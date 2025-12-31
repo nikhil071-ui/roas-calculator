@@ -1,3 +1,4 @@
+import Link from "next/link"; // <--- IMPORTED LINK
 import RoasCalculator from "@/components/RoasCalculator";
 
 export default function Home() {
@@ -23,16 +24,38 @@ export default function Home() {
         <div className="flex-1 order-2 lg:order-1">
             
             {/* AD SLOT 1: TOP LEADERBOARD (High Earnings) */}
-            {/* This gray box is where your Google Ad will appear later */}
             <div className="w-full h-[90px] bg-gray-200 mb-8 rounded-lg flex items-center justify-center text-gray-500 text-sm border border-gray-300">
                 [Google AdSense Leaderboard 728x90]
             </div>
-
+            
             {/* THE CALCULATOR TOOL */}
             <RoasCalculator />
 
+            {/* --- MORE TOOLS SECTION (NEW) --- */}
+            <section className="mt-12 mb-12">
+              <h2 className="text-2xl font-bold text-slate-900 mb-6 text-center">More Free Tools</h2>
+              <div className="flex justify-center gap-6 flex-wrap">
+                
+                {/* Link to Image Compressor */}
+                <Link href="/image-compressor" className="group block bg-white p-6 rounded-xl shadow-sm border border-gray-200 hover:border-blue-500 hover:shadow-lg transition w-full md:w-64 text-center">
+                  <div className="text-4xl mb-3 group-hover:scale-110 transition duration-300">🖼️</div>
+                  <h3 className="font-bold text-xl mb-2 text-slate-800 group-hover:text-blue-600">Image Compressor</h3>
+                  <p className="text-sm text-gray-500">Reduce image size by up to 80% without losing quality.</p>
+                </Link>
+
+                {/* Placeholder for Next Tool */}
+               {/* PDF Converter Card (Now Active) */}
+                <Link href="/pdf-converter" className="group block bg-white p-6 rounded-xl shadow-sm border border-gray-200 hover:border-red-500 hover:shadow-lg transition w-full md:w-64 text-center">
+                  <div className="text-4xl mb-3 group-hover:scale-110 transition duration-300">📄</div>
+                  <h3 className="font-bold text-xl mb-2 text-slate-800 group-hover:text-red-600">JPG to PDF</h3>
+                  <p className="text-sm text-gray-500">Combine multiple images into a single professional PDF document.</p>
+                </Link>
+
+              </div>
+            </section>
+
             {/* SEO CONTENT (Essential for Ranking & AdSense Approval) */}
-            <article className="prose lg:prose-xl mt-12 bg-white p-8 md:p-12 rounded-2xl shadow-sm border border-gray-100 max-w-none text-gray-700">
+            <article className="prose lg:prose-xl bg-white p-8 md:p-12 rounded-2xl shadow-sm border border-gray-100 max-w-none text-gray-700">
                 <h2 className="text-3xl font-bold text-slate-900">How to Calculate ROAS (Return on Ad Spend)</h2>
                 <p>
                   <strong>ROAS (Return on Ad Spend)</strong> is the most critical metric for any digital marketer or business owner. 
