@@ -20,8 +20,7 @@ export const metadata: Metadata = {
     follow: true,
   },
   verification: {
-    // You can paste your Google Search Console verification code here later if needed
-    // google: "your-verification-code",
+    google: "mtHJ8Sobw1wDN",
   },
 };
 
