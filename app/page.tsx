@@ -1,65 +1,92 @@
-import Image from "next/image";
+import RoasCalculator from "@/components/RoasCalculator";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
+    <main className="min-h-screen bg-gray-50 font-sans">
+      
+      {/* --- HERO SECTION (Targeting High CPC Keywords) --- */}
+      <header className="bg-blue-900 text-white py-12">
+        <div className="container mx-auto px-4 text-center">
+          <h1 className="text-3xl md:text-5xl font-bold mb-4">
+            Free ROAS Calculator & Profit Estimator
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+          <p className="text-lg text-blue-100 max-w-2xl mx-auto">
+            Instantly calculate your Return on Ad Spend (ROAS), Break-Even Point, 
+            and Net Profit for Facebook Ads, Google Ads, and TikTok.
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </header>
+
+      <div className="container mx-auto px-4 py-8 flex flex-col lg:flex-row gap-8">
+        
+        {/* --- MAIN CONTENT AREA --- */}
+        <div className="flex-1 order-2 lg:order-1">
+            
+            {/* AD SLOT 1: TOP LEADERBOARD (High Earnings) */}
+            {/* This gray box is where your Google Ad will appear later */}
+            <div className="w-full h-[90px] bg-gray-200 mb-8 rounded-lg flex items-center justify-center text-gray-500 text-sm border border-gray-300">
+                [Google AdSense Leaderboard 728x90]
+            </div>
+
+            {/* THE CALCULATOR TOOL */}
+            <RoasCalculator />
+
+            {/* SEO CONTENT (Essential for Ranking & AdSense Approval) */}
+            <article className="prose lg:prose-xl mt-12 bg-white p-8 md:p-12 rounded-2xl shadow-sm border border-gray-100 max-w-none text-gray-700">
+                <h2 className="text-3xl font-bold text-slate-900">How to Calculate ROAS (Return on Ad Spend)</h2>
+                <p>
+                  <strong>ROAS (Return on Ad Spend)</strong> is the most critical metric for any digital marketer or business owner. 
+                  Unlike ROI (Return on Investment), which looks at the big picture, ROAS focuses strictly on the effectiveness of your specific ad campaigns.
+                </p>
+                <p>
+                  The formula is simple but powerful: 
+                  <span className="block my-4 p-4 bg-slate-50 border-l-4 border-blue-500 font-mono text-slate-900 font-bold">
+                    ROAS = Total Conversion Revenue / Total Ad Spend
+                  </span>
+                  For example, if you spend <strong>$1,000</strong> on Facebook Ads and generate <strong>$5,000</strong> in revenue, your ROAS is <strong>5.0x</strong> (or 500%).
+                </p>
+                
+                <h3 className="text-2xl font-bold text-slate-900 mt-8">What is a "Good" ROAS Score in 2025?</h3>
+                <p>
+                  A common question we get is "What ROAS should I aim for?" The answer depends on your profit margins, but here are the industry benchmarks:
+                </p>
+                <ul className="list-disc pl-5 space-y-2">
+                    <li><strong>Below 2.0x:</strong> Warning Zone. Unless you have very high margins (like software), you might be losing money.</li>
+                    <li><strong>3.0x:</strong> The "Gold Standard" for eCommerce. This usually ensures you cover product costs and shipping while making a profit.</li>
+                    <li><strong>4.0x+:</strong> High Profitability. This allows you to scale your ad budget aggressively.</li>
+                </ul>
+
+                <h3 className="text-2xl font-bold text-slate-900 mt-8">ROAS vs. ROI: What's the Difference?</h3>
+                <p>
+                  While ROAS tells you if your <em>ads</em> are working, ROI tells you if your <em>business</em> is working. 
+                  Our calculator above includes a field for <strong>COGS (Cost of Goods Sold)</strong> to help you estimate your true Net Profit, bridging the gap between ROAS and ROI.
+                </p>
+
+                <div className="bg-blue-50 p-6 rounded-xl mt-8">
+                  <h4 className="font-bold text-blue-900 text-lg mb-2">💡 Pro Tip for AdSense Users</h4>
+                  <p className="text-blue-800 text-sm mb-0">
+                    Always calculate your <strong>Break-Even ROAS</strong> before launching a campaign. 
+                    If your profit margin is 50%, your Break-Even ROAS is 2.0x. Anything below that, and you are paying to lose money.
+                  </p>
+                </div>
+            </article>
         </div>
-      </main>
-    </div>
+
+        {/* --- SIDEBAR (Sticky Ads) --- */}
+        <aside className="w-full lg:w-[320px] order-1 lg:order-2 flex flex-col gap-6">
+            
+            {/* AD SLOT 2: SIDEBAR TOP */}
+            <div className="w-full h-[250px] bg-white rounded-lg shadow-sm flex items-center justify-center text-gray-500 text-sm border border-gray-200">
+                [AdSense Square 300x250]
+            </div>
+
+            {/* AD SLOT 3: STICKY VERTICAL (High Visibility) */}
+            <div className="sticky top-8 w-full h-[600px] bg-white rounded-lg shadow-sm flex items-center justify-center text-gray-500 text-sm border border-gray-200">
+                [AdSense Vertical 300x600]
+            </div>
+        </aside>
+
+      </div>
+    </main>
   );
 }
