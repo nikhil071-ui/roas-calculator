@@ -1,15 +1,28 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Link from "next/link";
-import Script from "next/script"; // <--- WE NEED THIS FOR ADS
+import Script from "next/script";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
+// --- GLOBAL SEO CONFIGURATION ---
 export const metadata: Metadata = {
-  title: "Free ROAS Calculator | Calculate Profit & Break-Even 2025",
-  description: "Calculate your Return on Ad Spend (ROAS), Break-Even Point, and Net Profit instantly. The best free tool for Facebook Ads, Google Ads, and dropshipping.",
-  keywords: "ROAS calculator, Facebook ads profit calculator, break even roas formula, ad spend calculator",
+  metadataBase: new URL("https://roas-calculator-brown.vercel.app"),
+  title: {
+    default: "Free Online Tools | ROAS Calc, Image Compressor & PDF Maker",
+    template: "%s | ROAS Tools",
+  },
+  description: "Free all-in-one toolkit: Calculate ROAS, Compress Images to 50KB, and Convert JPG to PDF under 2MB. Fast, private, and works offline.",
+  keywords: ["roas calculator", "image compressor 50kb", "jpg to pdf under 2mb", "online tools india", "free pdf maker", "reduce image size kb"],
+  robots: {
+    index: true,
+    follow: true,
+  },
+  verification: {
+    // You can paste your Google Search Console verification code here later if needed
+    // google: "your-verification-code",
+  },
 };
 
 export default function RootLayout({
@@ -21,7 +34,6 @@ export default function RootLayout({
     <html lang="en">
       <head>
         {/* --- GOOGLE ADSENSE SCRIPT START --- */}
-        {/* REPLACE XXXXXXXXXXXXXXXX WITH YOUR REAL ID BELOW */}
         <Script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4649521973867824"
@@ -30,10 +42,26 @@ export default function RootLayout({
         />
         {/* --- GOOGLE ADSENSE SCRIPT END --- */}
       </head>
-      <body className={inter.className}>
+      <body className={`${inter.className} bg-gray-50 text-gray-900`}>
+        
+        {/* --- GLOBAL NAVBAR (Appears on every page) --- */}
+        <nav className="bg-white border-b border-gray-200 sticky top-0 z-50">
+          <div className="container mx-auto px-4 h-16 flex items-center justify-between">
+            <Link href="/" className="font-bold text-xl text-blue-900 flex items-center gap-2">
+              🚀 ROAS Tools
+            </Link>
+            <div className="hidden md:flex gap-6 text-sm font-medium text-gray-600">
+              <Link href="/" className="hover:text-blue-600 transition">Home</Link>
+              <Link href="/image-compressor" className="hover:text-blue-600 transition">Image Compressor</Link>
+              <Link href="/pdf-converter" className="hover:text-blue-600 transition">PDF Maker</Link>
+            </div>
+          </div>
+        </nav>
+
+        {/* --- MAIN CONTENT --- */}
         {children}
 
-        {/* --- FOOTER START --- */}
+        {/* --- GLOBAL FOOTER --- */}
         <footer className="bg-slate-900 text-slate-400 py-10 mt-12 text-center text-sm border-t border-slate-800">
           <div className="container mx-auto px-4">
             
@@ -45,16 +73,15 @@ export default function RootLayout({
 
             <div className="max-w-2xl mx-auto mb-6 text-xs text-slate-500 leading-relaxed">
               <p>
-                <strong>Disclaimer:</strong> This calculator is for educational and informational purposes only. 
-                The results provided are estimates based on your inputs. We are not financial advisors, and 
-                this tool does not guarantee future profits. Please consult a professional for financial advice.
+                <strong>Disclaimer:</strong> This toolkit is for educational and informational purposes only. 
+                Files are processed locally in your browser for privacy. We do not store your images or PDFs.
               </p>
             </div>
 
-            <p className="opacity-50">© 2025 ROAS Calculator. All rights reserved.</p>
+            <p className="opacity-50">© 2025 ROAS Tools. All rights reserved.</p>
           </div>
         </footer>
-        {/* --- FOOTER END --- */}
+
       </body>
     </html>
   );
