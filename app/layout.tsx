@@ -21,14 +21,28 @@ export default function RootLayout({
       <body className={inter.className}>
         {children}
 
-        {/* --- FOOTER START --- */}
-        <footer className="bg-slate-900 text-slate-400 py-8 mt-12 text-center text-sm">
-          <div className="container mx-auto px-4 flex flex-col md:flex-row justify-center gap-6">
-            <Link href="/about" className="hover:text-white transition">About Us</Link>
-            <Link href="/contact" className="hover:text-white transition">Contact</Link>
-            <Link href="/privacy-policy" className="hover:text-white transition">Privacy Policy</Link>
+       {/* --- FOOTER START --- */}
+        <footer className="bg-slate-900 text-slate-400 py-10 mt-12 text-center text-sm border-t border-slate-800">
+          <div className="container mx-auto px-4">
+            
+            {/* Links */}
+            <div className="flex flex-col md:flex-row justify-center gap-6 mb-6 font-medium">
+              <Link href="/about" className="hover:text-white transition">About Us</Link>
+              <Link href="/contact" className="hover:text-white transition">Contact</Link>
+              <Link href="/privacy-policy" className="hover:text-white transition">Privacy Policy</Link>
+            </div>
+
+            {/* LEGAL DISCLAIMER (The Safety Shield) */}
+            <div className="max-w-2xl mx-auto mb-6 text-xs text-slate-500 leading-relaxed">
+              <p>
+                <strong>Disclaimer:</strong> This calculator is for educational and informational purposes only. 
+                The results provided are estimates based on your inputs. We are not financial advisors, and 
+                this tool does not guarantee future profits. Please consult a professional for financial advice.
+              </p>
+            </div>
+
+            <p className="opacity-50">© 2025 ROAS Calculator. All rights reserved.</p>
           </div>
-          <p className="mt-6 opacity-50">© 2025 ROAS Calculator. All rights reserved.</p>
         </footer>
         {/* --- FOOTER END --- */}
 
