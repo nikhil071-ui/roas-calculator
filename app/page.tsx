@@ -1,5 +1,15 @@
-import Link from "next/link"; // <--- IMPORTED LINK
-import RoasCalculator from "@/components/RoasCalculator";
+import type { Metadata } from "next";
+import Link from "next/link";
+import RoasClient from "./RoasClient"; // <--- Using the working Client Component
+
+export const metadata: Metadata = {
+  title: "Free ROAS Calculator | Calculate Profit & Break-Even 2025",
+  description: "Calculate your Return on Ad Spend (ROAS), Break-Even Point, and Net Profit instantly. The best free tool for Facebook Ads, Google Ads, and dropshipping.",
+  keywords: ["roas calculator", "facebook ads profit calculator", "break even roas formula", "dropshipping calculator", "marketing roi tool"],
+  alternates: {
+    canonical: "https://roas-calculator-brown.vercel.app/",
+  },
+};
 
 export default function Home() {
   return (
@@ -13,7 +23,7 @@ export default function Home() {
           </h1>
           <p className="text-lg text-blue-100 max-w-2xl mx-auto">
             Instantly calculate your Return on Ad Spend (ROAS), Break-Even Point, 
-            and Net Profit for Facebook Ads, Google Ads, and TikTok.
+            and Net Profit for Facebook Ads, Google Ads.
           </p>
         </div>
       </header>
@@ -28,10 +38,10 @@ export default function Home() {
                 [Google AdSense Leaderboard 728x90]
             </div>
             
-            {/* THE CALCULATOR TOOL */}
-            <RoasCalculator />
+            {/* THE CALCULATOR TOOL (Client Component) */}
+            <RoasClient />
 
-            {/* --- MORE TOOLS SECTION (NEW) --- */}
+            {/* --- MORE TOOLS SECTION --- */}
             <section className="mt-12 mb-12">
               <h2 className="text-2xl font-bold text-slate-900 mb-6 text-center">More Free Tools</h2>
               <div className="flex justify-center gap-6 flex-wrap">
@@ -43,8 +53,7 @@ export default function Home() {
                   <p className="text-sm text-gray-500">Reduce image size by up to 80% without losing quality.</p>
                 </Link>
 
-                {/* Placeholder for Next Tool */}
-               {/* PDF Converter Card (Now Active) */}
+                {/* PDF Converter Card */}
                 <Link href="/pdf-converter" className="group block bg-white p-6 rounded-xl shadow-sm border border-gray-200 hover:border-red-500 hover:shadow-lg transition w-full md:w-64 text-center">
                   <div className="text-4xl mb-3 group-hover:scale-110 transition duration-300">📄</div>
                   <h3 className="font-bold text-xl mb-2 text-slate-800 group-hover:text-red-600">JPG to PDF</h3>
@@ -69,7 +78,7 @@ export default function Home() {
                   For example, if you spend <strong>$1,000</strong> on Facebook Ads and generate <strong>$5,000</strong> in revenue, your ROAS is <strong>5.0x</strong> (or 500%).
                 </p>
                 
-                <h3 className="text-2xl font-bold text-slate-900 mt-8">What is a "Good" ROAS Score in 2025?</h3>
+                <h3 className="text-2xl font-bold text-slate-900 mt-8">What is a "Good" ROAS Score in 2026?</h3>
                 <p>
                   A common question we get is "What ROAS should I aim for?" The answer depends on your profit margins, but here are the industry benchmarks:
                 </p>
