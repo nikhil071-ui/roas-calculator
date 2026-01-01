@@ -4,6 +4,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://roas-calculator-brown.vercel.app';
 
   return [
+    // --- MAIN TOOLS ---
     {
       url: baseUrl,
       lastModified: new Date(),
@@ -22,7 +23,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'weekly',
       priority: 0.8,
     },
-    // --- ADD THESE 3 PAGES SO GOOGLE FINDS THEM ---
+    {
+      url: `${baseUrl}/currency-converter`, // <--- ADDED NEW TOOL
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.8,
+    },
+
+    // --- STATIC PAGES (Legal & Info) ---
     {
       url: `${baseUrl}/about`,
       lastModified: new Date(),

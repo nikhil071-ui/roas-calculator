@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Link from "next/link";
 import Script from "next/script";
-import { Analytics } from "@vercel/analytics/react"; // <--- NEW: Tracks your visitors
+import { Analytics } from "@vercel/analytics/react"; 
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -15,12 +15,11 @@ export const metadata: Metadata = {
     template: "%s | ROAS Tools",
   },
   description: "Free all-in-one toolkit: Calculate ROAS, Compress Images to 50KB, and Convert JPG to PDF under 2MB. Fast, private, and works offline.",
-  keywords: ["roas calculator", "image compressor 50kb", "jpg to pdf under 2mb", "online tools india", "free pdf maker", "reduce image size kb"],
+  keywords: ["roas calculator", "image compressor 50kb", "jpg to pdf under 2mb", "online tools india", "free pdf maker", "currency converter live"],
   robots: {
     index: true,
     follow: true,
   },
-  // --- FIX FOR LINKEDIN SAFETY WARNING ---
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -30,7 +29,7 @@ export const metadata: Metadata = {
     siteName: "ROAS Tools",
     images: [
       {
-        url: "/og-image.png", // Ensure this file exists in your public/ folder!
+        url: "/og-image.png",
         width: 1200,
         height: 630,
         alt: "ROAS Tools Preview",
@@ -57,7 +56,7 @@ export default function RootLayout({
       </head>
       <body className={`${inter.className} bg-gray-50 text-gray-900 flex flex-col min-h-screen`}>
         
-        {/* --- JSON-LD SCHEMA (The Secret for #1 Rankings) --- */}
+        {/* --- JSON-LD SCHEMA --- */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -74,7 +73,7 @@ export default function RootLayout({
                 "price": "0",
                 "priceCurrency": "USD"
               },
-              "featureList": "Calculate ROAS, Compress Images to 50KB, Convert JPG to PDF",
+              "featureList": "Calculate ROAS, Compress Images to 50KB, Convert JPG to PDF, Currency Converter",
               "author": {
                 "@type": "Organization",
                 "name": "ROAS Tools Inc."
@@ -96,6 +95,7 @@ export default function RootLayout({
               <Link href="/" className="hover:text-blue-600 transition">Home</Link>
               <Link href="/image-compressor" className="hover:text-blue-600 transition">Image Compressor</Link>
               <Link href="/pdf-converter" className="hover:text-blue-600 transition">PDF Maker</Link>
+              <Link href="/currency-converter" className="hover:text-blue-600 transition">Currency</Link>
             </div>
           </div>
         </nav>
@@ -103,7 +103,6 @@ export default function RootLayout({
         {/* --- MAIN CONTENT --- */}
         <div className="flex-grow">
             {children}
-            {/* --- VERCEL ANALYTICS (Tracks Visitors) --- */}
             <Analytics />
         </div>
 
@@ -123,13 +122,14 @@ export default function RootLayout({
               </p>
             </div>
 
-            {/* Column 2: Quick Links */}
+            {/* Column 2: Quick Links (UPDATED) */}
             <div>
               <h4 className="text-white font-bold mb-4 uppercase tracking-wider text-xs">Our Tools</h4>
               <ul className="space-y-3">
                 <li><Link href="/" className="hover:text-white transition flex items-center gap-2">📊 ROAS Calculator</Link></li>
                 <li><Link href="/image-compressor" className="hover:text-white transition flex items-center gap-2">🖼️ Image Compressor</Link></li>
                 <li><Link href="/pdf-converter" className="hover:text-white transition flex items-center gap-2">📄 JPG to PDF</Link></li>
+                <li><Link href="/currency-converter" className="hover:text-white transition flex items-center gap-2">💱 Currency Converter</Link></li>
               </ul>
             </div>
 

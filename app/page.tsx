@@ -59,6 +59,12 @@ export default function Home() {
                   <h3 className="font-bold text-xl mb-2 text-slate-800 group-hover:text-red-600">JPG to PDF</h3>
                   <p className="text-sm text-gray-500">Combine multiple images into a single professional PDF document.</p>
                 </Link>
+                {/* Currency Converter Card */}
+<Link href="/currency-converter" className="group block bg-white p-6 rounded-xl shadow-sm border border-gray-200 hover:border-emerald-500 hover:shadow-lg transition w-full md:w-64 text-center">
+  <div className="text-4xl mb-3 group-hover:scale-110 transition duration-300">💱</div>
+  <h3 className="font-bold text-xl mb-2 text-slate-800 group-hover:text-emerald-600">Currency Converter</h3>
+  <p className="text-sm text-gray-500">Live exchange rates for USD, INR, EUR, and 10+ global currencies.</p>
+</Link>
 
               </div>
             </section>
