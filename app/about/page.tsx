@@ -97,7 +97,7 @@ export default function About() {
       {/* Footer */}
       <footer className="max-w-3xl mx-auto mt-12 text-center border-t border-slate-200 pt-8">
         <p className="text-slate-500 mb-2">Built with ❤️ for the Marketing Community.</p>
-        <p className="text-slate-400 text-sm">© 2025 ROAS Tools Inc.</p>
+        <p className="text-slate-400 text-sm">© 2026 ROAS Tools Inc.</p>
       </footer>
 
     </div>

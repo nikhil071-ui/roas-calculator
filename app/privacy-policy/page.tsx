@@ -131,7 +131,7 @@ export default function PrivacyPolicy() {
       
       {/* Footer Note */}
       <p className="text-center text-slate-400 text-sm mt-8">
-        © 2025 ROAS Tools. All rights reserved.
+        © 2026 ROAS Tools. All rights reserved.
       </p>
     </div>
   );
