@@ -45,7 +45,7 @@ export default function ImageCompressorPage() {
 
       {/* --- SEO CONTENT (High Value Publisher Content) --- */}
       <article className="max-w-4xl mx-auto mt-12 bg-white p-8 md:p-12 rounded-2xl shadow-sm border border-gray-200 prose lg:prose-lg text-gray-700">
-        <h2 className="text-3xl font-bold text-slate-900">How to Compress Images to 50KB for Government Forms (2025 Guide)</h2>
+        <h2 className="text-3xl font-bold text-slate-900">How to Compress Images to 50KB for Government Forms (2026 Guide)</h2>
         <p>
           Applying for government jobs in India like <strong>SSC, UPSC, IBPS, SBI PO, or Railways (RRB)</strong>? 
           You know the struggle: the portal asks for a photo "under 50KB" and a signature "under 20KB", but your phone takes photos that are 5MB.
@@ -70,7 +70,7 @@ export default function ImageCompressorPage() {
             <li><strong>No Watermarks:</strong> We don't put any ugly logos on your important documents.</li>
         </ul>
 
-        <h3 className="text-2xl font-bold text-slate-900 mt-8">Common Size Requirements for 2025 Exams</h3>
+        <h3 className="text-2xl font-bold text-slate-900 mt-8">Common Size Requirements for 2026 Exams</h3>
         <div className="overflow-x-auto my-6">
             <table className="min-w-full bg-white border border-gray-300 text-sm">
                 <thead>

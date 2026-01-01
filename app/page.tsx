@@ -65,7 +65,7 @@ export default function Home() {
 
             {/* --- SEO CONTENT (Required for "Publisher Content" check) --- */}
             <article className="prose lg:prose-xl bg-white p-8 md:p-12 rounded-2xl shadow-sm border border-gray-100 max-w-none text-gray-700 mt-12">
-                <h2 className="text-3xl font-bold text-slate-900 mb-6">Complete Guide to ROAS: Calculation, Formulas & Strategy (2025)</h2>
+                <h2 className="text-3xl font-bold text-slate-900 mb-6">Complete Guide to ROAS: Calculation, Formulas & Strategy (2026)</h2>
                 
                 <p>
                   <strong>Return on Ad Spend (ROAS)</strong> is the definitive metric for evaluating the effectiveness of digital advertising campaigns. 

@@ -69,7 +69,7 @@ export default function PdfConverterPage() {
             <li><strong>Auto-Orientation:</strong> We detect if a document is horizontal (landscape) or vertical (portrait) and adjust the PDF page automatically.</li>
         </ul>
 
-        <h3 className="text-2xl font-bold text-slate-900 mt-8">Document Size Rules for 2025 Exams</h3>
+        <h3 className="text-2xl font-bold text-slate-900 mt-8">Document Size Rules for 2026 Exams</h3>
         <div className="overflow-x-auto my-6">
             <table className="min-w-full bg-white border border-gray-300 text-sm">
                 <thead>

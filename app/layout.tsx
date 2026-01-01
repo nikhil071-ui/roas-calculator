@@ -109,7 +109,7 @@ export default function RootLayout({
           </div>
 
           <div className="container mx-auto px-6 mt-12 pt-8 border-t border-slate-800 text-center">
-            <p>© 2025 ROAS Tools Inc. All rights reserved.</p>
+            <p>© 2026 ROAS Tools Inc. All rights reserved.</p>
           </div>
         </footer>
 
