@@ -73,7 +73,7 @@ export default function RootLayout({
               🚀 ROAS Tools
             </Link>
             
-            {/* Navigation Links - SCROLLABLE ON MOBILE (Fixed the 'Hidden' Error) */}
+            {/* Navigation Links - SCROLLABLE ON MOBILE */}
             <div className="flex gap-4 md:gap-8 text-sm font-medium text-gray-600 overflow-x-auto ml-4 whitespace-nowrap scrollbar-hide">
               <Link href="/" className="hover:text-blue-600 transition">Home</Link>
               <Link href="/image-compressor" className="hover:text-blue-600 transition">Image Compressor</Link>
@@ -87,7 +87,7 @@ export default function RootLayout({
             {children}
         </div>
 
-        {/* --- GLOBAL PRO FOOTER (High Value Content) --- */}
+        {/* --- GLOBAL PRO FOOTER --- */}
         <footer className="bg-slate-900 text-slate-400 py-12 mt-auto border-t border-slate-800 font-sans">
           <div className="container mx-auto px-6 grid md:grid-cols-4 gap-8 text-sm">
             
