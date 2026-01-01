@@ -39,6 +39,32 @@ export default function RootLayout({
       </head>
       <body className={`${inter.className} bg-gray-50 text-gray-900 flex flex-col min-h-screen`}>
         
+        {/* --- JSON-LD SCHEMA (The Secret for #1 Rankings) --- */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebApplication",
+              "name": "ROAS Tools",
+              "url": "https://roas-calculator-brown.vercel.app",
+              "applicationCategory": "BusinessApplication",
+              "operatingSystem": "All",
+              "browserRequirements": "Requires JavaScript. Requires HTML5.",
+              "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "USD"
+              },
+              "featureList": "Calculate ROAS, Compress Images to 50KB, Convert JPG to PDF",
+              "author": {
+                "@type": "Organization",
+                "name": "ROAS Tools Inc."
+              }
+            })
+          }}
+        />
+
         {/* --- GLOBAL NAVBAR --- */}
         <nav className="bg-white border-b border-gray-200 sticky top-0 z-50 shadow-sm">
           <div className="container mx-auto px-4 h-16 flex items-center justify-between">
