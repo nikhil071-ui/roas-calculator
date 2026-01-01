@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Link from "next/link";
 import Script from "next/script";
+import { Analytics } from "@vercel/analytics/react"; // <--- NEW: Tracks your visitors
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -18,6 +19,23 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
+  },
+  // --- FIX FOR LINKEDIN SAFETY WARNING ---
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://roas-calculator-brown.vercel.app",
+    title: "Free Image Compressor & PDF Maker (Privacy Focused)",
+    description: "Compress images to 50KB for SSC/UPSC exams and calculate ad profits instantly. No uploads required.",
+    siteName: "ROAS Tools",
+    images: [
+      {
+        url: "/og-image.png", // Ensure this file exists in your public/ folder!
+        width: 1200,
+        height: 630,
+        alt: "ROAS Tools Preview",
+      },
+    ],
   },
 };
 
@@ -85,6 +103,8 @@ export default function RootLayout({
         {/* --- MAIN CONTENT --- */}
         <div className="flex-grow">
             {children}
+            {/* --- VERCEL ANALYTICS (Tracks Visitors) --- */}
+            <Analytics />
         </div>
 
         {/* --- GLOBAL PRO FOOTER --- */}
