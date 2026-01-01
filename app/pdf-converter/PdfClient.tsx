@@ -3,25 +3,41 @@
 import { useState } from "react";
 import jsPDF from "jspdf";
 import imageCompression from "browser-image-compression";
-import { Upload, FileText, Trash2, Download, Plus, RotateCw, HardDrive, Eye, X } from "lucide-react";
+import { Upload, FileText, Trash2, Download, Plus, RotateCw, Settings, Eye, X, CheckCircle, FileDigit } from "lucide-react";
 
 export default function PdfClient() {
   const [images, setImages] = useState<{ file: File; rotation: number; id: string }[]>([]);
   const [isGenerating, setIsGenerating] = useState(false);
+  
+  // New State for Unit Selection
   const [targetSize, setTargetSize] = useState<number | string>(2); 
+  const [unit, setUnit] = useState<"KB" | "MB">("MB");
+
   const [statusText, setStatusText] = useState("");
   const [previewImage, setPreviewImage] = useState<string | null>(null);
   const [isPreviewLoading, setIsPreviewLoading] = useState(false);
 
-  const safeTarget = Number(targetSize) || 2;
-  const mbPerPage = images.length > 0 ? (safeTarget * 0.9) / images.length : 0;
+  // --- CALCULATE LIMITS ---
+  const totalTargetMB = unit === "KB" ? Number(targetSize) / 1024 : Number(targetSize);
+  // We allocate space per page. We reserve 10% buffer for PDF overhead.
+  const mbPerPage = images.length > 0 ? (totalTargetMB * 0.9) / images.length : 0;
+
+  // --- PRESETS FOR EXAMS ---
+  const presets = [
+    { label: "500 KB (SSC)", value: 500, unit: "KB" },
+    { label: "2 MB (UPSC)", value: 2, unit: "MB" },
+    { label: "5 MB (Email)", value: 5, unit: "MB" },
+    { label: "10 MB (High)", value: 10, unit: "MB" },
+  ];
   
   const getQualityLabel = () => {
-    if (images.length === 0) return { text: "Add images to see quality", color: "text-gray-400" };
-    if (mbPerPage > 0.8) return { text: "Quality: Excellent (High Res) 🌟", color: "text-green-600" };
-    if (mbPerPage > 0.3) return { text: "Quality: Good (Readable) ✅", color: "text-blue-600" };
-    if (mbPerPage > 0.1) return { text: "Quality: Low (Email Friendly) ⚠️", color: "text-yellow-600" };
-    return { text: "Quality: Very Pixelated (Not Recommended) ❌", color: "text-red-600" };
+    if (images.length === 0) return { text: "Add images to calculate quality", color: "text-gray-400" };
+    
+    // Logic: If we have to squeeze a page into < 50KB, it looks bad.
+    if (mbPerPage > 0.5) return { text: "Quality: Excellent (High Res) 🌟", color: "text-green-600" };
+    if (mbPerPage > 0.2) return { text: "Quality: Good (Readable) ✅", color: "text-blue-600" };
+    if (mbPerPage > 0.05) return { text: "Quality: Low (Strict Limits) ⚠️", color: "text-orange-600" };
+    return { text: "Quality: Risk of Blur (Too many pages for this size) ❌", color: "text-red-600" };
   };
 
   const handleImageUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -47,9 +63,18 @@ export default function PdfClient() {
     );
   };
 
+  const handlePresetClick = (presetVal: number, presetUnit: string) => {
+    setTargetSize(presetVal);
+    setUnit(presetUnit as "KB" | "MB");
+  };
+
+  // --- COMPRESSION LOGIC ---
   const compressSingleImage = async (imageItem: { file: File; rotation: number }) => {
+    // Safety: Ensure we don't try to compress to 0MB
+    const safeMB = mbPerPage < 0.02 ? 0.02 : mbPerPage;
+
     const options = {
-      maxSizeMB: mbPerPage, 
+      maxSizeMB: safeMB, 
       maxWidthOrHeight: 1920,
       useWebWorker: true,
     };
@@ -94,12 +119,12 @@ export default function PdfClient() {
   const generatePDF = async () => {
     if (images.length === 0) return;
     setIsGenerating(true);
-    setStatusText("Initializing...");
+    setStatusText("Initializing PDF Engine...");
 
     const doc = new jsPDF({ unit: "mm", format: "a4" });
     
     for (let i = 0; i < images.length; i++) {
-      setStatusText(`Compressing page ${i + 1} of ${images.length}...`);
+      setStatusText(`Processing page ${i + 1} of ${images.length}...`);
       
       const imgData = await compressSingleImage(images[i]);
       if (!imgData) continue;
@@ -135,141 +160,164 @@ export default function PdfClient() {
       doc.addImage(imgData, "JPEG", x, y, finalWidth, finalHeight);
     }
 
-    setStatusText("Downloading...");
-    doc.save(`document-${safeTarget}MB.pdf`);
+    setStatusText("Finalizing PDF...");
+    doc.save(`document-${targetSize}${unit}.pdf`);
     setIsGenerating(false);
     setStatusText("");
   };
 
   return (
-    <>
-      {previewImage || isPreviewLoading ? (
-        <div className="fixed inset-0 z-50 bg-black/80 flex items-center justify-center p-4 backdrop-blur-sm">
-          <div className="bg-white rounded-xl p-4 max-w-4xl w-full max-h-[90vh] flex flex-col relative">
-            <button 
-                onClick={() => { setPreviewImage(null); setIsPreviewLoading(false); }}
-                className="absolute top-4 right-4 bg-gray-200 hover:bg-red-500 hover:text-white p-2 rounded-full transition z-10"
-            >
-                <X size={24} />
-            </button>
-            <h3 className="text-xl font-bold mb-2 text-gray-800">Quality Preview</h3>
-            <p className="text-sm text-gray-500 mb-4">
-               This is how your page will look at <strong>{mbPerPage.toFixed(2)} MB</strong> size.
-            </p>
-            <div className="flex-1 overflow-auto bg-gray-100 rounded-lg flex items-center justify-center border">
-                {isPreviewLoading ? (
-                    <div className="flex flex-col items-center gap-2 text-blue-600">
-                        <div className="w-10 h-10 border-4 border-blue-600 border-t-transparent rounded-full animate-spin"></div>
-                        <span>Generating Preview...</span>
-                    </div>
-                ) : (
-                    // eslint-disable-next-line @next/next/no-img-element
-                    <img src={previewImage!} alt="Preview" className="max-w-full object-contain shadow-lg" />
-                )}
+    <div className="bg-white rounded-2xl shadow-xl overflow-hidden border border-slate-100">
+      
+      {/* --- HEADER & CONTROLS --- */}
+      <div className="bg-slate-900 p-6 md:p-8 text-white">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+            <div>
+                <h1 className="text-2xl md:text-3xl font-bold flex items-center gap-3">
+                  <FileText className="text-red-400" /> Pro PDF Maker
+                </h1>
+                <p className="mt-2 text-slate-400 text-sm">Convert photos to PDF with total size control.</p>
             </div>
-          </div>
-        </div>
-      ) : null}
 
-      <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
-        <div className="bg-red-600 p-6 text-white flex flex-col md:flex-row justify-between items-center gap-6">
-          <div>
-            <h1 className="text-3xl font-bold flex items-center gap-3">
-              <FileText /> Pro PDF Maker
-            </h1>
-            <p className="mt-2 opacity-90 text-sm">Convert & Compress images to PDF.</p>
-          </div>
-          
-          <div className="bg-white/10 p-4 rounded-xl flex flex-col gap-2 border border-white/20 min-w-[300px]">
-             <div className="flex items-center justify-between">
-                <div className="flex items-center gap-2">
-                    <HardDrive size={20} />
-                    <span className="font-bold text-sm uppercase">Target Size</span>
+            {/* CONTROL PANEL */}
+            <div className="bg-slate-800 p-4 rounded-xl border border-slate-700 w-full md:w-auto min-w-[340px]">
+                <div className="flex items-center justify-between mb-3">
+                    <div className="flex items-center gap-2 text-slate-300">
+                        <Settings size={18} />
+                        <span className="font-bold text-xs uppercase tracking-wider">Total PDF Size</span>
+                    </div>
+                    
+                    {/* INPUT + UNIT TOGGLE */}
+                    <div className="flex items-center gap-2">
+                        <input 
+                            type="number" min="0.1" step="0.1"
+                            value={targetSize} 
+                            onChange={(e) => setTargetSize(e.target.value)}
+                            className="w-20 px-2 py-1 rounded bg-white text-slate-900 font-bold outline-none text-right font-mono"
+                        />
+                        <div className="flex bg-slate-700 rounded p-1">
+                            <button 
+                                onClick={() => setUnit("KB")}
+                                className={`px-2 py-0.5 text-xs font-bold rounded transition ${unit === "KB" ? "bg-red-600 text-white" : "text-slate-400 hover:text-white"}`}
+                            >
+                                KB
+                            </button>
+                            <button 
+                                onClick={() => setUnit("MB")}
+                                className={`px-2 py-0.5 text-xs font-bold rounded transition ${unit === "MB" ? "bg-red-600 text-white" : "text-slate-400 hover:text-white"}`}
+                            >
+                                MB
+                            </button>
+                        </div>
+                    </div>
                 </div>
-                <div className="flex items-center gap-1 bg-white text-red-600 px-2 py-1 rounded font-bold">
-                    <input 
-                      type="number" min="0.1" max="50" step="0.1"
-                      value={targetSize} 
-                      onChange={(e) => setTargetSize(e.target.value)}
-                      className="w-12 outline-none text-right"
-                    />
-                    <span className="text-sm">MB</span>
-                </div>
-             </div>
-             <div className="text-xs bg-black/20 p-2 rounded text-center">
-                Approx <strong>{mbPerPage.toFixed(2)} MB</strong> per page
-             </div>
-          </div>
-        </div>
 
-        <div className="p-8">
-            <div className={`mb-6 p-3 rounded-lg text-sm font-bold text-center border ${getQualityLabel().color.replace('text-', 'border-').replace('600', '200')} bg-gray-50`}>
+                {/* PRESET BUTTONS */}
+                <div className="grid grid-cols-4 gap-2">
+                    {presets.map((preset, index) => (
+                        <button
+                            key={index}
+                            onClick={() => handlePresetClick(preset.value, preset.unit)}
+                            className={`text-[10px] font-bold py-2 px-1 rounded transition border ${
+                                Number(targetSize) === preset.value && unit === preset.unit
+                                ? "bg-red-600 text-white border-red-500" 
+                                : "bg-slate-700 text-slate-300 border-slate-600 hover:bg-slate-600"
+                            }`}
+                        >
+                            {preset.label.split(" (")[0]}
+                        </button>
+                    ))}
+                </div>
+            </div>
+        </div>
+      </div>
+
+      {/* --- MAIN AREA --- */}
+      <div className="p-6 md:p-8">
+        
+        {/* INFO BAR */}
+        <div className="grid md:grid-cols-2 gap-4 mb-8">
+             <div className={`p-3 rounded-lg text-sm font-bold text-center border ${getQualityLabel().color.replace('text-', 'border-').replace('600', '200')} bg-slate-50`}>
                 <span className={getQualityLabel().color}>{getQualityLabel().text}</span>
             </div>
+            <div className="p-3 rounded-lg text-sm font-bold text-center border border-slate-200 bg-slate-50 text-slate-600">
+                Limit per page: <span className="text-slate-900">{mbPerPage > 1 ? mbPerPage.toFixed(1) + " MB" : (mbPerPage * 1024).toFixed(0) + " KB"}</span> (Approx)
+            </div>
+        </div>
 
-          {images.length === 0 ? (
-            <div className="border-2 border-dashed border-gray-300 rounded-xl p-16 text-center hover:bg-red-50 transition cursor-pointer relative group">
+        {/* --- IMAGE GRID --- */}
+        {images.length === 0 ? (
+           <div className="border-2 border-dashed border-slate-300 rounded-2xl p-12 md:p-20 text-center hover:bg-slate-50 hover:border-red-400 transition cursor-pointer relative group">
               <input
                 type="file" multiple accept="image/*"
                 className="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10"
                 onChange={handleImageUpload}
               />
-              <Upload className="mx-auto h-16 w-16 text-gray-400 mb-4 group-hover:text-red-500 transition" />
-              <p className="text-2xl font-bold text-gray-700">Drop images here</p>
-            </div>
-          ) : (
-            <>
-              <div className="flex justify-between items-center mb-6">
-                 <h3 className="font-bold text-gray-700 text-lg">
-                    {images.length} Pages Selected
+              <div className="bg-red-50 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition">
+                <Upload className="h-10 w-10 text-red-600" />
+              </div>
+              <p className="text-2xl font-bold text-slate-800">Drop images here</p>
+              <p className="text-slate-500 mt-2">JPG, PNG, WEBP • We'll merge them into one PDF</p>
+           </div>
+        ) : (
+          <>
+             <div className="flex justify-between items-center mb-6">
+                 <h3 className="font-bold text-slate-700 text-lg flex items-center gap-2">
+                    <FileDigit /> {images.length} Pages
                  </h3>
-                 <label className="flex items-center gap-2 bg-blue-50 text-blue-700 px-4 py-2 rounded-lg cursor-pointer hover:bg-blue-100 transition font-medium">
-                    <Plus size={18} /> Add More
+                 <label className="flex items-center gap-2 bg-slate-100 text-slate-700 px-4 py-2 rounded-lg cursor-pointer hover:bg-slate-200 transition font-bold text-sm">
+                    <Plus size={16} /> Add More
                     <input type="file" multiple accept="image/*" className="hidden" onChange={handleImageUpload}/>
                  </label>
-              </div>
+             </div>
 
-              <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6">
-                {images.map((img, idx) => (
-                  <div key={img.id} className="relative group bg-gray-100 rounded-xl overflow-hidden shadow-sm border hover:shadow-md transition">
-                    <div className="h-48 flex items-center justify-center p-2 bg-gray-200">
-                        {/* eslint-disable-next-line @next/next/no-img-element */}
-                        <img
-                          src={URL.createObjectURL(img.file)}
-                          alt="preview"
-                          style={{ transform: `rotate(${img.rotation}deg)` }}
-                          className="max-h-full max-w-full object-contain transition-transform duration-300"
-                        />
-                    </div>
-                    <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center gap-3">
-                        <button 
-                            onClick={() => handlePreview(img)}
-                            className="bg-white text-gray-800 p-3 rounded-full hover:scale-110 transition shadow-lg flex flex-col items-center justify-center w-16 h-16"
-                            title="Preview Quality"
-                        >
-                            <Eye size={24} />
-                            <span className="text-[10px] font-bold mt-1">PREVIEW</span>
-                        </button>
-                    </div>
-                    <div className="bg-white p-3 flex justify-between items-center border-t relative z-10">
-                       <span className="text-xs font-bold text-gray-500">Pg {idx + 1}</span>
-                       <div className="flex gap-2">
-                          <button onClick={() => rotateImage(img.id)} className="p-2 text-gray-600 hover:bg-blue-50 hover:text-blue-600 rounded-full transition">
-                            <RotateCw size={18} />
-                          </button>
-                          <button onClick={() => removeImage(img.id)} className="p-2 text-gray-600 hover:bg-red-50 hover:text-red-600 rounded-full transition">
-                            <Trash2 size={18} />
-                          </button>
+             <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4">
+               {images.map((img, idx) => (
+                 <div key={img.id} className="relative group bg-slate-100 rounded-xl overflow-hidden shadow-sm border border-slate-200 hover:shadow-md transition">
+                   
+                   {/* PREVIEW IMAGE */}
+                   <div className="h-40 flex items-center justify-center p-2 bg-slate-200/50">
+                       {/* eslint-disable-next-line @next/next/no-img-element */}
+                       <img
+                         src={URL.createObjectURL(img.file)}
+                         alt="preview"
+                         style={{ transform: `rotate(${img.rotation}deg)` }}
+                         className="max-h-full max-w-full object-contain transition-transform duration-300"
+                       />
+                   </div>
+
+                   {/* HOVER ACTIONS */}
+                   <div className="absolute inset-0 bg-slate-900/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center gap-3 backdrop-blur-[2px]">
+                       <button 
+                           onClick={() => handlePreview(img)}
+                           className="bg-white text-slate-900 p-2 rounded-full hover:scale-110 transition shadow-lg"
+                           title="Preview Quality"
+                       >
+                           <Eye size={20} />
+                       </button>
+                   </div>
+
+                   {/* FOOTER ACTIONS */}
+                   <div className="bg-white p-2 flex justify-between items-center border-t relative z-10">
+                       <span className="text-xs font-bold text-slate-500 bg-slate-100 px-2 py-0.5 rounded">Pg {idx + 1}</span>
+                       <div className="flex gap-1">
+                         <button onClick={() => rotateImage(img.id)} className="p-1.5 text-slate-500 hover:bg-blue-50 hover:text-blue-600 rounded-md transition" title="Rotate">
+                           <RotateCw size={16} />
+                         </button>
+                         <button onClick={() => removeImage(img.id)} className="p-1.5 text-slate-500 hover:bg-red-50 hover:text-red-600 rounded-md transition" title="Delete">
+                           <Trash2 size={16} />
+                         </button>
                        </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
+                   </div>
+                 </div>
+               ))}
+             </div>
 
-              <div className="mt-10 p-6 bg-gray-50 rounded-xl border border-gray-200 flex flex-col md:flex-row items-center justify-between gap-6">
-                 <div className="text-gray-600 text-sm max-w-md">
-                    <strong>Ready to Convert?</strong><br/>
-                    We will auto-compress images to keep file size near <span className="text-red-600 font-bold">{targetSize} MB</span>.
+             {/* GENERATE SECTION */}
+             <div className="mt-10 p-6 bg-slate-50 rounded-xl border border-slate-200 flex flex-col md:flex-row items-center justify-between gap-6">
+                 <div className="text-slate-600 text-sm max-w-md">
+                    <strong>Ready to Create PDF?</strong><br/>
+                    We will optimize all {images.length} pages to ensure the final file is under <span className="text-red-600 font-bold">{targetSize} {unit}</span>.
                  </div>
                  
                  <button
@@ -277,9 +325,9 @@ export default function PdfClient() {
                     disabled={isGenerating}
                     className={`
                       px-8 py-4 rounded-xl font-bold text-lg text-white shadow-lg flex items-center gap-3
-                      ${isGenerating ? "bg-gray-400 cursor-not-allowed" : "bg-red-600 hover:bg-red-700 hover:scale-105 transition"}
+                      ${isGenerating ? "bg-slate-400 cursor-not-allowed" : "bg-red-600 hover:bg-red-700 hover:scale-105 transition"}
                     `}
-                  >
+                 >
                     {isGenerating ? (
                       <span className="flex items-center gap-2">Processing...</span>
                     ) : (
@@ -288,20 +336,61 @@ export default function PdfClient() {
                       </>
                     )}
                  </button>
-              </div>
+             </div>
 
-              {statusText && (
-                <div className="mt-6 text-center">
-                    <p className="text-blue-600 font-medium animate-pulse mb-2">{statusText}</p>
-                    <div className="w-full bg-gray-200 rounded-full h-2.5">
-                        <div className="bg-blue-600 h-2.5 rounded-full w-2/3 animate-[pulse_1s_ease-in-out_infinite]"></div>
+             {/* LOADING BAR */}
+             {statusText && (
+                <div className="mt-6 text-center animate-in fade-in slide-in-from-bottom-2">
+                    <p className="text-slate-700 font-bold mb-2 flex items-center justify-center gap-2">
+                        {isGenerating && <span className="w-4 h-4 border-2 border-red-600 border-t-transparent rounded-full animate-spin"></span>}
+                        {statusText}
+                    </p>
+                    <div className="w-full max-w-md mx-auto bg-slate-200 rounded-full h-1.5 overflow-hidden">
+                        <div className="bg-red-600 h-full rounded-full w-2/3 animate-[progress_1s_ease-in-out_infinite]"></div>
                     </div>
                 </div>
-              )}
-            </>
-          )}
-        </div>
+             )}
+          </>
+        )}
       </div>
-    </>
+
+      {/* --- PREVIEW MODAL --- */}
+      {(previewImage || isPreviewLoading) && (
+        <div className="fixed inset-0 z-50 bg-slate-900/90 flex items-center justify-center p-4 backdrop-blur-sm animate-in fade-in">
+          <div className="bg-white rounded-2xl p-4 max-w-4xl w-full max-h-[90vh] flex flex-col relative shadow-2xl">
+            <button 
+                onClick={() => { setPreviewImage(null); setIsPreviewLoading(false); }}
+                className="absolute top-4 right-4 bg-slate-100 hover:bg-red-500 hover:text-white p-2 rounded-full transition z-10"
+            >
+                <X size={24} />
+            </button>
+            <h3 className="text-xl font-bold mb-1 text-slate-800">Quality Preview</h3>
+            <p className="text-sm text-slate-500 mb-4">
+                This is how a single page will look at approx <strong>{mbPerPage > 1 ? mbPerPage.toFixed(1) + " MB" : (mbPerPage * 1024).toFixed(0) + " KB"}</strong>.
+            </p>
+            
+            <div className="flex-1 overflow-auto bg-slate-100 rounded-xl flex items-center justify-center border border-slate-200 p-4">
+                {isPreviewLoading ? (
+                    <div className="flex flex-col items-center gap-3 text-red-600">
+                        <div className="w-10 h-10 border-4 border-red-600 border-t-transparent rounded-full animate-spin"></div>
+                        <span className="font-bold text-sm uppercase tracking-wider">Optimizing...</span>
+                    </div>
+                ) : (
+                    // eslint-disable-next-line @next/next/no-img-element
+                    <img src={previewImage!} alt="Preview" className="max-w-full object-contain shadow-lg" />
+                )}
+            </div>
+          </div>
+        </div>
+      )}
+
+      <style jsx>{`
+        @keyframes progress {
+          0% { transform: translateX(-100%); }
+          50% { transform: translateX(0%); }
+          100% { transform: translateX(100%); }
+        }
+      `}</style>
+    </div>
   );
 }

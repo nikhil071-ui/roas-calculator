@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import RoasClient from "./RoasClient"; // <--- Using the working Client Component
+import RoasClient from "./RoasClient";
 
 export const metadata: Metadata = {
   title: "Free ROAS Calculator | Calculate Profit & Break-Even 2025",
@@ -13,9 +13,9 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-gray-50 font-sans">
+    <main className="min-h-screen bg-gray-50 font-sans pb-12">
       
-      {/* --- HERO SECTION (Targeting High CPC Keywords) --- */}
+      {/* --- HERO SECTION --- */}
       <header className="bg-blue-900 text-white py-12">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-3xl md:text-5xl font-bold mb-4">
@@ -23,7 +23,7 @@ export default function Home() {
           </h1>
           <p className="text-lg text-blue-100 max-w-2xl mx-auto">
             Instantly calculate your Return on Ad Spend (ROAS), Break-Even Point, 
-            and Net Profit for Facebook Ads, Google Ads.
+            and Net Profit for Facebook Ads and Google Ads.
           </p>
         </div>
       </header>
@@ -33,12 +33,12 @@ export default function Home() {
         {/* --- MAIN CONTENT AREA --- */}
         <div className="flex-1 order-2 lg:order-1">
             
-            {/* AD SLOT 1: TOP LEADERBOARD (High Earnings) */}
-            <div className="w-full h-[90px] bg-gray-200 mb-8 rounded-lg flex items-center justify-center text-gray-500 text-sm border border-gray-300">
-                [Google AdSense Leaderboard 728x90]
+            {/* AD SLOT 1: TOP LEADERBOARD (Empty container for Auto Ads) */}
+            <div className="w-full min-h-[90px] bg-gray-100 border border-gray-200 rounded-lg flex items-center justify-center overflow-hidden mb-8">
+                <span className="text-xs text-gray-400">Advertisement</span>
             </div>
             
-            {/* THE CALCULATOR TOOL (Client Component) */}
+            {/* THE CALCULATOR TOOL */}
             <RoasClient />
 
             {/* --- MORE TOOLS SECTION --- */}
@@ -53,7 +53,7 @@ export default function Home() {
                   <p className="text-sm text-gray-500">Reduce image size by up to 80% without losing quality.</p>
                 </Link>
 
-                {/* PDF Converter Card */}
+                {/* Link to PDF Converter */}
                 <Link href="/pdf-converter" className="group block bg-white p-6 rounded-xl shadow-sm border border-gray-200 hover:border-red-500 hover:shadow-lg transition w-full md:w-64 text-center">
                   <div className="text-4xl mb-3 group-hover:scale-110 transition duration-300">📄</div>
                   <h3 className="font-bold text-xl mb-2 text-slate-800 group-hover:text-red-600">JPG to PDF</h3>
@@ -63,8 +63,7 @@ export default function Home() {
               </div>
             </section>
 
-            {/* SEO CONTENT (Essential for Ranking & AdSense Approval) */}
-            {/* --- SEO CONTENT (The "Publisher Content" Fix) --- */}
+            {/* --- SEO CONTENT (Required for "Publisher Content" check) --- */}
             <article className="prose lg:prose-xl bg-white p-8 md:p-12 rounded-2xl shadow-sm border border-gray-100 max-w-none text-gray-700 mt-12">
                 <h2 className="text-3xl font-bold text-slate-900 mb-6">Complete Guide to ROAS: Calculation, Formulas & Strategy (2025)</h2>
                 
@@ -140,13 +139,13 @@ export default function Home() {
         <aside className="w-full lg:w-[320px] order-1 lg:order-2 flex flex-col gap-6">
             
             {/* AD SLOT 2: SIDEBAR TOP */}
-            <div className="w-full h-[250px] bg-white rounded-lg shadow-sm flex items-center justify-center text-gray-500 text-sm border border-gray-200">
-                [AdSense Square 300x250]
+            <div className="w-full min-h-[250px] bg-gray-100 border border-gray-200 rounded-lg flex items-center justify-center overflow-hidden">
+                <span className="text-xs text-gray-400">Advertisement</span>
             </div>
 
             {/* AD SLOT 3: STICKY VERTICAL (High Visibility) */}
-            <div className="sticky top-8 w-full h-[600px] bg-white rounded-lg shadow-sm flex items-center justify-center text-gray-500 text-sm border border-gray-200">
-                [AdSense Vertical 300x600]
+            <div className="sticky top-24 w-full min-h-[600px] bg-gray-100 border border-gray-200 rounded-lg flex items-center justify-center overflow-hidden">
+                <span className="text-xs text-gray-400">Advertisement</span>
             </div>
         </aside>
 
