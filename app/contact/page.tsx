@@ -83,7 +83,7 @@ export default function Contact() {
 
       {/* Footer */}
       <footer className="max-w-3xl mx-auto mt-12 text-center text-slate-400 text-sm">
-        <p>© 2026 ROAS Tools Inc. • Punjab, India</p>
+        <p>© 2026 ROAS Tools Inc.</p>
       </footer>
     </div>
   );
