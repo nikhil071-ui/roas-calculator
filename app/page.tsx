@@ -64,43 +64,75 @@ export default function Home() {
             </section>
 
             {/* SEO CONTENT (Essential for Ranking & AdSense Approval) */}
-            <article className="prose lg:prose-xl bg-white p-8 md:p-12 rounded-2xl shadow-sm border border-gray-100 max-w-none text-gray-700">
-                <h2 className="text-3xl font-bold text-slate-900">How to Calculate ROAS (Return on Ad Spend)</h2>
-                <p>
-                  <strong>ROAS (Return on Ad Spend)</strong> is the most critical metric for any digital marketer or business owner. 
-                  Unlike ROI (Return on Investment), which looks at the big picture, ROAS focuses strictly on the effectiveness of your specific ad campaigns.
-                </p>
-                <p>
-                  The formula is simple but powerful: 
-                  <span className="block my-4 p-4 bg-slate-50 border-l-4 border-blue-500 font-mono text-slate-900 font-bold">
-                    ROAS = Total Conversion Revenue / Total Ad Spend
-                  </span>
-                  For example, if you spend <strong>$1,000</strong> on Facebook Ads and generate <strong>$5,000</strong> in revenue, your ROAS is <strong>5.0x</strong> (or 500%).
-                </p>
+            {/* --- SEO CONTENT (The "Publisher Content" Fix) --- */}
+            <article className="prose lg:prose-xl bg-white p-8 md:p-12 rounded-2xl shadow-sm border border-gray-100 max-w-none text-gray-700 mt-12">
+                <h2 className="text-3xl font-bold text-slate-900 mb-6">Complete Guide to ROAS: Calculation, Formulas & Strategy (2025)</h2>
                 
-                <h3 className="text-2xl font-bold text-slate-900 mt-8">What is a "Good" ROAS Score in 2026?</h3>
                 <p>
-                  A common question we get is "What ROAS should I aim for?" The answer depends on your profit margins, but here are the industry benchmarks:
-                </p>
-                <ul className="list-disc pl-5 space-y-2">
-                    <li><strong>Below 2.0x:</strong> Warning Zone. Unless you have very high margins (like software), you might be losing money.</li>
-                    <li><strong>3.0x:</strong> The "Gold Standard" for eCommerce. This usually ensures you cover product costs and shipping while making a profit.</li>
-                    <li><strong>4.0x+:</strong> High Profitability. This allows you to scale your ad budget aggressively.</li>
-                </ul>
-
-                <h3 className="text-2xl font-bold text-slate-900 mt-8">ROAS vs. ROI: What's the Difference?</h3>
-                <p>
-                  While ROAS tells you if your <em>ads</em> are working, ROI tells you if your <em>business</em> is working. 
-                  Our calculator above includes a field for <strong>COGS (Cost of Goods Sold)</strong> to help you estimate your true Net Profit, bridging the gap between ROAS and ROI.
+                  <strong>Return on Ad Spend (ROAS)</strong> is the definitive metric for evaluating the effectiveness of digital advertising campaigns. 
+                  Whether you are running Facebook Ads, Google Performance Max, or TikTok Spark Ads, knowing your ROAS is the difference between scaling a profitable business and burning cash.
                 </p>
 
-                <div className="bg-blue-50 p-6 rounded-xl mt-8">
-                  <h4 className="font-bold text-blue-900 text-lg mb-2">💡 Pro Tip for AdSense Users</h4>
-                  <p className="text-blue-800 text-sm mb-0">
-                    Always calculate your <strong>Break-Even ROAS</strong> before launching a campaign. 
-                    If your profit margin is 50%, your Break-Even ROAS is 2.0x. Anything below that, and you are paying to lose money.
-                  </p>
+                <h3 className="text-2xl font-bold text-slate-900 mt-8">What is the ROAS Formula?</h3>
+                <p>
+                  The mathematical formula for calculating ROAS is straightforward but powerful. It measures the gross revenue generated for every single dollar spent on advertising.
+                </p>
+                <div className="bg-slate-50 border-l-4 border-blue-600 p-6 my-6">
+                    <p className="font-mono text-lg font-bold text-slate-900 mb-2">ROAS = Total Conversion Value ÷ Total Ad Spend</p>
+                    <p className="text-slate-600 text-sm">Example: If you spend $1,000 on ads and generate $5,000 in sales, your ROAS is 5.0 (or 500%).</p>
                 </div>
+
+                <h3 className="text-2xl font-bold text-slate-900 mt-8">ROAS vs. ROI: Why Marketers Get Confused</h3>
+                <p>
+                  Many beginners confuse ROAS with ROI (Return on Investment). While they are related, they serve different purposes:
+                </p>
+                <ul className="list-disc pl-5 space-y-4 my-4">
+                    <li><strong>ROAS</strong> looks strictly at ad effectiveness. It asks: <em>"Did my ads make money?"</em> It ignores software costs, employee salaries, and shipping.</li>
+                    <li><strong>ROI</strong> looks at the entire business picture. It asks: <em>"Did the company make a profit?"</em> ROI factors in COGS (Cost of Goods Sold), agency fees, and operations.</li>
+                </ul>
+                <p>
+                  Our tool above calculates both. By entering your <strong>Product Costs</strong>, we provide a "True Profit" analysis that bridges the gap between simple ROAS and actual business ROI.
+                </p>
+
+                <h3 className="text-2xl font-bold text-slate-900 mt-8">What is a "Good" ROAS Score?</h3>
+                <p>
+                  There is no single "good" number because it depends heavily on your profit margins. However, here are industry benchmarks for 2025:
+                </p>
+                <div className="grid md:grid-cols-3 gap-6 my-6">
+                    <div className="bg-red-50 p-4 rounded-lg border border-red-100">
+                        <h4 className="font-bold text-red-700">Under 3.0x</h4>
+                        <p className="text-sm text-red-600 mt-1">Danger Zone. Unless you have 80%+ margins (like SaaS), you are likely losing money after expenses.</p>
+                    </div>
+                    <div className="bg-yellow-50 p-4 rounded-lg border border-yellow-100">
+                        <h4 className="font-bold text-yellow-700">3.0x - 5.0x</h4>
+                        <p className="text-sm text-yellow-600 mt-1">The Sweet Spot. This is typically the target for dropshipping and e-commerce brands to remain healthy.</p>
+                    </div>
+                    <div className="bg-green-50 p-4 rounded-lg border border-green-100">
+                        <h4 className="font-bold text-green-700">Over 5.0x</h4>
+                        <p className="text-sm text-green-600 mt-1">Hyper Growth. Your ads are performing exceptionally well. You should increase ad spend immediately.</p>
+                    </div>
+                </div>
+
+                <h3 className="text-2xl font-bold text-slate-900 mt-8">How to Calculate Break-Even ROAS</h3>
+                <p>
+                  Your <strong>Break-Even ROAS</strong> is the minimum score you need to not lose money. Calculating this is crucial before launching any campaign.
+                </p>
+                <p className="italic my-4">Formula: 1 ÷ Profit Margin %</p>
+                <p>
+                  Example: If you sell a sneaker for $100 and it costs you $60 to buy and ship, your profit is $40 (40% margin). 
+                  Your Break-Even ROAS is <code>1 ÷ 0.40 = 2.5</code>. If your ads get a 2.4 ROAS, you are losing money, even though it looks positive.
+                </p>
+
+                <h3 className="text-2xl font-bold text-slate-900 mt-8">3 Strategies to Improve Your ROAS</h3>
+                <ol className="list-decimal pl-5 space-y-4 my-4">
+                    <li><strong>Improve Creative Quality:</strong> In 2025, user-generated content (UGC) and short-form video (Reels) typically drive 40% higher conversion rates than static images.</li>
+                    <li><strong>Increase Average Order Value (AOV):</strong> Use bundles or upsells. If you spend $20 to acquire a customer, selling them a $100 item yields a 5.0 ROAS, whereas selling a $50 item only yields 2.5 ROAS.</li>
+                    <li><strong>Optimize Landing Pages:</strong> A slow website kills ROAS. Ensure your page loads in under 2 seconds and has a clear "Add to Cart" button above the fold.</li>
+                </ol>
+
+                <p className="mt-8 text-sm text-gray-500">
+                  Disclaimer: This tool provides estimates based on your inputs. Advertising platforms fluctuate daily, and past performance does not guarantee future results. Always consult with a financial professional for business accounting.
+                </p>
             </article>
         </div>
 

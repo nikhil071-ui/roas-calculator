@@ -19,10 +19,6 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
-  verification: {
-    // You can paste your Google Search Console verification code here later if needed
-    // google: "your-verification-code",
-  },
 };
 
 export default function RootLayout({
@@ -33,24 +29,26 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        {/* --- GOOGLE ADSENSE SCRIPT START --- */}
+        {/* --- GOOGLE ADSENSE SCRIPT --- */}
         <Script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4649521973867824"
           crossOrigin="anonymous"
           strategy="afterInteractive"
         />
-        {/* --- GOOGLE ADSENSE SCRIPT END --- */}
       </head>
-      <body className={`${inter.className} bg-gray-50 text-gray-900`}>
+      <body className={`${inter.className} bg-gray-50 text-gray-900 flex flex-col min-h-screen`}>
         
-        {/* --- GLOBAL NAVBAR (Appears on every page) --- */}
-        <nav className="bg-white border-b border-gray-200 sticky top-0 z-50">
+        {/* --- GLOBAL NAVBAR --- */}
+        <nav className="bg-white border-b border-gray-200 sticky top-0 z-50 shadow-sm">
           <div className="container mx-auto px-4 h-16 flex items-center justify-between">
-            <Link href="/" className="font-bold text-xl text-blue-900 flex items-center gap-2">
+            {/* Logo */}
+            <Link href="/" className="font-bold text-xl text-blue-900 flex items-center gap-2 flex-shrink-0">
               🚀 ROAS Tools
             </Link>
-            <div className="hidden md:flex gap-6 text-sm font-medium text-gray-600">
+            
+            {/* Navigation Links - SCROLLABLE ON MOBILE (Fixed the 'Hidden' Error) */}
+            <div className="flex gap-4 md:gap-8 text-sm font-medium text-gray-600 overflow-x-auto ml-4 whitespace-nowrap scrollbar-hide">
               <Link href="/" className="hover:text-blue-600 transition">Home</Link>
               <Link href="/image-compressor" className="hover:text-blue-600 transition">Image Compressor</Link>
               <Link href="/pdf-converter" className="hover:text-blue-600 transition">PDF Maker</Link>
@@ -59,26 +57,59 @@ export default function RootLayout({
         </nav>
 
         {/* --- MAIN CONTENT --- */}
-        {children}
+        <div className="flex-grow">
+            {children}
+        </div>
 
-        {/* --- GLOBAL FOOTER --- */}
-        <footer className="bg-slate-900 text-slate-400 py-10 mt-12 text-center text-sm border-t border-slate-800">
-          <div className="container mx-auto px-4">
+        {/* --- GLOBAL PRO FOOTER (High Value Content) --- */}
+        <footer className="bg-slate-900 text-slate-400 py-12 mt-auto border-t border-slate-800 font-sans">
+          <div className="container mx-auto px-6 grid md:grid-cols-4 gap-8 text-sm">
             
-            <div className="flex flex-col md:flex-row justify-center gap-6 mb-6 font-medium">
-              <Link href="/about" className="hover:text-white transition">About Us</Link>
-              <Link href="/contact" className="hover:text-white transition">Contact</Link>
-              <Link href="/privacy-policy" className="hover:text-white transition">Privacy Policy</Link>
-            </div>
-
-            <div className="max-w-2xl mx-auto mb-6 text-xs text-slate-500 leading-relaxed">
-              <p>
-                <strong>Disclaimer:</strong> This toolkit is for educational and informational purposes only. 
-                Files are processed locally in your browser for privacy. We do not store your images or PDFs.
+            {/* Column 1: Brand Info */}
+            <div>
+              <h3 className="text-white font-bold text-lg mb-4 flex items-center gap-2">🚀 ROAS Tools</h3>
+              <p className="leading-relaxed mb-4">
+                Privacy-first utility tools for digital marketers and students. 
+                Built to be fast, free, and secure.
+              </p>
+              <p className="text-xs text-slate-500">
+                Data processed locally. No uploads.
               </p>
             </div>
 
-            <p className="opacity-50">© 2025 ROAS Tools. All rights reserved.</p>
+            {/* Column 2: Quick Links */}
+            <div>
+              <h4 className="text-white font-bold mb-4 uppercase tracking-wider text-xs">Our Tools</h4>
+              <ul className="space-y-3">
+                <li><Link href="/" className="hover:text-white transition flex items-center gap-2">📊 ROAS Calculator</Link></li>
+                <li><Link href="/image-compressor" className="hover:text-white transition flex items-center gap-2">🖼️ Image Compressor</Link></li>
+                <li><Link href="/pdf-converter" className="hover:text-white transition flex items-center gap-2">📄 JPG to PDF</Link></li>
+              </ul>
+            </div>
+
+            {/* Column 3: Company */}
+            <div>
+              <h4 className="text-white font-bold mb-4 uppercase tracking-wider text-xs">Company</h4>
+              <ul className="space-y-3">
+                <li><Link href="/about" className="hover:text-white transition">About Us</Link></li>
+                <li><Link href="/contact" className="hover:text-white transition">Contact Support</Link></li>
+                <li><Link href="/contact" className="hover:text-white transition">Report a Bug</Link></li>
+              </ul>
+            </div>
+
+            {/* Column 4: Legal & Trust */}
+            <div>
+              <h4 className="text-white font-bold mb-4 uppercase tracking-wider text-xs">Legal</h4>
+              <ul className="space-y-3">
+                <li><Link href="/privacy-policy" className="hover:text-white transition">Privacy Policy</Link></li>
+                <li><Link href="/privacy-policy" className="hover:text-white transition">Cookie Policy</Link></li>
+                <li><Link href="/privacy-policy" className="hover:text-white transition">Terms of Use</Link></li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="container mx-auto px-6 mt-12 pt-8 border-t border-slate-800 text-center">
+            <p>© 2025 ROAS Tools Inc. All rights reserved.</p>
           </div>
         </footer>
 

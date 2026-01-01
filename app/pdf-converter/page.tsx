@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import PdfClient from "./PdfClient"; // <--- Import your interactive tool
+import { ArrowLeft } from "lucide-react";
+import PdfClient from "./PdfClient"; 
 
 export const metadata: Metadata = {
   title: "Free JPG to PDF Converter - Create PDFs Under 2MB / 500KB",
@@ -13,32 +14,37 @@ export const metadata: Metadata = {
 
 export default function PdfConverterPage() {
   return (
-    <main className="min-h-screen bg-gray-50 p-6 font-sans relative">
+    <main className="min-h-screen bg-gray-50 font-sans relative pb-12">
       
-      {/* Navbar Link */}
-      <div className="max-w-6xl mx-auto mb-6 flex justify-between items-center">
-        <Link href="/" className="text-blue-600 hover:underline">← Back to Home</Link>
+      {/* Header / Navbar */}
+      <div className="bg-slate-900 text-white py-8 px-4">
+        <div className="max-w-6xl mx-auto">
+             <Link href="/" className="inline-flex items-center text-slate-400 hover:text-white mb-4 transition">
+                <ArrowLeft size={16} className="mr-2" /> Back to Home
+            </Link>
+            <h1 className="text-2xl md:text-4xl font-bold">Free JPG to PDF Converter</h1>
+            <p className="text-slate-400 mt-2">Merge photos into a single PDF & Compress to under 2MB.</p>
+        </div>
       </div>
 
-      {/* --- AD SLOT: TOP LEADERBOARD --- */}
-      <div className="max-w-6xl mx-auto mb-8 h-[90px] bg-white border border-gray-300 rounded-lg flex items-center justify-center text-gray-400 text-sm">
-         [Google AdSense Leaderboard 728x90]
+      {/* --- AD SLOT 1: TOP (Empty container for Auto Ads) --- */}
+      <div className="max-w-6xl mx-auto mt-6 min-h-[90px] bg-gray-100 border border-gray-200 rounded-lg flex items-center justify-center overflow-hidden">
+           <span className="text-xs text-gray-400">Advertisement</span>
       </div>
 
       {/* --- THE INTERACTIVE TOOL --- */}
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-6xl mx-auto mt-8 px-4">
         <PdfClient />
       </div>
       
-      {/* --- AD SLOT: BOTTOM BANNER --- */}
-      <div className="max-w-6xl mx-auto mt-8 h-[250px] bg-white border border-gray-300 rounded-lg flex items-center justify-center text-gray-400 text-sm">
-         [Google AdSense Banner 300x250 or Responsive]
+      {/* --- AD SLOT 2: MIDDLE --- */}
+      <div className="max-w-6xl mx-auto mt-8 min-h-[250px] bg-gray-100 border border-gray-200 rounded-lg flex items-center justify-center overflow-hidden">
+           <span className="text-xs text-gray-400">Advertisement</span>
       </div>
 
-      {/* SEO CONTENT SECTION */}
-      {/* --- SEO CONTENT (The "Secret Sauce" for #1 Ranking) --- */}
-      <article className="max-w-4xl mx-auto mt-16 prose lg:prose-lg text-gray-700 border-t pt-12">
-        <h2 className="text-3xl font-bold text-slate-900">Free JPG to PDF Converter: Merge & Compress Photos for Government Exams</h2>
+      {/* --- SEO CONTENT (High Value Publisher Content) --- */}
+      <article className="max-w-4xl mx-auto mt-12 bg-white p-8 md:p-12 rounded-2xl shadow-sm border border-gray-200 prose lg:prose-lg text-gray-700">
+        <h2 className="text-3xl font-bold text-slate-900">Free JPG to PDF Converter: Merge & Compress for Exams</h2>
         <p>
           Are you struggling to upload your documents for <strong>UPSC, SSC, NEET, JEE, or Banking exams</strong>? 
           Most portals like Ojas, MahaDBT, and IBPS require you to upload a single PDF file containing your ID proof, marksheets, and certificates, often with a strict size limit (e.g., <strong>under 2MB or 500KB</strong>).
@@ -65,12 +71,12 @@ export default function PdfConverterPage() {
 
         <h3 className="text-2xl font-bold text-slate-900 mt-8">Document Size Rules for 2025 Exams</h3>
         <div className="overflow-x-auto my-6">
-            <table className="min-w-full bg-white border border-gray-300">
+            <table className="min-w-full bg-white border border-gray-300 text-sm">
                 <thead>
-                    <tr className="bg-gray-100">
-                        <th className="py-2 px-4 border-b text-left">Exam / Portal</th>
-                        <th className="py-2 px-4 border-b text-left">Document Type</th>
-                        <th className="py-2 px-4 border-b text-left">Max Size Limit</th>
+                    <tr className="bg-slate-100">
+                        <th className="py-3 px-4 border-b text-left font-bold text-slate-800">Exam / Portal</th>
+                        <th className="py-3 px-4 border-b text-left font-bold text-slate-800">Document Type</th>
+                        <th className="py-3 px-4 border-b text-left font-bold text-slate-800">Max Size Limit</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -100,21 +106,21 @@ export default function PdfConverterPage() {
 
         <h3 className="text-2xl font-bold text-slate-900 mt-8">Frequently Asked Questions (FAQ)</h3>
         <details className="group border-b pb-4 mb-4 cursor-pointer">
-            <summary className="font-bold text-lg list-none flex justify-between items-center">
+            <summary className="font-bold text-lg list-none flex justify-between items-center text-slate-800">
                 <span>Can I merge 10+ photos into one PDF?</span>
                 <span className="transition group-open:rotate-180">⬇️</span>
             </summary>
-            <p className="mt-2 text-gray-600">Yes! There is no limit. You can upload 10, 20, or even 50 pages. Our tool handles them all and keeps the file size small.</p>
+            <p className="mt-2 text-gray-600">Yes! There is no limit. You can upload 10, 20, or even 50 pages.</p>
         </details>
         <details className="group border-b pb-4 mb-4 cursor-pointer">
-            <summary className="font-bold text-lg list-none flex justify-between items-center">
+            <summary className="font-bold text-lg list-none flex justify-between items-center text-slate-800">
                 <span>How do I reduce PDF size to 100KB?</span>
                 <span className="transition group-open:rotate-180">⬇️</span>
             </summary>
-            <p className="mt-2 text-gray-600">Simply type <strong>0.1</strong> in the "Target Size" box. The tool will automatically lower the image quality slightly to fit your 100KB limit.</p>
+            <p className="mt-2 text-gray-600">Simply type <strong>0.1</strong> in the "Target Size" box.</p>
         </details>
         <details className="group border-b pb-4 mb-4 cursor-pointer">
-            <summary className="font-bold text-lg list-none flex justify-between items-center">
+            <summary className="font-bold text-lg list-none flex justify-between items-center text-slate-800">
                 <span>Is this tool free?</span>
                 <span className="transition group-open:rotate-180">⬇️</span>
             </summary>

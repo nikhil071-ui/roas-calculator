@@ -1,18 +1,90 @@
+import Link from "next/link";
+import { Mail, ArrowLeft, MessageSquare, Clock, Send } from "lucide-react";
+
 export default function Contact() {
   return (
-    <main className="max-w-3xl mx-auto px-6 py-12 font-sans text-gray-800">
-      <h1 className="text-4xl font-bold mb-6">Contact Us</h1>
-      <p className="text-lg mb-8">
-        Have a feature request? Found a bug? Or just want to say hi? We'd love to hear from you.
-      </p>
-
-      <div className="bg-gray-50 p-8 rounded-xl border border-gray-200">
-        <h2 className="text-2xl font-bold mb-4">Get in Touch</h2>
-        <p className="mb-2"><strong>Email:</strong> luckmatters199@gmail.com</p>
-        <p className="text-sm text-gray-500 mt-4">
-          (We typically respond within 24-48 hours.)
-        </p>
+    <div className="min-h-screen bg-slate-50 font-sans text-slate-900 py-12 px-4 md:px-6">
+      
+      {/* --- BACK BUTTON --- */}
+      <div className="max-w-3xl mx-auto mb-8">
+        <Link href="/" className="inline-flex items-center text-slate-500 hover:text-blue-600 transition font-medium">
+            <ArrowLeft size={18} className="mr-2" /> Back to Calculator
+        </Link>
       </div>
-    </main>
+
+      {/* --- MAIN CARD --- */}
+      <main className="max-w-3xl mx-auto bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
+        
+        {/* Header Section */}
+        <div className="bg-slate-900 p-8 md:p-12 text-white relative overflow-hidden">
+            <div className="absolute top-0 right-0 p-4 opacity-10">
+                <Mail size={120} />
+            </div>
+            
+            <div className="relative z-10">
+                <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mb-6 shadow-lg shadow-blue-900/50">
+                    <MessageSquare className="text-white" size={28} />
+                </div>
+                <h1 className="text-3xl md:text-4xl font-bold mb-4">Contact Us</h1>
+                <p className="text-slate-300 text-lg max-w-xl">
+                    Have a feature request, found a bug, or just want to say hi? We read every message.
+                </p>
+            </div>
+        </div>
+
+        {/* Content Section */}
+        <div className="p-8 md:p-12 grid md:grid-cols-2 gap-12">
+            
+            {/* Left: Contact Info */}
+            <div className="space-y-8">
+                <div>
+                    <h2 className="text-xl font-bold text-slate-900 mb-4 flex items-center gap-2">
+                        <Send size={20} className="text-blue-600" /> Get in Touch
+                    </h2>
+                    <p className="text-slate-600 mb-6">
+                        The best way to reach us is via email. We don't use contact forms because we prefer direct human-to-human conversation.
+                    </p>
+                    
+                    <div className="bg-blue-50 p-6 rounded-xl border border-blue-100">
+                        <p className="text-xs font-bold text-blue-500 uppercase tracking-wider mb-2">Support Email</p>
+                        <a href="mailto:luckmatters199@gmail.com" className="text-xl md:text-2xl font-bold text-slate-900 hover:text-blue-600 transition break-all">
+                            luckmatters199@gmail.com
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 className="text-sm font-bold text-slate-900 mb-3 flex items-center gap-2">
+                        <Clock size={16} className="text-slate-400" /> Response Time
+                    </h3>
+                    <p className="text-slate-500 text-sm">
+                        We are a small team (of one!), so please allow <strong>24-48 hours</strong> for a response. We typically reply on weekends too.
+                    </p>
+                </div>
+            </div>
+
+            {/* Right: FAQ / Why Contact */}
+            <div className="bg-slate-50 rounded-xl p-8 border border-slate-100">
+                <h3 className="font-bold text-slate-900 mb-6">What can we help with?</h3>
+                <ul className="space-y-4">
+                    <li className="flex gap-3 text-sm text-slate-600">
+                        <span className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center text-green-600 flex-shrink-0 font-bold">1</span>
+                        <span><strong>Bug Reports:</strong> If a calculation looks wrong, let us know immediately.</span>
+                    </li>
+                    <li className="flex gap-3 text-sm text-slate-600">
+                        <span className="w-6 h-6 bg-orange-100 rounded-full flex items-center justify-center text-orange-600 flex-shrink-0 font-bold">2</span>
+                        <span><strong>Partnerships:</strong> Interested in sponsoring the tool? We are open to offers.</span>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+      </main>
+
+      {/* Footer */}
+      <footer className="max-w-3xl mx-auto mt-12 text-center text-slate-400 text-sm">
+        <p>© 2025 ROAS Tools Inc. • Punjab, India</p>
+      </footer>
+    </div>
   );
 }

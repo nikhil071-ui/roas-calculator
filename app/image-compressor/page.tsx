@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import CompressorClient from "./CompressorClient"; // <--- Importing the tool we just made
+import { ArrowLeft } from "lucide-react";
+import CompressorClient from "./CompressorClient"; 
 
 export const metadata: Metadata = {
   title: "Free Image Compressor - Reduce Size to 50KB / 20KB (JPEG & PNG)",
@@ -13,30 +14,37 @@ export const metadata: Metadata = {
 
 export default function ImageCompressorPage() {
   return (
-    <main className="min-h-screen bg-gray-50 p-6 font-sans relative">
+    <main className="min-h-screen bg-gray-50 font-sans relative pb-12">
       
-      {/* Navbar Link */}
-      <div className="max-w-5xl mx-auto mb-6 flex justify-between items-center">
-        <Link href="/" className="text-blue-600 hover:underline">← Back to Home</Link>
+      {/* Header / Navbar */}
+      <div className="bg-slate-900 text-white py-8 px-4">
+        <div className="max-w-5xl mx-auto">
+             <Link href="/" className="inline-flex items-center text-slate-400 hover:text-white mb-4 transition">
+                <ArrowLeft size={16} className="mr-2" /> Back to Home
+            </Link>
+            <h1 className="text-2xl md:text-4xl font-bold">Free Image Compressor</h1>
+            <p className="text-slate-400 mt-2">Reduce size to 20KB - 50KB for Government Forms.</p>
+        </div>
       </div>
 
-      {/* --- AD SLOT: TOP LEADERBOARD --- */}
-      <div className="max-w-5xl mx-auto mb-8 h-[90px] bg-white border border-gray-300 rounded-lg flex items-center justify-center text-gray-400 text-sm">
-         [Google AdSense Leaderboard 728x90]
+      {/* --- AD SLOT 1: TOP (Empty container for Auto Ads) --- */}
+      <div className="max-w-5xl mx-auto mt-6 min-h-[90px] bg-gray-100 border border-gray-200 rounded-lg flex items-center justify-center overflow-hidden">
+           {/* Google Auto Ads will fill this space automatically */}
+           <span className="text-xs text-gray-400">Advertisement</span>
       </div>
 
       {/* --- THE INTERACTIVE TOOL --- */}
-      <div className="max-w-5xl mx-auto">
+      <div className="max-w-5xl mx-auto mt-8 px-4">
         <CompressorClient />
       </div>
       
-      {/* --- AD SLOT: BOTTOM BANNER --- */}
-      <div className="max-w-6xl mx-auto mt-8 h-[250px] bg-white border border-gray-300 rounded-lg flex items-center justify-center text-gray-400 text-sm">
-         [Google AdSense Banner 300x250 or Responsive]
+      {/* --- AD SLOT 2: MIDDLE --- */}
+      <div className="max-w-5xl mx-auto mt-8 min-h-[250px] bg-gray-100 border border-gray-200 rounded-lg flex items-center justify-center overflow-hidden">
+           <span className="text-xs text-gray-400">Advertisement</span>
       </div>
 
-     {/* --- SEO CONTENT (The "Secret Sauce" for #1 Ranking) --- */}
-      <article className="max-w-4xl mx-auto mt-16 prose lg:prose-lg text-gray-700 border-t pt-12">
+      {/* --- SEO CONTENT (High Value Publisher Content) --- */}
+      <article className="max-w-4xl mx-auto mt-12 bg-white p-8 md:p-12 rounded-2xl shadow-sm border border-gray-200 prose lg:prose-lg text-gray-700">
         <h2 className="text-3xl font-bold text-slate-900">How to Compress Images to 50KB for Government Forms (2025 Guide)</h2>
         <p>
           Applying for government jobs in India like <strong>SSC, UPSC, IBPS, SBI PO, or Railways (RRB)</strong>? 
@@ -64,12 +72,12 @@ export default function ImageCompressorPage() {
 
         <h3 className="text-2xl font-bold text-slate-900 mt-8">Common Size Requirements for 2025 Exams</h3>
         <div className="overflow-x-auto my-6">
-            <table className="min-w-full bg-white border border-gray-300">
+            <table className="min-w-full bg-white border border-gray-300 text-sm">
                 <thead>
-                    <tr className="bg-gray-100">
-                        <th className="py-2 px-4 border-b text-left">Exam Name</th>
-                        <th className="py-2 px-4 border-b text-left">Photo Size</th>
-                        <th className="py-2 px-4 border-b text-left">Signature Size</th>
+                    <tr className="bg-slate-100">
+                        <th className="py-3 px-4 border-b text-left font-bold text-slate-800">Exam Name</th>
+                        <th className="py-3 px-4 border-b text-left font-bold text-slate-800">Photo Size</th>
+                        <th className="py-3 px-4 border-b text-left font-bold text-slate-800">Signature Size</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -88,29 +96,24 @@ export default function ImageCompressorPage() {
                         <td className="py-2 px-4 border-b">20KB – 50KB</td>
                         <td className="py-2 px-4 border-b">10KB – 20KB</td>
                     </tr>
-                    <tr>
-                        <td className="py-2 px-4 border-b">RRB NTPC</td>
-                        <td className="py-2 px-4 border-b">20KB – 50KB</td>
-                        <td className="py-2 px-4 border-b">10KB – 20KB</td>
-                    </tr>
                 </tbody>
             </table>
         </div>
 
         <h3 className="text-2xl font-bold text-slate-900 mt-8">Frequently Asked Questions (FAQ)</h3>
         <details className="group border-b pb-4 mb-4 cursor-pointer">
-            <summary className="font-bold text-lg list-none flex justify-between items-center">
+            <summary className="font-bold text-lg list-none flex justify-between items-center text-slate-800">
                 <span>Can I compress PNG images?</span>
                 <span className="transition group-open:rotate-180">⬇️</span>
             </summary>
-            <p className="mt-2 text-gray-600">Yes! We support JPG, JPEG, PNG, and WEBP formats. The tool will automatically convert them to a lightweight format if needed.</p>
+            <p className="mt-2 text-gray-600">Yes! We support JPG, JPEG, PNG, and WEBP formats.</p>
         </details>
         <details className="group border-b pb-4 mb-4 cursor-pointer">
-            <summary className="font-bold text-lg list-none flex justify-between items-center">
+            <summary className="font-bold text-lg list-none flex justify-between items-center text-slate-800">
                 <span>Will my photo become blurry?</span>
                 <span className="transition group-open:rotate-180">⬇️</span>
             </summary>
-            <p className="mt-2 text-gray-600">We use advanced compression that removes unnecessary metadata without destroying the image pixels. However, if you compress a 5MB photo to 10KB, some quality loss is expected.</p>
+            <p className="mt-2 text-gray-600">We use advanced compression to reduce file size while maintaining visible quality.</p>
         </details>
       </article>
 
