@@ -49,5 +49,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'yearly',
       priority: 0.5,
     },
+    {
+      url: 'https://roas-calculator-brown.vercel.app/image-compressor/ssc-cgl',
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 1.0, 
+    },
   ];
 }
