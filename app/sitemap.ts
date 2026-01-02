@@ -24,13 +24,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/currency-converter`, // <--- ADDED NEW TOOL
+      url: `${baseUrl}/currency-converter`,
       lastModified: new Date(),
       changeFrequency: 'weekly',
       priority: 0.8,
     },
 
-    // --- STATIC PAGES (Legal & Info) ---
+    // --- STATIC PAGES ---
     {
       url: `${baseUrl}/about`,
       lastModified: new Date(),
@@ -49,14 +49,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'yearly',
       priority: 0.5,
     },
+
+    // --- SPECIFIC SUB-TOOLS ---
     {
-      url: 'https://roas-calculator-brown.vercel.app/image-compressor/ssc-cgl',
+      // FIX: Assuming your folder is "app/ssc-cgl", this is the correct URL:
+      url: `${baseUrl}/ssc-cgl`, 
       lastModified: new Date(),
       changeFrequency: 'weekly',
       priority: 1.0, 
     },
     {
-      url: 'https://roas-calculator-brown.vercel.app/roas-calculator/facebook-ads',
+      // This matches your "app/roas-calculator/facebook-ads" folder:
+      url: `${baseUrl}/roas-calculator/facebook-ads`,
       lastModified: new Date(),
       changeFrequency: 'weekly',
       priority: 0.9, 
