@@ -21,12 +21,27 @@ export default function FacebookRoasPage() {
           <p className="text-slate-600 max-w-2xl mx-auto">
             Stop guessing. Know exactly what ROAS (Return on Ad Spend) you need to make a profit on your Facebook & Instagram campaigns.
           </p>
+
+          {/* --- MANUAL AD UNIT START --- */}
+          <div className="my-6 flex justify-center overflow-hidden min-h-[250px]">
+            <ins 
+              className="adsbygoogle"
+              style={{ display: "block" }}
+              data-ad-client="ca-pub-4649521973867824"
+              data-ad-slot="1463530914"
+              data-ad-format="auto"
+              data-full-width-responsive="true"
+            />
+            <script dangerouslySetInnerHTML={{ __html: "(adsbygoogle = window.adsbygoogle || []).push({});" }} />
+          </div>
+          {/* --- MANUAL AD UNIT END --- */}
+
         </div>
 
         {/* REUSING YOUR EXISTING CALCULATOR */}
         <RoasClient />
 
-        {/* SEO CONTENT (Google needs this to rank you) */}
+        {/* SEO CONTENT */}
         <div className="grid md:grid-cols-2 gap-8 mt-12">
             <div className="bg-white p-6 rounded-xl shadow-sm border border-slate-100">
                 <h3 className="font-bold text-xl mb-3 text-slate-800">Why Calculate Break-Even ROAS?</h3>
