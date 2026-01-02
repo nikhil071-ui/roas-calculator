@@ -53,7 +53,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // --- SPECIFIC SUB-TOOLS ---
     {
       // FIX: Assuming your folder is "app/ssc-cgl", this is the correct URL:
-      url: `${baseUrl}/ssc-cgl`, 
+      url: `${baseUrl}/image-compressor/ssc-cgl`, 
       lastModified: new Date(),
       changeFrequency: 'weekly',
       priority: 1.0, 
