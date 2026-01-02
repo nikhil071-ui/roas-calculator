@@ -55,5 +55,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'weekly',
       priority: 1.0, 
     },
+    {
+      url: 'https://roas-calculator-brown.vercel.app/roas-calculator/facebook-ads',
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.9, 
+    },
   ];
 }
