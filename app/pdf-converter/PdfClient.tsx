@@ -169,19 +169,7 @@ export default function PdfClient() {
   return (
     <div className="space-y-8">
       
-      {/* --- REAL GOOGLE AD START (Top of Tool) --- */}
-      <div className="flex justify-center overflow-hidden min-h-[250px]">
-        <ins 
-            className="adsbygoogle"
-            style={{ display: "block", minWidth: "300px" }} 
-            data-ad-client="ca-pub-4649521973867824"
-            data-ad-slot="1463530914"
-            data-ad-format="auto"
-            data-full-width-responsive="true"
-        />
-        <script dangerouslySetInnerHTML={{ __html: "(adsbygoogle = window.adsbygoogle || []).push({});" }} />
-      </div>
-      {/* --- REAL GOOGLE AD END --- */}
+      {/* --- AD REMOVED: Ad is handled in page.tsx --- */}
 
       <div className="bg-white rounded-2xl shadow-xl overflow-hidden border border-slate-100">
         

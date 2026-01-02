@@ -33,7 +33,7 @@ export default function RoasClient() {
     const roas = rev / spend;
     const profit = rev - spend - cost;
     const breakEvenRoas = cost > 0 ? rev / (rev - cost) : 1; 
-    const profitMargin = (profit / rev) * 100;
+    const profitMargin = rev > 0 ? (profit / rev) * 100 : 0;
     
     const cpa = orderCount > 0 ? spend / orderCount : 0; 
     const aov = orderCount > 0 ? rev / orderCount : 0;   
@@ -170,19 +170,7 @@ export default function RoasClient() {
   return (
     <div className="space-y-8">
       
-      {/* --- REAL GOOGLE AD START (REPLACED GREEN BOX) --- */}
-      <div className="flex justify-center overflow-hidden min-h-[250px]">
-        <ins 
-            className="adsbygoogle"
-            style={{ display: "block", minWidth: "300px" }} 
-            data-ad-client="ca-pub-4649521973867824"
-            data-ad-slot="1463530914"
-            data-ad-format="auto"
-            data-full-width-responsive="true"
-        />
-        <script dangerouslySetInnerHTML={{ __html: "(adsbygoogle = window.adsbygoogle || []).push({});" }} />
-      </div>
-      {/* --- REAL GOOGLE AD END --- */}
+      {/* --- AD REMOVED FROM HERE FOR SAFETY --- */}
 
       <div className="bg-white rounded-3xl shadow-2xl overflow-hidden border border-slate-100">
         

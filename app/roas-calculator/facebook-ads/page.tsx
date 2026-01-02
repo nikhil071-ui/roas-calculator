@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
-// FIX: Go up 2 levels (../../) to find RoasClient in the app folder
+// Go up 2 levels to find the components in the 'app' folder
 import RoasClient from "../../RoasClient"; 
+import AdBanner from "../../AdBanner"; 
 
 export const metadata: Metadata = {
   title: "Facebook Ads ROAS Calculator & Break-Even Tool (2026)",
@@ -22,24 +23,20 @@ export default function FacebookRoasPage() {
             Stop guessing. Know exactly what ROAS (Return on Ad Spend) you need to make a profit on your Facebook & Instagram campaigns.
           </p>
 
-          {/* --- MANUAL AD UNIT START --- */}
-          <div className="my-6 flex justify-center overflow-hidden min-h-[250px]">
-            <ins 
-              className="adsbygoogle"
-              style={{ display: "block" }}
-              data-ad-client="ca-pub-4649521973867824"
-              data-ad-slot="1463530914"
-              data-ad-format="auto"
-              data-full-width-responsive="true"
-            />
-            <script dangerouslySetInnerHTML={{ __html: "(adsbygoogle = window.adsbygoogle || []).push({});" }} />
+          {/* --- AD SLOT 1: TOP (Safe Component) --- */}
+          <div className="w-full flex justify-center mt-6">
+            <AdBanner />
           </div>
-          {/* --- MANUAL AD UNIT END --- */}
 
         </div>
 
         {/* REUSING YOUR EXISTING CALCULATOR */}
         <RoasClient />
+
+        {/* --- AD SLOT 2: MIDDLE (Optional but Recommended) --- */}
+        <div className="w-full flex justify-center mt-6">
+           <AdBanner />
+        </div>
 
         {/* SEO CONTENT */}
         <div className="grid md:grid-cols-2 gap-8 mt-12">

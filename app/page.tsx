@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import RoasClient from "./RoasClient";
+import AdBanner from "./AdBanner"; // <--- LINE 1: IMPORT ADDED
 
 export const metadata: Metadata = {
   title: "Free ROAS Calculator | Calculate Profit & Break-Even 2026",
@@ -33,8 +34,15 @@ export default function Home() {
         {/* --- MAIN CONTENT AREA --- */}
         <div className="flex-1 order-2 lg:order-1">
             
-            {/* THE CALCULATOR TOOL (Ad is now built-in inside this component) */}
+            {/* THE CALCULATOR TOOL */}
             <RoasClient />
+
+            {/* --- AD SPACE --- */}
+{/* Google Policy: Keep 20px+ distance from buttons to avoid bans */}
+<div className="mt-8 mb-8">
+  <AdBanner />
+</div>
+{/* ---------------- */}
 
             {/* --- MORE TOOLS SECTION --- */}
             <section className="mt-12 mb-12">

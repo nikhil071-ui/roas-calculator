@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-// We import the "Brain" from the folder above
+// If ../CompressorClient works, keep it. If it errors, change to ../../CompressorClient
 import CompressorClient from "../CompressorClient"; 
-// Import the Ad Component (adjust path if your file is deeper/shallower)
-import AdBanner from "../../AdBanner";
+// You confirmed this path works, so we keep it!
+import AdBanner from "../../AdBanner"; 
 
 // 1. SPECIFIC SEO FOR SSC STUDENTS
 export const metadata: Metadata = {
@@ -16,7 +16,7 @@ export default function SSCPage() {
     <main className="min-h-screen bg-gray-50 p-4 py-12">
       <div className="max-w-4xl mx-auto space-y-8">
         
-        {/* 2. SPECIFIC HEADER (Only for this page) */}
+        {/* 2. SPECIFIC HEADER */}
         <div className="text-center space-y-4">
           <h1 className="text-3xl md:text-4xl font-bold text-slate-900">
             SSC CGL Photo & Signature Resizer
@@ -27,7 +27,7 @@ export default function SSCPage() {
         </div>
 
         {/* --- AD SLOT 1: TOP --- */}
-        <div className="w-full">
+        <div className="w-full flex justify-center">
           <AdBanner />
         </div>
 
@@ -35,11 +35,11 @@ export default function SSCPage() {
         <CompressorClient />
 
         {/* --- AD SLOT 2: MIDDLE --- */}
-        <div className="w-full">
+        <div className="w-full flex justify-center">
           <AdBanner />
         </div>
 
-        {/* 4. SPECIFIC TEXT CONTENT (Google loves this) */}
+        {/* 4. SPECIFIC TEXT CONTENT */}
         <div className="prose max-w-none bg-white p-8 rounded-xl shadow-sm border border-slate-100 mt-8">
           <h3 className="text-xl font-bold mb-4">SSC CGL Photo Requirements 2026</h3>
           <ul className="list-disc pl-5 space-y-2 text-slate-700">
