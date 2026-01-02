@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import CurrencyClient from "./CurrencyClient";
+// FIXED IMPORT: Go up two levels to find the shared AdBanner
+import AdBanner from "../AdBanner";
 
 export const metadata: Metadata = {
   title: "Free Currency Converter | USD to INR, EUR, GBP Live Rates",
@@ -33,15 +35,15 @@ export default function CurrencyPage() {
         {/* LEFT COLUMN: Main Tool */}
         <div className="flex-1">
             
-            {/* AD SLOT 1 */}
-            <div className="w-full min-h-[90px] bg-gray-100 border border-gray-200 rounded-lg flex items-center justify-center overflow-hidden mb-8">
-                <span className="text-xs text-gray-400">Advertisement</span>
+            {/* AD SLOT 1: TOP */}
+            <div className="w-full mb-8">
+                <AdBanner />
             </div>
             
             {/* THE TOOL */}
             <CurrencyClient />
 
-            {/* SEO ARTICLE (Required for AdSense) */}
+            {/* SEO ARTICLE */}
             <article className="prose lg:prose-xl bg-white p-8 md:p-12 rounded-2xl shadow-sm border border-gray-100 max-w-none text-gray-700 mt-12">
                 <h2 className="text-2xl font-bold text-slate-900 mb-4">Understanding Exchange Rates</h2>
                 <p>
@@ -67,11 +69,15 @@ export default function CurrencyPage() {
 
         {/* SIDEBAR ADS */}
         <aside className="w-full lg:w-[320px] flex flex-col gap-6">
-            <div className="w-full min-h-[250px] bg-gray-100 border border-gray-200 rounded-lg flex items-center justify-center overflow-hidden">
-                <span className="text-xs text-gray-400">Advertisement</span>
+            
+            {/* AD SLOT 2: SIDEBAR TOP */}
+            <div className="w-full">
+                <AdBanner />
             </div>
-            <div className="sticky top-24 w-full min-h-[600px] bg-gray-100 border border-gray-200 rounded-lg flex items-center justify-center overflow-hidden">
-                <span className="text-xs text-gray-400">Advertisement</span>
+
+            {/* AD SLOT 3: SIDEBAR BOTTOM/STICKY */}
+            <div className="sticky top-24 w-full">
+                <AdBanner />
             </div>
         </aside>
 

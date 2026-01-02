@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import PdfClient from "./PdfClient"; 
+import AdBanner from "../AdBanner"; // Import the Ad Component
 
 export const metadata: Metadata = {
   title: "Free JPG to PDF Converter - Create PDFs Under 2MB / 500KB",
@@ -27,9 +28,9 @@ export default function PdfConverterPage() {
         </div>
       </div>
 
-      {/* --- AD SLOT 1: TOP (Empty container for Auto Ads) --- */}
-      <div className="max-w-6xl mx-auto mt-6 min-h-[90px] bg-gray-100 border border-gray-200 rounded-lg flex items-center justify-center overflow-hidden">
-           <span className="text-xs text-gray-400">Advertisement</span>
+      {/* --- AD SLOT 1: TOP --- */}
+      <div className="max-w-6xl mx-auto mt-6">
+           <AdBanner />
       </div>
 
       {/* --- THE INTERACTIVE TOOL --- */}
@@ -38,8 +39,8 @@ export default function PdfConverterPage() {
       </div>
       
       {/* --- AD SLOT 2: MIDDLE --- */}
-      <div className="max-w-6xl mx-auto mt-8 min-h-[250px] bg-gray-100 border border-gray-200 rounded-lg flex items-center justify-center overflow-hidden">
-           <span className="text-xs text-gray-400">Advertisement</span>
+      <div className="max-w-6xl mx-auto mt-8">
+           <AdBanner />
       </div>
 
       {/* --- SEO CONTENT (High Value Publisher Content) --- */}

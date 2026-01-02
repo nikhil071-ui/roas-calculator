@@ -3,7 +3,7 @@ import Link from "next/link";
 import RoasClient from "./RoasClient";
 
 export const metadata: Metadata = {
-  title: "Free ROAS Calculator | Calculate Profit & Break-Even 2025",
+  title: "Free ROAS Calculator | Calculate Profit & Break-Even 2026",
   description: "Calculate your Return on Ad Spend (ROAS), Break-Even Point, and Net Profit instantly. The best free tool for Facebook Ads, Google Ads, and dropshipping.",
   keywords: ["roas calculator", "facebook ads profit calculator", "break even roas formula", "dropshipping calculator", "marketing roi tool"],
   alternates: {
@@ -33,12 +33,7 @@ export default function Home() {
         {/* --- MAIN CONTENT AREA --- */}
         <div className="flex-1 order-2 lg:order-1">
             
-            {/* AD SLOT 1: TOP LEADERBOARD (Empty container for Auto Ads) */}
-            <div className="w-full min-h-[90px] bg-gray-100 border border-gray-200 rounded-lg flex items-center justify-center overflow-hidden mb-8">
-                <span className="text-xs text-gray-400">Advertisement</span>
-            </div>
-            
-            {/* THE CALCULATOR TOOL */}
+            {/* THE CALCULATOR TOOL (Ad is now built-in inside this component) */}
             <RoasClient />
 
             {/* --- MORE TOOLS SECTION --- */}
@@ -59,17 +54,18 @@ export default function Home() {
                   <h3 className="font-bold text-xl mb-2 text-slate-800 group-hover:text-red-600">JPG to PDF</h3>
                   <p className="text-sm text-gray-500">Combine multiple images into a single professional PDF document.</p>
                 </Link>
+                
                 {/* Currency Converter Card */}
-<Link href="/currency-converter" className="group block bg-white p-6 rounded-xl shadow-sm border border-gray-200 hover:border-emerald-500 hover:shadow-lg transition w-full md:w-64 text-center">
-  <div className="text-4xl mb-3 group-hover:scale-110 transition duration-300">💱</div>
-  <h3 className="font-bold text-xl mb-2 text-slate-800 group-hover:text-emerald-600">Currency Converter</h3>
-  <p className="text-sm text-gray-500">Live exchange rates for USD, INR, EUR, and 10+ global currencies.</p>
-</Link>
+                <Link href="/currency-converter" className="group block bg-white p-6 rounded-xl shadow-sm border border-gray-200 hover:border-emerald-500 hover:shadow-lg transition w-full md:w-64 text-center">
+                  <div className="text-4xl mb-3 group-hover:scale-110 transition duration-300">💱</div>
+                  <h3 className="font-bold text-xl mb-2 text-slate-800 group-hover:text-emerald-600">Currency Converter</h3>
+                  <p className="text-sm text-gray-500">Live exchange rates for USD, INR, EUR, and 10+ global currencies.</p>
+                </Link>
 
               </div>
             </section>
 
-            {/* --- SEO CONTENT (Required for "Publisher Content" check) --- */}
+            {/* --- SEO CONTENT --- */}
             <article className="prose lg:prose-xl bg-white p-8 md:p-12 rounded-2xl shadow-sm border border-gray-100 max-w-none text-gray-700 mt-12">
                 <h2 className="text-3xl font-bold text-slate-900 mb-6">Complete Guide to ROAS: Calculation, Formulas & Strategy (2026)</h2>
                 
@@ -101,7 +97,7 @@ export default function Home() {
 
                 <h3 className="text-2xl font-bold text-slate-900 mt-8">What is a "Good" ROAS Score?</h3>
                 <p>
-                  There is no single "good" number because it depends heavily on your profit margins. However, here are industry benchmarks for 2025:
+                  There is no single "good" number because it depends heavily on your profit margins. However, here are industry benchmarks for 2026:
                 </p>
                 <div className="grid md:grid-cols-3 gap-6 my-6">
                     <div className="bg-red-50 p-4 rounded-lg border border-red-100">
@@ -127,33 +123,8 @@ export default function Home() {
                   Example: If you sell a sneaker for $100 and it costs you $60 to buy and ship, your profit is $40 (40% margin). 
                   Your Break-Even ROAS is <code>1 ÷ 0.40 = 2.5</code>. If your ads get a 2.4 ROAS, you are losing money, even though it looks positive.
                 </p>
-
-                <h3 className="text-2xl font-bold text-slate-900 mt-8">3 Strategies to Improve Your ROAS</h3>
-                <ol className="list-decimal pl-5 space-y-4 my-4">
-                    <li><strong>Improve Creative Quality:</strong> In 2025, user-generated content (UGC) and short-form video (Reels) typically drive 40% higher conversion rates than static images.</li>
-                    <li><strong>Increase Average Order Value (AOV):</strong> Use bundles or upsells. If you spend $20 to acquire a customer, selling them a $100 item yields a 5.0 ROAS, whereas selling a $50 item only yields 2.5 ROAS.</li>
-                    <li><strong>Optimize Landing Pages:</strong> A slow website kills ROAS. Ensure your page loads in under 2 seconds and has a clear "Add to Cart" button above the fold.</li>
-                </ol>
-
-                <p className="mt-8 text-sm text-gray-500">
-                  Disclaimer: This tool provides estimates based on your inputs. Advertising platforms fluctuate daily, and past performance does not guarantee future results. Always consult with a financial professional for business accounting.
-                </p>
             </article>
         </div>
-
-        {/* --- SIDEBAR (Sticky Ads) --- */}
-        <aside className="w-full lg:w-[320px] order-1 lg:order-2 flex flex-col gap-6">
-            
-            {/* AD SLOT 2: SIDEBAR TOP */}
-            <div className="w-full min-h-[250px] bg-gray-100 border border-gray-200 rounded-lg flex items-center justify-center overflow-hidden">
-                <span className="text-xs text-gray-400">Advertisement</span>
-            </div>
-
-            {/* AD SLOT 3: STICKY VERTICAL (High Visibility) */}
-            <div className="sticky top-24 w-full min-h-[600px] bg-gray-100 border border-gray-200 rounded-lg flex items-center justify-center overflow-hidden">
-                <span className="text-xs text-gray-400">Advertisement</span>
-            </div>
-        </aside>
 
       </div>
     </main>

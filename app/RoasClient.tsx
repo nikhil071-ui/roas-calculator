@@ -49,7 +49,7 @@ export default function RoasClient() {
     });
   };
 
-  // --- THE NEW "PRO DESIGN" PDF GENERATOR ---
+  // --- PDF GENERATOR ---
   const downloadReport = () => {
     if (!results) {
         alert("Please calculate your ROAS first!");
@@ -60,12 +60,12 @@ export default function RoasClient() {
     const date = new Date().toLocaleDateString();
     const width = doc.internal.pageSize.getWidth();
 
-    // 1. BRANDED HEADER (Blue Block)
-    doc.setFillColor(30, 58, 138); // Blue 900
-    doc.rect(0, 0, width, 40, 'F'); // Filled rectangle
+    // 1. BRANDED HEADER
+    doc.setFillColor(30, 58, 138); 
+    doc.rect(0, 0, width, 40, 'F'); 
     
     doc.setFontSize(22);
-    doc.setTextColor(255, 255, 255); // White
+    doc.setTextColor(255, 255, 255); 
     doc.setFont("helvetica", "bold");
     doc.text("ROAS Performance Report", 20, 20);
     
@@ -74,16 +74,16 @@ export default function RoasClient() {
     doc.text(`Generated on: ${date}`, 20, 30);
     doc.text("via ROAS Tools", width - 40, 30, { align: 'right' });
 
-    // 2. SUMMARY BOX (The "Hero" Section)
+    // 2. SUMMARY BOX
     doc.setDrawColor(200, 200, 200);
-    doc.setFillColor(248, 250, 252); // Very light grey
-    doc.roundedRect(15, 50, width - 30, 45, 3, 3, 'FD'); // Box with Fill
+    doc.setFillColor(248, 250, 252); 
+    doc.roundedRect(15, 50, width - 30, 45, 3, 3, 'FD'); 
 
     // ROAS Score
     doc.setTextColor(100);
     doc.setFontSize(10);
     doc.text("ROAS SCORE", 30, 65);
-    doc.setTextColor(30, 58, 138); // Blue
+    doc.setTextColor(30, 58, 138); 
     doc.setFontSize(28);
     doc.setFont("helvetica", "bold");
     doc.text(`${results.roas}x`, 30, 80);
@@ -97,19 +97,19 @@ export default function RoasClient() {
     doc.setFontSize(28);
     doc.setFont("helvetica", "bold");
     if(results.isProfitable) {
-        doc.setTextColor(22, 163, 74); // Green
+        doc.setTextColor(22, 163, 74); 
         doc.text(`+$${results.profit}`, 110, 80);
     } else {
-        doc.setTextColor(220, 38, 38); // Red
+        doc.setTextColor(220, 38, 38); 
         doc.text(`$${results.profit}`, 110, 80);
     }
 
-    // 3. DETAILED METRICS GRID
+    // 3. METRICS
     doc.setFontSize(14);
     doc.setTextColor(0);
     doc.text("Key Metrics Breakdown", 20, 115);
     doc.setLineWidth(0.5);
-    doc.line(20, 118, width - 20, 118); // Underline
+    doc.line(20, 118, width - 20, 118); 
 
     let y = 135;
     const col1 = 30;
@@ -127,7 +127,7 @@ export default function RoasClient() {
     doc.text(`$${results.cpa}`, col1, y);
     doc.text(`$${results.aov}`, col2, y);
 
-    y += 20; // Space for next row
+    y += 20; 
 
     // Row 2
     doc.setFontSize(11);
@@ -142,9 +142,9 @@ export default function RoasClient() {
     doc.text(`${results.profitMargin}%`, col1, y);
     doc.text(`${results.breakEven}x`, col2, y);
 
-    // 4. INPUT DATA REVIEW (Grey Box)
+    // 4. INPUTS
     y += 30;
-    doc.setFillColor(241, 245, 249); // Slate 100
+    doc.setFillColor(241, 245, 249); 
     doc.rect(0, y, width, 40, 'F');
     
     doc.setFontSize(10);
@@ -168,7 +168,23 @@ export default function RoasClient() {
   };
 
   return (
-    <div className="bg-white rounded-3xl shadow-2xl overflow-hidden border border-slate-100">
+    <div className="space-y-8">
+      
+      {/* --- REAL GOOGLE AD START (REPLACED GREEN BOX) --- */}
+      <div className="flex justify-center overflow-hidden min-h-[250px]">
+        <ins 
+            className="adsbygoogle"
+            style={{ display: "block", minWidth: "300px" }} 
+            data-ad-client="ca-pub-4649521973867824"
+            data-ad-slot="1463530914"
+            data-ad-format="auto"
+            data-full-width-responsive="true"
+        />
+        <script dangerouslySetInnerHTML={{ __html: "(adsbygoogle = window.adsbygoogle || []).push({});" }} />
+      </div>
+      {/* --- REAL GOOGLE AD END --- */}
+
+      <div className="bg-white rounded-3xl shadow-2xl overflow-hidden border border-slate-100">
         
         {/* Modern Header */}
         <div className="bg-slate-900 p-8 text-white relative overflow-hidden">
@@ -328,6 +344,7 @@ export default function RoasClient() {
                 )}
             </div>
         </div>
+      </div>
     </div>
   );
 }

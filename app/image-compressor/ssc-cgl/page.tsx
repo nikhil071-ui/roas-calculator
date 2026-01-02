@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 // We import the "Brain" from the folder above
 import CompressorClient from "../CompressorClient"; 
+// Import the Ad Component (adjust path if your file is deeper/shallower)
+import AdBanner from "../../AdBanner";
 
 // 1. SPECIFIC SEO FOR SSC STUDENTS
 export const metadata: Metadata = {
@@ -24,8 +26,18 @@ export default function SSCPage() {
           </p>
         </div>
 
+        {/* --- AD SLOT 1: TOP --- */}
+        <div className="w-full">
+          <AdBanner />
+        </div>
+
         {/* 3. REUSE YOUR EXISTING TOOL */}
         <CompressorClient />
+
+        {/* --- AD SLOT 2: MIDDLE --- */}
+        <div className="w-full">
+          <AdBanner />
+        </div>
 
         {/* 4. SPECIFIC TEXT CONTENT (Google loves this) */}
         <div className="prose max-w-none bg-white p-8 rounded-xl shadow-sm border border-slate-100 mt-8">
