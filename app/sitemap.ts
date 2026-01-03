@@ -3,7 +3,7 @@ import { MetadataRoute } from 'next';
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://roas-calculator-brown.vercel.app';
 
-  // 1. DYNAMIC COMPRESSOR PAGES (From app/compressor/[slug])
+  // 1. COMPRESSOR PAGES (10 URLs)
   const compressorPages = [
     "jpeg-to-50kb",
     "image-to-20kb",
@@ -17,7 +17,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "upsc-photo-resizer"
   ];
 
-  // 2. DYNAMIC PDF PAGES (From app/pdf/[slug])
+  // 2. PDF PAGES (10 URLs)
   const pdfPages = [
     "jpg-to-pdf",
     "png-to-pdf",
@@ -31,7 +31,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "document-photo-to-pdf"
   ];
 
-  // 3. DYNAMIC CURRENCY PAGES (From app/currency/[slug])
+  // 3. CURRENCY PAGES (10 URLs)
   const currencyPages = [
     "usd-to-inr",
     "eur-to-usd",
@@ -45,7 +45,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "crypto-converter"
   ];
 
-  // 4. DYNAMIC ROAS PAGES (From app/roas/[slug])
+  // 4. ROAS PAGES (10 URLs)
   const roasPages = [
     "facebook-ads",
     "tiktok-ads",
@@ -59,7 +59,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "pinterest-ads"
   ];
 
-  // Generator Functions
+  // --- GENERATE URL OBJECTS ---
+
   const compressorUrls = compressorPages.map((slug) => ({
     url: `${baseUrl}/compressor/${slug}`,
     lastModified: new Date(),
@@ -74,71 +75,41 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.9,
   }));
 
+  const currencyUrls = currencyPages.map((slug) => ({
+    url: `${baseUrl}/currency/${slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'daily' as const,
+    priority: 0.9,
+  }));
+
+  const roasUrls = roasPages.map((slug) => ({
+    url: `${baseUrl}/roas/${slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'weekly' as const,
+    priority: 0.9,
+  }));
+
+  // --- RETURN ALL URLS ---
   return [
-    // --- MAIN TOOLS ---
-    {
-      url: baseUrl,
-      lastModified: new Date(),
-      changeFrequency: 'daily',
-      priority: 1,
-    },
-    {
-      url: `${baseUrl}/image-compressor`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/pdf-converter`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/currency-converter`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
+    // MAIN TOOLS
+    { url: baseUrl, lastModified: new Date(), changeFrequency: 'daily', priority: 1 },
+    { url: `${baseUrl}/image-compressor`, lastModified: new Date(), changeFrequency: 'weekly', priority: 0.8 },
+    { url: `${baseUrl}/pdf-converter`, lastModified: new Date(), changeFrequency: 'weekly', priority: 0.8 },
+    { url: `${baseUrl}/currency-converter`, lastModified: new Date(), changeFrequency: 'weekly', priority: 0.8 },
 
-    // --- STATIC PAGES ---
-    {
-      url: `${baseUrl}/about`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.5,
-    },
-    {
-      url: `${baseUrl}/contact`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.5,
-    },
-    {
-      url: `${baseUrl}/privacy-policy`,
-      lastModified: new Date(),
-      changeFrequency: 'yearly',
-      priority: 0.5,
-    },
+    // STATIC PAGES
+    { url: `${baseUrl}/about`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.5 },
+    { url: `${baseUrl}/contact`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.5 },
+    { url: `${baseUrl}/privacy-policy`, lastModified: new Date(), changeFrequency: 'yearly', priority: 0.5 },
 
-    // --- LEGACY / SPECIFIC MANUAL PAGES ---
-    {
-      url: `${baseUrl}/roas-calculator/facebook-ads`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.9, 
-    },
-    {
-      // Keeping this if you still have the manual folder 'app/image-compressor/ssc-cgl'
-      // If you deleted that folder, remove this block.
-      url: `${baseUrl}/image-compressor/ssc-cgl`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.9, 
-    },
+    // LEGACY PAGES (Keep these if folders exist)
+    { url: `${baseUrl}/roas-calculator/facebook-ads`, lastModified: new Date(), changeFrequency: 'weekly', priority: 0.9 },
+    { url: `${baseUrl}/image-compressor/ssc-cgl`, lastModified: new Date(), changeFrequency: 'weekly', priority: 0.9 },
 
-    // --- SPREAD DYNAMIC URLS ---
+    // DYNAMIC PAGES (SPREAD ALL ARRAYS)
     ...compressorUrls,
-    ...pdfUrls
+    ...pdfUrls,
+    ...currencyUrls,
+    ...roasUrls
   ];
 }
