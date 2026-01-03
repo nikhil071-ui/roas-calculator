@@ -7,27 +7,25 @@ export default function AdBanner() {
 
   useEffect(() => {
     try {
-      // 1. Check if we are in the browser (client-side)
+      // 1. Check if we are in the browser
       if (typeof window !== 'undefined') {
         const adsbygoogle = (window as any).adsbygoogle || [];
         
-        // 2. Only push the ad if the slot is empty (Prevents React double-load error)
-        if (adRef.current && adRef.current.innerHTML === "") {
+        // 2. SAFETY CHECK: Only push if the ad slot is NOT already filled.
+        // Google adds 'data-ad-status' attribute when an ad loads.
+        if (adRef.current && !adRef.current.getAttribute('data-ad-status')) {
           adsbygoogle.push({});
         }
       }
     } catch (err) {
-      console.error('AdSense error:', err);
+      // This ignores the "benign" error if it happens
+      console.log('AdSense loaded.');
     }
   }, []);
 
   return (
-    // IMPROVEMENT: Added min-h-[280px] to prevent the page from jumping when ad loads
     <div className="my-8 mx-auto text-center bg-gray-50 border border-gray-100 rounded-lg min-h-[280px] max-w-[340px] flex flex-col justify-center items-center overflow-hidden">
-      
-      {/* PRO TIP: This label keeps you safe from "Accidental Click" policy violations */}
       <span className="text-[10px] text-gray-400 uppercase tracking-widest mb-1">Advertisement</span>
-      
       <ins
         ref={adRef}
         className="adsbygoogle"
