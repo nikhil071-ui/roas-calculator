@@ -1,9 +1,10 @@
 import { MetadataRoute } from 'next';
 
-export default function sitemap(): MetadataRoute.Sitemap {
+// ADD 'async' HERE
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = 'https://roas-calculator-brown.vercel.app';
 
-  // 1. COMPRESSOR PAGES (10 URLs)
+  // 1. COMPRESSOR PAGES
   const compressorPages = [
     "jpeg-to-50kb",
     "image-to-20kb",
@@ -17,7 +18,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "upsc-photo-resizer"
   ];
 
-  // 2. PDF PAGES (10 URLs)
+  // 2. PDF PAGES
   const pdfPages = [
     "jpg-to-pdf",
     "png-to-pdf",
@@ -31,7 +32,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "document-photo-to-pdf"
   ];
 
-  // 3. CURRENCY PAGES (10 URLs)
+  // 3. CURRENCY PAGES
   const currencyPages = [
     "usd-to-inr",
     "eur-to-usd",
@@ -45,7 +46,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "crypto-converter"
   ];
 
-  // 4. ROAS PAGES (10 URLs)
+  // 4. ROAS PAGES
   const roasPages = [
     "facebook-ads",
     "tiktok-ads",
@@ -60,7 +61,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ];
 
   // --- GENERATE URL OBJECTS ---
-
   const compressorUrls = compressorPages.map((slug) => ({
     url: `${baseUrl}/compressor/${slug}`,
     lastModified: new Date(),
@@ -91,22 +91,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   // --- RETURN ALL URLS ---
   return [
-    // MAIN TOOLS
     { url: baseUrl, lastModified: new Date(), changeFrequency: 'daily', priority: 1 },
     { url: `${baseUrl}/image-compressor`, lastModified: new Date(), changeFrequency: 'weekly', priority: 0.8 },
     { url: `${baseUrl}/pdf-converter`, lastModified: new Date(), changeFrequency: 'weekly', priority: 0.8 },
     { url: `${baseUrl}/currency-converter`, lastModified: new Date(), changeFrequency: 'weekly', priority: 0.8 },
 
-    // STATIC PAGES
     { url: `${baseUrl}/about`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.5 },
     { url: `${baseUrl}/contact`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.5 },
     { url: `${baseUrl}/privacy-policy`, lastModified: new Date(), changeFrequency: 'yearly', priority: 0.5 },
 
-    // LEGACY PAGES (Keep these if folders exist)
     { url: `${baseUrl}/roas-calculator/facebook-ads`, lastModified: new Date(), changeFrequency: 'weekly', priority: 0.9 },
+    // If you deleted the 'ssc-cgl' folder, remove this line below:
     { url: `${baseUrl}/image-compressor/ssc-cgl`, lastModified: new Date(), changeFrequency: 'weekly', priority: 0.9 },
 
-    // DYNAMIC PAGES (SPREAD ALL ARRAYS)
     ...compressorUrls,
     ...pdfUrls,
     ...currencyUrls,
