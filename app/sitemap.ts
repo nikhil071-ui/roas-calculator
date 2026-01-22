@@ -98,6 +98,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
     { url: `${baseUrl}/about`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.5 },
     { url: `${baseUrl}/contact`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.5 },
+    { url: `${baseUrl}/faq`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.5 },
+    { url: `${baseUrl}/terms`, lastModified: new Date(), changeFrequency: 'yearly', priority: 0.4 },
     { url: `${baseUrl}/privacy-policy`, lastModified: new Date(), changeFrequency: 'yearly', priority: 0.5 },
 
     { url: `${baseUrl}/roas-calculator/facebook-ads`, lastModified: new Date(), changeFrequency: 'weekly', priority: 0.9 },

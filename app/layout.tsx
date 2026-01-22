@@ -138,6 +138,7 @@ export default function RootLayout({
               <h4 className="text-white font-bold mb-4 uppercase tracking-wider text-xs">Company</h4>
               <ul className="space-y-3">
                 <li><Link href="/about" className="hover:text-white transition">About Us</Link></li>
+                <li><Link href="/faq" className="hover:text-white transition">FAQ</Link></li>
                 <li><Link href="/contact" className="hover:text-white transition">Contact Support</Link></li>
                 <li><Link href="/contact" className="hover:text-white transition">Report a Bug</Link></li>
               </ul>
@@ -148,8 +149,8 @@ export default function RootLayout({
               <h4 className="text-white font-bold mb-4 uppercase tracking-wider text-xs">Legal</h4>
               <ul className="space-y-3">
                 <li><Link href="/privacy-policy" className="hover:text-white transition">Privacy Policy</Link></li>
+                <li><Link href="/terms" className="hover:text-white transition">Terms of Service</Link></li>
                 <li><Link href="/privacy-policy" className="hover:text-white transition">Cookie Policy</Link></li>
-                <li><Link href="/privacy-policy" className="hover:text-white transition">Terms of Use</Link></li>
               </ul>
             </div>
           </div>
