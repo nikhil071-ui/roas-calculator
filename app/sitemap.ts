@@ -1,114 +1,96 @@
 import { MetadataRoute } from 'next';
 
-// ADD 'async' HERE
+// STREAMLINED SITEMAP - Only core pages for AdSense approval
+// Dynamic pages still work via [slug] routes, but we don't advertise all 40+ in sitemap
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = 'https://roas-calculator-brown.vercel.app';
 
-  // 1. COMPRESSOR PAGES
-  const compressorPages = [
-    "jpeg-to-50kb",
-    "image-to-20kb",
-    "reduce-image-size-in-kb",
-    "passport-photo-size",
-    "compress-png-to-100kb",
-    "compress-image-for-web",
-    "resize-pixel-perfect",
-    "bulk-image-compressor",
-    "ssc-chsl-photo-resizer",
-    "upsc-photo-resizer"
-  ];
-
-  // 2. PDF PAGES
-  const pdfPages = [
-    "jpg-to-pdf",
-    "png-to-pdf",
-    "merge-photos-to-pdf",
-    "images-to-pdf",
-    "screenshot-to-pdf",
-    "iphone-photo-to-pdf",
-    "create-pdf-assignment",
-    "receipt-scanner-pdf",
-    "instagram-to-pdf",
-    "document-photo-to-pdf"
-  ];
-
-  // 3. CURRENCY PAGES
-  const currencyPages = [
-    "usd-to-inr",
-    "eur-to-usd",
-    "gbp-to-inr",
-    "aed-to-inr",
-    "cad-to-inr",
-    "aud-to-usd",
-    "usd-to-pkr",
-    "jpy-to-usd",
-    "usd-to-php",
-    "crypto-converter"
-  ];
-
-  // 4. ROAS PAGES
-  const roasPages = [
-    "facebook-ads",
-    "tiktok-ads",
-    "google-ads",
-    "dropshipping-profit",
-    "break-even-roas",
-    "marketing-roi",
-    "amazon-ppc-acos",
-    "influencer-roi",
-    "target-cpa",
-    "pinterest-ads"
-  ];
-
-  // --- GENERATE URL OBJECTS ---
-  const compressorUrls = compressorPages.map((slug) => ({
-    url: `${baseUrl}/compressor/${slug}`,
-    lastModified: new Date(),
-    changeFrequency: 'weekly' as const,
-    priority: 0.9,
-  }));
-
-  const pdfUrls = pdfPages.map((slug) => ({
-    url: `${baseUrl}/pdf/${slug}`,
-    lastModified: new Date(),
-    changeFrequency: 'weekly' as const,
-    priority: 0.9,
-  }));
-
-  const currencyUrls = currencyPages.map((slug) => ({
-    url: `${baseUrl}/currency/${slug}`,
-    lastModified: new Date(),
-    changeFrequency: 'daily' as const,
-    priority: 0.9,
-  }));
-
-  const roasUrls = roasPages.map((slug) => ({
-    url: `${baseUrl}/roas/${slug}`,
-    lastModified: new Date(),
-    changeFrequency: 'weekly' as const,
-    priority: 0.9,
-  }));
-
-  // --- RETURN ALL URLS ---
+  // --- RETURN ONLY CORE HIGH-VALUE URLS ---
   return [
-    { url: baseUrl, lastModified: new Date(), changeFrequency: 'daily', priority: 1 },
-    { url: `${baseUrl}/image-compressor`, lastModified: new Date(), changeFrequency: 'weekly', priority: 0.8 },
-    { url: `${baseUrl}/pdf-converter`, lastModified: new Date(), changeFrequency: 'weekly', priority: 0.8 },
-    { url: `${baseUrl}/currency-converter`, lastModified: new Date(), changeFrequency: 'weekly', priority: 0.8 },
+    // Homepage - Highest Priority
+    { 
+      url: baseUrl, 
+      lastModified: new Date(), 
+      changeFrequency: 'daily' as const, 
+      priority: 1 
+    },
 
-    { url: `${baseUrl}/about`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.5 },
-    { url: `${baseUrl}/contact`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.5 },
-    { url: `${baseUrl}/faq`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.5 },
-    { url: `${baseUrl}/terms`, lastModified: new Date(), changeFrequency: 'yearly', priority: 0.4 },
-    { url: `${baseUrl}/privacy-policy`, lastModified: new Date(), changeFrequency: 'yearly', priority: 0.5 },
+    // Main Tool Pages
+    { 
+      url: `${baseUrl}/image-compressor`, 
+      lastModified: new Date(), 
+      changeFrequency: 'weekly' as const, 
+      priority: 0.9 
+    },
+    { 
+      url: `${baseUrl}/pdf-converter`, 
+      lastModified: new Date(), 
+      changeFrequency: 'weekly' as const, 
+      priority: 0.9 
+    },
+    { 
+      url: `${baseUrl}/currency-converter`, 
+      lastModified: new Date(), 
+      changeFrequency: 'weekly' as const, 
+      priority: 0.9 
+    },
 
-    { url: `${baseUrl}/roas-calculator/facebook-ads`, lastModified: new Date(), changeFrequency: 'weekly', priority: 0.9 },
-    // If you deleted the 'ssc-cgl' folder, remove this line below:
-    { url: `${baseUrl}/image-compressor/ssc-cgl`, lastModified: new Date(), changeFrequency: 'weekly', priority: 0.9 },
+    // Most Popular Dynamic Pages (Top 3 per category)
+    { 
+      url: `${baseUrl}/compressor/jpeg-to-50kb`, 
+      lastModified: new Date(), 
+      changeFrequency: 'weekly' as const, 
+      priority: 0.8 
+    },
+    { 
+      url: `${baseUrl}/pdf/jpg-to-pdf`, 
+      lastModified: new Date(), 
+      changeFrequency: 'weekly' as const, 
+      priority: 0.8 
+    },
+    { 
+      url: `${baseUrl}/currency/usd-to-inr`, 
+      lastModified: new Date(), 
+      changeFrequency: 'daily' as const, 
+      priority: 0.8 
+    },
+    { 
+      url: `${baseUrl}/roas/facebook-ads`, 
+      lastModified: new Date(), 
+      changeFrequency: 'weekly' as const, 
+      priority: 0.8 
+    },
 
-    ...compressorUrls,
-    ...pdfUrls,
-    ...currencyUrls,
-    ...roasUrls
+    // Company & Legal Pages
+    { 
+      url: `${baseUrl}/about`, 
+      lastModified: new Date(), 
+      changeFrequency: 'monthly' as const, 
+      priority: 0.6 
+    },
+    { 
+      url: `${baseUrl}/contact`, 
+      lastModified: new Date(), 
+      changeFrequency: 'monthly' as const, 
+      priority: 0.6 
+    },
+    { 
+      url: `${baseUrl}/faq`, 
+      lastModified: new Date(), 
+      changeFrequency: 'monthly' as const, 
+      priority: 0.7 
+    },
+    { 
+      url: `${baseUrl}/terms`, 
+      lastModified: new Date(), 
+      changeFrequency: 'yearly' as const, 
+      priority: 0.4 
+    },
+    { 
+      url: `${baseUrl}/privacy-policy`, 
+      lastModified: new Date(), 
+      changeFrequency: 'yearly' as const, 
+      priority: 0.5 
+    },
   ];
 }
