@@ -127,8 +127,10 @@ export default function RootLayout({
               <h4 className="text-white font-bold mb-4 uppercase tracking-wider text-xs">Our Tools</h4>
               <ul className="space-y-3">
                 <li><Link href="/" className="hover:text-white transition flex items-center gap-2">📊 ROAS Calculator</Link></li>
+                <li><Link href="/roas/facebook-ads" className="hover:text-white transition flex items-center gap-2">📣 Facebook Ads ROAS</Link></li>
                 <li><Link href="/image-compressor" className="hover:text-white transition flex items-center gap-2">🖼️ Image Compressor</Link></li>
                 <li><Link href="/pdf-converter" className="hover:text-white transition flex items-center gap-2">📄 JPG to PDF</Link></li>
+                <li><Link href="/pdf/jpg-to-pdf" className="hover:text-white transition flex items-center gap-2">🧾 JPG to PDF (Direct)</Link></li>
                 <li><Link href="/currency-converter" className="hover:text-white transition flex items-center gap-2">💱 Currency Converter</Link></li>
               </ul>
             </div>

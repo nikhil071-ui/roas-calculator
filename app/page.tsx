@@ -73,6 +73,21 @@ export default function Home() {
               </div>
             </section>
 
+            {/* --- FEATURED PAGES (BOOST INDEXING) --- */}
+            <section className="mt-4 mb-12">
+              <h2 className="text-xl font-bold text-slate-900 mb-4 text-center">Featured Pages</h2>
+              <div className="grid md:grid-cols-2 gap-6">
+                <Link href="/roas/facebook-ads" className="group block bg-white p-6 rounded-xl shadow-sm border border-gray-200 hover:border-blue-500 hover:shadow-lg transition">
+                  <h3 className="font-bold text-lg text-slate-800 group-hover:text-blue-600">Facebook Ads ROAS Calculator</h3>
+                  <p className="text-sm text-gray-500 mt-2">Calculate break-even ROAS and profitability for Meta campaigns.</p>
+                </Link>
+                <Link href="/pdf/jpg-to-pdf" className="group block bg-white p-6 rounded-xl shadow-sm border border-gray-200 hover:border-red-500 hover:shadow-lg transition">
+                  <h3 className="font-bold text-lg text-slate-800 group-hover:text-red-600">JPG to PDF Converter (Direct)</h3>
+                  <p className="text-sm text-gray-500 mt-2">Convert photos to a clean PDF instantly — no watermark, no signup.</p>
+                </Link>
+              </div>
+            </section>
+
             {/* --- SEO CONTENT --- */}
             <article className="prose lg:prose-xl bg-white p-8 md:p-12 rounded-2xl shadow-sm border border-gray-100 max-w-none text-gray-700 mt-12">
                 <h2 className="text-3xl font-bold text-slate-900 mb-6">Complete Guide to ROAS: Calculation, Formulas & Strategy (2026)</h2>

@@ -43,6 +43,23 @@ export default function PdfConverterPage() {
            <AdBanner />
       </div>
 
+      {/* --- POPULAR PDF PAGES (BOOST INDEXING) --- */}
+      <section className="max-w-6xl mx-auto mt-8 px-4">
+        <div className="bg-white rounded-2xl border border-gray-200 shadow-sm p-6">
+          <h2 className="text-xl font-bold text-slate-900 mb-4">Popular PDF Pages</h2>
+          <div className="flex flex-col md:flex-row gap-4">
+            <Link href="/pdf/jpg-to-pdf" className="flex-1 block bg-slate-50 border border-slate-200 rounded-xl p-4 hover:border-red-400 hover:shadow-md transition">
+              <h3 className="font-bold text-slate-900">JPG to PDF (Direct)</h3>
+              <p className="text-sm text-slate-600 mt-1">Fast conversion optimized for exam uploads and job portals.</p>
+            </Link>
+            <Link href="/pdf/png-to-pdf" className="flex-1 block bg-slate-50 border border-slate-200 rounded-xl p-4 hover:border-blue-400 hover:shadow-md transition">
+              <h3 className="font-bold text-slate-900">PNG to PDF</h3>
+              <p className="text-sm text-slate-600 mt-1">Best for screenshots and images with transparency.</p>
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* --- SEO CONTENT (High Value Publisher Content) --- */}
       <article className="max-w-4xl mx-auto mt-12 bg-white p-8 md:p-12 rounded-2xl shadow-sm border border-gray-200 prose lg:prose-lg text-gray-700">
         <h2 className="text-3xl font-bold text-slate-900">Free JPG to PDF Converter: Merge & Compress for Exams</h2>
