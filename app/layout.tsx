@@ -16,6 +16,7 @@ export const metadata: Metadata = {
   },
   description: "Free all-in-one toolkit: Calculate ROAS, Compress Images to 50KB, and Convert JPG to PDF under 2MB. Fast, private, and works offline.",
   keywords: ["roas calculator", "image compressor 50kb", "jpg to pdf under 2mb", "online tools india", "free pdf maker", "currency converter live"],
+  viewport: "width=device-width, initial-scale=1, maximum-scale=5",
   robots: {
     index: true,
     follow: true,
@@ -46,6 +47,34 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        {/* --- FAVICON --- */}
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="apple-touch-icon" href="/favicon.ico" />
+        
+        {/* --- GOOGLE SEARCH CONSOLE VERIFICATION --- */}
+        <meta name="google-site-verification" content="google07479700bcc28a6c" />
+        
+        {/* --- GOOGLE ANALYTICS 4 --- */}
+        <Script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-YOUR-GA4-ID"
+          strategy="afterInteractive"
+        />
+        <Script
+          id="google-analytics"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-YOUR-GA4-ID', {
+                page_path: window.location.pathname,
+              });
+            `,
+          }}
+        />
+        
         {/* --- GOOGLE ADSENSE SCRIPT --- */}
         <Script
           async
