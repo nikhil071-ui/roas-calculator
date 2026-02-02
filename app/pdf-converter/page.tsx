@@ -8,6 +8,11 @@ export const metadata: Metadata = {
   title: "Free JPG to PDF Converter - Create PDFs Under 2MB / 500KB",
   description: "Convert photos to PDF online. Set exact file size limits (e.g., under 2MB) for free. Auto-rotate and compress JPG to PDF instantly.",
   keywords: ["jpg to pdf", "image to pdf converter", "create pdf under 2mb", "compress pdf online", "photo to pdf"],
+  robots: {
+    index: true,
+    follow: true,
+    nocache: false,
+  },
   alternates: {
     canonical: "https://roas-calculator-brown.vercel.app/pdf-converter",
   },

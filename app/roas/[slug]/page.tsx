@@ -120,6 +120,11 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     title: data.title,
     description: data.desc,
     keywords: data.keywords,
+    robots: {
+      index: true,
+      follow: true,
+      nocache: false,
+    },
     alternates: {
       canonical: `https://roas-calculator-brown.vercel.app/roas/${resolvedParams.slug}`,
     },
