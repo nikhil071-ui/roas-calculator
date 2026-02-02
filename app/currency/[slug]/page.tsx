@@ -5,6 +5,22 @@ import Link from "next/link";
 import CurrencyClient from "../../currency-converter/CurrencyClient"; 
 import AdBanner from "../../AdBanner"; 
 
+// --- STATIC PARAMS FOR FAST INDEXING ---
+export async function generateStaticParams() {
+  return [
+    { slug: 'usd-to-inr' },
+    { slug: 'eur-to-usd' },
+    { slug: 'gbp-to-inr' },
+    { slug: 'aed-to-inr' },
+    { slug: 'cad-to-inr' },
+    { slug: 'aud-to-usd' },
+    { slug: 'usd-to-pkr' },
+    { slug: 'jpy-to-usd' },
+    { slug: 'usd-to-php' },
+    { slug: 'crypto-converter' }
+  ];
+}
+
 // --- 1. SEO DATA LOOKUP TABLE ---
 const SEO_DATA: Record<string, { title: string; desc: string; h1: string; subtext: string; from: string; to: string; keywords: string[] }> = {
   "usd-to-inr": {

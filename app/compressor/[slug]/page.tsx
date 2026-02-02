@@ -5,6 +5,22 @@ import Link from "next/link";
 import CompressorClient from "../../image-compressor/CompressorClient"; 
 import AdBanner from "../../AdBanner"; 
 
+// --- STATIC PARAMS FOR FAST INDEXING ---
+export async function generateStaticParams() {
+  return [
+    { slug: 'jpeg-to-50kb' },
+    { slug: 'image-to-20kb' },
+    { slug: 'reduce-image-size-in-kb' },
+    { slug: 'passport-photo-size' },
+    { slug: 'compress-png-to-100kb' },
+    { slug: 'compress-image-for-web' },
+    { slug: 'resize-pixel-perfect' },
+    { slug: 'bulk-image-compressor' },
+    { slug: 'ssc-chsl-photo-resizer' },
+    { slug: 'upsc-photo-resizer' }
+  ];
+}
+
 // --- 1. SEO DATA LOOKUP TABLE ---
 const SEO_DATA: Record<string, { title: string; desc: string; h1: string; subtext: string; keywords: string[] }> = {
   "jpeg-to-50kb": {

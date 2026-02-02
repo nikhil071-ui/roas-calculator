@@ -5,6 +5,22 @@ import Link from "next/link";
 import PdfClient from "../../pdf-converter/PdfClient"; 
 import AdBanner from "../../AdBanner"; 
 
+// --- STATIC PARAMS FOR FAST INDEXING ---
+export async function generateStaticParams() {
+  return [
+    { slug: 'jpg-to-pdf' },
+    { slug: 'png-to-pdf' },
+    { slug: 'merge-photos-to-pdf' },
+    { slug: 'images-to-pdf' },
+    { slug: 'screenshot-to-pdf' },
+    { slug: 'iphone-photo-to-pdf' },
+    { slug: 'create-pdf-assignment' },
+    { slug: 'receipt-scanner-pdf' },
+    { slug: 'instagram-to-pdf' },
+    { slug: 'document-photo-to-pdf' }
+  ];
+}
+
 // --- 1. SEO DATA LOOKUP TABLE ---
 const SEO_DATA: Record<string, { title: string; desc: string; h1: string; subtext: string; keywords: string[] }> = {
   "jpg-to-pdf": {

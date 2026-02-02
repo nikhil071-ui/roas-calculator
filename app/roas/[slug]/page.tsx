@@ -5,6 +5,22 @@ import Link from "next/link";
 import RoasClient from "../../RoasClient"; 
 import AdBanner from "../../AdBanner"; 
 
+// --- STATIC PARAMS FOR FAST INDEXING ---
+export async function generateStaticParams() {
+  return [
+    { slug: 'facebook-ads' },
+    { slug: 'tiktok-ads' },
+    { slug: 'google-ads' },
+    { slug: 'dropshipping-profit' },
+    { slug: 'break-even-roas' },
+    { slug: 'marketing-roi' },
+    { slug: 'amazon-ppc-acos' },
+    { slug: 'influencer-roi' },
+    { slug: 'target-cpa' },
+    { slug: 'pinterest-ads' }
+  ];
+}
+
 // --- 1. SEO DATA LOOKUP TABLE ---
 const SEO_DATA: Record<string, { title: string; desc: string; h1: string; subtext: string; platform: string; keywords: string[] }> = {
   "facebook-ads": {
