@@ -4,6 +4,9 @@ import { ArrowLeft } from "lucide-react";
 import PdfClient from "./PdfClient"; 
 import AdBanner from "../AdBanner"; // Import the Ad Component
 
+export const dynamic = "force-static";
+export const revalidate = 86400;
+
 export const metadata: Metadata = {
   title: "Free JPG to PDF Converter - Create PDFs Under 2MB / 500KB",
   description: "Convert photos to PDF online. Set exact file size limits (e.g., under 2MB) for free. Auto-rotate and compress JPG to PDF instantly.",
