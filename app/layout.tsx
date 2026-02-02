@@ -57,7 +57,7 @@ export default function RootLayout({
         {/* --- GOOGLE ANALYTICS 4 --- */}
         <Script
           async
-          src="https://www.googletagmanager.com/gtag/js?id=G-YOUR-GA4-ID"
+          src="https://www.googletagmanager.com/gtag/js?id=G-9TNHKZL30M"
           strategy="afterInteractive"
         />
         <Script
@@ -68,7 +68,7 @@ export default function RootLayout({
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
-              gtag('config', 'G-YOUR-GA4-ID', {
+              gtag('config', 'G-9TNHKZL30M', {
                 page_path: window.location.pathname,
               });
             `,
