@@ -228,6 +228,7 @@ export default function RootLayout({
                 <li><Link href="/privacy-policy" className="hover:text-white transition">Privacy Policy</Link></li>
                 <li><Link href="/terms" className="hover:text-white transition">Terms of Service</Link></li>
                 <li><Link href="/editorial-policy" className="hover:text-white transition">Editorial Policy</Link></li>
+                <li><Link href="/indexing" className="hover:text-white transition">Indexing Checklist</Link></li>
                 <li><Link href="/privacy-policy" className="hover:text-white transition">Cookie Policy</Link></li>
               </ul>
             </div>
