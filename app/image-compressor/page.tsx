@@ -42,7 +42,10 @@ export default function ImageCompressorPage() {
             Free Image Compressor
           </h1>
           <p className="text-slate-400 mt-2">
-            Reduce size to 20KB - 50KB for Government Forms.
+            Reduce size to 20KB - 50KB for Government Forms, Exam Portals, and Online Applications
+          </p>
+          <p className="text-slate-500 text-sm mt-3">
+            ✓ Privacy-First (Offline) • ✓ No Limits • ✓ Instant Results
           </p>
         </div>
       </div>
@@ -60,6 +63,22 @@ export default function ImageCompressorPage() {
       {/* --- AD SLOT 2: MIDDLE --- */}
       <div className="max-w-5xl mx-auto mt-8">
         <AdBanner />
+      </div>
+
+      {/* EXPERT GUIDE CTA */}
+      <div className="max-w-5xl mx-auto mt-8 px-4">
+        <div className="bg-gradient-to-r from-purple-50 to-blue-50 rounded-xl border-2 border-purple-300 p-8">
+          <h3 className="text-2xl font-bold text-slate-900 mb-2">📚 Want to Master Image Compression?</h3>
+          <p className="text-slate-700 mb-4">
+            Our comprehensive guide covers JPEG algorithms, quality-size tradeoffs, all government exam requirements, and technical troubleshooting.
+          </p>
+          <Link 
+            href="/image-compressor/guide"
+            className="inline-block bg-purple-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-purple-700 transition"
+          >
+            Read Complete Image Compression Guide →
+          </Link>
+        </div>
       </div>
 
       {/* --- SEO CONTENT (High Value Publisher Content) --- */}

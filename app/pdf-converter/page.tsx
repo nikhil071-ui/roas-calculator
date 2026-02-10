@@ -51,6 +51,22 @@ export default function PdfConverterPage() {
            <AdBanner />
       </div>
 
+      {/* EXPERT GUIDE CTA */}
+      <div className="max-w-6xl mx-auto mt-8 px-4">
+        <div className="bg-gradient-to-r from-red-50 to-orange-50 rounded-xl border-2 border-red-300 p-8">
+          <h3 className="text-2xl font-bold text-slate-900 mb-2">📚 Master PDF Creation & Compression</h3>
+          <p className="text-slate-700 mb-4">
+            Read our comprehensive guide covering PDF file formats, compression techniques, government exam requirements, and troubleshooting.
+          </p>
+          <Link 
+            href="/pdf-converter/guide"
+            className="inline-block bg-red-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-red-700 transition"
+          >
+            Read Complete PDF Guide →
+          </Link>
+        </div>
+      </div>
+
       {/* --- POPULAR PDF PAGES (BOOST INDEXING) --- */}
       <section className="max-w-6xl mx-auto mt-8 px-4">
         <div className="bg-white rounded-2xl border border-gray-200 shadow-sm p-6">

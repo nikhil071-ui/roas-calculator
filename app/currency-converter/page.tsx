@@ -43,6 +43,20 @@ export default function CurrencyPage() {
             {/* THE TOOL */}
             <CurrencyClient />
 
+            {/* EXPERT GUIDE CTA */}
+            <div className="bg-gradient-to-r from-emerald-50 to-green-50 rounded-xl border-2 border-emerald-300 p-8 mt-8">
+              <h3 className="text-2xl font-bold text-slate-900 mb-2">📚 Master Currency Conversion & Forex</h3>
+              <p className="text-slate-700 mb-4">
+                Read our expert guide on exchange rates, spread costs, international transfers, and how to get the best conversion rates.
+              </p>
+              <a 
+                href="/currency-converter/guide"
+                className="inline-block bg-emerald-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-emerald-700 transition"
+              >
+                Read Complete Currency Guide →
+              </a>
+            </div>
+
             {/* SEO ARTICLE */}
             <article className="prose lg:prose-xl bg-white p-8 md:p-12 rounded-2xl shadow-sm border border-gray-100 max-w-none text-gray-700 mt-12">
                 <h2 className="text-2xl font-bold text-slate-900 mb-4">Understanding Exchange Rates</h2>
