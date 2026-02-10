@@ -2,7 +2,7 @@ import { MetadataRoute } from 'next';
 
 // FULL SITEMAP - Include all static pages and all dynamic slug routes
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const baseUrl = 'https://roas-calculator-brown.vercel.app';
+  const baseUrl = 'https://roas-calculator.tech';
   const lastModified = new Date();
 
   const staticRoutes = [

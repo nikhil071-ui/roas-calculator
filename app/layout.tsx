@@ -9,7 +9,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 // --- GLOBAL SEO CONFIGURATION ---
 export const metadata: Metadata = {
-  metadataBase: new URL("https://roas-calculator-brown.vercel.app"),
+  metadataBase: new URL("https://roas-calculator.tech"),
   title: {
     default: "Free Online Tools | ROAS Calc, Image Compressor & PDF Maker",
     template: "%s | ROAS Tools",
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://roas-calculator-brown.vercel.app",
+    url: "https://roas-calculator.tech",
     title: "Free Image Compressor & PDF Maker (Privacy Focused)",
     description: "Compress images to 50KB for SSC/UPSC exams and calculate ad profits instantly. No uploads required.",
     siteName: "ROAS Tools",
