@@ -121,6 +121,7 @@ export default function RootLayout({
             
             {/* Navigation Links - SCROLLABLE ON MOBILE */}
             <div className="flex gap-4 md:gap-8 text-sm font-medium text-gray-600 overflow-x-auto ml-4 whitespace-nowrap scrollbar-hide">
+              <Link href="/blog" className="hover:text-blue-600 transition">Blog</Link>
               <Link href="/" className="hover:text-blue-600 transition">Home</Link>
               <Link href="/image-compressor" className="hover:text-blue-600 transition">Image Compressor</Link>
               <Link href="/pdf-converter" className="hover:text-blue-600 transition">PDF Maker</Link>
@@ -168,6 +169,7 @@ export default function RootLayout({
             <div>
               <h4 className="text-white font-bold mb-4 uppercase tracking-wider text-xs">Company</h4>
               <ul className="space-y-3">
+                <li><Link href="/blog" className="hover:text-white transition">📰 Blog</Link></li>
                 <li><Link href="/about" className="hover:text-white transition">About Us</Link></li>
                 <li><Link href="/faq" className="hover:text-white transition">FAQ</Link></li>
                 <li><Link href="/contact" className="hover:text-white transition">Contact Support</Link></li>
