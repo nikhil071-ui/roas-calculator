@@ -25,7 +25,7 @@ export default function ImageCompressionTechnical() {
       </div>
 
       <main className="max-w-4xl mx-auto bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden mb-12">
-        <div className="bg-gradient-to-r from-purple-900 to-purple-800 p-8 md:p-12 text-white">
+        <div className="bg-linear-to-r from-purple-900 to-purple-800 p-8 md:p-12 text-white">
           <div className="flex items-center gap-3 mb-4">
             <BookOpen size={28} className="text-purple-300" />
             <span className="text-sm font-bold uppercase tracking-wider text-purple-200">Technical Deep Dive</span>
@@ -287,15 +287,15 @@ export default function ImageCompressionTechnical() {
             <div className="bg-purple-50 border border-purple-200 p-6 rounded my-6">
               <ul className="text-purple-800 text-sm space-y-2">
                 <li className="flex items-start gap-2">
-                  <CheckCircle size={18} className="text-purple-600 flex-shrink-0 mt-0.5" />
+                  <CheckCircle size={18} className="text-purple-600 shrink-0 mt-0.5" />
                   <span><strong>85% of 50 testers couldn't detect difference</strong> between 95% JPEG and 85% JPEG when shown at normal viewing distance.</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <CheckCircle size={18} className="text-purple-600 flex-shrink-0 mt-0.5" />
+                  <CheckCircle size={18} className="text-purple-600 shrink-0 mt-0.5" />
                   <span><strong>98% couldn't detect difference</strong> between WebP 85 and JPEG 95 when shown side-by-side briefly.</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <CheckCircle size={18} className="text-purple-600 flex-shrink-0 mt-0.5" />
+                  <CheckCircle size={18} className="text-purple-600 shrink-0 mt-0.5" />
                   <span><strong>Only close inspection revealed artifacts</strong> in 75% JPEG quality. Most users found this acceptable for thumbnails.</span>
                 </li>
               </ul>
@@ -345,7 +345,7 @@ export default function ImageCompressionTechnical() {
               Image compression is not about making images look bad—it's about finding the sweet spot where humans see no difference, but file size is optimized.
             </p>
 
-            <div className="bg-gradient-to-r from-green-50 to-blue-50 rounded-xl p-8 border border-green-200 mt-6">
+            <div className="bg-linear-to-r from-green-50 to-blue-50 rounded-xl p-8 border border-green-200 mt-6">
               <p className="font-bold text-slate-900 mb-4">Our Specific Recommendations:</p>
               <ul className="space-y-2 text-slate-700 text-sm">
                 <li>✓ Use WebP format for 95% of web images (31-41% file size savings)</li>
@@ -361,7 +361,7 @@ export default function ImageCompressionTechnical() {
             </p>
           </section>
 
-          <div className="bg-gradient-to-r from-purple-50 to-blue-50 rounded-xl p-8 border border-purple-200 mt-12">
+          <div className="bg-linear-to-r from-purple-50 to-blue-50 rounded-xl p-8 border border-purple-200 mt-12">
             <h3 className="text-xl font-bold text-slate-900 mb-3">Compress Your Images</h3>
             <p className="text-slate-700 mb-4">
               Use our Image Compressor to test different formats and quality settings on your own images.

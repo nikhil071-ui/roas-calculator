@@ -25,7 +25,7 @@ export default function CurrencyExchangeGuide() {
       </div>
 
       <main className="max-w-4xl mx-auto bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden mb-12">
-        <div className="bg-gradient-to-r from-green-900 to-green-800 p-8 md:p-12 text-white">
+        <div className="bg-linear-to-r from-green-900 to-green-800 p-8 md:p-12 text-white">
           <div className="flex items-center gap-3 mb-4">
             <DollarSign size={28} className="text-green-300" />
             <span className="text-sm font-bold uppercase tracking-wider text-green-200">Financial Guide</span>
@@ -327,7 +327,7 @@ export default function CurrencyExchangeGuide() {
           <section>
             <h2 className="text-3xl font-bold text-slate-900">Conclusion</h2>
             
-            <div className="bg-gradient-to-r from-green-50 to-blue-50 rounded-xl p-8 border border-green-200 mt-6">
+            <div className="bg-linear-to-r from-green-50 to-blue-50 rounded-xl p-8 border border-green-200 mt-6">
               <p className="font-bold text-slate-900 mb-4">Key Takeaways:</p>
               <ul className="space-y-2 text-slate-700 text-sm">
                 <li>✓ Banks hide 2-5% costs in exchange rate markups, not just fees</li>
@@ -343,7 +343,7 @@ export default function CurrencyExchangeGuide() {
             </p>
           </section>
 
-          <div className="bg-gradient-to-r from-green-50 to-blue-50 rounded-xl p-8 border border-green-200 mt-12">
+          <div className="bg-linear-to-r from-green-50 to-blue-50 rounded-xl p-8 border border-green-200 mt-12">
             <h3 className="text-xl font-bold text-slate-900 mb-3">Convert Currencies</h3>
             <p className="text-slate-700 mb-4">
               Use our Currency Converter to see real-time exchange rates and calculate transfer costs.

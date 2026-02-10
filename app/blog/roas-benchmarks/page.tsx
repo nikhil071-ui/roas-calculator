@@ -25,7 +25,7 @@ export default function RoasBenchmarks() {
       </div>
 
       <main className="max-w-4xl mx-auto bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden mb-12">
-        <div className="bg-gradient-to-r from-slate-900 to-slate-800 p-8 md:p-12 text-white">
+        <div className="bg-linear-to-r from-slate-900 to-slate-800 p-8 md:p-12 text-white">
           <div className="flex items-center gap-3 mb-4">
             <BarChart3 size={28} className="text-blue-300" />
             <span className="text-sm font-bold uppercase tracking-wider text-slate-300">Industry Data</span>
@@ -306,10 +306,10 @@ export default function RoasBenchmarks() {
             <h3 className="text-2xl font-bold text-slate-900 mt-6">2. Creative Testing (20-40% improvement potential)</h3>
             
             <ul className="list-disc pl-5 space-y-2 text-slate-700 text-sm mt-4">
-              <li><strong>User-generated content (UGC):</strong> Real customer testimonials & videos > professional ads</li>
+              <li><strong>User-generated content (UGC):</strong> Real customer testimonials & videos &gt; professional ads</li>
               <li><strong>Multiple variations:</strong> Test 5-10 creatives simultaneously, scale the winners</li>
               <li><strong>Dynamic creative:</strong> Let Facebook test creatives automatically at audience level</li>
-              <li><strong>Video > Image/Carousel:</strong> Video ads average 1.5-2x better ROAS</li>
+              <li><strong>Video &gt; Image/Carousel:</strong> Video ads average 1.5-2x better ROAS</li>
             </ul>
 
             <h3 className="text-2xl font-bold text-slate-900 mt-6">3. Landing Page Optimization (15-35% improvement potential)</h3>
@@ -317,7 +317,7 @@ export default function RoasBenchmarks() {
             <ul className="list-disc pl-5 space-y-2 text-slate-700 text-sm mt-4">
               <li><strong>Message match:</strong> Your ad promises should match landing page headline exactly</li>
               <li><strong>Page speed:</strong> 1 second slower = 7% lower conversions</li>
-              <li><strong>Checkout steps:</strong> 1-2 steps > 4+ steps (77% cart abandonment increase per step)</li>
+              <li><strong>Checkout steps:</strong> 1-2 steps &gt; 4+ steps (77% cart abandonment increase per step)</li>
               <li><strong>Trust signals:</strong> Customer reviews, SSL badge, money-back guarantee</li>
             </ul>
 
@@ -392,7 +392,7 @@ export default function RoasBenchmarks() {
           <section>
             <h2 className="text-3xl font-bold text-slate-900">Conclusion</h2>
             
-            <div className="bg-gradient-to-r from-slate-50 to-blue-50 rounded-xl p-8 border border-slate-200 mt-6">
+            <div className="bg-linear-to-r from-slate-50 to-blue-50 rounded-xl p-8 border border-slate-200 mt-6">
               <p className="font-bold text-slate-900 mb-4">Key Takeaways:</p>
               <ul className="space-y-2 text-slate-700 text-sm">
                 <li>✓ Industry-average ROAS ranges from 1.5x (automotive) to 4.5x (lead gen)</li>
@@ -408,7 +408,7 @@ export default function RoasBenchmarks() {
             </p>
           </section>
 
-          <div className="bg-gradient-to-r from-slate-50 to-blue-50 rounded-xl p-8 border border-slate-200 mt-12">
+          <div className="bg-linear-to-r from-slate-50 to-blue-50 rounded-xl p-8 border border-slate-200 mt-12">
             <h3 className="text-xl font-bold text-slate-900 mb-3">Calculate Your ROAS Now</h3>
             <p className="text-slate-700 mb-4">
               Use our free ROAS Calculator to see your current performance against industry benchmarks.

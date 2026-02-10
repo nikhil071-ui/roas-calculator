@@ -115,7 +115,7 @@ export default function RootLayout({
         <nav className="bg-white border-b border-gray-200 sticky top-0 z-50 shadow-sm">
           <div className="container mx-auto px-4 h-16 flex items-center justify-between">
             {/* Logo */}
-            <Link href="/" className="font-bold text-xl text-blue-900 flex items-center gap-2 flex-shrink-0">
+            <Link href="/" className="font-bold text-xl text-blue-900 flex items-center gap-2 shrink-0">
               🚀 ROAS Tools
             </Link>
             
@@ -131,7 +131,7 @@ export default function RootLayout({
         </nav>
 
         {/* --- MAIN CONTENT --- */}
-        <div className="flex-grow">
+        <div className="grow">
             {children}
             <Analytics />
         </div>

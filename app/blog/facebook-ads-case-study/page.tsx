@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   ],
 };
 
-export default function RoasCase Study() {
+export default function RoasCaseStudy() {
   return (
     <div className="min-h-screen bg-slate-50 font-sans text-slate-900 py-12 px-4 md:px-6">
       <div className="max-w-4xl mx-auto mb-8">
@@ -25,7 +25,7 @@ export default function RoasCase Study() {
       </div>
 
       <main className="max-w-4xl mx-auto bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden mb-12">
-        <div className="bg-gradient-to-r from-blue-900 to-blue-800 p-8 md:p-12 text-white">
+        <div className="bg-linear-to-r from-blue-900 to-blue-800 p-8 md:p-12 text-white">
           <div className="flex items-center gap-3 mb-4">
             <TrendingUp size={28} className="text-green-400" />
             <span className="text-sm font-bold uppercase tracking-wider text-blue-200">Case Study</span>
@@ -111,7 +111,7 @@ export default function RoasCase Study() {
                   <tr>
                     <td className="border border-slate-300 px-4 py-2 font-semibold">Average Order Value</td>
                     <td className="border border-slate-300 px-4 py-2">$89</td>
-                    <td className="border border-slate-300 px-4 py-2 text-red-600">AOV < CPA (losing money per sale)</td>
+                    <td className="border border-slate-300 px-4 py-2 text-red-600">AOV &lt; CPA (losing money per sale)</td>
                   </tr>
                   <tr className="bg-slate-50">
                     <td className="border border-slate-300 px-4 py-2 font-semibold">Conversion Rate</td>
@@ -400,7 +400,7 @@ export default function RoasCase Study() {
             </p>
           </section>
 
-          <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl p-8 border border-blue-200 mt-12">
+          <div className="bg-linear-to-r from-blue-50 to-indigo-50 rounded-xl p-8 border border-blue-200 mt-12">
             <h3 className="text-xl font-bold text-slate-900 mb-3">Get Your ROAS Analysis</h3>
             <p className="text-slate-700 mb-4">
               Use our free ROAS Calculator to analyze your own campaigns. See if you're above or below break-even, and calculate your target ROAS.

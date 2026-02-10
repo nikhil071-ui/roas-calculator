@@ -176,7 +176,7 @@ export default function BlogIndex() {
         )}
 
         {/* CTA Section */}
-        <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-8 md:p-12 border border-blue-200 text-center">
+        <div className="bg-linear-to-r from-blue-50 to-indigo-50 rounded-2xl p-8 md:p-12 border border-blue-200 text-center">
           <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-4">
             Ready to Optimize Your Campaigns?
           </h2>

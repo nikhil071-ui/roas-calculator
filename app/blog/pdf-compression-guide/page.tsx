@@ -25,7 +25,7 @@ export default function PDFCompressionGuide() {
       </div>
 
       <main className="max-w-4xl mx-auto bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden mb-12">
-        <div className="bg-gradient-to-r from-red-900 to-red-800 p-8 md:p-12 text-white">
+        <div className="bg-linear-to-r from-red-900 to-red-800 p-8 md:p-12 text-white">
           <div className="flex items-center gap-3 mb-4">
             <FileText size={28} className="text-red-300" />
             <span className="text-sm font-bold uppercase tracking-wider text-red-200">Technical Guide</span>
@@ -346,7 +346,7 @@ export default function PDFCompressionGuide() {
           <section>
             <h2 className="text-3xl font-bold text-slate-900">Conclusion</h2>
             
-            <div className="bg-gradient-to-r from-red-50 to-orange-50 rounded-xl p-8 border border-red-200 mt-6">
+            <div className="bg-linear-to-r from-red-50 to-orange-50 rounded-xl p-8 border border-red-200 mt-6">
               <p className="font-bold text-slate-900 mb-4">Key Takeaways:</p>
               <ul className="space-y-2 text-slate-700 text-sm">
                 <li>✓ Most PDFs can be reduced 60-90% without quality loss</li>
@@ -362,7 +362,7 @@ export default function PDFCompressionGuide() {
             </p>
           </section>
 
-          <div className="bg-gradient-to-r from-red-50 to-orange-50 rounded-xl p-8 border border-red-200 mt-12">
+          <div className="bg-linear-to-r from-red-50 to-orange-50 rounded-xl p-8 border border-red-200 mt-12">
             <h3 className="text-xl font-bold text-slate-900 mb-3">Compress a PDF</h3>
             <p className="text-slate-700 mb-4">
               Test compression on your own PDF file. See file size reduction before downloading.
