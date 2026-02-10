@@ -322,7 +322,7 @@ export default function PrivacyPolicy() {
                     <div className="bg-slate-50 p-6 rounded-lg border border-slate-200">
                         <p className="font-bold text-slate-900 text-lg mb-2">ROAS Tools Privacy Team</p>
                         <p className="text-slate-600 mb-1">Email: <a href="mailto:luckmatters199@gmail.com" className="text-blue-600 underline hover:text-blue-800">luckmatters199@gmail.com</a></p>
-                        <p className="text-slate-600 mb-1">Website: <a href="https://roas-calculator-brown.vercel.app" className="text-blue-600 underline hover:text-blue-800">roas-calculator-brown.vercel.app</a></p>
+                        <p className="text-slate-600 mb-1">Website: <a href="https://roas-calculator.tech" className="text-blue-600 underline hover:text-blue-800">roas-calculator.tech</a></p>
                         <p className="text-slate-500 text-sm mt-3">We aim to respond to all privacy inquiries within 48 hours during business days.</p>
                     </div>
                     <p className="text-slate-600 mt-6 leading-relaxed">

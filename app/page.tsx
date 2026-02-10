@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   description: "Calculate your Return on Ad Spend (ROAS), Break-Even Point, and Net Profit instantly. The best free tool for Facebook Ads, Google Ads, and dropshipping.",
   keywords: ["roas calculator", "facebook ads profit calculator", "break even roas formula", "dropshipping calculator", "marketing roi tool"],
   alternates: {
-    canonical: "https://roas-calculator-brown.vercel.app/",
+    canonical: "https://roas-calculator.tech/",
   },
 };
 
@@ -18,15 +18,15 @@ export default function Home() {
     "@type": "WebApplication",
     "name": "ROAS Calculator - Free Tool for Digital Marketing",
     "description": "Calculate your Return on Ad Spend (ROAS), Break-Even Point, and Net Profit instantly. The best free tool for Facebook Ads, Google Ads, and dropshipping.",
-    "url": "https://roas-calculator-brown.vercel.app/",
+    "url": "https://roas-calculator.tech/",
     "applicationCategory": "FinanceApplication",
     "author": {
       "@type": "Organization",
       "name": "ROAS Tools",
-      "url": "https://roas-calculator-brown.vercel.app/",
+      "url": "https://roas-calculator.tech/",
       "sameAs": [
-        "https://roas-calculator-brown.vercel.app/about",
-        "https://roas-calculator-brown.vercel.app/contact"
+        "https://roas-calculator.tech/about",
+        "https://roas-calculator.tech/contact"
       ]
     },
     "offers": {

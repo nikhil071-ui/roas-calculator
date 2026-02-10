@@ -136,7 +136,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       nocache: false,
     },
     alternates: {
-      canonical: `https://roas-calculator-brown.vercel.app/currency/${resolvedParams.slug}`,
+      canonical: `https://roas-calculator.tech/currency/${resolvedParams.slug}`,
     },
     openGraph: {
       title: data.title,

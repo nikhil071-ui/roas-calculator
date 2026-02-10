@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: '/private/',
     },
-    sitemap: 'https://roas-calculator-brown.vercel.app/sitemap.xml',
+    sitemap: 'https://roas-calculator.tech/sitemap.xml',
   };
 }

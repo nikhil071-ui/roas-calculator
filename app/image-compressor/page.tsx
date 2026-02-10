@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   ],
   alternates: {
     // TODO: Update this to your actual custom domain for production
-    canonical: "https://roas-calculator-brown.vercel.app/image-compressor",
+    canonical: "https://roas-calculator.tech/image-compressor",
   },
   openGraph: {
     title: "Free Image Compressor - Reduce Size to 50KB / 20KB",

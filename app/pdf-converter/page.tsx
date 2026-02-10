@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     nocache: false,
   },
   alternates: {
-    canonical: "https://roas-calculator-brown.vercel.app/pdf-converter",
+    canonical: "https://roas-calculator.tech/pdf-converter",
   },
 };
 

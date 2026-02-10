@@ -162,7 +162,7 @@ export default function RoasClient() {
     doc.setFontSize(9);
     doc.setTextColor(150);
     doc.text("This report was generated using the Free ROAS Calculator.", width / 2, 280, { align: 'center' });
-    doc.text("https://roas-calculator-brown.vercel.app", width / 2, 285, { align: 'center' });
+    doc.text("https://roas-calculator.tech", width / 2, 285, { align: 'center' });
 
     doc.save("ROAS_Professional_Report.pdf");
   };

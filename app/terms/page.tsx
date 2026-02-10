@@ -47,7 +47,7 @@ export default function TermsOfService() {
                 <h2 className="text-2xl font-bold text-slate-900 mb-4">1. Acceptance of Terms</h2>
                 <p className="text-slate-700 leading-relaxed mb-4">
                     By accessing or using ROAS Tools (the "Service"), including all calculators, converters, and utility tools 
-                    available at roas-calculator-brown.vercel.app (the "Website"), you agree to be bound by these Terms of Service 
+                    available at roas-calculator.tech (the "Website"), you agree to be bound by these Terms of Service 
                     ("Terms"). If you do not agree to these Terms, you must not use the Service.
                 </p>
                 <p className="text-slate-700 leading-relaxed">
@@ -298,7 +298,7 @@ export default function TermsOfService() {
                 </p>
                 <div className="space-y-2 text-slate-700">
                     <p><strong>Email:</strong> <a href="mailto:luckmatters199@gmail.com" className="text-blue-600 underline">luckmatters199@gmail.com</a></p>
-                    <p><strong>Website:</strong> <a href="/" className="text-blue-600 underline">roas-calculator-brown.vercel.app</a></p>
+                    <p><strong>Website:</strong> <a href="/" className="text-blue-600 underline">roas-calculator.tech</a></p>
                     <p><strong>Response Time:</strong> Within 24-48 hours (business days)</p>
                 </div>
             </section>
