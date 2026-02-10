@@ -57,6 +57,19 @@ export default function CurrencyPage() {
               </a>
             </div>
 
+            {/* QUICK HELP */}
+            <div className="bg-white rounded-xl border border-slate-200 p-6 mt-6 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+              <div>
+                <h3 className="text-lg font-bold text-slate-900">Need quick answers?</h3>
+                <p className="text-slate-600">See spreads, fees, and transfer tips.</p>
+              </div>
+              <div className="flex flex-wrap gap-3">
+                <a href="/currency-converter/faq" className="bg-slate-900 text-white px-4 py-2 rounded-lg font-semibold hover:bg-slate-800 transition">Currency FAQ</a>
+                <a href="/resources" className="bg-blue-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-blue-700 transition">Free Resources</a>
+                <a href="/comparisons" className="bg-emerald-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-emerald-700 transition">Tool Comparisons</a>
+              </div>
+            </div>
+
             {/* SEO ARTICLE */}
             <article className="prose lg:prose-xl bg-white p-8 md:p-12 rounded-2xl shadow-sm border border-gray-100 max-w-none text-gray-700 mt-12">
                 <h2 className="text-2xl font-bold text-slate-900 mb-4">Understanding Exchange Rates</h2>

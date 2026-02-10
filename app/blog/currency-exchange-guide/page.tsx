@@ -343,6 +343,27 @@ export default function CurrencyExchangeGuide() {
             </p>
           </section>
 
+          <section>
+            <h2 className="text-3xl font-bold text-slate-900">Sources</h2>
+            <ul className="list-disc pl-5 space-y-2 text-slate-700">
+              <li>
+                <a href="https://www.bis.org/statistics/rpfx23.htm" target="_blank" rel="noopener noreferrer" className="text-blue-700 hover:underline">
+                  BIS Triennial Survey (forex market size)
+                </a>
+              </li>
+              <li>
+                <a href="https://www.federalreserve.gov/" target="_blank" rel="noopener noreferrer" className="text-blue-700 hover:underline">
+                  Federal Reserve (interest rate impacts)
+                </a>
+              </li>
+              <li>
+                <a href="https://www.ecb.europa.eu/" target="_blank" rel="noopener noreferrer" className="text-blue-700 hover:underline">
+                  European Central Bank (currency policy context)
+                </a>
+              </li>
+            </ul>
+          </section>
+
           <div className="bg-linear-to-r from-green-50 to-blue-50 rounded-xl p-8 border border-green-200 mt-12">
             <h3 className="text-xl font-bold text-slate-900 mb-3">Convert Currencies</h3>
             <p className="text-slate-700 mb-4">

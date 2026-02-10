@@ -1,0 +1,18 @@
+PDF Compression Checklist
+
+1) Use case
+- Screen viewing: 100-150 DPI
+- Archive: 150-200 DPI
+- Print: 300 DPI
+
+2) Image settings
+- Convert to JPEG inside PDF when possible
+- Use grayscale for scanned text
+
+3) Metadata cleanup
+- Remove unused fonts and color profiles
+- Remove embedded previews
+
+4) Final verification
+- Check legibility on mobile and desktop
+- Confirm file size limits before upload

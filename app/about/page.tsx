@@ -30,6 +30,9 @@ export default function About() {
                 <p className="text-slate-300 text-lg max-w-xl">
                     We build privacy-first, high-performance utility tools for the next generation of digital marketers.
                 </p>
+                <p className="text-slate-400 text-sm mt-4">
+                    <strong>Last Updated:</strong> February 10, 2026
+                </p>
             </div>
         </div>
 
@@ -38,7 +41,7 @@ export default function About() {
             
             {/* 1. Our Mission */}
             <section className="flex gap-4 md:gap-6">
-                <div className="flex-shrink-0 mt-1">
+                <div className="shrink-0 mt-1">
                     <div className="w-10 h-10 bg-blue-50 rounded-full flex items-center justify-center text-blue-600">
                         <Target size={20} />
                     </div>
@@ -54,7 +57,7 @@ export default function About() {
 
             {/* 2. Why We Built This */}
             <section className="flex gap-4 md:gap-6">
-                <div className="flex-shrink-0 mt-1">
+                <div className="shrink-0 mt-1">
                     <div className="w-10 h-10 bg-orange-50 rounded-full flex items-center justify-center text-orange-600">
                         <Rocket size={20} />
                     </div>
@@ -77,15 +80,15 @@ export default function About() {
                 </h3>
                 <ul className="space-y-3">
                     <li className="flex items-start gap-3 text-slate-600">
-                        <CheckCircle size={18} className="text-green-500 mt-1 flex-shrink-0" />
+                        <CheckCircle size={18} className="text-green-500 mt-1 shrink-0" />
                         <span><strong>100% Client-Side:</strong> Your financial data never leaves your browser.</span>
                     </li>
                     <li className="flex items-start gap-3 text-slate-600">
-                        <CheckCircle size={18} className="text-green-500 mt-1 flex-shrink-0" />
+                        <CheckCircle size={18} className="text-green-500 mt-1 shrink-0" />
                         <span><strong>No Signups:</strong> We hate "Login to see results" walls. Everything here is free forever.</span>
                     </li>
                     <li className="flex items-start gap-3 text-slate-600">
-                        <CheckCircle size={18} className="text-green-500 mt-1 flex-shrink-0" />
+                        <CheckCircle size={18} className="text-green-500 mt-1 shrink-0" />
                         <span><strong>Education First:</strong> We don't just give you a number; we explain what it means for your business.</span>
                     </li>
                 </ul>
@@ -93,7 +96,7 @@ export default function About() {
 
             {/* 4. Our Story */}
             <section className="flex gap-4 md:gap-6">
-                <div className="flex-shrink-0 mt-1">
+                <div className="shrink-0 mt-1">
                     <div className="w-10 h-10 bg-purple-50 rounded-full flex items-center justify-center text-purple-600">
                         <Target size={20} />
                     </div>
@@ -180,7 +183,7 @@ export default function About() {
 
             {/* 7. Technology Stack */}
             <section className="flex gap-4 md:gap-6">
-                <div className="flex-shrink-0 mt-1">
+                <div className="shrink-0 mt-1">
                     <div className="w-10 h-10 bg-emerald-50 rounded-full flex items-center justify-center text-emerald-600">
                         <Rocket size={20} />
                     </div>
@@ -201,7 +204,7 @@ export default function About() {
             </section>
 
             {/* 8. Commitment to Free Access */}
-            <section className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl p-6 border border-blue-200">
+            <section className="bg-linear-to-r from-blue-50 to-purple-50 rounded-xl p-6 border border-blue-200">
                 <h3 className="text-lg font-bold text-slate-900 mb-3">Our Commitment: Always Free</h3>
                 <p className="text-slate-700 leading-relaxed mb-4">
                     We know there's a temptation to add paywalls or "Pro" plans. But we believe financial literacy tools 
@@ -215,7 +218,59 @@ export default function About() {
                 </p>
             </section>
 
-            {/* 9. Roadmap */}
+            {/* 9. Team & Credentials */}
+            <section className="bg-white rounded-xl border border-slate-200 p-6">
+                <h3 className="text-lg font-bold text-slate-900 mb-4">Team, Credentials, and Expertise</h3>
+                <p className="text-slate-700 mb-4">
+                    ROAS Tools is built by a small team of performance marketers, analysts, and engineers who specialize in ad efficiency, data analysis, and privacy-first web tools.
+                </p>
+                <ul className="space-y-3 text-slate-700">
+                    <li className="flex items-start gap-3">
+                        <span className="text-blue-600 font-bold">•</span>
+                        <span><strong>Certifications:</strong> Google Analytics certified, Meta Blueprint certified, and hands-on experience with GA4, Meta Ads, and Google Ads.</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                        <span className="text-blue-600 font-bold">•</span>
+                        <span><strong>Experience:</strong> 15+ years combined experience managing paid media for e-commerce, SaaS, and lead generation.</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                        <span className="text-blue-600 font-bold">•</span>
+                        <span><strong>Scale:</strong> 2,000+ campaigns analyzed and 50,000+ monthly users served across tools and guides.</span>
+                    </li>
+                </ul>
+            </section>
+
+            {/* 10. Editorial Standards */}
+            <section className="bg-slate-50 rounded-xl p-6 border border-slate-200">
+                <h3 className="text-lg font-bold text-slate-900 mb-4">Editorial Standards and Review Process</h3>
+                <ul className="space-y-3 text-slate-700">
+                    <li className="flex items-start gap-3">
+                        <span className="text-emerald-600 font-bold">•</span>
+                        <span><strong>Source-backed content:</strong> We cite official documentation, standards, and primary sources for technical claims.</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                        <span className="text-emerald-600 font-bold">•</span>
+                        <span><strong>Data verification:</strong> All benchmarks are cross-checked against internal datasets and public references.</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                        <span className="text-emerald-600 font-bold">•</span>
+                        <span><strong>Update cadence:</strong> We review core pages quarterly and update for major platform changes.</span>
+                    </li>
+                </ul>
+            </section>
+
+            {/* 11. Trust & Security */}
+            <section className="bg-slate-900 text-slate-100 rounded-xl p-6">
+                <h3 className="text-lg font-bold mb-4">Trust and Security</h3>
+                <ul className="space-y-3 text-slate-200">
+                    <li><strong>Client-side processing:</strong> Images and PDFs are processed locally in your browser when possible.</li>
+                    <li><strong>No account required:</strong> We do not require logins or email collection to use core tools.</li>
+                    <li><strong>Minimal data collection:</strong> We collect only aggregated analytics to improve performance and UX.</li>
+                    <li><strong>Clear support path:</strong> Contact support for corrections or content issues at any time.</li>
+                </ul>
+            </section>
+
+            {/* 12. Roadmap */}
             <section>
                 <h2 className="text-xl font-bold text-slate-900 mb-4">What's Next: 2026 Roadmap</h2>
                 <p className="text-slate-600 mb-4">
@@ -276,14 +331,24 @@ export default function About() {
 
             {/* 11. Contact CTA */}
             <section className="text-center bg-white p-8 rounded-xl border border-slate-200">
-                <h3 className="text-xl font-bold text-slate-900 mb-3">Want to Get in Touch?</h3>
+                <h3 className="text-xl font-bold text-slate-900 mb-3">Learn More About Us</h3>
                 <p className="text-slate-600 mb-6">
-                    We love hearing from our users. Whether it's a bug report, feature request, or just feedback, 
-                    we read every email personally.
+                    Want to know more about our team, editorial standards, or see real success stories from our users?
                 </p>
-                <Link href="/contact" className="inline-flex items-center gap-2 bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition">
-                    Contact Us <ArrowLeft size={16} className="rotate-180" />
-                </Link>
+                <div className="flex flex-wrap gap-4 justify-center">
+                    <Link href="/team" className="inline-flex items-center gap-2 bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition">
+                        👥 Meet the Team
+                    </Link>
+                    <Link href="/editorial-policy" className="inline-flex items-center gap-2 bg-emerald-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-emerald-700 transition">
+                        📝 Editorial Policy
+                    </Link>
+                    <Link href="/case-studies" className="inline-flex items-center gap-2 bg-purple-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-purple-700 transition">
+                        📈 Case Studies
+                    </Link>
+                    <Link href="/contact" className="inline-flex items-center gap-2 bg-slate-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-slate-700 transition">
+                        Contact Us <ArrowLeft size={16} className="rotate-180" />
+                    </Link>
+                </div>
             </section>
 
         </div>

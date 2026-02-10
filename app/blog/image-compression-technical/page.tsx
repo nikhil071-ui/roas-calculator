@@ -361,6 +361,27 @@ export default function ImageCompressionTechnical() {
             </p>
           </section>
 
+          <section>
+            <h2 className="text-3xl font-bold text-slate-900">Sources</h2>
+            <ul className="list-disc pl-5 space-y-2 text-slate-700">
+              <li>
+                <a href="https://www.w3.org/Graphics/JPEG/itu-t81.pdf" target="_blank" rel="noopener noreferrer" className="text-blue-700 hover:underline">
+                  ITU-T T.81 JPEG standard (DCT and quantization)
+                </a>
+              </li>
+              <li>
+                <a href="https://developers.google.com/speed/webp" target="_blank" rel="noopener noreferrer" className="text-blue-700 hover:underline">
+                  Google WebP documentation
+                </a>
+              </li>
+              <li>
+                <a href="https://aomediacodec.github.io/av1-avif/" target="_blank" rel="noopener noreferrer" className="text-blue-700 hover:underline">
+                  AVIF specification (AOMedia)
+                </a>
+              </li>
+            </ul>
+          </section>
+
           <div className="bg-linear-to-r from-purple-50 to-blue-50 rounded-xl p-8 border border-purple-200 mt-12">
             <h3 className="text-xl font-bold text-slate-900 mb-3">Compress Your Images</h3>
             <p className="text-slate-700 mb-4">

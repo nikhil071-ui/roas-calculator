@@ -408,6 +408,27 @@ export default function RoasBenchmarks() {
             </p>
           </section>
 
+          <section>
+            <h2 className="text-3xl font-bold text-slate-900">Sources</h2>
+            <ul className="list-disc pl-5 space-y-2 text-slate-700">
+              <li>
+                <a href="https://www.facebook.com/business/help" target="_blank" rel="noopener noreferrer" className="text-blue-700 hover:underline">
+                  Meta Business Help Center (ads optimization references)
+                </a>
+              </li>
+              <li>
+                <a href="https://support.google.com/google-ads/answer/2684489" target="_blank" rel="noopener noreferrer" className="text-blue-700 hover:underline">
+                  Google Ads Help: Conversion value and ROAS concepts
+                </a>
+              </li>
+              <li>
+                <a href="https://support.shopify.com/en/manual/reports-and-analytics" target="_blank" rel="noopener noreferrer" className="text-blue-700 hover:underline">
+                  Shopify Analytics documentation (e-commerce performance context)
+                </a>
+              </li>
+            </ul>
+          </section>
+
           <div className="bg-linear-to-r from-slate-50 to-blue-50 rounded-xl p-8 border border-slate-200 mt-12">
             <h3 className="text-xl font-bold text-slate-900 mb-3">Calculate Your ROAS Now</h3>
             <p className="text-slate-700 mb-4">

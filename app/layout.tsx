@@ -110,6 +110,46 @@ export default function RootLayout({
             })
           }}
         />
+        
+        {/* --- ORGANIZATION SCHEMA --- */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              "name": "ROAS Tools",
+              "alternateName": "ROAS Tools Digital Solutions",
+              "url": "https://roas-calculator-brown.vercel.app",
+              "logo": "https://roas-calculator-brown.vercel.app/favicon.ico",
+              "foundingDate": "2024",
+              "description": "Privacy-first digital marketing tools and financial calculators for marketers, entrepreneurs, and students worldwide.",
+              "email": "luckmatters199@gmail.com",
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Mumbai",
+                "addressRegion": "Maharashtra",
+                "addressCountry": "IN"
+              },
+              "sameAs": [
+                "https://github.com/nikhil071-ui/roas-calculator"
+              ],
+              "founder": {
+                "@type": "Person",
+                "name": "Sanjay Kumar",
+                "jobTitle": "Founder & Lead Developer"
+              },
+              "knowsAbout": [
+                "Digital Marketing",
+                "Return on Ad Spend (ROAS)",
+                "Performance Marketing",
+                "Image Compression",
+                "PDF Conversion",
+                "Currency Exchange"
+              ]
+            })
+          }}
+        />
 
         {/* --- GLOBAL NAVBAR --- */}
         <nav className="bg-white border-b border-gray-200 sticky top-0 z-50 shadow-sm">
@@ -170,19 +210,24 @@ export default function RootLayout({
               <h4 className="text-white font-bold mb-4 uppercase tracking-wider text-xs">Company</h4>
               <ul className="space-y-3">
                 <li><Link href="/blog" className="hover:text-white transition">📰 Blog</Link></li>
+                <li><Link href="/resources" className="hover:text-white transition">📥 Resources</Link></li>
+                <li><Link href="/comparisons" className="hover:text-white transition">📊 Comparisons</Link></li>
                 <li><Link href="/about" className="hover:text-white transition">About Us</Link></li>
-                <li><Link href="/faq" className="hover:text-white transition">FAQ</Link></li>
+                <li><Link href="/team" className="hover:text-white transition">👥 Our Team</Link></li>
+                <li><Link href="/case-studies" className="hover:text-white transition">📈 Case Studies</Link></li>
+                <li><Link href="/testimonials" className="hover:text-white transition">⭐ Testimonials</Link></li>
+                <li><Link href="/glossary" className="hover:text-white transition">📖 Glossary</Link></li>
                 <li><Link href="/contact" className="hover:text-white transition">Contact Support</Link></li>
-                <li><Link href="/contact" className="hover:text-white transition">Report a Bug</Link></li>
               </ul>
             </div>
 
             {/* Column 4: Legal & Trust */}
             <div>
-              <h4 className="text-white font-bold mb-4 uppercase tracking-wider text-xs">Legal</h4>
+              <h4 className="text-white font-bold mb-4 uppercase tracking-wider text-xs">Legal & Trust</h4>
               <ul className="space-y-3">
                 <li><Link href="/privacy-policy" className="hover:text-white transition">Privacy Policy</Link></li>
                 <li><Link href="/terms" className="hover:text-white transition">Terms of Service</Link></li>
+                <li><Link href="/editorial-policy" className="hover:text-white transition">Editorial Policy</Link></li>
                 <li><Link href="/privacy-policy" className="hover:text-white transition">Cookie Policy</Link></li>
               </ul>
             </div>

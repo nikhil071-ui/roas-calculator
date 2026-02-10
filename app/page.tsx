@@ -123,6 +123,45 @@ export default function Home() {
               </div>
             </section>
 
+            {/* --- RESOURCES & SUPPORT --- */}
+            <section className="mt-4 mb-12">
+              <h2 className="text-xl font-bold text-slate-900 mb-4 text-center">Resources and Help</h2>
+              <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-4">
+                <Link href="/blog" className="group block bg-white p-5 rounded-xl shadow-sm border border-gray-200 hover:border-blue-500 hover:shadow-lg transition text-center">
+                  <h3 className="font-bold text-slate-800 group-hover:text-blue-600">📰 Expert Blog</h3>
+                  <p className="text-xs text-gray-500 mt-2">Guides, case studies, and benchmarks.</p>
+                </Link>
+                <Link href="/roas/faq" className="group block bg-white p-5 rounded-xl shadow-sm border border-gray-200 hover:border-slate-700 hover:shadow-lg transition text-center">
+                  <h3 className="font-bold text-slate-800 group-hover:text-slate-900">❓ FAQs</h3>
+                  <p className="text-xs text-gray-500 mt-2">Quick answers for each tool.</p>
+                </Link>
+                <Link href="/resources" className="group block bg-white p-5 rounded-xl shadow-sm border border-gray-200 hover:border-emerald-500 hover:shadow-lg transition text-center">
+                  <h3 className="font-bold text-slate-800 group-hover:text-emerald-600">📥 Free Downloads</h3>
+                  <p className="text-xs text-gray-500 mt-2">Templates and checklists.</p>
+                </Link>
+                <Link href="/comparisons" className="group block bg-white p-5 rounded-xl shadow-sm border border-gray-200 hover:border-purple-500 hover:shadow-lg transition text-center">
+                  <h3 className="font-bold text-slate-800 group-hover:text-purple-600">📊 Tool Comparisons</h3>
+                  <p className="text-xs text-gray-500 mt-2">Transparent feature comparisons.</p>
+                </Link>
+                <Link href="/testimonials" className="group block bg-white p-5 rounded-xl shadow-sm border border-gray-200 hover:border-yellow-500 hover:shadow-lg transition text-center">
+                  <h3 className="font-bold text-slate-800 group-hover:text-yellow-600">⭐ Testimonials</h3>
+                  <p className="text-xs text-gray-500 mt-2">What users say about us.</p>
+                </Link>
+                <Link href="/case-studies" className="group block bg-white p-5 rounded-xl shadow-sm border border-gray-200 hover:border-indigo-500 hover:shadow-lg transition text-center">
+                  <h3 className="font-bold text-slate-800 group-hover:text-indigo-600">📈 Case Studies</h3>
+                  <p className="text-xs text-gray-500 mt-2">Real success stories from users.</p>
+                </Link>
+                <Link href="/glossary" className="group block bg-white p-5 rounded-xl shadow-sm border border-gray-200 hover:border-orange-500 hover:shadow-lg transition text-center">
+                  <h3 className="font-bold text-slate-800 group-hover:text-orange-600">📖 Glossary</h3>
+                  <p className="text-xs text-gray-500 mt-2">Marketing terms explained.</p>
+                </Link>
+                <Link href="/about" className="group block bg-white p-5 rounded-xl shadow-sm border border-gray-200 hover:border-teal-500 hover:shadow-lg transition text-center">
+                  <h3 className="font-bold text-slate-800 group-hover:text-teal-600">👥 About Us</h3>
+                  <p className="text-xs text-gray-500 mt-2">Meet our expert team.</p>
+                </Link>
+              </div>
+            </section>
+
             {/* --- SEO CONTENT --- */}
             <article className="prose lg:prose-xl bg-white p-8 md:p-12 rounded-2xl shadow-sm border border-gray-100 max-w-none text-gray-700 mt-12">
                 <h2 className="text-3xl font-bold text-slate-900 mb-6">Complete Guide to ROAS: Calculation, Formulas & Strategy (2026)</h2>

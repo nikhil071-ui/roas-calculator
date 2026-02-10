@@ -81,6 +81,21 @@ export default function ImageCompressorPage() {
         </div>
       </div>
 
+      {/* QUICK HELP */}
+      <div className="max-w-5xl mx-auto mt-6 px-4">
+        <div className="bg-white rounded-xl border border-slate-200 p-6 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+          <div>
+            <h3 className="text-lg font-bold text-slate-900">Need quick answers?</h3>
+            <p className="text-slate-600">See size rules, formats, and troubleshooting tips.</p>
+          </div>
+          <div className="flex flex-wrap gap-3">
+            <Link href="/image-compressor/faq" className="bg-slate-900 text-white px-4 py-2 rounded-lg font-semibold hover:bg-slate-800 transition">Image FAQ</Link>
+            <Link href="/resources" className="bg-blue-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-blue-700 transition">Free Resources</Link>
+            <Link href="/comparisons" className="bg-emerald-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-emerald-700 transition">Tool Comparisons</Link>
+          </div>
+        </div>
+      </div>
+
       {/* --- SEO CONTENT (High Value Publisher Content) --- */}
       <article className="max-w-4xl mx-auto mt-12 bg-white p-8 md:p-12 rounded-2xl shadow-sm border border-gray-200 prose lg:prose-lg text-gray-700">
         <h2 className="text-3xl font-bold text-slate-900">

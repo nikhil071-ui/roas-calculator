@@ -67,6 +67,21 @@ export default function PdfConverterPage() {
         </div>
       </div>
 
+      {/* QUICK HELP */}
+      <div className="max-w-6xl mx-auto mt-6 px-4">
+        <div className="bg-white rounded-xl border border-slate-200 p-6 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+          <div>
+            <h3 className="text-lg font-bold text-slate-900">Need quick answers?</h3>
+            <p className="text-slate-600">Check size limits, DPI guidance, and file tips.</p>
+          </div>
+          <div className="flex flex-wrap gap-3">
+            <Link href="/pdf-converter/faq" className="bg-slate-900 text-white px-4 py-2 rounded-lg font-semibold hover:bg-slate-800 transition">PDF FAQ</Link>
+            <Link href="/resources" className="bg-blue-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-blue-700 transition">Free Resources</Link>
+            <Link href="/comparisons" className="bg-emerald-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-emerald-700 transition">Tool Comparisons</Link>
+          </div>
+        </div>
+      </div>
+
       {/* --- POPULAR PDF PAGES (BOOST INDEXING) --- */}
       <section className="max-w-6xl mx-auto mt-8 px-4">
         <div className="bg-white rounded-2xl border border-gray-200 shadow-sm p-6">

@@ -362,6 +362,27 @@ export default function PDFCompressionGuide() {
             </p>
           </section>
 
+          <section>
+            <h2 className="text-3xl font-bold text-slate-900">Sources</h2>
+            <ul className="list-disc pl-5 space-y-2 text-slate-700">
+              <li>
+                <a href="https://www.iso.org/standard/51502.html" target="_blank" rel="noopener noreferrer" className="text-blue-700 hover:underline">
+                  ISO 32000-2 (PDF 2.0 specification)
+                </a>
+              </li>
+              <li>
+                <a href="https://www.adobe.com/acrobat/resources/what-is-pdf.html" target="_blank" rel="noopener noreferrer" className="text-blue-700 hover:underline">
+                  Adobe PDF overview and best practices
+                </a>
+              </li>
+              <li>
+                <a href="https://www.ghostscript.com/doc/current/Use.htm" target="_blank" rel="noopener noreferrer" className="text-blue-700 hover:underline">
+                  Ghostscript documentation (compression settings)
+                </a>
+              </li>
+            </ul>
+          </section>
+
           <div className="bg-linear-to-r from-red-50 to-orange-50 rounded-xl p-8 border border-red-200 mt-12">
             <h3 className="text-xl font-bold text-slate-900 mb-3">Compress a PDF</h3>
             <p className="text-slate-700 mb-4">

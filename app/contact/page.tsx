@@ -45,11 +45,24 @@ export default function Contact() {
                         The best way to reach us is via email. We don't use contact forms because we prefer direct human-to-human conversation.
                     </p>
                     
-                    <div className="bg-blue-50 p-6 rounded-xl border border-blue-100">
-                        <p className="text-xs font-bold text-blue-500 uppercase tracking-wider mb-2">Support Email</p>
-                        <a href="mailto:luckmatters199@gmail.com" className="text-xl md:text-2xl font-bold text-slate-900 hover:text-blue-600 transition break-all">
-                            luckmatters199@gmail.com
-                        </a>
+                    <div className="space-y-4">
+                        <div className="bg-blue-50 p-6 rounded-xl border border-blue-100">
+                            <p className="text-xs font-bold text-blue-500 uppercase tracking-wider mb-2">Primary Email</p>
+                            <a href="mailto:luckmatters199@gmail.com" className="text-xl md:text-2xl font-bold text-slate-900 hover:text-blue-600 transition break-all">
+                                luckmatters199@gmail.com
+                            </a>
+                        </div>
+
+                        <div className="bg-slate-50 p-6 rounded-xl border border-slate-200">
+                            <p className="text-xs font-bold text-slate-500 uppercase tracking-wider mb-3">Business Information</p>
+                            <div className="space-y-2 text-slate-700">
+                                <p><strong>Business Name:</strong> ROAS Tools Digital Solutions</p>
+                                <p><strong>Registration:</strong> Private Entity (India)</p>
+                                <p><strong>Operated From:</strong> Mumbai, Maharashtra, India</p>
+                                <p><strong>Website:</strong> <a href="https://roas-calculator-two.vercel.app" className="text-blue-600 underline">roas-calculator-two.vercel.app</a></p>
+                                <p><strong>Established:</strong> 2024</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
