@@ -298,7 +298,7 @@ export default function TermsOfService() {
                 </p>
                 <div className="space-y-2 text-slate-700">
                     <p><strong>Email:</strong> <a href="mailto:luckmatters199@gmail.com" className="text-blue-600 underline">luckmatters199@gmail.com</a></p>
-                    <p><strong>Website:</strong> <a href="/" className="text-blue-600 underline">roas-calculator.tech</a></p>
+                    <p><strong>Website:</strong> <Link href="/" className="text-blue-600 underline">roas-calculator.tech</Link></p>
                     <p><strong>Response Time:</strong> Within 24-48 hours (business days)</p>
                 </div>
             </section>

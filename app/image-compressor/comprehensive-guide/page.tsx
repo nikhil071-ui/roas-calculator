@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowLeft, Award, Target, Zap } from "lucide-react";
+import { ArrowLeft, Award } from "lucide-react";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -601,7 +601,7 @@ export default function ImageCompressorGuide() {
 
             <h3 className="text-2xl font-semibold text-slate-800 mt-6">Step 3: Upload to ROAS Calculator's Image Compressor</h3>
             <ol className="list-decimal pl-5 space-y-3 mt-3">
-              <li>Go to <a href="/image-compressor" className="text-blue-600 hover:underline">roas-calculator.tech/image-compressor</a></li>
+              <li>Go to <Link href="/image-compressor" className="text-blue-600 hover:underline">roas-calculator.tech/image-compressor</Link></li>
               <li>Click the upload box or drag your image file</li>
               <li>Our tool automatically starts compressing in real-time</li>
             </ol>
@@ -746,9 +746,9 @@ export default function ImageCompressorGuide() {
             <p className="text-slate-700 mb-4">
               Visit our free Image Compressor tool to instantly reduce your photo to the exact size needed for your government exam or application.
             </p>
-            <a href="/image-compressor" className="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition">
+            <Link href="/image-compressor" className="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition">
               Use Image Compressor Tool
-            </a>
+            </Link>
           </div>
         </article>
       </main>

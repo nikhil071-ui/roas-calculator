@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 // Go up two levels to 'app' to find the RoasClient (It is in the root app folder)

@@ -226,7 +226,7 @@ export default function PrivacyPolicy() {
                         Our website and tools are intended for general audiences and are not directed at children under the age of 13. We do not knowingly collect personal information from children under 13.
                     </p>
                     <p className="text-slate-600 leading-relaxed">
-                        If you are a parent or guardian and believe that your child has provided us with personal information, please contact us immediately at <strong>luckmatters199@gmail.com</strong>. Although we do not collect personal data through our tools, if we discover that a child under 13 has submitted information via our contact form, we will take steps to delete such information promptly.
+                        If you are a parent or guardian and believe that your child has provided us with personal information, please contact us immediately at <strong>luckmatters199@gmail.com</strong>. Although we do not collect personal data through our tools, if we discover that a child under 13 has submitted personal information to us by email, we will take steps to delete such information promptly.
                     </p>
                     <div className="bg-amber-50 border border-amber-200 p-4 rounded-lg mt-4 text-amber-900 text-sm">
                         <strong>Note for Students:</strong> If you are under 18, please seek parental permission before using our image compression tools for exam applications.

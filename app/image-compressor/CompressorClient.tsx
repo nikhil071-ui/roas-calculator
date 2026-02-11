@@ -69,8 +69,7 @@ export default function CompressorClient() {
     try {
       const compressedFile = await imageCompression(file, options);
       setCompressedImage(compressedFile);
-    } catch (error) {
-      console.log(error);
+    } catch {
       alert("Error compressing image. Try a different file.");
     }
     setIsCompressing(false);

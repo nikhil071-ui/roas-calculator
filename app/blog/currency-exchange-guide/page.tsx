@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowLeft, DollarSign, TrendingUp } from "lucide-react";
+import { ArrowLeft, DollarSign } from "lucide-react";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {

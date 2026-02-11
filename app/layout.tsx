@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import Link from "next/link";
 import Script from "next/script";
@@ -14,9 +14,8 @@ export const metadata: Metadata = {
     default: "Free Online Tools | ROAS Calc, Image Compressor & PDF Maker",
     template: "%s | ROAS Tools",
   },
-  description: "Free all-in-one toolkit: Calculate ROAS, Compress Images to 50KB, and Convert JPG to PDF under 2MB. Fast, private, and works offline.",
+  description: "Free all-in-one toolkit: Calculate ROAS, Compress Images to 50KB, and Convert JPG to PDF under 2MB. Fast, private, and core file tools work offline after load.",
   keywords: ["roas calculator", "image compressor 50kb", "jpg to pdf under 2mb", "online tools india", "free pdf maker", "currency converter live"],
-  viewport: "width=device-width, initial-scale=1, maximum-scale=5",
   robots: {
     index: true,
     follow: true,
@@ -37,6 +36,12 @@ export const metadata: Metadata = {
       },
     ],
   },
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
 };
 
 export default function RootLayout({
@@ -228,7 +233,7 @@ export default function RootLayout({
                 <li><Link href="/privacy-policy" className="hover:text-white transition">Privacy Policy</Link></li>
                 <li><Link href="/terms" className="hover:text-white transition">Terms of Service</Link></li>
                 <li><Link href="/editorial-policy" className="hover:text-white transition">Editorial Policy</Link></li>
-                <li><Link href="/indexing" className="hover:text-white transition">Indexing Checklist</Link></li>
+                <li><Link href="/faq" className="hover:text-white transition">FAQ</Link></li>
                 <li><Link href="/privacy-policy" className="hover:text-white transition">Cookie Policy</Link></li>
               </ul>
             </div>

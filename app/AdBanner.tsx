@@ -2,6 +2,10 @@
 
 import { useEffect, useRef } from 'react';
 
+type AdSenseWindow = Window & {
+  adsbygoogle?: unknown[];
+};
+
 export default function AdBanner() {
   const adRef = useRef<HTMLModElement>(null);
 
@@ -9,7 +13,7 @@ export default function AdBanner() {
     try {
       // 1. Check if we are in the browser
       if (typeof window !== 'undefined') {
-        const adsbygoogle = (window as any).adsbygoogle || [];
+        const adsbygoogle = (window as AdSenseWindow).adsbygoogle || [];
         
         // 2. SAFETY CHECK: Only push if the ad slot is NOT already filled.
         // Google adds 'data-ad-status' attribute when an ad loads.
@@ -17,10 +21,7 @@ export default function AdBanner() {
           adsbygoogle.push({});
         }
       }
-    } catch (err) {
-      // This ignores the "benign" error if it happens
-      console.log('AdSense loaded.');
-    }
+    } catch {}
   }, []);
 
   return (

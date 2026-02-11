@@ -3,7 +3,7 @@
 import { useState } from "react";
 import jsPDF from "jspdf";
 import imageCompression from "browser-image-compression";
-import { Upload, FileText, Trash2, Download, Plus, RotateCw, Settings, Eye, X, CheckCircle, FileDigit } from "lucide-react";
+import { Upload, FileText, Trash2, Download, Plus, RotateCw, Settings, Eye, X, FileDigit } from "lucide-react";
 
 export default function PdfClient() {
   const [images, setImages] = useState<{ file: File; rotation: number; id: string }[]>([]);

@@ -16,7 +16,6 @@ export const metadata: Metadata = {
     "reduce photo size for signature",
   ],
   alternates: {
-    // TODO: Update this to your actual custom domain for production
     canonical: "https://roas-calculator.tech/image-compressor",
   },
   openGraph: {
@@ -511,9 +510,9 @@ export default function ImageCompressorPage() {
             <p className="text-sm text-slate-600 mb-3">
               Combine multiple images (ID proof, certificates) into a single PDF file under 2 MB for government applications.
             </p>
-            <a href="/pdf-converter" className="text-blue-600 font-semibold hover:underline text-sm">
+            <Link href="/pdf-converter" className="text-blue-600 font-semibold hover:underline text-sm">
               Go to PDF Converter →
-            </a>
+            </Link>
           </div>
 
           <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
@@ -533,9 +532,9 @@ export default function ImageCompressorPage() {
             We're here to help! If you're facing issues or need guidance on preparing photos for a specific exam, 
             reach out to us via email.
           </p>
-          <a href="/contact" className="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition">
+          <Link href="/contact" className="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition">
             Contact Support
-          </a>
+          </Link>
         </div>
       </article>
     </main>

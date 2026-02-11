@@ -524,9 +524,9 @@ export default function Home() {
                 <div className="bg-blue-50 p-6 rounded-xl border border-blue-200 mt-8">
                     <p className="font-bold text-blue-900 mb-2">📚 Further Reading</p>
                     <ul className="text-sm text-blue-800 space-y-1">
-                        <li>• <a href="#" className="underline hover:text-blue-600">Advanced Facebook Ads Scaling Strategies</a></li>
-                        <li>• <a href="#" className="underline hover:text-blue-600">Google Performance Max Optimization Guide</a></li>
-                        <li>• <a href="#" className="underline hover:text-blue-600">Multi-Touch Attribution Explained</a></li>
+                        <li>• <Link href="/blog/facebook-ads-case-study" className="underline hover:text-blue-600">Advanced Facebook Ads Scaling Strategies</Link></li>
+                        <li>• <Link href="/blog/roas-benchmarks" className="underline hover:text-blue-600">Google Performance Max Optimization Guide</Link></li>
+                        <li>• <Link href="/blog" className="underline hover:text-blue-600">Multi-Touch Attribution Explained</Link></li>
                     </ul>
                 </div>
 

@@ -340,7 +340,7 @@ export default function ImageCompressionGuide() {
 
             <h3 className="text-xl font-bold text-slate-900 mt-6">Step 2: Upload to Our Tool</h3>
             <ol className="list-decimal pl-5 space-y-2 mt-3">
-              <li>Go to <a href="/image-compressor" className="text-blue-600 hover:underline">/image-compressor</a></li>
+              <li>Go to <Link href="/image-compressor" className="text-blue-600 hover:underline">/image-compressor</Link></li>
               <li>Click upload or drag your photo</li>
               <li>Tool auto-starts compressing</li>
             </ol>

@@ -4,6 +4,16 @@ import { useState } from "react";
 import jsPDF from "jspdf";
 import { Download, Calculator, DollarSign, TrendingUp, AlertTriangle, RefreshCcw, ShoppingBag, BarChart3, RotateCcw } from "lucide-react";
 
+type RoasResults = {
+  roas: string;
+  profit: string;
+  profitMargin: string;
+  breakEven: string;
+  cpa: string;
+  aov: string;
+  isProfitable: boolean;
+};
+
 export default function RoasClient() {
   // Inputs
   const [adSpend, setAdSpend] = useState<number | string>("");
@@ -11,7 +21,7 @@ export default function RoasClient() {
   const [productCost, setProductCost] = useState<number | string>("");
   const [orders, setOrders] = useState<number | string>("");
 
-  const [results, setResults] = useState<any>(null);
+  const [results, setResults] = useState<RoasResults | null>(null);
 
   // --- CLEAR FUNCTION ---
   const resetFields = () => {
@@ -32,7 +42,7 @@ export default function RoasClient() {
 
     const roas = rev / spend;
     const profit = rev - spend - cost;
-    const breakEvenRoas = cost > 0 ? rev / (rev - cost) : 1; 
+    const breakEvenRoas = cost > 0 && rev - cost > 0 ? rev / (rev - cost) : null;
     const profitMargin = rev > 0 ? (profit / rev) * 100 : 0;
     
     const cpa = orderCount > 0 ? spend / orderCount : 0; 
@@ -42,7 +52,7 @@ export default function RoasClient() {
       roas: roas.toFixed(2),
       profit: profit.toFixed(2),
       profitMargin: profitMargin.toFixed(1),
-      breakEven: breakEvenRoas.toFixed(2),
+      breakEven: breakEvenRoas ? breakEvenRoas.toFixed(2) : "N/A",
       cpa: cpa.toFixed(2),
       aov: aov.toFixed(2),
       isProfitable: profit > 0
@@ -140,7 +150,7 @@ export default function RoasClient() {
     doc.setTextColor(0);
     doc.setFont("helvetica", "bold");
     doc.text(`${results.profitMargin}%`, col1, y);
-    doc.text(`${results.breakEven}x`, col2, y);
+    doc.text(results.breakEven === "N/A" ? results.breakEven : `${results.breakEven}x`, col2, y);
 
     // 4. INPUTS
     y += 30;
@@ -316,7 +326,9 @@ export default function RoasClient() {
                                 </div>
                                 <div className="flex justify-between items-center">
                                     <span className="text-slate-600 text-sm font-medium">Break-Even</span>
-                                    <span className="font-bold text-orange-600">{results.breakEven}x</span>
+                                    <span className="font-bold text-orange-600">
+                                      {results.breakEven === "N/A" ? results.breakEven : `${results.breakEven}x`}
+                                    </span>
                                 </div>
                             </div>
                         </div>

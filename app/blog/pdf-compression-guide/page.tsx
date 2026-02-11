@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowLeft, FileText, TrendingUp } from "lucide-react";
+import { ArrowLeft, FileText } from "lucide-react";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {

@@ -464,9 +464,9 @@ export default function PdfConverterPage() {
             <p className="text-sm text-slate-600 mb-3">
               Need to reduce individual photo sizes to 50 KB or 20 KB before creating a PDF? Use our Image Compressor first.
             </p>
-            <a href="/image-compressor" className="text-blue-600 font-semibold hover:underline text-sm">
+            <Link href="/image-compressor" className="text-blue-600 font-semibold hover:underline text-sm">
               Go to Image Compressor →
-            </a>
+            </Link>
           </div>
 
           <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
@@ -486,9 +486,9 @@ export default function PdfConverterPage() {
             If you're having trouble creating a PDF for a specific exam or portal, don't hesitate to reach out. 
             We've helped thousands of students and professionals successfully submit their applications.
           </p>
-          <a href="/contact" className="inline-block bg-green-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-700 transition">
+          <Link href="/contact" className="inline-block bg-green-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-700 transition">
             Get Support
-          </a>
+          </Link>
         </div>
       </article>
 

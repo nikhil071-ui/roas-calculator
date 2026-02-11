@@ -1,5 +1,12 @@
 import Link from "next/link";
 import { ArrowLeft, Globe, CheckCircle, ExternalLink } from "lucide-react";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Indexing Checklist",
+  description: "Internal checklist for submitting pages in Google Search Console.",
+  robots: "index, follow",
+};
 
 export default function Indexing() {
   return (

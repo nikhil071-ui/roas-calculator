@@ -273,7 +273,7 @@ export default function EditorialPolicy() {
         <div className="bg-slate-900 p-8 text-center text-slate-400 text-sm">
             <p>
                 This editorial policy is a living document. We review and update it as our standards evolve. 
-                <br />Questions about our editorial practices? <a href="/contact" className="text-blue-400 underline">Contact us</a>.
+                <br />Questions about our editorial practices? <Link href="/contact" className="text-blue-400 underline">Contact us</Link>.
             </p>
         </div>
 

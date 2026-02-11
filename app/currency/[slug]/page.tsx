@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 // Go up two levels to 'app', then into 'currency-converter' to find the tool

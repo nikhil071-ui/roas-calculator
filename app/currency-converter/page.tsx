@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import CurrencyClient from "./CurrencyClient";
+import Link from "next/link";
 // FIXED IMPORT: Go up two levels to find the shared AdBanner
 import AdBanner from "../AdBanner";
 
@@ -53,12 +54,12 @@ export default function CurrencyPage() {
               <p className="text-slate-700 mb-4">
                 Read our expert guide on exchange rates, spread costs, international transfers, and how to get the best conversion rates.
               </p>
-              <a 
+              <Link
                 href="/currency-converter/guide"
                 className="inline-block bg-emerald-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-emerald-700 transition"
               >
                 Read Complete Currency Guide →
-              </a>
+              </Link>
             </div>
 
             {/* QUICK HELP */}
@@ -68,9 +69,9 @@ export default function CurrencyPage() {
                 <p className="text-slate-600">See spreads, fees, and transfer tips.</p>
               </div>
               <div className="flex flex-wrap gap-3">
-                <a href="/currency-converter/faq" className="bg-slate-900 text-white px-4 py-2 rounded-lg font-semibold hover:bg-slate-800 transition">Currency FAQ</a>
-                <a href="/resources" className="bg-blue-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-blue-700 transition">Free Resources</a>
-                <a href="/comparisons" className="bg-emerald-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-emerald-700 transition">Tool Comparisons</a>
+                <Link href="/currency-converter/faq" className="bg-slate-900 text-white px-4 py-2 rounded-lg font-semibold hover:bg-slate-800 transition">Currency FAQ</Link>
+                <Link href="/resources" className="bg-blue-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-blue-700 transition">Free Resources</Link>
+                <Link href="/comparisons" className="bg-emerald-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-emerald-700 transition">Tool Comparisons</Link>
               </div>
             </div>
 
