@@ -7,9 +7,13 @@ export const metadata: Metadata = {
   title: "Free Currency Converter | USD to INR, EUR, GBP Live Rates",
   description: "Convert currency instantly with live exchange rates. Free tool for USD to INR, Euro, and more. Accurate and updated daily.",
   keywords: ["currency converter", "usd to inr", "live exchange rates", "money converter", "forex calculator"],
+    alternates: {
+        canonical: "https://roas-calculator.tech/currency-converter",
+    },
   openGraph: {
     title: "Free Currency Converter (Live Rates)",
     description: "Convert USD, INR, EUR, GBP instantly.",
+        url: "https://roas-calculator.tech/currency-converter",
   },
 };
 

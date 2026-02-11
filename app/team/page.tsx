@@ -1,5 +1,19 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowLeft, Award, BookOpen, Star, Briefcase } from "lucide-react";
+
+export const metadata: Metadata = {
+    title: "Our Team | ROAS Tools",
+    description: "Meet the experts behind ROAS Tools and learn about our experience in marketing analytics and performance tools.",
+    alternates: {
+        canonical: "https://roas-calculator.tech/team",
+    },
+    openGraph: {
+        title: "Our Team | ROAS Tools",
+        description: "Meet the experts behind ROAS Tools and learn about our experience in marketing analytics and performance tools.",
+        url: "https://roas-calculator.tech/team",
+    },
+};
 
 export default function Team() {
   return (

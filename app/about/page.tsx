@@ -1,5 +1,19 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { Info, ArrowLeft, Target, Rocket, Heart, CheckCircle } from "lucide-react";
+
+export const metadata: Metadata = {
+    title: "About ROAS Tools",
+    description: "Learn about ROAS Tools, our mission, and how we build privacy-first, high-performance marketing calculators.",
+    alternates: {
+        canonical: "https://roas-calculator.tech/about",
+    },
+    openGraph: {
+        title: "About ROAS Tools",
+        description: "Learn about ROAS Tools, our mission, and how we build privacy-first, high-performance marketing calculators.",
+        url: "https://roas-calculator.tech/about",
+    },
+};
 
 export default function About() {
   return (

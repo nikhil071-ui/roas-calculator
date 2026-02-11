@@ -1,5 +1,19 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowLeft, TrendingUp, Star, DollarSign, Target } from "lucide-react";
+
+export const metadata: Metadata = {
+    title: "Case Studies | ROAS Tools",
+    description: "Real success stories from marketers and businesses using ROAS Tools to improve profitability.",
+    alternates: {
+        canonical: "https://roas-calculator.tech/case-studies",
+    },
+    openGraph: {
+        title: "Case Studies | ROAS Tools",
+        description: "Real success stories from marketers and businesses using ROAS Tools to improve profitability.",
+        url: "https://roas-calculator.tech/case-studies",
+    },
+};
 
 export default function CaseStudies() {
   return (
