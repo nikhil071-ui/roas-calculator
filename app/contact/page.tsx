@@ -59,7 +59,7 @@ export default function Contact() {
                                 <p><strong>Business Name:</strong> ROAS Tools Digital Solutions</p>
                                 <p><strong>Registration:</strong> Private Entity (India)</p>
                                 <p><strong>Operated From:</strong> Mumbai, Maharashtra, India</p>
-                                <p><strong>Website:</strong> <a href="https://roas-calculator-two.vercel.app" className="text-blue-600 underline">roas-calculator-two.vercel.app</a></p>
+                                <p><strong>Website:</strong> <a href="https://roas-calculator.tech" className="text-blue-600 underline">roas-calculator.tech</a></p>
                                 <p><strong>Established:</strong> 2024</p>
                             </div>
                         </div>

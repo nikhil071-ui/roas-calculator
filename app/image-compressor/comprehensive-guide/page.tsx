@@ -601,7 +601,7 @@ export default function ImageCompressorGuide() {
 
             <h3 className="text-2xl font-semibold text-slate-800 mt-6">Step 3: Upload to ROAS Calculator's Image Compressor</h3>
             <ol className="list-decimal pl-5 space-y-3 mt-3">
-              <li>Go to <a href="/image-compressor" className="text-blue-600 hover:underline">roas-calculator.vercel.app/image-compressor</a></li>
+              <li>Go to <a href="/image-compressor" className="text-blue-600 hover:underline">roas-calculator.tech/image-compressor</a></li>
               <li>Click the upload box or drag your image file</li>
               <li>Our tool automatically starts compressing in real-time</li>
             </ol>
