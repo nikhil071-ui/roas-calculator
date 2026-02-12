@@ -6,6 +6,19 @@ export const metadata: Metadata = {
   title: "Terms of Service | ROAS Tools",
   description: "Terms of Service, acceptable use policy, and legal information for ROAS Tools platform.",
   robots: "index, follow",
+  openGraph: {
+    title: "Terms of Service | ROAS Tools",
+    description: "Terms of Service, acceptable use policy, and legal information for ROAS Tools platform.",
+    url: "https://roas-calculator.tech/terms",
+  },
+      twitter: {
+    card: "summary_large_image",
+    title: "Terms of Service | ROAS Tools",
+    description: "Terms of Service, acceptable use policy, and legal information for ROAS Tools platform.",
+  },
+  alternates: {
+    canonical: "https://roas-calculator.tech/terms",
+  },
 };
 
 export default function TermsOfService() {
@@ -144,7 +157,7 @@ export default function TermsOfService() {
             <section>
                 <h2 className="text-2xl font-bold text-slate-900 mb-4">6. Disclaimer of Warranties</h2>
                 <div className="bg-yellow-50 p-6 rounded-xl border border-yellow-200">
-                    <p className="text-yellow-900 font-bold mb-3">⚠️ IMPORTANT LEGAL NOTICE</p>
+                    <p className="text-yellow-900 font-bold mb-3">! IMPORTANT LEGAL NOTICE</p>
                     <p className="text-yellow-800 text-sm leading-relaxed">
                         THE SERVICE IS PROVIDED ON AN "AS IS" AND "AS AVAILABLE" BASIS WITHOUT WARRANTIES OF ANY KIND, 
                         EITHER EXPRESS OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, IMPLIED WARRANTIES OF MERCHANTABILITY, 
@@ -321,7 +334,7 @@ export default function TermsOfService() {
           <Link href="/privacy-policy" className="text-blue-600 hover:underline mr-4">Privacy Policy</Link>
           <Link href="/contact" className="text-blue-600 hover:underline">Contact Us</Link>
         </p>
-        <p className="text-slate-400 text-sm">© 2026 ROAS Tools Inc. All rights reserved.</p>
+        <p className="text-slate-400 text-sm">(c) 2026 ROAS Tools Inc. All rights reserved.</p>
       </footer>
     </div>
   );

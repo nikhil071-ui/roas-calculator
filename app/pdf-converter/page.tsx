@@ -19,6 +19,16 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://roas-calculator.tech/pdf-converter",
   },
+  openGraph: {
+    title: "Free JPG to PDF Converter - Create PDFs Under 2MB / 500KB",
+    description: "Convert photos to PDF online. Set exact file size limits (e.g., under 2MB) for free. Auto-rotate and compress JPG to PDF instantly.",
+    url: "https://roas-calculator.tech/pdf-converter",
+  },
+      twitter: {
+    card: "summary_large_image",
+    title: "Free JPG to PDF Converter - Create PDFs Under 2MB / 500KB",
+    description: "Convert photos to PDF online. Set exact file size limits (e.g., under 2MB) for free. Auto-rotate and compress JPG to PDF instantly.",
+  },
 };
 
 export default function PdfConverterPage() {
@@ -54,7 +64,7 @@ export default function PdfConverterPage() {
       {/* EXPERT GUIDE CTA */}
       <div className="max-w-6xl mx-auto mt-8 px-4">
         <div className="bg-gradient-to-r from-red-50 to-orange-50 rounded-xl border-2 border-red-300 p-8">
-          <h3 className="text-2xl font-bold text-slate-900 mb-2">📚 Master PDF Creation & Compression</h3>
+          <h3 className="text-2xl font-bold text-slate-900 mb-2"> Master PDF Creation & Compression</h3>
           <p className="text-slate-700 mb-4">
             Read our comprehensive guide covering PDF file formats, compression techniques, government exam requirements, and troubleshooting.
           </p>
@@ -62,7 +72,7 @@ export default function PdfConverterPage() {
             href="/pdf-converter/guide"
             className="inline-block bg-red-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-red-700 transition"
           >
-            Read Complete PDF Guide →
+            Read Complete PDF Guide &rarr;
           </Link>
         </div>
       </div>
@@ -114,7 +124,7 @@ export default function PdfConverterPage() {
         <h3 className="text-2xl font-bold text-slate-900 mt-8">How to Create a PDF Under 2MB on Mobile</h3>
         <ol className="list-decimal pl-5 space-y-2">
             <li><strong>Select Images:</strong> Tap the "Upload" box and select your photos (Aadhar, Pan Card, Marksheets) from your gallery. You can select multiple at once.</li>
-            <li><strong>Arrange & Rotate:</strong> Use the rotate button 🔄 to fix any upside-down scans.</li>
+            <li><strong>Arrange & Rotate:</strong> Use the rotate button  to fix any upside-down scans.</li>
             <li><strong>Set Target Size:</strong> This is the magic part. Type <strong>2</strong> in the box if the form asks for "Under 2 MB". Type <strong>0.5</strong> for "Under 500 KB".</li>
             <li><strong>Download PDF:</strong> Click the download button. We merge and compress everything instantly.</li>
         </ol>
@@ -150,12 +160,12 @@ export default function PdfConverterPage() {
                     <tr>
                         <td className="py-2 px-4 border-b">NEET / JEE Main</td>
                         <td className="py-2 px-4 border-b">Category Certificate</td>
-                        <td className="py-2 px-4 border-b">50 KB – 300 KB</td>
+                        <td className="py-2 px-4 border-b">50 KB - 300 KB</td>
                     </tr>
                     <tr>
                         <td className="py-2 px-4 border-b">SBI / IBPS PO</td>
                         <td className="py-2 px-4 border-b">Handwritten Declaration</td>
-                        <td className="py-2 px-4 border-b">50 KB – 100 KB</td>
+                        <td className="py-2 px-4 border-b">50 KB - 100 KB</td>
                     </tr>
                 </tbody>
             </table>
@@ -165,7 +175,7 @@ export default function PdfConverterPage() {
         <details className="group border-b pb-4 mb-4 cursor-pointer">
             <summary className="font-bold text-lg list-none flex justify-between items-center text-slate-800">
                 <span>Can I merge 10+ photos into one PDF?</span>
-                <span className="transition group-open:rotate-180">⬇️</span>
+                <span className="transition group-open:rotate-180">down</span>
             </summary>
             <p className="mt-2 text-gray-600">
               Yes! There is no limit. You can upload 10, 20, or even 50 pages. The tool will combine all of them into a single PDF file 
@@ -175,7 +185,7 @@ export default function PdfConverterPage() {
         <details className="group border-b pb-4 mb-4 cursor-pointer">
             <summary className="font-bold text-lg list-none flex justify-between items-center text-slate-800">
                 <span>How do I reduce PDF size to 100KB?</span>
-                <span className="transition group-open:rotate-180">⬇️</span>
+                <span className="transition group-open:rotate-180">down</span>
             </summary>
             <p className="mt-2 text-gray-600">
               Simply type <strong>0.1</strong> in the "Target Size" box (0.1 MB = 100 KB). The tool will automatically compress 
@@ -185,25 +195,25 @@ export default function PdfConverterPage() {
         <details className="group border-b pb-4 mb-4 cursor-pointer">
             <summary className="font-bold text-lg list-none flex justify-between items-center text-slate-800">
                 <span>Is this tool free?</span>
-                <span className="transition group-open:rotate-180">⬇️</span>
+                <span className="transition group-open:rotate-180">down</span>
             </summary>
             <p className="mt-2 text-gray-600">Yes, it is 100% free forever. No sign-up, no credit card, and no hidden fees.</p>
         </details>
         <details className="group border-b pb-4 mb-4 cursor-pointer">
             <summary className="font-bold text-lg list-none flex justify-between items-center text-slate-800">
                 <span>What's the difference between JPG to PDF and merging PDF files?</span>
-                <span className="transition group-open:rotate-180">⬇️</span>
+                <span className="transition group-open:rotate-180">down</span>
             </summary>
             <p className="mt-2 text-gray-600">
               JPG to PDF (our tool) takes image files (photos, scanned documents) and converts them into a PDF document. 
-              Merging PDFs takes multiple existing PDF files and combines them. We specialize in the former—perfect for 
+              Merging PDFs takes multiple existing PDF files and combines them. We specialize in the former-perfect for 
               creating application documents from phone photos.
             </p>
         </details>
         <details className="group border-b pb-4 mb-4 cursor-pointer">
             <summary className="font-bold text-lg list-none flex justify-between items-center text-slate-800">
                 <span>Can I password-protect the PDF?</span>
-                <span className="transition group-open:rotate-180">⬇️</span>
+                <span className="transition group-open:rotate-180">down</span>
             </summary>
             <p className="mt-2 text-gray-600">
               Not currently. Most government portals don't require password-protected PDFs. If you need encryption, 
@@ -213,10 +223,10 @@ export default function PdfConverterPage() {
         <details className="group border-b pb-4 mb-4 cursor-pointer">
             <summary className="font-bold text-lg list-none flex justify-between items-center text-slate-800">
                 <span>Will the PDF work on all devices?</span>
-                <span className="transition group-open:rotate-180">⬇️</span>
+                <span className="transition group-open:rotate-180">down</span>
             </summary>
             <p className="mt-2 text-gray-600">
-              Yes! We create standard PDF 1.4 format files that open on any device—Windows, Mac, iPhone, Android, or Linux. 
+              Yes! We create standard PDF 1.4 format files that open on any device-Windows, Mac, iPhone, Android, or Linux. 
               They're also compatible with all PDF readers (Adobe, Chrome, Safari).
             </p>
         </details>
@@ -322,7 +332,7 @@ export default function PdfConverterPage() {
 
         <div className="space-y-4 mt-6">
           <div className="flex gap-4 items-start">
-            <span className="text-2xl flex-shrink-0">✅</span>
+            <span className="text-2xl flex-shrink-0">OK</span>
             <div>
               <h5 className="font-bold text-slate-900 mb-1">Label Your Files Correctly</h5>
               <p className="text-sm text-slate-600">
@@ -333,7 +343,7 @@ export default function PdfConverterPage() {
           </div>
 
           <div className="flex gap-4 items-start">
-            <span className="text-2xl flex-shrink-0">✅</span>
+            <span className="text-2xl flex-shrink-0">OK</span>
             <div>
               <h5 className="font-bold text-slate-900 mb-1">Organize Pages Logically</h5>
               <p className="text-sm text-slate-600">
@@ -343,7 +353,7 @@ export default function PdfConverterPage() {
           </div>
 
           <div className="flex gap-4 items-start">
-            <span className="text-2xl flex-shrink-0">✅</span>
+            <span className="text-2xl flex-shrink-0">OK</span>
             <div>
               <h5 className="font-bold text-slate-900 mb-1">Test Before the Deadline</h5>
               <p className="text-sm text-slate-600">
@@ -353,7 +363,7 @@ export default function PdfConverterPage() {
           </div>
 
           <div className="flex gap-4 items-start">
-            <span className="text-2xl flex-shrink-0">✅</span>
+            <span className="text-2xl flex-shrink-0">OK</span>
             <div>
               <h5 className="font-bold text-slate-900 mb-1">Keep Originals</h5>
               <p className="text-sm text-slate-600">
@@ -363,7 +373,7 @@ export default function PdfConverterPage() {
           </div>
 
           <div className="flex gap-4 items-start">
-            <span className="text-2xl flex-shrink-0">❌</span>
+            <span className="text-2xl flex-shrink-0">X</span>
             <div>
               <h5 className="font-bold text-red-900 mb-1">Don't Include Unnecessary Pages</h5>
               <p className="text-sm text-red-600">
@@ -373,7 +383,7 @@ export default function PdfConverterPage() {
           </div>
 
           <div className="flex gap-4 items-start">
-            <span className="text-2xl flex-shrink-0">❌</span>
+            <span className="text-2xl flex-shrink-0">X</span>
             <div>
               <h5 className="font-bold text-red-900 mb-1">Don't Use Portrait + Landscape Mix (Unless Required)</h5>
               <p className="text-sm text-red-600">
@@ -385,23 +395,23 @@ export default function PdfConverterPage() {
 
         <h3 className="text-2xl font-bold text-slate-900 mt-10">Privacy & Security</h3>
         <p>
-          Your documents often contain highly sensitive information—Aadhar numbers, PAN cards, addresses, signatures. Here's how we protect your data:
+          Your documents often contain highly sensitive information-Aadhar numbers, PAN cards, addresses, signatures. Here's how we protect your data:
         </p>
 
         <div className="bg-green-50 p-6 rounded-xl border border-green-200 my-6">
-          <h5 className="font-bold text-green-900 mb-3">🔒 Our Privacy Guarantees:</h5>
+          <h5 className="font-bold text-green-900 mb-3"> Our Privacy Guarantees:</h5>
           <ul className="space-y-2 text-sm text-green-800">
-            <li>• <strong>No Server Uploads:</strong> All image processing and PDF creation happens in your browser using JavaScript. 
+            <li>- <strong>No Server Uploads:</strong> All image processing and PDF creation happens in your browser using JavaScript. 
             Your files never touch our servers.</li>
-            <li>• <strong>No Data Collection:</strong> We don't track what documents you upload, how many pages you merge, or any personal information.</li>
-            <li>• <strong>No Analytics on Files:</strong> Unlike competitors, we don't analyze your PDFs for "AI training" or "service improvement."</li>
-            <li>• <strong>Works Offline:</strong> Once the page loads, you can disconnect from the internet and the tool still works—proving no data transmission.</li>
+            <li>- <strong>No Data Collection:</strong> We don't track what documents you upload, how many pages you merge, or any personal information.</li>
+            <li>- <strong>No Analytics on Files:</strong> Unlike competitors, we don't analyze your PDFs for "AI training" or "service improvement."</li>
+            <li>- <strong>Works Offline:</strong> Once the page loads, you can disconnect from the internet and the tool still works-proving no data transmission.</li>
           </ul>
         </div>
 
         <p className="text-sm text-slate-600 mt-4">
           <strong>Technical Verification:</strong> Open your browser's Developer Tools (F12), go to the Network tab, and watch as you use the tool. 
-          You'll see zero upload requests—only local processing.
+          You'll see zero upload requests-only local processing.
         </p>
 
         <h3 className="text-2xl font-bold text-slate-900 mt-10">Troubleshooting Common Issues</h3>
@@ -409,7 +419,7 @@ export default function PdfConverterPage() {
         <details className="bg-white border border-slate-200 rounded-lg p-4 mb-4 cursor-pointer">
           <summary className="font-bold text-slate-900 list-none flex justify-between items-center">
             <span>Issue: PDF size is still over the limit after compression</span>
-            <span className="group-open:rotate-180 transition">▼</span>
+            <span className="group-open:rotate-180 transition">v</span>
           </summary>
           <div className="mt-3 text-slate-700 space-y-2">
             <p><strong>Cause:</strong> You have too many high-resolution images or the target size is unrealistic.</p>
@@ -422,7 +432,7 @@ export default function PdfConverterPage() {
         <details className="bg-white border border-slate-200 rounded-lg p-4 mb-4 cursor-pointer">
           <summary className="font-bold text-slate-900 list-none flex justify-between items-center">
             <span>Issue: Text in PDF is unreadable or blurry</span>
-            <span className="group-open:rotate-180 transition">▼</span>
+            <span className="group-open:rotate-180 transition">v</span>
           </summary>
           <div className="mt-3 text-slate-700 space-y-2">
             <p><strong>Cause:</strong> The target size is too aggressive, forcing extreme compression.</p>
@@ -435,7 +445,7 @@ export default function PdfConverterPage() {
         <details className="bg-white border border-slate-200 rounded-lg p-4 mb-4 cursor-pointer">
           <summary className="font-bold text-slate-900 list-none flex justify-between items-center">
             <span>Issue: Portal says "Invalid PDF" or "Corrupted File"</span>
-            <span className="group-open:rotate-180 transition">▼</span>
+            <span className="group-open:rotate-180 transition">v</span>
           </summary>
           <div className="mt-3 text-slate-700 space-y-2">
             <p><strong>Solution 1:</strong> Make sure you downloaded the PDF completely. If your internet cut off mid-download, the file is incomplete.</p>
@@ -447,7 +457,7 @@ export default function PdfConverterPage() {
         <details className="bg-white border border-slate-200 rounded-lg p-4 mb-4 cursor-pointer">
           <summary className="font-bold text-slate-900 list-none flex justify-between items-center">
             <span>Issue: Pages are in the wrong order</span>
-            <span className="group-open:rotate-180 transition">▼</span>
+            <span className="group-open:rotate-180 transition">v</span>
           </summary>
           <div className="mt-3 text-slate-700 space-y-2">
             <p><strong>Cause:</strong> Images are arranged in the order you selected them from your device.</p>
@@ -465,7 +475,7 @@ export default function PdfConverterPage() {
               Need to reduce individual photo sizes to 50 KB or 20 KB before creating a PDF? Use our Image Compressor first.
             </p>
             <Link href="/image-compressor" className="text-blue-600 font-semibold hover:underline text-sm">
-              Go to Image Compressor →
+              Go to Image Compressor &rarr;
             </Link>
           </div>
 

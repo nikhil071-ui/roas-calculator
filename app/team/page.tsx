@@ -13,6 +13,11 @@ export const metadata: Metadata = {
         description: "Meet the experts behind ROAS Tools and learn about our experience in marketing analytics and performance tools.",
         url: "https://roas-calculator.tech/team",
     },
+        twitter: {
+      card: "summary_large_image",
+      title: "Our Team | ROAS Tools",
+      description: "Meet the experts behind ROAS Tools and learn about our experience in marketing analytics and performance tools.",
+    },
 };
 
 export default function Team() {
@@ -33,7 +38,7 @@ export default function Team() {
         <div className="bg-slate-900 p-8 md:p-12 text-white">
             <h1 className="text-3xl md:text-4xl font-bold mb-4">Our Team</h1>
             <p className="text-slate-300 text-lg max-w-2xl">
-                Meet the experts behind ROAS Tools—seasoned digital marketing professionals, certified analysts, and engineers committed to providing accurate, trustworthy financial tools.
+                Meet the experts behind ROAS Tools-seasoned digital marketing professionals, certified analysts, and engineers committed to providing accurate, trustworthy financial tools.
             </p>
         </div>
 
@@ -65,9 +70,9 @@ export default function Team() {
                                     <h3 className="font-bold text-slate-900 text-sm">Certifications</h3>
                                 </div>
                                 <ul className="text-sm text-slate-600 space-y-1">
-                                    <li>• Google Ads Certification (2021-Present)</li>
-                                    <li>• Meta Blueprint Certified (2020-Present)</li>
-                                    <li>• AWS Certified Solutions Architect</li>
+                                    <li>- Google Ads Certification (2021-Present)</li>
+                                    <li>- Meta Blueprint Certified (2020-Present)</li>
+                                    <li>- AWS Certified Solutions Architect</li>
                                 </ul>
                             </div>
                             <div className="bg-slate-50 p-4 rounded-lg border border-slate-100">
@@ -76,9 +81,9 @@ export default function Team() {
                                     <h3 className="font-bold text-slate-900 text-sm">Specializations</h3>
                                 </div>
                                 <ul className="text-sm text-slate-600 space-y-1">
-                                    <li>• Performance Marketing Analytics</li>
-                                    <li>• Financial Modeling & ROAS Optimization</li>
-                                    <li>• Full-Stack Development (React/Node)</li>
+                                    <li>- Performance Marketing Analytics</li>
+                                    <li>- Financial Modeling & ROAS Optimization</li>
+                                    <li>- Full-Stack Development (React/Node)</li>
                                 </ul>
                             </div>
                         </div>
@@ -86,7 +91,7 @@ export default function Team() {
                         <div className="bg-blue-50 p-4 rounded-lg border border-blue-100">
                             <p className="text-sm text-slate-700 italic">
                                 "I built ROAS Tools because I was tired of seeing business owners waste money on unprofitable ads. 
-                                Accurate financial tracking shouldn't require a finance degree—it should be instant and free."
+                                Accurate financial tracking shouldn't require a finance degree-it should be instant and free."
                             </p>
                         </div>
                     </div>
@@ -118,9 +123,9 @@ export default function Team() {
                                     <h3 className="font-bold text-slate-900 text-sm">Credentials</h3>
                                 </div>
                                 <ul className="text-sm text-slate-600 space-y-1">
-                                    <li>• M.A. in Communication (Mumbai University)</li>
-                                    <li>• HubSpot Content Marketing Certification</li>
-                                    <li>• 8+ years technical writing experience</li>
+                                    <li>- M.A. in Communication (Mumbai University)</li>
+                                    <li>- HubSpot Content Marketing Certification</li>
+                                    <li>- 8+ years technical writing experience</li>
                                 </ul>
                             </div>
                             <div className="bg-slate-50 p-4 rounded-lg border border-slate-100">
@@ -129,9 +134,9 @@ export default function Team() {
                                     <h3 className="font-bold text-slate-900 text-sm">Expertise</h3>
                                 </div>
                                 <ul className="text-sm text-slate-600 space-y-1">
-                                    <li>• SEO Strategy & Technical SEO</li>
-                                    <li>• Marketing Education & Training</li>
-                                    <li>• Data-Driven Content Creation</li>
+                                    <li>- SEO Strategy & Technical SEO</li>
+                                    <li>- Marketing Education & Training</li>
+                                    <li>- Data-Driven Content Creation</li>
                                 </ul>
                             </div>
                         </div>
@@ -171,9 +176,9 @@ export default function Team() {
                                     <h3 className="font-bold text-slate-900 text-sm">Background</h3>
                                 </div>
                                 <ul className="text-sm text-slate-600 space-y-1">
-                                    <li>• B.Tech in Computer Science (IIT Delhi)</li>
-                                    <li>• Certified Data Analyst (Google)</li>
-                                    <li>• 6+ years in fintech QA and testing</li>
+                                    <li>- B.Tech in Computer Science (IIT Delhi)</li>
+                                    <li>- Certified Data Analyst (Google)</li>
+                                    <li>- 6+ years in fintech QA and testing</li>
                                 </ul>
                             </div>
                             <div className="bg-slate-50 p-4 rounded-lg border border-slate-100">
@@ -182,9 +187,9 @@ export default function Team() {
                                     <h3 className="font-bold text-slate-900 text-sm">Responsibilities</h3>
                                 </div>
                                 <ul className="text-sm text-slate-600 space-y-1">
-                                    <li>• Formula Accuracy Validation</li>
-                                    <li>• Cross-Browser Testing</li>
-                                    <li>• Performance Benchmarking</li>
+                                    <li>- Formula Accuracy Validation</li>
+                                    <li>- Cross-Browser Testing</li>
+                                    <li>- Performance Benchmarking</li>
                                 </ul>
                             </div>
                         </div>

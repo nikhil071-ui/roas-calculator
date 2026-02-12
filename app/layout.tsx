@@ -4,12 +4,13 @@ import Link from "next/link";
 import Script from "next/script";
 import { Analytics } from "@vercel/analytics/react"; 
 import "./globals.css";
+import { DEFAULT_OPEN_GRAPH, SITE_URL } from "./seo";
 
 const inter = Inter({ subsets: ["latin"] });
 
 // --- GLOBAL SEO CONFIGURATION ---
 export const metadata: Metadata = {
-  metadataBase: new URL("https://roas-calculator.tech"),
+  metadataBase: new URL(SITE_URL),
   title: {
     default: "Free Online Tools | ROAS Calc, Image Compressor & PDF Maker",
     template: "%s | ROAS Tools",
@@ -20,21 +21,21 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
+  alternates: {
+    languages: {
+      "en": `${SITE_URL}/`,
+      "x-default": `${SITE_URL}/`,
+    },
+  },
   openGraph: {
-    type: "website",
+    ...DEFAULT_OPEN_GRAPH,
     locale: "en_US",
-    url: "https://roas-calculator.tech",
+    url: `${SITE_URL}/`,
     title: "Free Image Compressor & PDF Maker (Privacy Focused)",
     description: "Compress images to 50KB for SSC/UPSC exams and calculate ad profits instantly. No uploads required.",
-    siteName: "ROAS Tools",
-    images: [
-      {
-        url: "/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "ROAS Tools Preview",
-      },
-    ],
+  },
+  twitter: {
+    card: "summary_large_image",
   },
 };
 
@@ -161,7 +162,7 @@ export default function RootLayout({
           <div className="container mx-auto px-4 h-16 flex items-center justify-between">
             {/* Logo */}
             <Link href="/" className="font-bold text-xl text-blue-900 flex items-center gap-2 shrink-0">
-              🚀 ROAS Tools
+               ROAS Tools
             </Link>
             
             {/* Navigation Links - SCROLLABLE ON MOBILE */}
@@ -187,7 +188,7 @@ export default function RootLayout({
             
             {/* Column 1: Brand Info */}
             <div>
-              <h3 className="text-white font-bold text-lg mb-4 flex items-center gap-2">🚀 ROAS Tools</h3>
+              <h3 className="text-white font-bold text-lg mb-4 flex items-center gap-2"> ROAS Tools</h3>
               <p className="leading-relaxed mb-4">
                 Privacy-first utility tools for digital marketers and students. 
                 Built to be fast, free, and secure.
@@ -201,12 +202,12 @@ export default function RootLayout({
             <div>
               <h4 className="text-white font-bold mb-4 uppercase tracking-wider text-xs">Our Tools</h4>
               <ul className="space-y-3">
-                <li><Link href="/" className="hover:text-white transition flex items-center gap-2">📊 ROAS Calculator</Link></li>
-                <li><Link href="/roas/facebook-ads" className="hover:text-white transition flex items-center gap-2">📣 Facebook Ads ROAS</Link></li>
-                <li><Link href="/image-compressor" className="hover:text-white transition flex items-center gap-2">🖼️ Image Compressor</Link></li>
-                <li><Link href="/pdf-converter" className="hover:text-white transition flex items-center gap-2">📄 JPG to PDF</Link></li>
-                <li><Link href="/pdf/jpg-to-pdf" className="hover:text-white transition flex items-center gap-2">🧾 JPG to PDF (Direct)</Link></li>
-                <li><Link href="/currency-converter" className="hover:text-white transition flex items-center gap-2">💱 Currency Converter</Link></li>
+                <li><Link href="/" className="hover:text-white transition flex items-center gap-2"> ROAS Calculator</Link></li>
+                <li><Link href="/roas/facebook-ads" className="hover:text-white transition flex items-center gap-2"> Facebook Ads ROAS</Link></li>
+                <li><Link href="/image-compressor" className="hover:text-white transition flex items-center gap-2"> Image Compressor</Link></li>
+                <li><Link href="/pdf-converter" className="hover:text-white transition flex items-center gap-2"> JPG to PDF</Link></li>
+                <li><Link href="/pdf/jpg-to-pdf" className="hover:text-white transition flex items-center gap-2"> JPG to PDF (Direct)</Link></li>
+                <li><Link href="/currency-converter" className="hover:text-white transition flex items-center gap-2"> Currency Converter</Link></li>
               </ul>
             </div>
 
@@ -214,14 +215,14 @@ export default function RootLayout({
             <div>
               <h4 className="text-white font-bold mb-4 uppercase tracking-wider text-xs">Company</h4>
               <ul className="space-y-3">
-                <li><Link href="/blog" className="hover:text-white transition">📰 Blog</Link></li>
-                <li><Link href="/resources" className="hover:text-white transition">📥 Resources</Link></li>
-                <li><Link href="/comparisons" className="hover:text-white transition">📊 Comparisons</Link></li>
+                <li><Link href="/blog" className="hover:text-white transition"> Blog</Link></li>
+                <li><Link href="/resources" className="hover:text-white transition"> Resources</Link></li>
+                <li><Link href="/comparisons" className="hover:text-white transition"> Comparisons</Link></li>
                 <li><Link href="/about" className="hover:text-white transition">About Us</Link></li>
-                <li><Link href="/team" className="hover:text-white transition">👥 Our Team</Link></li>
-                <li><Link href="/case-studies" className="hover:text-white transition">📈 Case Studies</Link></li>
-                <li><Link href="/testimonials" className="hover:text-white transition">⭐ Testimonials</Link></li>
-                <li><Link href="/glossary" className="hover:text-white transition">📖 Glossary</Link></li>
+                <li><Link href="/team" className="hover:text-white transition"> Our Team</Link></li>
+                <li><Link href="/case-studies" className="hover:text-white transition"> Case Studies</Link></li>
+                <li><Link href="/testimonials" className="hover:text-white transition">star Testimonials</Link></li>
+                <li><Link href="/glossary" className="hover:text-white transition"> Glossary</Link></li>
                 <li><Link href="/contact" className="hover:text-white transition">Contact Support</Link></li>
               </ul>
             </div>
@@ -240,7 +241,7 @@ export default function RootLayout({
           </div>
 
           <div className="container mx-auto px-6 mt-12 pt-8 border-t border-slate-800 text-center">
-            <p>© 2026 ROAS Tools Inc. All rights reserved.</p>
+            <p>(c) 2026 ROAS Tools Inc. All rights reserved.</p>
           </div>
         </footer>
 

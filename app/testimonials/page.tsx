@@ -1,5 +1,24 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowLeft, Star, Quote } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "Testimonials | ROAS Tools",
+  description: "Feedback from marketers, business owners, and students using ROAS Tools.",
+  alternates: {
+    canonical: "https://roas-calculator.tech/testimonials",
+  },
+  openGraph: {
+    title: "Testimonials | ROAS Tools",
+    description: "Feedback from marketers, business owners, and students using ROAS Tools.",
+    url: "https://roas-calculator.tech/testimonials",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Testimonials | ROAS Tools",
+    description: "Feedback from marketers, business owners, and students using ROAS Tools.",
+  },
+};
 
 export default function Testimonials() {
   return (
@@ -89,7 +108,7 @@ export default function Testimonials() {
                     <Quote size={24} className="text-slate-300 mb-2" />
                     <p className="text-slate-700 mb-4 italic">
                         "As a freelancer managing 12 clients, I use this tool in every strategy call. Instead of confusing spreadsheets, 
-                        I share my screen and calculate ROAS live. Clients love it—they can actually see if their ads are working."
+                        I share my screen and calculate ROAS live. Clients love it-they can actually see if their ads are working."
                     </p>
                     <div className="flex items-center gap-3">
                         <div className="w-12 h-12 bg-gradient-to-br from-emerald-500 to-emerald-700 rounded-full flex items-center justify-center text-white font-bold text-sm">
@@ -135,7 +154,7 @@ export default function Testimonials() {
                     <Quote size={24} className="text-slate-300 mb-2" />
                     <p className="text-slate-700 mb-4 italic">
                         "I manage $200K/month in Google Ads for SaaS clients. This tool helped me explain to a CFO why we needed 
-                        more budget—showed break-even ROAS vs actual ROAS. Got approval for 50% increase that same day."
+                        more budget-showed break-even ROAS vs actual ROAS. Got approval for 50% increase that same day."
                     </p>
                     <div className="flex items-center gap-3">
                         <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-700 rounded-full flex items-center justify-center text-white font-bold text-sm">

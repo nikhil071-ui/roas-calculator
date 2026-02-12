@@ -1,5 +1,24 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { Shield, ArrowLeft, Lock, Eye, Server, Mail } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "Privacy Policy | ROAS Tools",
+  description: "Learn how ROAS Tools protects your data and handles cookies, analytics, and ads.",
+  alternates: {
+    canonical: "https://roas-calculator.tech/privacy-policy",
+  },
+  openGraph: {
+    title: "Privacy Policy | ROAS Tools",
+    description: "Learn how ROAS Tools protects your data and handles cookies, analytics, and ads.",
+    url: "https://roas-calculator.tech/privacy-policy",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Privacy Policy | ROAS Tools",
+    description: "Learn how ROAS Tools protects your data and handles cookies, analytics, and ads.",
+  },
+};
 
 export default function PrivacyPolicy() {
   return (
@@ -160,7 +179,7 @@ export default function PrivacyPolicy() {
                         <li>Cannot be recovered or accessed by us after you leave the site</li>
                     </ul>
                     <div className="bg-green-50 border border-green-200 p-4 rounded-lg mt-4 text-green-800 text-sm">
-                        <strong>✓ Privacy Guarantee:</strong> We cannot access your uploaded images, financial calculations, or currency conversion history because they exist only in your browser's local memory.
+                        <strong>OK Privacy Guarantee:</strong> We cannot access your uploaded images, financial calculations, or currency conversion history because they exist only in your browser's local memory.
                     </div>
                 </div>
             </section>
@@ -183,7 +202,7 @@ export default function PrivacyPolicy() {
                         <div className="bg-slate-50 p-4 rounded-lg">
                             <h4 className="font-bold text-slate-900 mb-2">Right to Access</h4>
                             <p className="text-slate-600 text-sm">
-                                You have the right to request copies of your personal data. Since we do not store personal data, there is nothing to access. However, Google AdSense may have data about your ad interactions—refer to Google's privacy policy.
+                                You have the right to request copies of your personal data. Since we do not store personal data, there is nothing to access. However, Google AdSense may have data about your ad interactions-refer to Google's privacy policy.
                             </p>
                         </div>
                         <div className="bg-slate-50 p-4 rounded-lg">
@@ -336,7 +355,7 @@ export default function PrivacyPolicy() {
       
       {/* Footer Note */}
       <p className="text-center text-slate-400 text-sm mt-8">
-        © 2026 ROAS Tools. All rights reserved.
+        (c) 2026 ROAS Tools. All rights reserved.
       </p>
     </div>
   );

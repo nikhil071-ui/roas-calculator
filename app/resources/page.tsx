@@ -11,6 +11,19 @@ export const metadata: Metadata = {
     "currency transfer checklist",
     "marketing templates",
   ],
+  openGraph: {
+    title: "Free Downloads and Templates | ROAS Tools",
+    description: "Download free templates and checklists for ROAS tracking, image compression, PDF optimization, and currency transfers.",
+    url: "https://roas-calculator.tech/resources",
+  },
+      twitter: {
+    card: "summary_large_image",
+    title: "Free Downloads and Templates | ROAS Tools",
+    description: "Download free templates and checklists for ROAS tracking, image compression, PDF optimization, and currency transfers.",
+  },
+  alternates: {
+    canonical: "https://roas-calculator.tech/resources",
+  },
 };
 
 export default function ResourcesPage() {

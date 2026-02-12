@@ -14,6 +14,19 @@ export const metadata: Metadata = {
     "reduce photo 50kb",
     "government form requirements",
   ],
+  openGraph: {
+    title: "Complete Guide to Image Compression | JPEG Algorithms & Government Forms",
+    description: "Expert guide to image compression. Learn JPEG technology, compression algorithms, lossless vs lossy, and step-by-step instructions for reducing photos to 50KB for exams.",
+    url: "https://roas-calculator.tech/image-compressor/guide",
+  },
+      twitter: {
+    card: "summary_large_image",
+    title: "Complete Guide to Image Compression | JPEG Algorithms & Government Forms",
+    description: "Expert guide to image compression. Learn JPEG technology, compression algorithms, lossless vs lossy, and step-by-step instructions for reducing photos to 50KB for exams.",
+  },
+  alternates: {
+    canonical: "https://roas-calculator.tech/image-compressor/guide",
+  },
 };
 
 export default function ImageCompressionGuide() {
@@ -46,7 +59,7 @@ export default function ImageCompressionGuide() {
             Master image compression technology, understand JPEG algorithms, and learn how to optimize images for government forms.
           </p>
           <p className="text-slate-400 text-sm mt-6">
-            📖 15-Minute Read | 📊 12 Detailed Sections | ✓ Expert Verified
+             15-Minute Read |  12 Detailed Sections | OK Expert Verified
           </p>
         </div>
 
@@ -55,7 +68,7 @@ export default function ImageCompressionGuide() {
           
           {/* TABLE OF CONTENTS */}
           <nav className="bg-blue-50 rounded-xl p-6 border border-blue-200">
-            <h2 className="text-lg font-bold text-slate-900 mb-4">📋 Quick Navigation</h2>
+            <h2 className="text-lg font-bold text-slate-900 mb-4"> Quick Navigation</h2>
             <div className="grid md:grid-cols-2 gap-3 text-sm">
               <a href="#what-is" className="text-blue-600 hover:underline">1. What Is Image Compression?</a>
               <a href="#formats" className="text-blue-600 hover:underline">2. JPEG vs PNG vs WebP</a>
@@ -78,9 +91,9 @@ export default function ImageCompressionGuide() {
             </p>
 
             <div className="bg-green-50 border-l-4 border-green-600 p-6 rounded my-4">
-              <p className="font-bold text-green-900">💡 Key Point:</p>
+              <p className="font-bold text-green-900"> Key Point:</p>
               <p className="text-green-800 text-sm mt-2">
-                Compression reduces FILE SIZE (storage space) but keeps dimensions (pixels) identical. A 4000×3000 image stays 4000×3000 whether it's 10MB or 50KB.
+                Compression reduces FILE SIZE (storage space) but keeps dimensions (pixels) identical. A 4000x3000 image stays 4000x3000 whether it's 10MB or 50KB.
               </p>
             </div>
 
@@ -106,54 +119,54 @@ export default function ImageCompressionGuide() {
           <section id="formats">
             <h2 className="text-3xl font-bold text-slate-900 mt-12">JPEG vs PNG vs WebP: Which Format?</h2>
             
-            <h3 className="text-xl font-bold text-slate-900 mt-6">📸 JPEG (Joint Photographic Experts Group)</h3>
+            <h3 className="text-xl font-bold text-slate-900 mt-6"> JPEG (Joint Photographic Experts Group)</h3>
             
             <div className="grid md:grid-cols-2 gap-4 bg-slate-50 p-6 rounded-lg my-4">
               <div>
-                <p className="font-bold text-green-600">✅ Best for:</p>
+                <p className="font-bold text-green-600">OK Best for:</p>
                 <ul className="text-sm space-y-1 text-slate-700 mt-2">
-                  <li>• Photographs & portraits</li>
-                  <li>• Government forms</li>
-                  <li>• 50-500KB typical size</li>
-                  <li>• 80-90% compression possible</li>
+                  <li>- Photographs & portraits</li>
+                  <li>- Government forms</li>
+                  <li>- 50-500KB typical size</li>
+                  <li>- 80-90% compression possible</li>
                 </ul>
               </div>
               <div>
-                <p className="font-bold text-red-600">❌ Problems:</p>
+                <p className="font-bold text-red-600">X Problems:</p>
                 <ul className="text-sm space-y-1 text-slate-700 mt-2">
-                  <li>• Lossy (loses detail)</li>
-                  <li>• Bad for text/logos</li>
-                  <li>• No transparency</li>
-                  <li>• Quality degrades with edits</li>
+                  <li>- Lossy (loses detail)</li>
+                  <li>- Bad for text/logos</li>
+                  <li>- No transparency</li>
+                  <li>- Quality degrades with edits</li>
                 </ul>
               </div>
             </div>
 
-            <h3 className="text-xl font-bold text-slate-900 mt-6">🎨 PNG (Portable Network Graphics)</h3>
+            <h3 className="text-xl font-bold text-slate-900 mt-6"> PNG (Portable Network Graphics)</h3>
             
             <div className="grid md:grid-cols-2 gap-4 bg-slate-50 p-6 rounded-lg my-4">
               <div>
-                <p className="font-bold text-green-600">✅ Best for:</p>
+                <p className="font-bold text-green-600">OK Best for:</p>
                 <ul className="text-sm space-y-1 text-slate-700 mt-2">
-                  <li>• Screenshots</li>
-                  <li>• Logos & graphics</li>
-                  <li>• Transparency needed</li>
-                  <li>• Lossless (no quality loss)</li>
+                  <li>- Screenshots</li>
+                  <li>- Logos & graphics</li>
+                  <li>- Transparency needed</li>
+                  <li>- Lossless (no quality loss)</li>
                 </ul>
               </div>
               <div>
-                <p className="font-bold text-red-600">❌ Problems:</p>
+                <p className="font-bold text-red-600">X Problems:</p>
                 <ul className="text-sm space-y-1 text-slate-700 mt-2">
-                  <li>• 5-10x larger than JPEG</li>
-                  <li>• Slow to load</li>
-                  <li>• Rejected by govt forms</li>
-                  <li>• Not ideal for photos</li>
+                  <li>- 5-10x larger than JPEG</li>
+                  <li>- Slow to load</li>
+                  <li>- Rejected by govt forms</li>
+                  <li>- Not ideal for photos</li>
                 </ul>
               </div>
             </div>
 
             <p className="text-sm text-slate-600 italic mt-4">
-              <strong>⚠️ Government Forms:</strong> Always use JPEG. Many portals reject PNG despite saying "JPG or PNG accepted."
+              <strong>! Government Forms:</strong> Always use JPEG. Many portals reject PNG despite saying "JPG or PNG accepted."
             </p>
           </section>
 
@@ -177,7 +190,7 @@ export default function ImageCompressionGuide() {
 
             <ol className="list-decimal pl-5 space-y-3 mt-4">
               <li>
-                <strong>Divide:</strong> Image split into 8×8 pixel blocks
+                <strong>Divide:</strong> Image split into 8x8 pixel blocks
               </li>
               <li>
                 <strong>Transform:</strong> Each block converted from color data to frequency patterns using math
@@ -227,21 +240,21 @@ export default function ImageCompressionGuide() {
 
             <div className="grid md:grid-cols-2 gap-6 my-6">
               <div className="bg-blue-50 p-6 rounded-lg border border-blue-200">
-                <h4 className="font-bold text-blue-900 mb-3">📐 Resolution (Dimensions)</h4>
+                <h4 className="font-bold text-blue-900 mb-3"> Resolution (Dimensions)</h4>
                 <ul className="text-sm space-y-2 text-blue-800">
-                  <li>• Width × Height in pixels</li>
-                  <li>• Example: 4000×3000 pixels (12MP)</li>
-                  <li>• Determines visual size on screen</li>
-                  <li>• Changing requires resizing tool</li>
+                  <li>- Width x Height in pixels</li>
+                  <li>- Example: 4000x3000 pixels (12MP)</li>
+                  <li>- Determines visual size on screen</li>
+                  <li>- Changing requires resizing tool</li>
                 </ul>
               </div>
               <div className="bg-orange-50 p-6 rounded-lg border border-orange-200">
-                <h4 className="font-bold text-orange-900 mb-3">📦 File Size (Storage)</h4>
+                <h4 className="font-bold text-orange-900 mb-3"> File Size (Storage)</h4>
                 <ul className="text-sm space-y-2 text-orange-800">
-                  <li>• Measured in KB, MB, GB</li>
-                  <li>• Example: 5 MB, 50 KB, 500 B</li>
-                  <li>• How much disk space it uses</li>
-                  <li>• Changed via compression</li>
+                  <li>- Measured in KB, MB, GB</li>
+                  <li>- Example: 5 MB, 50 KB, 500 B</li>
+                  <li>- How much disk space it uses</li>
+                  <li>- Changed via compression</li>
                 </ul>
               </div>
             </div>
@@ -250,14 +263,14 @@ export default function ImageCompressionGuide() {
             
             <div className="bg-slate-50 p-6 rounded-lg border border-slate-200">
               <ul className="space-y-2">
-                <li>• <strong>Dimensions:</strong> 4032 × 3024 pixels (12.2 MP)</li>
-                <li>• <strong>Quality 100 JPEG:</strong> ~3 MB</li>
-                <li>• <strong>Quality 65 JPEG:</strong> ~500 KB</li>
-                <li>• <strong>Quality 40 JPEG:</strong> ~150 KB</li>
-                <li>• <strong>Quality 20 JPEG:</strong> ~50 KB (for government forms)</li>
+                <li>- <strong>Dimensions:</strong> 4032 x 3024 pixels (12.2 MP)</li>
+                <li>- <strong>Quality 100 JPEG:</strong> ~3 MB</li>
+                <li>- <strong>Quality 65 JPEG:</strong> ~500 KB</li>
+                <li>- <strong>Quality 40 JPEG:</strong> ~150 KB</li>
+                <li>- <strong>Quality 20 JPEG:</strong> ~50 KB (for government forms)</li>
               </ul>
               <p className="text-sm text-slate-600 italic mt-4">
-                Notice: Dimensions stay the same (4032×3024) but file size changes 60x!
+                Notice: Dimensions stay the same (4032x3024) but file size changes 60x!
               </p>
             </div>
           </section>
@@ -316,12 +329,12 @@ export default function ImageCompressionGuide() {
             </div>
 
             <div className="bg-red-50 border-l-4 border-red-600 p-6 rounded mt-6">
-              <p className="font-bold text-red-900">⚠️ Critical Warning:</p>
+              <p className="font-bold text-red-900">! Critical Warning:</p>
               <ul className="text-red-800 text-sm space-y-2 mt-2">
-                <li>• SSC, IBPS, Railways are STRICT about size limits</li>
-                <li>• Even 1 KB over = automatic rejection</li>
-                <li>• Convert PNG to JPG (many portals reject PNG despite claims)</li>
-                <li>• Test upload 24 hours before deadline</li>
+                <li>- SSC, IBPS, Railways are STRICT about size limits</li>
+                <li>- Even 1 KB over = automatic rejection</li>
+                <li>- Convert PNG to JPG (many portals reject PNG despite claims)</li>
+                <li>- Test upload 24 hours before deadline</li>
               </ul>
             </div>
           </section>
@@ -348,9 +361,9 @@ export default function ImageCompressionGuide() {
             <h3 className="text-xl font-bold text-slate-900 mt-6">Step 3: Set Target Size</h3>
             <div className="bg-blue-50 p-4 rounded mt-3">
               <p className="text-sm font-mono">
-                • 50 KB limit? Enter: <strong>0.05</strong><br />
-                • 20 KB limit? Enter: <strong>0.02</strong><br />
-                • 100 KB limit? Enter: <strong>0.1</strong>
+                - 50 KB limit? Enter: <strong>0.05</strong><br />
+                - 20 KB limit? Enter: <strong>0.02</strong><br />
+                - 100 KB limit? Enter: <strong>0.1</strong>
               </p>
             </div>
 
@@ -364,7 +377,7 @@ export default function ImageCompressionGuide() {
 
             <h3 className="text-xl font-bold text-slate-900 mt-6">Step 5: Verify Size & Test Upload</h3>
             <ol className="list-decimal pl-5 space-y-2 mt-3">
-              <li>Right-click downloaded file → Properties</li>
+              <li>Right-click downloaded file &rarr; Properties</li>
               <li>Confirm file size is below exam limit</li>
               <li>Test upload to portal 24 hours before deadline</li>
               <li>If rejected, re-compress with lower target size</li>
@@ -379,22 +392,22 @@ export default function ImageCompressionGuide() {
             
             <div className="space-y-4 mt-6">
               <div className="border-l-4 border-green-600 bg-green-50 p-4 rounded">
-                <h4 className="font-bold text-green-900">✅ Excellent (50-100 KB)</h4>
+                <h4 className="font-bold text-green-900">OK Excellent (50-100 KB)</h4>
                 <p className="text-green-800 text-sm mt-1">Barely noticeable compression. Perfect for HD photos. Facial features remain sharp.</p>
               </div>
 
               <div className="border-l-4 border-blue-600 bg-blue-50 p-4 rounded">
-                <h4 className="font-bold text-blue-900">✅ Good (20-50 KB)</h4>
+                <h4 className="font-bold text-blue-900">OK Good (20-50 KB)</h4>
                 <p className="text-blue-800 text-sm mt-1">Slight blockiness when zoomed in, but acceptable for government forms. Features remain clear.</p>
               </div>
 
               <div className="border-l-4 border-orange-600 bg-orange-50 p-4 rounded">
-                <h4 className="font-bold text-orange-900">⚠️ Fair (10-20 KB)</h4>
+                <h4 className="font-bold text-orange-900">! Fair (10-20 KB)</h4>
                 <p className="text-orange-800 text-sm mt-1">Visible compression artifacts. Only use for strict size limits. Face still recognizable.</p>
               </div>
 
               <div className="border-l-4 border-red-600 bg-red-50 p-4 rounded">
-                <h4 className="font-bold text-red-900">❌ Poor (1-10 KB)</h4>
+                <h4 className="font-bold text-red-900">X Poor (1-10 KB)</h4>
                 <p className="text-red-800 text-sm mt-1">Extreme pixelation. Avoid unless absolutely required. Risk of rejection.</p>
               </div>
             </div>
@@ -416,8 +429,8 @@ export default function ImageCompressionGuide() {
             
             <details className="group border border-slate-200 rounded-lg p-4 mb-4 cursor-pointer bg-white hover:bg-slate-50">
               <summary className="font-bold text-slate-900 list-none flex justify-between items-center">
-                <span>❓ Compressed image is still too large</span>
-                <span className="transition-transform duration-300 group-open:rotate-180">▼</span>
+                <span>? Compressed image is still too large</span>
+                <span className="transition-transform duration-300 group-open:rotate-180">v</span>
               </summary>
               <div className="mt-3 text-slate-700 space-y-2 text-sm">
                 <p><strong>Solution 1:</strong> Lower target size further (e.g., from 0.02 to 0.018)</p>
@@ -428,8 +441,8 @@ export default function ImageCompressionGuide() {
 
             <details className="group border border-slate-200 rounded-lg p-4 mb-4 cursor-pointer bg-white hover:bg-slate-50">
               <summary className="font-bold text-slate-900 list-none flex justify-between items-center">
-                <span>❓ Image looks too blurry after compression</span>
-                <span className="transition-transform duration-300 group-open:rotate-180">▼</span>
+                <span>? Image looks too blurry after compression</span>
+                <span className="transition-transform duration-300 group-open:rotate-180">v</span>
               </summary>
               <div className="mt-3 text-slate-700 space-y-2 text-sm">
                 <p><strong>Cause:</strong> Target size is too aggressive</p>
@@ -440,8 +453,8 @@ export default function ImageCompressionGuide() {
 
             <details className="group border border-slate-200 rounded-lg p-4 mb-4 cursor-pointer bg-white hover:bg-slate-50">
               <summary className="font-bold text-slate-900 list-none flex justify-between items-center">
-                <span>❓ Tool doesn't work / download button broken</span>
-                <span className="transition-transform duration-300 group-open:rotate-180">▼</span>
+                <span>? Tool doesn't work / download button broken</span>
+                <span className="transition-transform duration-300 group-open:rotate-180">v</span>
               </summary>
               <div className="mt-3 text-slate-700 space-y-2 text-sm">
                 <p><strong>Check 1:</strong> Use modern browser (Chrome 90+, Safari 14+)</p>
@@ -453,12 +466,12 @@ export default function ImageCompressionGuide() {
 
             <details className="group border border-slate-200 rounded-lg p-4 mb-4 cursor-pointer bg-white hover:bg-slate-50">
               <summary className="font-bold text-slate-900 list-none flex justify-between items-center">
-                <span>❓ Portal rejects compressed photo despite meeting size requirement</span>
-                <span className="transition-transform duration-300 group-open:rotate-180">▼</span>
+                <span>? Portal rejects compressed photo despite meeting size requirement</span>
+                <span className="transition-transform duration-300 group-open:rotate-180">v</span>
               </summary>
               <div className="mt-3 text-slate-700 space-y-2 text-sm">
                 <p><strong>Issue:</strong> File size is OK, but other requirements aren't met</p>
-                <p><strong>Check dimensions:</strong> Some forms require 200×250 or 3.5×4.5 cm. Use a photo editor to resize.</p>
+                <p><strong>Check dimensions:</strong> Some forms require 200x250 or 3.5x4.5 cm. Use a photo editor to resize.</p>
                 <p><strong>Check format:</strong> Some portals reject PNG. Convert to JPG.</p>
                 <p><strong>Check background:</strong> Some exams require white background. Take a new photo or edit background.</p>
                 <p><strong>Check filename:</strong> Avoid special characters. Use "photo.jpg", not "my@photo(1).jpg"</p>
@@ -470,7 +483,7 @@ export default function ImageCompressionGuide() {
           <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl p-8 border border-blue-200 mt-12">
             <h3 className="text-xl font-bold text-slate-900 mb-3">Ready to compress your image?</h3>
             <p className="text-slate-700 mb-4">
-              Use our free image compressor tool to reduce your photo to any size you need—instantly, offline, and 100% private.
+              Use our free image compressor tool to reduce your photo to any size you need-instantly, offline, and 100% private.
             </p>
             <Link 
               href="/image-compressor"

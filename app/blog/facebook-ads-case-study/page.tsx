@@ -13,11 +13,53 @@ export const metadata: Metadata = {
     "facebook ads results",
     "conversion rate optimization",
   ],
+  openGraph: {
+    title: "Facebook Ads ROAS Case Study: How We Achieved 5.2x in 90 Days | Real Data",
+    description: "Real case study with data: Fashion e-commerce increased ROAS from 1.8x to 5.2x in 90 days. See exact strategies, budget allocation, and cost breakdowns.",
+    url: "https://roas-calculator.tech/blog/facebook-ads-case-study",
+  },
+      twitter: {
+    card: "summary_large_image",
+    title: "Facebook Ads ROAS Case Study: How We Achieved 5.2x in 90 Days | Real Data",
+    description: "Real case study with data: Fashion e-commerce increased ROAS from 1.8x to 5.2x in 90 days. See exact strategies, budget allocation, and cost breakdowns.",
+  },
+  alternates: {
+    canonical: "https://roas-calculator.tech/blog/facebook-ads-case-study",
+  },
 };
 
 export default function RoasCaseStudy() {
+  const breadcrumbData = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://roas-calculator.tech/",
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Blog",
+        "item": "https://roas-calculator.tech/blog",
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Facebook Ads ROAS Case Study",
+        "item": "https://roas-calculator.tech/blog/facebook-ads-case-study",
+      },
+    ],
+  };
+
   return (
     <div className="min-h-screen bg-slate-50 font-sans text-slate-900 py-12 px-4 md:px-6">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbData) }}
+      />
       <div className="max-w-4xl mx-auto mb-8">
         <Link href="/blog" className="inline-flex items-center text-slate-500 hover:text-blue-600 transition font-medium">
           <ArrowLeft size={18} className="mr-2" /> Back to Blog
@@ -31,13 +73,13 @@ export default function RoasCaseStudy() {
             <span className="text-sm font-bold uppercase tracking-wider text-blue-200">Case Study</span>
           </div>
           <h1 className="text-3xl md:text-5xl font-bold mb-4">
-            Facebook Ads ROAS Case Study: 1.8x → 5.2x in 90 Days
+            Facebook Ads ROAS Case Study: 1.8x &rarr; 5.2x in 90 Days
           </h1>
           <p className="text-blue-100 text-lg">
             Real data from a women's fashion e-commerce store. Exact strategies, budget breakdown, and ROAS improvements documented.
           </p>
           <p className="text-slate-300 text-sm mt-6">
-            📊 Real Numbers • 🎯 Verified Results • 📈 90-Day Data • 💰 ROI Breakdown
+             Real Numbers -  Verified Results -  90-Day Data -  ROI Breakdown
           </p>
         </div>
 
@@ -68,7 +110,7 @@ export default function RoasCaseStudy() {
             <p>
               <strong>Client:</strong> Women's Athletic Apparel E-commerce Store<br />
               <strong>Industry:</strong> Fashion/Activewear<br />
-              <strong>Monthly Revenue:</strong> $180,000 → $520,000<br />
+              <strong>Monthly Revenue:</strong> $180,000 &rarr; $520,000<br />
               <strong>Initial Ad Spend:</strong> $50,000/month<br />
               <strong>Final Ad Spend:</strong> $100,000/month (intentionally scaled)
             </p>
@@ -82,7 +124,7 @@ export default function RoasCaseStudy() {
               <p className="text-red-800 text-sm mt-2">
                 The store was spending $50,000/month on Facebook/Instagram ads but only generating $90,000 in revenue. 
                 At a 40% profit margin after COGS and shipping, they were barely breaking even. Their ROAS of 1.8x meant 
-                each dollar spent on ads returned only $1.80—unsustainable for growth.
+                each dollar spent on ads returned only $1.80-unsustainable for growth.
               </p>
             </div>
 
@@ -149,7 +191,7 @@ export default function RoasCaseStudy() {
                 <strong>After:</strong> Facebook's algorithm now specifically targets customers likely to buy high-value items ($150+)
               </li>
               <li>
-                <strong>Result:</strong> Average order value increased $89 → $142 (59% increase)
+                <strong>Result:</strong> Average order value increased $89 &rarr; $142 (59% increase)
               </li>
             </ul>
 
@@ -163,19 +205,19 @@ export default function RoasCaseStudy() {
               <div className="border border-red-300 bg-red-50 p-6 rounded-lg">
                 <p className="font-bold text-red-900">Professional Product Photos</p>
                 <ul className="text-sm text-red-800 mt-2 space-y-1">
-                  <li>• CTR: 0.85%</li>
-                  <li>• Conversion Rate: 0.6%</li>
-                  <li>• ROAS: 1.5x</li>
-                  <li>• Cost: $2,500/photoshoot</li>
+                  <li>- CTR: 0.85%</li>
+                  <li>- Conversion Rate: 0.6%</li>
+                  <li>- ROAS: 1.5x</li>
+                  <li>- Cost: $2,500/photoshoot</li>
                 </ul>
               </div>
               <div className="border border-green-300 bg-green-50 p-6 rounded-lg">
                 <p className="font-bold text-green-900">User-Generated Content (UGC)</p>
                 <ul className="text-sm text-green-800 mt-2 space-y-1">
-                  <li>• CTR: 2.1%</li>
-                  <li>• Conversion Rate: 1.2%</li>
-                  <li>• ROAS: 3.2x</li>
-                  <li>• Cost: $400/video (freelance)</li>
+                  <li>- CTR: 2.1%</li>
+                  <li>- Conversion Rate: 1.2%</li>
+                  <li>- ROAS: 3.2x</li>
+                  <li>- Cost: $400/video (freelance)</li>
                 </ul>
               </div>
             </div>
@@ -198,7 +240,7 @@ export default function RoasCaseStudy() {
                 <strong>Added:</strong> Broad audience (18-45, US, English) with lookalike audiences (customers + website visitors)
               </li>
               <li>
-                <strong>Result:</strong> CPM dropped from $12 → $8, while CTR increased 1.8%→2.3%
+                <strong>Result:</strong> CPM dropped from $12 &rarr; $8, while CTR increased 1.8% &rarr; 2.3%
               </li>
             </ul>
 
@@ -251,22 +293,22 @@ export default function RoasCaseStudy() {
               <div className="border-l-4 border-blue-600 bg-blue-50 p-6 rounded">
                 <h3 className="font-bold text-blue-900">Month 1 (Baseline)</h3>
                 <ul className="text-sm text-blue-800 mt-2 space-y-1">
-                  <li>• Ad Spend: $50,000</li>
-                  <li>• Revenue: $90,000</li>
-                  <li>• ROAS: 1.8x</li>
-                  <li>• AOV: $89</li>
-                  <li>• CPA: $125</li>
+                  <li>- Ad Spend: $50,000</li>
+                  <li>- Revenue: $90,000</li>
+                  <li>- ROAS: 1.8x</li>
+                  <li>- AOV: $89</li>
+                  <li>- CPA: $125</li>
                 </ul>
               </div>
 
               <div className="border-l-4 border-orange-600 bg-orange-50 p-6 rounded">
                 <h3 className="font-bold text-orange-900">Month 2 (Optimization Phase)</h3>
                 <ul className="text-sm text-orange-800 mt-2 space-y-1">
-                  <li>• Ad Spend: $50,000 (same budget, testing phase)</li>
-                  <li>• Revenue: $156,000 (+73%)</li>
-                  <li>• ROAS: 3.1x (+72%)</li>
-                  <li>• AOV: $118 (+33%)</li>
-                  <li>• CPA: $87 (-30%)</li>
+                  <li>- Ad Spend: $50,000 (same budget, testing phase)</li>
+                  <li>- Revenue: $156,000 (+73%)</li>
+                  <li>- ROAS: 3.1x (+72%)</li>
+                  <li>- AOV: $118 (+33%)</li>
+                  <li>- CPA: $87 (-30%)</li>
                   <li><strong>Key Change:</strong> 70% UGC creative, broad audience, value optimization</li>
                 </ul>
               </div>
@@ -274,11 +316,11 @@ export default function RoasCaseStudy() {
               <div className="border-l-4 border-green-600 bg-green-50 p-6 rounded">
                 <h3 className="font-bold text-green-900">Month 3 (Scaling Phase)</h3>
                 <ul className="text-sm text-green-800 mt-2 space-y-1">
-                  <li>• Ad Spend: $100,000 (2x budget, confident scaling)</li>
-                  <li>• Revenue: $520,000 (+233% from baseline)</li>
-                  <li>• ROAS: 5.2x (+189%)</li>
-                  <li>• AOV: $142 (+59%)</li>
-                  <li>• CPA: $68 (-46%)</li>
+                  <li>- Ad Spend: $100,000 (2x budget, confident scaling)</li>
+                  <li>- Revenue: $520,000 (+233% from baseline)</li>
+                  <li>- ROAS: 5.2x (+189%)</li>
+                  <li>- AOV: $142 (+59%)</li>
+                  <li>- CPA: $68 (-46%)</li>
                   <li><strong>Key Change:</strong> Scaling budget while maintaining efficiency</li>
                 </ul>
               </div>
@@ -334,7 +376,7 @@ export default function RoasCaseStudy() {
             </div>
 
             <p className="text-sm text-slate-600 italic">
-              Month 1 was nearly break-even ($280/month profit). By Month 3, the client went from barely surviving to generating $149,600 in monthly profit—a sustainable, scalable business.
+              Month 1 was nearly break-even ($280/month profit). By Month 3, the client went from barely surviving to generating $149,600 in monthly profit-a sustainable, scalable business.
             </p>
           </section>
 
@@ -376,7 +418,7 @@ export default function RoasCaseStudy() {
             <h2 className="text-3xl font-bold text-slate-900">Conclusion</h2>
             
             <p>
-              This case study demonstrates that ROAS improvements aren't magic—they come from applying data-driven strategies systematically. 
+              This case study demonstrates that ROAS improvements aren't magic-they come from applying data-driven strategies systematically. 
               The 189% ROAS improvement from 1.8x to 5.2x was achieved through:
             </p>
 
@@ -392,7 +434,7 @@ export default function RoasCaseStudy() {
               <br />
               <strong>Investment:</strong> ~$4,000 in optimization work, generating $149,600/month in additional profit.
               <br />
-              <strong>ROI on optimization:</strong> 3,640% (4,000 investment → 149,600 monthly profit).
+              <strong>ROI on optimization:</strong> 3,640% (4,000 investment &rarr; 149,600 monthly profit).
             </p>
 
             <p className="text-sm text-slate-600 italic mt-6">

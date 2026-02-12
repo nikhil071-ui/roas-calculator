@@ -11,6 +11,19 @@ export const metadata: Metadata = {
     "exam portal image size",
     "jpg compression",
   ],
+  openGraph: {
+    title: "Image Compressor FAQ | ROAS Tools",
+    description: "Answers to common questions about image compression, size limits, quality settings, and exam portal requirements.",
+    url: "https://roas-calculator.tech/image-compressor/faq",
+  },
+      twitter: {
+    card: "summary_large_image",
+    title: "Image Compressor FAQ | ROAS Tools",
+    description: "Answers to common questions about image compression, size limits, quality settings, and exam portal requirements.",
+  },
+  alternates: {
+    canonical: "https://roas-calculator.tech/image-compressor/faq",
+  },
 };
 
 const faqs = [

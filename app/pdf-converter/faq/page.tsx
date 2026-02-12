@@ -11,6 +11,19 @@ export const metadata: Metadata = {
     "pdf size limits",
     "exam pdf upload",
   ],
+  openGraph: {
+    title: "PDF Converter FAQ | ROAS Tools",
+    description: "Answers to common questions about JPG to PDF conversion, compression, size limits, and exam portal rules.",
+    url: "https://roas-calculator.tech/pdf-converter/faq",
+  },
+      twitter: {
+    card: "summary_large_image",
+    title: "PDF Converter FAQ | ROAS Tools",
+    description: "Answers to common questions about JPG to PDF conversion, compression, size limits, and exam portal rules.",
+  },
+  alternates: {
+    canonical: "https://roas-calculator.tech/pdf-converter/faq",
+  },
 };
 
 const faqs = [

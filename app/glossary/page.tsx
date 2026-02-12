@@ -1,5 +1,24 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowLeft, BookOpen, Search } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "Marketing Glossary | ROAS Tools",
+  description: "Digital marketing terms, ROAS metrics, and ad platform concepts explained.",
+  alternates: {
+    canonical: "https://roas-calculator.tech/glossary",
+  },
+  openGraph: {
+    title: "Marketing Glossary | ROAS Tools",
+    description: "Digital marketing terms, ROAS metrics, and ad platform concepts explained.",
+    url: "https://roas-calculator.tech/glossary",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Marketing Glossary | ROAS Tools",
+    description: "Digital marketing terms, ROAS metrics, and ad platform concepts explained.",
+  },
+};
 
 export default function Glossary() {
   return (
@@ -69,7 +88,7 @@ export default function Glossary() {
                         <h3 className="text-lg font-bold text-slate-900 mb-2">CPA (Cost Per Acquisition)</h3>
                         <p className="text-slate-600">
                             The average cost to acquire one customer or conversion. Calculated as: 
-                            <span className="font-mono bg-slate-100 px-2 py-1 rounded ml-1">Total Ad Spend ÷ Number of Conversions</span>. 
+                            <span className="font-mono bg-slate-100 px-2 py-1 rounded ml-1">Total Ad Spend / Number of Conversions</span>. 
                             Lower CPA is generally better, but must be evaluated alongside customer lifetime value (CLV).
                         </p>
                     </div>
@@ -78,7 +97,7 @@ export default function Glossary() {
                         <h3 className="text-lg font-bold text-slate-900 mb-2">CPC (Cost Per Click)</h3>
                         <p className="text-slate-600">
                             The amount you pay each time someone clicks on your ad. Common in Google Ads and Facebook Ads. 
-                            Calculated as: <span className="font-mono bg-slate-100 px-2 py-1 rounded">Total Cost ÷ Total Clicks</span>.
+                            Calculated as: <span className="font-mono bg-slate-100 px-2 py-1 rounded">Total Cost / Total Clicks</span>.
                         </p>
                     </div>
 
@@ -86,7 +105,7 @@ export default function Glossary() {
                         <h3 className="text-lg font-bold text-slate-900 mb-2">CPM (Cost Per Mille / Cost Per Thousand Impressions)</h3>
                         <p className="text-slate-600">
                             The cost to show your ad 1,000 times. Used primarily for brand awareness campaigns. 
-                            Formula: <span className="font-mono bg-slate-100 px-2 py-1 rounded">(Total Cost ÷ Impressions) × 1000</span>.
+                            Formula: <span className="font-mono bg-slate-100 px-2 py-1 rounded">(Total Cost / Impressions) x 1000</span>.
                         </p>
                     </div>
 
@@ -94,7 +113,7 @@ export default function Glossary() {
                         <h3 className="text-lg font-bold text-slate-900 mb-2">CTR (Click-Through Rate)</h3>
                         <p className="text-slate-600">
                             The percentage of people who click your ad after seeing it. Calculated as: 
-                            <span className="font-mono bg-slate-100 px-2 py-1 rounded">(Clicks ÷ Impressions) × 100</span>. 
+                            <span className="font-mono bg-slate-100 px-2 py-1 rounded">(Clicks / Impressions) x 100</span>. 
                             A CTR above 2% is generally good, but varies by industry.
                         </p>
                     </div>
@@ -103,7 +122,7 @@ export default function Glossary() {
                         <h3 className="text-lg font-bold text-slate-900 mb-2">Conversion Rate</h3>
                         <p className="text-slate-600">
                             The percentage of visitors who complete a desired action (purchase, signup, download). 
-                            Formula: <span className="font-mono bg-slate-100 px-2 py-1 rounded">(Conversions ÷ Total Visitors) × 100</span>.
+                            Formula: <span className="font-mono bg-slate-100 px-2 py-1 rounded">(Conversions / Total Visitors) x 100</span>.
                         </p>
                     </div>
                 </div>
@@ -181,7 +200,7 @@ export default function Glossary() {
                         <h3 className="text-lg font-bold text-slate-900 mb-2">Profit Margin</h3>
                         <p className="text-slate-600">
                             The percentage of revenue remaining after COGS. Used to calculate break-even ROAS. 
-                            Formula: <span className="font-mono bg-slate-100 px-2 py-1 rounded">((Revenue - COGS) ÷ Revenue) × 100</span>. 
+                            Formula: <span className="font-mono bg-slate-100 px-2 py-1 rounded">((Revenue - COGS) / Revenue) x 100</span>. 
                             A 30% profit margin means you keep $30 for every $100 in sales.
                         </p>
                     </div>
@@ -205,7 +224,7 @@ export default function Glossary() {
                         <h3 className="text-lg font-bold text-slate-900 mb-2">ROAS (Return on Ad Spend)</h3>
                         <p className="text-slate-600">
                             The primary metric for measuring advertising profitability. Calculated as: 
-                            <span className="font-mono bg-slate-100 px-2 py-1 rounded">Revenue ÷ Ad Spend</span>. 
+                            <span className="font-mono bg-slate-100 px-2 py-1 rounded">Revenue / Ad Spend</span>. 
                             A ROAS of 4.0x means you earn $4 for every $1 spent on ads. Must exceed break-even ROAS to be profitable.
                         </p>
                     </div>
@@ -214,7 +233,7 @@ export default function Glossary() {
                         <h3 className="text-lg font-bold text-slate-900 mb-2">ROI (Return on Investment)</h3>
                         <p className="text-slate-600">
                             Broader profitability metric that includes all costs (not just ad spend). 
-                            Formula: <span className="font-mono bg-slate-100 px-2 py-1 rounded">((Revenue - Total Costs) ÷ Total Costs) × 100</span>. 
+                            Formula: <span className="font-mono bg-slate-100 px-2 py-1 rounded">((Revenue - Total Costs) / Total Costs) x 100</span>. 
                             A 100% ROI means you doubled your money.
                         </p>
                     </div>
@@ -271,7 +290,7 @@ export default function Glossary() {
                     Don't see a term you're looking for? <Link href="/contact" className="text-blue-600 underline">Contact us</Link> and we'll add it.
                 </p>
                 <p className="text-sm text-slate-500">
-                    Last updated: February 10, 2026 • Next review: August 10, 2026
+                    Last updated: February 10, 2026 - Next review: August 10, 2026
                 </p>
             </div>
         </div>

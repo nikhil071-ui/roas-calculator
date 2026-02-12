@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import jsPDF from "jspdf";
 import imageCompression from "browser-image-compression";
 import { Upload, FileText, Trash2, Download, Plus, RotateCw, Settings, Eye, X, FileDigit } from "lucide-react";
@@ -16,6 +16,21 @@ export default function PdfClient() {
   const [statusText, setStatusText] = useState("");
   const [previewImage, setPreviewImage] = useState<string | null>(null);
   const [isPreviewLoading, setIsPreviewLoading] = useState(false);
+  const imageUrls = useMemo(
+    () => images.map((img) => ({ id: img.id, url: URL.createObjectURL(img.file) })),
+    [images]
+  );
+  const imageUrlMap = useMemo(() => {
+    const map = new Map<string, string>();
+    imageUrls.forEach((item) => map.set(item.id, item.url));
+    return map;
+  }, [imageUrls]);
+
+  useEffect(() => {
+    return () => {
+      imageUrls.forEach((item) => URL.revokeObjectURL(item.url));
+    };
+  }, [imageUrls]);
 
   // --- CALCULATE LIMITS ---
   const totalTargetMB = unit === "KB" ? Number(targetSize) / 1024 : Number(targetSize);
@@ -34,10 +49,10 @@ export default function PdfClient() {
     if (images.length === 0) return { text: "Add images to calculate quality", color: "text-gray-400" };
     
     // Logic: If we have to squeeze a page into < 50KB, it looks bad.
-    if (mbPerPage > 0.5) return { text: "Quality: Excellent (High Res) 🌟", color: "text-green-600" };
-    if (mbPerPage > 0.2) return { text: "Quality: Good (Readable) ✅", color: "text-blue-600" };
-    if (mbPerPage > 0.05) return { text: "Quality: Low (Strict Limits) ⚠️", color: "text-orange-600" };
-    return { text: "Quality: Risk of Blur (Too many pages for this size) ❌", color: "text-red-600" };
+    if (mbPerPage > 0.5) return { text: "Quality: Excellent (High Res) ", color: "text-green-600" };
+    if (mbPerPage > 0.2) return { text: "Quality: Good (Readable) OK", color: "text-blue-600" };
+    if (mbPerPage > 0.05) return { text: "Quality: Low (Strict Limits) !", color: "text-orange-600" };
+    return { text: "Quality: Risk of Blur (Too many pages for this size) X", color: "text-red-600" };
   };
 
   const handleImageUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -79,10 +94,12 @@ export default function PdfClient() {
       useWebWorker: true,
     };
 
+    let tempUrl: string | null = null;
     try {
       const compressedFile = await imageCompression(imageItem.file, options);
       const img = new Image();
-      img.src = URL.createObjectURL(compressedFile);
+      tempUrl = URL.createObjectURL(compressedFile);
+      img.src = tempUrl;
       await new Promise((r) => (img.onload = r));
 
       const canvas = document.createElement("canvas");
@@ -105,6 +122,8 @@ export default function PdfClient() {
     } catch (error) {
       console.error(error);
       return null;
+    } finally {
+      if (tempUrl) URL.revokeObjectURL(tempUrl);
     }
   };
 
@@ -261,7 +280,7 @@ export default function PdfClient() {
                   <Upload className="h-10 w-10 text-red-600" />
                 </div>
                 <p className="text-2xl font-bold text-slate-800">Drop images here</p>
-                <p className="text-slate-500 mt-2">JPG, PNG, WEBP • We'll merge them into one PDF</p>
+                <p className="text-slate-500 mt-2">JPG, PNG, WEBP - We'll merge them into one PDF</p>
              </div>
           ) : (
             <>
@@ -283,7 +302,7 @@ export default function PdfClient() {
                      <div className="h-40 flex items-center justify-center p-2 bg-slate-200/50">
                          {/* eslint-disable-next-line @next/next/no-img-element */}
                          <img
-                           src={URL.createObjectURL(img.file)}
+                           src={imageUrlMap.get(img.id) ?? ""}
                            alt="preview"
                            style={{ transform: `rotate(${img.rotation}deg)` }}
                            className="max-h-full max-w-full object-contain transition-transform duration-300"

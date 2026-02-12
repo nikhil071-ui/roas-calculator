@@ -13,6 +13,11 @@ export const metadata: Metadata = {
         description: "Learn about ROAS Tools, our mission, and how we build privacy-first, high-performance marketing calculators.",
         url: "https://roas-calculator.tech/about",
     },
+        twitter: {
+      card: "summary_large_image",
+      title: "About ROAS Tools",
+      description: "Learn about ROAS Tools, our mission, and how we build privacy-first, high-performance marketing calculators.",
+    },
 };
 
 export default function About() {
@@ -82,7 +87,7 @@ export default function About() {
                         Calculating "Return on Ad Spend" manually is tedious and prone to errors. Most tools online are either paid, full of spam, or require you to sign up.
                     </p>
                     <p className="text-slate-600 leading-relaxed">
-                        We built <strong>ROAS Tools</strong> to provide a fast, free, and accurate way to calculate ROAS, Break-Even Points, and Net Profit in real-time—without ever asking for your email.
+                        We built <strong>ROAS Tools</strong> to provide a fast, free, and accurate way to calculate ROAS, Break-Even Points, and Net Profit in real-time-without ever asking for your email.
                     </p>
                 </div>
             </section>
@@ -124,7 +129,7 @@ export default function About() {
                     </p>
                     <p className="text-slate-600 leading-relaxed mb-4">
                         Our founders have combined experience at leading marketing agencies, working with brands like fashion retailers, 
-                        SaaS startups, and dropshipping entrepreneurs. We understand the pressure of scaling ad spend while maintaining profitability—
+                        SaaS startups, and dropshipping entrepreneurs. We understand the pressure of scaling ad spend while maintaining profitability-
                         that's why accurate ROAS tracking is non-negotiable.
                     </p>
                     <p className="text-slate-600 leading-relaxed">
@@ -143,17 +148,17 @@ export default function About() {
                 </p>
                 <ul className="space-y-3">
                     <li className="flex items-start gap-3 text-slate-700">
-                        <span className="text-blue-600 font-bold">•</span>
+                        <span className="text-blue-600 font-bold">-</span>
                         <span><strong>Formula Verification:</strong> All calculations are cross-referenced with Google Ads Help documentation, 
                         Meta Business Help Center, and accounting principles (GAAP standards).</span>
                     </li>
                     <li className="flex items-start gap-3 text-slate-700">
-                        <span className="text-blue-600 font-bold">•</span>
+                        <span className="text-blue-600 font-bold">-</span>
                         <span><strong>Real-Time Processing:</strong> Unlike other calculators that round aggressively, 
                         we maintain precision to 2 decimal places for financial accuracy.</span>
                     </li>
                     <li className="flex items-start gap-3 text-slate-700">
-                        <span className="text-blue-600 font-bold">•</span>
+                        <span className="text-blue-600 font-bold">-</span>
                         <span><strong>Privacy-First Architecture:</strong> All calculations happen in your browser using JavaScript. 
                         We never send your data to our servers, ensuring complete confidentiality.</span>
                     </li>
@@ -209,10 +214,10 @@ export default function About() {
                         and <strong>Tailwind CSS</strong> for a fast, modern user experience. Here's why it matters:
                     </p>
                     <ul className="space-y-2 text-slate-600">
-                        <li>✓ <strong>Instant Load Times:</strong> Server-side rendering ensures pages load in under 1 second globally.</li>
-                        <li>✓ <strong>Mobile-First Design:</strong> Over 60% of our users access tools from mobile devices. Every feature is touch-optimized.</li>
-                        <li>✓ <strong>Offline Capability:</strong> Our image and PDF converters work even without internet once the page loads.</li>
-                        <li>✓ <strong>SEO Optimized:</strong> Structured data, semantic HTML, and clean URLs ensure our educational content ranks well on Google.</li>
+                        <li>OK <strong>Instant Load Times:</strong> Server-side rendering ensures pages load in under 1 second globally.</li>
+                        <li>OK <strong>Mobile-First Design:</strong> Over 60% of our users access tools from mobile devices. Every feature is touch-optimized.</li>
+                        <li>OK <strong>Offline Capability:</strong> Our image and PDF converters work even without internet once the page loads.</li>
+                        <li>OK <strong>SEO Optimized:</strong> Structured data, semantic HTML, and clean URLs ensure our educational content ranks well on Google.</li>
                     </ul>
                 </div>
             </section>
@@ -222,7 +227,7 @@ export default function About() {
                 <h3 className="text-lg font-bold text-slate-900 mb-3">Our Commitment: Always Free</h3>
                 <p className="text-slate-700 leading-relaxed mb-4">
                     We know there's a temptation to add paywalls or "Pro" plans. But we believe financial literacy tools 
-                    should be accessible to everyone—whether you're a Fortune 500 CMO or a college student starting your first 
+                    should be accessible to everyone-whether you're a Fortune 500 CMO or a college student starting your first 
                     dropshipping store.
                 </p>
                 <p className="text-slate-700 leading-relaxed">
@@ -240,15 +245,15 @@ export default function About() {
                 </p>
                 <ul className="space-y-3 text-slate-700">
                     <li className="flex items-start gap-3">
-                        <span className="text-blue-600 font-bold">•</span>
+                        <span className="text-blue-600 font-bold">-</span>
                         <span><strong>Certifications:</strong> Google Analytics certified, Meta Blueprint certified, and hands-on experience with GA4, Meta Ads, and Google Ads.</span>
                     </li>
                     <li className="flex items-start gap-3">
-                        <span className="text-blue-600 font-bold">•</span>
+                        <span className="text-blue-600 font-bold">-</span>
                         <span><strong>Experience:</strong> 15+ years combined experience managing paid media for e-commerce, SaaS, and lead generation.</span>
                     </li>
                     <li className="flex items-start gap-3">
-                        <span className="text-blue-600 font-bold">•</span>
+                        <span className="text-blue-600 font-bold">-</span>
                         <span><strong>Scale:</strong> 2,000+ campaigns analyzed and 50,000+ monthly users served across tools and guides.</span>
                     </li>
                 </ul>
@@ -259,15 +264,15 @@ export default function About() {
                 <h3 className="text-lg font-bold text-slate-900 mb-4">Editorial Standards and Review Process</h3>
                 <ul className="space-y-3 text-slate-700">
                     <li className="flex items-start gap-3">
-                        <span className="text-emerald-600 font-bold">•</span>
+                        <span className="text-emerald-600 font-bold">-</span>
                         <span><strong>Source-backed content:</strong> We cite official documentation, standards, and primary sources for technical claims.</span>
                     </li>
                     <li className="flex items-start gap-3">
-                        <span className="text-emerald-600 font-bold">•</span>
+                        <span className="text-emerald-600 font-bold">-</span>
                         <span><strong>Data verification:</strong> All benchmarks are cross-checked against internal datasets and public references.</span>
                     </li>
                     <li className="flex items-start gap-3">
-                        <span className="text-emerald-600 font-bold">•</span>
+                        <span className="text-emerald-600 font-bold">-</span>
                         <span><strong>Update cadence:</strong> We review core pages quarterly and update for major platform changes.</span>
                     </li>
                 </ul>
@@ -323,14 +328,14 @@ export default function About() {
                             "Finally, a ROAS calculator that actually explains what the numbers mean. I was bleeding money on Facebook ads 
                             until I calculated my real break-even point here."
                         </p>
-                        <footer className="text-sm text-slate-500">— Sarah K., Dropshipping Store Owner</footer>
+                        <footer className="text-sm text-slate-500">- Sarah K., Dropshipping Store Owner</footer>
                     </blockquote>
                     
                     <blockquote className="border-l-4 border-green-500 pl-4 py-2">
                         <p className="text-slate-700 italic mb-2">
                             "The image compressor saved me hours. Every government exam form needs photos under 50KB. This tool does it instantly."
                         </p>
-                        <footer className="text-sm text-slate-500">— Rahul M., SSC CGL Aspirant (India)</footer>
+                        <footer className="text-sm text-slate-500">- Rahul M., SSC CGL Aspirant (India)</footer>
                     </blockquote>
 
                     <blockquote className="border-l-4 border-purple-500 pl-4 py-2">
@@ -338,7 +343,7 @@ export default function About() {
                             "I use this during client calls to show them whether their Google Ads are profitable. 
                             The PDF export feature makes it easy to send professional reports."
                         </p>
-                        <footer className="text-sm text-slate-500">— Mike T., Digital Marketing Consultant</footer>
+                        <footer className="text-sm text-slate-500">- Mike T., Digital Marketing Consultant</footer>
                     </blockquote>
                 </div>
             </section>
@@ -351,13 +356,13 @@ export default function About() {
                 </p>
                 <div className="flex flex-wrap gap-4 justify-center">
                     <Link href="/team" className="inline-flex items-center gap-2 bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition">
-                        👥 Meet the Team
+                         Meet the Team
                     </Link>
                     <Link href="/editorial-policy" className="inline-flex items-center gap-2 bg-emerald-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-emerald-700 transition">
-                        📝 Editorial Policy
+                         Editorial Policy
                     </Link>
                     <Link href="/case-studies" className="inline-flex items-center gap-2 bg-purple-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-purple-700 transition">
-                        📈 Case Studies
+                         Case Studies
                     </Link>
                     <Link href="/contact" className="inline-flex items-center gap-2 bg-slate-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-slate-700 transition">
                         Contact Us <ArrowLeft size={16} className="rotate-180" />
@@ -370,8 +375,8 @@ export default function About() {
 
       {/* Footer */}
       <footer className="max-w-3xl mx-auto mt-12 text-center border-t border-slate-200 pt-8">
-        <p className="text-slate-500 mb-2">Built with ❤️ for the Marketing Community.</p>
-        <p className="text-slate-400 text-sm">© 2026 ROAS Tools Inc.</p>
+        <p className="text-slate-500 mb-2">Built with <3 for the Marketing Community.</p>
+        <p className="text-slate-400 text-sm">(c) 2026 ROAS Tools Inc.</p>
       </footer>
 
     </div>

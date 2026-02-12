@@ -95,10 +95,8 @@ const SEO_DATA: Record<string, { title: string; desc: string; h1: string; subtex
 };
 
 // --- 2. GENERATE DYNAMIC METADATA ---
-// FIX APPLIED: params is Promise<{ slug: string }>
-export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
-  const resolvedParams = await params; // <--- CRITICAL FIX
-  const data = SEO_DATA[resolvedParams.slug];
+export async function generateMetadata({ params }: { params: { slug: string } }) {
+  const data = SEO_DATA[params.slug];
   
   if (!data) {
     return {
@@ -116,7 +114,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       nocache: false,
     },
     alternates: {
-      canonical: `https://roas-calculator.tech/compressor/${resolvedParams.slug}`,
+      canonical: `https://roas-calculator.tech/compressor/${params.slug}`,
     },
     openGraph: {
       title: data.title,
@@ -127,19 +125,40 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 }
 
 // --- 3. THE PAGE COMPONENT ---
-// FIX APPLIED: params is Promise<{ slug: string }>
-export default async function DynamicCompressorPage({ params }: { params: Promise<{ slug: string }> }) {
-  const resolvedParams = await params; // <--- CRITICAL FIX
-  const data = SEO_DATA[resolvedParams.slug];
+export default async function DynamicCompressorPage({ params }: { params: { slug: string } }) {
+  const data = SEO_DATA[params.slug];
 
   if (!data) {
     notFound();
   }
 
+  const breadcrumbData = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://roas-calculator.tech/",
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": data.h1,
+        "item": `https://roas-calculator.tech/compressor/${params.slug}`,
+      },
+    ],
+  };
+
   const currentDate = new Date().toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
 
   return (
     <main className="min-h-screen bg-white p-4 py-12 font-sans text-gray-900">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbData) }}
+      />
       <div className="max-w-5xl mx-auto space-y-12">
         
         {/* DYNAMIC HEADER */}
@@ -193,7 +212,7 @@ export default async function DynamicCompressorPage({ params }: { params: Promis
           </p>
 
           <div className="bg-blue-50 border-l-4 border-blue-600 p-6 my-8 rounded-r-lg">
-            <h4 className="text-xl font-bold text-blue-900 mb-2">🚀 Key Features of this Tool:</h4>
+            <h4 className="text-xl font-bold text-blue-900 mb-2"> Key Features of this Tool:</h4>
             <ul className="list-disc pl-5 space-y-2 text-blue-800">
               <li><strong>Exact Size Control:</strong> Target 50KB, 20KB, or any custom size.</li>
               <li><strong>Privacy Guaranteed:</strong> Images are processed locally in your browser. No server uploads.</li>
@@ -269,7 +288,7 @@ export default async function DynamicCompressorPage({ params }: { params: Promis
               <details className="group bg-gray-50 p-6 rounded-xl cursor-pointer border border-gray-200 hover:border-blue-300 transition-colors">
                 <summary className="font-bold text-lg text-gray-900 list-none flex justify-between items-center">
                   Is it safe to upload my private photos here?
-                  <span className="text-blue-600 group-open:rotate-180 transition-transform duration-300">▼</span>
+                  <span className="text-blue-600 group-open:rotate-180 transition-transform duration-300">v</span>
                 </summary>
                 <p className="text-gray-700 mt-4 leading-relaxed">
                   Yes, absolutely. Unlike other websites, this tool runs <strong>100% in your browser</strong>. 
@@ -280,7 +299,7 @@ export default async function DynamicCompressorPage({ params }: { params: Promis
               <details className="group bg-gray-50 p-6 rounded-xl cursor-pointer border border-gray-200 hover:border-blue-300 transition-colors">
                 <summary className="font-bold text-lg text-gray-900 list-none flex justify-between items-center">
                   Why does the file size sometimes differ slightly?
-                  <span className="text-blue-600 group-open:rotate-180 transition-transform duration-300">▼</span>
+                  <span className="text-blue-600 group-open:rotate-180 transition-transform duration-300">v</span>
                 </summary>
                 <p className="text-gray-700 mt-4 leading-relaxed">
                   Image compression is complex. The target size is an estimate. Sometimes, to maintain a usable image quality, 
@@ -291,7 +310,7 @@ export default async function DynamicCompressorPage({ params }: { params: Promis
               <details className="group bg-gray-50 p-6 rounded-xl cursor-pointer border border-gray-200 hover:border-blue-300 transition-colors">
                 <summary className="font-bold text-lg text-gray-900 list-none flex justify-between items-center">
                   Can I use this for {data.keywords[0]}?
-                  <span className="text-blue-600 group-open:rotate-180 transition-transform duration-300">▼</span>
+                  <span className="text-blue-600 group-open:rotate-180 transition-transform duration-300">v</span>
                 </summary>
                 <p className="text-gray-700 mt-4 leading-relaxed">
                   Yes! This tool is specifically optimized for keywords like <strong>{data.keywords[0]}</strong> and <strong>{data.keywords[1]}</strong>.
@@ -302,7 +321,7 @@ export default async function DynamicCompressorPage({ params }: { params: Promis
               <details className="group bg-gray-50 p-6 rounded-xl cursor-pointer border border-gray-200 hover:border-blue-300 transition-colors">
                 <summary className="font-bold text-lg text-gray-900 list-none flex justify-between items-center">
                   Does this work on mobile phones?
-                  <span className="text-blue-600 group-open:rotate-180 transition-transform duration-300">▼</span>
+                  <span className="text-blue-600 group-open:rotate-180 transition-transform duration-300">v</span>
                 </summary>
                 <p className="text-gray-700 mt-4 leading-relaxed">
                   Yes, our tool is fully responsive. You can {data.h1.toLowerCase()} directly from your iPhone, Android, or tablet browser without installing any apps.

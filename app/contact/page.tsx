@@ -1,5 +1,24 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { Mail, ArrowLeft, MessageSquare, Clock, Send } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "Contact | ROAS Tools",
+  description: "Contact ROAS Tools for support, feature requests, partnerships, and bug reports.",
+  alternates: {
+    canonical: "https://roas-calculator.tech/contact",
+  },
+  openGraph: {
+    title: "Contact | ROAS Tools",
+    description: "Contact ROAS Tools for support, feature requests, partnerships, and bug reports.",
+    url: "https://roas-calculator.tech/contact",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Contact | ROAS Tools",
+    description: "Contact ROAS Tools for support, feature requests, partnerships, and bug reports.",
+  },
+};
 
 export default function Contact() {
   return (
@@ -235,27 +254,27 @@ export default function Contact() {
             <div className="grid md:grid-cols-2 gap-6">
                 <div className="space-y-3">
                     <h4 className="font-bold text-green-700 flex items-center gap-2">
-                        ✓ Do This
+                        OK Do This
                     </h4>
                     <ul className="space-y-2 text-sm text-slate-600">
-                        <li>• Be specific about which tool you're using</li>
-                        <li>• Include screenshots or error messages</li>
-                        <li>• Mention your browser (Chrome, Safari, Firefox)</li>
-                        <li>• Describe steps to reproduce the issue</li>
-                        <li>• Be patient—we're a small team!</li>
+                        <li>- Be specific about which tool you're using</li>
+                        <li>- Include screenshots or error messages</li>
+                        <li>- Mention your browser (Chrome, Safari, Firefox)</li>
+                        <li>- Describe steps to reproduce the issue</li>
+                        <li>- Be patient-we're a small team!</li>
                     </ul>
                 </div>
 
                 <div className="space-y-3">
                     <h4 className="font-bold text-red-700 flex items-center gap-2">
-                        ✗ Avoid This
+                        X Avoid This
                     </h4>
                     <ul className="space-y-2 text-sm text-slate-600">
-                        <li>• Sending multiple emails about the same issue</li>
-                        <li>• Using all caps or aggressive language</li>
-                        <li>• Asking for paid consultation via free support</li>
-                        <li>• Requesting features already planned in the roadmap</li>
-                        <li>• Spam or promotional content</li>
+                        <li>- Sending multiple emails about the same issue</li>
+                        <li>- Using all caps or aggressive language</li>
+                        <li>- Asking for paid consultation via free support</li>
+                        <li>- Requesting features already planned in the roadmap</li>
+                        <li>- Spam or promotional content</li>
                     </ul>
                 </div>
             </div>
@@ -297,7 +316,7 @@ export default function Contact() {
 
       {/* Footer */}
       <footer className="max-w-3xl mx-auto mt-12 text-center text-slate-400 text-sm">
-        <p>© 2026 ROAS Tools Inc.</p>
+        <p>(c) 2026 ROAS Tools Inc.</p>
       </footer>
     </div>
   );

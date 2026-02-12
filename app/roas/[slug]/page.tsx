@@ -108,9 +108,8 @@ const SEO_DATA: Record<string, { title: string; desc: string; h1: string; subtex
 };
 
 // --- 2. GENERATE DYNAMIC METADATA ---
-export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
-  const resolvedParams = await params;
-  const data = SEO_DATA[resolvedParams.slug];
+export async function generateMetadata({ params }: { params: { slug: string } }) {
+  const data = SEO_DATA[params.slug];
   
   if (!data) {
     return {
@@ -128,7 +127,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       nocache: false,
     },
     alternates: {
-      canonical: `https://roas-calculator.tech/roas/${resolvedParams.slug}`,
+      canonical: `https://roas-calculator.tech/roas/${params.slug}`,
     },
     openGraph: {
       title: data.title,
@@ -139,18 +138,40 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 }
 
 // --- 3. THE PAGE COMPONENT ---
-export default async function DynamicRoasPage({ params }: { params: Promise<{ slug: string }> }) {
-  const resolvedParams = await params;
-  const data = SEO_DATA[resolvedParams.slug];
+export default async function DynamicRoasPage({ params }: { params: { slug: string } }) {
+  const data = SEO_DATA[params.slug];
 
   if (!data) {
     notFound();
   }
 
+  const breadcrumbData = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://roas-calculator.tech/",
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": data.h1,
+        "item": `https://roas-calculator.tech/roas/${params.slug}`,
+      },
+    ],
+  };
+
   const currentDate = new Date().toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
 
   return (
     <main className="min-h-screen bg-white p-4 py-12 font-sans text-gray-900">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbData) }}
+      />
       <div className="max-w-5xl mx-auto space-y-12">
         
         {/* DYNAMIC HEADER */}
@@ -203,13 +224,13 @@ export default async function DynamicRoasPage({ params }: { params: Promise<{ sl
           </p>
 
           <div className="bg-blue-50 border-l-4 border-blue-600 p-6 my-8 rounded-r-lg">
-            <h4 className="text-xl font-bold text-blue-900 mb-2">📊 The Formula:</h4>
+            <h4 className="text-xl font-bold text-blue-900 mb-2"> The Formula:</h4>
             <p className="font-mono text-lg text-blue-800 bg-white inline-block px-3 py-1 rounded border border-blue-200">
-              ROAS = Total Revenue ÷ Total Ad Spend
+              ROAS = Total Revenue / Total Ad Spend
             </p>
             <p className="mt-3 text-blue-800">
               Example: You spent $500 on {data.platform} ads and made $2,500 in sales. <br/>
-              <strong>$2,500 ÷ $500 = 5.0 ROAS</strong> (or 500% return).
+              <strong>$2,500 / $500 = 5.0 ROAS</strong> (or 500% return).
             </p>
           </div>
 

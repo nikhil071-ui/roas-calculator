@@ -115,9 +115,8 @@ const SEO_DATA: Record<string, { title: string; desc: string; h1: string; subtex
 };
 
 // --- 2. GENERATE DYNAMIC METADATA ---
-export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
-  const resolvedParams = await params;
-  const data = SEO_DATA[resolvedParams.slug];
+export async function generateMetadata({ params }: { params: { slug: string } }) {
+  const data = SEO_DATA[params.slug];
   
   if (!data) {
     return {
@@ -135,7 +134,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       nocache: false,
     },
     alternates: {
-      canonical: `https://roas-calculator.tech/currency/${resolvedParams.slug}`,
+      canonical: `https://roas-calculator.tech/currency/${params.slug}`,
     },
     openGraph: {
       title: data.title,
@@ -146,18 +145,40 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 }
 
 // --- 3. THE PAGE COMPONENT ---
-export default async function DynamicCurrencyPage({ params }: { params: Promise<{ slug: string }> }) {
-  const resolvedParams = await params;
-  const data = SEO_DATA[resolvedParams.slug];
+export default async function DynamicCurrencyPage({ params }: { params: { slug: string } }) {
+  const data = SEO_DATA[params.slug];
 
   if (!data) {
     notFound();
   }
 
+  const breadcrumbData = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://roas-calculator.tech/",
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": data.h1,
+        "item": `https://roas-calculator.tech/currency/${params.slug}`,
+      },
+    ],
+  };
+
   const currentDate = new Date().toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
 
   return (
     <main className="min-h-screen bg-white p-4 py-12 font-sans text-gray-900">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbData) }}
+      />
       <div className="max-w-5xl mx-auto space-y-12">
         
         {/* DYNAMIC HEADER */}
@@ -213,7 +234,7 @@ export default async function DynamicCurrencyPage({ params }: { params: Promise<
           </ol>
 
           <div className="bg-emerald-50 border-l-4 border-emerald-600 p-6 my-8 rounded-r-lg">
-            <h4 className="text-xl font-bold text-emerald-900 mb-2">💡 Pro Tip for Money Transfer:</h4>
+            <h4 className="text-xl font-bold text-emerald-900 mb-2"> Pro Tip for Money Transfer:</h4>
             <p className="text-emerald-800">
               Banks often charge hidden fees by giving you a "bad" exchange rate. Always check the 
               <strong> Mid-Market Rate</strong> (what you see here) before using services like PayPal or Western Union.
@@ -239,7 +260,7 @@ export default async function DynamicCurrencyPage({ params }: { params: Promise<
              </details>
              <details className="group bg-gray-50 p-6 rounded-xl cursor-pointer border border-gray-200">
                 <summary className="font-bold text-gray-900">Is this the "Bank Rate"?</summary>
-                <p className="text-gray-700 mt-2">This is the "Mid-Market Rate" — the fairest rate derived from the midpoint between buy and sell prices in global markets.</p>
+                <p className="text-gray-700 mt-2">This is the "Mid-Market Rate" - the fairest rate derived from the midpoint between buy and sell prices in global markets.</p>
              </details>
              <details className="group bg-gray-50 p-6 rounded-xl cursor-pointer border border-gray-200">
                 <summary className="font-bold text-gray-900">Can I convert crypto assets?</summary>

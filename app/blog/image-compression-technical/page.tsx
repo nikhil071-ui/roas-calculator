@@ -13,11 +13,53 @@ export const metadata: Metadata = {
     "WebP vs JPEG",
     "image optimization guide",
   ],
+  openGraph: {
+    title: "Image Compression vs Quality: Technical Guide | Our Testing Results",
+    description: "Complete technical analysis of image compression. Real test results, algorithms explained (DCT, Huffman), quality metrics (SSIM), and when to compress.",
+    url: "https://roas-calculator.tech/blog/image-compression-technical",
+  },
+      twitter: {
+    card: "summary_large_image",
+    title: "Image Compression vs Quality: Technical Guide | Our Testing Results",
+    description: "Complete technical analysis of image compression. Real test results, algorithms explained (DCT, Huffman), quality metrics (SSIM), and when to compress.",
+  },
+  alternates: {
+    canonical: "https://roas-calculator.tech/blog/image-compression-technical",
+  },
 };
 
 export default function ImageCompressionTechnical() {
+  const breadcrumbData = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://roas-calculator.tech/",
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Blog",
+        "item": "https://roas-calculator.tech/blog",
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Image Compression Technical Guide",
+        "item": "https://roas-calculator.tech/blog/image-compression-technical",
+      },
+    ],
+  };
+
   return (
     <div className="min-h-screen bg-slate-50 font-sans text-slate-900 py-12 px-4 md:px-6">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbData) }}
+      />
       <div className="max-w-4xl mx-auto mb-8">
         <Link href="/blog" className="inline-flex items-center text-slate-500 hover:text-blue-600 transition font-medium">
           <ArrowLeft size={18} className="mr-2" /> Back to Blog
@@ -37,7 +79,7 @@ export default function ImageCompressionTechnical() {
             How JPEG, WebP, and AVIF compression algorithms work. Our test results on real images.
           </p>
           <p className="text-slate-300 text-sm mt-6">
-            🔬 Lab Tested • 📊 Real Data • 🔧 Technical Breakdown • ✅ Best Practices
+             Lab Tested -  Real Data -  Technical Breakdown - OK Best Practices
           </p>
         </div>
 
@@ -70,13 +112,13 @@ export default function ImageCompressionTechnical() {
             <h3 className="text-2xl font-bold text-slate-900 mt-6">1. The DCT Transform (Discrete Cosine Transform)</h3>
             
             <p>
-              JPEG breaks images into 8×8 pixel blocks. For each block, it calculates which mathematical frequencies are most important to human perception.
+              JPEG breaks images into 8x8 pixel blocks. For each block, it calculates which mathematical frequencies are most important to human perception.
             </p>
 
             <div className="bg-blue-50 border border-blue-200 p-6 rounded my-6">
               <p className="font-mono text-sm text-blue-900">
                 <strong>JPEG Compression Process:</strong><br />
-                1. Image → 8×8 blocks<br />
+                1. Image &rarr; 8x8 blocks<br />
                 2. Apply DCT to each block<br />
                 3. Quantize (discard small values humans can't see)<br />
                 4. Huffman encode (lossless compression of remaining data)<br />
@@ -156,13 +198,13 @@ export default function ImageCompressionTechnical() {
             <div className="bg-green-50 border border-green-200 p-6 rounded my-6">
               <p className="font-bold text-green-900">Our Test Results: JPEG vs WebP</p>
               <p className="text-green-800 text-sm mt-2">
-                Same source image (product photo, 3000×2000 px):
+                Same source image (product photo, 3000x2000 px):
               </p>
               <ul className="text-green-800 text-sm mt-2 space-y-1">
-                <li>• JPEG Quality 90: 485 KB</li>
-                <li>• WebP Quality 90: 285 KB (41% smaller)</li>
-                <li>• Visual difference: Imperceptible</li>
-                <li>• Load time reduction: ~340ms on 4G</li>
+                <li>- JPEG Quality 90: 485 KB</li>
+                <li>- WebP Quality 90: 285 KB (41% smaller)</li>
+                <li>- Visual difference: Imperceptible</li>
+                <li>- Load time reduction: ~340ms on 4G</li>
               </ul>
             </div>
 
@@ -178,11 +220,11 @@ export default function ImageCompressionTechnical() {
                 Same image, all formats at perceived-equal quality:
               </p>
               <ul className="text-blue-800 text-sm mt-2 space-y-1">
-                <li>• WebP Quality 80: 285 KB</li>
-                <li>• AVIF Quality 70: 125 KB (56% smaller than WebP)</li>
-                <li>• Visual difference: Imperceptible</li>
-                <li>• Browser support: 95% (Safari added 2023)</li>
-                <li>• Encoding time: 5-10x slower than WebP</li>
+                <li>- WebP Quality 80: 285 KB</li>
+                <li>- AVIF Quality 70: 125 KB (56% smaller than WebP)</li>
+                <li>- Visual difference: Imperceptible</li>
+                <li>- Browser support: 95% (Safari added 2023)</li>
+                <li>- Encoding time: 5-10x slower than WebP</li>
               </ul>
             </div>
 
@@ -202,24 +244,24 @@ export default function ImageCompressionTechnical() {
                 <tbody>
                   <tr>
                     <td className="border border-slate-300 px-4 py-2 font-semibold">JPEG</td>
-                    <td className="border border-slate-300 px-4 py-2 text-green-600">✓ All</td>
-                    <td className="border border-slate-300 px-4 py-2 text-green-600">✓ All</td>
-                    <td className="border border-slate-300 px-4 py-2 text-green-600">✓ All</td>
-                    <td className="border border-slate-300 px-4 py-2 text-green-600">✓ All</td>
+                    <td className="border border-slate-300 px-4 py-2 text-green-600">OK All</td>
+                    <td className="border border-slate-300 px-4 py-2 text-green-600">OK All</td>
+                    <td className="border border-slate-300 px-4 py-2 text-green-600">OK All</td>
+                    <td className="border border-slate-300 px-4 py-2 text-green-600">OK All</td>
                   </tr>
                   <tr className="bg-slate-50">
                     <td className="border border-slate-300 px-4 py-2 font-semibold">WebP</td>
-                    <td className="border border-slate-300 px-4 py-2 text-green-600">✓ v9+</td>
-                    <td className="border border-slate-300 px-4 py-2 text-green-600">✓ 14.1+</td>
-                    <td className="border border-slate-300 px-4 py-2 text-orange-600">✓ 65+</td>
-                    <td className="border border-slate-300 px-4 py-2 text-green-600">✓ 18+</td>
+                    <td className="border border-slate-300 px-4 py-2 text-green-600">OK v9+</td>
+                    <td className="border border-slate-300 px-4 py-2 text-green-600">OK 14.1+</td>
+                    <td className="border border-slate-300 px-4 py-2 text-orange-600">OK 65+</td>
+                    <td className="border border-slate-300 px-4 py-2 text-green-600">OK 18+</td>
                   </tr>
                   <tr>
                     <td className="border border-slate-300 px-4 py-2 font-semibold">AVIF</td>
-                    <td className="border border-slate-300 px-4 py-2 text-green-600">✓ 85+</td>
-                    <td className="border border-slate-300 px-4 py-2 text-green-600">✓ 16+</td>
-                    <td className="border border-slate-300 px-4 py-2 text-orange-600">✓ 113+</td>
-                    <td className="border border-slate-300 px-4 py-2 text-green-600">✓ 85+</td>
+                    <td className="border border-slate-300 px-4 py-2 text-green-600">OK 85+</td>
+                    <td className="border border-slate-300 px-4 py-2 text-green-600">OK 16+</td>
+                    <td className="border border-slate-300 px-4 py-2 text-orange-600">OK 113+</td>
+                    <td className="border border-slate-300 px-4 py-2 text-green-600">OK 85+</td>
                   </tr>
                 </tbody>
               </table>
@@ -309,30 +351,30 @@ export default function ImageCompressionTechnical() {
               <div className="border border-blue-300 bg-blue-50 p-6 rounded-lg">
                 <p className="font-bold text-blue-900">Product Photography (E-commerce)</p>
                 <ul className="text-blue-800 text-sm mt-2 space-y-1">
-                  <li>✓ Format: WebP with JPEG fallback</li>
-                  <li>✓ Quality: 82-88</li>
-                  <li>✓ Target size: 100-250 KB per image</li>
-                  <li>✓ Reason: Users judge products on appearance; quality matters</li>
+                  <li>OK Format: WebP with JPEG fallback</li>
+                  <li>OK Quality: 82-88</li>
+                  <li>OK Target size: 100-250 KB per image</li>
+                  <li>OK Reason: Users judge products on appearance; quality matters</li>
                 </ul>
               </div>
 
               <div className="border border-green-300 bg-green-50 p-6 rounded-lg">
                 <p className="font-bold text-green-900">Blog/Article Images</p>
                 <ul className="text-green-800 text-sm mt-2 space-y-1">
-                  <li>✓ Format: WebP/AVIF with JPEG fallback</li>
-                  <li>✓ Quality: 78-84</li>
-                  <li>✓ Target size: 50-150 KB per image</li>
-                  <li>✓ Reason: Detail less critical than load speed</li>
+                  <li>OK Format: WebP/AVIF with JPEG fallback</li>
+                  <li>OK Quality: 78-84</li>
+                  <li>OK Target size: 50-150 KB per image</li>
+                  <li>OK Reason: Detail less critical than load speed</li>
                 </ul>
               </div>
 
               <div className="border border-orange-300 bg-orange-50 p-6 rounded-lg">
                 <p className="font-bold text-orange-900">Thumbnails/Icons</p>
                 <ul className="text-orange-800 text-sm mt-2 space-y-1">
-                  <li>✓ Format: WebP with PNG fallback</li>
-                  <li>✓ Quality: 72-78</li>
-                  <li>✓ Target size: &lt;30 KB per image</li>
-                  <li>✓ Reason: Size is minimized with acceptable artifacts</li>
+                  <li>OK Format: WebP with PNG fallback</li>
+                  <li>OK Quality: 72-78</li>
+                  <li>OK Target size: &lt;30 KB per image</li>
+                  <li>OK Reason: Size is minimized with acceptable artifacts</li>
                 </ul>
               </div>
             </div>
@@ -342,17 +384,17 @@ export default function ImageCompressionTechnical() {
             <h2 className="text-3xl font-bold text-slate-900">Conclusion</h2>
             
             <p>
-              Image compression is not about making images look bad—it's about finding the sweet spot where humans see no difference, but file size is optimized.
+              Image compression is not about making images look bad-it's about finding the sweet spot where humans see no difference, but file size is optimized.
             </p>
 
             <div className="bg-linear-to-r from-green-50 to-blue-50 rounded-xl p-8 border border-green-200 mt-6">
               <p className="font-bold text-slate-900 mb-4">Our Specific Recommendations:</p>
               <ul className="space-y-2 text-slate-700 text-sm">
-                <li>✓ Use WebP format for 95% of web images (31-41% file size savings)</li>
-                <li>✓ Set quality to 80-85 for standard web use (imperceptible quality loss)</li>
-                <li>✓ Add AVIF as progressive enhancement for modern browsers</li>
-                <li>✓ Keep JPEG as fallback for older browser support</li>
-                <li>✓ Test with SSIM metrics (target 0.90+) and human eye tests</li>
+                <li>OK Use WebP format for 95% of web images (31-41% file size savings)</li>
+                <li>OK Set quality to 80-85 for standard web use (imperceptible quality loss)</li>
+                <li>OK Add AVIF as progressive enhancement for modern browsers</li>
+                <li>OK Keep JPEG as fallback for older browser support</li>
+                <li>OK Test with SSIM metrics (target 0.90+) and human eye tests</li>
               </ul>
             </div>
 

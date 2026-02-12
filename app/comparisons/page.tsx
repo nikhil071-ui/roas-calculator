@@ -11,6 +11,19 @@ export const metadata: Metadata = {
     "pdf converter comparison",
     "currency converter comparison",
   ],
+  openGraph: {
+    title: "Tool Comparisons | ROAS Tools",
+    description: "Compare ROAS Tools with popular alternatives for image compression, PDF conversion, currency exchange, and ROAS tracking.",
+    url: "https://roas-calculator.tech/comparisons",
+  },
+      twitter: {
+    card: "summary_large_image",
+    title: "Tool Comparisons | ROAS Tools",
+    description: "Compare ROAS Tools with popular alternatives for image compression, PDF conversion, currency exchange, and ROAS tracking.",
+  },
+  alternates: {
+    canonical: "https://roas-calculator.tech/comparisons",
+  },
 };
 
 export default function ComparisonsPage() {

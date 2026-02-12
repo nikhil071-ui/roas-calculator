@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import imageCompression from "browser-image-compression";
 import { Upload, Download, RefreshCw, Image as ImageIcon, Settings, Eye, X, CheckCircle } from "lucide-react";
 
@@ -13,6 +13,24 @@ export default function CompressorClient() {
   const [targetSize, setTargetSize] = useState<number | string>(50); // Default 50
   const [unit, setUnit] = useState<"KB" | "MB">("KB"); // Default Unit
   const [showPreview, setShowPreview] = useState(false);
+  const originalUrl = useMemo(
+    () => (originalImage ? URL.createObjectURL(originalImage) : null),
+    [originalImage]
+  );
+  const compressedUrl = useMemo(
+    () => (compressedImage ? URL.createObjectURL(compressedImage) : null),
+    [compressedImage]
+  );
+
+  useEffect(() => {
+    if (!originalUrl) return;
+    return () => URL.revokeObjectURL(originalUrl);
+  }, [originalUrl]);
+
+  useEffect(() => {
+    if (!compressedUrl) return;
+    return () => URL.revokeObjectURL(compressedUrl);
+  }, [compressedUrl]);
 
   // --- HELPER: PRESETS ---
   const presets = [
@@ -29,10 +47,10 @@ export default function CompressorClient() {
     // Normalize to MB for calculation
     const sizeInMB = unit === "KB" ? Number(targetSize) / 1024 : Number(targetSize);
 
-    if (sizeInMB >= 0.5) return { text: "Quality: Excellent (High Res) 🌟", color: "text-green-600" };
-    if (sizeInMB >= 0.1) return { text: "Quality: Good (Web Friendly) ✅", color: "text-blue-600" };
-    if (sizeInMB >= 0.01) return { text: "Quality: Low (Govt Form Standard) ⚠️", color: "text-orange-600" };
-    return { text: "Quality: Very Low (Pixelated) ❌", color: "text-red-600" };
+    if (sizeInMB >= 0.5) return { text: "Quality: Excellent (High Res) ", color: "text-green-600" };
+    if (sizeInMB >= 0.1) return { text: "Quality: Good (Web Friendly) OK", color: "text-blue-600" };
+    if (sizeInMB >= 0.01) return { text: "Quality: Low (Govt Form Standard) !", color: "text-orange-600" };
+    return { text: "Quality: Very Low (Pixelated) X", color: "text-red-600" };
   };
 
   const handleImageUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -201,7 +219,7 @@ export default function CompressorClient() {
                         <div className="h-64 flex items-center justify-center bg-slate-200/50 rounded-xl overflow-hidden border border-slate-200">
                             {/* eslint-disable-next-line @next/next/no-img-element */}
                             <img
-                                src={URL.createObjectURL(originalImage)}
+                                src={originalUrl ?? ""}
                                 alt="Original"
                                 className="max-h-full max-w-full object-contain opacity-70 grayscale"
                             />
@@ -242,7 +260,7 @@ export default function CompressorClient() {
                                 <>
                                     {/* eslint-disable-next-line @next/next/no-img-element */}
                                     <img
-                                        src={URL.createObjectURL(compressedImage)}
+                                        src={compressedUrl ?? ""}
                                         alt="Compressed"
                                         className="max-h-full max-w-full object-contain"
                                     />
@@ -260,9 +278,9 @@ export default function CompressorClient() {
                         </div>
 
                         {/* DOWNLOAD BUTTON */}
-                        {compressedImage && !isCompressing && (
+                        {compressedImage && compressedUrl && !isCompressing && (
                             <a
-                                href={URL.createObjectURL(compressedImage)}
+                                href={compressedUrl}
                                 download={`compressed-${originalImage.name}`}
                                 className="mt-4 w-full flex items-center justify-center gap-2 bg-blue-600 text-white py-3.5 rounded-xl font-bold hover:bg-blue-700 transition shadow-lg shadow-blue-500/30 transform active:scale-95"
                             >
@@ -276,7 +294,7 @@ export default function CompressorClient() {
         </div>
 
         {/* --- FULL SCREEN PREVIEW MODAL --- */}
-        {showPreview && compressedImage && (
+        {showPreview && compressedImage && compressedUrl && (
             <div className="fixed inset-0 z-[100] bg-slate-900/90 flex items-center justify-center p-4 backdrop-blur-md animate-in fade-in duration-200">
                 <div className="bg-white rounded-2xl p-4 max-w-5xl w-full max-h-[90vh] flex flex-col relative shadow-2xl">
                     <button 
@@ -291,7 +309,7 @@ export default function CompressorClient() {
                     <div className="flex-1 overflow-auto bg-slate-100 rounded-xl flex items-center justify-center border border-slate-200 p-4">
                         {/* eslint-disable-next-line @next/next/no-img-element */}
                         <img 
-                            src={URL.createObjectURL(compressedImage)} 
+                            src={compressedUrl} 
                             alt="Preview" 
                             className="max-w-full object-contain shadow-sm" 
                         />
@@ -304,7 +322,7 @@ export default function CompressorClient() {
                             Close
                         </button>
                         <a
-                            href={URL.createObjectURL(compressedImage)}
+                            href={compressedUrl}
                             download={`compressed-${originalImage?.name}`}
                             className="inline-flex items-center gap-2 bg-blue-600 text-white px-6 py-2 rounded-lg font-bold hover:bg-blue-700 transition shadow-lg"
                         >

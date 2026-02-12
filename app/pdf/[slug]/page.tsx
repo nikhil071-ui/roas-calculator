@@ -98,9 +98,8 @@ const SEO_DATA: Record<string, { title: string; desc: string; h1: string; subtex
 };
 
 // --- 2. GENERATE DYNAMIC METADATA ---
-export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
-  const resolvedParams = await params;
-  const data = SEO_DATA[resolvedParams.slug];
+export async function generateMetadata({ params }: { params: { slug: string } }) {
+  const data = SEO_DATA[params.slug];
   
   if (!data) {
     return {
@@ -118,7 +117,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       nocache: false,
     },
     alternates: {
-      canonical: `https://roas-calculator.tech/pdf/${resolvedParams.slug}`,
+      canonical: `https://roas-calculator.tech/pdf/${params.slug}`,
     },
     openGraph: {
       title: data.title,
@@ -129,18 +128,40 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 }
 
 // --- 3. THE PAGE COMPONENT ---
-export default async function DynamicPdfPage({ params }: { params: Promise<{ slug: string }> }) {
-  const resolvedParams = await params;
-  const data = SEO_DATA[resolvedParams.slug];
+export default async function DynamicPdfPage({ params }: { params: { slug: string } }) {
+  const data = SEO_DATA[params.slug];
 
   if (!data) {
     notFound();
   }
 
+  const breadcrumbData = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://roas-calculator.tech/",
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": data.h1,
+        "item": `https://roas-calculator.tech/pdf/${params.slug}`,
+      },
+    ],
+  };
+
   const currentDate = new Date().toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
 
   return (
     <main className="min-h-screen bg-white p-4 py-12 font-sans text-gray-900">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbData) }}
+      />
       <div className="max-w-5xl mx-auto space-y-12">
         
         {/* DYNAMIC HEADER */}
@@ -194,7 +215,7 @@ export default async function DynamicPdfPage({ params }: { params: Promise<{ slu
           </ul>
 
           <div className="bg-blue-50 border-l-4 border-blue-600 p-6 my-8 rounded-r-lg">
-            <h4 className="text-xl font-bold text-blue-900 mb-2">🚀 Tool Highlights:</h4>
+            <h4 className="text-xl font-bold text-blue-900 mb-2"> Tool Highlights:</h4>
             <ul className="list-disc pl-5 space-y-2 text-blue-800">
               <li><strong>Zero Uploads:</strong> We process files in your browser for maximum privacy.</li>
               <li><strong>No Watermarks:</strong> Your documents are clean and professional.</li>

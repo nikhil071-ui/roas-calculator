@@ -13,11 +13,53 @@ export const metadata: Metadata = {
     "roas by industry",
     "advertising roi",
   ],
+  openGraph: {
+    title: "ROAS Benchmarks by Industry: What's Normal & How to Improve",
+    description: "Complete ROAS benchmarks by industry (2024). E-commerce, SaaS, lead generation, and more. See where you rank and improvement strategies.",
+    url: "https://roas-calculator.tech/blog/roas-benchmarks",
+  },
+      twitter: {
+    card: "summary_large_image",
+    title: "ROAS Benchmarks by Industry: What's Normal & How to Improve",
+    description: "Complete ROAS benchmarks by industry (2024). E-commerce, SaaS, lead generation, and more. See where you rank and improvement strategies.",
+  },
+  alternates: {
+    canonical: "https://roas-calculator.tech/blog/roas-benchmarks",
+  },
 };
 
 export default function RoasBenchmarks() {
+  const breadcrumbData = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://roas-calculator.tech/",
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Blog",
+        "item": "https://roas-calculator.tech/blog",
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "ROAS Benchmarks by Industry: 2024 Data",
+        "item": "https://roas-calculator.tech/blog/roas-benchmarks",
+      },
+    ],
+  };
+
   return (
     <div className="min-h-screen bg-slate-50 font-sans text-slate-900 py-12 px-4 md:px-6">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbData) }}
+      />
       <div className="max-w-4xl mx-auto mb-8">
         <Link href="/blog" className="inline-flex items-center text-slate-500 hover:text-blue-600 transition font-medium">
           <ArrowLeft size={18} className="mr-2" /> Back to Blog
@@ -37,7 +79,7 @@ export default function RoasBenchmarks() {
             Complete ROAS benchmarks across 12+ industries. See where you rank and specific improvement strategies for your business.
           </p>
           <p className="text-slate-400 text-sm mt-6">
-            📊 12+ Industries • 🏆 Performance Tiers • 📈 Improvement Strategies • 💡 Expert Tips
+             12+ Industries -  Performance Tiers -  Improvement Strategies -  Expert Tips
           </p>
         </div>
 
@@ -49,7 +91,7 @@ export default function RoasBenchmarks() {
             <div className="bg-blue-50 border-l-4 border-blue-600 p-6 rounded my-6">
               <p className="font-bold text-blue-900">ROAS Definition:</p>
               <p className="text-blue-800 text-sm mt-2">
-                <strong>Return on Ad Spend (ROAS) = Revenue ÷ Ad Spend</strong>
+                <strong>Return on Ad Spend (ROAS) = Revenue / Ad Spend</strong>
               </p>
               <p className="text-blue-800 text-sm mt-2">
                 A 3x ROAS means for every $1 spent on ads, you get $3 in revenue. 
@@ -255,10 +297,10 @@ export default function RoasBenchmarks() {
             <div className="bg-blue-50 border border-blue-200 p-6 rounded my-6">
               <p className="font-bold text-blue-900">Formula:</p>
               <p className="text-blue-800 text-sm mt-2 font-mono">
-                Break-Even ROAS = 1 ÷ (Profit Margin %)
+                Break-Even ROAS = 1 / (Profit Margin %)
               </p>
               <p className="text-blue-800 text-sm mt-3">
-                <strong>Example:</strong> If your profit margin is 35%, you need 1÷0.35 = 2.86x ROAS minimum to break even.
+                <strong>Example:</strong> If your profit margin is 35%, you need 1/0.35 = 2.86x ROAS minimum to break even.
               </p>
             </div>
 
@@ -266,7 +308,7 @@ export default function RoasBenchmarks() {
             
             <div className="space-y-3 mt-4">
               <div className="flex items-start gap-3 p-4 bg-green-50 rounded-lg">
-                <span className="text-green-600 font-bold text-xl">✓</span>
+                <span className="text-green-600 font-bold text-xl">OK</span>
                 <div>
                   <p className="font-bold text-green-900">Above benchmark?</p>
                   <p className="text-green-800 text-sm">You're outperforming competitors. Scale up confidently.</p>
@@ -274,7 +316,7 @@ export default function RoasBenchmarks() {
               </div>
 
               <div className="flex items-start gap-3 p-4 bg-yellow-50 rounded-lg">
-                <span className="text-yellow-600 font-bold text-xl">—</span>
+                <span className="text-yellow-600 font-bold text-xl">-</span>
                 <div>
                   <p className="font-bold text-yellow-900">At benchmark?</p>
                   <p className="text-yellow-800 text-sm">Average for your industry. Optimization has room for improvement. Target: 20-30% above benchmark.</p>
@@ -282,7 +324,7 @@ export default function RoasBenchmarks() {
               </div>
 
               <div className="flex items-start gap-3 p-4 bg-red-50 rounded-lg">
-                <span className="text-red-600 font-bold text-xl">✕</span>
+                <span className="text-red-600 font-bold text-xl">X</span>
                 <div>
                   <p className="font-bold text-red-900">Below benchmark?</p>
                   <p className="text-red-800 text-sm">You're underperforming. Action needed. See improvement strategies below.</p>
@@ -337,8 +379,8 @@ export default function RoasBenchmarks() {
             <div className="bg-purple-50 border border-purple-200 p-6 rounded my-6">
               <p className="font-bold text-purple-900">Fashion E-commerce Store</p>
               <ul className="text-purple-800 text-sm mt-3 space-y-1">
-                <li>• <strong>Starting ROAS:</strong> 1.8x (below industry average 2.2x)</li>
-                <li>• <strong>Problem:</strong> Poor audience targeting + professional photos</li>
+                <li>- <strong>Starting ROAS:</strong> 1.8x (below industry average 2.2x)</li>
+                <li>- <strong>Problem:</strong> Poor audience targeting + professional photos</li>
                 <li>
                   <strong>Improvements made:</strong>
                   <ul className="mt-2 space-y-1 ml-4">
@@ -348,7 +390,7 @@ export default function RoasBenchmarks() {
                     <li>- Value optimization bid strategy (+30% ROAS)</li>
                   </ul>
                 </li>
-                <li>• <strong>Final ROAS:</strong> 5.2x (136% improvement, now in "excellent" tier)</li>
+                <li>- <strong>Final ROAS:</strong> 5.2x (136% improvement, now in "excellent" tier)</li>
               </ul>
             </div>
           </section>
@@ -358,7 +400,7 @@ export default function RoasBenchmarks() {
             
             <div className="space-y-4 mt-6">
               <div className="border-l-4 border-red-600 bg-red-50 p-6 rounded">
-                <p className="font-bold text-red-900">❌ Obsessing Over ROAS Without Profit Context</p>
+                <p className="font-bold text-red-900">X Obsessing Over ROAS Without Profit Context</p>
                 <p className="text-red-800 text-sm mt-2">
                   A 10x ROAS on a 5% margin business is $50 profit per $1,000 spend. 
                   Focus on absolute profit dollars, not ROAS percentage.
@@ -366,7 +408,7 @@ export default function RoasBenchmarks() {
               </div>
 
               <div className="border-l-4 border-orange-600 bg-orange-50 p-6 rounded">
-                <p className="font-bold text-orange-900">❌ Comparing Across Industries</p>
+                <p className="font-bold text-orange-900">X Comparing Across Industries</p>
                 <p className="text-orange-800 text-sm mt-2">
                   A 2.5x ROAS is excellent for automotive but poor for SaaS. 
                   Only compare to your own industry and your own baseline.
@@ -374,14 +416,14 @@ export default function RoasBenchmarks() {
               </div>
 
               <div className="border-l-4 border-yellow-600 bg-yellow-50 p-6 rounded">
-                <p className="font-bold text-yellow-900">❌ Scaling Too Fast</p>
+                <p className="font-bold text-yellow-900">X Scaling Too Fast</p>
                 <p className="text-yellow-800 text-sm mt-2">
                   Doubling budget overnight often halves ROAS. Increase by 20-30% weekly max while monitoring performance.
                 </p>
               </div>
 
               <div className="border-l-4 border-purple-600 bg-purple-50 p-6 rounded">
-                <p className="font-bold text-purple-900">❌ Ignoring Time-to-Profit</p>
+                <p className="font-bold text-purple-900">X Ignoring Time-to-Profit</p>
                 <p className="text-purple-800 text-sm mt-2">
                   If customers repurchase, your true LTV is much higher. A 2x initial ROAS becomes 5x+ with repeat customers.
                 </p>
@@ -395,11 +437,11 @@ export default function RoasBenchmarks() {
             <div className="bg-linear-to-r from-slate-50 to-blue-50 rounded-xl p-8 border border-slate-200 mt-6">
               <p className="font-bold text-slate-900 mb-4">Key Takeaways:</p>
               <ul className="space-y-2 text-slate-700 text-sm">
-                <li>✓ Industry-average ROAS ranges from 1.5x (automotive) to 4.5x (lead gen)</li>
-                <li>✓ "Good" ROAS depends on profit margins, not just raw numbers</li>
-                <li>✓ Calculate your break-even ROAS first (1 ÷ profit margin %)</li>
-                <li>✓ Target 20-30% above your industry benchmark for competitive advantage</li>
-                <li>✓ Biggest improvements come from audience selection, creative testing, and landing page optimization</li>
+                <li>OK Industry-average ROAS ranges from 1.5x (automotive) to 4.5x (lead gen)</li>
+                <li>OK "Good" ROAS depends on profit margins, not just raw numbers</li>
+                <li>OK Calculate your break-even ROAS first (1 / profit margin %)</li>
+                <li>OK Target 20-30% above your industry benchmark for competitive advantage</li>
+                <li>OK Biggest improvements come from audience selection, creative testing, and landing page optimization</li>
               </ul>
             </div>
 

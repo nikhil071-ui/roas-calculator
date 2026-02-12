@@ -11,6 +11,19 @@ export const metadata: Metadata = {
     "marketing roi",
     "ad profitability",
   ],
+  openGraph: {
+    title: "ROAS Calculator FAQ | ROAS Tools",
+    description: "Answers to common questions about ROAS, break-even ROAS, and profitability tracking.",
+    url: "https://roas-calculator.tech/roas/faq",
+  },
+      twitter: {
+    card: "summary_large_image",
+    title: "ROAS Calculator FAQ | ROAS Tools",
+    description: "Answers to common questions about ROAS, break-even ROAS, and profitability tracking.",
+  },
+  alternates: {
+    canonical: "https://roas-calculator.tech/roas/faq",
+  },
 };
 
 const faqs = [

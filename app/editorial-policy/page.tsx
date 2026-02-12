@@ -1,5 +1,24 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowLeft, Shield, CheckCircle, AlertTriangle, FileCheck } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "Editorial Policy | ROAS Tools",
+  description: "Our standards for accuracy, transparency, and trust in every tool and guide.",
+  alternates: {
+    canonical: "https://roas-calculator.tech/editorial-policy",
+  },
+  openGraph: {
+    title: "Editorial Policy | ROAS Tools",
+    description: "Our standards for accuracy, transparency, and trust in every tool and guide.",
+    url: "https://roas-calculator.tech/editorial-policy",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Editorial Policy | ROAS Tools",
+    description: "Our standards for accuracy, transparency, and trust in every tool and guide.",
+  },
+};
 
 export default function EditorialPolicy() {
   return (
@@ -126,25 +145,25 @@ export default function EditorialPolicy() {
                 </h2>
                 <ul className="space-y-3">
                     <li className="flex gap-3 text-slate-600">
-                        <span className="text-red-600 font-bold text-xl">×</span>
+                        <span className="text-red-600 font-bold text-xl">x</span>
                         <span><strong>No Paid Placements:</strong> We do not accept money from companies to promote their tools, services, or courses.</span>
                     </li>
                     <li className="flex gap-3 text-slate-600">
-                        <span className="text-red-600 font-bold text-xl">×</span>
+                        <span className="text-red-600 font-bold text-xl">x</span>
                         <span><strong>No Affiliate Bias:</strong> While we may include affiliate links for relevant products (e.g., accounting software), 
                         these do not influence our recommendations or editorial content.</span>
                     </li>
                     <li className="flex gap-3 text-slate-600">
-                        <span className="text-red-600 font-bold text-xl">×</span>
+                        <span className="text-red-600 font-bold text-xl">x</span>
                         <span><strong>No Clickbait:</strong> We don't use sensationalized headlines, fake urgency, or misleading thumbnails to drive traffic.</span>
                     </li>
                     <li className="flex gap-3 text-slate-600">
-                        <span className="text-red-600 font-bold text-xl">×</span>
+                        <span className="text-red-600 font-bold text-xl">x</span>
                         <span><strong>No AI-Generated Content Without Review:</strong> While we may use AI tools for research assistance, 
                         all published content is written, fact-checked, and approved by human experts.</span>
                     </li>
                     <li className="flex gap-3 text-slate-600">
-                        <span className="text-red-600 font-bold text-xl">×</span>
+                        <span className="text-red-600 font-bold text-xl">x</span>
                         <span><strong>No Personal Data Collection:</strong> Our calculators never send your financial data to our servers. 
                         All processing happens client-side in your browser.</span>
                     </li>
@@ -189,37 +208,37 @@ export default function EditorialPolicy() {
                     <div className="bg-white p-4 rounded-lg border border-slate-200">
                         <h4 className="font-bold text-slate-800 mb-2">Official Platform Documentation</h4>
                         <ul className="text-sm text-slate-600 space-y-1">
-                            <li>• Google Ads Help Center</li>
-                            <li>• Meta Business Help Center</li>
-                            <li>• TikTok Ads Learning Center</li>
-                            <li>• LinkedIn Marketing Solutions</li>
+                            <li>- Google Ads Help Center</li>
+                            <li>- Meta Business Help Center</li>
+                            <li>- TikTok Ads Learning Center</li>
+                            <li>- LinkedIn Marketing Solutions</li>
                         </ul>
                     </div>
                     <div className="bg-white p-4 rounded-lg border border-slate-200">
                         <h4 className="font-bold text-slate-800 mb-2">Industry Standards</h4>
                         <ul className="text-sm text-slate-600 space-y-1">
-                            <li>• GAAP (Generally Accepted Accounting Principles)</li>
-                            <li>• IAB (Interactive Advertising Bureau)</li>
-                            <li>• ISO Standards (ISO 4217 for currencies)</li>
-                            <li>• W3C Web Standards</li>
+                            <li>- GAAP (Generally Accepted Accounting Principles)</li>
+                            <li>- IAB (Interactive Advertising Bureau)</li>
+                            <li>- ISO Standards (ISO 4217 for currencies)</li>
+                            <li>- W3C Web Standards</li>
                         </ul>
                     </div>
                     <div className="bg-white p-4 rounded-lg border border-slate-200">
                         <h4 className="font-bold text-slate-800 mb-2">Government & Financial Data</h4>
                         <ul className="text-sm text-slate-600 space-y-1">
-                            <li>• Federal Reserve Economic Data (FRED)</li>
-                            <li>• European Central Bank (ECB)</li>
-                            <li>• Bank for International Settlements (BIS)</li>
-                            <li>• U.S. Bureau of Labor Statistics</li>
+                            <li>- Federal Reserve Economic Data (FRED)</li>
+                            <li>- European Central Bank (ECB)</li>
+                            <li>- Bank for International Settlements (BIS)</li>
+                            <li>- U.S. Bureau of Labor Statistics</li>
                         </ul>
                     </div>
                     <div className="bg-white p-4 rounded-lg border border-slate-200">
                         <h4 className="font-bold text-slate-800 mb-2">Academic Research</h4>
                         <ul className="text-sm text-slate-600 space-y-1">
-                            <li>• Peer-reviewed marketing journals</li>
-                            <li>• University research papers</li>
-                            <li>• Industry whitepapers from Nielsen, Forrester</li>
-                            <li>• Think with Google (Google research arm)</li>
+                            <li>- Peer-reviewed marketing journals</li>
+                            <li>- University research papers</li>
+                            <li>- Industry whitepapers from Nielsen, Forrester</li>
+                            <li>- Think with Google (Google research arm)</li>
                         </ul>
                     </div>
                 </div>
@@ -260,9 +279,9 @@ export default function EditorialPolicy() {
                 </p>
                 <div className="bg-white p-6 rounded-lg border border-slate-200">
                     <ul className="space-y-2 text-slate-600">
-                        <li>📧 <strong>Email:</strong> <a href="mailto:luckmatters199@gmail.com" className="text-blue-600 underline">luckmatters199@gmail.com</a></li>
-                        <li>⏱️ <strong>Response Time:</strong> We respond to all legitimate inquiries within 48 hours</li>
-                        <li>🔄 <strong>Updates:</strong> If your feedback leads to changes, we'll notify you personally</li>
+                        <li> <strong>Email:</strong> <a href="mailto:luckmatters199@gmail.com" className="text-blue-600 underline">luckmatters199@gmail.com</a></li>
+                        <li>time <strong>Response Time:</strong> We respond to all legitimate inquiries within 48 hours</li>
+                        <li> <strong>Updates:</strong> If your feedback leads to changes, we'll notify you personally</li>
                     </ul>
                 </div>
             </section>

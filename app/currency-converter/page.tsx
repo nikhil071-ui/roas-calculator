@@ -16,6 +16,11 @@ export const metadata: Metadata = {
     description: "Convert USD, INR, EUR, GBP instantly.",
         url: "https://roas-calculator.tech/currency-converter",
   },
+      twitter: {
+    card: "summary_large_image",
+    title: "Free Currency Converter | USD to INR, EUR, GBP Live Rates",
+    description: "Convert currency instantly with live exchange rates. Free tool for USD to INR, Euro, and more. Accurate and updated daily.",
+  },
 };
 
 export default function CurrencyPage() {
@@ -50,7 +55,7 @@ export default function CurrencyPage() {
 
             {/* EXPERT GUIDE CTA */}
             <div className="bg-gradient-to-r from-emerald-50 to-green-50 rounded-xl border-2 border-emerald-300 p-8 mt-8">
-              <h3 className="text-2xl font-bold text-slate-900 mb-2">📚 Master Currency Conversion & Forex</h3>
+              <h3 className="text-2xl font-bold text-slate-900 mb-2"> Master Currency Conversion & Forex</h3>
               <p className="text-slate-700 mb-4">
                 Read our expert guide on exchange rates, spread costs, international transfers, and how to get the best conversion rates.
               </p>
@@ -58,7 +63,7 @@ export default function CurrencyPage() {
                 href="/currency-converter/guide"
                 className="inline-block bg-emerald-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-emerald-700 transition"
               >
-                Read Complete Currency Guide →
+                Read Complete Currency Guide &rarr;
               </Link>
             </div>
 
@@ -96,7 +101,7 @@ export default function CurrencyPage() {
                 <h3 className="text-2xl font-bold text-slate-900 mt-10">How Currency Exchange Rates Work</h3>
                 <p>
                   Currency values are determined by supply and demand in the global foreign exchange market (Forex), 
-                  which trades over <strong>$7.5 trillion daily</strong>—making it the largest financial market in the world. 
+                  which trades over <strong>$7.5 trillion daily</strong>-making it the largest financial market in the world. 
                   Unlike stock markets, Forex operates 24/5 across different time zones (Sydney, Tokyo, London, New York).
                 </p>
                 <p className="mt-4">
@@ -126,7 +131,7 @@ export default function CurrencyPage() {
                             <li>Families sending remittances to India</li>
                         </ul>
                         <p className="text-sm text-slate-500 mt-3">
-                            <strong>2026 Range:</strong> ₹82-86 per 1 USD (historically volatile due to oil prices and RBI policy)
+                            <strong>2026 Range:</strong> INR82-86 per 1 USD (historically volatile due to oil prices and RBI policy)
                         </p>
                     </div>
 
@@ -163,7 +168,7 @@ export default function CurrencyPage() {
                 <ol className="list-decimal pl-5 space-y-3 mt-4">
                     <li>
                         <strong>Exchange Rate Markup:</strong> Banks and services like Western Union often add 3-5% to the mid-market rate. 
-                        If the real rate is 83.00 INR per USD, they might charge you 85.50—pocketing the difference.
+                        If the real rate is 83.00 INR per USD, they might charge you 85.50-pocketing the difference.
                     </li>
                     <li>
                         <strong>Transfer Fees:</strong> Flat fees ranging from $15-50 per transaction, depending on the service.
@@ -231,7 +236,7 @@ export default function CurrencyPage() {
 
                 <h4 className="text-xl font-semibold text-slate-800 mt-6">Risks of Currency Trading</h4>
                 <div className="bg-red-50 p-6 rounded-xl border border-red-200 my-6">
-                    <p className="text-red-900 font-bold mb-3">⚠️ High Risk Warning</p>
+                    <p className="text-red-900 font-bold mb-3">! High Risk Warning</p>
                     <ul className="text-sm text-red-800 space-y-2 list-disc pl-5">
                         <li><strong>Leverage Losses:</strong> Forex brokers offer 50:1 or 100:1 leverage, meaning a 1% adverse move can wipe out your entire investment.</li>
                         <li><strong>24/5 Volatility:</strong> Currencies can gap dramatically overnight due to geopolitical events (wars, elections, central bank announcements).</li>
@@ -318,10 +323,10 @@ export default function CurrencyPage() {
                         </thead>
                         <tbody>
                             <tr><td className="border border-slate-200 px-4 py-2">US Dollar</td><td className="border border-slate-200 px-4 py-2">$</td><td className="border border-slate-200 px-4 py-2 font-mono">USD</td><td className="border border-slate-200 px-4 py-2">United States</td></tr>
-                            <tr className="bg-slate-50"><td className="border border-slate-200 px-4 py-2">Euro</td><td className="border border-slate-200 px-4 py-2">€</td><td className="border border-slate-200 px-4 py-2 font-mono">EUR</td><td className="border border-slate-200 px-4 py-2">Eurozone (19 countries)</td></tr>
-                            <tr><td className="border border-slate-200 px-4 py-2">British Pound</td><td className="border border-slate-200 px-4 py-2">£</td><td className="border border-slate-200 px-4 py-2 font-mono">GBP</td><td className="border border-slate-200 px-4 py-2">United Kingdom</td></tr>
-                            <tr className="bg-slate-50"><td className="border border-slate-200 px-4 py-2">Indian Rupee</td><td className="border border-slate-200 px-4 py-2">₹</td><td className="border border-slate-200 px-4 py-2 font-mono">INR</td><td className="border border-slate-200 px-4 py-2">India</td></tr>
-                            <tr><td className="border border-slate-200 px-4 py-2">Japanese Yen</td><td className="border border-slate-200 px-4 py-2">¥</td><td className="border border-slate-200 px-4 py-2 font-mono">JPY</td><td className="border border-slate-200 px-4 py-2">Japan</td></tr>
+                            <tr className="bg-slate-50"><td className="border border-slate-200 px-4 py-2">Euro</td><td className="border border-slate-200 px-4 py-2">EUR</td><td className="border border-slate-200 px-4 py-2 font-mono">EUR</td><td className="border border-slate-200 px-4 py-2">Eurozone (19 countries)</td></tr>
+                            <tr><td className="border border-slate-200 px-4 py-2">British Pound</td><td className="border border-slate-200 px-4 py-2">GBP</td><td className="border border-slate-200 px-4 py-2 font-mono">GBP</td><td className="border border-slate-200 px-4 py-2">United Kingdom</td></tr>
+                            <tr className="bg-slate-50"><td className="border border-slate-200 px-4 py-2">Indian Rupee</td><td className="border border-slate-200 px-4 py-2">INR</td><td className="border border-slate-200 px-4 py-2 font-mono">INR</td><td className="border border-slate-200 px-4 py-2">India</td></tr>
+                            <tr><td className="border border-slate-200 px-4 py-2">Japanese Yen</td><td className="border border-slate-200 px-4 py-2">JPY</td><td className="border border-slate-200 px-4 py-2 font-mono">JPY</td><td className="border border-slate-200 px-4 py-2">Japan</td></tr>
                             <tr className="bg-slate-50"><td className="border border-slate-200 px-4 py-2">Canadian Dollar</td><td className="border border-slate-200 px-4 py-2">C$</td><td className="border border-slate-200 px-4 py-2 font-mono">CAD</td><td className="border border-slate-200 px-4 py-2">Canada</td></tr>
                             <tr><td className="border border-slate-200 px-4 py-2">Australian Dollar</td><td className="border border-slate-200 px-4 py-2">A$</td><td className="border border-slate-200 px-4 py-2 font-mono">AUD</td><td className="border border-slate-200 px-4 py-2">Australia</td></tr>
                             <tr className="bg-slate-50"><td className="border border-slate-200 px-4 py-2">Swiss Franc</td><td className="border border-slate-200 px-4 py-2">CHF</td><td className="border border-slate-200 px-4 py-2 font-mono">CHF</td><td className="border border-slate-200 px-4 py-2">Switzerland</td></tr>

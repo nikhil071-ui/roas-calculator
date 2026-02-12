@@ -13,6 +13,19 @@ export const metadata: Metadata = {
     "currency converter",
     "marketing guides",
   ],
+  openGraph: {
+    title: "Blog | ROAS Tools - Expert Guides & Case Studies",
+    description: "Expert guides on Facebook ads case studies, image compression, PDF optimization, currency exchange, and ROAS benchmarks. Real data and testing results.",
+    url: "https://roas-calculator.tech/blog",
+  },
+      twitter: {
+    card: "summary_large_image",
+    title: "Blog | ROAS Tools - Expert Guides & Case Studies",
+    description: "Expert guides on Facebook ads case studies, image compression, PDF optimization, currency exchange, and ROAS benchmarks. Real data and testing results.",
+  },
+  alternates: {
+    canonical: "https://roas-calculator.tech/blog",
+  },
 };
 
 interface BlogPost {
@@ -29,7 +42,7 @@ interface BlogPost {
 
 const blogPosts: BlogPost[] = [
   {
-    title: "Facebook Ads ROAS Case Study: 1.8x → 5.2x in 90 Days",
+    title: "Facebook Ads ROAS Case Study: 1.8x -> 5.2x in 90 Days",
     description:
       "Real case study with data: Fashion e-commerce store increased ROAS from 1.8x to 5.2x in 90 days. See exact strategies, budget allocation, and monthly results.",
     category: "Case Study",
@@ -126,7 +139,7 @@ export default function BlogIndex() {
                       </p>
 
                       <div className="flex items-center text-blue-600 font-semibold">
-                        Read Article →
+                        Read Article &rarr;
                       </div>
                     </div>
                   </div>
@@ -165,7 +178,7 @@ export default function BlogIndex() {
                       </p>
 
                       <div className="flex items-center text-blue-600 font-semibold text-sm">
-                        Read Article →
+                        Read Article &rarr;
                       </div>
                     </div>
                   </div>

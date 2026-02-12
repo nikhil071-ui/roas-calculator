@@ -13,11 +13,53 @@ export const metadata: Metadata = {
     "image quality in pdf",
     "pdf best practices",
   ],
+  openGraph: {
+    title: "PDF Compression Best Practices: File Size vs Quality Test Results",
+    description: "Complete guide to PDF compression. Real test results comparing tools, algorithms, compression settings. When to compress and industry standards.",
+    url: "https://roas-calculator.tech/blog/pdf-compression-guide",
+  },
+      twitter: {
+    card: "summary_large_image",
+    title: "PDF Compression Best Practices: File Size vs Quality Test Results",
+    description: "Complete guide to PDF compression. Real test results comparing tools, algorithms, compression settings. When to compress and industry standards.",
+  },
+  alternates: {
+    canonical: "https://roas-calculator.tech/blog/pdf-compression-guide",
+  },
 };
 
 export default function PDFCompressionGuide() {
+  const breadcrumbData = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://roas-calculator.tech/",
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Blog",
+        "item": "https://roas-calculator.tech/blog",
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "PDF Compression Guide",
+        "item": "https://roas-calculator.tech/blog/pdf-compression-guide",
+      },
+    ],
+  };
+
   return (
     <div className="min-h-screen bg-slate-50 font-sans text-slate-900 py-12 px-4 md:px-6">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbData) }}
+      />
       <div className="max-w-4xl mx-auto mb-8">
         <Link href="/blog" className="inline-flex items-center text-slate-500 hover:text-blue-600 transition font-medium">
           <ArrowLeft size={18} className="mr-2" /> Back to Blog
@@ -37,7 +79,7 @@ export default function PDFCompressionGuide() {
             Compare PDF compression techniques, tools, and settings. Real file size reductions with quality analysis.
           </p>
           <p className="text-slate-300 text-sm mt-6">
-            📄 Tested Tools • 📊 Real Reduction Data • 🎯 Best Practices • ✅ Quality Verified
+             Tested Tools -  Real Reduction Data -  Best Practices - OK Quality Verified
           </p>
         </div>
 
@@ -50,19 +92,19 @@ export default function PDFCompressionGuide() {
               <div className="border border-blue-300 bg-blue-50 p-6 rounded-lg">
                 <p className="font-bold text-blue-900">Email & Sharing</p>
                 <ul className="text-blue-800 text-sm mt-2 space-y-1">
-                  <li>• Gmail: 25 MB attachment limit</li>
-                  <li>• Many email systems: 10-20 MB limit</li>
-                  <li>• Uncompressed scans: 50-500 MB</li>
-                  <li>• Result: Compression essential for sharing</li>
+                  <li>- Gmail: 25 MB attachment limit</li>
+                  <li>- Many email systems: 10-20 MB limit</li>
+                  <li>- Uncompressed scans: 50-500 MB</li>
+                  <li>- Result: Compression essential for sharing</li>
                 </ul>
               </div>
               <div className="border border-green-300 bg-green-50 p-6 rounded-lg">
                 <p className="font-bold text-green-900">Web & Storage</p>
                 <ul className="text-green-800 text-sm mt-2 space-y-1">
-                  <li>• Bandwidth costs: $0.12/GB typically</li>
-                  <li>• Large PDFs = slow downloads</li>
-                  <li>• Storage: 100K PDFs at 5MB = 500GB</li>
-                  <li>• Compression: Save $60+/month in hosting</li>
+                  <li>- Bandwidth costs: $0.12/GB typically</li>
+                  <li>- Large PDFs = slow downloads</li>
+                  <li>- Storage: 100K PDFs at 5MB = 500GB</li>
+                  <li>- Compression: Save $60+/month in hosting</li>
                 </ul>
               </div>
             </div>
@@ -266,30 +308,30 @@ export default function PDFCompressionGuide() {
               <div className="border-l-4 border-blue-600 bg-blue-50 p-6 rounded">
                 <p className="font-bold text-blue-900">Screen-Only Viewing (Email/Web)</p>
                 <ul className="text-blue-800 text-sm mt-2 space-y-1">
-                  <li>✓ Target: 50-150 DPI image resolution</li>
-                  <li>✓ Remove metadata & embedded fonts</li>
-                  <li>✓ Use high compression (Quality: 85%)</li>
-                  <li>✓ Expected result: 90-95% size reduction</li>
+                  <li>OK Target: 50-150 DPI image resolution</li>
+                  <li>OK Remove metadata & embedded fonts</li>
+                  <li>OK Use high compression (Quality: 85%)</li>
+                  <li>OK Expected result: 90-95% size reduction</li>
                 </ul>
               </div>
 
               <div className="border-l-4 border-green-600 bg-green-50 p-6 rounded">
                 <p className="font-bold text-green-900">Document Archive (Legal/Compliance)</p>
                 <ul className="text-green-800 text-sm mt-2 space-y-1">
-                  <li>✓ Target: 150-200 DPI image resolution</li>
-                  <li>✓ Preserve all metadata</li>
-                  <li>✓ Use moderate compression (Quality: 90%)</li>
-                  <li>✓ Expected result: 40-60% size reduction</li>
+                  <li>OK Target: 150-200 DPI image resolution</li>
+                  <li>OK Preserve all metadata</li>
+                  <li>OK Use moderate compression (Quality: 90%)</li>
+                  <li>OK Expected result: 40-60% size reduction</li>
                 </ul>
               </div>
 
               <div className="border-l-4 border-purple-600 bg-purple-50 p-6 rounded">
                 <p className="font-bold text-purple-900">Print-Ready (Professional Output)</p>
                 <ul className="text-purple-800 text-sm mt-2 space-y-1">
-                  <li>✓ Target: 300 DPI (no reduction)</li>
-                  <li>✓ Use stream compression only</li>
-                  <li>✓ Keep high quality (Quality: 95%+)</li>
-                  <li>✓ Expected result: 10-20% size reduction</li>
+                  <li>OK Target: 300 DPI (no reduction)</li>
+                  <li>OK Use stream compression only</li>
+                  <li>OK Keep high quality (Quality: 95%+)</li>
+                  <li>OK Expected result: 10-20% size reduction</li>
                 </ul>
               </div>
             </div>
@@ -334,11 +376,11 @@ export default function PDFCompressionGuide() {
             <div className="bg-orange-50 border border-orange-200 p-6 rounded my-6">
               <p className="font-bold text-orange-900">Example: Document Management System</p>
               <ul className="text-orange-800 text-sm mt-3 space-y-1">
-                <li>• Storage: 100,000 PDFs at 5 MB = 500 GB</li>
-                <li>• Cloud storage costs: ~$60/month (AWS S3)</li>
-                <li>• Compression to 500 KB (90% reduction): 50 GB</li>
-                <li>• New storage cost: ~$6/month</li>
-                <li>• <strong>Annual savings: $648 = ROI for $20 software purchases</strong></li>
+                <li>- Storage: 100,000 PDFs at 5 MB = 500 GB</li>
+                <li>- Cloud storage costs: ~$60/month (AWS S3)</li>
+                <li>- Compression to 500 KB (90% reduction): 50 GB</li>
+                <li>- New storage cost: ~$6/month</li>
+                <li>- <strong>Annual savings: $648 = ROI for $20 software purchases</strong></li>
               </ul>
             </div>
           </section>
@@ -349,11 +391,11 @@ export default function PDFCompressionGuide() {
             <div className="bg-linear-to-r from-red-50 to-orange-50 rounded-xl p-8 border border-red-200 mt-6">
               <p className="font-bold text-slate-900 mb-4">Key Takeaways:</p>
               <ul className="space-y-2 text-slate-700 text-sm">
-                <li>✓ Most PDFs can be reduced 60-90% without quality loss</li>
-                <li>✓ Use Adobe, ILovePDF, or Ghostscript for best results</li>
-                <li>✓ Adjust DPI and quality based on end use (screen vs print)</li>
-                <li>✓ ROI is immediate for large document collections</li>
-                <li>✓ Check output quality on your specific content before deploying</li>
+                <li>OK Most PDFs can be reduced 60-90% without quality loss</li>
+                <li>OK Use Adobe, ILovePDF, or Ghostscript for best results</li>
+                <li>OK Adjust DPI and quality based on end use (screen vs print)</li>
+                <li>OK ROI is immediate for large document collections</li>
+                <li>OK Check output quality on your specific content before deploying</li>
               </ul>
             </div>
 

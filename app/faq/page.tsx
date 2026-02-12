@@ -6,11 +6,72 @@ export const metadata: Metadata = {
   title: "Frequently Asked Questions (FAQ) | ROAS Tools",
   description: "Find answers to common questions about ROAS Calculator, Currency Converter, Image Compressor, and PDF tools.",
   keywords: ["FAQ", "help", "support", "ROAS calculator questions", "how to use"],
+  openGraph: {
+    title: "Frequently Asked Questions (FAQ) | ROAS Tools",
+    description: "Find answers to common questions about ROAS Calculator, Currency Converter, Image Compressor, and PDF tools.",
+    url: "https://roas-calculator.tech/faq",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Frequently Asked Questions (FAQ) | ROAS Tools",
+    description: "Find answers to common questions about ROAS Calculator, Currency Converter, Image Compressor, and PDF tools.",
+  },
+  alternates: {
+    canonical: "https://roas-calculator.tech/faq",
+  },
 };
 
+const faqs = [
+  {
+    q: "Is ROAS Tools really free? Are there any hidden costs?",
+    a: "Yes. All tools are free with no trials or paywalls. The site is supported by non-intrusive ads.",
+  },
+  {
+    q: "Do I need to create an account to use the tools?",
+    a: "No. All tools work instantly without signups or logins.",
+  },
+  {
+    q: "Is my data safe? Do you store my information?",
+    a: "No data is stored. Calculations and file processing happen locally in your browser.",
+  },
+  {
+    q: "Are exchange rates real-time?",
+    a: "Yes. Rates are updated frequently, but your bank may apply a markup to the final rate.",
+  },
+  {
+    q: "How do I compress an image to exactly 50KB?",
+    a: "Set the target size and download the compressed file. Preview quality before saving.",
+  },
+  {
+    q: "How do I create a PDF under 2MB?",
+    a: "Upload your images, set the target size to 2 MB, and download the optimized PDF.",
+  },
+  {
+    q: "Does the tool work offline?",
+    a: "Some tools work offline after the page loads, but live currency rates require internet access.",
+  },
+];
+
 export default function FAQ() {
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map((item) => ({
+      "@type": "Question",
+      "name": item.q,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": item.a,
+      },
+    })),
+  };
+
   return (
     <div className="min-h-screen bg-slate-50 font-sans text-slate-900 py-12 px-4 md:px-6">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       
       {/* --- BACK BUTTON --- */}
       <div className="max-w-4xl mx-auto mb-8">
@@ -75,7 +136,7 @@ export default function FAQ() {
                     <details className="group bg-slate-50 rounded-lg p-5 cursor-pointer border border-slate-200">
                         <summary className="font-bold text-slate-900 list-none flex justify-between items-center">
                             <span>Is ROAS Tools really free? Are there any hidden costs?</span>
-                            <span className="transition-transform duration-300 group-open:rotate-180">▼</span>
+                            <span className="transition-transform duration-300 group-open:rotate-180">v</span>
                         </summary>
                         <p className="mt-4 text-slate-700 leading-relaxed">
                             Yes, 100% free. No trials, no "freemium" tiers, no paywalls. We monetize through ethical, non-intrusive Google AdSense ads. 
@@ -86,7 +147,7 @@ export default function FAQ() {
                     <details className="group bg-slate-50 rounded-lg p-5 cursor-pointer border border-slate-200">
                         <summary className="font-bold text-slate-900 list-none flex justify-between items-center">
                             <span>Do I need to create an account to use the tools?</span>
-                            <span className="transition-transform duration-300 group-open:rotate-180">▼</span>
+                            <span className="transition-transform duration-300 group-open:rotate-180">v</span>
                         </summary>
                         <p className="mt-4 text-slate-700 leading-relaxed">
                             No! We deliberately avoid forcing signups. All tools are accessible instantly without any login, email, or personal information. 
@@ -97,30 +158,30 @@ export default function FAQ() {
                     <details className="group bg-slate-50 rounded-lg p-5 cursor-pointer border border-slate-200">
                         <summary className="font-bold text-slate-900 list-none flex justify-between items-center">
                             <span>Is my data safe? Do you store my information?</span>
-                            <span className="transition-transform duration-300 group-open:rotate-180">▼</span>
+                            <span className="transition-transform duration-300 group-open:rotate-180">v</span>
                         </summary>
                         <p className="mt-4 text-slate-700 leading-relaxed">
                             <strong>Your data never leaves your device.</strong> All calculations and file processing happen client-side in your browser using JavaScript. 
                             We cannot see, access, or store your financial data, images, or PDFs. You can verify this by opening your browser's Developer Tools 
-                            and checking the Network tab—there are no upload requests.
+                            and checking the Network tab-there are no upload requests.
                         </p>
                     </details>
 
                     <details className="group bg-slate-50 rounded-lg p-5 cursor-pointer border border-slate-200">
                         <summary className="font-bold text-slate-900 list-none flex justify-between items-center">
                             <span>Can I use these tools on my phone?</span>
-                            <span className="transition-transform duration-300 group-open:rotate-180">▼</span>
+                            <span className="transition-transform duration-300 group-open:rotate-180">v</span>
                         </summary>
                         <p className="mt-4 text-slate-700 leading-relaxed">
                             Absolutely! All our tools are fully mobile-optimized and work seamlessly on iOS (iPhone/iPad) and Android devices. 
-                            No app installation needed—just open the website in your mobile browser (Chrome, Safari, Firefox).
+                            No app installation needed-just open the website in your mobile browser (Chrome, Safari, Firefox).
                         </p>
                     </details>
 
                     <details className="group bg-slate-50 rounded-lg p-5 cursor-pointer border border-slate-200">
                         <summary className="font-bold text-slate-900 list-none flex justify-between items-center">
                             <span>Can I use these tools for commercial/business purposes?</span>
-                            <span className="transition-transform duration-300 group-open:rotate-180">▼</span>
+                            <span className="transition-transform duration-300 group-open:rotate-180">v</span>
                         </summary>
                         <p className="mt-4 text-slate-700 leading-relaxed">
                             Yes! Marketing agencies, consultants, and businesses use our tools daily with clients. The only restriction: 
@@ -138,27 +199,27 @@ export default function FAQ() {
                     <details className="group bg-slate-50 rounded-lg p-5 cursor-pointer border border-slate-200">
                         <summary className="font-bold text-slate-900 list-none flex justify-between items-center">
                             <span>What is a "good" ROAS score?</span>
-                            <span className="transition-transform duration-300 group-open:rotate-180">▼</span>
+                            <span className="transition-transform duration-300 group-open:rotate-180">v</span>
                         </summary>
                         <div className="mt-4 text-slate-700 space-y-3">
                             <p>It depends on your profit margins. General benchmarks:</p>
                             <ul className="list-disc pl-5 space-y-1">
                                 <li><strong>Under 3.0x:</strong> Likely losing money (unless you have 80%+ margins like SaaS)</li>
                                 <li><strong>3.0x - 5.0x:</strong> Healthy for most e-commerce businesses</li>
-                                <li><strong>Over 5.0x:</strong> Excellent—scale aggressively</li>
+                                <li><strong>Over 5.0x:</strong> Excellent-scale aggressively</li>
                             </ul>
-                            <p className="text-sm">Always calculate your break-even ROAS using the formula: 1 ÷ Profit Margin %</p>
+                            <p className="text-sm">Always calculate your break-even ROAS using the formula: 1 / Profit Margin %</p>
                         </div>
                     </details>
 
                     <details className="group bg-slate-50 rounded-lg p-5 cursor-pointer border border-slate-200">
                         <summary className="font-bold text-slate-900 list-none flex justify-between items-center">
                             <span>How is ROAS different from ROI?</span>
-                            <span className="transition-transform duration-300 group-open:rotate-180">▼</span>
+                            <span className="transition-transform duration-300 group-open:rotate-180">v</span>
                         </summary>
                         <p className="mt-4 text-slate-700 leading-relaxed">
-                            <strong>ROAS</strong> measures ad efficiency: Revenue ÷ Ad Spend. It ignores other costs. 
-                            <strong>ROI</strong> measures overall profitability: (Revenue - All Costs) ÷ All Costs. 
+                            <strong>ROAS</strong> measures ad efficiency: Revenue / Ad Spend. It ignores other costs. 
+                            <strong>ROI</strong> measures overall profitability: (Revenue - All Costs) / All Costs. 
                             ROAS is for marketing optimization; ROI is for business decisions.
                         </p>
                     </details>
@@ -166,7 +227,7 @@ export default function FAQ() {
                     <details className="group bg-slate-50 rounded-lg p-5 cursor-pointer border border-slate-200">
                         <summary className="font-bold text-slate-900 list-none flex justify-between items-center">
                             <span>Can ROAS be negative?</span>
-                            <span className="transition-transform duration-300 group-open:rotate-180">▼</span>
+                            <span className="transition-transform duration-300 group-open:rotate-180">v</span>
                         </summary>
                         <p className="mt-4 text-slate-700 leading-relaxed">
                             No. ROAS is a ratio that cannot be negative. If you spend $1,000 and make $0 revenue, your ROAS is 0. 
@@ -177,18 +238,18 @@ export default function FAQ() {
                     <details className="group bg-slate-50 rounded-lg p-5 cursor-pointer border border-slate-200">
                         <summary className="font-bold text-slate-900 list-none flex justify-between items-center">
                             <span>How do I export my ROAS report?</span>
-                            <span className="transition-transform duration-300 group-open:rotate-180">▼</span>
+                            <span className="transition-transform duration-300 group-open:rotate-180">v</span>
                         </summary>
                         <p className="mt-4 text-slate-700 leading-relaxed">
                             After calculating your results, click the "Download Report" button. This generates a professional PDF report 
-                            with your ROAS score, profit metrics, and breakdown—perfect for sharing with team members or clients.
+                            with your ROAS score, profit metrics, and breakdown-perfect for sharing with team members or clients.
                         </p>
                     </details>
 
                     <details className="group bg-slate-50 rounded-lg p-5 cursor-pointer border border-slate-200">
                         <summary className="font-bold text-slate-900 list-none flex justify-between items-center">
                             <span>Should I include shipping costs in product costs?</span>
-                            <span className="transition-transform duration-300 group-open:rotate-180">▼</span>
+                            <span className="transition-transform duration-300 group-open:rotate-180">v</span>
                         </summary>
                         <p className="mt-4 text-slate-700 leading-relaxed">
                             Yes! The "Product Cost" field should include everything you pay per sale: product cost, shipping to customer, 
@@ -206,7 +267,7 @@ export default function FAQ() {
                     <details className="group bg-slate-50 rounded-lg p-5 cursor-pointer border border-slate-200">
                         <summary className="font-bold text-slate-900 list-none flex justify-between items-center">
                             <span>Are the exchange rates real-time?</span>
-                            <span className="transition-transform duration-300 group-open:rotate-180">▼</span>
+                            <span className="transition-transform duration-300 group-open:rotate-180">v</span>
                         </summary>
                         <p className="mt-4 text-slate-700 leading-relaxed">
                             Yes, we use live data from financial institutions updated every few minutes. However, the rate you actually receive 
@@ -217,10 +278,10 @@ export default function FAQ() {
                     <details className="group bg-slate-50 rounded-lg p-5 cursor-pointer border border-slate-200">
                         <summary className="font-bold text-slate-900 list-none flex justify-between items-center">
                             <span>Why is the rate different from Google or my bank?</span>
-                            <span className="transition-transform duration-300 group-open:rotate-180">▼</span>
+                            <span className="transition-transform duration-300 group-open:rotate-180">v</span>
                         </summary>
                         <p className="mt-4 text-slate-700 leading-relaxed">
-                            We show the "mid-market rate"—the real exchange rate banks use between themselves. Your bank adds a markup (profit) on top of this. 
+                            We show the "mid-market rate"-the real exchange rate banks use between themselves. Your bank adds a markup (profit) on top of this. 
                             Google's rates update less frequently. Minor differences (0.1-0.5%) are normal. Always confirm with your bank before large transfers.
                         </p>
                     </details>
@@ -228,7 +289,7 @@ export default function FAQ() {
                     <details className="group bg-slate-50 rounded-lg p-5 cursor-pointer border border-slate-200">
                         <summary className="font-bold text-slate-900 list-none flex justify-between items-center">
                             <span>What's the best way to send money internationally?</span>
-                            <span className="transition-transform duration-300 group-open:rotate-180">▼</span>
+                            <span className="transition-transform duration-300 group-open:rotate-180">v</span>
                         </summary>
                         <div className="mt-4 text-slate-700 space-y-3">
                             <p>Best options (ranked by cost-effectiveness):</p>
@@ -244,7 +305,7 @@ export default function FAQ() {
                     <details className="group bg-slate-50 rounded-lg p-5 cursor-pointer border border-slate-200">
                         <summary className="font-bold text-slate-900 list-none flex justify-between items-center">
                             <span>Can I see historical exchange rates?</span>
-                            <span className="transition-transform duration-300 group-open:rotate-180">▼</span>
+                            <span className="transition-transform duration-300 group-open:rotate-180">v</span>
                         </summary>
                         <p className="mt-4 text-slate-700 leading-relaxed">
                             Not currently. Our tool shows real-time rates only. For historical data, check XE.com or OANDA. 
@@ -262,7 +323,7 @@ export default function FAQ() {
                     <details className="group bg-slate-50 rounded-lg p-5 cursor-pointer border border-slate-200">
                         <summary className="font-bold text-slate-900 list-none flex justify-between items-center">
                             <span>How do I compress an image to exactly 50KB?</span>
-                            <span className="transition-transform duration-300 group-open:rotate-180">▼</span>
+                            <span className="transition-transform duration-300 group-open:rotate-180">v</span>
                         </summary>
                         <p className="mt-4 text-slate-700 leading-relaxed">
                             In the "Target Max Size" field, type <strong>0.05</strong> (because 50 KB = 0.05 MB). 
@@ -274,7 +335,7 @@ export default function FAQ() {
                     <details className="group bg-slate-50 rounded-lg p-5 cursor-pointer border border-slate-200">
                         <summary className="font-bold text-slate-900 list-none flex justify-between items-center">
                             <span>Will my photo become blurry after compression?</span>
-                            <span className="transition-transform duration-300 group-open:rotate-180">▼</span>
+                            <span className="transition-transform duration-300 group-open:rotate-180">v</span>
                         </summary>
                         <p className="mt-4 text-slate-700 leading-relaxed">
                             It depends on the target size. For passport photos compressed to 50KB, facial features remain sharp. 
@@ -286,7 +347,7 @@ export default function FAQ() {
                     <details className="group bg-slate-50 rounded-lg p-5 cursor-pointer border border-slate-200">
                         <summary className="font-bold text-slate-900 list-none flex justify-between items-center">
                             <span>Can I compress PNG images?</span>
-                            <span className="transition-transform duration-300 group-open:rotate-180">▼</span>
+                            <span className="transition-transform duration-300 group-open:rotate-180">v</span>
                         </summary>
                         <p className="mt-4 text-slate-700 leading-relaxed">
                             Yes! We support JPG, JPEG, PNG, and WEBP formats. However, PNG files (especially with transparency) compress less efficiently. 
@@ -297,7 +358,7 @@ export default function FAQ() {
                     <details className="group bg-slate-50 rounded-lg p-5 cursor-pointer border border-slate-200">
                         <summary className="font-bold text-slate-900 list-none flex justify-between items-center">
                             <span>Why does the portal reject my photo even after compression?</span>
-                            <span className="transition-transform duration-300 group-open:rotate-180">▼</span>
+                            <span className="transition-transform duration-300 group-open:rotate-180">v</span>
                         </summary>
                         <div className="mt-4 text-slate-700 space-y-2">
                             <p>Common rejection reasons:</p>
@@ -313,7 +374,7 @@ export default function FAQ() {
                     <details className="group bg-slate-50 rounded-lg p-5 cursor-pointer border border-slate-200">
                         <summary className="font-bold text-slate-900 list-none flex justify-between items-center">
                             <span>Is there a limit to how many images I can compress?</span>
-                            <span className="transition-transform duration-300 group-open:rotate-180">▼</span>
+                            <span className="transition-transform duration-300 group-open:rotate-180">v</span>
                         </summary>
                         <p className="mt-4 text-slate-700 leading-relaxed">
                             No limits! Compress as many photos as you need. Since processing happens locally in your browser, 
@@ -331,7 +392,7 @@ export default function FAQ() {
                     <details className="group bg-slate-50 rounded-lg p-5 cursor-pointer border border-slate-200">
                         <summary className="font-bold text-slate-900 list-none flex justify-between items-center">
                             <span>How do I create a PDF under 2MB?</span>
-                            <span className="transition-transform duration-300 group-open:rotate-180">▼</span>
+                            <span className="transition-transform duration-300 group-open:rotate-180">v</span>
                         </summary>
                         <p className="mt-4 text-slate-700 leading-relaxed">
                             Upload all your images (certificates, ID proofs, etc.), then set the "Target Size" to <strong>2</strong> (meaning 2 MB). 
@@ -343,7 +404,7 @@ export default function FAQ() {
                     <details className="group bg-slate-50 rounded-lg p-5 cursor-pointer border border-slate-200">
                         <summary className="font-bold text-slate-900 list-none flex justify-between items-center">
                             <span>Can I merge 50+ images into one PDF?</span>
-                            <span className="transition-transform duration-300 group-open:rotate-180">▼</span>
+                            <span className="transition-transform duration-300 group-open:rotate-180">v</span>
                         </summary>
                         <p className="mt-4 text-slate-700 leading-relaxed">
                             Yes! There's no page limit. However, keep in mind that more images = larger file size. 
@@ -355,7 +416,7 @@ export default function FAQ() {
                     <details className="group bg-slate-50 rounded-lg p-5 cursor-pointer border border-slate-200">
                         <summary className="font-bold text-slate-900 list-none flex justify-between items-center">
                             <span>Pages are in the wrong order. How do I fix this?</span>
-                            <span className="transition-transform duration-300 group-open:rotate-180">▼</span>
+                            <span className="transition-transform duration-300 group-open:rotate-180">v</span>
                         </summary>
                         <p className="mt-4 text-slate-700 leading-relaxed">
                             Images are arranged in the order you select them. When choosing files, click them in the correct sequence. 
@@ -367,7 +428,7 @@ export default function FAQ() {
                     <details className="group bg-slate-50 rounded-lg p-5 cursor-pointer border border-slate-200">
                         <summary className="font-bold text-slate-900 list-none flex justify-between items-center">
                             <span>Can I password-protect the PDF?</span>
-                            <span className="transition-transform duration-300 group-open:rotate-180">▼</span>
+                            <span className="transition-transform duration-300 group-open:rotate-180">v</span>
                         </summary>
                         <p className="mt-4 text-slate-700 leading-relaxed">
                             Not currently. Most government portals don't require password-protected PDFs (in fact, they often reject them). 
@@ -378,7 +439,7 @@ export default function FAQ() {
                     <details className="group bg-slate-50 rounded-lg p-5 cursor-pointer border border-slate-200">
                         <summary className="font-bold text-slate-900 list-none flex justify-between items-center">
                             <span>Portal says "Invalid PDF" or "Corrupted File." What now?</span>
-                            <span className="transition-transform duration-300 group-open:rotate-180">▼</span>
+                            <span className="transition-transform duration-300 group-open:rotate-180">v</span>
                         </summary>
                         <div className="mt-4 text-slate-700 space-y-2">
                             <p>Try these solutions:</p>
@@ -401,7 +462,7 @@ export default function FAQ() {
                     <details className="group bg-slate-50 rounded-lg p-5 cursor-pointer border border-slate-200">
                         <summary className="font-bold text-slate-900 list-none flex justify-between items-center">
                             <span>The tool isn't working on my phone. What should I do?</span>
-                            <span className="transition-transform duration-300 group-open:rotate-180">▼</span>
+                            <span className="transition-transform duration-300 group-open:rotate-180">v</span>
                         </summary>
                         <div className="mt-4 text-slate-700 space-y-2">
                             <p>Troubleshooting steps:</p>
@@ -419,7 +480,7 @@ export default function FAQ() {
                     <details className="group bg-slate-50 rounded-lg p-5 cursor-pointer border border-slate-200">
                         <summary className="font-bold text-slate-900 list-none flex justify-between items-center">
                             <span>Download button doesn't work. Help!</span>
-                            <span className="transition-transform duration-300 group-open:rotate-180">▼</span>
+                            <span className="transition-transform duration-300 group-open:rotate-180">v</span>
                         </summary>
                         <div className="mt-4 text-slate-700 space-y-2">
                             <p>Try these fixes:</p>
@@ -435,7 +496,7 @@ export default function FAQ() {
                     <details className="group bg-slate-50 rounded-lg p-5 cursor-pointer border border-slate-200">
                         <summary className="font-bold text-slate-900 list-none flex justify-between items-center">
                             <span>Does this work offline?</span>
-                            <span className="transition-transform duration-300 group-open:rotate-180">▼</span>
+                            <span className="transition-transform duration-300 group-open:rotate-180">v</span>
                         </summary>
                         <p className="mt-4 text-slate-700 leading-relaxed">
                             Partially. The Image Compressor and PDF Converter work offline once the page loads (because they process locally). 
@@ -446,22 +507,22 @@ export default function FAQ() {
                     <details className="group bg-slate-50 rounded-lg p-5 cursor-pointer border border-slate-200">
                         <summary className="font-bold text-slate-900 list-none flex justify-between items-center">
                             <span>I found a bug. How do I report it?</span>
-                            <span className="transition-transform duration-300 group-open:rotate-180">▼</span>
+                            <span className="transition-transform duration-300 group-open:rotate-180">v</span>
                         </summary>
                         <p className="mt-4 text-slate-700 leading-relaxed">
                             Thank you for helping us improve! Email <a href="mailto:luckmatters199@gmail.com" className="text-blue-600 underline">luckmatters199@gmail.com</a> with:
-                            <br />• Which tool you were using<br />
-                            • What you expected to happen<br />
-                            • What actually happened<br />
-                            • Screenshots if possible<br />
-                            • Your browser and device (e.g., "Chrome 120 on Windows 11")
+                            <br />- Which tool you were using<br />
+                            - What you expected to happen<br />
+                            - What actually happened<br />
+                            - Screenshots if possible<br />
+                            - Your browser and device (e.g., "Chrome 120 on Windows 11")
                         </p>
                     </details>
 
                     <details className="group bg-slate-50 rounded-lg p-5 cursor-pointer border border-slate-200">
                         <summary className="font-bold text-slate-900 list-none flex justify-between items-center">
                             <span>Can I suggest a new feature?</span>
-                            <span className="transition-transform duration-300 group-open:rotate-180">▼</span>
+                            <span className="transition-transform duration-300 group-open:rotate-180">v</span>
                         </summary>
                         <p className="mt-4 text-slate-700 leading-relaxed">
                             Absolutely! We love user feedback. Email us at <a href="mailto:luckmatters199@gmail.com" className="text-blue-600 underline">luckmatters199@gmail.com</a> with your idea 
@@ -489,7 +550,7 @@ export default function FAQ() {
 
       {/* Footer */}
       <footer className="max-w-4xl mx-auto mt-12 text-center text-slate-400 text-sm">
-        <p>© 2026 ROAS Tools Inc.</p>
+        <p>(c) 2026 ROAS Tools Inc.</p>
       </footer>
     </div>
   );

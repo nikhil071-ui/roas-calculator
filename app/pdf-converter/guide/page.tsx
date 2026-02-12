@@ -14,6 +14,19 @@ export const metadata: Metadata = {
     "create pdf under 2mb",
     "government exam requirements",
   ],
+  openGraph: {
+    title: "Complete Guide to PDF Creation & Compression | JPG to PDF for Government Forms",
+    description: "Expert guide to creating PDFs from images. Learn PDF compression, file size optimization, and step-by-step instructions for exam portals and government applications.",
+    url: "https://roas-calculator.tech/pdf-converter/guide",
+  },
+      twitter: {
+    card: "summary_large_image",
+    title: "Complete Guide to PDF Creation & Compression | JPG to PDF for Government Forms",
+    description: "Expert guide to creating PDFs from images. Learn PDF compression, file size optimization, and step-by-step instructions for exam portals and government applications.",
+  },
+  alternates: {
+    canonical: "https://roas-calculator.tech/pdf-converter/guide",
+  },
 };
 
 export default function PDFConverterGuide() {
@@ -45,7 +58,7 @@ export default function PDFConverterGuide() {
         <article className="p-8 md:p-12 prose lg:prose-lg max-w-none text-slate-700 space-y-8">
           
           <nav className="bg-red-50 rounded-xl p-6 border border-red-200">
-            <h2 className="text-lg font-bold text-slate-900 mb-4">📋 Quick Navigation</h2>
+            <h2 className="text-lg font-bold text-slate-900 mb-4"> Quick Navigation</h2>
             <div className="grid md:grid-cols-2 gap-3 text-sm">
               <a href="#what-is-pdf" className="text-red-600 hover:underline">1. What is a PDF?</a>
               <a href="#why-pdf" className="text-red-600 hover:underline">2. Why PDFs for Government Forms</a>
@@ -67,10 +80,10 @@ export default function PDFConverterGuide() {
             </p>
 
             <div className="bg-blue-50 border-l-4 border-blue-600 p-6 rounded my-4">
-              <p className="font-bold text-blue-900">🎯 Key Benefit for Government Forms:</p>
+              <p className="font-bold text-blue-900"> Key Benefit for Government Forms:</p>
               <p className="text-blue-800 text-sm mt-2">
                 A PDF created on your iPhone looks identical when opened on a Windows PC or Android tablet. 
-                This standardization is why government portals specifically ask for PDFs—they know exactly how your document will appear.
+                This standardization is why government portals specifically ask for PDFs-they know exactly how your document will appear.
               </p>
             </div>
 
@@ -272,10 +285,10 @@ export default function PDFConverterGuide() {
               </li>
               <li>
                 <strong>Set Size Limit:</strong> Type "2" for 2MB, "0.5" for 500KB, "1" for 1MB
-                <p className="text-sm text-slate-600 mt-1">Tip: Be conservative—set 100KB below the actual limit</p>
+                <p className="text-sm text-slate-600 mt-1">Tip: Be conservative-set 100KB below the actual limit</p>
               </li>
               <li>
-                <strong>Download & Test:</strong> Check file size. Right-click → Properties
+                <strong>Download & Test:</strong> Check file size. Right-click &rarr; Properties
                 <p className="text-sm text-slate-600 mt-1">Tip: Test upload to portal 24 hours before deadline</p>
               </li>
             </ol>
@@ -286,8 +299,8 @@ export default function PDFConverterGuide() {
             
             <details className="group border border-slate-200 rounded-lg p-4 mb-4 cursor-pointer bg-white">
               <summary className="font-bold text-slate-900 list-none flex justify-between">
-                <span>❓ PDF is still larger than limit</span>
-                <span className="transition group-open:rotate-180">▼</span>
+                <span>? PDF is still larger than limit</span>
+                <span className="transition group-open:rotate-180">v</span>
               </summary>
               <div className="mt-3 text-slate-700 space-y-2 text-sm">
                 <p><strong>Solution 1:</strong> Lower compression target (e.g., from 2.0 to 1.5)</p>
@@ -298,8 +311,8 @@ export default function PDFConverterGuide() {
 
             <details className="group border border-slate-200 rounded-lg p-4 mb-4 cursor-pointer bg-white">
               <summary className="font-bold text-slate-900 list-none flex justify-between">
-                <span>❓ PDF pages are blurry or hard to read</span>
-                <span className="transition group-open:rotate-180">▼</span>
+                <span>? PDF pages are blurry or hard to read</span>
+                <span className="transition group-open:rotate-180">v</span>
               </summary>
               <div className="mt-3 text-slate-700 space-y-2 text-sm">
                 <p><strong>Cause:</strong> Compression too aggressive or original images poor quality</p>
@@ -310,8 +323,8 @@ export default function PDFConverterGuide() {
 
             <details className="group border border-slate-200 rounded-lg p-4 mb-4 cursor-pointer bg-white">
               <summary className="font-bold text-slate-900 list-none flex justify-between">
-                <span>❓ Portal rejects my PDF despite meeting size requirement</span>
-                <span className="transition group-open:rotate-180">▼</span>
+                <span>? Portal rejects my PDF despite meeting size requirement</span>
+                <span className="transition group-open:rotate-180">v</span>
               </summary>
               <div className="mt-3 text-slate-700 space-y-2 text-sm">
                 <p><strong>Check 1:</strong> File extension. Must be .pdf (not .jpeg converted to PDF)</p>
@@ -339,30 +352,30 @@ export default function PDFConverterGuide() {
                 <tbody>
                   <tr>
                     <td className="border border-slate-300 px-3 py-2 font-semibold">ROAS PDF Converter</td>
-                    <td className="border border-slate-300 px-3 py-2">✅ 100% Free</td>
-                    <td className="border border-slate-300 px-3 py-2">✅ Offline</td>
-                    <td className="border border-slate-300 px-3 py-2">⚡ Instant</td>
+                    <td className="border border-slate-300 px-3 py-2">OK 100% Free</td>
+                    <td className="border border-slate-300 px-3 py-2">OK Offline</td>
+                    <td className="border border-slate-300 px-3 py-2">! Instant</td>
                     <td className="border border-slate-300 px-3 py-2">Exams (Recommended)</td>
                   </tr>
                   <tr className="bg-slate-50">
                     <td className="border border-slate-300 px-3 py-2 font-semibold">ILovePDF</td>
-                    <td className="border border-slate-300 px-3 py-2">⚠️ Limited free</td>
-                    <td className="border border-slate-300 px-3 py-2">❌ Uploads server</td>
-                    <td className="border border-slate-300 px-3 py-2">🐢 Slow</td>
+                    <td className="border border-slate-300 px-3 py-2">! Limited free</td>
+                    <td className="border border-slate-300 px-3 py-2">X Uploads server</td>
+                    <td className="border border-slate-300 px-3 py-2"> Slow</td>
                     <td className="border border-slate-300 px-3 py-2">Batch processing</td>
                   </tr>
                   <tr>
                     <td className="border border-slate-300 px-3 py-2 font-semibold">Adobe Acrobat</td>
-                    <td className="border border-slate-300 px-3 py-2">❌ Paid ($20/mo)</td>
-                    <td className="border border-slate-300 px-3 py-2">✅ Internal</td>
-                    <td className="border border-slate-300 px-3 py-2">⚡ Fast</td>
+                    <td className="border border-slate-300 px-3 py-2">X Paid ($20/mo)</td>
+                    <td className="border border-slate-300 px-3 py-2">OK Internal</td>
+                    <td className="border border-slate-300 px-3 py-2">! Fast</td>
                     <td className="border border-slate-300 px-3 py-2">Professional use</td>
                   </tr>
                   <tr className="bg-slate-50">
                     <td className="border border-slate-300 px-3 py-2 font-semibold">Smallpdf</td>
-                    <td className="border border-slate-300 px-3 py-2">⚠️ 2 free/month</td>
-                    <td className="border border-slate-300 px-3 py-2">❌ Cloud-based</td>
-                    <td className="border border-slate-300 px-3 py-2">🐢 Slow</td>
+                    <td className="border border-slate-300 px-3 py-2">! 2 free/month</td>
+                    <td className="border border-slate-300 px-3 py-2">X Cloud-based</td>
+                    <td className="border border-slate-300 px-3 py-2"> Slow</td>
                     <td className="border border-slate-300 px-3 py-2">Occasional use</td>
                   </tr>
                 </tbody>

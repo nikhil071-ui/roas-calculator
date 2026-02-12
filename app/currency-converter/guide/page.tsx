@@ -14,6 +14,19 @@ export const metadata: Metadata = {
     "best exchange rates",
     "currency converter",
   ],
+  openGraph: {
+    title: "Complete Guide to Currency Conversion & Exchange Rates | 2026 Forex Explained",
+    description: "Expert guide to currency conversion. Learn how exchange rates work, real-time forex, conversion fees, and international money transfers for travel and business.",
+    url: "https://roas-calculator.tech/currency-converter/guide",
+  },
+      twitter: {
+    card: "summary_large_image",
+    title: "Complete Guide to Currency Conversion & Exchange Rates | 2026 Forex Explained",
+    description: "Expert guide to currency conversion. Learn how exchange rates work, real-time forex, conversion fees, and international money transfers for travel and business.",
+  },
+  alternates: {
+    canonical: "https://roas-calculator.tech/currency-converter/guide",
+  },
 };
 
 export default function CurrencyConverterGuide() {
@@ -45,7 +58,7 @@ export default function CurrencyConverterGuide() {
         <article className="p-8 md:p-12 prose lg:prose-lg max-w-none text-slate-700 space-y-8">
           
           <nav className="bg-emerald-50 rounded-xl p-6 border border-emerald-200">
-            <h2 className="text-lg font-bold text-slate-900 mb-4">📋 Quick Navigation</h2>
+            <h2 className="text-lg font-bold text-slate-900 mb-4"> Quick Navigation</h2>
             <div className="grid md:grid-cols-2 gap-3 text-sm">
               <a href="#what-is-forex" className="text-emerald-600 hover:underline">1. How Exchange Rates Work</a>
               <a href="#fx-market" className="text-emerald-600 hover:underline">2. The Forex Market</a>
@@ -67,7 +80,7 @@ export default function CurrencyConverterGuide() {
             </p>
 
             <div className="bg-blue-50 border-l-4 border-blue-600 p-6 rounded my-4">
-              <p className="font-bold text-blue-900">💡 Key Concept:</p>
+              <p className="font-bold text-blue-900"> Key Concept:</p>
               <p className="text-blue-800 text-sm mt-2">
                 Exchange rates fluctuate constantly (multiple times per second) based on supply and demand. 
                 When we say "USD/INR is 84," that's the rate at that precise moment. A second later, it might be 83.98 or 84.02.
@@ -93,7 +106,7 @@ export default function CurrencyConverterGuide() {
             </ul>
 
             <p className="text-sm text-slate-600 italic mt-4">
-              Note: The inverse (INR/USD) would be 1÷84 = 0.0119 USD per rupee (confusing, which is why we usually quote USD/INR instead).
+              Note: The inverse (INR/USD) would be 1/84 = 0.0119 USD per rupee (confusing, which is why we usually quote USD/INR instead).
             </p>
 
             <h3 className="text-xl font-bold text-slate-900 mt-6">What Causes Exchange Rates to Change?</h3>
@@ -168,12 +181,12 @@ export default function CurrencyConverterGuide() {
 
             <div className="bg-slate-50 p-6 rounded-lg border border-slate-200 my-4">
               <p className="font-mono text-center text-lg mb-4">
-                INR Amount = USD Amount × Exchange Rate
+                INR Amount = USD Amount x Exchange Rate
               </p>
               <p className="text-sm text-slate-600">
                 Example: Convert $100 USD to INR at rate 84
                 <br />
-                100 × 84 = 8,400 INR
+                100 x 84 = 8,400 INR
               </p>
             </div>
 
@@ -181,12 +194,12 @@ export default function CurrencyConverterGuide() {
             
             <div className="bg-slate-50 p-6 rounded-lg border border-slate-200 mt-4">
               <p className="font-mono text-center text-lg mb-4">
-                USD Amount = INR Amount ÷ Exchange Rate
+                USD Amount = INR Amount / Exchange Rate
               </p>
               <p className="text-sm text-slate-600">
                 Example: Convert 8,400 INR to USD at rate 84
                 <br />
-                8,400 ÷ 84 = $100 USD
+                8,400 / 84 = $100 USD
               </p>
             </div>
 
@@ -289,31 +302,31 @@ export default function CurrencyConverterGuide() {
             
             <div className="space-y-4 mt-4">
               <div className="border border-green-300 bg-green-50 p-4 rounded">
-                <p className="font-bold text-green-900">✅ Wise (Best for most people)</p>
+                <p className="font-bold text-green-900">OK Wise (Best for most people)</p>
                 <ul className="text-sm text-green-800 mt-2 space-y-1">
-                  <li>• Mid-market rates (0.3-1% spread)</li>
-                  <li>• Fast (1-2 days to India)</li>
-                  <li>• Small amounts OK</li>
-                  <li>• $4.12 fee typical</li>
+                  <li>- Mid-market rates (0.3-1% spread)</li>
+                  <li>- Fast (1-2 days to India)</li>
+                  <li>- Small amounts OK</li>
+                  <li>- $4.12 fee typical</li>
                 </ul>
               </div>
 
               <div className="border border-blue-300 bg-blue-50 p-4 rounded">
-                <p className="font-bold text-blue-900">✅ SWIFT Banks</p>
+                <p className="font-bold text-blue-900">OK SWIFT Banks</p>
                 <ul className="text-sm text-blue-800 mt-2 space-y-1">
-                  <li>• Traditional & secure</li>
-                  <li>• Slow (3-5 days)</li>
-                  <li>• High fees ($15-50)</li>
-                  <li>• Poor exchange rates</li>
+                  <li>- Traditional & secure</li>
+                  <li>- Slow (3-5 days)</li>
+                  <li>- High fees ($15-50)</li>
+                  <li>- Poor exchange rates</li>
                 </ul>
               </div>
 
               <div className="border border-orange-300 bg-orange-50 p-4 rounded">
-                <p className="font-bold text-orange-900">❌ Remittance Services (MoneyGram, Western Union)</p>
+                <p className="font-bold text-orange-900">X Remittance Services (MoneyGram, Western Union)</p>
                 <ul className="text-sm text-orange-800 mt-2 space-y-1">
-                  <li>• Expensive (3-5% spread)</li>
-                  <li>• High fees ($5-20)</li>
-                  <li>• Useful for cash pickup only</li>
+                  <li>- Expensive (3-5% spread)</li>
+                  <li>- High fees ($5-20)</li>
+                  <li>- Useful for cash pickup only</li>
                 </ul>
               </div>
             </div>
@@ -354,13 +367,13 @@ export default function CurrencyConverterGuide() {
             
             <div className="space-y-4 mt-4">
               <div className="bg-green-50 border-l-4 border-green-600 p-4 rounded">
-                <p className="font-bold text-green-900">✅ Real-Time Rates</p>
+                <p className="font-bold text-green-900">OK Real-Time Rates</p>
                 <p className="text-green-800 text-sm mt-1">Updated multiple times per second. Used by banks and professional traders. Most accurate.</p>
                 <p className="text-sm text-green-700 mt-2">Our currency converter uses real-time rates from live forex feeds.</p>
               </div>
 
               <div className="bg-orange-50 border-l-4 border-orange-600 p-4 rounded">
-                <p className="font-bold text-orange-900">⚠️ Delayed Rates (15-20 minute lag)</p>
+                <p className="font-bold text-orange-900">! Delayed Rates (15-20 minute lag)</p>
                 <p className="text-orange-800 text-sm mt-1">Older rates from 15-20 minutes ago. Free providers use these to save on data costs.</p>
                 <p className="text-sm text-orange-700 mt-2">At volatile times (economic news), delays can cause 0.5-2% differences.</p>
               </div>
@@ -383,26 +396,26 @@ export default function CurrencyConverterGuide() {
                 <tbody>
                   <tr>
                     <td className="border border-slate-300 px-3 py-2 font-semibold">ROAS Converter</td>
-                    <td className="border border-slate-300 px-3 py-2">✅ Yes</td>
-                    <td className="border border-slate-300 px-3 py-2">✅ 100% Free</td>
+                    <td className="border border-slate-300 px-3 py-2">OK Yes</td>
+                    <td className="border border-slate-300 px-3 py-2">OK 100% Free</td>
                     <td className="border border-slate-300 px-3 py-2">Quick conversions (Recommended)</td>
                   </tr>
                   <tr className="bg-slate-50">
                     <td className="border border-slate-300 px-3 py-2 font-semibold">XE.com</td>
-                    <td className="border border-slate-300 px-3 py-2">✅ Yes</td>
-                    <td className="border border-slate-300 px-3 py-2">✅ Free</td>
+                    <td className="border border-slate-300 px-3 py-2">OK Yes</td>
+                    <td className="border border-slate-300 px-3 py-2">OK Free</td>
                     <td className="border border-slate-300 px-3 py-2">Reference rates, learning</td>
                   </tr>
                   <tr>
                     <td className="border border-slate-300 px-3 py-2 font-semibold">Google Finance</td>
-                    <td className="border border-slate-300 px-3 py-2">✅ Yes</td>
-                    <td className="border border-slate-300 px-3 py-2">✅ Free</td>
+                    <td className="border border-slate-300 px-3 py-2">OK Yes</td>
+                    <td className="border border-slate-300 px-3 py-2">OK Free</td>
                     <td className="border border-slate-300 px-3 py-2">Simple conversions</td>
                   </tr>
                   <tr className="bg-slate-50">
                     <td className="border border-slate-300 px-3 py-2 font-semibold">Wise</td>
-                    <td className="border border-slate-300 px-3 py-2">✅ Yes</td>
-                    <td className="border border-slate-300 px-3 py-2">✅ Free converter</td>
+                    <td className="border border-slate-300 px-3 py-2">OK Yes</td>
+                    <td className="border border-slate-300 px-3 py-2">OK Free converter</td>
                     <td className="border border-slate-300 px-3 py-2">Actual transfers (small fee)</td>
                   </tr>
                 </tbody>

@@ -11,6 +11,19 @@ export const metadata: Metadata = {
     "currency transfer fees",
     "mid-market rate",
   ],
+  openGraph: {
+    title: "Currency Converter FAQ | ROAS Tools",
+    description: "Answers to common questions about exchange rates, spreads, and international transfer costs.",
+    url: "https://roas-calculator.tech/currency-converter/faq",
+  },
+      twitter: {
+    card: "summary_large_image",
+    title: "Currency Converter FAQ | ROAS Tools",
+    description: "Answers to common questions about exchange rates, spreads, and international transfer costs.",
+  },
+  alternates: {
+    canonical: "https://roas-calculator.tech/currency-converter/faq",
+  },
 };
 
 const faqs = [

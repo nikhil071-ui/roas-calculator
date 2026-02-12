@@ -23,6 +23,11 @@ export const metadata: Metadata = {
     description: "Perfect for SSC, UPSC, and IBPS online forms. Privacy-focused & Offline capable.",
     type: "website",
   },
+      twitter: {
+    card: "summary_large_image",
+    title: "Free Image Compressor - Reduce Size to 50KB / 20KB (JPEG & PNG)",
+    description: "Compress images online for free. Reduce JPG/PNG size to specific MB or KB limits for government forms (SSC, UPSC). No signup required.",
+  },
 };
 
 export default function ImageCompressorPage() {
@@ -44,7 +49,7 @@ export default function ImageCompressorPage() {
             Reduce size to 20KB - 50KB for Government Forms, Exam Portals, and Online Applications
           </p>
           <p className="text-slate-500 text-sm mt-3">
-            ✓ Privacy-First (Offline) • ✓ No Limits • ✓ Instant Results
+            OK Privacy-First (Offline) - OK No Limits - OK Instant Results
           </p>
         </div>
       </div>
@@ -67,7 +72,7 @@ export default function ImageCompressorPage() {
       {/* EXPERT GUIDE CTA */}
       <div className="max-w-5xl mx-auto mt-8 px-4">
         <div className="bg-gradient-to-r from-purple-50 to-blue-50 rounded-xl border-2 border-purple-300 p-8">
-          <h3 className="text-2xl font-bold text-slate-900 mb-2">📚 Want to Master Image Compression?</h3>
+          <h3 className="text-2xl font-bold text-slate-900 mb-2"> Want to Master Image Compression?</h3>
           <p className="text-slate-700 mb-4">
             Our comprehensive guide covers JPEG algorithms, quality-size tradeoffs, all government exam requirements, and technical troubleshooting.
           </p>
@@ -75,7 +80,7 @@ export default function ImageCompressorPage() {
             href="/image-compressor/guide"
             className="inline-block bg-purple-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-purple-700 transition"
           >
-            Read Complete Image Compression Guide →
+            Read Complete Image Compression Guide &rarr;
           </Link>
         </div>
       </div>
@@ -178,18 +183,18 @@ export default function ImageCompressorPage() {
             <tbody>
               <tr>
                 <td className="py-2 px-4 border-b">SSC CGL / CHSL</td>
-                <td className="py-2 px-4 border-b">20KB – 50KB</td>
-                <td className="py-2 px-4 border-b">10KB – 20KB</td>
+                <td className="py-2 px-4 border-b">20KB - 50KB</td>
+                <td className="py-2 px-4 border-b">10KB - 20KB</td>
               </tr>
               <tr>
                 <td className="py-2 px-4 border-b">UPSC Civil Services</td>
-                <td className="py-2 px-4 border-b">20KB – 300KB</td>
-                <td className="py-2 px-4 border-b">20KB – 300KB</td>
+                <td className="py-2 px-4 border-b">20KB - 300KB</td>
+                <td className="py-2 px-4 border-b">20KB - 300KB</td>
               </tr>
               <tr>
                 <td className="py-2 px-4 border-b">IBPS PO / Clerk</td>
-                <td className="py-2 px-4 border-b">20KB – 50KB</td>
-                <td className="py-2 px-4 border-b">10KB – 20KB</td>
+                <td className="py-2 px-4 border-b">20KB - 50KB</td>
+                <td className="py-2 px-4 border-b">10KB - 20KB</td>
               </tr>
             </tbody>
           </table>
@@ -202,7 +207,7 @@ export default function ImageCompressorPage() {
           <summary className="font-bold text-lg list-none flex justify-between items-center text-slate-800">
             <span>Can I compress PNG images?</span>
             <span className="transition-transform duration-300 group-open:rotate-180">
-              ⬇️
+              down
             </span>
           </summary>
           <p className="mt-2 text-gray-600">
@@ -214,7 +219,7 @@ export default function ImageCompressorPage() {
           <summary className="font-bold text-lg list-none flex justify-between items-center text-slate-800">
             <span>Will my photo become blurry?</span>
             <span className="transition-transform duration-300 group-open:rotate-180">
-              ⬇️
+              down
             </span>
           </summary>
           <p className="mt-2 text-gray-600">
@@ -227,7 +232,7 @@ export default function ImageCompressorPage() {
           <summary className="font-bold text-lg list-none flex justify-between items-center text-slate-800">
             <span>What's the difference between lossy and lossless compression?</span>
             <span className="transition-transform duration-300 group-open:rotate-180">
-              ⬇️
+              down
             </span>
           </summary>
           <p className="mt-2 text-gray-600">
@@ -240,7 +245,7 @@ export default function ImageCompressorPage() {
           <summary className="font-bold text-lg list-none flex justify-between items-center text-slate-800">
             <span>Can I compress images on my phone?</span>
             <span className="transition-transform duration-300 group-open:rotate-180">
-              ⬇️
+              down
             </span>
           </summary>
           <p className="mt-2 text-gray-600">
@@ -252,7 +257,7 @@ export default function ImageCompressorPage() {
           <summary className="font-bold text-lg list-none flex justify-between items-center text-slate-800">
             <span>Why does the portal reject my photo even after compression?</span>
             <span className="transition-transform duration-300 group-open:rotate-180">
-              ⬇️
+              down
             </span>
           </summary>
           <p className="mt-2 text-gray-600">
@@ -265,7 +270,7 @@ export default function ImageCompressorPage() {
           <summary className="font-bold text-lg list-none flex justify-between items-center text-slate-800">
             <span>Is there a limit to how many images I can compress?</span>
             <span className="transition-transform duration-300 group-open:rotate-180">
-              ⬇️
+              down
             </span>
           </summary>
           <p className="mt-2 text-gray-600">
@@ -299,7 +304,7 @@ export default function ImageCompressorPage() {
         </h4>
         <p className="mt-3">
           Human eyes are more sensitive to brightness (luminance) than color (chrominance). 
-          JPEG exploits this by storing less color information than brightness information—a technique called chroma subsampling. 
+          JPEG exploits this by storing less color information than brightness information-a technique called chroma subsampling. 
           The most common format (4:2:0) reduces color data by 75% without visible quality loss.
         </p>
 
@@ -318,24 +323,24 @@ export default function ImageCompressorPage() {
         </h3>
         
         <div className="bg-blue-50 p-6 rounded-xl border border-blue-200 my-6">
-          <h4 className="font-bold text-blue-900 mb-3">✅ Do These Things:</h4>
+          <h4 className="font-bold text-blue-900 mb-3">OK Do These Things:</h4>
           <ul className="space-y-2 text-blue-800">
-            <li>• <strong>Take photos in good lighting:</strong> Natural daylight prevents grain and noise, which compresses better.</li>
-            <li>• <strong>Use a plain background:</strong> White or light-colored walls reduce file size because there's less detail to store.</li>
-            <li>• <strong>Face the camera directly:</strong> Side angles add shadows and complexity, increasing file size.</li>
-            <li>• <strong>Remove glasses:</strong> Reflections create high-frequency noise that resists compression.</li>
-            <li>• <strong>Test before the deadline:</strong> Always upload a test photo to the portal a few days early to catch any issues.</li>
+            <li>- <strong>Take photos in good lighting:</strong> Natural daylight prevents grain and noise, which compresses better.</li>
+            <li>- <strong>Use a plain background:</strong> White or light-colored walls reduce file size because there's less detail to store.</li>
+            <li>- <strong>Face the camera directly:</strong> Side angles add shadows and complexity, increasing file size.</li>
+            <li>- <strong>Remove glasses:</strong> Reflections create high-frequency noise that resists compression.</li>
+            <li>- <strong>Test before the deadline:</strong> Always upload a test photo to the portal a few days early to catch any issues.</li>
           </ul>
         </div>
 
         <div className="bg-red-50 p-6 rounded-xl border border-red-200 my-6">
-          <h4 className="font-bold text-red-900 mb-3">❌ Avoid These Mistakes:</h4>
+          <h4 className="font-bold text-red-900 mb-3">X Avoid These Mistakes:</h4>
           <ul className="space-y-2 text-red-800">
-            <li>• <strong>Using selfie mode:</strong> Front cameras have lower resolution and more distortion than rear cameras.</li>
-            <li>• <strong>Zooming in too much:</strong> Cropping a small portion of a large photo reduces quality. Take a properly framed photo from the start.</li>
-            <li>• <strong>Applying filters:</strong> Instagram/Snapchat filters add digital artifacts that inflate file size.</li>
-            <li>• <strong>Scanning at high DPI:</strong> 600 DPI scans create massive files. Use 150-300 DPI for documents.</li>
-            <li>• <strong>Using PNG for photos:</strong> PNG is lossless and creates 3-5x larger files. Always convert to JPG for photos.</li>
+            <li>- <strong>Using selfie mode:</strong> Front cameras have lower resolution and more distortion than rear cameras.</li>
+            <li>- <strong>Zooming in too much:</strong> Cropping a small portion of a large photo reduces quality. Take a properly framed photo from the start.</li>
+            <li>- <strong>Applying filters:</strong> Instagram/Snapchat filters add digital artifacts that inflate file size.</li>
+            <li>- <strong>Scanning at high DPI:</strong> 600 DPI scans create massive files. Use 150-300 DPI for documents.</li>
+            <li>- <strong>Using PNG for photos:</strong> PNG is lossless and creates 3-5x larger files. Always convert to JPG for photos.</li>
           </ul>
         </div>
 
@@ -444,7 +449,7 @@ export default function ImageCompressorPage() {
 
         <p className="mt-4">
           Our tool uses <strong>JavaScript Canvas API</strong> to process images entirely within your browser. 
-          Your photos never leave your device—we couldn't see them even if we wanted to. 
+          Your photos never leave your device-we couldn't see them even if we wanted to. 
           This is verified by checking the browser Network tab (no upload requests) or inspecting our open-source code.
         </p>
 
@@ -455,7 +460,7 @@ export default function ImageCompressorPage() {
         <details className="group border border-slate-200 rounded-lg p-4 mb-4 cursor-pointer bg-white">
           <summary className="font-bold text-slate-900 list-none flex justify-between items-center">
             <span>Issue: Compressed image is still too large</span>
-            <span className="transition-transform duration-300 group-open:rotate-180">▼</span>
+            <span className="transition-transform duration-300 group-open:rotate-180">v</span>
           </summary>
           <div className="mt-3 text-slate-700 space-y-2">
             <p><strong>Solution 1:</strong> Lower the target size further. For example, if you set 0.05 MB (50 KB) and it's still 52 KB, try 0.045 MB.</p>
@@ -467,7 +472,7 @@ export default function ImageCompressorPage() {
         <details className="group border border-slate-200 rounded-lg p-4 mb-4 cursor-pointer bg-white">
           <summary className="font-bold text-slate-900 list-none flex justify-between items-center">
             <span>Issue: Image looks too blurry or pixelated</span>
-            <span className="transition-transform duration-300 group-open:rotate-180">▼</span>
+            <span className="transition-transform duration-300 group-open:rotate-180">v</span>
           </summary>
           <div className="mt-3 text-slate-700 space-y-2">
             <p><strong>Cause:</strong> The target size is too aggressive for the image complexity.</p>
@@ -479,7 +484,7 @@ export default function ImageCompressorPage() {
         <details className="group border border-slate-200 rounded-lg p-4 mb-4 cursor-pointer bg-white">
           <summary className="font-bold text-slate-900 list-none flex justify-between items-center">
             <span>Issue: Tool doesn't work on my phone</span>
-            <span className="transition-transform duration-300 group-open:rotate-180">▼</span>
+            <span className="transition-transform duration-300 group-open:rotate-180">v</span>
           </summary>
           <div className="mt-3 text-slate-700 space-y-2">
             <p><strong>Check 1:</strong> Make sure you're using a modern browser (Chrome 90+, Safari 14+). Old browsers lack Canvas API support.</p>
@@ -492,7 +497,7 @@ export default function ImageCompressorPage() {
         <details className="group border border-slate-200 rounded-lg p-4 mb-4 cursor-pointer bg-white">
           <summary className="font-bold text-slate-900 list-none flex justify-between items-center">
             <span>Issue: Download button doesn't work</span>
-            <span className="transition-transform duration-300 group-open:rotate-180">▼</span>
+            <span className="transition-transform duration-300 group-open:rotate-180">v</span>
           </summary>
           <div className="mt-3 text-slate-700 space-y-2">
             <p><strong>Solution 1:</strong> Check if your browser is blocking pop-ups or downloads. Enable downloads in browser settings.</p>
@@ -511,7 +516,7 @@ export default function ImageCompressorPage() {
               Combine multiple images (ID proof, certificates) into a single PDF file under 2 MB for government applications.
             </p>
             <Link href="/pdf-converter" className="text-blue-600 font-semibold hover:underline text-sm">
-              Go to PDF Converter →
+              Go to PDF Converter &rarr;
             </Link>
           </div>
 
