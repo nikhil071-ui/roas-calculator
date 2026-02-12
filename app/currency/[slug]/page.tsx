@@ -115,8 +115,9 @@ const SEO_DATA: Record<string, { title: string; desc: string; h1: string; subtex
 };
 
 // --- 2. GENERATE DYNAMIC METADATA ---
-export async function generateMetadata({ params }: { params: { slug: string } }) {
-  const data = SEO_DATA[params.slug];
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const data = SEO_DATA[slug];
   
   if (!data) {
     return {
@@ -134,7 +135,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
       nocache: false,
     },
     alternates: {
-      canonical: `https://roas-calculator.tech/currency/${params.slug}`,
+      canonical: `https://roas-calculator.tech/currency/${slug}`,
     },
     openGraph: {
       title: data.title,
@@ -145,8 +146,9 @@ export async function generateMetadata({ params }: { params: { slug: string } })
 }
 
 // --- 3. THE PAGE COMPONENT ---
-export default async function DynamicCurrencyPage({ params }: { params: { slug: string } }) {
-  const data = SEO_DATA[params.slug];
+export default async function DynamicCurrencyPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const data = SEO_DATA[slug];
 
   if (!data) {
     notFound();
@@ -166,7 +168,7 @@ export default async function DynamicCurrencyPage({ params }: { params: { slug: 
         "@type": "ListItem",
         "position": 2,
         "name": data.h1,
-        "item": `https://roas-calculator.tech/currency/${params.slug}`,
+        "item": `https://roas-calculator.tech/currency/${slug}`,
       },
     ],
   };
