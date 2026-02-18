@@ -65,6 +65,9 @@ export default function PaybackCashFlowGuidePage() {
           <p className="text-slate-600 mt-4">
             Updated February 18, 2026. Use payback period to align acquisition speed with runway protection.
           </p>
+          <p className="text-slate-700 mt-4">
+            Quick answer: many SaaS teams target under 12 months payback, 12-18 months is manageable, and beyond 18 months often requires CAC and pricing intervention.
+          </p>
         </div>
 
         <article className="p-8 md:p-12 prose lg:prose-lg max-w-none text-slate-700 space-y-8">
@@ -120,6 +123,14 @@ export default function PaybackCashFlowGuidePage() {
             </ul>
           </section>
 
+          <section>
+            <h2>Decision Stack: Do Not Use Payback in Isolation</h2>
+            <p>
+              Pair payback with <Link href="/cac-calculator" className="text-blue-700 hover:underline">CAC</Link>, <Link href="/ltv-calculator" className="text-blue-700 hover:underline">LTV</Link>, and <Link href="/mer-calculator" className="text-blue-700 hover:underline">MER</Link> before scaling.
+              For practical scenario planning, use the <Link href="/ppc-toolkit" className="text-blue-700 hover:underline">PPC Toolkit</Link>.
+            </p>
+          </section>
+
           <section className="bg-slate-50 rounded-xl p-6 border border-slate-200">
             <h2 className="text-2xl font-bold text-slate-900 mb-3">Use These Calculators Together</h2>
             <div className="flex flex-wrap gap-3">
@@ -134,4 +145,3 @@ export default function PaybackCashFlowGuidePage() {
     </div>
   );
 }
-

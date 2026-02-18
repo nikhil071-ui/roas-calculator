@@ -50,6 +50,9 @@ export default function MERvsROASPage() {
           <p className="text-slate-600 mt-3 max-w-3xl">
             Short answer: use <strong>ROAS</strong> for campaign-level optimization and <strong>MER</strong> for blended, business-level efficiency tracking.
           </p>
+          <p className="text-slate-700 mt-3 max-w-3xl">
+            Quick answer: if you need to decide where to move spend this week, use ROAS. If you need to report total marketing efficiency to leadership, use MER.
+          </p>
         </div>
 
         <section className="bg-white border border-slate-200 rounded-xl p-6">
@@ -111,8 +114,18 @@ export default function MERvsROASPage() {
             </Link>
           </div>
         </section>
+        <section className="text-sm text-slate-500 border-t border-slate-200 pt-6">
+          Reviewed by ROAS Tools Editorial Team. Updated February 18, 2026.
+        </section>
+        <section className="bg-white border border-slate-200 rounded-xl p-6">
+          <h2 className="text-2xl font-bold mb-3">Sources and References</h2>
+          <ul className="list-disc pl-5 space-y-2 text-slate-700">
+            <li><a href="https://support.google.com/google-ads/answer/6268637" target="_blank" rel="noopener noreferrer" className="text-blue-700 hover:underline">Google Ads documentation for value-based bidding</a></li>
+            <li><a href="https://www.shopify.com/blog/roas" target="_blank" rel="noopener noreferrer" className="text-blue-700 hover:underline">Shopify ROAS guidance for eCommerce teams</a></li>
+            <li><a href="https://www.thinkwithgoogle.com/" target="_blank" rel="noopener noreferrer" className="text-blue-700 hover:underline">Think with Google research and strategy resources</a></li>
+          </ul>
+        </section>
       </main>
     </div>
   );
 }
-

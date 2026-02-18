@@ -193,6 +193,44 @@ export default async function DynamicRoasPage({ params }: { params: Promise<{ sl
       },
     ],
   };
+  const faqData = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": `What is a good ROAS for ${data.platform}?`,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": `A good ROAS depends on contribution margin. Many teams target 3.0x to 5.0x, but your break-even ROAS is the real baseline.`
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I calculate break-even ROAS?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Break-even ROAS is calculated as 1 divided by contribution margin in decimal form."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Should I scale budget when ROAS is above break-even?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "If ROAS is consistently above break-even and conversion quality is stable, scale gradually while monitoring CAC, MER, and payback."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is ROAS the same as profit?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. ROAS measures revenue return per ad dollar. Profit also depends on COGS, fees, fulfillment, and overhead."
+        }
+      }
+    ]
+  };
 
   const currentDate = new Date().toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
 
@@ -201,6 +239,10 @@ export default async function DynamicRoasPage({ params }: { params: Promise<{ sl
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbData) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqData) }}
       />
       <div className="max-w-5xl mx-auto space-y-12">
         
@@ -358,6 +400,28 @@ export default async function DynamicRoasPage({ params }: { params: Promise<{ sl
               <Link href="/roas/google-shopping-roas" className="text-blue-700 hover:underline">Google Shopping ROAS</Link>
               <Link href="/roas/meta-dtc-roas" className="text-blue-700 hover:underline">Meta DTC ROAS</Link>
               <Link href="/roas/lead-gen-cpl-roas" className="text-blue-700 hover:underline">Lead Gen CPL ROAS</Link>
+            </div>
+          </div>
+
+          <div className="bg-slate-50 border border-slate-200 rounded-xl p-6 mt-6">
+            <h3 className="text-xl font-bold text-slate-900 mb-3">Frequently Asked Questions</h3>
+            <div className="space-y-4 text-gray-700">
+              <div>
+                <p className="font-semibold text-slate-900">What is a good ROAS for {data.platform}?</p>
+                <p>Use your break-even as baseline. Many accounts target 3.0x to 5.0x, but margin and cash flow determine the right threshold.</p>
+              </div>
+              <div>
+                <p className="font-semibold text-slate-900">How do I calculate break-even ROAS?</p>
+                <p>Break-even ROAS = 1 / contribution margin. If margin is 30%, break-even ROAS is 3.33x.</p>
+              </div>
+              <div>
+                <p className="font-semibold text-slate-900">When should I scale ad spend?</p>
+                <p>Scale when ROAS remains above break-even with stable conversion quality and controlled CAC.</p>
+              </div>
+              <div>
+                <p className="font-semibold text-slate-900">Does high ROAS always mean profitability?</p>
+                <p>No. You still need to account for product cost, fees, shipping, and operating expenses.</p>
+              </div>
             </div>
           </div>
 

@@ -55,6 +55,9 @@ export default function MetricComparisonPage() {
           <p className="text-slate-600 mt-3 max-w-3xl">
             Teams confuse these metrics and optimize the wrong lever. Use this page to pick the right KPI for each decision layer.
           </p>
+          <p className="text-slate-700 mt-3 max-w-3xl">
+            Quick answer: use ROAS for channel execution, MER for blended executive visibility, ACoS for Amazon efficiency, and ROI for final profitability decisions.
+          </p>
         </div>
 
         <section className="bg-white border border-slate-200 rounded-xl p-6">
@@ -134,6 +137,14 @@ export default function MetricComparisonPage() {
 
         <section className="text-sm text-slate-500 border-t border-slate-200 pt-6">
           Reviewed by ROAS Tools Editorial Team. Updated February 18, 2026.
+        </section>
+        <section className="bg-white border border-slate-200 rounded-xl p-6">
+          <h2 className="text-2xl font-bold mb-3">Sources and References</h2>
+          <ul className="list-disc pl-5 space-y-2 text-slate-700">
+            <li><a href="https://support.google.com/google-ads/answer/6268637" target="_blank" rel="noopener noreferrer" className="text-blue-700 hover:underline">Google Ads: Target ROAS bidding documentation</a></li>
+            <li><a href="https://advertising.amazon.com/library/guides/acos-advertising-cost-of-sales" target="_blank" rel="noopener noreferrer" className="text-blue-700 hover:underline">Amazon Ads: ACoS definition and usage</a></li>
+            <li><a href="https://www.shopify.com/blog/roas" target="_blank" rel="noopener noreferrer" className="text-blue-700 hover:underline">Shopify: ROAS practical guidance</a></li>
+          </ul>
         </section>
       </main>
     </div>

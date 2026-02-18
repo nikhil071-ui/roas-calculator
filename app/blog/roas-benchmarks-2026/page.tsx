@@ -90,6 +90,9 @@ export default function RoasBenchmarks2026Page() {
           <p className="text-slate-600 mt-4">
             Last updated: February 2026. Use these ranges as directional guidance and calibrate them with your contribution margin and payback target.
           </p>
+          <p className="text-slate-700 mt-4">
+            Quick answer: in 2026 many teams use around 1.8x to 3.8x as a typical channel range, but your required ROAS is your break-even threshold, not an industry average.
+          </p>
         </div>
 
         <article className="p-8 md:p-12 prose lg:prose-lg max-w-none text-slate-700 space-y-8">
@@ -167,6 +170,16 @@ export default function RoasBenchmarks2026Page() {
                   Google Ads documentation (target ROAS and value optimization)
                 </a>
               </li>
+              <li>
+                <a href="https://www.wordstream.com/blog/ws/facebook-ads-benchmarks" target="_blank" rel="noopener noreferrer">
+                  WordStream benchmarks (cross-industry paid media context)
+                </a>
+              </li>
+              <li>
+                <a href="https://www.searchenginejournal.com/google-ads-benchmarks/" target="_blank" rel="noopener noreferrer">
+                  Search Engine Journal benchmark roundups
+                </a>
+              </li>
             </ul>
           </section>
 
@@ -196,6 +209,19 @@ export default function RoasBenchmarks2026Page() {
               <a href="/resources/roas-scenario-planner.csv" download className="bg-white hover:bg-slate-100 text-slate-900 font-semibold px-4 py-2 rounded-lg no-underline">
                 Download Scenario Planner
               </a>
+            </div>
+          </section>
+
+          <section className="bg-white rounded-xl p-6 border border-slate-200">
+            <h2 className="text-2xl font-bold text-slate-900 mb-3">Apply the Benchmark to Your Own Numbers</h2>
+            <p className="text-slate-700 mb-4">
+              Benchmarks are directional. Use your actual CAC, LTV, and blended MER to decide whether to scale or hold budget.
+            </p>
+            <div className="flex flex-wrap gap-3">
+              <Link href="/cac-calculator" className="text-blue-700 hover:underline">CAC Calculator</Link>
+              <Link href="/ltv-calculator" className="text-blue-700 hover:underline">LTV Calculator</Link>
+              <Link href="/mer-calculator" className="text-blue-700 hover:underline">MER Calculator</Link>
+              <Link href="/comparisons/mer-vs-roas" className="text-blue-700 hover:underline">MER vs ROAS Guide</Link>
             </div>
           </section>
         </article>

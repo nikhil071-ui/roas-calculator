@@ -65,6 +65,9 @@ export default function AttributionImpactOnROASPage() {
           <p className="text-slate-600 mt-4">
             Updated February 18, 2026. The same campaign can look profitable or unprofitable depending on your attribution model.
           </p>
+          <p className="text-slate-700 mt-4">
+            Quick answer: use platform ROAS for daily execution, then validate with blended MER and business-level ROI before scaling budgets.
+          </p>
         </div>
 
         <article className="p-8 md:p-12 prose lg:prose-lg max-w-none text-slate-700 space-y-8">
@@ -117,6 +120,14 @@ export default function AttributionImpactOnROASPage() {
             </ol>
           </section>
 
+          <section>
+            <h2>Run Parallel Measurement Checks</h2>
+            <p>
+              Keep a working model with <Link href="/" className="text-blue-700 hover:underline">ROAS</Link>, <Link href="/mer-calculator" className="text-blue-700 hover:underline">MER</Link>, and <Link href="/cac-calculator" className="text-blue-700 hover:underline">CAC</Link> to avoid misreading attribution noise.
+              If your team mixes metrics, start with the framework in <Link href="/comparisons/cac-vs-cpa-vs-roas" className="text-blue-700 hover:underline">CAC vs CPA vs ROAS</Link>.
+            </p>
+          </section>
+
           <section className="bg-slate-50 rounded-xl p-6 border border-slate-200">
             <h2 className="text-2xl font-bold text-slate-900 mb-3">Related Pages</h2>
             <div className="flex flex-wrap gap-3">
@@ -135,4 +146,3 @@ export default function AttributionImpactOnROASPage() {
     </div>
   );
 }
-
