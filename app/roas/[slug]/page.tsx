@@ -336,6 +336,16 @@ export default async function DynamicRoasPage({ params }: { params: Promise<{ sl
             </div>
           </div>
 
+          <div className="bg-slate-50 border border-slate-200 rounded-xl p-6 mt-6">
+            <h3 className="text-xl font-bold text-slate-900 mb-3">Related Profitability Calculators</h3>
+            <div className="flex flex-wrap gap-3">
+              <Link href="/cac-calculator" className="text-blue-700 hover:underline">CAC Calculator</Link>
+              <Link href="/ltv-calculator" className="text-blue-700 hover:underline">LTV Calculator</Link>
+              <Link href="/mer-calculator" className="text-blue-700 hover:underline">MER Calculator</Link>
+              <Link href="/payback-period-calculator" className="text-blue-700 hover:underline">CAC Payback Calculator</Link>
+            </div>
+          </div>
+
           <div className="mt-12 p-8 bg-slate-900 text-white rounded-2xl text-center">
             <h3 className="text-2xl font-bold mb-4">Are you spending internationally?</h3>
             <p className="mb-6 text-slate-300">

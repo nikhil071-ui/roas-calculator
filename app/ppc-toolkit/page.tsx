@@ -61,6 +61,9 @@ export default function PPCToolkitPage() {
           <p className="text-slate-600 mt-3 max-w-3xl">
             Competitor calculators usually stop at ROAS. This toolkit combines ROAS with CAC, LTV, MER, and target CPA so decisions are based on unit economics.
           </p>
+          <p className="text-slate-700 mt-3 max-w-3xl">
+            Quick definition: this page is a central planning hub for paid media unit economics, including acquisition cost, lifetime value, blended efficiency, and payback speed.
+          </p>
         </div>
 
         <section className="bg-white border border-slate-200 rounded-xl p-6">

@@ -55,6 +55,9 @@ export default function PaybackPeriodPage() {
           <p className="text-slate-600 mt-3">
             Payback period tells you how quickly acquisition spend returns. This is critical for cash flow and scaling decisions.
           </p>
+          <p className="text-slate-700 mt-3">
+            Quick answer: payback period is the number of months required to recover CAC from gross profit.
+          </p>
         </div>
 
         <section className="bg-slate-50 border border-slate-200 rounded-xl p-6">
@@ -79,6 +82,15 @@ export default function PaybackPeriodPage() {
         <section className="flex flex-wrap gap-3">
           <Link href="/cac-calculator" className="bg-blue-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-blue-700 transition">Open CAC Calculator</Link>
           <Link href="/ltv-calculator" className="bg-slate-900 text-white px-4 py-2 rounded-lg font-semibold hover:bg-slate-800 transition">Open LTV Calculator</Link>
+        </section>
+
+        <section className="bg-slate-50 border border-slate-200 rounded-xl p-6">
+          <h2 className="text-2xl font-bold mb-3">Related Calculators</h2>
+          <div className="flex flex-wrap gap-3">
+            <Link href="/mer-calculator" className="text-blue-700 hover:underline">MER Calculator</Link>
+            <Link href="/roas/target-cpa" className="text-blue-700 hover:underline">Target CPA Calculator</Link>
+            <Link href="/roas/break-even-roas" className="text-blue-700 hover:underline">Break-even ROAS</Link>
+          </div>
         </section>
 
         <section className="text-sm text-slate-500 border-t border-slate-200 pt-6">

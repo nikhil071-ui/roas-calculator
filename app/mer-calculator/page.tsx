@@ -55,6 +55,9 @@ export default function MERCalculatorPage() {
           <p className="text-slate-600 mt-3">
             MER (Marketing Efficiency Ratio) measures total revenue against total marketing spend across channels.
           </p>
+          <p className="text-slate-700 mt-3">
+            Quick answer: MER equals total revenue divided by total marketing spend for the same period.
+          </p>
         </div>
 
         <section className="bg-slate-50 border border-slate-200 rounded-xl p-6">
@@ -79,6 +82,15 @@ export default function MERCalculatorPage() {
         <section className="flex flex-wrap gap-3">
           <Link href="/" className="bg-blue-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-blue-700 transition">Open ROAS Calculator</Link>
           <Link href="/resources/ppc-budget-planner.csv" className="bg-slate-900 text-white px-4 py-2 rounded-lg font-semibold hover:bg-slate-800 transition">Download Budget Planner</Link>
+        </section>
+
+        <section className="bg-slate-50 border border-slate-200 rounded-xl p-6">
+          <h2 className="text-2xl font-bold mb-3">Related Calculators</h2>
+          <div className="flex flex-wrap gap-3">
+            <Link href="/cac-calculator" className="text-blue-700 hover:underline">CAC Calculator</Link>
+            <Link href="/ltv-calculator" className="text-blue-700 hover:underline">LTV Calculator</Link>
+            <Link href="/payback-period-calculator" className="text-blue-700 hover:underline">Payback Calculator</Link>
+          </div>
         </section>
 
         <section className="text-sm text-slate-500 border-t border-slate-200 pt-6">

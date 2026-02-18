@@ -55,6 +55,9 @@ export default function LTVCalculatorPage() {
           <p className="text-slate-600 mt-3">
             Lifetime Value helps you avoid under-scaling profitable channels and over-scaling low-retention campaigns.
           </p>
+          <p className="text-slate-700 mt-3">
+            Quick answer: LTV estimates total gross profit a customer generates over their retained lifetime.
+          </p>
         </div>
 
         <section className="bg-slate-50 border border-slate-200 rounded-xl p-6">
@@ -77,6 +80,15 @@ export default function LTVCalculatorPage() {
         <section className="flex flex-wrap gap-3">
           <Link href="/cac-calculator" className="bg-blue-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-blue-700 transition">Open CAC Calculator</Link>
           <Link href="/payback-period-calculator" className="bg-slate-900 text-white px-4 py-2 rounded-lg font-semibold hover:bg-slate-800 transition">Open Payback Calculator</Link>
+        </section>
+
+        <section className="bg-slate-50 border border-slate-200 rounded-xl p-6">
+          <h2 className="text-2xl font-bold mb-3">Related Calculators</h2>
+          <div className="flex flex-wrap gap-3">
+            <Link href="/mer-calculator" className="text-blue-700 hover:underline">MER Calculator</Link>
+            <Link href="/roas/marketing-roi" className="text-blue-700 hover:underline">Marketing ROI</Link>
+            <Link href="/roas/break-even-roas" className="text-blue-700 hover:underline">Break-even ROAS</Link>
+          </div>
         </section>
 
         <section className="text-sm text-slate-500 border-t border-slate-200 pt-6">
