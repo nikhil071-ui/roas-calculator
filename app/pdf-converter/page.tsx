@@ -1,8 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
-import PdfClient from "./PdfClient"; 
+import dynamic from "next/dynamic";
 import AdBanner from "../AdBanner"; // Import the Ad Component
+
+const PdfClient = dynamic(() => import("./PdfClient"), {
+  ssr: false,
+  loading: () => <div className="bg-white border border-slate-200 rounded-xl p-6 text-slate-600">Loading PDF converter...</div>,
+});
 
 export const dynamic = "force-static";
 export const revalidate = 86400;

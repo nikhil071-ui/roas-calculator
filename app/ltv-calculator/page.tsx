@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import LTVCalculatorClient from "./LTVCalculatorClient";
 
 export const metadata: Metadata = {
   title: "LTV Calculator (Customer Lifetime Value)",
@@ -76,6 +77,8 @@ export default function LTVCalculatorPage() {
             <li>If LTV:CAC exceeds 3 with stable payback, scaling is usually safer.</li>
           </ul>
         </section>
+
+        <LTVCalculatorClient />
 
         <section className="flex flex-wrap gap-3">
           <Link href="/cac-calculator" className="bg-blue-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-blue-700 transition">Open CAC Calculator</Link>

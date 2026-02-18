@@ -139,6 +139,8 @@ export default function AttributionImpactOnROASPage() {
               </Link>
               <Link href="/" className="text-blue-700 hover:underline">ROAS Calculator</Link>
               <Link href="/mer-calculator" className="text-blue-700 hover:underline">MER Calculator</Link>
+              <Link href="/resources" className="text-blue-700 hover:underline">Templates Library</Link>
+              <Link href="/ppc-toolkit" className="text-blue-700 hover:underline">PPC Toolkit</Link>
             </div>
           </section>
         </article>

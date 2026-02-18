@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import PaybackCalculatorClient from "./PaybackCalculatorClient";
 
 export const metadata: Metadata = {
   title: "CAC Payback Period Calculator",
@@ -78,6 +79,8 @@ export default function PaybackPeriodPage() {
             <li>Over 18 months usually requires tighter CAC controls or higher ARPU.</li>
           </ul>
         </section>
+
+        <PaybackCalculatorClient />
 
         <section className="flex flex-wrap gap-3">
           <Link href="/cac-calculator" className="bg-blue-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-blue-700 transition">Open CAC Calculator</Link>

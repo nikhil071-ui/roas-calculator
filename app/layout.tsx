@@ -81,13 +81,6 @@ export default function RootLayout({
           }}
         />
         
-        {/* --- GOOGLE ADSENSE SCRIPT --- */}
-        <Script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4649521973867824"
-          crossOrigin="anonymous"
-          strategy="lazyOnload"
-        />
       </head>
       <body className={`${inter.className} bg-gray-50 text-gray-900 flex flex-col min-h-screen`}>
         <noscript>

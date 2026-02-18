@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import MERCalculatorClient from "./MERCalculatorClient";
 
 export const metadata: Metadata = {
   title: "MER Calculator (Marketing Efficiency Ratio)",
@@ -78,6 +79,8 @@ export default function MERCalculatorPage() {
             <li>Pair MER with CAC and LTV to avoid false confidence from one strong channel.</li>
           </ul>
         </section>
+
+        <MERCalculatorClient />
 
         <section className="flex flex-wrap gap-3">
           <Link href="/" className="bg-blue-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-blue-700 transition">Open ROAS Calculator</Link>

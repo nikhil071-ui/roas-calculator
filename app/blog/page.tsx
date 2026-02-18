@@ -257,6 +257,18 @@ export default function BlogIndex() {
             >
               Currency Converter
             </Link>
+            <Link
+              href="/ppc-toolkit"
+              className="bg-indigo-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-indigo-700 transition"
+            >
+              PPC Toolkit
+            </Link>
+            <Link
+              href="/resources"
+              className="bg-white text-slate-900 border border-slate-300 px-6 py-3 rounded-lg font-semibold hover:bg-slate-100 transition"
+            >
+              Templates
+            </Link>
           </div>
         </div>
 

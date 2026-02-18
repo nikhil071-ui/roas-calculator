@@ -57,12 +57,28 @@ export default function RoasBenchmarks() {
       },
     ],
   };
+  const articleData = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: "ROAS Benchmarks by Industry: 2024 Data",
+    datePublished: "2024-06-01",
+    dateModified: "2026-02-18",
+    author: {
+      "@type": "Organization",
+      name: "ROAS Tools Editorial Team",
+    },
+    mainEntityOfPage: "https://roas-calculator.tech/blog/roas-benchmarks-2026",
+  };
 
   return (
     <div className="min-h-screen bg-slate-50 font-sans text-slate-900 py-12 px-4 md:px-6">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbData) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleData) }}
       />
       <div className="max-w-4xl mx-auto mb-8">
         <Link href="/blog" className="inline-flex items-center text-slate-500 hover:text-blue-600 transition font-medium">
@@ -487,6 +503,9 @@ export default function RoasBenchmarks() {
               Open ROAS Calculator
             </Link>
           </div>
+          <section className="text-sm text-slate-500 border-t border-slate-200 pt-6">
+            Reviewed by ROAS Tools Editorial Team. Updated February 18, 2026.
+          </section>
         </article>
       </main>
     </div>

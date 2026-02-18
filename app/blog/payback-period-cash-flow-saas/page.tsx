@@ -138,6 +138,7 @@ export default function PaybackCashFlowGuidePage() {
               <Link href="/cac-calculator" className="text-blue-700 hover:underline">CAC Calculator</Link>
               <Link href="/ltv-calculator" className="text-blue-700 hover:underline">LTV Calculator</Link>
               <Link href="/ppc-toolkit" className="text-blue-700 hover:underline">PPC Toolkit</Link>
+              <Link href="/resources" className="text-blue-700 hover:underline">Templates Library</Link>
             </div>
           </section>
         </article>

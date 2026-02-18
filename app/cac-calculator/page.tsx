@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import CACCalculatorClient from "./CACCalculatorClient";
 
 export const metadata: Metadata = {
   title: "CAC Calculator (Customer Acquisition Cost)",
@@ -76,6 +77,8 @@ export default function CACCalculatorPage() {
             <li>Pause or rework when CAC exceeds target for 7-14 days after optimizations.</li>
           </ul>
         </section>
+
+        <CACCalculatorClient />
 
         <section className="flex flex-wrap gap-3">
           <Link href="/" className="bg-blue-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-blue-700 transition">Open ROAS Calculator</Link>
