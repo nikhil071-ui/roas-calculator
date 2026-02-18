@@ -6,7 +6,7 @@ import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
 import { DEFAULT_OPEN_GRAPH, SITE_URL } from "./seo";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ["latin"], display: "swap" });
 
 // --- GLOBAL SEO CONFIGURATION ---
 export const metadata: Metadata = {
@@ -83,6 +83,12 @@ export default function RootLayout({
         
       </head>
       <body className={`${inter.className} bg-gray-50 text-gray-900 flex flex-col min-h-screen`}>
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[100] focus:bg-white focus:text-slate-900 focus:px-4 focus:py-2 focus:rounded-md focus:shadow-lg"
+        >
+          Skip to main content
+        </a>
         <noscript>
           <div className="bg-amber-100 text-amber-900 text-sm text-center py-2 px-4">
             JavaScript is required for calculators and file tools. Static guides and resources remain available.
@@ -164,7 +170,7 @@ export default function RootLayout({
         </nav>
 
         {/* --- MAIN CONTENT --- */}
-        <div className="grow">
+        <div id="main-content" className="grow" tabIndex={-1}>
             {children}
             <Analytics />
         </div>

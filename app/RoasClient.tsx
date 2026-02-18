@@ -271,10 +271,10 @@ export default function RoasClient() {
         {/* Modern Header */}
         <div className="bg-slate-900 p-8 text-white relative overflow-hidden">
             <div className="absolute top-0 right-0 p-4 opacity-10">
-                <Calculator size={120} />
+                <Calculator size={120} aria-hidden="true" focusable="false" />
             </div>
             <h2 className="text-3xl font-extrabold flex items-center gap-3 relative z-10">
-                <Calculator className="text-blue-400" /> 
+                <Calculator className="text-blue-400" aria-hidden="true" focusable="false" /> 
                 ROAS Calculator <span className="text-sm bg-blue-600 px-2 py-1 rounded text-white font-normal">Workspace</span>
             </h2>
             <p className="text-slate-300 text-sm mt-2 relative z-10 max-w-lg">
@@ -292,7 +292,7 @@ export default function RoasClient() {
                     <div className="space-y-2">
                         <label htmlFor="ad-spend" className="text-xs font-bold text-slate-500 uppercase tracking-wider">Total Ad Spend</label>
                         <div className="relative group">
-                            <DollarSign className="absolute left-4 top-4 text-slate-400 group-focus-within:text-blue-600 transition" size={20} />
+                            <DollarSign className="absolute left-4 top-4 text-slate-400 group-focus-within:text-blue-600 transition" size={20} aria-hidden="true" focusable="false" />
                             <input 
                                 id="ad-spend"
                                 type="number" 
@@ -309,7 +309,7 @@ export default function RoasClient() {
                     <div className="space-y-2">
                         <label htmlFor="total-revenue" className="text-xs font-bold text-slate-500 uppercase tracking-wider">Total Revenue</label>
                         <div className="relative group">
-                            <TrendingUp className="absolute left-4 top-4 text-slate-400 group-focus-within:text-green-600 transition" size={20} />
+                            <TrendingUp className="absolute left-4 top-4 text-slate-400 group-focus-within:text-green-600 transition" size={20} aria-hidden="true" focusable="false" />
                             <input 
                                 id="total-revenue"
                                 type="number" 
@@ -330,7 +330,7 @@ export default function RoasClient() {
                     <div className="space-y-2">
                         <label htmlFor="product-costs" className="text-xs font-bold text-slate-500 uppercase tracking-wider">Product Costs</label>
                         <div className="relative group">
-                            <AlertTriangle className="absolute left-4 top-4 text-slate-400 group-focus-within:text-orange-500 transition" size={20} />
+                            <AlertTriangle className="absolute left-4 top-4 text-slate-400 group-focus-within:text-orange-500 transition" size={20} aria-hidden="true" focusable="false" />
                             <input 
                                 id="product-costs"
                                 type="number" 
@@ -347,7 +347,7 @@ export default function RoasClient() {
                     <div className="space-y-2">
                         <label htmlFor="total-orders" className="text-xs font-bold text-slate-500 uppercase tracking-wider">Total Orders</label>
                         <div className="relative group">
-                            <ShoppingBag className="absolute left-4 top-4 text-slate-400 group-focus-within:text-purple-500 transition" size={20} />
+                            <ShoppingBag className="absolute left-4 top-4 text-slate-400 group-focus-within:text-purple-500 transition" size={20} aria-hidden="true" focusable="false" />
                             <input 
                                 id="total-orders"
                                 type="number" 
@@ -398,7 +398,7 @@ export default function RoasClient() {
                         title="Clear all fields"
                         aria-label="Clear all calculator fields"
                     >
-                        <RotateCcw size={20} />
+                        <RotateCcw size={20} aria-hidden="true" focusable="false" />
                         <span className="text-sm">Reset</span>
                     </button>
                     <button 
@@ -407,7 +407,7 @@ export default function RoasClient() {
                         className="flex-1 bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 rounded-xl shadow-lg hover:shadow-blue-500/30 transition transform hover:-translate-y-1 flex items-center justify-center gap-2 text-lg"
                         aria-label="Calculate ROAS results and profitability metrics"
                     >
-                        <RefreshCcw size={22} /> Calculate Results
+                        <RefreshCcw size={22} aria-hidden="true" focusable="false" /> Calculate Results
                     </button>
                 </div>
                 {validationError ? (
@@ -422,7 +422,7 @@ export default function RoasClient() {
             <div className="bg-slate-50 rounded-2xl p-8 border border-slate-200 flex flex-col justify-center min-h-[400px]">
                 {!results ? (
                     <div className="text-center text-slate-400">
-                        <BarChart3 size={64} className="mx-auto mb-6 opacity-20" />
+                        <BarChart3 size={64} className="mx-auto mb-6 opacity-20" aria-hidden="true" focusable="false" />
                         <h3 className="text-xl font-bold text-slate-500 mb-2">Ready to Analyze</h3>
                         <p className="text-sm">Enter your campaign data on the left to generate your profit report.</p>
                     </div>
@@ -487,7 +487,7 @@ export default function RoasClient() {
                             className="w-full bg-slate-800 hover:bg-slate-900 text-white py-4 rounded-xl font-bold flex items-center justify-center gap-3 transition shadow-lg hover:shadow-slate-500/20"
                             aria-label="Download campaign results as a PDF report"
                         >
-                            <Download size={20} /> {exporting ? "Preparing PDF..." : "Download PDF Report"}
+                            <Download size={20} aria-hidden="true" focusable="false" /> {exporting ? "Preparing PDF..." : "Download PDF Report"}
                         </button>
                     </div>
                 )}
