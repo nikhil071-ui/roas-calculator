@@ -121,6 +121,24 @@ export default function Indexing() {
                             Open <ExternalLink size={14} />
                         </Link>
                     </li>
+                    <li className="flex items-center justify-between gap-4">
+                        <span className="text-slate-700">/ppc-toolkit</span>
+                        <Link href="/ppc-toolkit" className="text-blue-600 underline inline-flex items-center gap-2">
+                            Open <ExternalLink size={14} />
+                        </Link>
+                    </li>
+                    <li className="flex items-center justify-between gap-4">
+                        <span className="text-slate-700">/comparisons/roas-vs-roi-vs-mer-vs-acos</span>
+                        <Link href="/comparisons/roas-vs-roi-vs-mer-vs-acos" className="text-blue-600 underline inline-flex items-center gap-2">
+                            Open <ExternalLink size={14} />
+                        </Link>
+                    </li>
+                    <li className="flex items-center justify-between gap-4">
+                        <span className="text-slate-700">/blog/roas-benchmarks-2026</span>
+                        <Link href="/blog/roas-benchmarks-2026" className="text-blue-600 underline inline-flex items-center gap-2">
+                            Open <ExternalLink size={14} />
+                        </Link>
+                    </li>
                 </ul>
             </section>
 

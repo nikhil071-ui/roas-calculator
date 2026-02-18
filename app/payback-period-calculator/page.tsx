@@ -1,0 +1,62 @@
+import Link from "next/link";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "CAC Payback Period Calculator",
+  description:
+    "Estimate CAC payback period in months using CAC, gross margin, and monthly revenue per customer.",
+  keywords: ["payback period calculator", "cac payback", "saas payback period", "ltv cac payback"],
+  alternates: {
+    canonical: "https://roas-calculator.tech/payback-period-calculator",
+  },
+  openGraph: {
+    title: "CAC Payback Period Calculator",
+    description: "Calculate how many months it takes to recover customer acquisition cost.",
+    url: "https://roas-calculator.tech/payback-period-calculator",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "CAC Payback Period Calculator",
+    description: "Calculate how many months it takes to recover customer acquisition cost.",
+  },
+};
+
+export default function PaybackPeriodPage() {
+  return (
+    <div className="min-h-screen bg-slate-50 text-slate-900 py-12 px-4 md:px-6">
+      <main className="max-w-4xl mx-auto bg-white border border-slate-200 rounded-2xl shadow-sm p-8 md:p-12 space-y-8">
+        <div>
+          <Link href="/ppc-toolkit" className="text-sm text-slate-500 hover:text-blue-600 transition">Back to PPC Toolkit</Link>
+          <h1 className="text-3xl md:text-4xl font-bold mt-2">CAC Payback Period Calculator</h1>
+          <p className="text-slate-600 mt-3">
+            Payback period tells you how quickly acquisition spend returns. This is critical for cash flow and scaling decisions.
+          </p>
+        </div>
+
+        <section className="bg-slate-50 border border-slate-200 rounded-xl p-6">
+          <h2 className="text-2xl font-bold mb-3">Formula</h2>
+          <p className="font-mono bg-white border border-slate-200 rounded px-4 py-3">
+            Payback (months) = CAC / (Monthly Revenue per Customer * Gross Margin)
+          </p>
+          <p className="text-slate-700 mt-3">
+            Example: CAC $600, monthly revenue $100, gross margin 80% = 7.5 months payback.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-bold mb-3">Practical Guardrails</h2>
+          <ul className="list-disc pl-5 space-y-2 text-slate-700">
+            <li>Less than 12 months is often considered healthy for many SaaS models.</li>
+            <li>12 to 18 months can be workable with strong retention and cash reserves.</li>
+            <li>Over 18 months usually requires tighter CAC controls or higher ARPU.</li>
+          </ul>
+        </section>
+
+        <section className="flex flex-wrap gap-3">
+          <Link href="/cac-calculator" className="bg-blue-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-blue-700 transition">Open CAC Calculator</Link>
+          <Link href="/ltv-calculator" className="bg-slate-900 text-white px-4 py-2 rounded-lg font-semibold hover:bg-slate-800 transition">Open LTV Calculator</Link>
+        </section>
+      </main>
+    </div>
+  );
+}

@@ -1,0 +1,62 @@
+import Link from "next/link";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "MER Calculator (Marketing Efficiency Ratio)",
+  description:
+    "Calculate Marketing Efficiency Ratio (MER) across all paid and owned channels to monitor blended efficiency.",
+  keywords: ["mer calculator", "marketing efficiency ratio", "blended roas", "overall marketing efficiency"],
+  alternates: {
+    canonical: "https://roas-calculator.tech/mer-calculator",
+  },
+  openGraph: {
+    title: "MER Calculator (Marketing Efficiency Ratio)",
+    description: "Track blended efficiency across channels with MER and compare against channel ROAS.",
+    url: "https://roas-calculator.tech/mer-calculator",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "MER Calculator (Marketing Efficiency Ratio)",
+    description: "Track blended efficiency across channels with MER and compare against channel ROAS.",
+  },
+};
+
+export default function MERCalculatorPage() {
+  return (
+    <div className="min-h-screen bg-slate-50 text-slate-900 py-12 px-4 md:px-6">
+      <main className="max-w-4xl mx-auto bg-white border border-slate-200 rounded-2xl shadow-sm p-8 md:p-12 space-y-8">
+        <div>
+          <Link href="/ppc-toolkit" className="text-sm text-slate-500 hover:text-blue-600 transition">Back to PPC Toolkit</Link>
+          <h1 className="text-3xl md:text-4xl font-bold mt-2">MER Calculator</h1>
+          <p className="text-slate-600 mt-3">
+            MER (Marketing Efficiency Ratio) measures total revenue against total marketing spend across channels.
+          </p>
+        </div>
+
+        <section className="bg-slate-50 border border-slate-200 rounded-xl p-6">
+          <h2 className="text-2xl font-bold mb-3">Formula</h2>
+          <p className="font-mono bg-white border border-slate-200 rounded px-4 py-3">
+            MER = Total Revenue / Total Marketing Spend
+          </p>
+          <p className="text-slate-700 mt-3">
+            Use MER for executive-level trend tracking, then use channel ROAS to find where performance is changing.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-bold mb-3">How to Use It</h2>
+          <ul className="list-disc pl-5 space-y-2 text-slate-700">
+            <li>Review MER weekly for blended health.</li>
+            <li>Break down by channel when MER drops for two consecutive periods.</li>
+            <li>Pair MER with CAC and LTV to avoid false confidence from one strong channel.</li>
+          </ul>
+        </section>
+
+        <section className="flex flex-wrap gap-3">
+          <Link href="/" className="bg-blue-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-blue-700 transition">Open ROAS Calculator</Link>
+          <Link href="/resources/ppc-budget-planner.csv" className="bg-slate-900 text-white px-4 py-2 rounded-lg font-semibold hover:bg-slate-800 transition">Download Budget Planner</Link>
+        </section>
+      </main>
+    </div>
+  );
+}

@@ -177,6 +177,22 @@ export default function Home() {
                   <h3 className="font-bold text-slate-800 group-hover:text-indigo-600"> PPC Toolkit</h3>
                   <p className="text-xs text-gray-500 mt-2">ROAS, CAC, LTV, MER and target CPA formulas.</p>
                 </Link>
+                <Link href="/cac-calculator" className="group block bg-white p-5 rounded-xl shadow-sm border border-gray-200 hover:border-blue-500 hover:shadow-lg transition text-center">
+                  <h3 className="font-bold text-slate-800 group-hover:text-blue-600"> CAC Calculator</h3>
+                  <p className="text-xs text-gray-500 mt-2">Track customer acquisition cost and decision thresholds.</p>
+                </Link>
+                <Link href="/ltv-calculator" className="group block bg-white p-5 rounded-xl shadow-sm border border-gray-200 hover:border-cyan-500 hover:shadow-lg transition text-center">
+                  <h3 className="font-bold text-slate-800 group-hover:text-cyan-600"> LTV Calculator</h3>
+                  <p className="text-xs text-gray-500 mt-2">Estimate customer lifetime value for paid growth planning.</p>
+                </Link>
+                <Link href="/mer-calculator" className="group block bg-white p-5 rounded-xl shadow-sm border border-gray-200 hover:border-violet-500 hover:shadow-lg transition text-center">
+                  <h3 className="font-bold text-slate-800 group-hover:text-violet-600"> MER Calculator</h3>
+                  <p className="text-xs text-gray-500 mt-2">Measure blended marketing efficiency across channels.</p>
+                </Link>
+                <Link href="/payback-period-calculator" className="group block bg-white p-5 rounded-xl shadow-sm border border-gray-200 hover:border-fuchsia-500 hover:shadow-lg transition text-center">
+                  <h3 className="font-bold text-slate-800 group-hover:text-fuchsia-600"> Payback Calculator</h3>
+                  <p className="text-xs text-gray-500 mt-2">Calculate CAC payback period in months.</p>
+                </Link>
                 <Link href="/resources" className="group block bg-white p-5 rounded-xl shadow-sm border border-gray-200 hover:border-sky-500 hover:shadow-lg transition text-center">
                   <h3 className="font-bold text-slate-800 group-hover:text-sky-600"> Scenario Templates</h3>
                   <p className="text-xs text-gray-500 mt-2">Download planning sheets for budgets and benchmarks.</p>

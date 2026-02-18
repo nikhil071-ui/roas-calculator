@@ -30,8 +30,22 @@ export const metadata: Metadata = {
 };
 
 export default function MetricComparisonPage() {
+  const webPageData = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: "ROAS vs ROI vs MER vs ACoS",
+    url: "https://roas-calculator.tech/comparisons/roas-vs-roi-vs-mer-vs-acos",
+    about: ["ROAS", "ROI", "MER", "ACoS", "Paid Media Metrics"],
+    isPartOf: {
+      "@type": "WebSite",
+      name: "ROAS Tools",
+      url: "https://roas-calculator.tech/",
+    },
+  };
+
   return (
     <div className="min-h-screen bg-slate-50 text-slate-900 py-12 px-4 md:px-6">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageData) }} />
       <main className="max-w-5xl mx-auto space-y-8">
         <div>
           <Link href="/comparisons" className="text-sm text-slate-500 hover:text-blue-600 transition">

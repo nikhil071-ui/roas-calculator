@@ -27,6 +27,8 @@ export const metadata: Metadata = {
     description:
       "A practical benchmark guide with formulas and cited sources for channel-level paid media planning.",
   },
+  authors: [{ name: "ROAS Tools Editorial Team" }],
+  publisher: "ROAS Tools",
 };
 
 export default function RoasBenchmarks2026Page() {
@@ -54,10 +56,31 @@ export default function RoasBenchmarks2026Page() {
       },
     ],
   };
+  const articleData = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: "ROAS Benchmarks 2026: Updated Channel and Industry Ranges",
+    datePublished: "2026-02-18",
+    dateModified: "2026-02-18",
+    author: {
+      "@type": "Organization",
+      name: "ROAS Tools Editorial Team",
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "ROAS Tools",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://roas-calculator.tech/favicon.ico",
+      },
+    },
+    mainEntityOfPage: "https://roas-calculator.tech/blog/roas-benchmarks-2026",
+  };
 
   return (
     <div className="min-h-screen bg-slate-50 text-slate-900 py-12 px-4 md:px-6">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbData) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleData) }} />
       <main className="max-w-4xl mx-auto bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
         <div className="p-8 md:p-12 border-b border-slate-200">
           <Link href="/blog" className="text-sm text-slate-500 hover:text-blue-600 transition">

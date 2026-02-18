@@ -31,8 +31,27 @@ export const metadata: Metadata = {
 };
 
 export default function PPCToolkitPage() {
+  const webAppData = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    name: "PPC Profitability Toolkit",
+    operatingSystem: "Web",
+    applicationCategory: "BusinessApplication",
+    offers: {
+      "@type": "Offer",
+      price: "0",
+      priceCurrency: "USD",
+    },
+    url: "https://roas-calculator.tech/ppc-toolkit",
+    publisher: {
+      "@type": "Organization",
+      name: "ROAS Tools",
+    },
+  };
+
   return (
     <div className="min-h-screen bg-slate-50 text-slate-900 py-12 px-4 md:px-6">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webAppData) }} />
       <main className="max-w-5xl mx-auto space-y-8">
         <div>
           <Link href="/" className="text-sm text-slate-500 hover:text-blue-600 transition">
@@ -105,7 +124,23 @@ export default function PPCToolkitPage() {
 
         <section className="bg-white border border-slate-200 rounded-xl p-6">
           <h2 className="text-2xl font-bold mb-4">Use-Case Calculators</h2>
-          <div className="grid md:grid-cols-2 gap-4">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <Link href="/cac-calculator" className="p-4 rounded-lg border border-slate-200 hover:border-blue-500 hover:shadow-sm transition">
+              <p className="font-semibold">CAC Calculator</p>
+              <p className="text-sm text-slate-600">Track acquisition cost per new customer.</p>
+            </Link>
+            <Link href="/ltv-calculator" className="p-4 rounded-lg border border-slate-200 hover:border-blue-500 hover:shadow-sm transition">
+              <p className="font-semibold">LTV Calculator</p>
+              <p className="text-sm text-slate-600">Estimate customer value across retention windows.</p>
+            </Link>
+            <Link href="/mer-calculator" className="p-4 rounded-lg border border-slate-200 hover:border-blue-500 hover:shadow-sm transition">
+              <p className="font-semibold">MER Calculator</p>
+              <p className="text-sm text-slate-600">Monitor blended channel efficiency.</p>
+            </Link>
+            <Link href="/payback-period-calculator" className="p-4 rounded-lg border border-slate-200 hover:border-blue-500 hover:shadow-sm transition">
+              <p className="font-semibold">CAC Payback Calculator</p>
+              <p className="text-sm text-slate-600">See how fast acquisition spend returns.</p>
+            </Link>
             <Link href="/roas/break-even-roas" className="p-4 rounded-lg border border-slate-200 hover:border-blue-500 hover:shadow-sm transition">
               <p className="font-semibold">Break-even ROAS</p>
               <p className="text-sm text-slate-600">Find minimum return required before scaling.</p>

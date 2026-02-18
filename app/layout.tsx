@@ -64,11 +64,11 @@ export default function RootLayout({
         <Script
           async
           src="https://www.googletagmanager.com/gtag/js?id=G-QQF9NJDQSZ"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
         />
         <Script
           id="google-analytics"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
           dangerouslySetInnerHTML={{
             __html: `
               window.dataLayer = window.dataLayer || [];
@@ -86,10 +86,15 @@ export default function RootLayout({
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4649521973867824"
           crossOrigin="anonymous"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
         />
       </head>
       <body className={`${inter.className} bg-gray-50 text-gray-900 flex flex-col min-h-screen`}>
+        <noscript>
+          <div className="bg-amber-100 text-amber-900 text-sm text-center py-2 px-4">
+            JavaScript is required for calculators and file tools. Static guides and resources remain available.
+          </div>
+        </noscript>
         
         {/* --- JSON-LD SCHEMA --- */}
         <script

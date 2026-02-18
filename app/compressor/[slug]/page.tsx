@@ -121,6 +121,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       title: data.title,
       description: data.desc,
       type: "website",
+      url: `https://roas-calculator.tech/compressor/${slug}`,
     }
   };
 }
