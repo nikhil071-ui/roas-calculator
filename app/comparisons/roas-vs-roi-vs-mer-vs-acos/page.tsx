@@ -126,6 +126,9 @@ export default function MetricComparisonPage() {
             <Link href="/ppc-toolkit" className="px-4 py-2 rounded-lg bg-slate-700 hover:bg-slate-600 font-semibold">
               Open PPC Toolkit
             </Link>
+            <Link href="/comparisons/mer-vs-roas" className="px-4 py-2 rounded-lg bg-emerald-600 hover:bg-emerald-700 font-semibold">
+              Read MER vs ROAS
+            </Link>
           </div>
         </section>
 

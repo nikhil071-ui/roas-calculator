@@ -61,7 +61,10 @@
 - Day 13: Completed
 - Day 14: Completed
 - Day 15: Completed
-- Days 16-30: Planned
+- Day 16: Completed
+- Day 17: Completed
+- Day 18: Completed
+- Days 19-30: Planned
 
 ## Priority URL Set for Ongoing GSC Requests
 - /ppc-toolkit

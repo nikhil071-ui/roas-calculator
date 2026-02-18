@@ -97,6 +97,28 @@ const blogPosts: BlogPost[] = [
     date: "2026",
     readTime: "8 min",
   },
+  {
+    title: "SaaS CAC Payback Period and Cash Flow Planning",
+    description:
+      "How CAC payback controls cash flow risk, hiring velocity, and sustainable paid acquisition scaling in SaaS.",
+    category: "SaaS Finance",
+    categoryColor: "bg-indigo-100 text-indigo-900",
+    icon: <BarChart3 size={24} className="text-indigo-600" />,
+    href: "/blog/payback-period-cash-flow-saas",
+    date: "2026",
+    readTime: "9 min",
+  },
+  {
+    title: "Attribution Impact on ROAS: Last-Click vs Data-Driven",
+    description:
+      "How attribution model choice changes ROAS interpretation, reporting, and budget decisions across channels.",
+    category: "Measurement",
+    categoryColor: "bg-amber-100 text-amber-900",
+    icon: <TrendingUp size={24} className="text-amber-600" />,
+    href: "/blog/attribution-impact-on-roas",
+    date: "2026",
+    readTime: "8 min",
+  },
 ];
 
 export default function BlogIndex() {

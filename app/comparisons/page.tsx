@@ -41,6 +41,19 @@ export default function ComparisonsPage() {
         </div>
 
         <div className="space-y-8">
+          <section className="bg-emerald-50 p-6 rounded-xl border border-emerald-200 shadow-sm">
+            <h2 className="text-xl font-bold text-slate-900">Metrics Comparison: MER vs ROAS</h2>
+            <p className="text-slate-700 mt-2">
+              Clarify when to use blended MER for executive reporting and when to use ROAS for campaign optimization.
+            </p>
+            <Link
+              href="/comparisons/mer-vs-roas"
+              className="inline-block mt-4 bg-emerald-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-emerald-700 transition"
+            >
+              Open Comparison Guide
+            </Link>
+          </section>
+
           <section className="bg-indigo-50 p-6 rounded-xl border border-indigo-200 shadow-sm">
             <h2 className="text-xl font-bold text-slate-900">Metrics Comparison: CAC vs CPA vs ROAS</h2>
             <p className="text-slate-700 mt-2">
