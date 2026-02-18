@@ -4,9 +4,9 @@ import TrackedDownloadLink from "@/app/components/TrackedDownloadLink";
 import AuthorTrustBlock from "@/app/components/AuthorTrustBlock";
 
 export const metadata: Metadata = {
-  title: "PPC Toolkit: ROAS, CAC, LTV, MER, Target CPA",
+  title: "PPC Toolkit for Paid Media Profitability",
   description:
-    "Use one toolkit for ROAS, break-even ROAS, CAC, LTV:CAC ratio, MER, and target CPA planning. Built for paid growth teams.",
+    "Plan paid media performance with ROAS, CAC, LTV, MER, and target CPA in one practical toolkit.",
   keywords: [
     "ppc toolkit",
     "cac calculator",
@@ -19,14 +19,14 @@ export const metadata: Metadata = {
     canonical: "https://roas-calculator.tech/ppc-toolkit",
   },
   openGraph: {
-    title: "PPC Toolkit: ROAS, CAC, LTV, MER, Target CPA",
+    title: "PPC Toolkit for Paid Media Profitability",
     description:
       "A practical planning hub for ROAS, CAC, LTV, MER, and budget decisions before you scale paid traffic.",
     url: "https://roas-calculator.tech/ppc-toolkit",
   },
   twitter: {
     card: "summary_large_image",
-    title: "PPC Toolkit: ROAS, CAC, LTV, MER, Target CPA",
+    title: "PPC Toolkit for Paid Media Profitability",
     description:
       "A practical planning hub for ROAS, CAC, LTV, MER, and budget decisions before you scale paid traffic.",
   },

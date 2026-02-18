@@ -255,10 +255,10 @@ export default function RoasClient() {
             <div className="absolute top-0 right-0 p-4 opacity-10">
                 <Calculator size={120} />
             </div>
-            <h1 className="text-3xl font-extrabold flex items-center gap-3 relative z-10">
+            <h2 className="text-3xl font-extrabold flex items-center gap-3 relative z-10">
                 <Calculator className="text-blue-400" /> 
                 ROAS Calculator <span className="text-sm bg-blue-600 px-2 py-1 rounded text-white font-normal">PRO</span>
-            </h1>
+            </h2>
             <p className="text-slate-300 text-sm mt-2 relative z-10 max-w-lg">
                 Enter your campaign numbers below. We will calculate your true profit, CPA, AOV, and Break-Even point instantly.
             </p>

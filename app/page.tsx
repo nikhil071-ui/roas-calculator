@@ -6,9 +6,9 @@ import RoasClient from "./RoasClient";
 import AdBanner from "./AdBanner";
 
 export const metadata: Metadata = {
-  title: "ROAS Calculator (Return on Ad Spend) | Break-Even, Profit, and PPC Planning",
+  title: "ROAS Calculator: Break-Even and Profit Estimator",
   description:
-    "Free ROAS calculator for Google Ads, Facebook Ads, and eCommerce. Calculate return on ad spend, break-even ROAS, CAC context, and profit before scaling budget.",
+    "Calculate ROAS, break-even thresholds, and campaign profit in one free calculator for marketers and eCommerce teams.",
   keywords: [
     "roas calculator",
     "return on ad spend calculator",
@@ -23,21 +23,21 @@ export const metadata: Metadata = {
     canonical: SITE_URL,
   },
   openGraph: {
-    title: "ROAS Calculator (Return on Ad Spend) | Break-Even, Profit, and PPC Planning",
+    title: "ROAS Calculator: Break-Even and Profit Estimator",
     description:
-      "Free ROAS calculator for Google Ads, Facebook Ads, and eCommerce. Calculate return on ad spend, break-even ROAS, CAC context, and profit before scaling budget.",
+      "Calculate ROAS, break-even thresholds, and campaign profit in one free calculator for marketers and eCommerce teams.",
     url: SITE_URL,
   },
   twitter: {
     card: "summary_large_image",
-    title: "ROAS Calculator (Return on Ad Spend) | Break-Even, Profit, and PPC Planning",
+    title: "ROAS Calculator: Break-Even and Profit Estimator",
     description:
-      "Free ROAS calculator for Google Ads, Facebook Ads, and eCommerce. Calculate return on ad spend, break-even ROAS, CAC context, and profit before scaling budget.",
+      "Calculate ROAS, break-even thresholds, and campaign profit in one free calculator for marketers and eCommerce teams.",
   },
 };
 
 export default function Home() {
-  const schemaData = {
+  const webApplicationData = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
     "name": "ROAS Calculator - Free Tool for Digital Marketing",
@@ -60,15 +60,74 @@ export default function Home() {
       "availability": "https://schema.org/InStock"
     }
   };
+  const websiteData = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "ROAS Tools",
+    "url": SITE_URL
+  };
+  const organizationData = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "ROAS Tools",
+    "url": SITE_URL,
+    "logo": `${SITE_URL}/favicon.ico`,
+    "sameAs": [
+      `${SITE_URL}/about`,
+      `${SITE_URL}/authors`,
+      `${SITE_URL}/editorial-policy`
+    ],
+    "publishingPrinciples": `${SITE_URL}/editorial-policy`
+  };
+  const faqData = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is a good ROAS?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A good ROAS depends on contribution margin and payback targets. Many teams use 3.0x to 5.0x as a working range, but break-even ROAS is the real baseline."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is high ROAS always profitable?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. You still need to include COGS, shipping, platform fees, and overhead. Pair ROAS with CAC, LTV, and MER before increasing budget."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "When should I scale ad spend?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Scale when ROAS stays above break-even and conversion quality remains stable across multiple days, with healthy CAC payback."
+        }
+      }
+    ]
+  };
 
   return (
     <main className="min-h-screen bg-gray-50 font-sans pb-12">
-      {/* JSON-LD SCHEMA FOR SEO */}
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webApplicationData) }}
       />
-      
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteData) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationData) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqData) }}
+      />
       
       {/* --- HERO SECTION --- */}
       <header className="bg-blue-900 text-white py-12">
@@ -86,9 +145,20 @@ export default function Home() {
         
         {/* --- MAIN CONTENT AREA --- */}
         <div className="flex-1 order-2 lg:order-1">
-            
+            <section className="mb-6 bg-white border border-slate-200 rounded-2xl p-4">
+              <h2 className="text-sm font-semibold uppercase tracking-wide text-slate-500 mb-3">Quick Jump</h2>
+              <div className="flex flex-wrap gap-2">
+                <a href="#calculator" className="px-3 py-1.5 rounded-full bg-slate-100 text-slate-700 text-sm hover:bg-slate-200 transition">Calculator</a>
+                <a href="#optimization-guide" className="px-3 py-1.5 rounded-full bg-slate-100 text-slate-700 text-sm hover:bg-slate-200 transition">Optimization Guide</a>
+                <a href="#content-cluster" className="px-3 py-1.5 rounded-full bg-slate-100 text-slate-700 text-sm hover:bg-slate-200 transition">Content Cluster</a>
+                <a href="#faq" className="px-3 py-1.5 rounded-full bg-slate-100 text-slate-700 text-sm hover:bg-slate-200 transition">FAQ</a>
+              </div>
+            </section>
+
             {/* THE CALCULATOR TOOL */}
-            <RoasClient />
+            <section id="calculator">
+              <RoasClient />
+            </section>
 
             <section className="mt-8 mb-6 bg-white border border-slate-200 rounded-2xl p-6">
               <h2 className="text-2xl font-bold text-slate-900 mb-2">How this ROAS calculator helps ad optimization</h2>
@@ -192,9 +262,9 @@ export default function Home() {
             </section>
 
             {/* --- FEATURED PAGES (BOOST INDEXING) --- */}
-            <section className="mt-4 mb-12">
-              <h2 className="text-xl font-bold text-slate-900 mb-4 text-center">Featured Pages</h2>
-              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <details className="mt-4 mb-12 bg-white border border-slate-200 rounded-2xl p-6">
+              <summary className="text-xl font-bold text-slate-900 cursor-pointer">Featured Pages</summary>
+              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mt-4">
                 <Link href="/roas/facebook-ads" className="group block bg-white p-6 rounded-xl shadow-sm border border-gray-200 hover:border-blue-500 hover:shadow-lg transition">
                   <h3 className="font-bold text-lg text-slate-800 group-hover:text-blue-600">Facebook Ads ROAS Calculator</h3>
                   <p className="text-sm text-gray-500 mt-2">Calculate break-even ROAS and profitability for Meta campaigns.</p>
@@ -217,9 +287,9 @@ export default function Home() {
                   <p className="text-sm text-gray-500 mt-2">Choose the right metric for campaign and budget decisions.</p>
                 </Link>
               </div>
-            </section>
+            </details>
 
-            <section className="mt-4 mb-12 bg-white border border-slate-200 rounded-2xl p-6 md:p-8">
+            <section id="optimization-guide" className="mt-4 mb-12 bg-white border border-slate-200 rounded-2xl p-6 md:p-8">
               <h2 className="text-2xl font-bold text-slate-900 mb-2">What should you do next?</h2>
               <p className="text-slate-600 mb-5">
                 Pick the path that matches your goal, then use the right calculator and framework.
@@ -245,7 +315,7 @@ export default function Home() {
               </div>
             </section>
 
-            <section className="mt-4 mb-12 bg-white border border-slate-200 rounded-2xl p-6 md:p-8">
+            <section id="content-cluster" className="mt-4 mb-12 bg-white border border-slate-200 rounded-2xl p-6 md:p-8">
               <h2 className="text-2xl font-bold text-slate-900 mb-2">ROAS Content Cluster</h2>
               <p className="text-slate-600 mb-5">
                 Follow this internal path: learn definitions, compare benchmarks, optimize campaigns, then validate full profitability.
@@ -271,9 +341,9 @@ export default function Home() {
             </section>
 
             {/* --- RESOURCES & SUPPORT --- */}
-            <section className="mt-4 mb-12">
-              <h2 className="text-xl font-bold text-slate-900 mb-4 text-center">Resources and Help</h2>
-              <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-4">
+            <details className="mt-4 mb-12 bg-white border border-slate-200 rounded-2xl p-6">
+              <summary className="text-xl font-bold text-slate-900 cursor-pointer">Resources and Help</summary>
+              <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-4 mt-4">
                 <Link href="/blog" className="group block bg-white p-5 rounded-xl shadow-sm border border-gray-200 hover:border-blue-500 hover:shadow-lg transition text-center">
                   <h3 className="font-bold text-slate-800 group-hover:text-blue-600"> Expert Blog</h3>
                   <p className="text-xs text-gray-500 mt-2">Guides, case studies, and benchmarks.</p>
@@ -336,7 +406,7 @@ export default function Home() {
                   <p className="text-xs text-gray-500 mt-2">Download planning sheets for budgets and benchmarks.</p>
                 </Link>
               </div>
-            </section>
+            </details>
 
             {/* --- SEO SUMMARY (SHORTER FOR CORE WEB VITALS) --- */}
             <section className="bg-white p-8 md:p-12 rounded-2xl shadow-sm border border-gray-100 text-gray-700 mt-12">
@@ -377,7 +447,7 @@ export default function Home() {
               </div>
             </section>
 
-            <section className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 text-gray-700 mt-8">
+            <section id="faq" className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 text-gray-700 mt-8">
               <h2 className="text-2xl font-bold text-slate-900 mb-4">ROAS FAQ for Google Ads and Facebook Ads teams</h2>
               <div className="space-y-3">
                 <details className="rounded-lg border border-slate-200 p-4 bg-slate-50">

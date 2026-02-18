@@ -4,7 +4,7 @@ import BlogInternalLinks from "@/app/components/BlogInternalLinks";
 import AuthorTrustBlock from "@/app/components/AuthorTrustBlock";
 
 export const metadata: Metadata = {
-  title: "ROAS Benchmarks 2026: Industry and Channel Targets + Formula",
+  title: "ROAS Benchmarks 2026 by Channel and Industry",
   description:
     "Updated 2026 ROAS benchmarks with break-even formula, channel ranges, and practical scale/hold/pause interpretation.",
   keywords: [
@@ -18,14 +18,14 @@ export const metadata: Metadata = {
     canonical: "https://roas-calculator.tech/blog/roas-benchmarks-2026",
   },
   openGraph: {
-    title: "ROAS Benchmarks 2026: Industry and Channel Targets + Formula",
+    title: "ROAS Benchmarks 2026 by Channel and Industry",
     description:
       "Updated 2026 ROAS benchmarks with break-even formula, channel ranges, and practical scale/hold/pause interpretation.",
     url: "https://roas-calculator.tech/blog/roas-benchmarks-2026",
   },
   twitter: {
     card: "summary_large_image",
-    title: "ROAS Benchmarks 2026: Industry and Channel Targets + Formula",
+    title: "ROAS Benchmarks 2026 by Channel and Industry",
     description:
       "Updated 2026 ROAS benchmarks with break-even formula, channel ranges, and practical scale/hold/pause interpretation.",
   },
