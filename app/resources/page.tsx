@@ -204,6 +204,16 @@ export default function ResourcesPage() {
           </Link>
         </div>
 
+        <div className="mt-10 bg-emerald-50 border border-emerald-200 rounded-xl p-6">
+          <h3 className="text-lg font-bold text-slate-900 mb-2">ROAS Planning Pack</h3>
+          <p className="text-slate-700">
+            Need a guided scenario workbook? Use the dedicated planning page with workflow links from benchmark to calculator to toolkit.
+          </p>
+          <Link href="/resources/roas-planning-template" className="inline-block mt-4 text-emerald-700 font-semibold hover:underline">
+            Open ROAS Planning Template Page
+          </Link>
+        </div>
+
         <div className="mt-10 bg-white border border-slate-200 rounded-xl p-6">
           <h3 className="text-lg font-bold text-slate-900 mb-2">Recommended Workflow</h3>
           <p className="text-slate-600 mb-4">

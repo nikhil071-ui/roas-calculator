@@ -1,9 +1,16 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import RoasClient from "./RoasClient";
-import AdBanner from "./AdBanner"; // <--- LINE 1: IMPORT ADDED
+import dynamic from "next/dynamic";
 import { SITE_URL } from "./seo";
 import TrackedLink from "@/app/components/TrackedLink";
+
+const RoasClient = dynamic(() => import("./RoasClient"), {
+  ssr: false,
+  loading: () => <div className="bg-white border border-slate-200 rounded-xl p-6 text-slate-600">Loading calculator...</div>,
+});
+const AdBanner = dynamic(() => import("./AdBanner"), {
+  ssr: false,
+});
 
 export const metadata: Metadata = {
   title: "Free ROAS Calculator | Calculate Profit & Break-Even 2026",

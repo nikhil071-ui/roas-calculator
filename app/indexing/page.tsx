@@ -139,6 +139,24 @@ export default function Indexing() {
                             Open <ExternalLink size={14} />
                         </Link>
                     </li>
+                    <li className="flex items-center justify-between gap-4">
+                        <span className="text-slate-700">/comparisons/mer-vs-roas</span>
+                        <Link href="/comparisons/mer-vs-roas" className="text-blue-600 underline inline-flex items-center gap-2">
+                            Open <ExternalLink size={14} />
+                        </Link>
+                    </li>
+                    <li className="flex items-center justify-between gap-4">
+                        <span className="text-slate-700">/break-even-roas-by-margin</span>
+                        <Link href="/break-even-roas-by-margin" className="text-blue-600 underline inline-flex items-center gap-2">
+                            Open <ExternalLink size={14} />
+                        </Link>
+                    </li>
+                    <li className="flex items-center justify-between gap-4">
+                        <span className="text-slate-700">/resources/roas-planning-template</span>
+                        <Link href="/resources/roas-planning-template" className="text-blue-600 underline inline-flex items-center gap-2">
+                            Open <ExternalLink size={14} />
+                        </Link>
+                    </li>
                 </ul>
             </section>
 
@@ -152,6 +170,17 @@ export default function Indexing() {
                     <CheckCircle size={18} className="text-blue-600" />
                     <span className="text-slate-700">Sitemap URL: <strong>/sitemap.xml</strong></span>
                 </div>
+            </section>
+
+            <section className="bg-white p-6 rounded-xl border border-slate-200">
+                <h3 className="text-lg font-bold text-slate-900 mb-2">Crawl Diagnostics Checklist</h3>
+                <ul className="list-disc pl-5 space-y-2 text-slate-700">
+                    <li>In URL Inspection, confirm canonical is selected to non-www host.</li>
+                    <li>Validate mobile crawler fetch is successful for homepage and top /roas/* URLs.</li>
+                    <li>In your crawl tool, check for 200 status on priority pages and 301 from /blog/roas-benchmarks to /blog/roas-benchmarks-2026.</li>
+                    <li>Confirm noindex pages are intentional and removed from sitemap.</li>
+                    <li>Verify structured data validity for Article, FAQPage, and WebApplication where applied.</li>
+                </ul>
             </section>
         </div>
 

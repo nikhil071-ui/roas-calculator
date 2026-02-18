@@ -108,6 +108,9 @@ export default function RoasBenchmarks2026Page() {
 
           <section>
             <h2>Directional Benchmarks for 2026</h2>
+            <p>
+              Calibration note: these ranges were refreshed for Q1 2026 and should be treated as directional, not universal targets.
+            </p>
             <div className="overflow-x-auto">
               <table className="w-full text-sm border border-slate-300">
                 <thead className="bg-slate-100">
@@ -132,6 +135,11 @@ export default function RoasBenchmarks2026Page() {
                     <td className="border border-slate-300 px-4 py-2">B2B Lead Gen (CPL model)</td>
                     <td className="border border-slate-300 px-4 py-2">2.5x - 5.0x</td>
                     <td className="border border-slate-300 px-4 py-2">6.0x - 10.0x+</td>
+                  </tr>
+                  <tr>
+                    <td className="border border-slate-300 px-4 py-2">Subscription SaaS (Paid Search + Paid Social)</td>
+                    <td className="border border-slate-300 px-4 py-2">1.7x - 3.0x</td>
+                    <td className="border border-slate-300 px-4 py-2">3.2x - 4.8x+</td>
                   </tr>
                 </tbody>
               </table>
@@ -178,6 +186,11 @@ export default function RoasBenchmarks2026Page() {
               <li>
                 <a href="https://www.searchenginejournal.com/google-ads-benchmarks/" target="_blank" rel="noopener noreferrer">
                   Search Engine Journal benchmark roundups
+                </a>
+              </li>
+              <li>
+                <a href="https://www.statista.com/topics/1176/online-advertising/" target="_blank" rel="noopener noreferrer">
+                  Statista online advertising trend context
                 </a>
               </li>
             </ul>

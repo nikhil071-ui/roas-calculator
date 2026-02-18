@@ -19,6 +19,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     '/ltv-calculator',
     '/mer-calculator',
     '/payback-period-calculator',
+    '/break-even-roas-by-margin',
+    '/resources/roas-planning-template',
   ]);
 
   const staticRoutes = [
@@ -46,8 +48,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     '/ltv-calculator',
     '/mer-calculator',
     '/payback-period-calculator',
+    '/break-even-roas-by-margin',
     '/resources',
     '/resources/ga4-conversion-mapping',
+    '/resources/roas-planning-template',
     '/comparisons',
     '/comparisons/roas-vs-roi-vs-mer-vs-acos',
     '/comparisons/cac-vs-cpa-vs-roas',
