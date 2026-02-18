@@ -4,6 +4,22 @@ import { MetadataRoute } from 'next';
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = 'https://roas-calculator.tech';
   const lastModified = new Date();
+  const highPriorityRoutes = new Set([
+    '/',
+    '/ppc-toolkit',
+    '/resources',
+    '/comparisons',
+    '/comparisons/roas-vs-roi-vs-mer-vs-acos',
+    '/comparisons/cac-vs-cpa-vs-roas',
+    '/comparisons/mer-vs-roas',
+    '/blog/roas-benchmarks-2026',
+    '/blog/payback-period-cash-flow-saas',
+    '/blog/attribution-impact-on-roas',
+    '/cac-calculator',
+    '/ltv-calculator',
+    '/mer-calculator',
+    '/payback-period-calculator',
+  ]);
 
   const staticRoutes = [
     '/',
@@ -108,7 +124,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       url: `${baseUrl}${route}`,
       lastModified,
       changeFrequency: 'weekly' as const,
-      priority: route === '/' ? 1 : 0.7,
+      priority: route === '/' ? 1 : highPriorityRoutes.has(route) ? 0.9 : 0.7,
     })),
     ...roasSlugs.map((slug) => ({
       url: `${baseUrl}/roas/${slug}`,

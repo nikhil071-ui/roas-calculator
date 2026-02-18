@@ -71,16 +71,26 @@
 - Day 23: Completed
 - Day 24: Completed
 - Day 25: Completed
-- Days 26-30: Planned
+- Day 26: Completed
+- Day 27: Completed
+- Day 28: Completed
+- Day 29: Completed
+- Day 30: Completed
 
 ## Priority URL Set for Ongoing GSC Requests
 - /ppc-toolkit
 - /comparisons/roas-vs-roi-vs-mer-vs-acos
+- /comparisons/cac-vs-cpa-vs-roas
+- /comparisons/mer-vs-roas
 - /blog/roas-benchmarks-2026
+- /blog/payback-period-cash-flow-saas
+- /blog/attribution-impact-on-roas
 - /cac-calculator
 - /ltv-calculator
 - /mer-calculator
 - /payback-period-calculator
+- /resources
+- /resources/ga4-conversion-mapping
 - /roas/google-shopping-roas
 - /roas/meta-dtc-roas
 - /roas/lead-gen-cpl-roas
