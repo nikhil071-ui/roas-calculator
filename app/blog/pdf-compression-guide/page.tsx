@@ -2,6 +2,7 @@ import Link from "next/link";
 import { ArrowLeft, FileText } from "lucide-react";
 import type { Metadata } from "next";
 import BlogInternalLinks from "@/app/components/BlogInternalLinks";
+import ArticleJsonLd from "@/app/components/ArticleJsonLd";
 
 export const metadata: Metadata = {
   title: "PDF Compression Guide 2026: Best Practices and Test Results",
@@ -57,6 +58,11 @@ export default function PDFCompressionGuide() {
 
   return (
     <div className="min-h-screen bg-slate-50 font-sans text-slate-900 py-12 px-4 md:px-6">
+      <ArticleJsonLd
+        headline="PDF Compression Guide 2026: Best Practices and Test Results"
+        description="Compare PDF compression methods with real results and choose settings for email, web, archive, and print use cases."
+        url="https://roas-calculator.tech/blog/pdf-compression-guide"
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbData) }}

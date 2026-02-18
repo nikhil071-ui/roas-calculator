@@ -2,6 +2,7 @@ import Link from "next/link";
 import { ArrowLeft, TrendingUp } from "lucide-react";
 import type { Metadata } from "next";
 import BlogInternalLinks from "@/app/components/BlogInternalLinks";
+import ArticleJsonLd from "@/app/components/ArticleJsonLd";
 
 export const metadata: Metadata = {
   title: "Facebook Ads ROAS Case Study (2026): 1.8x to 5.2x in 90 Days",
@@ -57,6 +58,11 @@ export default function RoasCaseStudy() {
 
   return (
     <div className="min-h-screen bg-slate-50 font-sans text-slate-900 py-12 px-4 md:px-6">
+      <ArticleJsonLd
+        headline="Facebook Ads ROAS Case Study (2026): 1.8x to 5.2x in 90 Days"
+        description="Detailed Facebook Ads case study with numbers: 1.8x to 5.2x ROAS in 90 days, including strategy, budget breakdown, and profit analysis."
+        url="https://roas-calculator.tech/blog/facebook-ads-case-study"
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbData) }}

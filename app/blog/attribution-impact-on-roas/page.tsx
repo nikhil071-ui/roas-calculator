@@ -1,4 +1,4 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import type { Metadata } from "next";
 import BlogInternalLinks from "@/app/components/BlogInternalLinks";
 
@@ -48,7 +48,7 @@ export default function AttributionImpactOnROASPage() {
       name: "ROAS Tools",
       logo: {
         "@type": "ImageObject",
-        url: "https://roas-calculator.tech/favicon.ico",
+        url: "https://roas-calculator.tech/icon.svg",
       },
     },
     mainEntityOfPage: "https://roas-calculator.tech/blog/attribution-impact-on-roas",
@@ -160,3 +160,5 @@ export default function AttributionImpactOnROASPage() {
     </div>
   );
 }
+
+

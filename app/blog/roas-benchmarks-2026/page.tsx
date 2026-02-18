@@ -1,4 +1,4 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import type { Metadata } from "next";
 import BlogInternalLinks from "@/app/components/BlogInternalLinks";
 import AuthorTrustBlock from "@/app/components/AuthorTrustBlock";
@@ -77,7 +77,7 @@ export default function RoasBenchmarks2026Page() {
       name: "ROAS Tools",
       logo: {
         "@type": "ImageObject",
-        url: "https://roas-calculator.tech/favicon.ico",
+        url: "https://roas-calculator.tech/icon.svg",
       },
     },
     mainEntityOfPage: "https://roas-calculator.tech/blog/roas-benchmarks-2026",
@@ -278,3 +278,5 @@ export default function RoasBenchmarks2026Page() {
     </div>
   );
 }
+
+

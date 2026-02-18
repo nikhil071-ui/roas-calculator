@@ -3,7 +3,7 @@ import Link from "next/link";
 import { SITE_URL } from "./seo";
 import TrackedLink from "@/app/components/TrackedLink";
 import RoasClient from "./RoasClient";
-import AdBanner from "./AdBanner";
+import DeferredAdBanner from "@/app/components/DeferredAdBanner";
 
 export const metadata: Metadata = {
   title: "ROAS Calculator: Break-Even and Profit Estimator",
@@ -103,14 +103,22 @@ export default function Home() {
       />
       
       {/* --- HERO SECTION --- */}
-      <header className="bg-blue-900 text-white py-12">
+      <header className="bg-blue-900 text-white py-10 md:py-12">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-3xl md:text-5xl font-bold mb-4">
-            ROAS Calculator (Return on Ad Spend) and Break-Even Profit Estimator
+            ROAS Calculator: Calculate Break-Even and Campaign Profit Fast
           </h1>
-          <p className="text-lg text-blue-100 max-w-2xl mx-auto">
-            Instantly calculate return on ad spend, break-even ROAS, and net profit for Google Ads, Facebook Ads, and eCommerce campaigns.
+          <p className="text-lg text-blue-100 max-w-3xl mx-auto">
+            Enter spend, revenue, and costs to get ROAS, net profit, CPA, AOV, and break-even guidance in one view.
           </p>
+          <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
+            <a href="#calculator" className="inline-flex items-center px-5 py-3 rounded-lg bg-white text-blue-900 font-bold hover:bg-blue-50 transition">
+              Start Calculator
+            </a>
+            <Link href="/ppc-toolkit" className="inline-flex items-center px-5 py-3 rounded-lg border border-blue-200 text-white font-semibold hover:bg-blue-800 transition">
+              Open PPC Toolkit
+            </Link>
+          </div>
         </div>
       </header>
 
@@ -118,26 +126,21 @@ export default function Home() {
         
         {/* --- MAIN CONTENT AREA --- */}
         <div className="flex-1 order-2 lg:order-1">
-            <section className="mb-6 bg-white border border-slate-200 rounded-2xl p-4">
-              <h2 className="text-sm font-semibold uppercase tracking-wide text-slate-500 mb-3">Quick Jump</h2>
-              <div className="flex flex-wrap gap-2">
-                <a href="#calculator" className="px-3 py-1.5 rounded-full bg-slate-100 text-slate-700 text-sm hover:bg-slate-200 transition">Calculator</a>
-                <a href="#optimization-guide" className="px-3 py-1.5 rounded-full bg-slate-100 text-slate-700 text-sm hover:bg-slate-200 transition">Optimization Guide</a>
-                <a href="#content-cluster" className="px-3 py-1.5 rounded-full bg-slate-100 text-slate-700 text-sm hover:bg-slate-200 transition">Content Cluster</a>
-                <a href="#faq" className="px-3 py-1.5 rounded-full bg-slate-100 text-slate-700 text-sm hover:bg-slate-200 transition">FAQ</a>
-              </div>
+            {/* THE CALCULATOR TOOL */}
+            <section id="calculator">
+              <RoasClient />
             </section>
 
-            <section className="mb-6 bg-emerald-50 border border-emerald-200 rounded-2xl p-4">
-              <h2 className="text-base font-bold text-emerald-900 mb-2">Trusted by performance teams</h2>
+            <section className="mt-4 mb-6 bg-emerald-50 border border-emerald-200 rounded-2xl p-4">
+              <h2 className="text-base font-bold text-emerald-900 mb-2">Trusted planning, private inputs</h2>
               <p className="text-sm text-emerald-800 mb-3">
-                Use this calculator for campaign audits, break-even checks, and scale/hold decisions before changing budget.
+                Last updated February 18, 2026. Inputs stay in your browser and are not sent to our server.
               </p>
               <div className="flex flex-wrap gap-2">
                 <TrackedLink
                   href="/ppc-toolkit"
                   eventName="cta_click_ppc_toolkit"
-                  eventParams={{ source_page: "/", cta_module: "trust_strip", position: "above_fold" }}
+                  eventParams={{ source_page: "/", cta_module: "trust_strip", position: "below_calculator" }}
                   className="inline-flex items-center px-3 py-2 rounded-lg bg-emerald-700 text-white font-semibold hover:bg-emerald-800 transition"
                 >
                   Open Toolkit
@@ -146,11 +149,6 @@ export default function Home() {
                   Review Methodology
                 </Link>
               </div>
-            </section>
-
-            {/* THE CALCULATOR TOOL */}
-            <section id="calculator">
-              <RoasClient />
             </section>
 
             <section className="mt-8 mb-6 bg-white border border-slate-200 rounded-2xl p-6">
@@ -216,7 +214,7 @@ export default function Home() {
             {/* --- AD SPACE --- */}
 {/* Google Policy: Keep 20px+ distance from buttons to avoid bans */}
 <div className="mt-10 mb-10">
-  <AdBanner />
+  <DeferredAdBanner />
 </div>
 {/* ---------------- */}
 

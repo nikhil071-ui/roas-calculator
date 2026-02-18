@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import BlogInternalLinks from "@/app/components/BlogInternalLinks";
+import ArticleJsonLd from "@/app/components/ArticleJsonLd";
 
 export const metadata: Metadata = {
   title: "When to Scale or Pause Campaigns: ROAS Decision Thresholds",
@@ -14,6 +15,11 @@ export const metadata: Metadata = {
 export default function ScaleOrPauseCampaignsPage() {
   return (
     <main className="min-h-screen bg-slate-50 text-slate-900 py-12 px-4 md:px-6">
+      <ArticleJsonLd
+        headline="When to Scale or Pause Campaigns: ROAS Decision Thresholds"
+        description="Use ROAS threshold bands tied to break-even math to decide when to scale, hold, or pause campaigns."
+        url="https://roas-calculator.tech/blog/when-to-scale-or-pause-campaigns"
+      />
       <article className="max-w-4xl mx-auto bg-white border border-slate-200 rounded-2xl p-8 md:p-10 space-y-6">
         <Link href="/blog" className="text-sm text-slate-500 hover:text-blue-600 transition">Back to Blog</Link>
         <h1 className="text-3xl font-bold">When to Scale or Pause Campaigns</h1>

@@ -2,6 +2,7 @@ import Link from "next/link";
 import { ArrowLeft, BookOpen, CheckCircle } from "lucide-react";
 import type { Metadata } from "next";
 import BlogInternalLinks from "@/app/components/BlogInternalLinks";
+import ArticleJsonLd from "@/app/components/ArticleJsonLd";
 
 export const metadata: Metadata = {
   title: "Image Compression vs Quality (2026): Technical Guide and Test Data",
@@ -57,6 +58,11 @@ export default function ImageCompressionTechnical() {
 
   return (
     <div className="min-h-screen bg-slate-50 font-sans text-slate-900 py-12 px-4 md:px-6">
+      <ArticleJsonLd
+        headline="Image Compression vs Quality (2026): Technical Guide and Test Data"
+        description="Technical image compression guide with real tests: JPEG, WebP, AVIF, SSIM metrics, and practical quality settings for 2026."
+        url="https://roas-calculator.tech/blog/image-compression-technical"
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbData) }}

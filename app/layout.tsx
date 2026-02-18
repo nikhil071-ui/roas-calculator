@@ -54,8 +54,8 @@ export default function RootLayout({
     <html lang="en">
       <head>
         {/* --- FAVICON --- */}
-        <link rel="icon" href="/favicon.ico" sizes="any" />
-        <link rel="apple-touch-icon" href="/favicon.ico" />
+        <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+        <link rel="apple-touch-icon" href="/icon.svg" />
         
         {/* --- GOOGLE SEARCH CONSOLE VERIFICATION --- */}
         <meta name="google-site-verification" content="google07479700bcc28a6c" />
@@ -105,7 +105,7 @@ export default function RootLayout({
               "name": "ROAS Tools",
               "alternateName": "ROAS Tools Digital Solutions",
               "url": "https://roas-calculator.tech",
-              "logo": "https://roas-calculator.tech/favicon.ico",
+              "logo": "https://roas-calculator.tech/icon.svg",
               "foundingDate": "2024",
               "description": "Privacy-first digital marketing tools and financial calculators for marketers, entrepreneurs, and students worldwide.",
               "email": "luckmatters199@gmail.com",

@@ -2,6 +2,7 @@ import Link from "next/link";
 import { ArrowLeft, DollarSign } from "lucide-react";
 import type { Metadata } from "next";
 import BlogInternalLinks from "@/app/components/BlogInternalLinks";
+import ArticleJsonLd from "@/app/components/ArticleJsonLd";
 
 export const metadata: Metadata = {
   title: "Currency Exchange Guide 2026: Real-Time Rates and Hidden Fees",
@@ -57,6 +58,11 @@ export default function CurrencyExchangeGuide() {
 
   return (
     <div className="min-h-screen bg-slate-50 font-sans text-slate-900 py-12 px-4 md:px-6">
+      <ArticleJsonLd
+        headline="Currency Exchange Guide 2026: How Rates Work and What You Actually Pay"
+        description="Understand exchange rates, hidden markups, transfer fees, and practical methods to reduce total conversion cost."
+        url="https://roas-calculator.tech/blog/currency-exchange-guide"
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbData) }}
