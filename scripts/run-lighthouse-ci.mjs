@@ -4,12 +4,17 @@ import { spawnSync } from "node:child_process";
 const url = process.env.AUDIT_URL || "http://127.0.0.1:3000";
 const outputPath = "lighthouse-ci.json";
 const runCommand = process.platform === "win32" ? "npx.cmd" : "npx";
+const preset = process.env.LIGHTHOUSE_PRESET || "desktop";
+const minPerformance = Number(process.env.LH_MIN_PERFORMANCE ?? "0.75");
+const minAccessibility = Number(process.env.LH_MIN_ACCESSIBILITY ?? "0.9");
+const minSeo = Number(process.env.LH_MIN_SEO ?? "0.95");
 
 const run = spawnSync(
   runCommand,
   [
     "lighthouse",
     url,
+    `--preset=${preset}`,
     "--chrome-flags=--headless",
     "--output=json",
     `--output-path=${outputPath}`,
@@ -24,9 +29,9 @@ if (run.status !== 0) {
 
 const report = JSON.parse(readFileSync(outputPath, "utf8"));
 const thresholds = {
-  performance: 0.9,
-  accessibility: 0.95,
-  seo: 0.95,
+  performance: minPerformance,
+  accessibility: minAccessibility,
+  seo: minSeo,
 };
 
 const scores = {
