@@ -119,6 +119,50 @@ const blogPosts: BlogPost[] = [
     date: "2026",
     readTime: "8 min",
   },
+  {
+    title: "How to Improve ROAS Without Raising Budget",
+    description:
+      "Practical workflow to improve ROAS through conversion rate, AOV, and traffic quality before increasing spend.",
+    category: "Optimization",
+    categoryColor: "bg-emerald-100 text-emerald-900",
+    icon: <TrendingUp size={24} className="text-emerald-600" />,
+    href: "/blog/how-to-improve-roas-without-raising-budget",
+    date: "2026",
+    readTime: "7 min",
+  },
+  {
+    title: "ROAS Audit Checklist: Technical, Funnel, and Profitability",
+    description:
+      "Checklist for tracking validity, funnel diagnostics, and profitability guardrails before scaling ad spend.",
+    category: "Audit",
+    categoryColor: "bg-amber-100 text-amber-900",
+    icon: <BarChart3 size={24} className="text-amber-600" />,
+    href: "/blog/roas-audit-checklist",
+    date: "2026",
+    readTime: "6 min",
+  },
+  {
+    title: "When to Scale or Pause Campaigns",
+    description:
+      "Threshold-based decision matrix using break-even ROAS, CAC, and payback constraints.",
+    category: "Decision Guide",
+    categoryColor: "bg-indigo-100 text-indigo-900",
+    icon: <DollarSign size={24} className="text-indigo-600" />,
+    href: "/blog/when-to-scale-or-pause-campaigns",
+    date: "2026",
+    readTime: "7 min",
+  },
+  {
+    title: "Creative Testing Framework for ROAS",
+    description:
+      "Hypothesis-driven ad creative testing process to improve return quality and scale winners with confidence.",
+    category: "Creative Strategy",
+    categoryColor: "bg-purple-100 text-purple-900",
+    icon: <Zap size={24} className="text-purple-600" />,
+    href: "/blog/creative-testing-framework-for-roas",
+    date: "2026",
+    readTime: "7 min",
+  },
 ];
 
 export default function BlogIndex() {
@@ -140,6 +184,25 @@ export default function BlogIndex() {
             Real data from our testing and client work.
           </p>
         </div>
+
+        <section className="mb-10 bg-white border border-slate-200 rounded-2xl p-6">
+          <h2 className="text-2xl font-bold text-slate-900 mb-2">ROAS Content Hubs</h2>
+          <p className="text-slate-600 mb-4">Follow these pillar hubs to move from basic ROAS learning to profitable scaling decisions.</p>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-3">
+            <Link href="/learn/roas" className="rounded-lg border border-slate-200 p-3 hover:border-blue-500 transition">
+              <p className="font-semibold text-slate-900">ROAS Education</p>
+            </Link>
+            <Link href="/benchmarks/roas" className="rounded-lg border border-slate-200 p-3 hover:border-blue-500 transition">
+              <p className="font-semibold text-slate-900">ROAS Benchmarks</p>
+            </Link>
+            <Link href="/optimize/roas" className="rounded-lg border border-slate-200 p-3 hover:border-blue-500 transition">
+              <p className="font-semibold text-slate-900">Ad Optimization</p>
+            </Link>
+            <Link href="/profitability/ads" className="rounded-lg border border-slate-200 p-3 hover:border-blue-500 transition">
+              <p className="font-semibold text-slate-900">Profitability</p>
+            </Link>
+          </div>
+        </section>
 
         {/* Featured Posts */}
         {featuredPosts.length > 0 && (

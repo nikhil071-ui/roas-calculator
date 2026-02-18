@@ -164,6 +164,27 @@ export default function PPCToolkitPage() {
           </div>
         </section>
 
+        <section className="bg-white border border-slate-200 rounded-xl p-6">
+          <h2 className="text-2xl font-bold mb-3">Cluster Navigation</h2>
+          <p className="text-slate-600 mb-4">
+            Use this loop for weekly planning: learn the metric, benchmark it, optimize execution, then validate profitability.
+          </p>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-3">
+            <Link href="/learn/roas" className="rounded-lg border border-slate-200 p-3 hover:border-blue-500 transition">
+              <p className="font-semibold">ROAS Education</p>
+            </Link>
+            <Link href="/benchmarks/roas" className="rounded-lg border border-slate-200 p-3 hover:border-blue-500 transition">
+              <p className="font-semibold">ROAS Benchmarks</p>
+            </Link>
+            <Link href="/optimize/roas" className="rounded-lg border border-slate-200 p-3 hover:border-blue-500 transition">
+              <p className="font-semibold">ROAS Optimization</p>
+            </Link>
+            <Link href="/profitability/ads" className="rounded-lg border border-slate-200 p-3 hover:border-blue-500 transition">
+              <p className="font-semibold">Profitability Hub</p>
+            </Link>
+          </div>
+        </section>
+
         <section className="bg-slate-900 text-white rounded-xl p-6">
           <h2 className="text-2xl font-bold mb-3">Templates for Practitioners</h2>
           <p className="text-slate-300 mb-4">

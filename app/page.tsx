@@ -192,6 +192,31 @@ export default function Home() {
               </div>
             </section>
 
+            <section className="mt-4 mb-12 bg-white border border-slate-200 rounded-2xl p-6 md:p-8">
+              <h2 className="text-2xl font-bold text-slate-900 mb-2">ROAS Content Cluster</h2>
+              <p className="text-slate-600 mb-5">
+                Follow this internal path: learn definitions, compare benchmarks, optimize campaigns, then validate full profitability.
+              </p>
+              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+                <Link href="/learn/roas" className="block rounded-xl border border-blue-200 bg-blue-50 p-4 hover:border-blue-400 transition">
+                  <h3 className="font-bold text-slate-900">ROAS Education</h3>
+                  <p className="text-sm text-slate-600 mt-1">Formula, break-even math, and interpretation basics.</p>
+                </Link>
+                <Link href="/benchmarks/roas" className="block rounded-xl border border-indigo-200 bg-indigo-50 p-4 hover:border-indigo-400 transition">
+                  <h3 className="font-bold text-slate-900">ROAS Benchmarks</h3>
+                  <p className="text-sm text-slate-600 mt-1">Channel ranges and practical interpretation.</p>
+                </Link>
+                <Link href="/optimize/roas" className="block rounded-xl border border-emerald-200 bg-emerald-50 p-4 hover:border-emerald-400 transition">
+                  <h3 className="font-bold text-slate-900">Ad Optimization</h3>
+                  <p className="text-sm text-slate-600 mt-1">Scale, hold, or pause frameworks.</p>
+                </Link>
+                <Link href="/profitability/ads" className="block rounded-xl border border-purple-200 bg-purple-50 p-4 hover:border-purple-400 transition">
+                  <h3 className="font-bold text-slate-900">Profitability</h3>
+                  <p className="text-sm text-slate-600 mt-1">Tie ROAS to CAC, LTV, MER, and payback.</p>
+                </Link>
+              </div>
+            </section>
+
             {/* --- RESOURCES & SUPPORT --- */}
             <section className="mt-4 mb-12">
               <h2 className="text-xl font-bold text-slate-900 mb-4 text-center">Resources and Help</h2>

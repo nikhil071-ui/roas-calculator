@@ -210,6 +210,21 @@ export default function ComparisonsPage() {
         </div>
 
         <div className="mt-12 bg-white border border-slate-200 rounded-xl p-6">
+          <h3 className="text-lg font-bold text-slate-900 mb-2">Cluster Hubs</h3>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-3 mb-5">
+            <Link href="/learn/roas" className="rounded-lg border border-slate-200 p-3 hover:border-blue-500 transition">
+              <p className="font-semibold">ROAS Education</p>
+            </Link>
+            <Link href="/benchmarks/roas" className="rounded-lg border border-slate-200 p-3 hover:border-blue-500 transition">
+              <p className="font-semibold">ROAS Benchmarks</p>
+            </Link>
+            <Link href="/optimize/roas" className="rounded-lg border border-slate-200 p-3 hover:border-blue-500 transition">
+              <p className="font-semibold">Ad Optimization</p>
+            </Link>
+            <Link href="/profitability/ads" className="rounded-lg border border-slate-200 p-3 hover:border-blue-500 transition">
+              <p className="font-semibold">Profitability</p>
+            </Link>
+          </div>
           <h3 className="text-lg font-bold text-slate-900 mb-2">Want a Head-to-Head Feature?</h3>
           <p className="text-slate-600">
             Tell us which tool you want compared and we will add it with transparent criteria and testing.
