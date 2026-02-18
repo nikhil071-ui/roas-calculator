@@ -361,6 +361,12 @@ export default function About() {
                     <Link href="/editorial-policy" className="inline-flex items-center gap-2 bg-emerald-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-emerald-700 transition">
                          Editorial Policy
                     </Link>
+                    <Link href="/authors" className="inline-flex items-center gap-2 bg-indigo-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-indigo-700 transition">
+                         Authors
+                    </Link>
+                    <Link href="/methodology" className="inline-flex items-center gap-2 bg-purple-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-purple-700 transition">
+                         Methodology
+                    </Link>
                     <Link href="/case-studies" className="inline-flex items-center gap-2 bg-purple-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-purple-700 transition">
                          Case Studies
                     </Link>

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import BlogInternalLinks from "@/app/components/BlogInternalLinks";
+import AuthorTrustBlock from "@/app/components/AuthorTrustBlock";
 
 export const metadata: Metadata = {
   title: "ROAS Benchmarks 2026: Industry and Channel Targets + Formula",
@@ -28,7 +29,7 @@ export const metadata: Metadata = {
     description:
       "Updated 2026 ROAS benchmarks with break-even formula, channel ranges, and practical scale/hold/pause interpretation.",
   },
-  authors: [{ name: "ROAS Tools Editorial Team" }],
+  authors: [{ name: "Priya Malhotra" }],
   publisher: "ROAS Tools",
 };
 
@@ -64,8 +65,12 @@ export default function RoasBenchmarks2026Page() {
     datePublished: "2026-02-18",
     dateModified: "2026-02-18",
     author: {
-      "@type": "Organization",
-      name: "ROAS Tools Editorial Team",
+      "@type": "Person",
+      name: "Priya Malhotra",
+    },
+    reviewedBy: {
+      "@type": "Person",
+      name: "Sanjay Kumar",
     },
     publisher: {
       "@type": "Organization",
@@ -94,6 +99,16 @@ export default function RoasBenchmarks2026Page() {
           <p className="text-slate-700 mt-4">
             Quick answer: in 2026 many teams use around 1.8x to 3.8x as a typical channel range, but your required ROAS is your break-even threshold, not an industry average.
           </p>
+          <div className="mt-5">
+            <AuthorTrustBlock
+              authorName="Priya Malhotra"
+              authorRole="Lead Content Strategist"
+              reviewerName="Sanjay Kumar"
+              reviewerRole="Founder and Technical Reviewer"
+              publishedDate="February 18, 2026"
+              reviewedDate="February 18, 2026"
+            />
+          </div>
         </div>
 
         <article className="p-8 md:p-12 prose lg:prose-lg max-w-none text-slate-700 space-y-8">

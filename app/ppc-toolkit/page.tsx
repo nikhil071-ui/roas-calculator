@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import TrackedDownloadLink from "@/app/components/TrackedDownloadLink";
+import AuthorTrustBlock from "@/app/components/AuthorTrustBlock";
 
 export const metadata: Metadata = {
   title: "PPC Toolkit: ROAS, CAC, LTV, MER, Target CPA",
@@ -65,6 +66,16 @@ export default function PPCToolkitPage() {
           <p className="text-slate-700 mt-3 max-w-3xl">
             Quick definition: this page is a central planning hub for paid media unit economics, including acquisition cost, lifetime value, blended efficiency, and payback speed.
           </p>
+          <div className="mt-4 max-w-3xl">
+            <AuthorTrustBlock
+              authorName="Priya Malhotra"
+              authorRole="Content Strategist"
+              reviewerName="Rahul Verma"
+              reviewerRole="Data QA Reviewer"
+              publishedDate="February 2026"
+              reviewedDate="February 2026"
+            />
+          </div>
         </div>
 
         <section className="bg-white border border-slate-200 rounded-xl p-6">

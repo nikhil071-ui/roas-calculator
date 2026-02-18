@@ -134,6 +134,27 @@ export default function Home() {
               </div>
             </section>
 
+            <section className="mt-4 mb-8 bg-white border border-slate-200 rounded-2xl p-6">
+              <h2 className="text-xl font-bold text-slate-900 mb-2">Why marketers trust these analytics tools</h2>
+              <p className="text-slate-600 mb-4">
+                We publish named authors, review dates, and methodology pages so calculator outputs can be validated and audited.
+              </p>
+              <div className="flex flex-wrap gap-3">
+                <Link href="/authors" className="inline-flex items-center px-4 py-2 rounded-lg bg-white border border-slate-300 text-slate-900 font-semibold hover:bg-slate-50 transition">
+                  Authors and Reviewers
+                </Link>
+                <Link href="/methodology" className="inline-flex items-center px-4 py-2 rounded-lg bg-white border border-slate-300 text-slate-900 font-semibold hover:bg-slate-50 transition">
+                  Methodology
+                </Link>
+                <Link href="/data-sources" className="inline-flex items-center px-4 py-2 rounded-lg bg-white border border-slate-300 text-slate-900 font-semibold hover:bg-slate-50 transition">
+                  Data Sources
+                </Link>
+                <Link href="/editorial-policy" className="inline-flex items-center px-4 py-2 rounded-lg bg-white border border-slate-300 text-slate-900 font-semibold hover:bg-slate-50 transition">
+                  Editorial Policy
+                </Link>
+              </div>
+            </section>
+
             {/* --- AD SPACE --- */}
 {/* Google Policy: Keep 20px+ distance from buttons to avoid bans */}
 <div className="mt-10 mb-10">

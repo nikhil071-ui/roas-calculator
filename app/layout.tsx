@@ -138,6 +138,7 @@ export default function RootLayout({
               "sameAs": [
                 "https://github.com/nikhil071-ui/roas-calculator"
               ],
+              "publishingPrinciples": "https://roas-calculator.tech/editorial-policy",
               "founder": {
                 "@type": "Person",
                 "name": "Sanjay Kumar",
@@ -235,6 +236,9 @@ export default function RootLayout({
                 <li><Link href="/privacy-policy" className="hover:text-white transition">Privacy Policy</Link></li>
                 <li><Link href="/terms" className="hover:text-white transition">Terms of Service</Link></li>
                 <li><Link href="/editorial-policy" className="hover:text-white transition">Editorial Policy</Link></li>
+                <li><Link href="/authors" className="hover:text-white transition">Authors and Reviewers</Link></li>
+                <li><Link href="/methodology" className="hover:text-white transition">Methodology</Link></li>
+                <li><Link href="/data-sources" className="hover:text-white transition">Data Sources</Link></li>
                 <li><Link href="/faq" className="hover:text-white transition">FAQ</Link></li>
                 <li><Link href="/privacy-policy" className="hover:text-white transition">Cookie Policy</Link></li>
               </ul>

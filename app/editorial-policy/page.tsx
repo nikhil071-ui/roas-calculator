@@ -286,6 +286,15 @@ export default function EditorialPolicy() {
                 </div>
             </section>
 
+            <section className="bg-slate-50 rounded-xl p-6 border border-slate-200">
+                <h3 className="text-xl font-bold text-slate-900 mb-3">Related Trust Pages</h3>
+                <div className="flex flex-wrap gap-3">
+                    <Link href="/authors" className="text-blue-700 hover:underline">Authors and Reviewers</Link>
+                    <Link href="/methodology" className="text-blue-700 hover:underline">Methodology</Link>
+                    <Link href="/data-sources" className="text-blue-700 hover:underline">Data Sources</Link>
+                </div>
+            </section>
+
         </div>
 
         {/* Footer */}

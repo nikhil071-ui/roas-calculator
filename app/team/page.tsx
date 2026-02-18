@@ -219,6 +219,11 @@ export default function Team() {
                 and stay updated on the latest changes in digital advertising platforms, privacy regulations (GDPR, CCPA), 
                 and web technologies.
             </p>
+            <div className="flex flex-wrap gap-3 mt-5">
+                <Link href="/authors" className="text-blue-700 hover:underline">Authors and Reviewers</Link>
+                <Link href="/methodology" className="text-blue-700 hover:underline">Methodology</Link>
+                <Link href="/data-sources" className="text-blue-700 hover:underline">Data Sources</Link>
+            </div>
         </div>
 
       </main>
