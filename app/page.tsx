@@ -142,7 +142,7 @@ export default function Home() {
                 >
                   Open Toolkit
                 </TrackedLink>
-                <Link href="/methodology" className="inline-flex items-center px-3 py-2 rounded-lg bg-white border border-emerald-300 text-emerald-900 font-semibold hover:bg-emerald-100 transition">
+                <Link href="/methodology" className="inline-flex items-center px-3 py-2 text-sm font-semibold text-emerald-900 underline underline-offset-2 hover:text-emerald-800 transition">
                   Review Methodology
                 </Link>
               </div>
@@ -180,15 +180,9 @@ export default function Home() {
                 Use these follow-up tools before changing budget so decisions are tied to CAC, LTV, and blended efficiency.
               </p>
               <div className="flex flex-wrap items-center gap-3">
-                <TrackedLink
-                  href="/ppc-toolkit"
-                  eventName="cta_click_ppc_toolkit"
-                  eventParams={{ source_page: "/", cta_module: "next_step_after_calculation", position: "above_fold" }}
-                  className="inline-flex items-center px-4 py-2 rounded-lg bg-indigo-600 text-white font-semibold hover:bg-indigo-700 transition"
-                  aria-label="Open PPC toolkit for ROAS CAC LTV and MER planning"
-                >
+                <Link href="/ppc-toolkit" className="text-sm font-semibold text-slate-700 hover:text-slate-900 underline underline-offset-2" aria-label="Open PPC toolkit for ROAS CAC LTV and MER planning">
                   Open PPC Toolkit
-                </TrackedLink>
+                </Link>
                 <Link href="/resources" className="text-sm font-semibold text-slate-700 hover:text-slate-900 underline underline-offset-2" aria-label="Download ROAS planning templates and checklists">
                   Download Templates
                 </Link>
@@ -225,35 +219,6 @@ export default function Home() {
   <AdBanner />
 </div>
 {/* ---------------- */}
-
-            {/* --- FEATURED PAGES (BOOST INDEXING) --- */}
-            <details className="mt-4 mb-12 bg-white border border-slate-200 rounded-2xl p-6">
-              <summary className="text-xl font-bold text-slate-900 cursor-pointer">Featured Pages</summary>
-              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mt-4">
-                <Link href="/roas/facebook-ads" className="group block bg-white p-6 rounded-xl shadow-sm border border-gray-200 hover:border-blue-500 hover:shadow-lg transition">
-                  <h3 className="font-bold text-lg text-slate-800 group-hover:text-blue-600">Facebook Ads ROAS Calculator</h3>
-                  <p className="text-sm text-gray-500 mt-2">Calculate break-even ROAS and profitability for Meta campaigns.</p>
-                </Link>
-                <Link href="/pdf/jpg-to-pdf" className="group block bg-white p-6 rounded-xl shadow-sm border border-gray-200 hover:border-red-500 hover:shadow-lg transition">
-                  <h3 className="font-bold text-lg text-slate-800 group-hover:text-red-600">JPG to PDF Converter (Direct)</h3>
-                  <p className="text-sm text-gray-500 mt-2">Convert photos to a clean PDF instantly - no watermark, no signup.</p>
-                </Link>
-                <TrackedLink
-                  href="/ppc-toolkit"
-                  eventName="cta_click_ppc_toolkit"
-                  eventParams={{ source_page: "/", cta_module: "featured_pages", position: "mid_content" }}
-                  className="group block bg-white p-6 rounded-xl shadow-sm border border-gray-200 hover:border-indigo-500 hover:shadow-lg transition"
-                  aria-label="Open PPC toolkit hub for ROAS CAC LTV and MER"
-                >
-                  <h3 className="font-bold text-lg text-slate-800 group-hover:text-indigo-600">PPC Toolkit</h3>
-                  <p className="text-sm text-gray-500 mt-2">ROAS, CAC, LTV, MER, and target CPA in one practical planning hub.</p>
-                </TrackedLink>
-                <Link href="/comparisons/roas-vs-roi-vs-mer-vs-acos" className="group block bg-white p-6 rounded-xl shadow-sm border border-gray-200 hover:border-purple-500 hover:shadow-lg transition">
-                  <h3 className="font-bold text-lg text-slate-800 group-hover:text-purple-600">ROAS vs ROI vs MER vs ACoS</h3>
-                  <p className="text-sm text-gray-500 mt-2">Choose the right metric for campaign and budget decisions.</p>
-                </Link>
-              </div>
-            </details>
 
             <section id="optimization-guide" className="mt-4 mb-12 bg-white border border-slate-200 rounded-2xl p-6 md:p-8">
               <h2 className="text-2xl font-bold text-slate-900 mb-2">What should you do next?</h2>
@@ -339,16 +304,6 @@ export default function Home() {
                   <h3 className="font-bold text-slate-800 group-hover:text-orange-600">Glossary</h3>
                   <p className="text-xs text-gray-500 mt-2">Marketing terms explained.</p>
                 </Link>
-                <TrackedLink
-                  href="/ppc-toolkit"
-                  eventName="cta_click_ppc_toolkit"
-                  eventParams={{ source_page: "/", cta_module: "resources_help_grid", position: "mid_content" }}
-                  className="group block bg-white p-5 rounded-xl shadow-sm border border-gray-200 hover:border-indigo-500 hover:shadow-lg transition text-center"
-                  aria-label="Open PPC toolkit from resources section"
-                >
-                  <h3 className="font-bold text-slate-800 group-hover:text-indigo-600">PPC Toolkit</h3>
-                  <p className="text-xs text-gray-500 mt-2">ROAS, CAC, LTV, MER and target CPA formulas.</p>
-                </TrackedLink>
                 <Link href="/about" className="group block bg-white p-5 rounded-xl shadow-sm border border-gray-200 hover:border-teal-500 hover:shadow-lg transition text-center">
                   <h3 className="font-bold text-slate-800 group-hover:text-teal-600">About Us</h3>
                   <p className="text-xs text-gray-500 mt-2">Meet our team and editorial standards.</p>

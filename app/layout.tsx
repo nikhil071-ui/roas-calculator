@@ -158,13 +158,13 @@ export default function RootLayout({
             </Link>
             
             {/* Navigation Links - SCROLLABLE ON MOBILE */}
-            <div className="flex gap-4 md:gap-8 text-sm font-medium text-gray-600 overflow-x-auto ml-4 whitespace-nowrap scrollbar-hide">
-              <Link href="/blog" className="hover:text-blue-600 transition">Blog</Link>
-              <Link href="/" className="hover:text-blue-600 transition">Home</Link>
-              <Link href="/ppc-toolkit" className="hover:text-blue-600 transition">PPC Toolkit</Link>
-              <Link href="/image-compressor" className="hover:text-blue-600 transition">Image Compressor</Link>
-              <Link href="/pdf-converter" className="hover:text-blue-600 transition">PDF Maker</Link>
-              <Link href="/currency-converter" className="hover:text-blue-600 transition">Currency</Link>
+            <div className="flex gap-4 md:gap-8 text-sm font-medium text-gray-600 overflow-x-auto ml-4 whitespace-nowrap">
+              <Link href="/blog" className="hover:text-blue-600 transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded-sm">Blog</Link>
+              <Link href="/" className="hover:text-blue-600 transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded-sm">Home</Link>
+              <Link href="/ppc-toolkit" className="hover:text-blue-600 transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded-sm">PPC Toolkit</Link>
+              <Link href="/image-compressor" className="hover:text-blue-600 transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded-sm">Image Compressor</Link>
+              <Link href="/pdf-converter" className="hover:text-blue-600 transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded-sm">PDF Maker</Link>
+              <Link href="/currency-converter" className="hover:text-blue-600 transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded-sm">Currency</Link>
             </div>
           </div>
         </nav>
