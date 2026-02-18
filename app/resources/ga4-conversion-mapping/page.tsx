@@ -66,6 +66,21 @@ export default function GA4ConversionMappingPage() {
                   <td className="border-t px-4 py-2">Clicks to PPC Toolkit from articles/comparisons</td>
                   <td className="border-t px-4 py-2 font-mono">source_page, cta_module, position</td>
                 </tr>
+                <tr>
+                  <td className="border-t px-4 py-2 font-mono">calculator_complete</td>
+                  <td className="border-t px-4 py-2">Successful calculator result state generated</td>
+                  <td className="border-t px-4 py-2 font-mono">calculator_type, result_state, roas_value, break_even_value</td>
+                </tr>
+                <tr>
+                  <td className="border-t px-4 py-2 font-mono">result_export_click</td>
+                  <td className="border-t px-4 py-2">User exports calculator report</td>
+                  <td className="border-t px-4 py-2 font-mono">calculator_type, export_type</td>
+                </tr>
+                <tr>
+                  <td className="border-t px-4 py-2 font-mono">calculator_preset_selected</td>
+                  <td className="border-t px-4 py-2">Preset chosen before calculation</td>
+                  <td className="border-t px-4 py-2 font-mono">calculator_type, preset</td>
+                </tr>
               </tbody>
             </table>
           </div>
@@ -75,10 +90,23 @@ export default function GA4ConversionMappingPage() {
           <h2 className="text-2xl font-bold">Page to Event Mapping</h2>
           <ul className="list-disc pl-5 mt-3 text-slate-700 space-y-2">
             <li>Homepage and `/roas/*` pages: `calculator_start`, `calculator_submit`.</li>
+            <li>Result generation: `calculator_complete`.</li>
+            <li>Report download actions: `result_export_click`.</li>
+            <li>Preset usage analysis: `calculator_preset_selected`.</li>
             <li>`/resources` and template links: `template_download`.</li>
             <li>CTA modules on blog/comparison pages: `cta_click_ppc_toolkit`.</li>
-            <li>Mark `calculator_submit` and `template_download` as GA4 conversions.</li>
+            <li>Mark `calculator_complete`, `template_download`, and `cta_click_ppc_toolkit` as primary GA4 conversions.</li>
           </ul>
+        </section>
+
+        <section className="mt-8">
+          <h2 className="text-2xl font-bold">Recommended Conversion Funnel</h2>
+          <ol className="list-decimal pl-5 mt-3 text-slate-700 space-y-2">
+            <li>Landing: page_view on calculator page.</li>
+            <li>Engagement: `calculator_start`.</li>
+            <li>Completion: `calculator_complete`.</li>
+            <li>Next-step click: `cta_click_ppc_toolkit` or `template_download`.</li>
+          </ol>
         </section>
 
         <section className="mt-8">
@@ -94,4 +122,3 @@ export default function GA4ConversionMappingPage() {
     </div>
   );
 }
-

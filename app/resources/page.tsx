@@ -20,6 +20,9 @@ export const metadata: Metadata = {
     "backlink outreach tracker",
     "guest post topic ideas",
     "outreach email templates",
+    "seo checklist",
+    "gsc index prune log",
+    "ctr title test matrix",
     "marketing templates",
   ],
   openGraph: {
@@ -52,6 +55,19 @@ export default function ResourcesPage() {
         </div>
 
         <div className="grid md:grid-cols-2 gap-6">
+          <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+            <h2 className="text-xl font-bold text-slate-900">SEO 9/10 Gap Checklist (Ops Pack)</h2>
+            <p className="text-slate-600 mt-2">
+              Strict pass/fail checklist and execution logs for backlinks, CTR testing, benchmark refreshes, and GSC pruning.
+            </p>
+            <Link
+              href="/resources/seo-9of10-checklist"
+              className="inline-block mt-4 bg-slate-900 text-white px-4 py-2 rounded-lg font-semibold hover:bg-slate-800 transition"
+            >
+              Open SEO Checklist
+            </Link>
+          </div>
+
           <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
             <h2 className="text-xl font-bold text-slate-900">Backlink Outreach Playbook (CSV + TXT)</h2>
             <p className="text-slate-600 mt-2">

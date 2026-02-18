@@ -1,0 +1,7 @@
+url,index_status,gsc_reason,cluster,primary_or_support,last_90d_clicks,last_90d_impressions,decision,action_owner,action_due_date,merge_target,canonical_target,notes
+/blog/roas-benchmarks,Excluded,Duplicate with better canonical,benchmarks,support,0,0,Prune,SEO Team,,,,Legacy benchmark page points to 2026 page
+/blog/roas-benchmarks-2026,Indexed,,benchmarks,primary,0,0,Keep,SEO Team,,,,Quarterly refresh candidate
+/industry/shopify/roas-calculator,Indexed,,programmatic,primary,0,0,Keep,SEO Team,,,,Track performance after 90 days
+/industry/real-estate/roas-calculator,Indexed,,programmatic,support,0,0,Review,SEO Team,,,,Merge if no traction in 120 days
+/platform/linkedin-ads/roas-calculator,Indexed,,programmatic,support,0,0,Review,SEO Team,,,,Likely low volume, test title variant
+/roas-scenarios/agency-client-roas-reporting,Indexed,,scenario,support,0,0,Keep,SEO Team,,,,Useful for outreach links

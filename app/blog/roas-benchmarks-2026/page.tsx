@@ -215,6 +215,15 @@ export default function RoasBenchmarks2026Page() {
           <section className="text-sm text-slate-500 border-t border-slate-200 pt-6">
             Reviewed by ROAS Tools Editorial Team. Published and updated on February 18, 2026.
           </section>
+          <section className="bg-slate-50 rounded-xl p-6 border border-slate-200">
+            <h2 className="text-2xl font-bold text-slate-900 mb-3">Quarterly Refresh Cadence</h2>
+            <p className="text-slate-700 mb-3">
+              This benchmark page is reviewed quarterly to keep ranges and citations current as ad platform dynamics change.
+            </p>
+            <a href="/resources/quarterly-benchmark-refresh-log.csv" download className="text-blue-700 hover:underline">
+              Download Benchmark Refresh Log
+            </a>
+          </section>
 
           <section className="bg-slate-50 rounded-xl p-6 border border-slate-200">
             <h2 className="text-2xl font-bold text-slate-900 mb-3">Related Calculators</h2>
