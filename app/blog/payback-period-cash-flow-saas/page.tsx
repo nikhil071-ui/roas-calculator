@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import BlogInternalLinks from "@/app/components/BlogInternalLinks";
 
 export const metadata: Metadata = {
   title: "SaaS CAC Payback Period and Cash Flow: Practical Guide (2026)",
@@ -141,6 +142,17 @@ export default function PaybackCashFlowGuidePage() {
               <Link href="/resources" className="text-blue-700 hover:underline">Templates Library</Link>
             </div>
           </section>
+          <BlogInternalLinks
+            title="SaaS Profitability Link Map"
+            description="Move from cash flow analysis to CAC, LTV, and payback execution."
+            links={[
+              { href: "/payback-period-calculator", label: "CAC Payback Calculator" },
+              { href: "/ltv-calculator", label: "LTV Calculator" },
+              { href: "/cac-calculator", label: "CAC Calculator" },
+              { href: "/profitability/ads", label: "Ad Profitability Hub" },
+              { href: "/ppc-toolkit", label: "PPC Toolkit" },
+            ]}
+          />
         </article>
       </main>
     </div>

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import BlogInternalLinks from "@/app/components/BlogInternalLinks";
 
 export const metadata: Metadata = {
   title: "Attribution Models and ROAS: How Interpretation Changes (2026)",
@@ -143,6 +144,17 @@ export default function AttributionImpactOnROASPage() {
               <Link href="/ppc-toolkit" className="text-blue-700 hover:underline">PPC Toolkit</Link>
             </div>
           </section>
+          <BlogInternalLinks
+            title="Attribution to Action Links"
+            description="Validate attribution insights with execution and profitability calculators."
+            links={[
+              { href: "/comparisons/roas-vs-roi-vs-mer-vs-acos", label: "ROAS vs ROI vs MER vs ACoS" },
+              { href: "/mer-calculator", label: "MER Calculator" },
+              { href: "/roas/google-ads", label: "Google Ads ROAS Calculator" },
+              { href: "/ppc-toolkit", label: "PPC Toolkit" },
+              { href: "/learn/roas", label: "ROAS Education Hub" },
+            ]}
+          />
         </article>
       </main>
     </div>

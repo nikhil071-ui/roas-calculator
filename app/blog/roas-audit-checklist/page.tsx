@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import BlogInternalLinks from "@/app/components/BlogInternalLinks";
 
 export const metadata: Metadata = {
   title: "ROAS Audit Checklist: Technical, Funnel, and Profitability",
@@ -33,6 +34,17 @@ export default function RoasAuditChecklistPage() {
             <Link href="/profitability/ads" className="px-4 py-2 rounded-lg bg-emerald-600 text-white font-semibold hover:bg-emerald-700 transition">Profitability Hub</Link>
           </div>
         </div>
+        <BlogInternalLinks
+          title="Audit to Calculator Path"
+          description="Convert audit findings into measurable action on key calculators."
+          links={[
+            { href: "/", label: "ROAS Calculator" },
+            { href: "/break-even-roas-by-margin", label: "Break-even ROAS by Margin" },
+            { href: "/mer-calculator", label: "MER Calculator" },
+            { href: "/resources/roas-planning-template", label: "ROAS Planning Template" },
+            { href: "/ppc-toolkit", label: "PPC Toolkit" },
+          ]}
+        />
       </article>
     </main>
   );

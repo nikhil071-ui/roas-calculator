@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowLeft, TrendingUp } from "lucide-react";
 import type { Metadata } from "next";
+import BlogInternalLinks from "@/app/components/BlogInternalLinks";
 
 export const metadata: Metadata = {
   title: "Facebook Ads ROAS Case Study (2026): 1.8x to 5.2x in 90 Days",
@@ -485,6 +486,17 @@ export default function RoasCaseStudy() {
               Try ROAS Calculator
             </Link>
           </div>
+          <BlogInternalLinks
+            title="Case Study Internal Links"
+            description="Use these pages to replicate this ROAS improvement workflow on your own account."
+            links={[
+              { href: "/roas/facebook-ads", label: "Facebook Ads ROAS Calculator" },
+              { href: "/break-even-roas-by-margin", label: "Break-even ROAS by Margin" },
+              { href: "/ppc-toolkit", label: "PPC Toolkit" },
+              { href: "/comparisons/mer-vs-roas", label: "MER vs ROAS Guide" },
+              { href: "/cac-calculator", label: "CAC Calculator" },
+            ]}
+          />
         </article>
       </main>
     </div>

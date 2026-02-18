@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import BlogInternalLinks from "@/app/components/BlogInternalLinks";
 
 export const metadata: Metadata = {
   title: "How to Improve ROAS Without Raising Budget (Practical Framework)",
@@ -33,6 +34,17 @@ export default function ImproveRoasWithoutBudgetPage() {
             <Link href="/ppc-toolkit" className="px-4 py-2 rounded-lg bg-indigo-600 text-white font-semibold hover:bg-indigo-700 transition">Open PPC Toolkit</Link>
           </div>
         </div>
+        <BlogInternalLinks
+          title="Optimization Link Map"
+          description="Use these calculators before raising budget."
+          links={[
+            { href: "/", label: "ROAS Calculator" },
+            { href: "/roas/target-cpa", label: "Target CPA Calculator" },
+            { href: "/comparisons/cac-vs-cpa-vs-roas", label: "CAC vs CPA vs ROAS" },
+            { href: "/ppc-toolkit", label: "PPC Toolkit" },
+            { href: "/optimize/roas", label: "ROAS Optimization Hub" },
+          ]}
+        />
       </article>
     </main>
   );

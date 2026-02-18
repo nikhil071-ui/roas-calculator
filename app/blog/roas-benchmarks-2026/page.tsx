@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import BlogInternalLinks from "@/app/components/BlogInternalLinks";
 
 export const metadata: Metadata = {
   title: "ROAS Benchmarks 2026: Industry and Channel Targets + Formula",
@@ -237,6 +238,17 @@ export default function RoasBenchmarks2026Page() {
               <Link href="/comparisons/mer-vs-roas" className="text-blue-700 hover:underline">MER vs ROAS Guide</Link>
             </div>
           </section>
+          <BlogInternalLinks
+            title="Internal Calculator Path"
+            description="Use benchmark context, then calculate your break-even and channel-level action plan."
+            links={[
+              { href: "/roas/google-ads", label: "Google Ads ROAS Calculator" },
+              { href: "/roas/facebook-ads", label: "Facebook Ads ROAS Calculator" },
+              { href: "/break-even-roas-by-margin", label: "Break-even ROAS by Margin" },
+              { href: "/ppc-toolkit", label: "PPC Toolkit" },
+              { href: "/benchmarks/roas", label: "ROAS Benchmarks Hub" },
+            ]}
+          />
         </article>
       </main>
     </div>

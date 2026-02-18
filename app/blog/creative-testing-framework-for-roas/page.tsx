@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import BlogInternalLinks from "@/app/components/BlogInternalLinks";
 
 export const metadata: Metadata = {
   title: "Creative Testing Framework for ROAS Improvement",
@@ -34,6 +35,17 @@ export default function CreativeTestingFrameworkPage() {
             <Link href="/resources/roas-planning-template" className="px-4 py-2 rounded-lg bg-white border border-slate-300 text-slate-900 font-semibold hover:bg-slate-100 transition">Planning Template</Link>
           </div>
         </div>
+        <BlogInternalLinks
+          title="Creative to Revenue Link Map"
+          description="Tie creative testing outcomes to channel ROAS and planning workflows."
+          links={[
+            { href: "/roas/facebook-ads", label: "Facebook Ads ROAS Calculator" },
+            { href: "/roas/tiktok-ads", label: "TikTok Ads ROAS Calculator" },
+            { href: "/optimize/roas", label: "ROAS Optimization Hub" },
+            { href: "/resources/roas-planning-template", label: "ROAS Planning Template" },
+            { href: "/ppc-toolkit", label: "PPC Toolkit" },
+          ]}
+        />
       </article>
     </main>
   );

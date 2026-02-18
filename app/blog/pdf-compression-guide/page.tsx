@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowLeft, FileText } from "lucide-react";
 import type { Metadata } from "next";
+import BlogInternalLinks from "@/app/components/BlogInternalLinks";
 
 export const metadata: Metadata = {
   title: "PDF Compression Guide 2026: Best Practices and Test Results",
@@ -447,6 +448,17 @@ export default function PDFCompressionGuide() {
               Open PDF Converter
             </Link>
           </div>
+          <BlogInternalLinks
+            title="Document Workflow Internal Links"
+            description="Link document utility traffic into ROAS and planning calculators."
+            links={[
+              { href: "/pdf-converter", label: "PDF Converter" },
+              { href: "/image-compressor", label: "Image Compressor" },
+              { href: "/", label: "ROAS Calculator" },
+              { href: "/ppc-toolkit", label: "PPC Toolkit" },
+              { href: "/resources", label: "Templates Library" },
+            ]}
+          />
         </article>
       </main>
     </div>

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowLeft, DollarSign } from "lucide-react";
 import type { Metadata } from "next";
+import BlogInternalLinks from "@/app/components/BlogInternalLinks";
 
 export const metadata: Metadata = {
   title: "Currency Exchange Guide 2026: Real-Time Rates and Hidden Fees",
@@ -428,6 +429,17 @@ export default function CurrencyExchangeGuide() {
               Open Currency Converter
             </Link>
           </div>
+          <BlogInternalLinks
+            title="Marketing Finance Internal Links"
+            description="If you run cross-border ads, connect exchange-rate planning with ROAS and MER analysis."
+            links={[
+              { href: "/currency-converter", label: "Currency Converter" },
+              { href: "/roas/google-shopping-roas", label: "Google Shopping ROAS Calculator" },
+              { href: "/mer-calculator", label: "MER Calculator" },
+              { href: "/ppc-toolkit", label: "PPC Toolkit" },
+              { href: "/", label: "ROAS Calculator" },
+            ]}
+          />
         </article>
       </main>
     </div>

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import BlogInternalLinks from "@/app/components/BlogInternalLinks";
 
 export const metadata: Metadata = {
   title: "When to Scale or Pause Campaigns: ROAS Decision Thresholds",
@@ -55,6 +56,17 @@ export default function ScaleOrPauseCampaignsPage() {
             <Link href="/payback-period-calculator" className="px-4 py-2 rounded-lg bg-indigo-600 text-white font-semibold hover:bg-indigo-700 transition">Payback Calculator</Link>
           </div>
         </div>
+        <BlogInternalLinks
+          title="Scale/Pause Decision Links"
+          description="Use break-even and payback thresholds before changing campaign budgets."
+          links={[
+            { href: "/roas/break-even-roas", label: "Break-even ROAS Calculator" },
+            { href: "/payback-period-calculator", label: "CAC Payback Calculator" },
+            { href: "/roas/facebook-ads", label: "Facebook Ads ROAS Calculator" },
+            { href: "/ppc-toolkit", label: "PPC Toolkit" },
+            { href: "/optimize/roas", label: "ROAS Optimization Hub" },
+          ]}
+        />
       </article>
     </main>
   );

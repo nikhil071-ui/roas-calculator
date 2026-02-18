@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowLeft, BookOpen, CheckCircle } from "lucide-react";
 import type { Metadata } from "next";
+import BlogInternalLinks from "@/app/components/BlogInternalLinks";
 
 export const metadata: Metadata = {
   title: "Image Compression vs Quality (2026): Technical Guide and Test Data",
@@ -446,6 +447,17 @@ export default function ImageCompressionTechnical() {
               Open Image Compressor
             </Link>
           </div>
+          <BlogInternalLinks
+            title="Utility to Revenue Links"
+            description="Route utility traffic into calculator and planning pages."
+            links={[
+              { href: "/image-compressor", label: "Image Compressor" },
+              { href: "/pdf-converter", label: "JPG to PDF Converter" },
+              { href: "/", label: "ROAS Calculator" },
+              { href: "/ppc-toolkit", label: "PPC Toolkit" },
+              { href: "/resources", label: "Templates Library" },
+            ]}
+          />
         </article>
       </main>
     </div>

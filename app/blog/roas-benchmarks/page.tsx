@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowLeft, BarChart3 } from "lucide-react";
 import type { Metadata } from "next";
+import BlogInternalLinks from "@/app/components/BlogInternalLinks";
 
 export const metadata: Metadata = {
   title: "ROAS Benchmarks by Industry: What's Normal & How to Improve",
@@ -506,6 +507,17 @@ export default function RoasBenchmarks() {
           <section className="text-sm text-slate-500 border-t border-slate-200 pt-6">
             Reviewed by ROAS Tools Editorial Team. Updated February 18, 2026.
           </section>
+          <BlogInternalLinks
+            title="Benchmark to Calculator Link Map"
+            description="Move from directional benchmark data to account-level calculation and planning."
+            links={[
+              { href: "/roas/google-ads", label: "Google Ads ROAS Calculator" },
+              { href: "/roas/facebook-ads", label: "Facebook Ads ROAS Calculator" },
+              { href: "/break-even-roas-by-margin", label: "Break-even ROAS by Margin" },
+              { href: "/ppc-toolkit", label: "PPC Toolkit" },
+              { href: "/benchmarks/roas", label: "ROAS Benchmarks Hub" },
+            ]}
+          />
         </article>
       </main>
     </div>
