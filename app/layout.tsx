@@ -59,6 +59,13 @@ export default function RootLayout({
         
         {/* --- GOOGLE SEARCH CONSOLE VERIFICATION --- */}
         <meta name="google-site-verification" content="google07479700bcc28a6c" />
+
+        {/* --- PERFORMANCE HINTS --- */}
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
+        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+        <link rel="preconnect" href="https://pagead2.googlesyndication.com" />
+        <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com" />
+        <link rel="preload" as="image" href="/og-image.png" />
         
         {/* --- GOOGLE ANALYTICS 4 --- */}
         <Script

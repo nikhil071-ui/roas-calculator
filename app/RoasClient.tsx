@@ -1,7 +1,7 @@
 "use client";
 
-import { useRef, useState } from "react";
-import { Download, Calculator, DollarSign, TrendingUp, AlertTriangle, RefreshCcw, ShoppingBag, BarChart3, RotateCcw } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
+import { Download, Calculator, DollarSign, TrendingUp, AlertTriangle, RefreshCcw, ShoppingBag, BarChart3, RotateCcw, Share2 } from "lucide-react";
 
 type RoasResults = {
   roas: string;
@@ -24,7 +24,19 @@ export default function RoasClient() {
   const [validationError, setValidationError] = useState("");
   const [hasTrackedStart, setHasTrackedStart] = useState(false);
   const [exporting, setExporting] = useState(false);
+  const [shareStatus, setShareStatus] = useState<"idle" | "done" | "error">("idle");
+  const [showStickyCta, setShowStickyCta] = useState(false);
   const calculateButtonRef = useRef<HTMLButtonElement | null>(null);
+
+  useEffect(() => {
+    const onScroll = () => {
+      setShowStickyCta(window.scrollY > 280);
+    };
+
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   const sendAnalyticsEvent = async (
     eventName: string,
@@ -32,6 +44,35 @@ export default function RoasClient() {
   ) => {
     const { trackEvent } = await import("@/app/lib/analytics");
     trackEvent(eventName, params);
+  };
+
+  const sendServerCompletionLog = (payload: {
+    calculator_type: string;
+    result_state: string;
+    roas_value: number;
+    break_even_value: number | null;
+  }) => {
+    if (typeof window === "undefined") return;
+    const consent = window.localStorage.getItem("analytics_consent");
+    if (consent !== "granted") return;
+
+    const body = JSON.stringify({
+      ...payload,
+      event_time: new Date().toISOString(),
+    });
+
+    if (navigator.sendBeacon) {
+      const blob = new Blob([body], { type: "application/json" });
+      navigator.sendBeacon("/api/analytics/calculator-complete", blob);
+      return;
+    }
+
+    void fetch("/api/analytics/calculator-complete", {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body,
+      keepalive: true,
+    });
   };
 
   const applyPreset = (preset: "ecommerce" | "saas" | "leadgen") => {
@@ -104,6 +145,12 @@ export default function RoasClient() {
       result_state: resultState,
     });
     void sendAnalyticsEvent("calculator_complete", {
+      calculator_type: "roas",
+      result_state: resultState,
+      roas_value: Number(roas.toFixed(2)),
+      break_even_value: breakEvenRoas ? Number(breakEvenRoas.toFixed(2)) : null,
+    });
+    sendServerCompletionLog({
       calculator_type: "roas",
       result_state: resultState,
       roas_value: Number(roas.toFixed(2)),
@@ -258,6 +305,28 @@ export default function RoasClient() {
       doc.save("ROAS_Professional_Report.pdf");
     } finally {
       setExporting(false);
+    }
+  };
+
+  const copyShareSummary = async () => {
+    if (!results) return;
+
+    const shareText = [
+      `ROAS: ${results.roas}x`,
+      `Net Profit: $${results.profit}`,
+      `Break-even: ${results.breakEven === "N/A" ? "N/A" : `${results.breakEven}x`}`,
+      `Calculated with ROAS Tools: https://roas-calculator.tech/`,
+    ].join(" | ");
+
+    try {
+      await navigator.clipboard.writeText(shareText);
+      setShareStatus("done");
+      void sendAnalyticsEvent("result_share_click", {
+        calculator_type: "roas",
+        share_type: "clipboard",
+      });
+    } catch {
+      setShareStatus("error");
     }
   };
 
@@ -480,28 +549,50 @@ export default function RoasClient() {
                             </div>
                         </div>
 
-                        {/* PDF BUTTON */}
-                        <button
-                            onClick={downloadReport}
-                            disabled={exporting}
-                            className="w-full bg-slate-800 hover:bg-slate-900 text-white py-4 rounded-xl font-bold flex items-center justify-center gap-3 transition shadow-lg hover:shadow-slate-500/20"
-                            aria-label="Download campaign results as a PDF report"
-                        >
-                            <Download size={20} aria-hidden="true" focusable="false" /> {exporting ? "Preparing PDF..." : "Download PDF Report"}
-                        </button>
+                        <div className="grid sm:grid-cols-2 gap-3">
+                          <button
+                              onClick={downloadReport}
+                              disabled={exporting}
+                              className="w-full bg-slate-800 hover:bg-slate-900 text-white py-4 rounded-xl font-bold flex items-center justify-center gap-3 transition shadow-lg hover:shadow-slate-500/20"
+                              aria-label="Download campaign results as a PDF report"
+                          >
+                              <Download size={20} aria-hidden="true" focusable="false" /> {exporting ? "Preparing PDF..." : "Download PDF Report"}
+                          </button>
+                          <button
+                              onClick={copyShareSummary}
+                              className="w-full bg-white border border-slate-300 hover:bg-slate-100 text-slate-900 py-4 rounded-xl font-bold flex items-center justify-center gap-3 transition"
+                              aria-label="Copy result summary for sharing"
+                          >
+                              <Share2 size={20} aria-hidden="true" focusable="false" /> Copy Summary
+                          </button>
+                        </div>
+                        {shareStatus === "done" ? <p className="text-xs text-green-700">Summary copied to clipboard.</p> : null}
+                        {shareStatus === "error" ? <p className="text-xs text-red-600">Could not copy summary. Please try again.</p> : null}
                     </div>
                 )}
             </div>
         </div>
       </div>
-      <button
-        type="button"
-        onClick={scrollToCalculate}
-        className="md:hidden fixed bottom-4 left-4 right-4 z-40 bg-blue-600 text-white font-bold py-3 rounded-xl shadow-lg hover:bg-blue-700 transition"
-        aria-label="Scroll to calculator action button"
-      >
-        Calculate ROAS
-      </button>
+      {showStickyCta ? (
+        <>
+          <button
+            type="button"
+            onClick={scrollToCalculate}
+            className="md:hidden fixed bottom-4 left-4 right-4 z-40 bg-blue-600 text-white font-bold py-3 rounded-xl shadow-lg hover:bg-blue-700 transition"
+            aria-label="Scroll to calculator action button"
+          >
+            Calculate ROAS
+          </button>
+          <button
+            type="button"
+            onClick={scrollToCalculate}
+            className="hidden md:inline-flex fixed bottom-6 right-6 z-40 bg-blue-600 text-white font-bold px-5 py-3 rounded-xl shadow-lg hover:bg-blue-700 transition"
+            aria-label="Scroll to calculator action button"
+          >
+            Calculate ROAS
+          </button>
+        </>
+      ) : null}
     </div>
   );
 }

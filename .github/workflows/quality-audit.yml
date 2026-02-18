@@ -1,0 +1,60 @@
+name: Quality Audit
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install
+        run: npm ci
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Build
+        run: npm run build
+
+      - name: Start App
+        run: npm run start &
+
+      - name: Wait for App
+        run: |
+          for i in {1..45}; do
+            if curl -sSf http://127.0.0.1:3000 > /dev/null; then
+              echo "App is ready"
+              exit 0
+            fi
+            sleep 2
+          done
+          echo "App did not start in time"
+          exit 1
+
+      - name: Run Lighthouse + Axe
+        env:
+          AUDIT_URL: http://127.0.0.1:3000
+        run: npm run audit:ci
+
+      - name: Upload Lighthouse Report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: lighthouse-ci-report
+          path: lighthouse-ci.json
