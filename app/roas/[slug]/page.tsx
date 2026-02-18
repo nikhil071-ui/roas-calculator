@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import TrackedLink from "@/app/components/TrackedLink";
 // Go up two levels to 'app' to find the RoasClient (It is in the root app folder)
 import RoasClient from "../../RoasClient"; 
 import AdBanner from "../../AdBanner"; 
@@ -262,9 +263,14 @@ export default async function DynamicRoasPage({ params }: { params: Promise<{ sl
             Validate your result with CAC, LTV, and MER before scaling budget so decisions stay tied to full unit economics.
           </p>
           <div className="flex flex-wrap gap-3">
-            <Link href="/ppc-toolkit" className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold px-4 py-2 rounded-lg">
+            <TrackedLink
+              href="/ppc-toolkit"
+              eventName="cta_click_ppc_toolkit"
+              eventParams={{ source_page: `/roas/${slug}`, cta_module: "post_calculation_action", position: "above_fold" }}
+              className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold px-4 py-2 rounded-lg"
+            >
               Open PPC Toolkit
-            </Link>
+            </TrackedLink>
             <Link href="/resources" className="inline-block bg-white hover:bg-gray-100 text-gray-900 font-semibold px-4 py-2 rounded-lg border border-gray-300">
               Download Planning Templates
             </Link>
@@ -387,9 +393,14 @@ export default async function DynamicRoasPage({ params }: { params: Promise<{ sl
               For deeper planning, combine ROAS with CAC, LTV, MER, and target CPA in our toolkit and downloadable planning sheets.
             </p>
             <div className="flex flex-wrap gap-3">
-              <Link href="/ppc-toolkit" className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold px-4 py-2 rounded-lg">
+              <TrackedLink
+                href="/ppc-toolkit"
+                eventName="cta_click_ppc_toolkit"
+                eventParams={{ source_page: `/roas/${slug}`, cta_module: "profitability_model", position: "mid_content" }}
+                className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold px-4 py-2 rounded-lg"
+              >
                 Open PPC Toolkit
-              </Link>
+              </TrackedLink>
               <Link href="/resources" className="inline-block bg-white hover:bg-gray-100 text-gray-900 font-semibold px-4 py-2 rounded-lg border border-gray-300">
                 Download Planning Templates
               </Link>

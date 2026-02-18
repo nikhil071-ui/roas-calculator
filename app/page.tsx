@@ -3,6 +3,7 @@ import Link from "next/link";
 import RoasClient from "./RoasClient";
 import AdBanner from "./AdBanner"; // <--- LINE 1: IMPORT ADDED
 import { SITE_URL } from "./seo";
+import TrackedLink from "@/app/components/TrackedLink";
 
 export const metadata: Metadata = {
   title: "Free ROAS Calculator | Calculate Profit & Break-Even 2026",
@@ -84,9 +85,14 @@ export default function Home() {
                 Use these follow-up tools before changing budget so decisions are tied to CAC, LTV, and blended efficiency.
               </p>
               <div className="flex flex-wrap gap-3">
-                <Link href="/ppc-toolkit" className="inline-flex items-center px-4 py-2 rounded-lg bg-indigo-600 text-white font-semibold hover:bg-indigo-700 transition">
+                <TrackedLink
+                  href="/ppc-toolkit"
+                  eventName="cta_click_ppc_toolkit"
+                  eventParams={{ source_page: "/", cta_module: "next_step_after_calculation", position: "above_fold" }}
+                  className="inline-flex items-center px-4 py-2 rounded-lg bg-indigo-600 text-white font-semibold hover:bg-indigo-700 transition"
+                >
                   Open PPC Toolkit
-                </Link>
+                </TrackedLink>
                 <Link href="/resources" className="inline-flex items-center px-4 py-2 rounded-lg bg-white border border-slate-300 text-slate-900 font-semibold hover:bg-slate-50 transition">
                   Download Templates
                 </Link>
@@ -144,10 +150,15 @@ export default function Home() {
                   <h3 className="font-bold text-lg text-slate-800 group-hover:text-red-600">JPG to PDF Converter (Direct)</h3>
                   <p className="text-sm text-gray-500 mt-2">Convert photos to a clean PDF instantly - no watermark, no signup.</p>
                 </Link>
-                <Link href="/ppc-toolkit" className="group block bg-white p-6 rounded-xl shadow-sm border border-gray-200 hover:border-indigo-500 hover:shadow-lg transition">
+                <TrackedLink
+                  href="/ppc-toolkit"
+                  eventName="cta_click_ppc_toolkit"
+                  eventParams={{ source_page: "/", cta_module: "featured_pages", position: "mid_content" }}
+                  className="group block bg-white p-6 rounded-xl shadow-sm border border-gray-200 hover:border-indigo-500 hover:shadow-lg transition"
+                >
                   <h3 className="font-bold text-lg text-slate-800 group-hover:text-indigo-600">PPC Toolkit</h3>
                   <p className="text-sm text-gray-500 mt-2">ROAS, CAC, LTV, MER, and target CPA in one practical planning hub.</p>
-                </Link>
+                </TrackedLink>
                 <Link href="/comparisons/roas-vs-roi-vs-mer-vs-acos" className="group block bg-white p-6 rounded-xl shadow-sm border border-gray-200 hover:border-purple-500 hover:shadow-lg transition">
                   <h3 className="font-bold text-lg text-slate-800 group-hover:text-purple-600">ROAS vs ROI vs MER vs ACoS</h3>
                   <p className="text-sm text-gray-500 mt-2">Choose the right metric for campaign and budget decisions.</p>
@@ -161,10 +172,15 @@ export default function Home() {
                 Pick the path that matches your goal, then use the right calculator and framework.
               </p>
               <div className="grid md:grid-cols-3 gap-4">
-                <Link href="/ppc-toolkit" className="block rounded-xl border border-indigo-200 bg-indigo-50 p-4 hover:border-indigo-400 transition">
+                <TrackedLink
+                  href="/ppc-toolkit"
+                  eventName="cta_click_ppc_toolkit"
+                  eventParams={{ source_page: "/", cta_module: "what_should_you_do_next", position: "mid_content" }}
+                  className="block rounded-xl border border-indigo-200 bg-indigo-50 p-4 hover:border-indigo-400 transition"
+                >
                   <h3 className="font-bold text-slate-900">Plan full funnel economics</h3>
                   <p className="text-sm text-slate-600 mt-1">Use ROAS, CAC, LTV, MER, and target CPA together.</p>
-                </Link>
+                </TrackedLink>
                 <Link href="/comparisons/roas-vs-roi-vs-mer-vs-acos" className="block rounded-xl border border-blue-200 bg-blue-50 p-4 hover:border-blue-400 transition">
                   <h3 className="font-bold text-slate-900">Choose the right metric</h3>
                   <p className="text-sm text-slate-600 mt-1">Compare ROAS, ROI, MER, and ACoS by decision type.</p>
@@ -212,10 +228,15 @@ export default function Home() {
                   <h3 className="font-bold text-slate-800 group-hover:text-teal-600"> About Us</h3>
                   <p className="text-xs text-gray-500 mt-2">Meet our expert team.</p>
                 </Link>
-                <Link href="/ppc-toolkit" className="group block bg-white p-5 rounded-xl shadow-sm border border-gray-200 hover:border-indigo-500 hover:shadow-lg transition text-center">
+                <TrackedLink
+                  href="/ppc-toolkit"
+                  eventName="cta_click_ppc_toolkit"
+                  eventParams={{ source_page: "/", cta_module: "resources_help_grid", position: "mid_content" }}
+                  className="group block bg-white p-5 rounded-xl shadow-sm border border-gray-200 hover:border-indigo-500 hover:shadow-lg transition text-center"
+                >
                   <h3 className="font-bold text-slate-800 group-hover:text-indigo-600"> PPC Toolkit</h3>
                   <p className="text-xs text-gray-500 mt-2">ROAS, CAC, LTV, MER and target CPA formulas.</p>
-                </Link>
+                </TrackedLink>
                 <Link href="/cac-calculator" className="group block bg-white p-5 rounded-xl shadow-sm border border-gray-200 hover:border-blue-500 hover:shadow-lg transition text-center">
                   <h3 className="font-bold text-slate-800 group-hover:text-blue-600"> CAC Calculator</h3>
                   <p className="text-xs text-gray-500 mt-2">Track customer acquisition cost and decision thresholds.</p>

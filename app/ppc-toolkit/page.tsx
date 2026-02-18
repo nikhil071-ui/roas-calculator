@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import TrackedDownloadLink from "@/app/components/TrackedDownloadLink";
 
 export const metadata: Metadata = {
   title: "PPC Toolkit: ROAS, CAC, LTV, MER, Target CPA",
@@ -169,12 +170,24 @@ export default function PPCToolkitPage() {
             Download scenario planners and budget models for weekly performance reviews and stakeholder reporting.
           </p>
           <div className="flex flex-wrap gap-3">
-            <a href="/resources/roas-scenario-planner.csv" download className="px-4 py-2 rounded-lg bg-blue-600 hover:bg-blue-700 font-semibold">
+            <TrackedDownloadLink
+              href="/resources/roas-scenario-planner.csv"
+              templateName="roas_scenario_planner"
+              fileType="csv"
+              sourcePage="/ppc-toolkit"
+              className="px-4 py-2 rounded-lg bg-blue-600 hover:bg-blue-700 font-semibold"
+            >
               Download Scenario Planner
-            </a>
-            <a href="/resources/ppc-budget-planner.csv" download className="px-4 py-2 rounded-lg bg-white text-slate-900 hover:bg-slate-100 font-semibold">
+            </TrackedDownloadLink>
+            <TrackedDownloadLink
+              href="/resources/ppc-budget-planner.csv"
+              templateName="ppc_budget_planner"
+              fileType="csv"
+              sourcePage="/ppc-toolkit"
+              className="px-4 py-2 rounded-lg bg-white text-slate-900 hover:bg-slate-100 font-semibold"
+            >
               Download Budget Planner
-            </a>
+            </TrackedDownloadLink>
           </div>
         </section>
       </main>

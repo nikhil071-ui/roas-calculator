@@ -3,6 +3,7 @@
 import { useState } from "react";
 import jsPDF from "jspdf";
 import { Download, Calculator, DollarSign, TrendingUp, AlertTriangle, RefreshCcw, ShoppingBag, BarChart3, RotateCcw } from "lucide-react";
+import { trackEvent } from "@/app/lib/analytics";
 
 type RoasResults = {
   roas: string;
@@ -22,6 +23,7 @@ export default function RoasClient() {
   const [orders, setOrders] = useState<number | string>("");
 
   const [results, setResults] = useState<RoasResults | null>(null);
+  const [hasTrackedStart, setHasTrackedStart] = useState(false);
 
   // --- CLEAR FUNCTION ---
   const resetFields = () => {
@@ -48,6 +50,14 @@ export default function RoasClient() {
     const cpa = orderCount > 0 ? spend / orderCount : 0; 
     const aov = orderCount > 0 ? rev / orderCount : 0;   
 
+    const resultState =
+      profit > 0 ? "profitable" : profit < 0 ? "unprofitable" : "break_even";
+    trackEvent("calculator_submit", {
+      calculator_type: "roas",
+      has_optional_costs: cost > 0,
+      result_state: resultState,
+    });
+
     setResults({
       roas: roas.toFixed(2),
       profit: profit.toFixed(2),
@@ -57,6 +67,19 @@ export default function RoasClient() {
       aov: aov.toFixed(2),
       isProfitable: profit > 0
     });
+  };
+
+  const trackCalculatorStart = () => {
+    if (hasTrackedStart) return;
+    const pathname = typeof window !== "undefined" ? window.location.pathname : "/";
+    const isRoasSlug = pathname.startsWith("/roas/");
+    const slug = isRoasSlug ? pathname.replace("/roas/", "") : "home";
+    trackEvent("calculator_start", {
+      page_type: isRoasSlug ? "roas_slug" : "home",
+      calculator_type: "roas",
+      slug,
+    });
+    setHasTrackedStart(true);
   };
 
   // --- PDF GENERATOR ---
@@ -213,6 +236,7 @@ export default function RoasClient() {
                                 type="number" 
                                 value={adSpend}
                                 onChange={(e) => setAdSpend(e.target.value)}
+                                onFocus={trackCalculatorStart}
                                 className="w-full pl-12 pr-4 py-4 bg-slate-50 border-2 border-slate-200 rounded-xl focus:border-blue-600 focus:bg-white focus:ring-4 focus:ring-blue-100 outline-none transition-all font-extrabold text-xl text-gray-900 placeholder-gray-300"
                                 placeholder="0.00"
                             />
@@ -226,6 +250,7 @@ export default function RoasClient() {
                                 type="number" 
                                 value={revenue}
                                 onChange={(e) => setRevenue(e.target.value)}
+                                onFocus={trackCalculatorStart}
                                 className="w-full pl-12 pr-4 py-4 bg-slate-50 border-2 border-slate-200 rounded-xl focus:border-green-500 focus:bg-white focus:ring-4 focus:ring-green-100 outline-none transition-all font-extrabold text-xl text-gray-900 placeholder-gray-300"
                                 placeholder="0.00"
                             />
@@ -243,6 +268,7 @@ export default function RoasClient() {
                                 type="number" 
                                 value={productCost}
                                 onChange={(e) => setProductCost(e.target.value)}
+                                onFocus={trackCalculatorStart}
                                 className="w-full pl-12 pr-4 py-4 bg-slate-50 border-2 border-slate-200 rounded-xl focus:border-orange-400 focus:bg-white focus:ring-4 focus:ring-orange-100 outline-none transition-all font-extrabold text-xl text-gray-900 placeholder-gray-300"
                                 placeholder="0.00"
                             />
@@ -256,6 +282,7 @@ export default function RoasClient() {
                                 type="number" 
                                 value={orders}
                                 onChange={(e) => setOrders(e.target.value)}
+                                onFocus={trackCalculatorStart}
                                 className="w-full pl-12 pr-4 py-4 bg-slate-50 border-2 border-slate-200 rounded-xl focus:border-purple-400 focus:bg-white focus:ring-4 focus:ring-purple-100 outline-none transition-all font-extrabold text-xl text-gray-900 placeholder-gray-300"
                                 placeholder="0"
                             />

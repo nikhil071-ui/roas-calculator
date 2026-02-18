@@ -1,5 +1,7 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import TrackedDownloadLink from "@/app/components/TrackedDownloadLink";
+import TrackedLink from "@/app/components/TrackedLink";
 
 export const metadata: Metadata = {
   title: "Free Downloads and Templates | ROAS Tools",
@@ -52,13 +54,15 @@ export default function ResourcesPage() {
             <p className="text-slate-600 mt-2">
               Track daily spend, revenue, ROAS, break-even thresholds, and profit in one sheet.
             </p>
-            <a
+            <TrackedDownloadLink
               href="/resources/roas-tracking-template.csv"
-              download
+              templateName="roas_tracking_template"
+              fileType="csv"
+              sourcePage="/resources"
               className="inline-block mt-4 bg-blue-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-blue-700 transition"
             >
               Download CSV
-            </a>
+            </TrackedDownloadLink>
           </div>
 
           <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
@@ -66,13 +70,15 @@ export default function ResourcesPage() {
             <p className="text-slate-600 mt-2">
               Compare base, conservative, and aggressive spend plans with break-even ROAS and scale/hold/pause decisions.
             </p>
-            <a
+            <TrackedDownloadLink
               href="/resources/roas-scenario-planner.csv"
-              download
+              templateName="roas_scenario_planner"
+              fileType="csv"
+              sourcePage="/resources"
               className="inline-block mt-4 bg-indigo-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-indigo-700 transition"
             >
               Download Planner
-            </a>
+            </TrackedDownloadLink>
           </div>
 
           <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
@@ -80,13 +86,15 @@ export default function ResourcesPage() {
             <p className="text-slate-600 mt-2">
               Allocate budgets by channel with target CPA, projected revenue, target ROAS, and guardrail actions.
             </p>
-            <a
+            <TrackedDownloadLink
               href="/resources/ppc-budget-planner.csv"
-              download
+              templateName="ppc_budget_planner"
+              fileType="csv"
+              sourcePage="/resources"
               className="inline-block mt-4 bg-sky-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-sky-700 transition"
             >
               Download Planner
-            </a>
+            </TrackedDownloadLink>
           </div>
 
           <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
@@ -94,13 +102,15 @@ export default function ResourcesPage() {
             <p className="text-slate-600 mt-2">
               Model CAC, LTV ratio, and payback windows by channel to decide scale, hold, or pause.
             </p>
-            <a
+            <TrackedDownloadLink
               href="/resources/cac-ltv-model-template.csv"
-              download
+              templateName="cac_ltv_model_template"
+              fileType="csv"
+              sourcePage="/resources"
               className="inline-block mt-4 bg-blue-700 text-white px-4 py-2 rounded-lg font-semibold hover:bg-blue-800 transition"
             >
               Download Model
-            </a>
+            </TrackedDownloadLink>
           </div>
 
           <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
@@ -108,13 +118,15 @@ export default function ResourcesPage() {
             <p className="text-slate-600 mt-2">
               Track blended MER weekly with target variance and action notes for leadership reporting.
             </p>
-            <a
+            <TrackedDownloadLink
               href="/resources/mer-weekly-tracker.csv"
-              download
+              templateName="mer_weekly_tracker"
+              fileType="csv"
+              sourcePage="/resources"
               className="inline-block mt-4 bg-violet-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-violet-700 transition"
             >
               Download Tracker
-            </a>
+            </TrackedDownloadLink>
           </div>
 
           <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
@@ -122,13 +134,15 @@ export default function ResourcesPage() {
             <p className="text-slate-600 mt-2">
               Monitor daily spend pace vs target budget and expected ROAS to prevent overspend.
             </p>
-            <a
+            <TrackedDownloadLink
               href="/resources/budget-pacing-template.csv"
-              download
+              templateName="budget_pacing_template"
+              fileType="csv"
+              sourcePage="/resources"
               className="inline-block mt-4 bg-cyan-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-cyan-700 transition"
             >
               Download Template
-            </a>
+            </TrackedDownloadLink>
           </div>
 
           <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
@@ -136,13 +150,15 @@ export default function ResourcesPage() {
             <p className="text-slate-600 mt-2">
               Step-by-step checklist to hit size limits for exam portals and web uploads.
             </p>
-            <a
+            <TrackedDownloadLink
               href="/resources/image-compression-checklist.txt"
-              download
+              templateName="image_compression_checklist"
+              fileType="txt"
+              sourcePage="/resources"
               className="inline-block mt-4 bg-purple-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-purple-700 transition"
             >
               Download Checklist
-            </a>
+            </TrackedDownloadLink>
           </div>
 
           <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
@@ -150,13 +166,15 @@ export default function ResourcesPage() {
             <p className="text-slate-600 mt-2">
               Quick guide for choosing DPI, image settings, and safe compression levels.
             </p>
-            <a
+            <TrackedDownloadLink
               href="/resources/pdf-compression-checklist.txt"
-              download
+              templateName="pdf_compression_checklist"
+              fileType="txt"
+              sourcePage="/resources"
               className="inline-block mt-4 bg-red-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-red-700 transition"
             >
               Download Checklist
-            </a>
+            </TrackedDownloadLink>
           </div>
 
           <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
@@ -164,13 +182,15 @@ export default function ResourcesPage() {
             <p className="text-slate-600 mt-2">
               Compare rates and fees to avoid hidden costs on international transfers.
             </p>
-            <a
+            <TrackedDownloadLink
               href="/resources/currency-transfer-checklist.txt"
-              download
+              templateName="currency_transfer_checklist"
+              fileType="txt"
+              sourcePage="/resources"
               className="inline-block mt-4 bg-emerald-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-emerald-700 transition"
             >
               Download Checklist
-            </a>
+            </TrackedDownloadLink>
           </div>
         </div>
 
@@ -204,9 +224,14 @@ export default function ResourcesPage() {
           <p className="text-slate-600">
             Need a full metric stack? Use our PPC Toolkit for ROAS, break-even ROAS, CAC, LTV, MER, and target CPA workflows.
           </p>
-          <Link href="/ppc-toolkit" className="inline-block mt-4 text-blue-700 font-semibold hover:underline">
+          <TrackedLink
+            href="/ppc-toolkit"
+            eventName="cta_click_ppc_toolkit"
+            eventParams={{ source_page: "/resources", cta_module: "need_more", position: "footer" }}
+            className="inline-block mt-4 text-blue-700 font-semibold hover:underline"
+          >
             Open PPC Toolkit
-          </Link>
+          </TrackedLink>
         </div>
       </div>
     </div>
