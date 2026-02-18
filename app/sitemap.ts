@@ -19,7 +19,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     '/currency-converter/faq',
     '/blog',
     '/blog/facebook-ads-case-study',
-    '/blog/roas-benchmarks',
     '/blog/roas-benchmarks-2026',
     '/blog/image-compression-technical',
     '/blog/pdf-compression-guide',

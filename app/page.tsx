@@ -45,11 +45,6 @@ export default function Home() {
       "price": "0",
       "priceCurrency": "USD",
       "availability": "https://schema.org/InStock"
-    },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": 4.9,
-      "ratingCount": 1000
     }
   };
 
@@ -216,11 +211,8 @@ export default function Home() {
                 Want the full guide, benchmarks, and case studies? Read the detailed articles below.
               </p>
               <div className="flex flex-wrap gap-3">
-                <Link href="/blog/roas-benchmarks" className="inline-flex items-center px-4 py-2 rounded-lg bg-blue-600 text-white font-semibold hover:bg-blue-700 transition">
-                  ROAS Benchmarks
-                </Link>
                 <Link href="/blog/roas-benchmarks-2026" className="inline-flex items-center px-4 py-2 rounded-lg bg-indigo-600 text-white font-semibold hover:bg-indigo-700 transition">
-                  2026 Benchmark Update
+                  ROAS Benchmarks 2026
                 </Link>
                 <Link href="/blog/facebook-ads-case-study" className="inline-flex items-center px-4 py-2 rounded-lg bg-slate-900 text-white font-semibold hover:bg-slate-800 transition">
                   Facebook Ads Case Study

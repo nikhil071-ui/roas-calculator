@@ -5,6 +5,10 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "ROAS Benchmarks by Industry: What's Normal & How to Improve",
   description: "Complete ROAS benchmarks by industry (2024). E-commerce, SaaS, lead generation, and more. See where you rank and improvement strategies.",
+  robots: {
+    index: false,
+    follow: true,
+  },
   keywords: [
     "roas benchmarks",
     "industry standards",
@@ -16,7 +20,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "ROAS Benchmarks by Industry: What's Normal & How to Improve",
     description: "Complete ROAS benchmarks by industry (2024). E-commerce, SaaS, lead generation, and more. See where you rank and improvement strategies.",
-    url: "https://roas-calculator.tech/blog/roas-benchmarks",
+    url: "https://roas-calculator.tech/blog/roas-benchmarks-2026",
   },
       twitter: {
     card: "summary_large_image",
@@ -24,7 +28,7 @@ export const metadata: Metadata = {
     description: "Complete ROAS benchmarks by industry (2024). E-commerce, SaaS, lead generation, and more. See where you rank and improvement strategies.",
   },
   alternates: {
-    canonical: "https://roas-calculator.tech/blog/roas-benchmarks",
+    canonical: "https://roas-calculator.tech/blog/roas-benchmarks-2026",
   },
 };
 

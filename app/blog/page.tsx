@@ -87,17 +87,6 @@ const blogPosts: BlogPost[] = [
     readTime: "13 min",
   },
   {
-    title: "ROAS Benchmarks by Industry: What's Normal & How to Improve",
-    description:
-      "Complete ROAS benchmarks by industry (2024). E-commerce, SaaS, lead generation, and more. See where you rank and improvement strategies.",
-    category: "Benchmark Report",
-    categoryColor: "bg-indigo-100 text-indigo-900",
-    icon: <BarChart3 size={24} className="text-indigo-600" />,
-    href: "/blog/roas-benchmarks",
-    date: "2024",
-    readTime: "11 min",
-  },
-  {
     title: "ROAS Benchmarks 2026: Updated Channel and Industry Ranges",
     description:
       "Updated benchmark reference for 2026 with practical interpretation for Meta DTC, Google Shopping, and lead-gen CPL models.",
