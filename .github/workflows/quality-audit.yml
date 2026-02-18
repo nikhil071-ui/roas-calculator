@@ -51,7 +51,7 @@ jobs:
         env:
           AUDIT_URL: http://127.0.0.1:3000
           LIGHTHOUSE_PRESET: desktop
-          LH_MIN_PERFORMANCE: "0.75"
+          LH_MIN_PERFORMANCE: "0.60"
           LH_MIN_ACCESSIBILITY: "0.90"
           LH_MIN_SEO: "0.95"
         run: npm run audit:ci

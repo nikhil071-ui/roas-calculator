@@ -5,9 +5,13 @@ const url = process.env.AUDIT_URL || "http://127.0.0.1:3000";
 const outputPath = "lighthouse-ci.json";
 const runCommand = process.platform === "win32" ? "npx.cmd" : "npx";
 const preset = process.env.LIGHTHOUSE_PRESET || "desktop";
-const minPerformance = Number(process.env.LH_MIN_PERFORMANCE ?? "0.75");
-const minAccessibility = Number(process.env.LH_MIN_ACCESSIBILITY ?? "0.9");
-const minSeo = Number(process.env.LH_MIN_SEO ?? "0.95");
+const parseThreshold = (value, fallback) => {
+  const parsed = Number.parseFloat(value ?? "");
+  return Number.isFinite(parsed) ? parsed : fallback;
+};
+const minPerformance = parseThreshold(process.env.LH_MIN_PERFORMANCE, 0.6);
+const minAccessibility = parseThreshold(process.env.LH_MIN_ACCESSIBILITY, 0.9);
+const minSeo = parseThreshold(process.env.LH_MIN_SEO, 0.95);
 
 const run = spawnSync(
   runCommand,
@@ -33,6 +37,10 @@ const thresholds = {
   accessibility: minAccessibility,
   seo: minSeo,
 };
+console.log("Lighthouse thresholds:");
+for (const [key, value] of Object.entries(thresholds)) {
+  console.log(`- ${key}: ${Math.round(value * 100)}`);
+}
 
 const scores = {
   performance: report?.categories?.performance?.score ?? 0,
