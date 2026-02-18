@@ -1,0 +1,16 @@
+site_name,site_url,type,priority,topic_angle,target_landing_page,cta,status,contact_name,contact_url,outreach_owner,pitch_date,follow_up_1,follow_up_2,published_url,notes
+HubSpot Blog,https://blog.hubspot.com/guest-blogging-guidelines,Guest Post,P1,ROAS vs MER vs ROI by growth stage,/comparisons/roas-vs-roi-vs-mer-vs-acos,Use calculator framework,To Pitch,,,,,,,Primary priority
+HubSpot Agency Post,https://blog.hubspot.com/agency-post-guest-blogging-guidelines,Guest Post,P1,Agency ROAS plus CAC plus payback reporting,/ppc-toolkit,Download template,To Pitch,,,,,,,Agency decision content
+CXL,https://help.cxl.com/en/articles/3934385-guest-post-for-the-cxl-blog,Guest Post,P1,Attribution error impact on ROAS,/blog/attribution-impact-on-roas,Methodology links,To Pitch,,,,,,,Technical analytics angle
+MarketingProfs,https://www.marketingprofs.com/write-for-us,Guest Post,P1,Break-even ROAS by margin for B2B,/break-even-roas-by-margin,Toolkit workflow,To Pitch,,,,,,,High editorial fit
+Search Engine Journal,https://www.searchenginejournal.com/writers-guidelines-for-search-engine-journal/,Contributor,P1,ROAS benchmarks 2026 interpretation,/blog/roas-benchmarks-2026,Cited benchmark references,Relationship,,,,,,,Relationship first
+HackerNoon,https://help.hackernoon.com/,Contributor,P1,Building ROAS decision tools from formulas,/,Calculator plus trust pages,To Pitch,,,,,,,Developer and growth audience
+Business2Community,https://business2community.net/become-a-contributor/,Contributor,P2,Scale hold pause framework,/blog/when-to-scale-or-pause-campaigns,Calculator CTA,To Pitch,,,,,,,Practical operator audience
+Bay Leaf Digital,https://www.bayleafdigital.com/write-for-us/,Guest Post,P2,SaaS CAC payback plus ROAS,/blog/payback-period-cash-flow-saas,Payback calculator,To Pitch,,,,,,,B2B SaaS fit
+Usermaven,https://usermaven.com/write-for-us,Guest Post,P2,Attribution quality and ROAS decisions,/ppc-toolkit,Methodology page,To Pitch,,,,,,,Analytics audience
+DataDab,https://www.datadab.com/blog/write-for-us/,Guest Post,P2,ROAS planning template for B2B,/resources/roas-planning-template,Template download,To Vet,,,,,,,Check fee and quality
+Coveragely,https://coveragely.com/write-for-us/,Guest Post,P2,Digital PR efficiency with MER and ROAS,/mer-calculator,Comparison link,To Pitch,,,,,,,PR plus analytics angle
+Martech Zone,https://martech.zone/ask/,Editorial Submission,P2,ROAS dashboard audit mistakes,/blog/roas-audit-checklist,Toolkit link,To Pitch,,,,,,,Submission format varies
+StartupOG,https://startupog.com/write-for-us/,Guest Post,P3,Startup paid growth break-even framework,/learn/roas,Scenario pages,To Pitch,,,,,,,Long-tail audience
+Yantle,https://yantle.com/write-for-us/,Guest Post,P3,Paid plus outbound measurement,/comparisons/cac-vs-cpa-vs-roas,CAC calculator,To Vet,,,,,,,Validate traffic quality
+Sonan Insights,https://sonan.ca/saas-write-for-us/,Guest Post,P3,Subscription ROAS with LTV,/roas-scenarios/subscription-roas-with-ltv,LTV calculator,To Pitch,,,,,,,SaaS audience

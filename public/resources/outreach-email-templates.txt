@@ -1,0 +1,59 @@
+Subject ideas:
+1) Data-led guest post idea for {{site_name}}: {{topic}}
+2) Original contribution pitch: {{topic}} with practical calculator framework
+3) Contributor idea for {{site_name}} (ROAS and profitability angle)
+
+Email 1 - Initial pitch
+Hi {{first_name}},
+
+I run ROAS Tools, a marketing calculator platform focused on ROAS, CAC, LTV, MER, and paid media profitability frameworks.
+
+I’d love to contribute an original piece for {{site_name}}:
+- {{topic_option_1}}
+- {{topic_option_2}}
+- {{topic_option_3}}
+
+Each draft would include:
+- practical formulas and decision tables
+- current benchmark context
+- a no-fluff framework readers can apply immediately
+
+Relevant source page for context: {{source_url}}
+
+If useful, I can send a short outline in your preferred format.
+
+Best,
+{{your_name}}
+{{role}}
+{{website}}
+
+Follow-up 1 (Day 4)
+Hi {{first_name}},
+
+Quick follow-up on my guest post pitch. I can tailor the article to your editorial style and include only actionable frameworks.
+
+If helpful, I can send a 5-bullet outline for: {{selected_topic}}.
+
+Thanks,
+{{your_name}}
+
+Follow-up 2 (Day 9)
+Hi {{first_name}},
+
+Final follow-up from my side.
+
+If guest contributions are closed right now, no problem. If you’re open later, I can provide a ready-to-edit draft on {{selected_topic}} with clean sources and no promotional fluff.
+
+Thanks again,
+{{your_name}}
+
+Accepted pitch handoff
+Thanks {{first_name}}.
+
+Great, I’ll deliver:
+- Word count: {{word_count}}
+- Tone: {{tone}}
+- Deadline: {{date}}
+- Includes: examples, formulas, references, and practical action checklist
+
+I’ll keep external links minimal and align with your editorial requirements.

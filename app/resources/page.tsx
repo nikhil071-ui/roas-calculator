@@ -17,6 +17,9 @@ export const metadata: Metadata = {
     "image compression checklist",
     "pdf compression checklist",
     "currency transfer checklist",
+    "backlink outreach tracker",
+    "guest post topic ideas",
+    "outreach email templates",
     "marketing templates",
   ],
   openGraph: {
@@ -49,6 +52,19 @@ export default function ResourcesPage() {
         </div>
 
         <div className="grid md:grid-cols-2 gap-6">
+          <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+            <h2 className="text-xl font-bold text-slate-900">Backlink Outreach Playbook (CSV + TXT)</h2>
+            <p className="text-slate-600 mt-2">
+              Complete outreach pack for marketing calculator SaaS: target websites, topic bank, and pitch templates.
+            </p>
+            <Link
+              href="/resources/backlink-outreach-playbook"
+              className="inline-block mt-4 bg-emerald-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-emerald-700 transition"
+            >
+              Open Outreach Playbook
+            </Link>
+          </div>
+
           <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
             <h2 className="text-xl font-bold text-slate-900">ROAS Tracking Template (CSV)</h2>
             <p className="text-slate-600 mt-2">
