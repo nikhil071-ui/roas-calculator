@@ -23,6 +23,25 @@ export const metadata: Metadata = {
 };
 
 export default function MERCalculatorPage() {
+  const webAppData = {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    name: "MER Calculator",
+    applicationCategory: "BusinessApplication",
+    operatingSystem: "Web",
+    offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+    url: "https://roas-calculator.tech/mer-calculator",
+  };
+  const howToData = {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    name: "How to calculate MER",
+    step: [
+      { "@type": "HowToStep", name: "Enter total revenue", text: "Use blended revenue for the period you are analyzing." },
+      { "@type": "HowToStep", name: "Enter total marketing spend", text: "Include all paid and owned marketing costs for the same period." },
+      { "@type": "HowToStep", name: "Interpret MER trend", text: "Use MER for blended direction and ROAS for channel diagnosis." },
+    ],
+  };
   const faqData = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -48,6 +67,8 @@ export default function MERCalculatorPage() {
 
   return (
     <div className="min-h-screen bg-slate-50 text-slate-900 py-12 px-4 md:px-6">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webAppData) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToData) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqData) }} />
       <main className="max-w-4xl mx-auto bg-white border border-slate-200 rounded-2xl shadow-sm p-8 md:p-12 space-y-8">
         <div>

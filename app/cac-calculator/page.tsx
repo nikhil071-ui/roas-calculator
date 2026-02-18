@@ -25,6 +25,25 @@ export const metadata: Metadata = {
 };
 
 export default function CACCalculatorPage() {
+  const webAppData = {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    name: "CAC Calculator",
+    applicationCategory: "BusinessApplication",
+    operatingSystem: "Web",
+    offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+    url: "https://roas-calculator.tech/cac-calculator",
+  };
+  const howToData = {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    name: "How to calculate customer acquisition cost",
+    step: [
+      { "@type": "HowToStep", name: "Enter ad spend", text: "Add total paid acquisition spend for the selected period." },
+      { "@type": "HowToStep", name: "Enter new customers", text: "Add the number of newly acquired customers in the same period." },
+      { "@type": "HowToStep", name: "Review CAC", text: "Use CAC with LTV and payback thresholds before scaling." },
+    ],
+  };
   const faqData = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -50,6 +69,8 @@ export default function CACCalculatorPage() {
 
   return (
     <div className="min-h-screen bg-slate-50 text-slate-900 py-12 px-4 md:px-6">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webAppData) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToData) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqData) }} />
       <main className="max-w-4xl mx-auto bg-white border border-slate-200 rounded-2xl shadow-sm p-8 md:p-12 space-y-8">
         <div>

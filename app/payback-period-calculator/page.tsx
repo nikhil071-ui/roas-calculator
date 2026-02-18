@@ -23,6 +23,25 @@ export const metadata: Metadata = {
 };
 
 export default function PaybackPeriodPage() {
+  const webAppData = {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    name: "CAC Payback Period Calculator",
+    applicationCategory: "BusinessApplication",
+    operatingSystem: "Web",
+    offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+    url: "https://roas-calculator.tech/payback-period-calculator",
+  };
+  const howToData = {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    name: "How to calculate CAC payback period",
+    step: [
+      { "@type": "HowToStep", name: "Enter CAC", text: "Use current acquisition cost per customer from paid channels." },
+      { "@type": "HowToStep", name: "Enter monthly revenue and margin", text: "Add realistic revenue per customer and gross margin assumptions." },
+      { "@type": "HowToStep", name: "Review payback months", text: "Use payback months to decide scale, hold, or budget reduction." },
+    ],
+  };
   const faqData = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -48,6 +67,8 @@ export default function PaybackPeriodPage() {
 
   return (
     <div className="min-h-screen bg-slate-50 text-slate-900 py-12 px-4 md:px-6">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webAppData) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToData) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqData) }} />
       <main className="max-w-4xl mx-auto bg-white border border-slate-200 rounded-2xl shadow-sm p-8 md:p-12 space-y-8">
         <div>

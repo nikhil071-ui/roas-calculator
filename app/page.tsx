@@ -226,35 +226,6 @@ export default function Home() {
 </div>
 {/* ---------------- */}
 
-            {/* --- MORE TOOLS SECTION --- */}
-            <section className="mt-12 mb-12">
-              <h2 className="text-2xl font-bold text-slate-900 mb-6 text-center">More Free Tools</h2>
-              <div className="flex justify-center gap-6 flex-wrap">
-                
-                {/* Link to Image Compressor */}
-                <Link href="/image-compressor" className="group block bg-white p-6 rounded-xl shadow-sm border border-gray-200 hover:border-blue-500 hover:shadow-lg transition w-full md:w-64 text-center">
-                  <div className="text-4xl mb-3 group-hover:scale-110 transition duration-300"></div>
-                  <h3 className="font-bold text-xl mb-2 text-slate-800 group-hover:text-blue-600">Image Compressor</h3>
-                  <p className="text-sm text-gray-500">Reduce image size by up to 80% without losing quality.</p>
-                </Link>
-
-                {/* Link to PDF Converter */}
-                <Link href="/pdf-converter" className="group block bg-white p-6 rounded-xl shadow-sm border border-gray-200 hover:border-red-500 hover:shadow-lg transition w-full md:w-64 text-center">
-                  <div className="text-4xl mb-3 group-hover:scale-110 transition duration-300"></div>
-                  <h3 className="font-bold text-xl mb-2 text-slate-800 group-hover:text-red-600">JPG to PDF</h3>
-                  <p className="text-sm text-gray-500">Combine multiple images into a single professional PDF document.</p>
-                </Link>
-                
-                {/* Currency Converter Card */}
-                <Link href="/currency-converter" className="group block bg-white p-6 rounded-xl shadow-sm border border-gray-200 hover:border-emerald-500 hover:shadow-lg transition w-full md:w-64 text-center">
-                  <div className="text-4xl mb-3 group-hover:scale-110 transition duration-300"></div>
-                  <h3 className="font-bold text-xl mb-2 text-slate-800 group-hover:text-emerald-600">Currency Converter</h3>
-                  <p className="text-sm text-gray-500">Live exchange rates for USD, INR, EUR, and 10+ global currencies.</p>
-                </Link>
-
-              </div>
-            </section>
-
             {/* --- FEATURED PAGES (BOOST INDEXING) --- */}
             <details className="mt-4 mb-12 bg-white border border-slate-200 rounded-2xl p-6">
               <summary className="text-xl font-bold text-slate-900 cursor-pointer">Featured Pages</summary>

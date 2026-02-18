@@ -23,6 +23,25 @@ export const metadata: Metadata = {
 };
 
 export default function LTVCalculatorPage() {
+  const webAppData = {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    name: "LTV Calculator",
+    applicationCategory: "BusinessApplication",
+    operatingSystem: "Web",
+    offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+    url: "https://roas-calculator.tech/ltv-calculator",
+  };
+  const howToData = {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    name: "How to estimate customer lifetime value",
+    step: [
+      { "@type": "HowToStep", name: "Enter order value", text: "Use your average order value for a realistic LTV baseline." },
+      { "@type": "HowToStep", name: "Add frequency and retention", text: "Include expected purchase frequency and retention period." },
+      { "@type": "HowToStep", name: "Compare with CAC", text: "Validate LTV:CAC ratio before increasing paid traffic." },
+    ],
+  };
   const faqData = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -48,6 +67,8 @@ export default function LTVCalculatorPage() {
 
   return (
     <div className="min-h-screen bg-slate-50 text-slate-900 py-12 px-4 md:px-6">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webAppData) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToData) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqData) }} />
       <main className="max-w-4xl mx-auto bg-white border border-slate-200 rounded-2xl shadow-sm p-8 md:p-12 space-y-8">
         <div>
