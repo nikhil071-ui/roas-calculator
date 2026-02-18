@@ -1,0 +1,5 @@
+Scenario,Monthly_Ad_Spend,Projected_Revenue,Gross_Margin_Percent,BreakEven_ROAS,Actual_ROAS,Net_Contribution,Decision
+Base,5000,18000,40,2.5,3.6,2200,Scale
+Conservative,5000,14000,40,2.5,2.8,600,Hold
+Aggressive,7500,21000,40,2.5,2.8,900,Hold
+Weak_CVR,5000,11000,40,2.5,2.2,-600,Pause

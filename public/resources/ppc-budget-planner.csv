@@ -1,0 +1,5 @@
+Channel,Planned_Budget,Target_CPA,Expected_Conversions,Projected_Revenue,Target_ROAS,Guardrail_Action
+Meta_DTC,4000,30,133,12000,3.0,Reduce if ROAS < 2.4 for 7 days
+Google_Shopping,3500,28,125,12600,3.6,Scale 15% if ROAS > 4.0 for 2 weeks
+Search_NonBrand,2000,35,57,5700,2.85,Pause keywords below break-even
+Retargeting,1200,18,67,6700,5.58,Defend budget and refresh creative weekly

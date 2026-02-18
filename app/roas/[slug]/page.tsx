@@ -13,6 +13,9 @@ export async function generateStaticParams() {
     { slug: 'facebook-ads' },
     { slug: 'tiktok-ads' },
     { slug: 'google-ads' },
+    { slug: 'google-shopping-roas' },
+    { slug: 'meta-dtc-roas' },
+    { slug: 'lead-gen-cpl-roas' },
     { slug: 'dropshipping-profit' },
     { slug: 'break-even-roas' },
     { slug: 'marketing-roi' },
@@ -48,6 +51,30 @@ const SEO_DATA: Record<string, { title: string; desc: string; h1: string; subtex
     subtext: "Optimize your Google Performance Max budget.",
     platform: "Google Ads (PPC)",
     keywords: ["google ads roas", "ppc calculator", "performance max roas", "target roas bidding"]
+  },
+  "google-shopping-roas": {
+    title: "Google Shopping ROAS Calculator (2026)",
+    desc: "Calculate Google Shopping campaign ROAS, break-even points, and profit thresholds for product feed ads.",
+    h1: "Google Shopping ROAS Calculator",
+    subtext: "Model product-feed profitability before scaling spend.",
+    platform: "Google Shopping",
+    keywords: ["google shopping roas", "shopping ads benchmark", "product feed profitability", "target roas shopping"]
+  },
+  "meta-dtc-roas": {
+    title: "Meta DTC ROAS Calculator for Shopify Brands",
+    desc: "Track Meta ROAS for direct-to-consumer brands and estimate break-even performance by margin and AOV.",
+    h1: "Meta DTC ROAS Calculator",
+    subtext: "Built for direct-to-consumer growth teams on Meta.",
+    platform: "Meta Ads for DTC",
+    keywords: ["meta dtc roas", "shopify meta ads", "facebook roas benchmark", "dtc ad profitability"]
+  },
+  "lead-gen-cpl-roas": {
+    title: "Lead Gen ROAS Calculator (CPL Model)",
+    desc: "Estimate ROAS for lead generation campaigns using CPL, close rate, and customer value assumptions.",
+    h1: "Lead Gen ROAS Calculator",
+    subtext: "Translate CPL and close-rate into revenue return.",
+    platform: "Lead Generation Campaigns",
+    keywords: ["lead gen roas", "cpl to roas", "lead quality profitability", "b2b lead generation roi"]
   },
   "dropshipping-profit": {
     title: "Dropshipping Profit Margin Calculator (Shopify)",
@@ -259,6 +286,54 @@ export default async function DynamicRoasPage({ params }: { params: Promise<{ sl
             <li><strong>3.0x - 4.0x:</strong> Healthy. This is the goal for most dropshipping and e-commerce stores.</li>
             <li><strong>Above 5.0x:</strong> Excellent. You should consider scaling your budget immediately.</li>
           </ul>
+
+          <h3 className="text-2xl font-bold text-gray-900 mt-10">What to Do Next: Scale, Hold, or Pause?</h3>
+          <p>
+            Use this decision logic after calculating your result. It keeps budget decisions tied to break-even math rather than guesswork.
+          </p>
+          <div className="overflow-x-auto my-6">
+            <table className="w-full text-sm border border-gray-200">
+              <thead className="bg-gray-50">
+                <tr>
+                  <th className="text-left px-4 py-3">ROAS vs Break-Even</th>
+                  <th className="text-left px-4 py-3">Recommended Action</th>
+                  <th className="text-left px-4 py-3">Priority Fix</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td className="border-t px-4 py-3">20%+ above break-even</td>
+                  <td className="border-t px-4 py-3">Scale budget by 10-20% weekly</td>
+                  <td className="border-t px-4 py-3">Protect winning creative and audience</td>
+                </tr>
+                <tr>
+                  <td className="border-t px-4 py-3">At break-even (+/-10%)</td>
+                  <td className="border-t px-4 py-3">Hold spend, optimize funnel</td>
+                  <td className="border-t px-4 py-3">Improve conversion rate and AOV</td>
+                </tr>
+                <tr>
+                  <td className="border-t px-4 py-3">Below break-even by 10%+</td>
+                  <td className="border-t px-4 py-3">Pause or cap spend</td>
+                  <td className="border-t px-4 py-3">Rework offer, targeting, or CPA limits</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div className="bg-gray-50 border border-gray-200 rounded-xl p-6 mt-6">
+            <p className="font-semibold text-gray-900 mb-2">Build a full profitability model</p>
+            <p className="text-gray-700 mb-4">
+              For deeper planning, combine ROAS with CAC, LTV, MER, and target CPA in our toolkit and downloadable planning sheets.
+            </p>
+            <div className="flex flex-wrap gap-3">
+              <Link href="/ppc-toolkit" className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold px-4 py-2 rounded-lg">
+                Open PPC Toolkit
+              </Link>
+              <Link href="/resources" className="inline-block bg-white hover:bg-gray-100 text-gray-900 font-semibold px-4 py-2 rounded-lg border border-gray-300">
+                Download Planning Templates
+              </Link>
+            </div>
+          </div>
 
           <div className="mt-12 p-8 bg-slate-900 text-white rounded-2xl text-center">
             <h3 className="text-2xl font-bold mb-4">Are you spending internationally?</h3>

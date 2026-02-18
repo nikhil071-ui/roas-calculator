@@ -41,6 +41,19 @@ export default function ComparisonsPage() {
         </div>
 
         <div className="space-y-8">
+          <section className="bg-blue-50 p-6 rounded-xl border border-blue-200 shadow-sm">
+            <h2 className="text-xl font-bold text-slate-900">Metrics Comparison: ROAS vs ROI vs MER vs ACoS</h2>
+            <p className="text-slate-700 mt-2">
+              Understand which metric to use for campaign optimization, executive reporting, and profitability decisions.
+            </p>
+            <Link
+              href="/comparisons/roas-vs-roi-vs-mer-vs-acos"
+              className="inline-block mt-4 bg-blue-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-blue-700 transition"
+            >
+              Open Comparison Guide
+            </Link>
+          </section>
+
           <section className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
             <h2 className="text-xl font-bold text-slate-900">Image Compressor: ROAS Tools vs Alternatives</h2>
             <div className="overflow-x-auto mt-4">

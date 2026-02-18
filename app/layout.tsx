@@ -169,6 +169,7 @@ export default function RootLayout({
             <div className="flex gap-4 md:gap-8 text-sm font-medium text-gray-600 overflow-x-auto ml-4 whitespace-nowrap scrollbar-hide">
               <Link href="/blog" className="hover:text-blue-600 transition">Blog</Link>
               <Link href="/" className="hover:text-blue-600 transition">Home</Link>
+              <Link href="/ppc-toolkit" className="hover:text-blue-600 transition">PPC Toolkit</Link>
               <Link href="/image-compressor" className="hover:text-blue-600 transition">Image Compressor</Link>
               <Link href="/pdf-converter" className="hover:text-blue-600 transition">PDF Maker</Link>
               <Link href="/currency-converter" className="hover:text-blue-600 transition">Currency</Link>
@@ -204,6 +205,7 @@ export default function RootLayout({
               <ul className="space-y-3">
                 <li><Link href="/" className="hover:text-white transition flex items-center gap-2"> ROAS Calculator</Link></li>
                 <li><Link href="/roas/facebook-ads" className="hover:text-white transition flex items-center gap-2"> Facebook Ads ROAS</Link></li>
+                <li><Link href="/ppc-toolkit" className="hover:text-white transition flex items-center gap-2"> PPC Toolkit</Link></li>
                 <li><Link href="/image-compressor" className="hover:text-white transition flex items-center gap-2"> Image Compressor</Link></li>
                 <li><Link href="/pdf-converter" className="hover:text-white transition flex items-center gap-2"> JPG to PDF</Link></li>
                 <li><Link href="/pdf/jpg-to-pdf" className="hover:text-white transition flex items-center gap-2"> JPG to PDF (Direct)</Link></li>
@@ -218,6 +220,7 @@ export default function RootLayout({
                 <li><Link href="/blog" className="hover:text-white transition"> Blog</Link></li>
                 <li><Link href="/resources" className="hover:text-white transition"> Resources</Link></li>
                 <li><Link href="/comparisons" className="hover:text-white transition"> Comparisons</Link></li>
+                <li><Link href="/comparisons/roas-vs-roi-vs-mer-vs-acos" className="hover:text-white transition"> ROAS vs ROI vs MER vs ACoS</Link></li>
                 <li><Link href="/about" className="hover:text-white transition">About Us</Link></li>
                 <li><Link href="/team" className="hover:text-white transition"> Our Team</Link></li>
                 <li><Link href="/case-studies" className="hover:text-white transition"> Case Studies</Link></li>

@@ -122,7 +122,7 @@ export default function Home() {
             {/* --- FEATURED PAGES (BOOST INDEXING) --- */}
             <section className="mt-4 mb-12">
               <h2 className="text-xl font-bold text-slate-900 mb-4 text-center">Featured Pages</h2>
-              <div className="grid md:grid-cols-2 gap-6">
+              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                 <Link href="/roas/facebook-ads" className="group block bg-white p-6 rounded-xl shadow-sm border border-gray-200 hover:border-blue-500 hover:shadow-lg transition">
                   <h3 className="font-bold text-lg text-slate-800 group-hover:text-blue-600">Facebook Ads ROAS Calculator</h3>
                   <p className="text-sm text-gray-500 mt-2">Calculate break-even ROAS and profitability for Meta campaigns.</p>
@@ -130,6 +130,14 @@ export default function Home() {
                 <Link href="/pdf/jpg-to-pdf" className="group block bg-white p-6 rounded-xl shadow-sm border border-gray-200 hover:border-red-500 hover:shadow-lg transition">
                   <h3 className="font-bold text-lg text-slate-800 group-hover:text-red-600">JPG to PDF Converter (Direct)</h3>
                   <p className="text-sm text-gray-500 mt-2">Convert photos to a clean PDF instantly - no watermark, no signup.</p>
+                </Link>
+                <Link href="/ppc-toolkit" className="group block bg-white p-6 rounded-xl shadow-sm border border-gray-200 hover:border-indigo-500 hover:shadow-lg transition">
+                  <h3 className="font-bold text-lg text-slate-800 group-hover:text-indigo-600">PPC Toolkit</h3>
+                  <p className="text-sm text-gray-500 mt-2">ROAS, CAC, LTV, MER, and target CPA in one practical planning hub.</p>
+                </Link>
+                <Link href="/comparisons/roas-vs-roi-vs-mer-vs-acos" className="group block bg-white p-6 rounded-xl shadow-sm border border-gray-200 hover:border-purple-500 hover:shadow-lg transition">
+                  <h3 className="font-bold text-lg text-slate-800 group-hover:text-purple-600">ROAS vs ROI vs MER vs ACoS</h3>
+                  <p className="text-sm text-gray-500 mt-2">Choose the right metric for campaign and budget decisions.</p>
                 </Link>
               </div>
             </section>
@@ -170,6 +178,14 @@ export default function Home() {
                   <h3 className="font-bold text-slate-800 group-hover:text-teal-600"> About Us</h3>
                   <p className="text-xs text-gray-500 mt-2">Meet our expert team.</p>
                 </Link>
+                <Link href="/ppc-toolkit" className="group block bg-white p-5 rounded-xl shadow-sm border border-gray-200 hover:border-indigo-500 hover:shadow-lg transition text-center">
+                  <h3 className="font-bold text-slate-800 group-hover:text-indigo-600"> PPC Toolkit</h3>
+                  <p className="text-xs text-gray-500 mt-2">ROAS, CAC, LTV, MER and target CPA formulas.</p>
+                </Link>
+                <Link href="/resources" className="group block bg-white p-5 rounded-xl shadow-sm border border-gray-200 hover:border-sky-500 hover:shadow-lg transition text-center">
+                  <h3 className="font-bold text-slate-800 group-hover:text-sky-600"> Scenario Templates</h3>
+                  <p className="text-xs text-gray-500 mt-2">Download planning sheets for budgets and benchmarks.</p>
+                </Link>
               </div>
             </section>
 
@@ -202,6 +218,9 @@ export default function Home() {
               <div className="flex flex-wrap gap-3">
                 <Link href="/blog/roas-benchmarks" className="inline-flex items-center px-4 py-2 rounded-lg bg-blue-600 text-white font-semibold hover:bg-blue-700 transition">
                   ROAS Benchmarks
+                </Link>
+                <Link href="/blog/roas-benchmarks-2026" className="inline-flex items-center px-4 py-2 rounded-lg bg-indigo-600 text-white font-semibold hover:bg-indigo-700 transition">
+                  2026 Benchmark Update
                 </Link>
                 <Link href="/blog/facebook-ads-case-study" className="inline-flex items-center px-4 py-2 rounded-lg bg-slate-900 text-white font-semibold hover:bg-slate-800 transition">
                   Facebook Ads Case Study

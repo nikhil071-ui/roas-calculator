@@ -97,6 +97,17 @@ const blogPosts: BlogPost[] = [
     date: "2024",
     readTime: "11 min",
   },
+  {
+    title: "ROAS Benchmarks 2026: Updated Channel and Industry Ranges",
+    description:
+      "Updated benchmark reference for 2026 with practical interpretation for Meta DTC, Google Shopping, and lead-gen CPL models.",
+    category: "Benchmark Update",
+    categoryColor: "bg-sky-100 text-sky-900",
+    icon: <BarChart3 size={24} className="text-sky-600" />,
+    href: "/blog/roas-benchmarks-2026",
+    date: "2026",
+    readTime: "8 min",
+  },
 ];
 
 export default function BlogIndex() {
