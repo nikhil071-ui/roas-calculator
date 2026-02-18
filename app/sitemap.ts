@@ -1,4 +1,5 @@
 import { MetadataRoute } from 'next';
+import { industryPages, platformPages, scenarioPages } from "@/app/lib/pseo";
 
 // FULL SITEMAP - Include all static pages and all dynamic slug routes
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
@@ -32,6 +33,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     '/payback-period-calculator',
     '/break-even-roas-by-margin',
     '/resources/roas-planning-template',
+    '/industry',
+    '/platform',
+    '/roas-scenarios',
   ]);
 
   const staticRoutes = [
@@ -67,6 +71,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     '/resources',
     '/resources/ga4-conversion-mapping',
     '/resources/roas-planning-template',
+    '/industry',
+    '/platform',
+    '/roas-scenarios',
     '/learn/roas',
     '/benchmarks/roas',
     '/benchmarks/facebook-ads-roas',
@@ -172,6 +179,24 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     })),
     ...currencySlugs.map((slug) => ({
       url: `${baseUrl}/currency/${slug}`,
+      lastModified,
+      changeFrequency: 'weekly' as const,
+      priority: 0.8,
+    })),
+    ...industryPages.map((item) => ({
+      url: `${baseUrl}/industry/${item.slug}/roas-calculator`,
+      lastModified,
+      changeFrequency: 'weekly' as const,
+      priority: 0.8,
+    })),
+    ...platformPages.map((item) => ({
+      url: `${baseUrl}/platform/${item.slug}/roas-calculator`,
+      lastModified,
+      changeFrequency: 'weekly' as const,
+      priority: 0.8,
+    })),
+    ...scenarioPages.map((item) => ({
+      url: `${baseUrl}/roas-scenarios/${item.slug}`,
       lastModified,
       changeFrequency: 'weekly' as const,
       priority: 0.8,
