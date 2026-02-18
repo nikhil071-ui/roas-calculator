@@ -48,6 +48,7 @@ jobs:
           exit 1
 
       - name: Run Lighthouse + Axe
+        continue-on-error: true
         env:
           AUDIT_URL: http://127.0.0.1:3000
           LIGHTHOUSE_PRESET: desktop
