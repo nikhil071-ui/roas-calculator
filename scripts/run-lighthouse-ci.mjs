@@ -7,8 +7,20 @@ const runCommand = process.platform === "win32" ? "npx.cmd" : "npx";
 const preset = process.env.LIGHTHOUSE_PRESET || "desktop";
 const parseThreshold = (value, fallback) => {
   const parsed = Number.parseFloat(value ?? "");
-  return Number.isFinite(parsed) ? parsed : fallback;
+  if (!Number.isFinite(parsed)) {
+    return fallback;
+  }
+
+  // Accept both decimal thresholds (0.6) and percentage-style inputs (60).
+  const normalized = parsed > 1 ? parsed / 100 : parsed;
+  return Math.max(0, Math.min(1, normalized));
 };
+
+console.log("Raw Lighthouse env thresholds:");
+console.log(`- LH_MIN_PERFORMANCE: ${process.env.LH_MIN_PERFORMANCE ?? "(unset)"}`);
+console.log(`- LH_MIN_ACCESSIBILITY: ${process.env.LH_MIN_ACCESSIBILITY ?? "(unset)"}`);
+console.log(`- LH_MIN_SEO: ${process.env.LH_MIN_SEO ?? "(unset)"}`);
+
 const minPerformance = parseThreshold(process.env.LH_MIN_PERFORMANCE, 0.6);
 const minAccessibility = parseThreshold(process.env.LH_MIN_ACCESSIBILITY, 0.9);
 const minSeo = parseThreshold(process.env.LH_MIN_SEO, 0.95);
