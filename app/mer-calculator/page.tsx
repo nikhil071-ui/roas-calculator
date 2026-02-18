@@ -22,8 +22,32 @@ export const metadata: Metadata = {
 };
 
 export default function MERCalculatorPage() {
+  const faqData = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: "What is a good MER target?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "A good MER depends on your gross margin and fixed costs. Use your break-even model before setting growth targets.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "How is MER different from ROAS?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "MER is blended across all marketing spend, while ROAS is usually channel or campaign specific.",
+        },
+      },
+    ],
+  };
+
   return (
     <div className="min-h-screen bg-slate-50 text-slate-900 py-12 px-4 md:px-6">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqData) }} />
       <main className="max-w-4xl mx-auto bg-white border border-slate-200 rounded-2xl shadow-sm p-8 md:p-12 space-y-8">
         <div>
           <Link href="/ppc-toolkit" className="text-sm text-slate-500 hover:text-blue-600 transition">Back to PPC Toolkit</Link>
@@ -55,6 +79,10 @@ export default function MERCalculatorPage() {
         <section className="flex flex-wrap gap-3">
           <Link href="/" className="bg-blue-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-blue-700 transition">Open ROAS Calculator</Link>
           <Link href="/resources/ppc-budget-planner.csv" className="bg-slate-900 text-white px-4 py-2 rounded-lg font-semibold hover:bg-slate-800 transition">Download Budget Planner</Link>
+        </section>
+
+        <section className="text-sm text-slate-500 border-t border-slate-200 pt-6">
+          Reviewed by ROAS Tools Editorial Team. Updated February 18, 2026.
         </section>
       </main>
     </div>

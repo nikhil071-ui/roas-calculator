@@ -170,6 +170,10 @@ export default function RoasBenchmarks2026Page() {
             </ul>
           </section>
 
+          <section className="text-sm text-slate-500 border-t border-slate-200 pt-6">
+            Reviewed by ROAS Tools Editorial Team. Published and updated on February 18, 2026.
+          </section>
+
           <section className="bg-slate-900 text-white rounded-xl p-6">
             <h2 className="text-white m-0 mb-3">Next Step: Run Your Own Scenario</h2>
             <p className="text-slate-300 mb-4">

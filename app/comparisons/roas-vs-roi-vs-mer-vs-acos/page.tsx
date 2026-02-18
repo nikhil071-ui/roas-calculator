@@ -128,6 +128,10 @@ export default function MetricComparisonPage() {
             </Link>
           </div>
         </section>
+
+        <section className="text-sm text-slate-500 border-t border-slate-200 pt-6">
+          Reviewed by ROAS Tools Editorial Team. Updated February 18, 2026.
+        </section>
       </main>
     </div>
   );
