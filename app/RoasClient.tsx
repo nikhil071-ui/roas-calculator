@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import jsPDF from "jspdf";
 import { Download, Calculator, DollarSign, TrendingUp, AlertTriangle, RefreshCcw, ShoppingBag, BarChart3, RotateCcw } from "lucide-react";
 import { trackEvent } from "@/app/lib/analytics";
@@ -24,6 +24,39 @@ export default function RoasClient() {
 
   const [results, setResults] = useState<RoasResults | null>(null);
   const [hasTrackedStart, setHasTrackedStart] = useState(false);
+  const calculateButtonRef = useRef<HTMLButtonElement | null>(null);
+
+  const applyPreset = (preset: "ecommerce" | "saas" | "leadgen") => {
+    trackCalculatorStart();
+    if (preset === "ecommerce") {
+      setAdSpend("1000");
+      setRevenue("3500");
+      setProductCost("1700");
+      setOrders("70");
+    } else if (preset === "saas") {
+      setAdSpend("3000");
+      setRevenue("9000");
+      setProductCost("1200");
+      setOrders("45");
+    } else {
+      setAdSpend("1500");
+      setRevenue("6000");
+      setProductCost("900");
+      setOrders("30");
+    }
+    trackEvent("calculator_preset_selected", {
+      calculator_type: "roas",
+      preset,
+    });
+  };
+
+  const scrollToCalculate = () => {
+    calculateButtonRef.current?.scrollIntoView({ behavior: "smooth", block: "center" });
+    trackEvent("cta_click_calculate_sticky", {
+      calculator_type: "roas",
+      page_type: "home_or_slug",
+    });
+  };
 
   // --- CLEAR FUNCTION ---
   const resetFields = () => {
@@ -57,6 +90,12 @@ export default function RoasClient() {
       has_optional_costs: cost > 0,
       result_state: resultState,
     });
+    trackEvent("calculator_complete", {
+      calculator_type: "roas",
+      result_state: resultState,
+      roas_value: Number(roas.toFixed(2)),
+      break_even_value: breakEvenRoas ? Number(breakEvenRoas.toFixed(2)) : null,
+    });
 
     setResults({
       roas: roas.toFixed(2),
@@ -88,6 +127,10 @@ export default function RoasClient() {
         alert("Please calculate your ROAS first!");
         return;
     }
+    trackEvent("result_export_click", {
+      calculator_type: "roas",
+      export_type: "pdf",
+    });
 
     const doc = new jsPDF();
     const date = new Date().toLocaleDateString();
@@ -227,7 +270,7 @@ export default function RoasClient() {
             <div className="space-y-6">
                 
                 {/* ROW 1 */}
-                <div className="grid grid-cols-2 gap-6">
+              <div className="grid grid-cols-2 gap-6">
                     <div className="space-y-2">
                         <label className="text-xs font-bold text-slate-500 uppercase tracking-wider">Total Ad Spend</label>
                         <div className="relative group">
@@ -288,6 +331,33 @@ export default function RoasClient() {
                             />
                         </div>
                     </div>
+              </div>
+
+                <div className="bg-slate-50 border border-slate-200 rounded-xl p-4">
+                    <p className="text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Quick Presets</p>
+                    <div className="flex flex-wrap gap-2">
+                        <button
+                            type="button"
+                            onClick={() => applyPreset("ecommerce")}
+                            className="px-3 py-2 rounded-lg bg-white border border-slate-300 text-slate-900 text-sm font-semibold hover:bg-slate-100 transition"
+                        >
+                            eCom
+                        </button>
+                        <button
+                            type="button"
+                            onClick={() => applyPreset("saas")}
+                            className="px-3 py-2 rounded-lg bg-white border border-slate-300 text-slate-900 text-sm font-semibold hover:bg-slate-100 transition"
+                        >
+                            SaaS
+                        </button>
+                        <button
+                            type="button"
+                            onClick={() => applyPreset("leadgen")}
+                            className="px-3 py-2 rounded-lg bg-white border border-slate-300 text-slate-900 text-sm font-semibold hover:bg-slate-100 transition"
+                        >
+                            Lead Gen
+                        </button>
+                    </div>
                 </div>
 
                 {/* ACTION BUTTONS */}
@@ -300,12 +370,16 @@ export default function RoasClient() {
                         <RotateCcw size={20} />
                     </button>
                     <button 
+                        ref={calculateButtonRef}
                         onClick={calculateROAS}
                         className="flex-1 bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 rounded-xl shadow-lg hover:shadow-blue-500/30 transition transform hover:-translate-y-1 flex items-center justify-center gap-2 text-lg"
                     >
                         <RefreshCcw size={22} /> Calculate Results
                     </button>
                 </div>
+                <p className="text-xs text-slate-500">
+                  No signup required. Your inputs stay in your browser and are not sent to our server.
+                </p>
             </div>
 
             {/* RIGHT: DASHBOARD RESULTS */}
@@ -318,6 +392,16 @@ export default function RoasClient() {
                     </div>
                 ) : (
                     <div className="space-y-6 animate-in fade-in zoom-in duration-300">
+                        <div className="bg-white rounded-xl border border-slate-200 p-4 shadow-sm">
+                            <p className="text-xs font-bold text-slate-500 uppercase tracking-wider mb-1">Decision Summary</p>
+                            <p className="text-sm text-slate-700">
+                              {results.breakEven !== "N/A" && Number(results.roas) >= Number(results.breakEven) * 1.2
+                                ? "Scale gradually: ROAS is materially above break-even."
+                                : results.breakEven !== "N/A" && Number(results.roas) <= Number(results.breakEven) * 0.9
+                                ? "Pause or cap spend: ROAS is below break-even threshold."
+                                : "Hold and optimize: ROAS is near break-even, improve conversion and AOV first."}
+                            </p>
+                        </div>
                         
                         {/* HERO METRICS */}
                         <div className="grid grid-cols-2 gap-4">
@@ -372,6 +456,13 @@ export default function RoasClient() {
             </div>
         </div>
       </div>
+      <button
+        type="button"
+        onClick={scrollToCalculate}
+        className="md:hidden fixed bottom-4 left-4 right-4 z-40 bg-blue-600 text-white font-bold py-3 rounded-xl shadow-lg hover:bg-blue-700 transition"
+      >
+        Calculate ROAS
+      </button>
     </div>
   );
 }
