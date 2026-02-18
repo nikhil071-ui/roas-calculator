@@ -3,8 +3,8 @@ import { ArrowLeft, TrendingUp } from "lucide-react";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Facebook Ads ROAS Case Study: How We Achieved 5.2x in 90 Days | Real Data",
-  description: "Real case study with data: Fashion e-commerce increased ROAS from 1.8x to 5.2x in 90 days. See exact strategies, budget allocation, and cost breakdowns.",
+  title: "Facebook Ads ROAS Case Study (2026): 1.8x to 5.2x in 90 Days",
+  description: "Detailed Facebook Ads case study with numbers: 1.8x to 5.2x ROAS in 90 days, including strategy, budget breakdown, and profit analysis.",
   keywords: [
     "facebook ads case study",
     "roas improvement",
@@ -14,14 +14,14 @@ export const metadata: Metadata = {
     "conversion rate optimization",
   ],
   openGraph: {
-    title: "Facebook Ads ROAS Case Study: How We Achieved 5.2x in 90 Days | Real Data",
-    description: "Real case study with data: Fashion e-commerce increased ROAS from 1.8x to 5.2x in 90 days. See exact strategies, budget allocation, and cost breakdowns.",
+    title: "Facebook Ads ROAS Case Study (2026): 1.8x to 5.2x in 90 Days",
+    description: "Detailed Facebook Ads case study with numbers: 1.8x to 5.2x ROAS in 90 days, including strategy, budget breakdown, and profit analysis.",
     url: "https://roas-calculator.tech/blog/facebook-ads-case-study",
   },
-      twitter: {
+  twitter: {
     card: "summary_large_image",
-    title: "Facebook Ads ROAS Case Study: How We Achieved 5.2x in 90 Days | Real Data",
-    description: "Real case study with data: Fashion e-commerce increased ROAS from 1.8x to 5.2x in 90 days. See exact strategies, budget allocation, and cost breakdowns.",
+    title: "Facebook Ads ROAS Case Study (2026): 1.8x to 5.2x in 90 Days",
+    description: "Detailed Facebook Ads case study with numbers: 1.8x to 5.2x ROAS in 90 days, including strategy, budget breakdown, and profit analysis.",
   },
   alternates: {
     canonical: "https://roas-calculator.tech/blog/facebook-ads-case-study",
@@ -461,6 +461,16 @@ export default function RoasCaseStudy() {
                 </a>
               </li>
             </ul>
+          </section>
+
+          <section className="bg-slate-50 rounded-xl p-6 border border-slate-200">
+            <h3 className="text-xl font-bold text-slate-900 mb-3">Related Planning Tools</h3>
+            <div className="flex flex-wrap gap-3">
+              <Link href="/roas/facebook-ads" className="text-blue-700 hover:underline">Facebook Ads ROAS Calculator</Link>
+              <Link href="/cac-calculator" className="text-blue-700 hover:underline">CAC Calculator</Link>
+              <Link href="/payback-period-calculator" className="text-blue-700 hover:underline">Payback Calculator</Link>
+              <Link href="/resources/roas-scenario-planner.csv" className="text-blue-700 hover:underline">ROAS Scenario Template</Link>
+            </div>
           </section>
 
           <div className="bg-linear-to-r from-blue-50 to-indigo-50 rounded-xl p-8 border border-blue-200 mt-12">

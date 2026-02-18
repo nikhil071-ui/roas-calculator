@@ -3,8 +3,8 @@ import { BookOpen, TrendingUp, BarChart3, DollarSign, FileText, Zap } from "luci
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Blog | ROAS Tools - Expert Guides & Case Studies",
-  description: "Expert guides on Facebook ads case studies, image compression, PDF optimization, currency exchange, and ROAS benchmarks. Real data and testing results.",
+  title: "ROAS Blog 2026: Benchmarks, Case Studies, and Calculator Guides",
+  description: "Read practical 2026 guides on ROAS, CAC, LTV, MER, and paid media benchmarks with real examples and linked calculators.",
   keywords: [
     "facebook ads",
     "roas calculator",
@@ -14,14 +14,14 @@ export const metadata: Metadata = {
     "marketing guides",
   ],
   openGraph: {
-    title: "Blog | ROAS Tools - Expert Guides & Case Studies",
-    description: "Expert guides on Facebook ads case studies, image compression, PDF optimization, currency exchange, and ROAS benchmarks. Real data and testing results.",
+    title: "ROAS Blog 2026: Benchmarks, Case Studies, and Calculator Guides",
+    description: "Read practical 2026 guides on ROAS, CAC, LTV, MER, and paid media benchmarks with real examples and linked calculators.",
     url: "https://roas-calculator.tech/blog",
   },
-      twitter: {
+  twitter: {
     card: "summary_large_image",
-    title: "Blog | ROAS Tools - Expert Guides & Case Studies",
-    description: "Expert guides on Facebook ads case studies, image compression, PDF optimization, currency exchange, and ROAS benchmarks. Real data and testing results.",
+    title: "ROAS Blog 2026: Benchmarks, Case Studies, and Calculator Guides",
+    description: "Read practical 2026 guides on ROAS, CAC, LTV, MER, and paid media benchmarks with real examples and linked calculators.",
   },
   alternates: {
     canonical: "https://roas-calculator.tech/blog",

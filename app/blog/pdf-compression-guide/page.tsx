@@ -3,8 +3,8 @@ import { ArrowLeft, FileText } from "lucide-react";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "PDF Compression Best Practices: File Size vs Quality Test Results",
-  description: "Complete guide to PDF compression. Real test results comparing tools, algorithms, compression settings. When to compress and industry standards.",
+  title: "PDF Compression Guide 2026: Best Practices and Test Results",
+  description: "Compare PDF compression methods with real results and choose settings for email, web, archive, and print use cases.",
   keywords: [
     "pdf compression",
     "pdf file size",
@@ -14,14 +14,14 @@ export const metadata: Metadata = {
     "pdf best practices",
   ],
   openGraph: {
-    title: "PDF Compression Best Practices: File Size vs Quality Test Results",
-    description: "Complete guide to PDF compression. Real test results comparing tools, algorithms, compression settings. When to compress and industry standards.",
+    title: "PDF Compression Guide 2026: Best Practices and Test Results",
+    description: "Compare PDF compression methods with real results and choose settings for email, web, archive, and print use cases.",
     url: "https://roas-calculator.tech/blog/pdf-compression-guide",
   },
-      twitter: {
+  twitter: {
     card: "summary_large_image",
-    title: "PDF Compression Best Practices: File Size vs Quality Test Results",
-    description: "Complete guide to PDF compression. Real test results comparing tools, algorithms, compression settings. When to compress and industry standards.",
+    title: "PDF Compression Guide 2026: Best Practices and Test Results",
+    description: "Compare PDF compression methods with real results and choose settings for email, web, archive, and print use cases.",
   },
   alternates: {
     canonical: "https://roas-calculator.tech/blog/pdf-compression-guide",
@@ -423,6 +423,16 @@ export default function PDFCompressionGuide() {
                 </a>
               </li>
             </ul>
+          </section>
+
+          <section className="bg-slate-50 rounded-xl p-6 border border-slate-200">
+            <h3 className="text-xl font-bold text-slate-900 mb-3">Related Tools</h3>
+            <div className="flex flex-wrap gap-3">
+              <Link href="/pdf-converter" className="text-blue-700 hover:underline">PDF Converter</Link>
+              <Link href="/pdf/jpg-to-pdf" className="text-blue-700 hover:underline">JPG to PDF Direct</Link>
+              <Link href="/image-compressor" className="text-blue-700 hover:underline">Image Compressor</Link>
+              <Link href="/resources/pdf-compression-checklist.txt" className="text-blue-700 hover:underline">PDF Checklist</Link>
+            </div>
           </section>
 
           <div className="bg-linear-to-r from-red-50 to-orange-50 rounded-xl p-8 border border-red-200 mt-12">

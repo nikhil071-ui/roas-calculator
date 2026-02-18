@@ -2,9 +2,9 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "ROAS Benchmarks 2026: Updated Channel and Industry Ranges",
+  title: "ROAS Benchmarks 2026: Industry and Channel Targets + Formula",
   description:
-    "Updated ROAS benchmark ranges for 2026 with interpretation by margin profile, channel mix, and growth stage.",
+    "Updated 2026 ROAS benchmarks with break-even formula, channel ranges, and practical scale/hold/pause interpretation.",
   keywords: [
     "roas benchmarks 2026",
     "google ads benchmark roas",
@@ -16,16 +16,16 @@ export const metadata: Metadata = {
     canonical: "https://roas-calculator.tech/blog/roas-benchmarks-2026",
   },
   openGraph: {
-    title: "ROAS Benchmarks 2026: Updated Channel and Industry Ranges",
+    title: "ROAS Benchmarks 2026: Industry and Channel Targets + Formula",
     description:
-      "A practical benchmark guide with formulas and cited sources for channel-level paid media planning.",
+      "Updated 2026 ROAS benchmarks with break-even formula, channel ranges, and practical scale/hold/pause interpretation.",
     url: "https://roas-calculator.tech/blog/roas-benchmarks-2026",
   },
   twitter: {
     card: "summary_large_image",
-    title: "ROAS Benchmarks 2026: Updated Channel and Industry Ranges",
+    title: "ROAS Benchmarks 2026: Industry and Channel Targets + Formula",
     description:
-      "A practical benchmark guide with formulas and cited sources for channel-level paid media planning.",
+      "Updated 2026 ROAS benchmarks with break-even formula, channel ranges, and practical scale/hold/pause interpretation.",
   },
   authors: [{ name: "ROAS Tools Editorial Team" }],
   publisher: "ROAS Tools",
@@ -172,6 +172,16 @@ export default function RoasBenchmarks2026Page() {
 
           <section className="text-sm text-slate-500 border-t border-slate-200 pt-6">
             Reviewed by ROAS Tools Editorial Team. Published and updated on February 18, 2026.
+          </section>
+
+          <section className="bg-slate-50 rounded-xl p-6 border border-slate-200">
+            <h2 className="text-2xl font-bold text-slate-900 mb-3">Related Calculators</h2>
+            <div className="flex flex-wrap gap-3">
+              <Link href="/" className="text-blue-700 hover:underline">ROAS Calculator</Link>
+              <Link href="/cac-calculator" className="text-blue-700 hover:underline">CAC Calculator</Link>
+              <Link href="/ltv-calculator" className="text-blue-700 hover:underline">LTV Calculator</Link>
+              <Link href="/payback-period-calculator" className="text-blue-700 hover:underline">Payback Calculator</Link>
+            </div>
           </section>
 
           <section className="bg-slate-900 text-white rounded-xl p-6">

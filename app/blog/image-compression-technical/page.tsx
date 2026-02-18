@@ -3,8 +3,8 @@ import { ArrowLeft, BookOpen, CheckCircle } from "lucide-react";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Image Compression vs Quality: Technical Guide | Our Testing Results",
-  description: "Complete technical analysis of image compression. Real test results, algorithms explained (DCT, Huffman), quality metrics (SSIM), and when to compress.",
+  title: "Image Compression vs Quality (2026): Technical Guide and Test Data",
+  description: "Technical image compression guide with real tests: JPEG, WebP, AVIF, SSIM metrics, and practical quality settings for 2026.",
   keywords: [
     "image compression",
     "image quality",
@@ -14,14 +14,14 @@ export const metadata: Metadata = {
     "image optimization guide",
   ],
   openGraph: {
-    title: "Image Compression vs Quality: Technical Guide | Our Testing Results",
-    description: "Complete technical analysis of image compression. Real test results, algorithms explained (DCT, Huffman), quality metrics (SSIM), and when to compress.",
+    title: "Image Compression vs Quality (2026): Technical Guide and Test Data",
+    description: "Technical image compression guide with real tests: JPEG, WebP, AVIF, SSIM metrics, and practical quality settings for 2026.",
     url: "https://roas-calculator.tech/blog/image-compression-technical",
   },
-      twitter: {
+  twitter: {
     card: "summary_large_image",
-    title: "Image Compression vs Quality: Technical Guide | Our Testing Results",
-    description: "Complete technical analysis of image compression. Real test results, algorithms explained (DCT, Huffman), quality metrics (SSIM), and when to compress.",
+    title: "Image Compression vs Quality (2026): Technical Guide and Test Data",
+    description: "Technical image compression guide with real tests: JPEG, WebP, AVIF, SSIM metrics, and practical quality settings for 2026.",
   },
   alternates: {
     canonical: "https://roas-calculator.tech/blog/image-compression-technical",
@@ -422,6 +422,16 @@ export default function ImageCompressionTechnical() {
                 </a>
               </li>
             </ul>
+          </section>
+
+          <section className="bg-slate-50 rounded-xl p-6 border border-slate-200">
+            <h3 className="text-xl font-bold text-slate-900 mb-3">Related Tools</h3>
+            <div className="flex flex-wrap gap-3">
+              <Link href="/image-compressor" className="text-blue-700 hover:underline">Image Compressor</Link>
+              <Link href="/compressor/compress-image-for-web" className="text-blue-700 hover:underline">Web Image Optimizer</Link>
+              <Link href="/pdf-converter" className="text-blue-700 hover:underline">JPG to PDF Converter</Link>
+              <Link href="/resources/image-compression-checklist.txt" className="text-blue-700 hover:underline">Compression Checklist</Link>
+            </div>
           </section>
 
           <div className="bg-linear-to-r from-purple-50 to-blue-50 rounded-xl p-8 border border-purple-200 mt-12">

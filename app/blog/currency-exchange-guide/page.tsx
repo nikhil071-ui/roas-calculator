@@ -3,8 +3,8 @@ import { ArrowLeft, DollarSign } from "lucide-react";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Currency Exchange Rates: How Real-Time Rates Work & Cost Analysis",
-  description: "How currency exchange rates work, real-time vs delayed rates, hidden fees from banks vs fintech. Complete cost analysis with examples.",
+  title: "Currency Exchange Guide 2026: Real-Time Rates and Hidden Fees",
+  description: "Learn how currency rates work, compare transfer costs, and avoid hidden markups with practical examples for 2026.",
   keywords: [
     "currency exchange rates",
     "forex rates",
@@ -14,14 +14,14 @@ export const metadata: Metadata = {
     "real-time currency rates",
   ],
   openGraph: {
-    title: "Currency Exchange Rates: How Real-Time Rates Work & Cost Analysis",
-    description: "How currency exchange rates work, real-time vs delayed rates, hidden fees from banks vs fintech. Complete cost analysis with examples.",
+    title: "Currency Exchange Guide 2026: Real-Time Rates and Hidden Fees",
+    description: "Learn how currency rates work, compare transfer costs, and avoid hidden markups with practical examples for 2026.",
     url: "https://roas-calculator.tech/blog/currency-exchange-guide",
   },
-      twitter: {
+  twitter: {
     card: "summary_large_image",
-    title: "Currency Exchange Rates: How Real-Time Rates Work & Cost Analysis",
-    description: "How currency exchange rates work, real-time vs delayed rates, hidden fees from banks vs fintech. Complete cost analysis with examples.",
+    title: "Currency Exchange Guide 2026: Real-Time Rates and Hidden Fees",
+    description: "Learn how currency rates work, compare transfer costs, and avoid hidden markups with practical examples for 2026.",
   },
   alternates: {
     canonical: "https://roas-calculator.tech/blog/currency-exchange-guide",
@@ -404,6 +404,16 @@ export default function CurrencyExchangeGuide() {
                 </a>
               </li>
             </ul>
+          </section>
+
+          <section className="bg-slate-50 rounded-xl p-6 border border-slate-200">
+            <h3 className="text-xl font-bold text-slate-900 mb-3">Related Tools</h3>
+            <div className="flex flex-wrap gap-3">
+              <Link href="/currency-converter" className="text-blue-700 hover:underline">Currency Converter</Link>
+              <Link href="/roas/google-shopping-roas" className="text-blue-700 hover:underline">Google Shopping ROAS</Link>
+              <Link href="/mer-calculator" className="text-blue-700 hover:underline">MER Calculator</Link>
+              <Link href="/resources/currency-transfer-checklist.txt" className="text-blue-700 hover:underline">Transfer Checklist</Link>
+            </div>
           </section>
 
           <div className="bg-linear-to-r from-green-50 to-blue-50 rounded-xl p-8 border border-green-200 mt-12">
