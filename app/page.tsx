@@ -137,6 +137,27 @@ export default function Home() {
               </div>
             </section>
 
+            <section className="mt-4 mb-12 bg-white border border-slate-200 rounded-2xl p-6 md:p-8">
+              <h2 className="text-2xl font-bold text-slate-900 mb-2">What should you do next?</h2>
+              <p className="text-slate-600 mb-5">
+                Pick the path that matches your goal, then use the right calculator and framework.
+              </p>
+              <div className="grid md:grid-cols-3 gap-4">
+                <Link href="/ppc-toolkit" className="block rounded-xl border border-indigo-200 bg-indigo-50 p-4 hover:border-indigo-400 transition">
+                  <h3 className="font-bold text-slate-900">Plan full funnel economics</h3>
+                  <p className="text-sm text-slate-600 mt-1">Use ROAS, CAC, LTV, MER, and target CPA together.</p>
+                </Link>
+                <Link href="/comparisons/roas-vs-roi-vs-mer-vs-acos" className="block rounded-xl border border-blue-200 bg-blue-50 p-4 hover:border-blue-400 transition">
+                  <h3 className="font-bold text-slate-900">Choose the right metric</h3>
+                  <p className="text-sm text-slate-600 mt-1">Compare ROAS, ROI, MER, and ACoS by decision type.</p>
+                </Link>
+                <Link href="/comparisons/cac-vs-cpa-vs-roas" className="block rounded-xl border border-emerald-200 bg-emerald-50 p-4 hover:border-emerald-400 transition">
+                  <h3 className="font-bold text-slate-900">Fix acquisition efficiency</h3>
+                  <p className="text-sm text-slate-600 mt-1">Decide when to optimize for CAC, CPA, or ROAS.</p>
+                </Link>
+              </div>
+            </section>
+
             {/* --- RESOURCES & SUPPORT --- */}
             <section className="mt-4 mb-12">
               <h2 className="text-xl font-bold text-slate-900 mb-4 text-center">Resources and Help</h2>

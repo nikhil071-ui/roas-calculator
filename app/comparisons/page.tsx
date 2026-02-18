@@ -2,8 +2,8 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Tool Comparisons | ROAS Tools",
-  description: "Compare ROAS Tools with popular alternatives for image compression, PDF conversion, currency exchange, and ROAS tracking.",
+  title: "Tool Comparisons | ROAS, CAC, CPA and More",
+  description: "Compare ROAS, CAC, CPA, ROI, MER, and ACoS frameworks with practical guides plus side-by-side tool comparisons.",
   keywords: [
     "tool comparisons",
     "roas calculator comparison",
@@ -12,14 +12,14 @@ export const metadata: Metadata = {
     "currency converter comparison",
   ],
   openGraph: {
-    title: "Tool Comparisons | ROAS Tools",
-    description: "Compare ROAS Tools with popular alternatives for image compression, PDF conversion, currency exchange, and ROAS tracking.",
+    title: "Tool Comparisons | ROAS, CAC, CPA and More",
+    description: "Compare ROAS, CAC, CPA, ROI, MER, and ACoS frameworks with practical guides plus side-by-side tool comparisons.",
     url: "https://roas-calculator.tech/comparisons",
   },
       twitter: {
     card: "summary_large_image",
-    title: "Tool Comparisons | ROAS Tools",
-    description: "Compare ROAS Tools with popular alternatives for image compression, PDF conversion, currency exchange, and ROAS tracking.",
+    title: "Tool Comparisons | ROAS, CAC, CPA and More",
+    description: "Compare ROAS, CAC, CPA, ROI, MER, and ACoS frameworks with practical guides plus side-by-side tool comparisons.",
   },
   alternates: {
     canonical: "https://roas-calculator.tech/comparisons",
@@ -41,6 +41,19 @@ export default function ComparisonsPage() {
         </div>
 
         <div className="space-y-8">
+          <section className="bg-indigo-50 p-6 rounded-xl border border-indigo-200 shadow-sm">
+            <h2 className="text-xl font-bold text-slate-900">Metrics Comparison: CAC vs CPA vs ROAS</h2>
+            <p className="text-slate-700 mt-2">
+              Decide whether to optimize campaign CPA, channel-level ROAS, or business-level CAC based on your growth stage.
+            </p>
+            <Link
+              href="/comparisons/cac-vs-cpa-vs-roas"
+              className="inline-block mt-4 bg-indigo-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-indigo-700 transition"
+            >
+              Open Comparison Guide
+            </Link>
+          </section>
+
           <section className="bg-blue-50 p-6 rounded-xl border border-blue-200 shadow-sm">
             <h2 className="text-xl font-bold text-slate-900">Metrics Comparison: ROAS vs ROI vs MER vs ACoS</h2>
             <p className="text-slate-700 mt-2">

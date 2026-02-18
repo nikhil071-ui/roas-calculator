@@ -346,6 +346,21 @@ export default async function DynamicRoasPage({ params }: { params: Promise<{ sl
             </div>
           </div>
 
+          <div className="bg-white border border-gray-200 rounded-xl p-6 mt-6">
+            <h3 className="text-xl font-bold text-slate-900 mb-3">ROAS by Channel and Objective</h3>
+            <p className="text-gray-700 mb-4">
+              Use the matching calculator for each ad channel to compare break-even targets and scale decisions side by side.
+            </p>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
+              <Link href="/roas/facebook-ads" className="text-blue-700 hover:underline">Facebook Ads ROAS</Link>
+              <Link href="/roas/tiktok-ads" className="text-blue-700 hover:underline">TikTok Ads ROAS</Link>
+              <Link href="/roas/google-ads" className="text-blue-700 hover:underline">Google Ads ROAS</Link>
+              <Link href="/roas/google-shopping-roas" className="text-blue-700 hover:underline">Google Shopping ROAS</Link>
+              <Link href="/roas/meta-dtc-roas" className="text-blue-700 hover:underline">Meta DTC ROAS</Link>
+              <Link href="/roas/lead-gen-cpl-roas" className="text-blue-700 hover:underline">Lead Gen CPL ROAS</Link>
+            </div>
+          </div>
+
           <div className="mt-12 p-8 bg-slate-900 text-white rounded-2xl text-center">
             <h3 className="text-2xl font-bold mb-4">Are you spending internationally?</h3>
             <p className="mb-6 text-slate-300">

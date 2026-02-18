@@ -31,6 +31,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     '/resources',
     '/comparisons',
     '/comparisons/roas-vs-roi-vs-mer-vs-acos',
+    '/comparisons/cac-vs-cpa-vs-roas',
     '/case-studies',
     '/testimonials',
     '/glossary',
