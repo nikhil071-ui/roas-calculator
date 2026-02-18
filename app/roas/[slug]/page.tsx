@@ -256,8 +256,26 @@ export default async function DynamicRoasPage({ params }: { params: Promise<{ sl
           </p>
         </div>
 
+        <section className="bg-white border border-slate-200 rounded-xl p-6">
+          <h2 className="text-2xl font-bold text-slate-900 mb-2">Take Action After You Calculate</h2>
+          <p className="text-slate-600 mb-4">
+            Validate your result with CAC, LTV, and MER before scaling budget so decisions stay tied to full unit economics.
+          </p>
+          <div className="flex flex-wrap gap-3">
+            <Link href="/ppc-toolkit" className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold px-4 py-2 rounded-lg">
+              Open PPC Toolkit
+            </Link>
+            <Link href="/resources" className="inline-block bg-white hover:bg-gray-100 text-gray-900 font-semibold px-4 py-2 rounded-lg border border-gray-300">
+              Download Planning Templates
+            </Link>
+            <Link href="/comparisons/cac-vs-cpa-vs-roas" className="inline-block bg-emerald-600 hover:bg-emerald-700 text-white font-semibold px-4 py-2 rounded-lg">
+              Read CAC vs CPA vs ROAS
+            </Link>
+          </div>
+        </section>
+
         {/* --- AD SLOT 1: TOP --- */}
-        <div className="w-full flex justify-center bg-gray-50 rounded-lg p-2">
+        <div className="w-full flex justify-center bg-gray-50 rounded-lg p-2 my-8">
           <AdBanner />
         </div>
 
@@ -268,7 +286,7 @@ export default async function DynamicRoasPage({ params }: { params: Promise<{ sl
         </div>
 
         {/* --- AD SLOT 2: BOTTOM --- */}
-        <div className="w-full flex justify-center bg-gray-50 rounded-lg p-2">
+        <div className="w-full flex justify-center bg-gray-50 rounded-lg p-2 my-8">
            <AdBanner />
         </div>
 

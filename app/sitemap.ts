@@ -31,6 +31,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     '/mer-calculator',
     '/payback-period-calculator',
     '/resources',
+    '/resources/ga4-conversion-mapping',
     '/comparisons',
     '/comparisons/roas-vs-roi-vs-mer-vs-acos',
     '/comparisons/cac-vs-cpa-vs-roas',

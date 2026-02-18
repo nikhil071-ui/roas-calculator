@@ -8,6 +8,10 @@ export const metadata: Metadata = {
     "roas template",
     "ppc budget planner",
     "roas scenario planner",
+    "ga4 conversion mapping",
+    "mer tracker template",
+    "cac ltv model template",
+    "budget pacing template",
     "image compression checklist",
     "pdf compression checklist",
     "currency transfer checklist",
@@ -86,6 +90,48 @@ export default function ResourcesPage() {
           </div>
 
           <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+            <h2 className="text-xl font-bold text-slate-900">CAC vs LTV Model Template (CSV)</h2>
+            <p className="text-slate-600 mt-2">
+              Model CAC, LTV ratio, and payback windows by channel to decide scale, hold, or pause.
+            </p>
+            <a
+              href="/resources/cac-ltv-model-template.csv"
+              download
+              className="inline-block mt-4 bg-blue-700 text-white px-4 py-2 rounded-lg font-semibold hover:bg-blue-800 transition"
+            >
+              Download Model
+            </a>
+          </div>
+
+          <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+            <h2 className="text-xl font-bold text-slate-900">MER Weekly Tracker (CSV)</h2>
+            <p className="text-slate-600 mt-2">
+              Track blended MER weekly with target variance and action notes for leadership reporting.
+            </p>
+            <a
+              href="/resources/mer-weekly-tracker.csv"
+              download
+              className="inline-block mt-4 bg-violet-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-violet-700 transition"
+            >
+              Download Tracker
+            </a>
+          </div>
+
+          <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+            <h2 className="text-xl font-bold text-slate-900">Budget Pacing Template (CSV)</h2>
+            <p className="text-slate-600 mt-2">
+              Monitor daily spend pace vs target budget and expected ROAS to prevent overspend.
+            </p>
+            <a
+              href="/resources/budget-pacing-template.csv"
+              download
+              className="inline-block mt-4 bg-cyan-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-cyan-700 transition"
+            >
+              Download Template
+            </a>
+          </div>
+
+          <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
             <h2 className="text-xl font-bold text-slate-900">Image Compression Checklist (TXT)</h2>
             <p className="text-slate-600 mt-2">
               Step-by-step checklist to hit size limits for exam portals and web uploads.
@@ -125,6 +171,31 @@ export default function ResourcesPage() {
             >
               Download Checklist
             </a>
+          </div>
+        </div>
+
+        <div className="mt-10 bg-indigo-50 border border-indigo-200 rounded-xl p-6">
+          <h3 className="text-lg font-bold text-slate-900 mb-2">Measurement Setup</h3>
+          <p className="text-slate-700">
+            Need clean attribution and conversion reporting? Use our GA4 implementation map for calculator events and template downloads.
+          </p>
+          <Link href="/resources/ga4-conversion-mapping" className="inline-block mt-4 text-indigo-700 font-semibold hover:underline">
+            Open GA4 Conversion Mapping
+          </Link>
+        </div>
+
+        <div className="mt-10 bg-white border border-slate-200 rounded-xl p-6">
+          <h3 className="text-lg font-bold text-slate-900 mb-2">Recommended Workflow</h3>
+          <p className="text-slate-600 mb-4">
+            Start with the calculators, then use templates to operationalize decisions across weekly reporting.
+          </p>
+          <div className="flex flex-wrap gap-3">
+            <Link href="/" className="text-blue-700 font-semibold hover:underline">ROAS Calculator</Link>
+            <Link href="/cac-calculator" className="text-blue-700 font-semibold hover:underline">CAC Calculator</Link>
+            <Link href="/ltv-calculator" className="text-blue-700 font-semibold hover:underline">LTV Calculator</Link>
+            <Link href="/mer-calculator" className="text-blue-700 font-semibold hover:underline">MER Calculator</Link>
+            <Link href="/payback-period-calculator" className="text-blue-700 font-semibold hover:underline">Payback Calculator</Link>
+            <Link href="/comparisons/mer-vs-roas" className="text-blue-700 font-semibold hover:underline">MER vs ROAS</Link>
           </div>
         </div>
 

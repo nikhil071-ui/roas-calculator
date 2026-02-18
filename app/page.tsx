@@ -78,9 +78,27 @@ export default function Home() {
             {/* THE CALCULATOR TOOL */}
             <RoasClient />
 
+            <section className="mt-8 mb-6 bg-white border border-slate-200 rounded-2xl p-6">
+              <h2 className="text-xl font-bold text-slate-900 mb-2">Next Step After Calculation</h2>
+              <p className="text-slate-600 mb-4">
+                Use these follow-up tools before changing budget so decisions are tied to CAC, LTV, and blended efficiency.
+              </p>
+              <div className="flex flex-wrap gap-3">
+                <Link href="/ppc-toolkit" className="inline-flex items-center px-4 py-2 rounded-lg bg-indigo-600 text-white font-semibold hover:bg-indigo-700 transition">
+                  Open PPC Toolkit
+                </Link>
+                <Link href="/resources" className="inline-flex items-center px-4 py-2 rounded-lg bg-white border border-slate-300 text-slate-900 font-semibold hover:bg-slate-50 transition">
+                  Download Templates
+                </Link>
+                <Link href="/comparisons/mer-vs-roas" className="inline-flex items-center px-4 py-2 rounded-lg bg-emerald-600 text-white font-semibold hover:bg-emerald-700 transition">
+                  Read MER vs ROAS
+                </Link>
+              </div>
+            </section>
+
             {/* --- AD SPACE --- */}
 {/* Google Policy: Keep 20px+ distance from buttons to avoid bans */}
-<div className="mt-8 mb-8">
+<div className="mt-10 mb-10">
   <AdBanner />
 </div>
 {/* ---------------- */}

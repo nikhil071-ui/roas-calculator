@@ -1,0 +1,5 @@
+month,channel,new_customers,cac_usd,arpu_usd,gross_margin_pct,ltv_12m_usd,ltv_cac_ratio,payback_months,action
+2026-01,google_ads,120,185,55,78,515,2.78,9.4,scale
+2026-01,meta_ads,150,210,48,74,426,2.03,12.8,hold
+2026-01,linkedin,40,360,95,82,935,2.60,10.5,hold
+2026-01,organic_assist,60,95,52,80,499,5.25,4.6,scale

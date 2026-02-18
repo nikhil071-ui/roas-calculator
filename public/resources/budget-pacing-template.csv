@@ -1,0 +1,4 @@
+date,channel,daily_budget,target_spend,actual_spend,variance_pct,target_roas,actual_roas,pace_status,action
+2026-02-15,google_ads,1800,1800,1710,-5.0,3.8,3.9,underpace,raise_budget_5pct
+2026-02-15,meta_ads,2200,2200,2480,12.7,2.9,2.4,overpace,reduce_budget_10pct
+2026-02-15,tiktok_ads,900,900,860,-4.4,2.6,2.8,underpace,hold
