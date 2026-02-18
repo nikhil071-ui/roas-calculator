@@ -1,9 +1,7 @@
 "use client";
 
 import { useRef, useState } from "react";
-import jsPDF from "jspdf";
 import { Download, Calculator, DollarSign, TrendingUp, AlertTriangle, RefreshCcw, ShoppingBag, BarChart3, RotateCcw } from "lucide-react";
-import { trackEvent } from "@/app/lib/analytics";
 
 type RoasResults = {
   roas: string;
@@ -25,7 +23,16 @@ export default function RoasClient() {
   const [results, setResults] = useState<RoasResults | null>(null);
   const [validationError, setValidationError] = useState("");
   const [hasTrackedStart, setHasTrackedStart] = useState(false);
+  const [exporting, setExporting] = useState(false);
   const calculateButtonRef = useRef<HTMLButtonElement | null>(null);
+
+  const sendAnalyticsEvent = async (
+    eventName: string,
+    params: Record<string, string | number | boolean | null | undefined>,
+  ) => {
+    const { trackEvent } = await import("@/app/lib/analytics");
+    trackEvent(eventName, params);
+  };
 
   const applyPreset = (preset: "ecommerce" | "saas" | "leadgen") => {
     trackCalculatorStart();
@@ -45,7 +52,7 @@ export default function RoasClient() {
       setProductCost("900");
       setOrders("30");
     }
-    trackEvent("calculator_preset_selected", {
+    void sendAnalyticsEvent("calculator_preset_selected", {
       calculator_type: "roas",
       preset,
     });
@@ -53,7 +60,7 @@ export default function RoasClient() {
 
   const scrollToCalculate = () => {
     calculateButtonRef.current?.scrollIntoView({ behavior: "smooth", block: "center" });
-    trackEvent("cta_click_calculate_sticky", {
+    void sendAnalyticsEvent("cta_click_calculate_sticky", {
       calculator_type: "roas",
       page_type: "home_or_slug",
     });
@@ -91,12 +98,12 @@ export default function RoasClient() {
 
     const resultState =
       profit > 0 ? "profitable" : profit < 0 ? "unprofitable" : "break_even";
-    trackEvent("calculator_submit", {
+    void sendAnalyticsEvent("calculator_submit", {
       calculator_type: "roas",
       has_optional_costs: cost > 0,
       result_state: resultState,
     });
-    trackEvent("calculator_complete", {
+    void sendAnalyticsEvent("calculator_complete", {
       calculator_type: "roas",
       result_state: resultState,
       roas_value: Number(roas.toFixed(2)),
@@ -119,7 +126,7 @@ export default function RoasClient() {
     const pathname = typeof window !== "undefined" ? window.location.pathname : "/";
     const isRoasSlug = pathname.startsWith("/roas/");
     const slug = isRoasSlug ? pathname.replace("/roas/", "") : "home";
-    trackEvent("calculator_start", {
+    void sendAnalyticsEvent("calculator_start", {
       page_type: isRoasSlug ? "roas_slug" : "home",
       calculator_type: "roas",
       slug,
@@ -128,17 +135,19 @@ export default function RoasClient() {
   };
 
   // --- PDF GENERATOR ---
-  const downloadReport = () => {
+  const downloadReport = async () => {
     if (!results) {
         alert("Please calculate your ROAS first!");
         return;
     }
-    trackEvent("result_export_click", {
+    void sendAnalyticsEvent("result_export_click", {
       calculator_type: "roas",
       export_type: "pdf",
     });
-
-    const doc = new jsPDF();
+    setExporting(true);
+    try {
+      const { default: jsPDF } = await import("jspdf");
+      const doc = new jsPDF();
     const date = new Date().toLocaleDateString();
     const width = doc.internal.pageSize.getWidth();
 
@@ -246,7 +255,10 @@ export default function RoasClient() {
     doc.text("This report was generated using the Free ROAS Calculator.", width / 2, 280, { align: 'center' });
     doc.text("https://roas-calculator.tech", width / 2, 285, { align: 'center' });
 
-    doc.save("ROAS_Professional_Report.pdf");
+      doc.save("ROAS_Professional_Report.pdf");
+    } finally {
+      setExporting(false);
+    }
   };
 
   return (
@@ -382,11 +394,12 @@ export default function RoasClient() {
                 <div className="flex gap-4 pt-4">
                     <button 
                         onClick={resetFields}
-                        className="px-6 py-4 rounded-xl font-bold text-slate-500 hover:text-slate-700 hover:bg-slate-100 transition border border-transparent hover:border-slate-200 flex items-center gap-2"
+                        className="px-4 py-4 rounded-xl font-bold text-slate-600 hover:text-slate-800 hover:bg-slate-100 transition border border-transparent hover:border-slate-200 flex items-center gap-2"
                         title="Clear all fields"
                         aria-label="Clear all calculator fields"
                     >
                         <RotateCcw size={20} />
+                        <span className="text-sm">Reset</span>
                     </button>
                     <button 
                         ref={calculateButtonRef}
@@ -468,12 +481,13 @@ export default function RoasClient() {
                         </div>
 
                         {/* PDF BUTTON */}
-                        <button 
+                        <button
                             onClick={downloadReport}
+                            disabled={exporting}
                             className="w-full bg-slate-800 hover:bg-slate-900 text-white py-4 rounded-xl font-bold flex items-center justify-center gap-3 transition shadow-lg hover:shadow-slate-500/20"
                             aria-label="Download campaign results as a PDF report"
                         >
-                            <Download size={20} /> Download PDF Report
+                            <Download size={20} /> {exporting ? "Preparing PDF..." : "Download PDF Report"}
                         </button>
                     </div>
                 )}

@@ -60,25 +60,6 @@ export default function Home() {
       "availability": "https://schema.org/InStock"
     }
   };
-  const websiteData = {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "ROAS Tools",
-    "url": SITE_URL
-  };
-  const organizationData = {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "ROAS Tools",
-    "url": SITE_URL,
-    "logo": `${SITE_URL}/favicon.ico`,
-    "sameAs": [
-      `${SITE_URL}/about`,
-      `${SITE_URL}/authors`,
-      `${SITE_URL}/editorial-policy`
-    ],
-    "publishingPrinciples": `${SITE_URL}/editorial-policy`
-  };
   const faqData = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -88,7 +69,7 @@ export default function Home() {
         "name": "What is a good ROAS?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "A good ROAS depends on contribution margin and payback targets. Many teams use 3.0x to 5.0x as a working range, but break-even ROAS is the real baseline."
+          "text": "A good ROAS depends on your contribution margin and payback window. Many teams use 3.0x to 5.0x as a directional range, but your break-even ROAS is the only hard baseline. Always compare ROAS with CAC and margin before scaling."
         }
       },
       {
@@ -96,7 +77,7 @@ export default function Home() {
         "name": "Is high ROAS always profitable?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "No. You still need to include COGS, shipping, platform fees, and overhead. Pair ROAS with CAC, LTV, and MER before increasing budget."
+          "text": "No, a high ROAS can still lose money if margins are thin. Include COGS, shipping, platform fees, and operating costs in your profitability check. Pair ROAS with CAC, LTV, and MER before raising spend."
         }
       },
       {
@@ -104,7 +85,7 @@ export default function Home() {
         "name": "When should I scale ad spend?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Scale when ROAS stays above break-even and conversion quality remains stable across multiple days, with healthy CAC payback."
+          "text": "Scale when ROAS is consistently above break-even and conversion quality is stable. Validate that CAC payback remains healthy over multiple days, not just one spike. Increase budgets gradually and monitor blended MER during scale."
         }
       }
     ]
@@ -115,14 +96,6 @@ export default function Home() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(webApplicationData) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteData) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationData) }}
       />
       <script
         type="application/ld+json"
@@ -206,7 +179,7 @@ export default function Home() {
               <p className="text-slate-600 mb-4">
                 Use these follow-up tools before changing budget so decisions are tied to CAC, LTV, and blended efficiency.
               </p>
-              <div className="flex flex-wrap gap-3">
+              <div className="flex flex-wrap items-center gap-3">
                 <TrackedLink
                   href="/ppc-toolkit"
                   eventName="cta_click_ppc_toolkit"
@@ -216,10 +189,10 @@ export default function Home() {
                 >
                   Open PPC Toolkit
                 </TrackedLink>
-                <Link href="/resources" className="inline-flex items-center px-4 py-2 rounded-lg bg-white border border-slate-300 text-slate-900 font-semibold hover:bg-slate-50 transition" aria-label="Download ROAS planning templates and checklists">
+                <Link href="/resources" className="text-sm font-semibold text-slate-700 hover:text-slate-900 underline underline-offset-2" aria-label="Download ROAS planning templates and checklists">
                   Download Templates
                 </Link>
-                <Link href="/comparisons/mer-vs-roas" className="inline-flex items-center px-4 py-2 rounded-lg bg-emerald-600 text-white font-semibold hover:bg-emerald-700 transition" aria-label="Read the MER versus ROAS comparison guide">
+                <Link href="/comparisons/mer-vs-roas" className="text-sm font-semibold text-slate-700 hover:text-slate-900 underline underline-offset-2" aria-label="Read the MER versus ROAS comparison guide">
                   Read MER vs ROAS
                 </Link>
               </div>

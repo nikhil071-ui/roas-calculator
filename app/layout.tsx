@@ -89,32 +89,6 @@ export default function RootLayout({
           </div>
         </noscript>
         
-        {/* --- JSON-LD SCHEMA --- */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "WebApplication",
-              "name": "ROAS Tools",
-              "url": "https://roas-calculator.tech",
-              "applicationCategory": "BusinessApplication",
-              "operatingSystem": "All",
-              "browserRequirements": "Requires JavaScript. Requires HTML5.",
-              "offers": {
-                "@type": "Offer",
-                "price": "0",
-                "priceCurrency": "USD"
-              },
-              "featureList": "Calculate ROAS, Compress Images to 50KB, Convert JPG to PDF, Currency Converter",
-              "author": {
-                "@type": "Organization",
-                "name": "ROAS Tools Inc."
-              }
-            })
-          }}
-        />
-        
         {/* --- ORGANIZATION SCHEMA --- */}
         <script
           type="application/ld+json"
@@ -152,6 +126,19 @@ export default function RootLayout({
                 "PDF Conversion",
                 "Currency Exchange"
               ]
+            })
+          }}
+        />
+        
+        {/* --- WEBSITE SCHEMA --- */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              "name": "ROAS Tools",
+              "url": "https://roas-calculator.tech"
             })
           }}
         />
