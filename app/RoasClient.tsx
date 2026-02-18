@@ -23,6 +23,7 @@ export default function RoasClient() {
   const [orders, setOrders] = useState<number | string>("");
 
   const [results, setResults] = useState<RoasResults | null>(null);
+  const [validationError, setValidationError] = useState("");
   const [hasTrackedStart, setHasTrackedStart] = useState(false);
   const calculateButtonRef = useRef<HTMLButtonElement | null>(null);
 
@@ -65,6 +66,7 @@ export default function RoasClient() {
     setProductCost("");
     setOrders("");
     setResults(null);
+    setValidationError("");
   };
 
   const calculateROAS = () => {
@@ -73,7 +75,11 @@ export default function RoasClient() {
     const cost = Number(productCost) || 0;
     const orderCount = Number(orders) || 0;
 
-    if (spend === 0) return;
+    if (spend === 0) {
+      setValidationError("Add ad spend greater than 0 to calculate ROAS.");
+      return;
+    }
+    setValidationError("");
 
     const roas = rev / spend;
     const profit = rev - spend - cost;
@@ -257,7 +263,7 @@ export default function RoasClient() {
             </div>
             <h2 className="text-3xl font-extrabold flex items-center gap-3 relative z-10">
                 <Calculator className="text-blue-400" /> 
-                ROAS Calculator <span className="text-sm bg-blue-600 px-2 py-1 rounded text-white font-normal">PRO</span>
+                ROAS Calculator <span className="text-sm bg-blue-600 px-2 py-1 rounded text-white font-normal">Workspace</span>
             </h2>
             <p className="text-slate-300 text-sm mt-2 relative z-10 max-w-lg">
                 Enter your campaign numbers below. We will calculate your true profit, CPA, AOV, and Break-Even point instantly.
@@ -272,64 +278,76 @@ export default function RoasClient() {
                 {/* ROW 1 */}
               <div className="grid grid-cols-2 gap-6">
                     <div className="space-y-2">
-                        <label className="text-xs font-bold text-slate-500 uppercase tracking-wider">Total Ad Spend</label>
+                        <label htmlFor="ad-spend" className="text-xs font-bold text-slate-500 uppercase tracking-wider">Total Ad Spend</label>
                         <div className="relative group">
                             <DollarSign className="absolute left-4 top-4 text-slate-400 group-focus-within:text-blue-600 transition" size={20} />
                             <input 
+                                id="ad-spend"
                                 type="number" 
                                 value={adSpend}
                                 onChange={(e) => setAdSpend(e.target.value)}
                                 onFocus={trackCalculatorStart}
                                 className="w-full pl-12 pr-4 py-4 bg-slate-50 border-2 border-slate-200 rounded-xl focus:border-blue-600 focus:bg-white focus:ring-4 focus:ring-blue-100 outline-none transition-all font-extrabold text-xl text-gray-900 placeholder-gray-300"
                                 placeholder="0.00"
+                                aria-describedby="ad-spend-help"
                             />
                         </div>
+                        <p id="ad-spend-help" className="text-xs text-slate-500">Total platform spend for the selected date range.</p>
                     </div>
                     <div className="space-y-2">
-                        <label className="text-xs font-bold text-slate-500 uppercase tracking-wider">Total Revenue</label>
+                        <label htmlFor="total-revenue" className="text-xs font-bold text-slate-500 uppercase tracking-wider">Total Revenue</label>
                         <div className="relative group">
                             <TrendingUp className="absolute left-4 top-4 text-slate-400 group-focus-within:text-green-600 transition" size={20} />
                             <input 
+                                id="total-revenue"
                                 type="number" 
                                 value={revenue}
                                 onChange={(e) => setRevenue(e.target.value)}
                                 onFocus={trackCalculatorStart}
                                 className="w-full pl-12 pr-4 py-4 bg-slate-50 border-2 border-slate-200 rounded-xl focus:border-green-500 focus:bg-white focus:ring-4 focus:ring-green-100 outline-none transition-all font-extrabold text-xl text-gray-900 placeholder-gray-300"
                                 placeholder="0.00"
+                                aria-describedby="total-revenue-help"
                             />
                         </div>
+                        <p id="total-revenue-help" className="text-xs text-slate-500">Attributed revenue from campaigns in the same period.</p>
                     </div>
                 </div>
 
                 {/* ROW 2 */}
                 <div className="grid grid-cols-2 gap-6">
                     <div className="space-y-2">
-                        <label className="text-xs font-bold text-slate-500 uppercase tracking-wider">Product Costs</label>
+                        <label htmlFor="product-costs" className="text-xs font-bold text-slate-500 uppercase tracking-wider">Product Costs</label>
                         <div className="relative group">
                             <AlertTriangle className="absolute left-4 top-4 text-slate-400 group-focus-within:text-orange-500 transition" size={20} />
                             <input 
+                                id="product-costs"
                                 type="number" 
                                 value={productCost}
                                 onChange={(e) => setProductCost(e.target.value)}
                                 onFocus={trackCalculatorStart}
                                 className="w-full pl-12 pr-4 py-4 bg-slate-50 border-2 border-slate-200 rounded-xl focus:border-orange-400 focus:bg-white focus:ring-4 focus:ring-orange-100 outline-none transition-all font-extrabold text-xl text-gray-900 placeholder-gray-300"
                                 placeholder="0.00"
+                                aria-describedby="product-costs-help"
                             />
                         </div>
+                        <p id="product-costs-help" className="text-xs text-slate-500">Optional COGS and fulfillment cost for net profit checks.</p>
                     </div>
                     <div className="space-y-2">
-                        <label className="text-xs font-bold text-slate-500 uppercase tracking-wider">Total Orders</label>
+                        <label htmlFor="total-orders" className="text-xs font-bold text-slate-500 uppercase tracking-wider">Total Orders</label>
                         <div className="relative group">
                             <ShoppingBag className="absolute left-4 top-4 text-slate-400 group-focus-within:text-purple-500 transition" size={20} />
                             <input 
+                                id="total-orders"
                                 type="number" 
                                 value={orders}
                                 onChange={(e) => setOrders(e.target.value)}
                                 onFocus={trackCalculatorStart}
                                 className="w-full pl-12 pr-4 py-4 bg-slate-50 border-2 border-slate-200 rounded-xl focus:border-purple-400 focus:bg-white focus:ring-4 focus:ring-purple-100 outline-none transition-all font-extrabold text-xl text-gray-900 placeholder-gray-300"
                                 placeholder="0"
+                                aria-describedby="total-orders-help"
                             />
                         </div>
+                        <p id="total-orders-help" className="text-xs text-slate-500">Optional. Used to calculate CPA and average order value.</p>
                     </div>
               </div>
 
@@ -366,6 +384,7 @@ export default function RoasClient() {
                         onClick={resetFields}
                         className="px-6 py-4 rounded-xl font-bold text-slate-500 hover:text-slate-700 hover:bg-slate-100 transition border border-transparent hover:border-slate-200 flex items-center gap-2"
                         title="Clear all fields"
+                        aria-label="Clear all calculator fields"
                     >
                         <RotateCcw size={20} />
                     </button>
@@ -373,10 +392,14 @@ export default function RoasClient() {
                         ref={calculateButtonRef}
                         onClick={calculateROAS}
                         className="flex-1 bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 rounded-xl shadow-lg hover:shadow-blue-500/30 transition transform hover:-translate-y-1 flex items-center justify-center gap-2 text-lg"
+                        aria-label="Calculate ROAS results and profitability metrics"
                     >
                         <RefreshCcw size={22} /> Calculate Results
                     </button>
                 </div>
+                {validationError ? (
+                  <p className="text-xs text-red-600" role="alert">{validationError}</p>
+                ) : null}
                 <p className="text-xs text-slate-500">
                   No signup required. Your inputs stay in your browser and are not sent to our server.
                 </p>
@@ -448,6 +471,7 @@ export default function RoasClient() {
                         <button 
                             onClick={downloadReport}
                             className="w-full bg-slate-800 hover:bg-slate-900 text-white py-4 rounded-xl font-bold flex items-center justify-center gap-3 transition shadow-lg hover:shadow-slate-500/20"
+                            aria-label="Download campaign results as a PDF report"
                         >
                             <Download size={20} /> Download PDF Report
                         </button>
@@ -460,6 +484,7 @@ export default function RoasClient() {
         type="button"
         onClick={scrollToCalculate}
         className="md:hidden fixed bottom-4 left-4 right-4 z-40 bg-blue-600 text-white font-bold py-3 rounded-xl shadow-lg hover:bg-blue-700 transition"
+        aria-label="Scroll to calculator action button"
       >
         Calculate ROAS
       </button>

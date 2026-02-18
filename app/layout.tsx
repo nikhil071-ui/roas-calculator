@@ -223,7 +223,7 @@ export default function RootLayout({
                 <li><Link href="/about" className="hover:text-white transition">About Us</Link></li>
                 <li><Link href="/team" className="hover:text-white transition"> Our Team</Link></li>
                 <li><Link href="/case-studies" className="hover:text-white transition"> Case Studies</Link></li>
-                <li><Link href="/testimonials" className="hover:text-white transition">star Testimonials</Link></li>
+                <li><Link href="/testimonials" className="hover:text-white transition">Testimonials</Link></li>
                 <li><Link href="/glossary" className="hover:text-white transition"> Glossary</Link></li>
                 <li><Link href="/contact" className="hover:text-white transition">Contact Support</Link></li>
               </ul>

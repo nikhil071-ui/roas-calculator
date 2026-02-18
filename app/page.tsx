@@ -155,6 +155,26 @@ export default function Home() {
               </div>
             </section>
 
+            <section className="mb-6 bg-emerald-50 border border-emerald-200 rounded-2xl p-4">
+              <h2 className="text-base font-bold text-emerald-900 mb-2">Trusted by performance teams</h2>
+              <p className="text-sm text-emerald-800 mb-3">
+                Use this calculator for campaign audits, break-even checks, and scale/hold decisions before changing budget.
+              </p>
+              <div className="flex flex-wrap gap-2">
+                <TrackedLink
+                  href="/ppc-toolkit"
+                  eventName="cta_click_ppc_toolkit"
+                  eventParams={{ source_page: "/", cta_module: "trust_strip", position: "above_fold" }}
+                  className="inline-flex items-center px-3 py-2 rounded-lg bg-emerald-700 text-white font-semibold hover:bg-emerald-800 transition"
+                >
+                  Open Toolkit
+                </TrackedLink>
+                <Link href="/methodology" className="inline-flex items-center px-3 py-2 rounded-lg bg-white border border-emerald-300 text-emerald-900 font-semibold hover:bg-emerald-100 transition">
+                  Review Methodology
+                </Link>
+              </div>
+            </section>
+
             {/* THE CALCULATOR TOOL */}
             <section id="calculator">
               <RoasClient />
@@ -192,13 +212,14 @@ export default function Home() {
                   eventName="cta_click_ppc_toolkit"
                   eventParams={{ source_page: "/", cta_module: "next_step_after_calculation", position: "above_fold" }}
                   className="inline-flex items-center px-4 py-2 rounded-lg bg-indigo-600 text-white font-semibold hover:bg-indigo-700 transition"
+                  aria-label="Open PPC toolkit for ROAS CAC LTV and MER planning"
                 >
                   Open PPC Toolkit
                 </TrackedLink>
-                <Link href="/resources" className="inline-flex items-center px-4 py-2 rounded-lg bg-white border border-slate-300 text-slate-900 font-semibold hover:bg-slate-50 transition">
+                <Link href="/resources" className="inline-flex items-center px-4 py-2 rounded-lg bg-white border border-slate-300 text-slate-900 font-semibold hover:bg-slate-50 transition" aria-label="Download ROAS planning templates and checklists">
                   Download Templates
                 </Link>
-                <Link href="/comparisons/mer-vs-roas" className="inline-flex items-center px-4 py-2 rounded-lg bg-emerald-600 text-white font-semibold hover:bg-emerald-700 transition">
+                <Link href="/comparisons/mer-vs-roas" className="inline-flex items-center px-4 py-2 rounded-lg bg-emerald-600 text-white font-semibold hover:bg-emerald-700 transition" aria-label="Read the MER versus ROAS comparison guide">
                   Read MER vs ROAS
                 </Link>
               </div>
@@ -278,6 +299,7 @@ export default function Home() {
                   eventName="cta_click_ppc_toolkit"
                   eventParams={{ source_page: "/", cta_module: "featured_pages", position: "mid_content" }}
                   className="group block bg-white p-6 rounded-xl shadow-sm border border-gray-200 hover:border-indigo-500 hover:shadow-lg transition"
+                  aria-label="Open PPC toolkit hub for ROAS CAC LTV and MER"
                 >
                   <h3 className="font-bold text-lg text-slate-800 group-hover:text-indigo-600">PPC Toolkit</h3>
                   <p className="text-sm text-gray-500 mt-2">ROAS, CAC, LTV, MER, and target CPA in one practical planning hub.</p>
@@ -300,6 +322,7 @@ export default function Home() {
                   eventName="cta_click_ppc_toolkit"
                   eventParams={{ source_page: "/", cta_module: "what_should_you_do_next", position: "mid_content" }}
                   className="block rounded-xl border border-indigo-200 bg-indigo-50 p-4 hover:border-indigo-400 transition"
+                  aria-label="Plan full funnel economics in PPC toolkit"
                 >
                   <h3 className="font-bold text-slate-900">Plan full funnel economics</h3>
                   <p className="text-sm text-slate-600 mt-1">Use ROAS, CAC, LTV, MER, and target CPA together.</p>
@@ -343,67 +366,48 @@ export default function Home() {
             {/* --- RESOURCES & SUPPORT --- */}
             <details className="mt-4 mb-12 bg-white border border-slate-200 rounded-2xl p-6">
               <summary className="text-xl font-bold text-slate-900 cursor-pointer">Resources and Help</summary>
-              <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-4 mt-4">
+              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mt-4">
                 <Link href="/blog" className="group block bg-white p-5 rounded-xl shadow-sm border border-gray-200 hover:border-blue-500 hover:shadow-lg transition text-center">
-                  <h3 className="font-bold text-slate-800 group-hover:text-blue-600"> Expert Blog</h3>
+                  <h3 className="font-bold text-slate-800 group-hover:text-blue-600">Blog Guides</h3>
                   <p className="text-xs text-gray-500 mt-2">Guides, case studies, and benchmarks.</p>
                 </Link>
                 <Link href="/roas/faq" className="group block bg-white p-5 rounded-xl shadow-sm border border-gray-200 hover:border-slate-700 hover:shadow-lg transition text-center">
-                  <h3 className="font-bold text-slate-800 group-hover:text-slate-900">? FAQs</h3>
+                  <h3 className="font-bold text-slate-800 group-hover:text-slate-900">ROAS FAQs</h3>
                   <p className="text-xs text-gray-500 mt-2">Quick answers for each tool.</p>
                 </Link>
                 <Link href="/resources" className="group block bg-white p-5 rounded-xl shadow-sm border border-gray-200 hover:border-emerald-500 hover:shadow-lg transition text-center">
-                  <h3 className="font-bold text-slate-800 group-hover:text-emerald-600"> Free Downloads</h3>
+                  <h3 className="font-bold text-slate-800 group-hover:text-emerald-600">Free Downloads</h3>
                   <p className="text-xs text-gray-500 mt-2">Templates and checklists.</p>
                 </Link>
                 <Link href="/comparisons" className="group block bg-white p-5 rounded-xl shadow-sm border border-gray-200 hover:border-purple-500 hover:shadow-lg transition text-center">
-                  <h3 className="font-bold text-slate-800 group-hover:text-purple-600"> Tool Comparisons</h3>
+                  <h3 className="font-bold text-slate-800 group-hover:text-purple-600">Tool Comparisons</h3>
                   <p className="text-xs text-gray-500 mt-2">Transparent feature comparisons.</p>
                 </Link>
                 <Link href="/testimonials" className="group block bg-white p-5 rounded-xl shadow-sm border border-gray-200 hover:border-yellow-500 hover:shadow-lg transition text-center">
-                  <h3 className="font-bold text-slate-800 group-hover:text-yellow-600">star Testimonials</h3>
+                  <h3 className="font-bold text-slate-800 group-hover:text-yellow-600">Testimonials</h3>
                   <p className="text-xs text-gray-500 mt-2">What users say about us.</p>
                 </Link>
                 <Link href="/case-studies" className="group block bg-white p-5 rounded-xl shadow-sm border border-gray-200 hover:border-indigo-500 hover:shadow-lg transition text-center">
-                  <h3 className="font-bold text-slate-800 group-hover:text-indigo-600"> Case Studies</h3>
+                  <h3 className="font-bold text-slate-800 group-hover:text-indigo-600">Case Studies</h3>
                   <p className="text-xs text-gray-500 mt-2">Real success stories from users.</p>
                 </Link>
                 <Link href="/glossary" className="group block bg-white p-5 rounded-xl shadow-sm border border-gray-200 hover:border-orange-500 hover:shadow-lg transition text-center">
-                  <h3 className="font-bold text-slate-800 group-hover:text-orange-600"> Glossary</h3>
+                  <h3 className="font-bold text-slate-800 group-hover:text-orange-600">Glossary</h3>
                   <p className="text-xs text-gray-500 mt-2">Marketing terms explained.</p>
-                </Link>
-                <Link href="/about" className="group block bg-white p-5 rounded-xl shadow-sm border border-gray-200 hover:border-teal-500 hover:shadow-lg transition text-center">
-                  <h3 className="font-bold text-slate-800 group-hover:text-teal-600"> About Us</h3>
-                  <p className="text-xs text-gray-500 mt-2">Meet our expert team.</p>
                 </Link>
                 <TrackedLink
                   href="/ppc-toolkit"
                   eventName="cta_click_ppc_toolkit"
                   eventParams={{ source_page: "/", cta_module: "resources_help_grid", position: "mid_content" }}
                   className="group block bg-white p-5 rounded-xl shadow-sm border border-gray-200 hover:border-indigo-500 hover:shadow-lg transition text-center"
+                  aria-label="Open PPC toolkit from resources section"
                 >
-                  <h3 className="font-bold text-slate-800 group-hover:text-indigo-600"> PPC Toolkit</h3>
+                  <h3 className="font-bold text-slate-800 group-hover:text-indigo-600">PPC Toolkit</h3>
                   <p className="text-xs text-gray-500 mt-2">ROAS, CAC, LTV, MER and target CPA formulas.</p>
                 </TrackedLink>
-                <Link href="/cac-calculator" className="group block bg-white p-5 rounded-xl shadow-sm border border-gray-200 hover:border-blue-500 hover:shadow-lg transition text-center">
-                  <h3 className="font-bold text-slate-800 group-hover:text-blue-600"> CAC Calculator</h3>
-                  <p className="text-xs text-gray-500 mt-2">Track customer acquisition cost and decision thresholds.</p>
-                </Link>
-                <Link href="/ltv-calculator" className="group block bg-white p-5 rounded-xl shadow-sm border border-gray-200 hover:border-cyan-500 hover:shadow-lg transition text-center">
-                  <h3 className="font-bold text-slate-800 group-hover:text-cyan-600"> LTV Calculator</h3>
-                  <p className="text-xs text-gray-500 mt-2">Estimate customer lifetime value for paid growth planning.</p>
-                </Link>
-                <Link href="/mer-calculator" className="group block bg-white p-5 rounded-xl shadow-sm border border-gray-200 hover:border-violet-500 hover:shadow-lg transition text-center">
-                  <h3 className="font-bold text-slate-800 group-hover:text-violet-600"> MER Calculator</h3>
-                  <p className="text-xs text-gray-500 mt-2">Measure blended marketing efficiency across channels.</p>
-                </Link>
-                <Link href="/payback-period-calculator" className="group block bg-white p-5 rounded-xl shadow-sm border border-gray-200 hover:border-fuchsia-500 hover:shadow-lg transition text-center">
-                  <h3 className="font-bold text-slate-800 group-hover:text-fuchsia-600"> Payback Calculator</h3>
-                  <p className="text-xs text-gray-500 mt-2">Calculate CAC payback period in months.</p>
-                </Link>
-                <Link href="/resources" className="group block bg-white p-5 rounded-xl shadow-sm border border-gray-200 hover:border-sky-500 hover:shadow-lg transition text-center">
-                  <h3 className="font-bold text-slate-800 group-hover:text-sky-600"> Scenario Templates</h3>
-                  <p className="text-xs text-gray-500 mt-2">Download planning sheets for budgets and benchmarks.</p>
+                <Link href="/about" className="group block bg-white p-5 rounded-xl shadow-sm border border-gray-200 hover:border-teal-500 hover:shadow-lg transition text-center">
+                  <h3 className="font-bold text-slate-800 group-hover:text-teal-600">About Us</h3>
+                  <p className="text-xs text-gray-500 mt-2">Meet our team and editorial standards.</p>
                 </Link>
               </div>
             </details>
