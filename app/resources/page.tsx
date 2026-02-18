@@ -23,6 +23,7 @@ export const metadata: Metadata = {
     "seo checklist",
     "gsc index prune log",
     "ctr title test matrix",
+    "weekly seo scoreboard",
     "marketing templates",
   ],
   openGraph: {
@@ -55,6 +56,22 @@ export default function ResourcesPage() {
         </div>
 
         <div className="grid md:grid-cols-2 gap-6">
+          <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+            <h2 className="text-xl font-bold text-slate-900">Weekly SEO Scoreboard (CSV)</h2>
+            <p className="text-slate-600 mt-2">
+              Track the 5 core growth levers in one sheet: backlinks, CTR tests, benchmark refreshes, index tuning, and GA4 funnel performance.
+            </p>
+            <TrackedDownloadLink
+              href="/resources/weekly-seo-scoreboard.csv"
+              templateName="weekly_seo_scoreboard"
+              fileType="csv"
+              sourcePage="/resources"
+              className="inline-block mt-4 bg-blue-800 text-white px-4 py-2 rounded-lg font-semibold hover:bg-blue-900 transition"
+            >
+              Download Scoreboard
+            </TrackedDownloadLink>
+          </div>
+
           <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
             <h2 className="text-xl font-bold text-slate-900">SEO 9/10 Gap Checklist (Ops Pack)</h2>
             <p className="text-slate-600 mt-2">

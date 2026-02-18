@@ -1,0 +1,13 @@
+week_start,week_end,lever,metric,target,actual,status,owner,source,notes,next_action
+2026-03-02,2026-03-08,Backlinks,New quality backlinks,5,,,,Backlink Team,backlink-monthly-placement-log.csv,,Run outreach follow-ups
+2026-03-02,2026-03-08,Backlinks,Referring domains growth,3,,,,Backlink Team,GSC Links report,,Prioritize relevant marketing domains
+2026-03-02,2026-03-08,CTR Optimization,Top page CTR (%),+0.4pp,,,,SEO Team,ctr-title-meta-test-matrix.csv,,Continue active title/meta test
+2026-03-02,2026-03-08,CTR Optimization,Average position (top 10 URLs),Improve,,,,SEO Team,GSC Performance,,Refine snippets on low-CTR pages
+2026-03-02,2026-03-08,Benchmark Refresh,Quarterly update status,On schedule,,,,Editorial Team,quarterly-benchmark-refresh-log.csv,,Refresh citations if due
+2026-03-02,2026-03-08,Benchmark Refresh,Citations added this cycle,3,,,,Editorial Team,blog/roas-benchmarks-2026,,Add primary source links
+2026-03-02,2026-03-08,GSC Index Tuning,Indexed pages growth,Increase,,,,SEO Team,gsc-index-prune-log.csv,,Submit priority pages
+2026-03-02,2026-03-08,GSC Index Tuning,Low-value pages pruned/merged,2,,,,SEO Team,gsc-index-prune-log.csv,,Execute prune decisions
+2026-03-02,2026-03-08,GA4 Funnel,Calculator completion rate (%),+10% baseline,,,,Analytics Team,GA4 Funnel Exploration,,Improve completion UX
+2026-03-02,2026-03-08,GA4 Funnel,Completion to toolkit/template click rate (%),+15% baseline,,,,Analytics Team,GA4 events,,Optimize next-step CTA modules
+2026-03-02,2026-03-08,GA4 Funnel,Template downloads,20,,,,Analytics Team,template_download event,,Test stronger resource CTAs
+2026-03-02,2026-03-08,Overall Health,Weekly SEO score (internal),>=8.8/10,,,,Growth Lead,manual summary,,Decide next sprint priorities
