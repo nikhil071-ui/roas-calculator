@@ -1,15 +1,9 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import TrackedLink from "@/app/components/TrackedLink";
-import dynamic from "next/dynamic";
+import RoasClient from "../../RoasClient";
+import AdBanner from "../../AdBanner";
 // Go up two levels to 'app' to find the RoasClient (It is in the root app folder)
-const RoasClient = dynamic(() => import("../../RoasClient"), {
-  ssr: false,
-  loading: () => <div className="bg-white border border-slate-200 rounded-xl p-6 text-slate-600">Loading calculator...</div>,
-});
-const AdBanner = dynamic(() => import("../../AdBanner"), {
-  ssr: false,
-});
 
 export const dynamic = "force-static";
 export const revalidate = 86400;

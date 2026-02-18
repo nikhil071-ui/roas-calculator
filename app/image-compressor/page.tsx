@@ -1,13 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
-import dynamic from "next/dynamic";
 import AdBanner from "../AdBanner"; // Import the ad component
-
-const CompressorClient = dynamic(() => import("./CompressorClient"), {
-  ssr: false,
-  loading: () => <div className="bg-white border border-slate-200 rounded-xl p-6 text-slate-600">Loading compressor...</div>,
-});
+import CompressorClient from "./CompressorClient";
 
 export const metadata: Metadata = {
   title: "Free Image Compressor - Reduce Size to 50KB / 20KB (JPEG & PNG)",

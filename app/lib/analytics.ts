@@ -9,9 +9,13 @@ declare global {
 }
 
 function sanitizeParams(params: GAParams): Record<string, GAParamValue> {
-  return Object.fromEntries(
-    Object.entries(params).filter(([, value]): value is GAParamValue => value !== null && value !== undefined)
-  );
+  const sanitized: Record<string, GAParamValue> = {};
+  for (const [key, value] of Object.entries(params)) {
+    if (value !== null && value !== undefined) {
+      sanitized[key] = value;
+    }
+  }
+  return sanitized;
 }
 
 export function trackEvent(eventName: string, params: GAParams = {}): void {
@@ -19,4 +23,3 @@ export function trackEvent(eventName: string, params: GAParams = {}): void {
   if (typeof window.gtag !== "function") return;
   window.gtag("event", eventName, sanitizeParams(params));
 }
-
