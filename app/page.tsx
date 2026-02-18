@@ -6,21 +6,33 @@ import RoasClient from "./RoasClient";
 import AdBanner from "./AdBanner";
 
 export const metadata: Metadata = {
-  title: "Free ROAS Calculator | Calculate Profit & Break-Even 2026",
-  description: "Calculate your Return on Ad Spend (ROAS), Break-Even Point, and Net Profit instantly. The best free tool for Facebook Ads, Google Ads, and dropshipping.",
-  keywords: ["roas calculator", "facebook ads profit calculator", "break even roas formula", "dropshipping calculator", "marketing roi tool"],
+  title: "ROAS Calculator (Return on Ad Spend) | Break-Even, Profit, and PPC Planning",
+  description:
+    "Free ROAS calculator for Google Ads, Facebook Ads, and eCommerce. Calculate return on ad spend, break-even ROAS, CAC context, and profit before scaling budget.",
+  keywords: [
+    "roas calculator",
+    "return on ad spend calculator",
+    "break even roas calculator",
+    "google ads roas calculator",
+    "facebook ads roas calculator",
+    "ecommerce profitability calculator",
+    "ppc profit calculator",
+    "marketing roi tool",
+  ],
   alternates: {
     canonical: SITE_URL,
   },
   openGraph: {
-    title: "Free ROAS Calculator | Calculate Profit & Break-Even 2026",
-    description: "Calculate your Return on Ad Spend (ROAS), Break-Even Point, and Net Profit instantly. The best free tool for Facebook Ads, Google Ads, and dropshipping.",
+    title: "ROAS Calculator (Return on Ad Spend) | Break-Even, Profit, and PPC Planning",
+    description:
+      "Free ROAS calculator for Google Ads, Facebook Ads, and eCommerce. Calculate return on ad spend, break-even ROAS, CAC context, and profit before scaling budget.",
     url: SITE_URL,
   },
   twitter: {
     card: "summary_large_image",
-    title: "Free ROAS Calculator | Calculate Profit & Break-Even 2026",
-    description: "Calculate your Return on Ad Spend (ROAS), Break-Even Point, and Net Profit instantly. The best free tool for Facebook Ads, Google Ads, and dropshipping.",
+    title: "ROAS Calculator (Return on Ad Spend) | Break-Even, Profit, and PPC Planning",
+    description:
+      "Free ROAS calculator for Google Ads, Facebook Ads, and eCommerce. Calculate return on ad spend, break-even ROAS, CAC context, and profit before scaling budget.",
   },
 };
 
@@ -62,11 +74,10 @@ export default function Home() {
       <header className="bg-blue-900 text-white py-12">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-3xl md:text-5xl font-bold mb-4">
-            Free ROAS Calculator & Profit Estimator
+            ROAS Calculator (Return on Ad Spend) and Break-Even Profit Estimator
           </h1>
           <p className="text-lg text-blue-100 max-w-2xl mx-auto">
-            Instantly calculate your Return on Ad Spend (ROAS), Break-Even Point, 
-            and Net Profit for Facebook Ads and Google Ads.
+            Instantly calculate return on ad spend, break-even ROAS, and net profit for Google Ads, Facebook Ads, and eCommerce campaigns.
           </p>
         </div>
       </header>
@@ -78,6 +89,27 @@ export default function Home() {
             
             {/* THE CALCULATOR TOOL */}
             <RoasClient />
+
+            <section className="mt-8 mb-6 bg-white border border-slate-200 rounded-2xl p-6">
+              <h2 className="text-2xl font-bold text-slate-900 mb-2">How this ROAS calculator helps ad optimization</h2>
+              <p className="text-slate-600 mb-4">
+                Use this calculator to connect campaign ROAS with contribution margin, customer acquisition cost (CAC), lifetime value (LTV), and media efficiency ratio (MER).
+              </p>
+              <div className="grid md:grid-cols-3 gap-3">
+                <div className="rounded-lg border border-slate-200 p-4 bg-slate-50">
+                  <h3 className="font-semibold text-slate-900">Revenue efficiency</h3>
+                  <p className="text-sm text-slate-600 mt-1">Measure how much revenue each ad dollar generates.</p>
+                </div>
+                <div className="rounded-lg border border-slate-200 p-4 bg-slate-50">
+                  <h3 className="font-semibold text-slate-900">Break-even guardrail</h3>
+                  <p className="text-sm text-slate-600 mt-1">Find your minimum ROAS target from margin assumptions.</p>
+                </div>
+                <div className="rounded-lg border border-slate-200 p-4 bg-slate-50">
+                  <h3 className="font-semibold text-slate-900">Scale decisions</h3>
+                  <p className="text-sm text-slate-600 mt-1">Decide when to scale, hold, or pause campaigns with confidence.</p>
+                </div>
+              </div>
+            </section>
 
             <section className="mt-8 mb-6 bg-white border border-slate-200 rounded-2xl p-6">
               <h2 className="text-xl font-bold text-slate-900 mb-2">Next Step After Calculation</h2>
@@ -288,11 +320,11 @@ export default function Home() {
             {/* --- SEO SUMMARY (SHORTER FOR CORE WEB VITALS) --- */}
             <section className="bg-white p-8 md:p-12 rounded-2xl shadow-sm border border-gray-100 text-gray-700 mt-12">
               <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-4">
-                ROAS Basics, Benchmarks, and Strategy
+                ROAS Calculator Guide: Formula, Benchmarks, and Profitability Strategy
               </h2>
               <p className="text-slate-700 mb-6">
-                ROAS tells you how much revenue you generate for every dollar spent on ads. Use the
-                calculator above to find break-even ROAS, compare channels, and decide when to scale.
+                Return on ad spend (ROAS) tells you how much revenue you generate for each ad dollar. Use
+                the calculator above to find break-even ROAS, compare channels, and plan budget changes.
               </p>
               <div className="grid md:grid-cols-3 gap-4 mb-8">
                 <div className="bg-slate-50 p-4 rounded-lg border border-slate-200">
@@ -321,6 +353,24 @@ export default function Home() {
                 <Link href="/blog" className="inline-flex items-center px-4 py-2 rounded-lg bg-white text-slate-900 border border-slate-300 font-semibold hover:bg-slate-50 transition">
                   All Marketing Guides
                 </Link>
+              </div>
+            </section>
+
+            <section className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 text-gray-700 mt-8">
+              <h2 className="text-2xl font-bold text-slate-900 mb-4">ROAS FAQ for Google Ads and Facebook Ads teams</h2>
+              <div className="space-y-3">
+                <details className="rounded-lg border border-slate-200 p-4 bg-slate-50">
+                  <summary className="font-semibold text-slate-900 cursor-pointer">What is a good ROAS?</summary>
+                  <p className="text-sm text-slate-700 mt-2">A good ROAS depends on contribution margin and payback targets. Many teams use 3.0x to 5.0x as a working range, but break-even ROAS is the real baseline.</p>
+                </details>
+                <details className="rounded-lg border border-slate-200 p-4 bg-slate-50">
+                  <summary className="font-semibold text-slate-900 cursor-pointer">Is high ROAS always profitable?</summary>
+                  <p className="text-sm text-slate-700 mt-2">No. You still need to include COGS, shipping, platform fees, and overhead. Pair ROAS with CAC, LTV, and MER before increasing budget.</p>
+                </details>
+                <details className="rounded-lg border border-slate-200 p-4 bg-slate-50">
+                  <summary className="font-semibold text-slate-900 cursor-pointer">When should I scale ad spend?</summary>
+                  <p className="text-sm text-slate-700 mt-2">Scale when ROAS stays above break-even and conversion quality remains stable across multiple days, with healthy CAC payback.</p>
+                </details>
               </div>
             </section>
         </div>
