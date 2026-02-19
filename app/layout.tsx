@@ -4,6 +4,7 @@ import Link from "next/link";
 import Script from "next/script";
 import { Analytics } from "@vercel/analytics/react";
 import WebVitals from "@/app/components/WebVitals";
+import AnalyticsScripts from "@/app/components/AnalyticsScripts";
 import "./globals.css";
 import { DEFAULT_OPEN_GRAPH, SITE_URL } from "./seo";
 
@@ -62,8 +63,6 @@ export default function RootLayout({
         <meta name="google-site-verification" content="google07479700bcc28a6c" />
 
         {/* --- PERFORMANCE HINTS --- */}
-        <link rel="preconnect" href="https://www.googletagmanager.com" />
-        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
         <link rel="preconnect" href="https://pagead2.googlesyndication.com" />
         <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com" />
         <link rel="preload" as="image" href="/og-image.png" />
@@ -78,27 +77,6 @@ export default function RootLayout({
           />
         ) : null}
 
-        {/* --- GOOGLE ANALYTICS 4 --- */}
-        <Script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=G-QQF9NJDQSZ"
-          strategy="lazyOnload"
-        />
-        <Script
-          id="google-analytics"
-          strategy="lazyOnload"
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-QQF9NJDQSZ', {
-                page_path: window.location.pathname,
-              });
-            `,
-          }}
-        />
-        
       </head>
       <body className={`${inter.className} bg-gray-50 text-gray-900 flex flex-col min-h-screen`}>
         <a
@@ -112,6 +90,7 @@ export default function RootLayout({
             JavaScript is required for calculators and file tools. Static guides and resources remain available.
           </div>
         </noscript>
+        <AnalyticsScripts />
         
         {/* --- ORGANIZATION SCHEMA --- */}
         <script
@@ -190,7 +169,9 @@ export default function RootLayout({
         {/* --- MAIN CONTENT --- */}
         <div id="main-content" className="grow" tabIndex={-1}>
             {children}
-            <Analytics />
+            {process.env.NODE_ENV === "production" && process.env.NEXT_PUBLIC_ENABLE_VERCEL_ANALYTICS === "true" ? (
+              <Analytics />
+            ) : null}
             <WebVitals />
         </div>
 
