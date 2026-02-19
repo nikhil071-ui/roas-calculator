@@ -1,7 +1,6 @@
 "use client";
 
-import { FormEvent, useMemo, useState } from "react";
-import { useSearchParams } from "next/navigation";
+import { FormEvent, useState } from "react";
 
 type EmailCaptureCardProps = {
   title?: string;
@@ -24,11 +23,7 @@ export default function EmailCaptureCard({
 }: EmailCaptureCardProps) {
   const [email, setEmail] = useState("");
   const [consent, setConsent] = useState(false);
-  const searchParams = useSearchParams();
   const actionUrl = process.env.NEXT_PUBLIC_EMAIL_CAPTURE_ACTION || "/api/email-capture";
-
-  const signupStatus = useMemo(() => searchParams.get("signup"), [searchParams]);
-  const signupReason = useMemo(() => searchParams.get("reason"), [searchParams]);
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     if (!consent) {
@@ -38,11 +33,6 @@ export default function EmailCaptureCard({
 
   return (
     <section className={`bg-slate-900 text-white rounded-2xl ${variant === "compact" ? "p-5" : "p-6 md:p-7"} ${className}`}>
-      {signupStatus === "error" ? (
-        <p className="mb-3 rounded-lg border border-amber-300/40 bg-amber-500/10 px-3 py-2 text-sm text-amber-200">
-          Signup failed ({signupReason || "unknown"}). Please retry in a moment.
-        </p>
-      ) : null}
       <h2 className={`${variant === "compact" ? "text-xl" : "text-2xl"} font-bold`}>{title}</h2>
       <p className={`text-slate-300 max-w-2xl ${variant === "compact" ? "mt-1 text-sm" : "mt-2"}`}>{description}</p>
       <p className="mt-1 text-xs text-slate-400">{helperText}</p>
