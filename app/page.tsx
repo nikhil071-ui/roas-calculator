@@ -4,6 +4,7 @@ import { SITE_URL } from "./seo";
 import TrackedLink from "@/app/components/TrackedLink";
 import RoasClient from "./RoasClient";
 import LazyHomeSecondarySections from "@/app/components/LazyHomeSecondarySections";
+import EmailCaptureCard from "@/app/components/EmailCaptureCard";
 
 export const metadata: Metadata = {
   title: "ROAS Calculator: Break-Even and Profit Estimator",
@@ -120,6 +121,9 @@ export default function Home() {
           <p className="text-lg text-blue-100 max-w-3xl mx-auto">
             Enter spend, revenue, and costs to get ROAS, net profit, CPA, AOV, and break-even guidance in one view.
           </p>
+          <p className="text-sm text-blue-200 max-w-2xl mx-auto mt-3">
+            Built by Sanjay Kumar, performance marketer and operator across $2M+ monthly paid media budgets.
+          </p>
           <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
             <a href="#calculator" className="inline-flex items-center px-5 py-3 rounded-lg bg-white text-blue-900 font-bold hover:bg-blue-50 transition">
               Start Calculator
@@ -162,6 +166,8 @@ export default function Home() {
                 </Link>
               </div>
             </section>
+
+            <EmailCaptureCard source="home_calculator" className="mt-8 mb-6" />
 
             <section className="mt-8 mb-6 bg-white border border-slate-200 rounded-2xl p-6">
               <h2 className="text-2xl font-bold text-slate-900 mb-2">How this ROAS calculator helps ad optimization</h2>

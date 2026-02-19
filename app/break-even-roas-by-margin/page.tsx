@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import BreakEvenByMarginClient from "./BreakEvenByMarginClient";
+import EmailCaptureCard from "@/app/components/EmailCaptureCard";
 
 export const metadata: Metadata = {
   title: "Break-even ROAS by Margin Calculator",
@@ -77,8 +78,8 @@ export default function BreakEvenByMarginPage() {
             <Link href="/resources/roas-planning-template" className="text-blue-700 hover:underline">ROAS Planning Template</Link>
           </div>
         </section>
+        <EmailCaptureCard source="break_even_margin_calculator" />
       </main>
     </div>
   );
 }
-

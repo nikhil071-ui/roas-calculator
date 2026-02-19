@@ -5,7 +5,7 @@ import TrackedLink from "@/app/components/TrackedLink";
 
 export const metadata: Metadata = {
   title: "Free Downloads and Templates | ROAS Tools",
-  description: "Download free templates and checklists for ROAS tracking, image compression, PDF optimization, and currency transfers.",
+  description: "Download free templates and checklists for ROAS tracking, CAC/LTV modeling, MER reporting, and paid media operations.",
   keywords: [
     "roas template",
     "ppc budget planner",
@@ -14,9 +14,6 @@ export const metadata: Metadata = {
     "mer tracker template",
     "cac ltv model template",
     "budget pacing template",
-    "image compression checklist",
-    "pdf compression checklist",
-    "currency transfer checklist",
     "backlink outreach tracker",
     "guest post topic ideas",
     "outreach email templates",
@@ -28,13 +25,13 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: "Free Downloads and Templates | ROAS Tools",
-    description: "Download free templates and checklists for ROAS tracking, image compression, PDF optimization, and currency transfers.",
+    description: "Download free templates and checklists for ROAS tracking, CAC/LTV modeling, MER reporting, and paid media operations.",
     url: "https://roas-calculator.tech/resources",
   },
       twitter: {
     card: "summary_large_image",
     title: "Free Downloads and Templates | ROAS Tools",
-    description: "Download free templates and checklists for ROAS tracking, image compression, PDF optimization, and currency transfers.",
+    description: "Download free templates and checklists for ROAS tracking, CAC/LTV modeling, MER reporting, and paid media operations.",
   },
   alternates: {
     canonical: "https://roas-calculator.tech/resources",
@@ -51,7 +48,7 @@ export default function ResourcesPage() {
           </Link>
           <h1 className="text-3xl md:text-4xl font-bold mt-2">Free Resources</h1>
           <p className="text-slate-600 mt-2 max-w-2xl">
-            Practical downloads to help you track ROAS, CAC, LTV assumptions, and budget decisions, plus compression and currency checklists.
+            Practical downloads to help you track ROAS, CAC, LTV assumptions, MER trends, and budget decisions.
           </p>
         </div>
 
@@ -194,53 +191,6 @@ export default function ResourcesPage() {
             </TrackedDownloadLink>
           </div>
 
-          <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
-            <h2 className="text-xl font-bold text-slate-900">Image Compression Checklist (TXT)</h2>
-            <p className="text-slate-600 mt-2">
-              Step-by-step checklist to hit size limits for exam portals and web uploads.
-            </p>
-            <TrackedDownloadLink
-              href="/resources/image-compression-checklist.txt"
-              templateName="image_compression_checklist"
-              fileType="txt"
-              sourcePage="/resources"
-              className="inline-block mt-4 bg-purple-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-purple-700 transition"
-            >
-              Download Checklist
-            </TrackedDownloadLink>
-          </div>
-
-          <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
-            <h2 className="text-xl font-bold text-slate-900">PDF Compression Checklist (TXT)</h2>
-            <p className="text-slate-600 mt-2">
-              Quick guide for choosing DPI, image settings, and safe compression levels.
-            </p>
-            <TrackedDownloadLink
-              href="/resources/pdf-compression-checklist.txt"
-              templateName="pdf_compression_checklist"
-              fileType="txt"
-              sourcePage="/resources"
-              className="inline-block mt-4 bg-red-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-red-700 transition"
-            >
-              Download Checklist
-            </TrackedDownloadLink>
-          </div>
-
-          <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
-            <h2 className="text-xl font-bold text-slate-900">Currency Transfer Checklist (TXT)</h2>
-            <p className="text-slate-600 mt-2">
-              Compare rates and fees to avoid hidden costs on international transfers.
-            </p>
-            <TrackedDownloadLink
-              href="/resources/currency-transfer-checklist.txt"
-              templateName="currency_transfer_checklist"
-              fileType="txt"
-              sourcePage="/resources"
-              className="inline-block mt-4 bg-emerald-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-emerald-700 transition"
-            >
-              Download Checklist
-            </TrackedDownloadLink>
-          </div>
         </div>
 
         <div className="mt-10 bg-indigo-50 border border-indigo-200 rounded-xl p-6">

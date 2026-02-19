@@ -13,11 +13,11 @@ const inter = Inter({ subsets: ["latin"], display: "swap" });
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Free Online Tools | ROAS Calc, Image Compressor & PDF Maker",
+    default: "ROAS Tools | Profitability Calculators for Paid Media",
     template: "%s | ROAS Tools",
   },
-  description: "Free all-in-one toolkit: Calculate ROAS, Compress Images to 50KB, and Convert JPG to PDF under 2MB. Fast, private, and core file tools work offline after load.",
-  keywords: ["roas calculator", "image compressor 50kb", "jpg to pdf under 2mb", "online tools india", "free pdf maker", "currency converter live"],
+  description: "Privacy-first calculator platform for ROAS, CAC, LTV, MER, payback period, and break-even decisions.",
+  keywords: ["roas calculator", "cac calculator", "ltv calculator", "mer calculator", "payback period calculator", "break-even roas"],
   robots: {
     index: true,
     follow: true,
@@ -32,8 +32,8 @@ export const metadata: Metadata = {
     ...DEFAULT_OPEN_GRAPH,
     locale: "en_US",
     url: `${SITE_URL}/`,
-    title: "Free Image Compressor & PDF Maker (Privacy Focused)",
-    description: "Compress images to 50KB for SSC/UPSC exams and calculate ad profits instantly. No uploads required.",
+    title: "ROAS Tools | Profitability Calculators for Paid Media",
+    description: "Calculate ROAS, CAC, LTV, MER, payback period, and break-even thresholds in one workflow.",
   },
   twitter: {
     card: "summary_large_image",
@@ -71,7 +71,7 @@ export default function RootLayout({
         </a>
         <noscript>
           <div className="bg-amber-100 text-amber-900 text-sm text-center py-2 px-4">
-            JavaScript is required for calculators and file tools. Static guides and resources remain available.
+            JavaScript is required for calculators. Static guides and resources remain available.
           </div>
         </noscript>
         <AnalyticsScripts />
@@ -109,9 +109,9 @@ export default function RootLayout({
                 "Digital Marketing",
                 "Return on Ad Spend (ROAS)",
                 "Performance Marketing",
-                "Image Compression",
-                "PDF Conversion",
-                "Currency Exchange"
+                "Customer Acquisition Cost (CAC)",
+                "Customer Lifetime Value (LTV)",
+                "Marketing Efficiency Ratio (MER)"
               ]
             })
           }}
@@ -143,9 +143,8 @@ export default function RootLayout({
               <Link href="/blog" prefetch={false} className="hover:text-blue-600 transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded-sm">Blog</Link>
               <Link href="/" prefetch={false} className="hover:text-blue-600 transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded-sm">Home</Link>
               <Link href="/ppc-toolkit" prefetch={false} className="hover:text-blue-600 transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded-sm">PPC Toolkit</Link>
-              <Link href="/image-compressor" prefetch={false} className="hover:text-blue-600 transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded-sm">Image Compressor</Link>
-              <Link href="/pdf-converter" prefetch={false} className="hover:text-blue-600 transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded-sm">PDF Maker</Link>
-              <Link href="/currency-converter" prefetch={false} className="hover:text-blue-600 transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded-sm">Currency</Link>
+              <Link href="/resources" prefetch={false} className="hover:text-blue-600 transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded-sm">Resources</Link>
+              <Link href="/benchmarks/roas" prefetch={false} className="hover:text-blue-600 transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded-sm">Benchmarks</Link>
             </div>
           </div>
         </nav>
@@ -167,11 +166,11 @@ export default function RootLayout({
             <div>
               <h3 className="text-white font-bold text-lg mb-4 flex items-center gap-2"> ROAS Tools</h3>
               <p className="leading-relaxed mb-4">
-                Privacy-first utility tools for digital marketers and students. 
+                Privacy-first profitability tools for digital marketers and growth teams.
                 Built to be fast, free, and secure.
               </p>
               <p className="text-xs text-slate-500">
-                Data processed locally. No uploads.
+                Data processed locally. No account required for calculators.
               </p>
             </div>
 
@@ -182,10 +181,10 @@ export default function RootLayout({
                 <li><Link href="/" className="hover:text-white transition flex items-center gap-2"> ROAS Calculator</Link></li>
                 <li><Link href="/roas/facebook-ads" className="hover:text-white transition flex items-center gap-2"> Facebook Ads ROAS</Link></li>
                 <li><Link href="/ppc-toolkit" className="hover:text-white transition flex items-center gap-2"> PPC Toolkit</Link></li>
-                <li><Link href="/image-compressor" className="hover:text-white transition flex items-center gap-2"> Image Compressor</Link></li>
-                <li><Link href="/pdf-converter" className="hover:text-white transition flex items-center gap-2"> JPG to PDF</Link></li>
-                <li><Link href="/pdf/jpg-to-pdf" className="hover:text-white transition flex items-center gap-2"> JPG to PDF (Direct)</Link></li>
-                <li><Link href="/currency-converter" className="hover:text-white transition flex items-center gap-2"> Currency Converter</Link></li>
+                <li><Link href="/cac-calculator" className="hover:text-white transition flex items-center gap-2"> CAC Calculator</Link></li>
+                <li><Link href="/ltv-calculator" className="hover:text-white transition flex items-center gap-2"> LTV Calculator</Link></li>
+                <li><Link href="/mer-calculator" className="hover:text-white transition flex items-center gap-2"> MER Calculator</Link></li>
+                <li><Link href="/payback-period-calculator" className="hover:text-white transition flex items-center gap-2"> Payback Calculator</Link></li>
               </ul>
             </div>
 

@@ -20,36 +20,6 @@ export const BLOG_POSTS: BlogPostMeta[] = [
     wordCount: 1850,
   },
   {
-    slug: "image-compression-technical",
-    title: "Image Compression vs Quality: Technical Guide & Lab Test Results",
-    description:
-      "How JPEG, WebP, and AVIF compression algorithms work with quality and size test results.",
-    publishedDate: "2024-09-15",
-    modifiedDate: "2026-02-18",
-    readTimeMinutes: 10,
-    wordCount: 1560,
-  },
-  {
-    slug: "pdf-compression-guide",
-    title: "PDF Compression Best Practices: File Size vs Quality",
-    description:
-      "Practical PDF compression methods with quality trade-offs and tool comparisons.",
-    publishedDate: "2024-08-30",
-    modifiedDate: "2026-02-18",
-    readTimeMinutes: 11,
-    wordCount: 1680,
-  },
-  {
-    slug: "currency-exchange-guide",
-    title: "Currency Exchange Rates: How They Work & Cost Comparison",
-    description:
-      "How currency exchange rates work, and where hidden transfer costs typically appear.",
-    publishedDate: "2024-11-10",
-    modifiedDate: "2026-02-18",
-    readTimeMinutes: 13,
-    wordCount: 2010,
-  },
-  {
     slug: "roas-benchmarks-2026",
     title: "ROAS Benchmarks 2026: Updated Channel and Industry Ranges",
     description:

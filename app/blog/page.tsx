@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { BookOpen, TrendingUp, BarChart3, DollarSign, FileText, Zap } from "lucide-react";
+import { BookOpen, TrendingUp, BarChart3, DollarSign, Zap } from "lucide-react";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -8,9 +8,9 @@ export const metadata: Metadata = {
   keywords: [
     "facebook ads",
     "roas calculator",
-    "image compression",
-    "pdf compression",
-    "currency converter",
+    "cac calculator",
+    "ltv calculator",
+    "mer calculator",
     "marketing guides",
   ],
   openGraph: {
@@ -58,42 +58,6 @@ const blogPosts: BlogPost[] = [
     readTime: "12 min",
     wordCount: 1850,
     featured: true,
-  },
-  {
-    title: "Image Compression vs Quality: Technical Guide & Lab Test Results",
-    description:
-      "How JPEG, WebP, and AVIF compression algorithms work. Our testing results comparing quality settings, file sizes, and loss metrics (SSIM scores).",
-    category: "Technical Deep Dive",
-    categoryColor: "bg-purple-100 text-purple-900",
-    icon: <Zap size={24} className="text-purple-600" />,
-    href: "/blog/image-compression-technical",
-    date: "2024",
-    readTime: "10 min",
-    wordCount: 1560,
-  },
-  {
-    title: "PDF Compression Best Practices: File Size vs Quality",
-    description:
-      "Complete guide to PDF compression. Real test results comparing 8 tools (Adobe, ILovePDF, SmallPDF, Ghostscript). Compression techniques explained with results.",
-    category: "Best Practices",
-    categoryColor: "bg-red-100 text-red-900",
-    icon: <FileText size={24} className="text-red-600" />,
-    href: "/blog/pdf-compression-guide",
-    date: "2024",
-    readTime: "11 min",
-    wordCount: 1680,
-  },
-  {
-    title: "Currency Exchange Rates: How They Work & Cost Comparison",
-    description:
-      "How currency exchange rates work, real-time vs delayed rates, hidden bank fees. Complete cost analysis: Wise vs PayPal vs Bank transfers with real numbers.",
-    category: "Financial Guide",
-    categoryColor: "bg-green-100 text-green-900",
-    icon: <DollarSign size={24} className="text-green-600" />,
-    href: "/blog/currency-exchange-guide",
-    date: "2024",
-    readTime: "13 min",
-    wordCount: 2010,
   },
   {
     title: "ROAS Benchmarks 2026: Updated Channel and Industry Ranges",
@@ -196,7 +160,7 @@ export default function BlogIndex() {
           </div>
 
           <p className="text-lg text-slate-600 max-w-2xl">
-            Expert guides, case studies, and technical deep dives on marketing optimization, image compression, PDF management, and currency exchange. 
+            Expert guides, case studies, and technical deep dives on ROAS, CAC, LTV, MER, and profitability execution.
             Real data from our testing and client work.
           </p>
         </div>
@@ -308,8 +272,8 @@ export default function BlogIndex() {
           </h2>
 
           <p className="text-slate-600 mb-6 max-w-2xl mx-auto">
-            Use our free tools to calculate your ROAS, compress images, convert PDFs, and compare currency rates. 
-            No signup required.
+            Use our free tools to calculate ROAS, CAC, LTV, MER, payback period, and break-even thresholds.
+            No signup required for calculator access.
           </p>
 
           <div className="flex flex-wrap gap-4 justify-center">
@@ -320,22 +284,10 @@ export default function BlogIndex() {
               ROAS Calculator
             </Link>
             <Link
-              href="/image-compressor"
-              className="bg-purple-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-purple-700 transition"
+              href="/cac-calculator"
+              className="bg-slate-900 text-white px-6 py-3 rounded-lg font-semibold hover:bg-slate-800 transition"
             >
-              Image Compressor
-            </Link>
-            <Link
-              href="/pdf-converter"
-              className="bg-red-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-red-700 transition"
-            >
-              PDF Converter
-            </Link>
-            <Link
-              href="/currency-converter"
-              className="bg-green-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-700 transition"
-            >
-              Currency Converter
+              CAC Calculator
             </Link>
             <Link
               href="/ppc-toolkit"

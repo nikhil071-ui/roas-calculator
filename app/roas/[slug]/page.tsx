@@ -455,15 +455,15 @@ export default async function DynamicRoasPage({ params }: { params: Promise<{ sl
           </div>
 
           <div className="mt-12 p-8 bg-slate-900 text-white rounded-2xl text-center">
-            <h3 className="text-2xl font-bold mb-4">Are you spending internationally?</h3>
+            <h3 className="text-2xl font-bold mb-4">Need a full decision stack?</h3>
             <p className="mb-6 text-slate-300">
-              If you pay for ads in USD but sell in INR (or vice versa), check the real exchange rates first.
+              Validate ROAS with CAC, LTV, MER, and payback before your next budget change.
             </p>
             <Link 
-              href="/currency-converter" 
+              href="/ppc-toolkit" 
               className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full transition-transform hover:scale-105"
             >
-              Check Currency Rates &rarr;
+              Open PPC Toolkit &rarr;
             </Link>
           </div>
 

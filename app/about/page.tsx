@@ -47,7 +47,7 @@ export default function About() {
                 </div>
                 <h1 className="text-3xl md:text-4xl font-bold mb-4">About ROAS Tools</h1>
                 <p className="text-slate-300 text-lg max-w-xl">
-                    We build privacy-first, high-performance utility tools for the next generation of digital marketers.
+                    We build privacy-first, high-performance profitability tools for growth teams and paid media operators.
                 </p>
                 <p className="text-slate-400 text-sm mt-4">
                     <strong>Last Updated:</strong> February 10, 2026
@@ -87,7 +87,7 @@ export default function About() {
                         Calculating "Return on Ad Spend" manually is tedious and prone to errors. Most tools online are either paid, full of spam, or require you to sign up.
                     </p>
                     <p className="text-slate-600 leading-relaxed">
-                        We built <strong>ROAS Tools</strong> to provide a fast, free, and accurate way to calculate ROAS, Break-Even Points, and Net Profit in real-time-without ever asking for your email.
+                        We built <strong>ROAS Tools</strong> to provide a fast, free, and accurate way to calculate ROAS, Break-Even Points, and Net Profit in real-time while preserving privacy and transparent methodology.
                     </p>
                 </div>
             </section>
@@ -193,8 +193,7 @@ export default function About() {
                     <div className="bg-white p-5 rounded-lg border border-slate-200">
                         <h4 className="font-bold text-slate-800 mb-2">Students & Job Seekers</h4>
                         <p className="text-sm text-slate-600">
-                            Marketing students preparing for interviews use our tools to understand core advertising metrics. 
-                            Our image and PDF compressors help students meet strict document requirements for government exams.
+                            Marketing students preparing for interviews use our tools to understand core advertising metrics, profitability logic, and campaign decision frameworks.
                         </p>
                     </div>
                 </div>
@@ -216,7 +215,7 @@ export default function About() {
                     <ul className="space-y-2 text-slate-600">
                         <li>OK <strong>Instant Load Times:</strong> Server-side rendering ensures pages load in under 1 second globally.</li>
                         <li>OK <strong>Mobile-First Design:</strong> Over 60% of our users access tools from mobile devices. Every feature is touch-optimized.</li>
-                        <li>OK <strong>Offline Capability:</strong> Our image and PDF converters work even without internet once the page loads.</li>
+                        <li>OK <strong>Offline-Friendly Calculations:</strong> Core calculator logic runs client-side for fast response and privacy.</li>
                         <li>OK <strong>SEO Optimized:</strong> Structured data, semantic HTML, and clean URLs ensure our educational content ranks well on Google.</li>
                     </ul>
                 </div>
@@ -224,17 +223,30 @@ export default function About() {
 
             {/* 8. Commitment to Free Access */}
             <section className="bg-linear-to-r from-blue-50 to-purple-50 rounded-xl p-6 border border-blue-200">
-                <h3 className="text-lg font-bold text-slate-900 mb-3">Our Commitment: Always Free</h3>
+                <h3 className="text-lg font-bold text-slate-900 mb-3">Our Commitment: Accessible, Transparent, Practical</h3>
                 <p className="text-slate-700 leading-relaxed mb-4">
-                    We know there's a temptation to add paywalls or "Pro" plans. But we believe financial literacy tools 
-                    should be accessible to everyone-whether you're a Fortune 500 CMO or a college student starting your first 
-                    dropshipping store.
+                    We know there's a temptation to add paywalls too early. We prioritize practical value first and publish transparent formulas, assumptions, and review dates so teams can trust decisions.
                 </p>
                 <p className="text-slate-700 leading-relaxed">
                     Our platform is funded by <strong>ethical, non-intrusive advertising</strong> (Google AdSense). 
-                    We will never sell your data, require email signups, or hide features behind paywalls. 
+                    We never sell your data, and we keep core calculators open without login walls. 
                     If this model ever changes, we'll announce it transparently on this page.
                 </p>
+            </section>
+
+            <section className="bg-white rounded-xl border border-slate-200 p-6">
+                <h3 className="text-lg font-bold text-slate-900 mb-3">Founder Snapshot</h3>
+                <p className="text-slate-700 mb-3">
+                    Built by <strong>Sanjay Kumar</strong>, who has led performance programs across e-commerce and lead-gen accounts with over <strong>$2M monthly ad spend</strong> under management.
+                </p>
+                <div className="flex flex-wrap gap-3">
+                    <Link href="/team" className="inline-flex items-center px-4 py-2 rounded-lg bg-blue-600 text-white font-semibold hover:bg-blue-700 transition">
+                        View Full Team
+                    </Link>
+                    <Link href="https://www.linkedin.com" className="inline-flex items-center px-4 py-2 rounded-lg border border-slate-300 text-slate-900 font-semibold hover:bg-slate-50 transition">
+                        Founder LinkedIn
+                    </Link>
+                </div>
             </section>
 
             {/* 9. Team & Credentials */}
@@ -302,19 +314,19 @@ export default function About() {
                     </div>
                     <div className="flex items-start gap-3">
                         <span className="px-2 py-1 bg-green-100 text-green-700 text-xs font-bold rounded">LIVE</span>
-                        <span className="text-slate-700">Currency Converter with 15+ currencies</span>
+                        <span className="text-slate-700">Benchmark updates for paid media verticals</span>
                     </div>
                     <div className="flex items-start gap-3">
                         <span className="px-2 py-1 bg-yellow-100 text-yellow-700 text-xs font-bold rounded">Q1 2026</span>
-                        <span className="text-slate-700">Profit Margin Calculator for Shopify stores</span>
+                        <span className="text-slate-700">Scenario modeling for scale, hold, and pause decisions</span>
                     </div>
                     <div className="flex items-start gap-3">
                         <span className="px-2 py-1 bg-yellow-100 text-yellow-700 text-xs font-bold rounded">Q2 2026</span>
-                        <span className="text-slate-700">Multi-Platform ROAS Tracker (Compare Facebook vs Google Ads)</span>
+                        <span className="text-slate-700">Persona pages for Shopify, Amazon, SaaS, and lead-gen teams</span>
                     </div>
                     <div className="flex items-start gap-3">
                         <span className="px-2 py-1 bg-gray-100 text-gray-600 text-xs font-bold rounded">PLANNED</span>
-                        <span className="text-slate-700">Break-Even Point Calculator with visual charts</span>
+                        <span className="text-slate-700">Exportable reports for teams and agency handoffs</span>
                     </div>
                 </div>
             </section>
@@ -331,13 +343,6 @@ export default function About() {
                         <footer className="text-sm text-slate-500">- Sarah K., Dropshipping Store Owner</footer>
                     </blockquote>
                     
-                    <blockquote className="border-l-4 border-green-500 pl-4 py-2">
-                        <p className="text-slate-700 italic mb-2">
-                            "The image compressor saved me hours. Every government exam form needs photos under 50KB. This tool does it instantly."
-                        </p>
-                        <footer className="text-sm text-slate-500">- Rahul M., SSC CGL Aspirant (India)</footer>
-                    </blockquote>
-
                     <blockquote className="border-l-4 border-purple-500 pl-4 py-2">
                         <p className="text-slate-700 italic mb-2">
                             "I use this during client calls to show them whether their Google Ads are profitable. 

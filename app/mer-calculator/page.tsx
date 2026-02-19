@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import MERCalculatorClient from "./MERCalculatorClient";
+import EmailCaptureCard from "@/app/components/EmailCaptureCard";
 
 export const metadata: Metadata = {
   title: "MER Calculator (Marketing Efficiency Ratio)",
@@ -116,6 +117,7 @@ export default function MERCalculatorPage() {
             <Link href="/payback-period-calculator" className="text-blue-700 hover:underline">Payback Calculator</Link>
           </div>
         </section>
+        <EmailCaptureCard source="mer_calculator" />
 
         <section className="text-sm text-slate-500 border-t border-slate-200 pt-6">
           Reviewed by ROAS Tools Editorial Team. Updated February 18, 2026.

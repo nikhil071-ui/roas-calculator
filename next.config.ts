@@ -10,7 +10,7 @@ const contentSecurityPolicy = [
   "frame-src https://googleads.g.doubleclick.net https://tpc.googlesyndication.com",
   "object-src 'none'",
   "base-uri 'self'",
-  "form-action 'self'",
+  "form-action 'self' https://*.list-manage.com https://app.convertkit.com https://*.sibforms.com",
   "frame-ancestors 'self'",
   "upgrade-insecure-requests",
 ].join("; ");
@@ -27,6 +27,51 @@ const nextConfig: NextConfig = {
       {
         source: "/blog/roas-benchmarks",
         destination: "/blog/roas-benchmarks-2026",
+        permanent: true,
+      },
+      {
+        source: "/blog/image-compression-technical",
+        destination: "/blog",
+        permanent: true,
+      },
+      {
+        source: "/blog/pdf-compression-guide",
+        destination: "/blog",
+        permanent: true,
+      },
+      {
+        source: "/blog/currency-exchange-guide",
+        destination: "/blog",
+        permanent: true,
+      },
+      {
+        source: "/image-compressor/:path*",
+        destination: "/resources",
+        permanent: true,
+      },
+      {
+        source: "/pdf-converter/:path*",
+        destination: "/resources",
+        permanent: true,
+      },
+      {
+        source: "/currency-converter/:path*",
+        destination: "/resources",
+        permanent: true,
+      },
+      {
+        source: "/compressor/:path*",
+        destination: "/resources",
+        permanent: true,
+      },
+      {
+        source: "/pdf/:path*",
+        destination: "/resources",
+        permanent: true,
+      },
+      {
+        source: "/currency/:path*",
+        destination: "/resources",
         permanent: true,
       },
     ];

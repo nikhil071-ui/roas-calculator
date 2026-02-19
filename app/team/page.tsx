@@ -164,7 +164,7 @@ export default function Team() {
                         <p className="text-purple-600 font-semibold mb-4">Quality Assurance Engineer & Data Analyst</p>
                         
                         <p className="text-slate-600 leading-relaxed mb-6">
-                            Rahul ensures every calculator, converter, and tool on the platform produces mathematically accurate results. 
+                            Rahul ensures every calculator and planning workflow on the platform produces mathematically accurate results. 
                             He conducts rigorous testing against industry benchmarks and validates formulas with CPAs and financial analysts. 
                             Prior to joining ROAS Tools, he worked as a systems analyst at HDFC Bank.
                         </p>

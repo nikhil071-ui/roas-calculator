@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import LTVCalculatorClient from "./LTVCalculatorClient";
+import EmailCaptureCard from "@/app/components/EmailCaptureCard";
 
 export const metadata: Metadata = {
   title: "LTV Calculator (Customer Lifetime Value)",
@@ -114,6 +115,7 @@ export default function LTVCalculatorPage() {
             <Link href="/roas/break-even-roas" className="text-blue-700 hover:underline">Break-even ROAS</Link>
           </div>
         </section>
+        <EmailCaptureCard source="ltv_calculator" />
 
         <section className="text-sm text-slate-500 border-t border-slate-200 pt-6">
           Reviewed by ROAS Tools Editorial Team. Updated February 18, 2026.
