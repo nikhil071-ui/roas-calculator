@@ -3,6 +3,9 @@ import { ArrowLeft, FileText } from "lucide-react";
 import type { Metadata } from "next";
 import BlogInternalLinks from "@/app/components/BlogInternalLinks";
 import ArticleJsonLd from "@/app/components/ArticleJsonLd";
+import { getBlogPostBySlug } from "@/app/lib/blog-posts";
+
+const blogMeta = getBlogPostBySlug("pdf-compression-guide");
 
 export const metadata: Metadata = {
   title: "PDF Compression Guide 2026: Best Practices and Test Results",
@@ -27,6 +30,11 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: "https://roas-calculator.tech/blog/pdf-compression-guide",
+  },
+  robots: { index: true, follow: true },
+  other: {
+    "article:read_time": `${blogMeta?.readTimeMinutes ?? 11} min`,
+    "article:word_count": `${blogMeta?.wordCount ?? 1680}`,
   },
 };
 
@@ -62,6 +70,10 @@ export default function PDFCompressionGuide() {
         headline="PDF Compression Guide 2026: Best Practices and Test Results"
         description="Compare PDF compression methods with real results and choose settings for email, web, archive, and print use cases."
         url="https://roas-calculator.tech/blog/pdf-compression-guide"
+        publishedDate={blogMeta?.publishedDate}
+        modifiedDate={blogMeta?.modifiedDate}
+        readTimeMinutes={blogMeta?.readTimeMinutes}
+        wordCount={blogMeta?.wordCount}
       />
       <script
         type="application/ld+json"

@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useState } from "react";
 import jsPDF from "jspdf";
 import imageCompression from "browser-image-compression";
+import NextImage from "next/image";
 import { Upload, FileText, Trash2, Download, Plus, RotateCw, Settings, Eye, X, FileDigit } from "lucide-react";
 
 export default function PdfClient() {
@@ -300,10 +301,12 @@ export default function PdfClient() {
                      
                      {/* PREVIEW IMAGE */}
                      <div className="h-40 flex items-center justify-center p-2 bg-slate-200/50">
-                         {/* eslint-disable-next-line @next/next/no-img-element */}
-                         <img
+                         <NextImage
                            src={imageUrlMap.get(img.id) ?? ""}
                            alt="preview"
+                           width={600}
+                           height={600}
+                           unoptimized
                            style={{ transform: `rotate(${img.rotation}deg)` }}
                            className="max-h-full max-w-full object-contain transition-transform duration-300"
                          />
@@ -399,8 +402,7 @@ export default function PdfClient() {
                           <span className="font-bold text-sm uppercase tracking-wider">Optimizing...</span>
                       </div>
                   ) : (
-                      // eslint-disable-next-line @next/next/no-img-element
-                      <img src={previewImage!} alt="Preview" className="max-w-full object-contain shadow-lg" />
+                      <NextImage src={previewImage!} alt="Preview" width={1200} height={1200} unoptimized className="max-w-full object-contain shadow-lg" />
                   )}
               </div>
             </div>

@@ -3,6 +3,9 @@ import { ArrowLeft, DollarSign } from "lucide-react";
 import type { Metadata } from "next";
 import BlogInternalLinks from "@/app/components/BlogInternalLinks";
 import ArticleJsonLd from "@/app/components/ArticleJsonLd";
+import { getBlogPostBySlug } from "@/app/lib/blog-posts";
+
+const blogMeta = getBlogPostBySlug("currency-exchange-guide");
 
 export const metadata: Metadata = {
   title: "Currency Exchange Guide 2026: Real-Time Rates and Hidden Fees",
@@ -27,6 +30,11 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: "https://roas-calculator.tech/blog/currency-exchange-guide",
+  },
+  robots: { index: true, follow: true },
+  other: {
+    "article:read_time": `${blogMeta?.readTimeMinutes ?? 13} min`,
+    "article:word_count": `${blogMeta?.wordCount ?? 2010}`,
   },
 };
 
@@ -62,6 +70,10 @@ export default function CurrencyExchangeGuide() {
         headline="Currency Exchange Guide 2026: How Rates Work and What You Actually Pay"
         description="Understand exchange rates, hidden markups, transfer fees, and practical methods to reduce total conversion cost."
         url="https://roas-calculator.tech/blog/currency-exchange-guide"
+        publishedDate={blogMeta?.publishedDate}
+        modifiedDate={blogMeta?.modifiedDate}
+        readTimeMinutes={blogMeta?.readTimeMinutes}
+        wordCount={blogMeta?.wordCount}
       />
       <script
         type="application/ld+json"

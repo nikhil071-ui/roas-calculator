@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useMemo } from "react";
 import imageCompression from "browser-image-compression";
+import Image from "next/image";
 import { Upload, Download, RefreshCw, Image as ImageIcon, Settings, Eye, X, CheckCircle } from "lucide-react";
 
 export default function CompressorClient() {
@@ -217,10 +218,12 @@ export default function CompressorClient() {
                             </span>
                         </div>
                         <div className="h-64 flex items-center justify-center bg-slate-200/50 rounded-xl overflow-hidden border border-slate-200">
-                            {/* eslint-disable-next-line @next/next/no-img-element */}
-                            <img
+                            <Image
                                 src={originalUrl ?? ""}
                                 alt="Original"
+                                width={800}
+                                height={800}
+                                unoptimized
                                 className="max-h-full max-w-full object-contain opacity-70 grayscale"
                             />
                         </div>
@@ -258,10 +261,12 @@ export default function CompressorClient() {
                                 </div>
                             ) : compressedImage ? (
                                 <>
-                                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                                    <img
+                                    <Image
                                         src={compressedUrl ?? ""}
                                         alt="Compressed"
+                                        width={800}
+                                        height={800}
+                                        unoptimized
                                         className="max-h-full max-w-full object-contain"
                                     />
                                     {/* PREVIEW BUTTON OVERLAY */}
@@ -307,10 +312,12 @@ export default function CompressorClient() {
                         <Eye size={20} className="text-blue-600"/> Final Quality Check
                     </h3>
                     <div className="flex-1 overflow-auto bg-slate-100 rounded-xl flex items-center justify-center border border-slate-200 p-4">
-                        {/* eslint-disable-next-line @next/next/no-img-element */}
-                        <img 
+                        <Image
                             src={compressedUrl} 
                             alt="Preview" 
+                            width={1200}
+                            height={1200}
+                            unoptimized
                             className="max-w-full object-contain shadow-sm" 
                         />
                     </div>

@@ -2,6 +2,9 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import BlogInternalLinks from "@/app/components/BlogInternalLinks";
 import ArticleJsonLd from "@/app/components/ArticleJsonLd";
+import { getBlogPostBySlug } from "@/app/lib/blog-posts";
+
+const blogMeta = getBlogPostBySlug("roas-audit-checklist");
 
 export const metadata: Metadata = {
   title: "ROAS Audit Checklist: Technical, Funnel, and Profitability",
@@ -9,6 +12,11 @@ export const metadata: Metadata = {
     "Use this ROAS audit checklist to diagnose tracking errors, thin conversion funnels, and profitability leaks before scaling ad spend.",
   alternates: {
     canonical: "https://roas-calculator.tech/blog/roas-audit-checklist",
+  },
+  robots: { index: true, follow: true },
+  other: {
+    "article:read_time": `${blogMeta?.readTimeMinutes ?? 6} min`,
+    "article:word_count": `${blogMeta?.wordCount ?? 860}`,
   },
 };
 
@@ -19,6 +27,10 @@ export default function RoasAuditChecklistPage() {
         headline="ROAS Audit Checklist: Technical, Funnel, and Profitability"
         description="Use this ROAS audit checklist to diagnose tracking errors, thin conversion funnels, and profitability leaks before scaling ad spend."
         url="https://roas-calculator.tech/blog/roas-audit-checklist"
+        publishedDate={blogMeta?.publishedDate}
+        modifiedDate={blogMeta?.modifiedDate}
+        readTimeMinutes={blogMeta?.readTimeMinutes}
+        wordCount={blogMeta?.wordCount}
       />
       <article className="max-w-4xl mx-auto bg-white border border-slate-200 rounded-2xl p-8 md:p-10 space-y-6">
         <Link href="/blog" className="text-sm text-slate-500 hover:text-blue-600 transition">Back to Blog</Link>

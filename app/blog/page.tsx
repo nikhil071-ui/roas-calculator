@@ -26,6 +26,10 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://roas-calculator.tech/blog",
   },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 interface BlogPost {
@@ -37,6 +41,7 @@ interface BlogPost {
   href: string;
   date: string;
   readTime: string;
+  wordCount: number;
   featured?: boolean;
 }
 
@@ -51,6 +56,7 @@ const blogPosts: BlogPost[] = [
     href: "/blog/facebook-ads-case-study",
     date: "2024",
     readTime: "12 min",
+    wordCount: 1850,
     featured: true,
   },
   {
@@ -63,6 +69,7 @@ const blogPosts: BlogPost[] = [
     href: "/blog/image-compression-technical",
     date: "2024",
     readTime: "10 min",
+    wordCount: 1560,
   },
   {
     title: "PDF Compression Best Practices: File Size vs Quality",
@@ -74,6 +81,7 @@ const blogPosts: BlogPost[] = [
     href: "/blog/pdf-compression-guide",
     date: "2024",
     readTime: "11 min",
+    wordCount: 1680,
   },
   {
     title: "Currency Exchange Rates: How They Work & Cost Comparison",
@@ -85,6 +93,7 @@ const blogPosts: BlogPost[] = [
     href: "/blog/currency-exchange-guide",
     date: "2024",
     readTime: "13 min",
+    wordCount: 2010,
   },
   {
     title: "ROAS Benchmarks 2026: Updated Channel and Industry Ranges",
@@ -96,6 +105,7 @@ const blogPosts: BlogPost[] = [
     href: "/blog/roas-benchmarks-2026",
     date: "2026",
     readTime: "8 min",
+    wordCount: 1220,
   },
   {
     title: "SaaS CAC Payback Period and Cash Flow Planning",
@@ -107,6 +117,7 @@ const blogPosts: BlogPost[] = [
     href: "/blog/payback-period-cash-flow-saas",
     date: "2026",
     readTime: "9 min",
+    wordCount: 1330,
   },
   {
     title: "Attribution Impact on ROAS: Last-Click vs Data-Driven",
@@ -118,6 +129,7 @@ const blogPosts: BlogPost[] = [
     href: "/blog/attribution-impact-on-roas",
     date: "2026",
     readTime: "8 min",
+    wordCount: 1180,
   },
   {
     title: "How to Improve ROAS Without Raising Budget",
@@ -129,6 +141,7 @@ const blogPosts: BlogPost[] = [
     href: "/blog/how-to-improve-roas-without-raising-budget",
     date: "2026",
     readTime: "7 min",
+    wordCount: 980,
   },
   {
     title: "ROAS Audit Checklist: Technical, Funnel, and Profitability",
@@ -140,6 +153,7 @@ const blogPosts: BlogPost[] = [
     href: "/blog/roas-audit-checklist",
     date: "2026",
     readTime: "6 min",
+    wordCount: 860,
   },
   {
     title: "When to Scale or Pause Campaigns",
@@ -151,6 +165,7 @@ const blogPosts: BlogPost[] = [
     href: "/blog/when-to-scale-or-pause-campaigns",
     date: "2026",
     readTime: "7 min",
+    wordCount: 940,
   },
   {
     title: "Creative Testing Framework for ROAS",
@@ -162,6 +177,7 @@ const blogPosts: BlogPost[] = [
     href: "/blog/creative-testing-framework-for-roas",
     date: "2026",
     readTime: "7 min",
+    wordCount: 1010,
   },
 ];
 
@@ -223,6 +239,7 @@ export default function BlogIndex() {
                         </div>
                         <div className="text-sm text-slate-500">
                           <p className="font-semibold">{post.readTime}</p>
+                          <p>{post.wordCount.toLocaleString()} words</p>
                         </div>
                       </div>
 
@@ -262,7 +279,7 @@ export default function BlogIndex() {
                             {post.category}
                           </span>
                         </div>
-                        <p className="text-xs text-slate-500">{post.readTime}</p>
+                        <p className="text-xs text-slate-500">{post.readTime} | {post.wordCount.toLocaleString()} words</p>
                       </div>
 
                       <h3 className="text-lg font-bold mb-2 text-slate-900 group-hover:text-blue-600 transition line-clamp-2">

@@ -3,6 +3,9 @@ import { ArrowLeft, TrendingUp } from "lucide-react";
 import type { Metadata } from "next";
 import BlogInternalLinks from "@/app/components/BlogInternalLinks";
 import ArticleJsonLd from "@/app/components/ArticleJsonLd";
+import { getBlogPostBySlug } from "@/app/lib/blog-posts";
+
+const blogMeta = getBlogPostBySlug("facebook-ads-case-study");
 
 export const metadata: Metadata = {
   title: "Facebook Ads ROAS Case Study (2026): 1.8x to 5.2x in 90 Days",
@@ -27,6 +30,11 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: "https://roas-calculator.tech/blog/facebook-ads-case-study",
+  },
+  robots: { index: true, follow: true },
+  other: {
+    "article:read_time": `${blogMeta?.readTimeMinutes ?? 12} min`,
+    "article:word_count": `${blogMeta?.wordCount ?? 1850}`,
   },
 };
 
@@ -62,6 +70,10 @@ export default function RoasCaseStudy() {
         headline="Facebook Ads ROAS Case Study (2026): 1.8x to 5.2x in 90 Days"
         description="Detailed Facebook Ads case study with numbers: 1.8x to 5.2x ROAS in 90 days, including strategy, budget breakdown, and profit analysis."
         url="https://roas-calculator.tech/blog/facebook-ads-case-study"
+        publishedDate={blogMeta?.publishedDate}
+        modifiedDate={blogMeta?.modifiedDate}
+        readTimeMinutes={blogMeta?.readTimeMinutes}
+        wordCount={blogMeta?.wordCount}
       />
       <script
         type="application/ld+json"

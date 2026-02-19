@@ -1,6 +1,9 @@
-﻿import Link from "next/link";
+import Link from "next/link";
 import type { Metadata } from "next";
 import BlogInternalLinks from "@/app/components/BlogInternalLinks";
+import { getBlogPostBySlug } from "@/app/lib/blog-posts";
+
+const blogMeta = getBlogPostBySlug("payback-period-cash-flow-saas");
 
 export const metadata: Metadata = {
   title: "SaaS CAC Payback Period and Cash Flow: Practical Guide (2026)",
@@ -35,10 +38,12 @@ export const metadata: Metadata = {
 export default function PaybackCashFlowGuidePage() {
   const articleData = {
     "@context": "https://schema.org",
-    "@type": "Article",
+    "@type": "BlogPosting",
     headline: "SaaS CAC Payback Period and Cash Flow: Practical Guide",
-    datePublished: "2026-02-18",
-    dateModified: "2026-02-18",
+    datePublished: blogMeta?.publishedDate ?? "2026-02-18",
+    dateModified: blogMeta?.modifiedDate ?? "2026-02-18",
+    wordCount: blogMeta?.wordCount ?? 1330,
+    timeRequired: `PT${blogMeta?.readTimeMinutes ?? 9}M`,
     author: {
       "@type": "Organization",
       name: "ROAS Tools Editorial Team",
@@ -158,5 +163,7 @@ export default function PaybackCashFlowGuidePage() {
     </div>
   );
 }
+
+
 
 

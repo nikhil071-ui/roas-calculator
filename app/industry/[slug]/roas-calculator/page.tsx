@@ -14,12 +14,22 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   const data = getIndustryBySlug(slug);
   if (!data) {
-    return { title: "Industry ROAS Page Not Found" };
+    return {
+      title: "Industry ROAS Page Not Found",
+      robots: {
+        index: false,
+        follow: false,
+      },
+    };
   }
   return {
     title: data.title,
     description: data.description,
     keywords: [data.primaryKeyword, ...data.relatedKeywords],
+    robots: {
+      index: true,
+      follow: true,
+    },
     alternates: { canonical: `https://roas-calculator.tech/industry/${slug}/roas-calculator` },
     openGraph: {
       title: data.title,

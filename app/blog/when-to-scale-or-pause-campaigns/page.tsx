@@ -2,6 +2,9 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import BlogInternalLinks from "@/app/components/BlogInternalLinks";
 import ArticleJsonLd from "@/app/components/ArticleJsonLd";
+import { getBlogPostBySlug } from "@/app/lib/blog-posts";
+
+const blogMeta = getBlogPostBySlug("when-to-scale-or-pause-campaigns");
 
 export const metadata: Metadata = {
   title: "When to Scale or Pause Campaigns: ROAS Decision Thresholds",
@@ -9,6 +12,11 @@ export const metadata: Metadata = {
     "Use ROAS threshold bands tied to break-even math to decide when to scale, hold, or pause campaigns.",
   alternates: {
     canonical: "https://roas-calculator.tech/blog/when-to-scale-or-pause-campaigns",
+  },
+  robots: { index: true, follow: true },
+  other: {
+    "article:read_time": `${blogMeta?.readTimeMinutes ?? 7} min`,
+    "article:word_count": `${blogMeta?.wordCount ?? 940}`,
   },
 };
 
@@ -19,6 +27,10 @@ export default function ScaleOrPauseCampaignsPage() {
         headline="When to Scale or Pause Campaigns: ROAS Decision Thresholds"
         description="Use ROAS threshold bands tied to break-even math to decide when to scale, hold, or pause campaigns."
         url="https://roas-calculator.tech/blog/when-to-scale-or-pause-campaigns"
+        publishedDate={blogMeta?.publishedDate}
+        modifiedDate={blogMeta?.modifiedDate}
+        readTimeMinutes={blogMeta?.readTimeMinutes}
+        wordCount={blogMeta?.wordCount}
       />
       <article className="max-w-4xl mx-auto bg-white border border-slate-200 rounded-2xl p-8 md:p-10 space-y-6">
         <Link href="/blog" className="text-sm text-slate-500 hover:text-blue-600 transition">Back to Blog</Link>

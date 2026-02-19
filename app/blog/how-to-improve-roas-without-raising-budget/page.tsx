@@ -2,6 +2,9 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import BlogInternalLinks from "@/app/components/BlogInternalLinks";
 import ArticleJsonLd from "@/app/components/ArticleJsonLd";
+import { getBlogPostBySlug } from "@/app/lib/blog-posts";
+
+const blogMeta = getBlogPostBySlug("how-to-improve-roas-without-raising-budget");
 
 export const metadata: Metadata = {
   title: "How to Improve ROAS Without Raising Budget (Practical Framework)",
@@ -9,6 +12,11 @@ export const metadata: Metadata = {
     "A practical framework to increase ROAS without increasing spend by improving conversion rate, AOV, and traffic quality.",
   alternates: {
     canonical: "https://roas-calculator.tech/blog/how-to-improve-roas-without-raising-budget",
+  },
+  robots: { index: true, follow: true },
+  other: {
+    "article:read_time": `${blogMeta?.readTimeMinutes ?? 7} min`,
+    "article:word_count": `${blogMeta?.wordCount ?? 980}`,
   },
 };
 
@@ -19,6 +27,10 @@ export default function ImproveRoasWithoutBudgetPage() {
         headline="How to Improve ROAS Without Raising Budget (Practical Framework)"
         description="A practical framework to increase ROAS without increasing spend by improving conversion rate, AOV, and traffic quality."
         url="https://roas-calculator.tech/blog/how-to-improve-roas-without-raising-budget"
+        publishedDate={blogMeta?.publishedDate}
+        modifiedDate={blogMeta?.modifiedDate}
+        readTimeMinutes={blogMeta?.readTimeMinutes}
+        wordCount={blogMeta?.wordCount}
       />
       <article className="max-w-4xl mx-auto bg-white border border-slate-200 rounded-2xl p-8 md:p-10 space-y-6">
         <Link href="/blog" className="text-sm text-slate-500 hover:text-blue-600 transition">Back to Blog</Link>

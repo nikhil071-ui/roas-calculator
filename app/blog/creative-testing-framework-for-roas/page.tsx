@@ -2,6 +2,9 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import BlogInternalLinks from "@/app/components/BlogInternalLinks";
 import ArticleJsonLd from "@/app/components/ArticleJsonLd";
+import { getBlogPostBySlug } from "@/app/lib/blog-posts";
+
+const blogMeta = getBlogPostBySlug("creative-testing-framework-for-roas");
 
 export const metadata: Metadata = {
   title: "Creative Testing Framework for ROAS Improvement",
@@ -9,6 +12,11 @@ export const metadata: Metadata = {
     "A practical creative testing framework to improve ROAS with hypothesis-driven iterations and structured winner promotion.",
   alternates: {
     canonical: "https://roas-calculator.tech/blog/creative-testing-framework-for-roas",
+  },
+  robots: { index: true, follow: true },
+  other: {
+    "article:read_time": `${blogMeta?.readTimeMinutes ?? 7} min`,
+    "article:word_count": `${blogMeta?.wordCount ?? 1010}`,
   },
 };
 
@@ -19,6 +27,10 @@ export default function CreativeTestingFrameworkPage() {
         headline="Creative Testing Framework for ROAS Improvement"
         description="A practical creative testing framework to improve ROAS with hypothesis-driven iterations and structured winner promotion."
         url="https://roas-calculator.tech/blog/creative-testing-framework-for-roas"
+        publishedDate={blogMeta?.publishedDate}
+        modifiedDate={blogMeta?.modifiedDate}
+        readTimeMinutes={blogMeta?.readTimeMinutes}
+        wordCount={blogMeta?.wordCount}
       />
       <article className="max-w-4xl mx-auto bg-white border border-slate-200 rounded-2xl p-8 md:p-10 space-y-6">
         <Link href="/blog" className="text-sm text-slate-500 hover:text-blue-600 transition">Back to Blog</Link>

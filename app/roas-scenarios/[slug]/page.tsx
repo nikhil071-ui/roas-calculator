@@ -13,11 +13,23 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
   const data = getScenarioBySlug(slug);
-  if (!data) return { title: "ROAS Scenario Not Found" };
+  if (!data) {
+    return {
+      title: "ROAS Scenario Not Found",
+      robots: {
+        index: false,
+        follow: false,
+      },
+    };
+  }
   return {
     title: data.title,
     description: data.description,
     keywords: [data.primaryKeyword, ...data.relatedKeywords],
+    robots: {
+      index: true,
+      follow: true,
+    },
     alternates: { canonical: `https://roas-calculator.tech/roas-scenarios/${slug}` },
     openGraph: {
       title: data.title,

@@ -2,7 +2,8 @@ import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import Link from "next/link";
 import Script from "next/script";
-import { Analytics } from "@vercel/analytics/react"; 
+import { Analytics } from "@vercel/analytics/react";
+import WebVitals from "@/app/components/WebVitals";
 import "./globals.css";
 import { DEFAULT_OPEN_GRAPH, SITE_URL } from "./seo";
 
@@ -66,7 +67,17 @@ export default function RootLayout({
         <link rel="preconnect" href="https://pagead2.googlesyndication.com" />
         <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com" />
         <link rel="preload" as="image" href="/og-image.png" />
-        
+        {process.env.NODE_ENV === "production" &&
+        process.env.NEXT_PUBLIC_ADSENSE_CLIENT_ID ? (
+          <Script
+            id="adsense-global-script"
+            async
+            strategy="afterInteractive"
+            src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${process.env.NEXT_PUBLIC_ADSENSE_CLIENT_ID}`}
+            crossOrigin="anonymous"
+          />
+        ) : null}
+
         {/* --- GOOGLE ANALYTICS 4 --- */}
         <Script
           async
@@ -180,6 +191,7 @@ export default function RootLayout({
         <div id="main-content" className="grow" tabIndex={-1}>
             {children}
             <Analytics />
+            <WebVitals />
         </div>
 
         {/* --- GLOBAL PRO FOOTER --- */}

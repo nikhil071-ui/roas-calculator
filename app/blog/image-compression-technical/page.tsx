@@ -3,6 +3,9 @@ import { ArrowLeft, BookOpen, CheckCircle } from "lucide-react";
 import type { Metadata } from "next";
 import BlogInternalLinks from "@/app/components/BlogInternalLinks";
 import ArticleJsonLd from "@/app/components/ArticleJsonLd";
+import { getBlogPostBySlug } from "@/app/lib/blog-posts";
+
+const blogMeta = getBlogPostBySlug("image-compression-technical");
 
 export const metadata: Metadata = {
   title: "Image Compression vs Quality (2026): Technical Guide and Test Data",
@@ -27,6 +30,11 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: "https://roas-calculator.tech/blog/image-compression-technical",
+  },
+  robots: { index: true, follow: true },
+  other: {
+    "article:read_time": `${blogMeta?.readTimeMinutes ?? 10} min`,
+    "article:word_count": `${blogMeta?.wordCount ?? 1560}`,
   },
 };
 
@@ -62,6 +70,10 @@ export default function ImageCompressionTechnical() {
         headline="Image Compression vs Quality (2026): Technical Guide and Test Data"
         description="Technical image compression guide with real tests: JPEG, WebP, AVIF, SSIM metrics, and practical quality settings for 2026."
         url="https://roas-calculator.tech/blog/image-compression-technical"
+        publishedDate={blogMeta?.publishedDate}
+        modifiedDate={blogMeta?.modifiedDate}
+        readTimeMinutes={blogMeta?.readTimeMinutes}
+        wordCount={blogMeta?.wordCount}
       />
       <script
         type="application/ld+json"

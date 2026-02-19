@@ -13,11 +13,23 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
   const data = getPlatformBySlug(slug);
-  if (!data) return { title: "Platform ROAS Page Not Found" };
+  if (!data) {
+    return {
+      title: "Platform ROAS Page Not Found",
+      robots: {
+        index: false,
+        follow: false,
+      },
+    };
+  }
   return {
     title: data.title,
     description: data.description,
     keywords: [data.primaryKeyword, ...data.relatedKeywords],
+    robots: {
+      index: true,
+      follow: true,
+    },
     alternates: { canonical: `https://roas-calculator.tech/platform/${slug}/roas-calculator` },
     openGraph: {
       title: data.title,

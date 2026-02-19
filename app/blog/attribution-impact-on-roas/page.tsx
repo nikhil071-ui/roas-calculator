@@ -1,6 +1,9 @@
-﻿import Link from "next/link";
+import Link from "next/link";
 import type { Metadata } from "next";
 import BlogInternalLinks from "@/app/components/BlogInternalLinks";
+import { getBlogPostBySlug } from "@/app/lib/blog-posts";
+
+const blogMeta = getBlogPostBySlug("attribution-impact-on-roas");
 
 export const metadata: Metadata = {
   title: "Attribution Models and ROAS: How Interpretation Changes (2026)",
@@ -35,10 +38,12 @@ export const metadata: Metadata = {
 export default function AttributionImpactOnROASPage() {
   const articleData = {
     "@context": "https://schema.org",
-    "@type": "Article",
+    "@type": "BlogPosting",
     headline: "Attribution Models and ROAS: How Interpretation Changes",
-    datePublished: "2026-02-18",
-    dateModified: "2026-02-18",
+    datePublished: blogMeta?.publishedDate ?? "2026-02-18",
+    dateModified: blogMeta?.modifiedDate ?? "2026-02-18",
+    wordCount: blogMeta?.wordCount ?? 1180,
+    timeRequired: `PT${blogMeta?.readTimeMinutes ?? 8}M`,
     author: {
       "@type": "Organization",
       name: "ROAS Tools Editorial Team",
@@ -160,5 +165,7 @@ export default function AttributionImpactOnROASPage() {
     </div>
   );
 }
+
+
 
 

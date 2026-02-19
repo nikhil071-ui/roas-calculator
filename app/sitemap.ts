@@ -1,5 +1,6 @@
 import { MetadataRoute } from 'next';
 import { industryPages, platformPages, scenarioPages } from "@/app/lib/pseo";
+import { BLOG_POSTS } from "@/app/lib/blog-posts";
 
 // FULL SITEMAP - Include all static pages and all dynamic slug routes
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
@@ -56,17 +57,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     '/currency-converter/guide',
     '/currency-converter/faq',
     '/blog',
-    '/blog/facebook-ads-case-study',
-    '/blog/roas-benchmarks-2026',
-    '/blog/how-to-improve-roas-without-raising-budget',
-    '/blog/roas-audit-checklist',
-    '/blog/when-to-scale-or-pause-campaigns',
-    '/blog/creative-testing-framework-for-roas',
-    '/blog/image-compression-technical',
-    '/blog/pdf-compression-guide',
-    '/blog/currency-exchange-guide',
-    '/blog/payback-period-cash-flow-saas',
-    '/blog/attribution-impact-on-roas',
     '/ppc-toolkit',
     '/cac-calculator',
     '/ltv-calculator',
@@ -106,6 +96,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     '/terms',
     '/privacy-policy',
   ];
+  const blogRoutes = BLOG_POSTS.map((post) => `/blog/${post.slug}`);
+  const allStaticRoutes = [...new Set([...staticRoutes, ...blogRoutes])];
 
   const roasSlugs = [
     'facebook-ads',
@@ -163,7 +155,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   ];
 
   return [
-    ...staticRoutes.map((route) => ({
+    ...allStaticRoutes.map((route) => ({
       url: `${baseUrl}${route}`,
       lastModified,
       changeFrequency: 'weekly' as const,

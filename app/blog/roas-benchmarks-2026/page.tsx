@@ -2,6 +2,9 @@
 import type { Metadata } from "next";
 import BlogInternalLinks from "@/app/components/BlogInternalLinks";
 import AuthorTrustBlock from "@/app/components/AuthorTrustBlock";
+import { getBlogPostBySlug } from "@/app/lib/blog-posts";
+
+const blogMeta = getBlogPostBySlug("roas-benchmarks-2026");
 
 export const metadata: Metadata = {
   title: "ROAS Benchmarks 2026 by Channel and Industry",
@@ -16,6 +19,11 @@ export const metadata: Metadata = {
   ],
   alternates: {
     canonical: "https://roas-calculator.tech/blog/roas-benchmarks-2026",
+  },
+  robots: { index: true, follow: true },
+  other: {
+    "article:read_time": `${blogMeta?.readTimeMinutes ?? 8} min`,
+    "article:word_count": `${blogMeta?.wordCount ?? 1220}`,
   },
   openGraph: {
     title: "ROAS Benchmarks 2026 by Channel and Industry",
@@ -60,10 +68,12 @@ export default function RoasBenchmarks2026Page() {
   };
   const articleData = {
     "@context": "https://schema.org",
-    "@type": "Article",
+    "@type": "BlogPosting",
     headline: "ROAS Benchmarks 2026: Updated Channel and Industry Ranges",
-    datePublished: "2026-02-18",
-    dateModified: "2026-02-18",
+    datePublished: blogMeta?.publishedDate ?? "2026-02-18",
+    dateModified: blogMeta?.modifiedDate ?? "2026-02-18",
+    wordCount: blogMeta?.wordCount ?? 1220,
+    timeRequired: `PT${blogMeta?.readTimeMinutes ?? 8}M`,
     author: {
       "@type": "Person",
       name: "Priya Malhotra",

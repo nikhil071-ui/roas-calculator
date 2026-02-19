@@ -1,7 +1,6 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
-import Script from "next/script";
 
 type AdSenseWindow = Window & {
   adsbygoogle?: unknown[];
@@ -12,13 +11,11 @@ export default function AdBanner() {
 
   useEffect(() => {
     try {
-      // 1. Check if we are in the browser
-      if (typeof window !== 'undefined') {
+      if (typeof window !== "undefined") {
+        const hasScript = Boolean(document.querySelector('script[src*="adsbygoogle.js"]'));
         const adsbygoogle = (window as AdSenseWindow).adsbygoogle || [];
-        
-        // 2. SAFETY CHECK: Only push if the ad slot is NOT already filled.
-        // Google adds 'data-ad-status' attribute when an ad loads.
-        if (adRef.current && !adRef.current.getAttribute('data-ad-status')) {
+
+        if (hasScript && adRef.current && !adRef.current.getAttribute("data-ad-status")) {
           adsbygoogle.push({});
         }
       }
@@ -26,26 +23,17 @@ export default function AdBanner() {
   }, []);
 
   return (
-    <>
-      <Script
-        id="adsense-route-script"
-        async
-        strategy="lazyOnload"
-        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4649521973867824"
-        crossOrigin="anonymous"
-      />
-      <div className="my-8 mx-auto text-center bg-gray-50 border border-gray-100 rounded-lg min-h-[280px] max-w-[340px] flex flex-col justify-center items-center overflow-hidden">
-        <span className="text-[10px] text-gray-400 uppercase tracking-widest mb-1">Advertisement</span>
-        <ins
-          ref={adRef}
-          className="adsbygoogle"
-          style={{ display: 'block', width: '100%' }}
-          data-ad-client="ca-pub-4649521973867824"
-          data-ad-slot="1463530914"
-          data-ad-format="auto"
-          data-full-width-responsive="true"
-        ></ins>
-      </div>
-    </>
+    <div className="my-8 mx-auto text-center bg-gray-50 border border-gray-100 rounded-lg min-h-[280px] max-w-[340px] flex flex-col justify-center items-center overflow-hidden">
+      <span className="text-[10px] text-gray-400 uppercase tracking-widest mb-1">Advertisement</span>
+      <ins
+        ref={adRef}
+        className="adsbygoogle"
+        style={{ display: "block", width: "100%" }}
+        data-ad-client={process.env.NEXT_PUBLIC_ADSENSE_CLIENT_ID ?? "ca-pub-4649521973867824"}
+        data-ad-slot="1463530914"
+        data-ad-format="auto"
+        data-full-width-responsive="true"
+      ></ins>
+    </div>
   );
 }

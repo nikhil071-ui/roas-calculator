@@ -5,6 +5,8 @@ type ArticleJsonLdProps = {
   publishedDate?: string;
   modifiedDate?: string;
   authorName?: string;
+  wordCount?: number;
+  readTimeMinutes?: number;
 };
 
 export default function ArticleJsonLd({
@@ -14,14 +16,18 @@ export default function ArticleJsonLd({
   publishedDate = "2026-02-18",
   modifiedDate = "2026-02-18",
   authorName = "ROAS Tools Editorial Team",
+  wordCount,
+  readTimeMinutes,
 }: ArticleJsonLdProps) {
   const articleData = {
     "@context": "https://schema.org",
-    "@type": "Article",
+    "@type": "BlogPosting",
     headline,
     description,
     datePublished: publishedDate,
     dateModified: modifiedDate,
+    ...(wordCount ? { wordCount } : {}),
+    ...(readTimeMinutes ? { timeRequired: `PT${readTimeMinutes}M` } : {}),
     author: {
       "@type": "Organization",
       name: authorName,
