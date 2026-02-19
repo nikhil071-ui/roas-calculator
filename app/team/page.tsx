@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowLeft, Award, BookOpen, Star, Briefcase } from "lucide-react";
-import FounderAuthorityBlock from "@/app/components/FounderAuthorityBlock";
 
 export const metadata: Metadata = {
     title: "Our Team | ROAS Tools",
@@ -50,8 +49,6 @@ export default function Team() {
 
         {/* Team Members */}
         <div className="p-8 md:p-12 space-y-12">
-            <FounderAuthorityBlock compact />
-            
             {/* Team Member 1: Founder & Lead Developer */}
             <div className="border-b border-slate-200 pb-12">
                 <div className="flex flex-col md:flex-row gap-8">

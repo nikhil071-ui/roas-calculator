@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Info, ArrowLeft, Target, Rocket, Heart, CheckCircle } from "lucide-react";
-import FounderAuthorityBlock from "@/app/components/FounderAuthorityBlock";
 
 export const metadata: Metadata = {
     title: "About ROAS Tools",
@@ -234,8 +233,6 @@ export default function About() {
                     If this model ever changes, we'll announce it transparently on this page.
                 </p>
             </section>
-
-            <FounderAuthorityBlock />
 
             {/* 9. Team & Credentials */}
             <section className="bg-white rounded-xl border border-slate-200 p-6">
