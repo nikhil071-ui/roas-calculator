@@ -33,18 +33,29 @@ jobs:
         run: npm run build
 
       - name: Start App
-        run: npm run start &
+        run: |
+          timeout 90 npm run start > /tmp/app.log 2>&1 &
+          APP_PID=$!
+          sleep 3
+          if ! kill -0 $APP_PID 2>/dev/null; then
+            echo "App failed to start. Output:"
+            cat /tmp/app.log
+            exit 1
+          fi
+          echo "APP_PID=$APP_PID" >> $GITHUB_ENV
 
       - name: Wait for App
         run: |
-          for i in {1..45}; do
-            if curl -sSf http://127.0.0.1:3000 > /dev/null; then
-              echo "App is ready"
+          for i in {1..30}; do
+            if curl -sSf http://127.0.0.1:3000 > /dev/null 2>&1; then
+              echo "App is ready on attempt $i"
               exit 0
             fi
+            echo "Attempt $i/30: App not ready yet, waiting..."
             sleep 2
           done
-          echo "App did not start in time"
+          echo "App failed to respond in time. App log:"
+          cat /tmp/app.log || echo "No log file found"
           exit 1
 
       - name: Run Lighthouse + Axe

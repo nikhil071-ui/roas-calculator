@@ -6,7 +6,7 @@ const runCommand = process.platform === "win32" ? "npx.cmd" : "npx";
 const run = spawnSync(
   runCommand,
   ["@axe-core/cli", url, "--tags", "wcag2a,wcag2aa", "--exit"],
-  { encoding: "utf8" },
+  { encoding: "utf8", stdio: ["pipe", "pipe", "pipe"] },
 );
 
 const output = `${run.stdout ?? ""}${run.stderr ?? ""}`;
