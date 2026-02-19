@@ -513,6 +513,60 @@ export default function RoasClient() {
     <div className="space-y-8">
       
       {/* --- AD REMOVED FROM HERE FOR SAFETY --- */}
+      {activeEmail ? (
+        <section className="rounded-2xl border border-emerald-200 bg-emerald-50 p-4">
+          <div className="flex flex-wrap items-center justify-between gap-3">
+            <p className="text-sm text-emerald-900">
+              Logged in as <strong>{activeEmail}</strong>. This session is active across the whole site.
+            </p>
+            <button
+              type="button"
+              onClick={() => {
+                clearActiveSubscriberEmail();
+                setActiveEmail(null);
+                setHistoryEntries([]);
+                setHistoryStatus("idle");
+                window.dispatchEvent(new Event("subscriber-email-updated"));
+              }}
+              className="rounded-md border border-emerald-300 bg-white px-3 py-1 text-xs font-semibold text-emerald-900 hover:bg-emerald-100"
+            >
+              Logout
+            </button>
+          </div>
+          <div className="mt-3 flex flex-wrap gap-2">
+            <button
+              type="button"
+              onClick={downloadHistory}
+              className="rounded-lg bg-slate-800 px-3 py-2 text-xs font-semibold text-white hover:bg-slate-900"
+            >
+              Download History CSV
+            </button>
+            <button
+              type="button"
+              onClick={sendHistoryToEmail}
+              className="rounded-lg border border-slate-300 bg-white px-3 py-2 text-xs font-semibold text-slate-900 hover:bg-slate-100"
+            >
+              Send to This Email
+            </button>
+          </div>
+          {historyStatus === "sent" ? (
+            <p className="mt-2 text-xs text-emerald-700">Email draft opened in your mail app.</p>
+          ) : null}
+          {historyEntries.length > 0 ? (
+            <ul className="mt-3 space-y-1 text-xs text-slate-700">
+              {historyEntries.slice(0, 5).map((item) => (
+                <li key={`${item.timestamp}-${item.roas}`}>
+                  {new Date(item.timestamp).toLocaleString()} | ROAS {item.roas}x | Profit ${item.profit}
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <p className="mt-2 text-xs text-slate-600">
+              No local history yet. Run a calculation and it will be stored under this email.
+            </p>
+          )}
+        </section>
+      ) : null}
 
       <div className="bg-white rounded-3xl shadow-2xl overflow-hidden border border-slate-100">
         
@@ -840,57 +894,6 @@ export default function RoasClient() {
                         </div>
                         {shareStatus === "done" ? <p className="text-xs text-green-700">Summary copied to clipboard.</p> : null}
                         {shareStatus === "error" ? <p className="text-xs text-red-600">Could not copy summary. Please try again.</p> : null}
-                        {activeEmail ? (
-                          <div className="rounded-xl border border-slate-200 bg-white p-4">
-                            <div className="flex flex-wrap items-center justify-between gap-3">
-                              <p className="text-sm text-slate-700">
-                                Signed in as <strong>{activeEmail}</strong>. Your result history is stored locally for this email.
-                              </p>
-                              <button
-                                type="button"
-                                onClick={() => {
-                                  clearActiveSubscriberEmail();
-                                  setActiveEmail(null);
-                                  setHistoryEntries([]);
-                                  window.dispatchEvent(new Event("subscriber-email-updated"));
-                                }}
-                                className="rounded-md border border-slate-300 px-3 py-1 text-xs font-semibold text-slate-700 hover:bg-slate-100"
-                              >
-                                Logout
-                              </button>
-                            </div>
-                            <div className="mt-3 flex flex-wrap gap-2">
-                              <button
-                                type="button"
-                                onClick={downloadHistory}
-                                className="rounded-lg bg-slate-800 px-3 py-2 text-xs font-semibold text-white hover:bg-slate-900"
-                              >
-                                Download History CSV
-                              </button>
-                              <button
-                                type="button"
-                                onClick={sendHistoryToEmail}
-                                className="rounded-lg border border-slate-300 px-3 py-2 text-xs font-semibold text-slate-900 hover:bg-slate-100"
-                              >
-                                Send to This Email
-                              </button>
-                            </div>
-                            {historyStatus === "sent" ? (
-                              <p className="mt-2 text-xs text-emerald-700">Email draft opened in your mail app.</p>
-                            ) : null}
-                            {historyEntries.length > 0 ? (
-                              <ul className="mt-3 space-y-1 text-xs text-slate-600">
-                                {historyEntries.slice(0, 5).map((item) => (
-                                  <li key={`${item.timestamp}-${item.roas}`}>
-                                    {new Date(item.timestamp).toLocaleString()} | ROAS {item.roas}x | Profit ${item.profit}
-                                  </li>
-                                ))}
-                              </ul>
-                            ) : (
-                              <p className="mt-2 text-xs text-slate-500">No local history yet. Run a calculation to start saving entries.</p>
-                            )}
-                          </div>
-                        ) : null}
                         <EmailCaptureCard
                           source="roas_results"
                           variant="compact"
