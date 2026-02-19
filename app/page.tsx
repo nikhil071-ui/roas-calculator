@@ -124,7 +124,7 @@ export default function Home() {
             <a href="#calculator" className="inline-flex items-center px-5 py-3 rounded-lg bg-white text-blue-900 font-bold hover:bg-blue-50 transition">
               Start Calculator
             </a>
-            <Link href="/ppc-toolkit" className="inline-flex items-center px-5 py-3 rounded-lg border border-blue-200 text-white font-semibold hover:bg-blue-800 transition">
+            <Link href="/ppc-toolkit" prefetch={false} className="inline-flex items-center px-5 py-3 rounded-lg border border-blue-200 text-white font-semibold hover:bg-blue-800 transition">
               Open PPC Toolkit
             </Link>
           </div>
@@ -157,7 +157,7 @@ export default function Home() {
                 >
                   Open Toolkit
                 </TrackedLink>
-                <Link href="/methodology" className="inline-flex items-center px-3 py-2 text-sm font-semibold text-emerald-900 underline underline-offset-2 hover:text-emerald-800 transition">
+                <Link href="/methodology" prefetch={false} className="inline-flex items-center px-3 py-2 text-sm font-semibold text-emerald-900 underline underline-offset-2 hover:text-emerald-800 transition">
                   Review Methodology
                 </Link>
               </div>
@@ -190,13 +190,13 @@ export default function Home() {
                 Use these follow-up tools before changing budget so decisions are tied to CAC, LTV, and blended efficiency.
               </p>
               <div className="flex flex-wrap items-center gap-3">
-                <Link href="/ppc-toolkit" className="text-sm font-semibold text-slate-700 hover:text-slate-900 underline underline-offset-2" aria-label="Open PPC toolkit for ROAS CAC LTV and MER planning">
+                <Link href="/ppc-toolkit" prefetch={false} className="text-sm font-semibold text-slate-700 hover:text-slate-900 underline underline-offset-2" aria-label="Open PPC toolkit for ROAS CAC LTV and MER planning">
                   Open PPC Toolkit
                 </Link>
-                <Link href="/resources" className="text-sm font-semibold text-slate-700 hover:text-slate-900 underline underline-offset-2" aria-label="Download ROAS planning templates and checklists">
+                <Link href="/resources" prefetch={false} className="text-sm font-semibold text-slate-700 hover:text-slate-900 underline underline-offset-2" aria-label="Download ROAS planning templates and checklists">
                   Download Templates
                 </Link>
-                <Link href="/comparisons/mer-vs-roas" className="text-sm font-semibold text-slate-700 hover:text-slate-900 underline underline-offset-2" aria-label="Read the MER versus ROAS comparison guide">
+                <Link href="/comparisons/mer-vs-roas" prefetch={false} className="text-sm font-semibold text-slate-700 hover:text-slate-900 underline underline-offset-2" aria-label="Read the MER versus ROAS comparison guide">
                   Read MER vs ROAS
                 </Link>
               </div>
@@ -208,16 +208,16 @@ export default function Home() {
                 We publish named authors, review dates, and methodology pages so calculator outputs can be validated and audited.
               </p>
               <div className="flex flex-wrap gap-3">
-                <Link href="/authors" className="inline-flex items-center px-4 py-2 rounded-lg bg-white border border-slate-300 text-slate-900 font-semibold hover:bg-slate-50 transition">
+                <Link href="/authors" prefetch={false} className="inline-flex items-center px-4 py-2 rounded-lg bg-white border border-slate-300 text-slate-900 font-semibold hover:bg-slate-50 transition">
                   Authors and Reviewers
                 </Link>
-                <Link href="/methodology" className="inline-flex items-center px-4 py-2 rounded-lg bg-white border border-slate-300 text-slate-900 font-semibold hover:bg-slate-50 transition">
+                <Link href="/methodology" prefetch={false} className="inline-flex items-center px-4 py-2 rounded-lg bg-white border border-slate-300 text-slate-900 font-semibold hover:bg-slate-50 transition">
                   Methodology
                 </Link>
-                <Link href="/data-sources" className="inline-flex items-center px-4 py-2 rounded-lg bg-white border border-slate-300 text-slate-900 font-semibold hover:bg-slate-50 transition">
+                <Link href="/data-sources" prefetch={false} className="inline-flex items-center px-4 py-2 rounded-lg bg-white border border-slate-300 text-slate-900 font-semibold hover:bg-slate-50 transition">
                   Data Sources
                 </Link>
-                <Link href="/editorial-policy" className="inline-flex items-center px-4 py-2 rounded-lg bg-white border border-slate-300 text-slate-900 font-semibold hover:bg-slate-50 transition">
+                <Link href="/editorial-policy" prefetch={false} className="inline-flex items-center px-4 py-2 rounded-lg bg-white border border-slate-300 text-slate-900 font-semibold hover:bg-slate-50 transition">
                   Editorial Policy
                 </Link>
               </div>
@@ -229,10 +229,10 @@ export default function Home() {
                 See real outcomes, implementation notes, and benchmark context before changing budget decisions.
               </p>
               <div className="flex flex-wrap gap-3">
-                <Link href="/testimonials" className="inline-flex items-center px-4 py-2 rounded-lg bg-blue-600 text-white font-semibold hover:bg-blue-700 transition">
+                <Link href="/testimonials" prefetch={false} className="inline-flex items-center px-4 py-2 rounded-lg bg-blue-600 text-white font-semibold hover:bg-blue-700 transition">
                   Read Testimonials
                 </Link>
-                <Link href="/case-studies" className="inline-flex items-center px-4 py-2 rounded-lg bg-white border border-blue-300 text-slate-900 font-semibold hover:bg-blue-100 transition">
+                <Link href="/case-studies" prefetch={false} className="inline-flex items-center px-4 py-2 rounded-lg bg-white border border-blue-300 text-slate-900 font-semibold hover:bg-blue-100 transition">
                   View Case Studies
                 </Link>
               </div>

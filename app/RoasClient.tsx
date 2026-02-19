@@ -181,7 +181,7 @@ export default function RoasClient() {
     setHasTrackedStart(true);
   };
 
-  // --- PDF GENERATOR ---
+  // --- REPORT DOWNLOAD ---
   const downloadReport = async () => {
     if (!results) {
         alert("Please calculate your ROAS first!");
@@ -189,120 +189,41 @@ export default function RoasClient() {
     }
     void sendAnalyticsEvent("result_export_click", {
       calculator_type: "roas",
-      export_type: "pdf",
+      export_type: "txt",
     });
     setExporting(true);
     try {
-      const { default: jsPDF } = await import("jspdf");
-      const doc = new jsPDF();
-    const date = new Date().toLocaleDateString();
-    const width = doc.internal.pageSize.getWidth();
+      const generatedAt = new Date().toISOString();
+      const rows = [
+        "ROAS Performance Report",
+        `Generated at: ${generatedAt}`,
+        "Source: https://roas-calculator.tech/",
+        "",
+        "RESULTS",
+        `ROAS: ${results.roas}x`,
+        `Net Profit: $${results.profit}`,
+        `Profit Margin: ${results.profitMargin}%`,
+        `Break-even ROAS: ${results.breakEven === "N/A" ? "N/A" : `${results.breakEven}x`}`,
+        `CPA: $${results.cpa}`,
+        `AOV: $${results.aov}`,
+        `Decision State: ${results.isProfitable ? "profitable" : "not_profitable"}`,
+        "",
+        "INPUTS",
+        `Ad Spend: ${adSpend || 0}`,
+        `Revenue: ${revenue || 0}`,
+        `Product Cost: ${productCost || 0}`,
+        `Orders: ${orders || 0}`,
+      ];
 
-    // 1. BRANDED HEADER
-    doc.setFillColor(30, 58, 138); 
-    doc.rect(0, 0, width, 40, 'F'); 
-    
-    doc.setFontSize(22);
-    doc.setTextColor(255, 255, 255); 
-    doc.setFont("helvetica", "bold");
-    doc.text("ROAS Performance Report", 20, 20);
-    
-    doc.setFontSize(10);
-    doc.setFont("helvetica", "normal");
-    doc.text(`Generated on: ${date}`, 20, 30);
-    doc.text("via ROAS Tools", width - 40, 30, { align: 'right' });
-
-    // 2. SUMMARY BOX
-    doc.setDrawColor(200, 200, 200);
-    doc.setFillColor(248, 250, 252); 
-    doc.roundedRect(15, 50, width - 30, 45, 3, 3, 'FD'); 
-
-    // ROAS Score
-    doc.setTextColor(100);
-    doc.setFontSize(10);
-    doc.text("ROAS SCORE", 30, 65);
-    doc.setTextColor(30, 58, 138); 
-    doc.setFontSize(28);
-    doc.setFont("helvetica", "bold");
-    doc.text(`${results.roas}x`, 30, 80);
-
-    // Net Profit
-    doc.setTextColor(100);
-    doc.setFontSize(10);
-    doc.setFont("helvetica", "normal");
-    doc.text("NET PROFIT", 110, 65);
-    
-    doc.setFontSize(28);
-    doc.setFont("helvetica", "bold");
-    if(results.isProfitable) {
-        doc.setTextColor(22, 163, 74); 
-        doc.text(`+$${results.profit}`, 110, 80);
-    } else {
-        doc.setTextColor(220, 38, 38); 
-        doc.text(`$${results.profit}`, 110, 80);
-    }
-
-    // 3. METRICS
-    doc.setFontSize(14);
-    doc.setTextColor(0);
-    doc.text("Key Metrics Breakdown", 20, 115);
-    doc.setLineWidth(0.5);
-    doc.line(20, 118, width - 20, 118); 
-
-    let y = 135;
-    const col1 = 30;
-    const col2 = 110;
-
-    // Row 1
-    doc.setFontSize(11);
-    doc.setTextColor(100);
-    doc.text("CPA (Cost Per Acquisition)", col1, y);
-    doc.text("Average Order Value (AOV)", col2, y);
-    y += 8;
-    doc.setFontSize(14);
-    doc.setTextColor(0);
-    doc.setFont("helvetica", "bold");
-    doc.text(`$${results.cpa}`, col1, y);
-    doc.text(`$${results.aov}`, col2, y);
-
-    y += 20; 
-
-    // Row 2
-    doc.setFontSize(11);
-    doc.setTextColor(100);
-    doc.setFont("helvetica", "normal");
-    doc.text("Profit Margin", col1, y);
-    doc.text("Break-Even ROAS", col2, y);
-    y += 8;
-    doc.setFontSize(14);
-    doc.setTextColor(0);
-    doc.setFont("helvetica", "bold");
-    doc.text(`${results.profitMargin}%`, col1, y);
-    doc.text(results.breakEven === "N/A" ? results.breakEven : `${results.breakEven}x`, col2, y);
-
-    // 4. INPUTS
-    y += 30;
-    doc.setFillColor(241, 245, 249); 
-    doc.rect(0, y, width, 40, 'F');
-    
-    doc.setFontSize(10);
-    doc.setTextColor(100);
-    doc.text("CAMPAIGN INPUTS:", 20, y + 15);
-    
-    doc.setTextColor(50);
-    doc.text(`Ad Spend: $${adSpend}`, 60, y + 15);
-    doc.text(`Revenue: $${revenue}`, 120, y + 15);
-    
-    doc.text(`Product Cost: $${productCost || 0}`, 60, y + 25);
-    doc.text(`Total Orders: ${orders || 0}`, 120, y + 25);
-
-    // 5. FOOTER
-    doc.setFontSize(9);
-    doc.setTextColor(150);
-    doc.text("This report was generated using the Free ROAS Calculator.", width / 2, 280, { align: 'center' });
-    doc.text("https://roas-calculator.tech", width / 2, 285, { align: 'center' });
-
-      doc.save("ROAS_Professional_Report.pdf");
+      const blob = new Blob([rows.join("\n")], { type: "text/plain;charset=utf-8" });
+      const fileUrl = URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.href = fileUrl;
+      link.download = "roas_report.txt";
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+      URL.revokeObjectURL(fileUrl);
     } finally {
       setExporting(false);
     }
@@ -558,9 +479,9 @@ export default function RoasClient() {
                               onClick={downloadReport}
                               disabled={exporting}
                               className="w-full bg-slate-800 hover:bg-slate-900 text-white py-4 rounded-xl font-bold flex items-center justify-center gap-3 transition shadow-lg hover:shadow-slate-500/20"
-                              aria-label="Download campaign results as a PDF report"
+                              aria-label="Download campaign results as a text report"
                           >
-                              <Download size={20} aria-hidden="true" focusable="false" /> {exporting ? "Preparing PDF..." : "Download PDF Report"}
+                              <Download size={20} aria-hidden="true" focusable="false" /> {exporting ? "Preparing Report..." : "Download Report"}
                           </button>
                           <button
                               onClick={copyShareSummary}

@@ -1,7 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import Link from "next/link";
-import Script from "next/script";
 import { Analytics } from "@vercel/analytics/react";
 import WebVitals from "@/app/components/WebVitals";
 import AnalyticsScripts from "@/app/components/AnalyticsScripts";
@@ -61,21 +60,6 @@ export default function RootLayout({
         
         {/* --- GOOGLE SEARCH CONSOLE VERIFICATION --- */}
         <meta name="google-site-verification" content="google07479700bcc28a6c" />
-
-        {/* --- PERFORMANCE HINTS --- */}
-        <link rel="preconnect" href="https://pagead2.googlesyndication.com" />
-        <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com" />
-        <link rel="preload" as="image" href="/og-image.png" />
-        {process.env.NODE_ENV === "production" &&
-        process.env.NEXT_PUBLIC_ADSENSE_CLIENT_ID ? (
-          <Script
-            id="adsense-global-script"
-            async
-            strategy="afterInteractive"
-            src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${process.env.NEXT_PUBLIC_ADSENSE_CLIENT_ID}`}
-            crossOrigin="anonymous"
-          />
-        ) : null}
 
       </head>
       <body className={`${inter.className} bg-gray-50 text-gray-900 flex flex-col min-h-screen`}>
@@ -156,12 +140,12 @@ export default function RootLayout({
             
             {/* Navigation Links - SCROLLABLE ON MOBILE */}
             <div className="flex gap-4 md:gap-8 text-sm font-medium text-gray-600 overflow-x-auto ml-4 whitespace-nowrap">
-              <Link href="/blog" className="hover:text-blue-600 transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded-sm">Blog</Link>
-              <Link href="/" className="hover:text-blue-600 transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded-sm">Home</Link>
-              <Link href="/ppc-toolkit" className="hover:text-blue-600 transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded-sm">PPC Toolkit</Link>
-              <Link href="/image-compressor" className="hover:text-blue-600 transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded-sm">Image Compressor</Link>
-              <Link href="/pdf-converter" className="hover:text-blue-600 transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded-sm">PDF Maker</Link>
-              <Link href="/currency-converter" className="hover:text-blue-600 transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded-sm">Currency</Link>
+              <Link href="/blog" prefetch={false} className="hover:text-blue-600 transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded-sm">Blog</Link>
+              <Link href="/" prefetch={false} className="hover:text-blue-600 transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded-sm">Home</Link>
+              <Link href="/ppc-toolkit" prefetch={false} className="hover:text-blue-600 transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded-sm">PPC Toolkit</Link>
+              <Link href="/image-compressor" prefetch={false} className="hover:text-blue-600 transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded-sm">Image Compressor</Link>
+              <Link href="/pdf-converter" prefetch={false} className="hover:text-blue-600 transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded-sm">PDF Maker</Link>
+              <Link href="/currency-converter" prefetch={false} className="hover:text-blue-600 transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded-sm">Currency</Link>
             </div>
           </div>
         </nav>
