@@ -42,6 +42,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     '/industry',
     '/platform',
     '/roas-scenarios',
+    '/shopify-roas-calculator',
+    '/amazon-roas',
+    '/lead-generation-roas',
+    '/saas-cac-payback',
   ]);
 
   const staticRoutes = [
@@ -64,6 +68,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     '/industry',
     '/platform',
     '/roas-scenarios',
+    '/shopify-roas-calculator',
+    '/amazon-roas',
+    '/lead-generation-roas',
+    '/saas-cac-payback',
     '/learn/roas',
     '/benchmarks/roas',
     '/benchmarks/facebook-ads-roas',

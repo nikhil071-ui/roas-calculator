@@ -7,9 +7,9 @@ export const metadata: Metadata = {
   keywords: [
     "tool comparisons",
     "roas calculator comparison",
-    "image compressor comparison",
-    "pdf converter comparison",
-    "currency converter comparison",
+    "cac vs cpa vs roas",
+    "mer vs roas",
+    "roas vs roi",
   ],
   openGraph: {
     title: "Tool Comparisons | ROAS, CAC, CPA and More",
@@ -78,102 +78,6 @@ export default function ComparisonsPage() {
             >
               Open Comparison Guide
             </Link>
-          </section>
-
-          <section className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
-            <h2 className="text-xl font-bold text-slate-900">Image Compressor: ROAS Tools vs Alternatives</h2>
-            <div className="overflow-x-auto mt-4">
-              <table className="w-full text-sm border border-slate-200">
-                <thead className="bg-slate-100">
-                  <tr>
-                    <th className="text-left px-3 py-2">Feature</th>
-                    <th className="text-left px-3 py-2">ROAS Tools</th>
-                    <th className="text-left px-3 py-2">Typical Online Compressors</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td className="px-3 py-2 border-t">Privacy</td>
-                    <td className="px-3 py-2 border-t">Client-side (no uploads)</td>
-                    <td className="px-3 py-2 border-t">Uploads to server</td>
-                  </tr>
-                  <tr>
-                    <td className="px-3 py-2 border-t">Exact size targeting</td>
-                    <td className="px-3 py-2 border-t">Yes (KB/MB precision)</td>
-                    <td className="px-3 py-2 border-t">Often preset only</td>
-                  </tr>
-                  <tr>
-                    <td className="px-3 py-2 border-t">Exam portal support</td>
-                    <td className="px-3 py-2 border-t">Yes</td>
-                    <td className="px-3 py-2 border-t">Not tailored</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </section>
-
-          <section className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
-            <h2 className="text-xl font-bold text-slate-900">PDF Converter: ROAS Tools vs Alternatives</h2>
-            <div className="overflow-x-auto mt-4">
-              <table className="w-full text-sm border border-slate-200">
-                <thead className="bg-slate-100">
-                  <tr>
-                    <th className="text-left px-3 py-2">Feature</th>
-                    <th className="text-left px-3 py-2">ROAS Tools</th>
-                    <th className="text-left px-3 py-2">Typical Online Converters</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td className="px-3 py-2 border-t">File size limits</td>
-                    <td className="px-3 py-2 border-t">Exact target (e.g., 0.5 MB)</td>
-                    <td className="px-3 py-2 border-t">Often coarse presets</td>
-                  </tr>
-                  <tr>
-                    <td className="px-3 py-2 border-t">Watermarks</td>
-                    <td className="px-3 py-2 border-t">None</td>
-                    <td className="px-3 py-2 border-t">Common on free tiers</td>
-                  </tr>
-                  <tr>
-                    <td className="px-3 py-2 border-t">Privacy</td>
-                    <td className="px-3 py-2 border-t">Client-side where possible</td>
-                    <td className="px-3 py-2 border-t">Uploads to server</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </section>
-
-          <section className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
-            <h2 className="text-xl font-bold text-slate-900">Currency Converter: ROAS Tools vs Alternatives</h2>
-            <div className="overflow-x-auto mt-4">
-              <table className="w-full text-sm border border-slate-200">
-                <thead className="bg-slate-100">
-                  <tr>
-                    <th className="text-left px-3 py-2">Feature</th>
-                    <th className="text-left px-3 py-2">ROAS Tools</th>
-                    <th className="text-left px-3 py-2">Typical Converters</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td className="px-3 py-2 border-t">Rate clarity</td>
-                    <td className="px-3 py-2 border-t">Mid-market explanation</td>
-                    <td className="px-3 py-2 border-t">Rate type often unclear</td>
-                  </tr>
-                  <tr>
-                    <td className="px-3 py-2 border-t">Educational content</td>
-                    <td className="px-3 py-2 border-t">Detailed guide</td>
-                    <td className="px-3 py-2 border-t">Limited context</td>
-                  </tr>
-                  <tr>
-                    <td className="px-3 py-2 border-t">Privacy</td>
-                    <td className="px-3 py-2 border-t">No account required</td>
-                    <td className="px-3 py-2 border-t">Often gated</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
           </section>
 
           <section className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">

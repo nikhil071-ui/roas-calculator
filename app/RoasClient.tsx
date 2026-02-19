@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { Download, Calculator, DollarSign, TrendingUp, AlertTriangle, RefreshCcw, ShoppingBag, BarChart3, RotateCcw, Share2 } from "lucide-react";
+import EmailCaptureCard from "@/app/components/EmailCaptureCard";
 
 type RoasResults = {
   roas: string;
@@ -12,6 +13,31 @@ type RoasResults = {
   aov: string;
   isProfitable: boolean;
 };
+
+type ScenarioRow = {
+  title: string;
+  detail: string;
+  action: "Scale" | "Hold" | "Pause";
+  projectedRoas: number | null;
+};
+
+type IndustryKey = "dtc" | "saas" | "leadgen";
+
+const INDUSTRY_BENCHMARKS: Record<
+  IndustryKey,
+  { label: string; typicalMin: number; typicalMax: number; strongMin: number }
+> = {
+  dtc: { label: "DTC / eCommerce", typicalMin: 1.8, typicalMax: 3.2, strongMin: 3.5 },
+  saas: { label: "SaaS", typicalMin: 1.7, typicalMax: 3.0, strongMin: 3.2 },
+  leadgen: { label: "Lead Gen", typicalMin: 2.5, typicalMax: 5.0, strongMin: 6.0 },
+};
+
+function getDecisionLabel(projectedRoas: number, breakEven: number | null): "Scale" | "Hold" | "Pause" {
+  if (!breakEven || !Number.isFinite(breakEven)) return "Hold";
+  if (projectedRoas >= breakEven * 1.2) return "Scale";
+  if (projectedRoas <= breakEven * 0.9) return "Pause";
+  return "Hold";
+}
 
 export default function RoasClient() {
   // Inputs
@@ -26,6 +52,8 @@ export default function RoasClient() {
   const [exporting, setExporting] = useState(false);
   const [shareStatus, setShareStatus] = useState<"idle" | "done" | "error">("idle");
   const [showStickyCta, setShowStickyCta] = useState(false);
+  const [showExampleReport, setShowExampleReport] = useState(false);
+  const [industryKey, setIndustryKey] = useState<IndustryKey>("dtc");
   const calculateButtonRef = useRef<HTMLButtonElement | null>(null);
 
   useEffect(() => {
@@ -77,6 +105,9 @@ export default function RoasClient() {
 
   const applyPreset = (preset: "ecommerce" | "saas" | "leadgen") => {
     trackCalculatorStart();
+    setResults(null);
+    setValidationError("");
+    setShowExampleReport(false);
     if (preset === "ecommerce") {
       setAdSpend("1000");
       setRevenue("3500");
@@ -115,6 +146,50 @@ export default function RoasClient() {
     setOrders("");
     setResults(null);
     setValidationError("");
+    setShowExampleReport(false);
+  };
+
+  const showSampleReport = () => {
+    trackCalculatorStart();
+
+    const sample = {
+      spend: 2500,
+      revenueValue: 9000,
+      cost: 3400,
+      orderCount: 90,
+    };
+
+    const roas = sample.revenueValue / sample.spend;
+    const profit = sample.revenueValue - sample.spend - sample.cost;
+    const breakEvenRoas = sample.revenueValue > 0
+      ? (sample.cost === 0 ? 1 : sample.revenueValue - sample.cost > 0 ? sample.revenueValue / (sample.revenueValue - sample.cost) : null)
+      : null;
+    const profitMargin = sample.revenueValue > 0 ? (profit / sample.revenueValue) * 100 : 0;
+    const cpa = sample.orderCount > 0 ? sample.spend / sample.orderCount : 0;
+    const aov = sample.orderCount > 0 ? sample.revenueValue / sample.orderCount : 0;
+
+    setAdSpend(String(sample.spend));
+    setRevenue(String(sample.revenueValue));
+    setProductCost(String(sample.cost));
+    setOrders(String(sample.orderCount));
+    setValidationError("");
+    setShareStatus("idle");
+    setShowExampleReport(true);
+    setResults({
+      roas: roas.toFixed(2),
+      profit: profit.toFixed(2),
+      profitMargin: profitMargin.toFixed(1),
+      breakEven: breakEvenRoas ? breakEvenRoas.toFixed(2) : "N/A",
+      cpa: cpa.toFixed(2),
+      aov: aov.toFixed(2),
+      isProfitable: profit > 0,
+    });
+
+    void sendAnalyticsEvent("example_report_view", {
+      calculator_type: "roas",
+      example_type: "shopify_dtc",
+      source: "roas_workspace",
+    });
   };
 
   const calculateROAS = () => {
@@ -128,6 +203,7 @@ export default function RoasClient() {
       return;
     }
     setValidationError("");
+    setShowExampleReport(false);
 
     const roas = rev / spend;
     const profit = rev - spend - cost;
@@ -250,6 +326,97 @@ export default function RoasClient() {
       setShareStatus("error");
     }
   };
+
+  const resultsRoas = results ? Number(results.roas) : null;
+  const resultsBreakEven = results && results.breakEven !== "N/A" ? Number(results.breakEven) : null;
+  const benchmark = INDUSTRY_BENCHMARKS[industryKey];
+
+  const industryComparison = (() => {
+    if (!resultsRoas || !Number.isFinite(resultsRoas)) return null;
+
+    if (resultsRoas < benchmark.typicalMin) {
+      return {
+        label: "Below industry typical",
+        tone: "bg-red-50 border-red-200 text-red-800",
+      };
+    }
+    if (resultsRoas <= benchmark.typicalMax) {
+      return {
+        label: "Within industry typical",
+        tone: "bg-amber-50 border-amber-200 text-amber-800",
+      };
+    }
+    if (resultsRoas >= benchmark.strongMin) {
+      return {
+        label: "Above strong industry range",
+        tone: "bg-emerald-50 border-emerald-200 text-emerald-800",
+      };
+    }
+    return {
+      label: "Above typical range",
+      tone: "bg-blue-50 border-blue-200 text-blue-800",
+    };
+  })();
+
+  const scenarioRows: ScenarioRow[] = (() => {
+    if (!resultsRoas) return [];
+
+    const spend = Number(adSpend) || 0;
+    const rev = Number(revenue) || 0;
+    const cost = Number(productCost) || 0;
+    const orderCount = Number(orders) || 0;
+    const aov = orderCount > 0 ? rev / orderCount : 0;
+    const costPerOrder = orderCount > 0 ? cost / orderCount : 0;
+
+    const doubledSpend = spend * 2;
+    const doubledRevenue = rev * 2;
+    const doubledCost = cost * 2;
+    const doubledRoas = doubledSpend > 0 ? doubledRevenue / doubledSpend : 0;
+    const doubledProfit = doubledRevenue - doubledSpend - doubledCost;
+
+    const roasDrop = resultsRoas * 0.9;
+    const roasDropRevenue = spend * roasDrop;
+    const roasDropProfit = roasDropRevenue - spend - cost;
+
+    const cacIncreaseRow = (() => {
+      if (orderCount <= 0 || aov <= 0) {
+        return {
+          title: "If CAC rises 15%",
+          detail: "Add orders to model this scenario.",
+          action: "Hold" as const,
+          projectedRoas: null,
+        };
+      }
+      const projectedOrders = orderCount / 1.15;
+      const projectedRevenue = projectedOrders * aov;
+      const projectedCost = projectedOrders * costPerOrder;
+      const projectedRoas = spend > 0 ? projectedRevenue / spend : 0;
+      const projectedProfit = projectedRevenue - spend - projectedCost;
+      const action = getDecisionLabel(projectedRoas, resultsBreakEven);
+      return {
+        title: "If CAC rises 15%",
+        detail: `ROAS ${projectedRoas.toFixed(2)}x | Profit $${projectedProfit.toFixed(0)}`,
+        action,
+        projectedRoas,
+      };
+    })();
+
+    return [
+      {
+        title: "If budget doubles",
+        detail: `ROAS ${doubledRoas.toFixed(2)}x | Profit $${doubledProfit.toFixed(0)}`,
+        action: getDecisionLabel(doubledRoas, resultsBreakEven),
+        projectedRoas: doubledRoas,
+      },
+      cacIncreaseRow,
+      {
+        title: "If ROAS drops 10%",
+        detail: `ROAS ${roasDrop.toFixed(2)}x | Profit $${roasDropProfit.toFixed(0)}`,
+        action: getDecisionLabel(roasDrop, resultsBreakEven),
+        projectedRoas: roasDrop,
+      },
+    ];
+  })();
 
   return (
     <div className="space-y-8">
@@ -381,7 +548,36 @@ export default function RoasClient() {
                         >
                             Lead Gen
                         </button>
+                        <button
+                            type="button"
+                            onClick={showExampleReport ? resetFields : showSampleReport}
+                            className="px-3 py-2 rounded-lg bg-amber-50 border border-amber-300 text-amber-900 text-sm font-semibold hover:bg-amber-100 transition"
+                        >
+                            {showExampleReport ? "Use Blank Inputs" : "See Example Report"}
+                        </button>
                     </div>
+                    <p className="text-xs text-slate-500 mt-2">
+                      Loads sample inputs instantly so you can preview output before entering your own numbers.
+                    </p>
+                </div>
+
+                <div className="bg-slate-50 border border-slate-200 rounded-xl p-4">
+                    <label htmlFor="industry-benchmark" className="text-xs font-bold text-slate-500 uppercase tracking-wider">
+                      Benchmark Layer
+                    </label>
+                    <select
+                      id="industry-benchmark"
+                      value={industryKey}
+                      onChange={(event) => setIndustryKey(event.target.value as IndustryKey)}
+                      className="mt-2 w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900 focus:border-blue-600 focus:outline-none"
+                    >
+                      <option value="dtc">DTC / eCommerce</option>
+                      <option value="saas">SaaS</option>
+                      <option value="leadgen">Lead Generation</option>
+                    </select>
+                    <p className="text-xs text-slate-500 mt-2">
+                      Compare your ROAS to {benchmark.label} ranges ({benchmark.typicalMin.toFixed(1)}x-{benchmark.typicalMax.toFixed(1)}x typical).
+                    </p>
                 </div>
 
                 {/* ACTION BUTTONS */}
@@ -422,6 +618,12 @@ export default function RoasClient() {
                     </div>
                 ) : (
                     <div className="space-y-6 animate-in fade-in zoom-in duration-300">
+                        {showExampleReport ? (
+                          <div className="bg-amber-50 border border-amber-200 rounded-xl p-3">
+                            <p className="text-xs font-bold text-amber-900 uppercase tracking-wider">Example Report Mode</p>
+                            <p className="text-sm text-amber-800 mt-1">These are preloaded sample inputs to preview the output format.</p>
+                          </div>
+                        ) : null}
                         <div className="bg-white rounded-xl border border-slate-200 p-4 shadow-sm">
                             <p className="text-xs font-bold text-slate-500 uppercase tracking-wider mb-1">Decision Summary</p>
                             <p className="text-sm text-slate-700">
@@ -438,6 +640,11 @@ export default function RoasClient() {
                             <div className="bg-white p-5 rounded-2xl border border-slate-100 shadow-sm text-center transform transition hover:scale-105">
                                 <p className="text-xs text-slate-500 uppercase font-bold tracking-wider mb-1">ROAS Score</p>
                                 <p className="text-4xl font-black text-blue-600">{results.roas}x</p>
+                                {industryComparison ? (
+                                  <p className={`mt-2 inline-flex rounded-full border px-2 py-1 text-[11px] font-semibold ${industryComparison.tone}`}>
+                                    Compare to industry: {industryComparison.label}
+                                  </p>
+                                ) : null}
                             </div>
                             <div className="bg-white p-5 rounded-2xl border border-slate-100 shadow-sm text-center transform transition hover:scale-105">
                                 <p className="text-xs text-slate-500 uppercase font-bold tracking-wider mb-1">Net Profit</p>
@@ -474,6 +681,55 @@ export default function RoasClient() {
                             </div>
                         </div>
 
+                        <div className="bg-white rounded-xl border border-slate-200 p-5 shadow-sm">
+                            <h4 className="text-xs font-bold text-slate-400 uppercase mb-4 border-b pb-2">Scenario Modeling</h4>
+                            <div className="space-y-3">
+                              {scenarioRows.map((scenario) => (
+                                <div key={scenario.title} className="rounded-lg border border-slate-200 bg-slate-50 p-3">
+                                  <div className="flex items-center justify-between gap-3">
+                                    <p className="text-sm font-semibold text-slate-900">{scenario.title}</p>
+                                    <span
+                                      className={`inline-flex rounded-full px-2 py-1 text-xs font-bold ${
+                                        scenario.action === "Scale"
+                                          ? "bg-emerald-100 text-emerald-800"
+                                          : scenario.action === "Pause"
+                                          ? "bg-red-100 text-red-800"
+                                          : "bg-amber-100 text-amber-800"
+                                      }`}
+                                    >
+                                      {scenario.action}
+                                    </span>
+                                  </div>
+                                  <p className="text-xs text-slate-600 mt-1">{scenario.detail}</p>
+                                  <details className="mt-2">
+                                    <summary className="cursor-pointer text-xs font-semibold text-blue-700 hover:text-blue-800">
+                                      Why this decision?
+                                    </summary>
+                                    <div className="mt-2 rounded-md border border-slate-200 bg-white p-2 text-xs text-slate-600 space-y-1">
+                                      {scenario.projectedRoas === null ? (
+                                        <p>
+                                          Scenario math requires order-based inputs. Add orders to compute projected ROAS for CAC change.
+                                        </p>
+                                      ) : resultsBreakEven ? (
+                                        <>
+                                          <p>Projected ROAS: {scenario.projectedRoas.toFixed(2)}x</p>
+                                          <p>Break-even ROAS: {resultsBreakEven.toFixed(2)}x</p>
+                                          <p>Scale if projected ROAS &gt;= {(resultsBreakEven * 1.2).toFixed(2)}x</p>
+                                          <p>Pause if projected ROAS &lt;= {(resultsBreakEven * 0.9).toFixed(2)}x</p>
+                                          <p>Otherwise hold and optimize.</p>
+                                        </>
+                                      ) : (
+                                        <p>
+                                          Break-even ROAS is unavailable from current inputs, so guidance defaults to Hold until margin assumptions are clear.
+                                        </p>
+                                      )}
+                                    </div>
+                                  </details>
+                                </div>
+                              ))}
+                            </div>
+                        </div>
+
                         <div className="grid sm:grid-cols-2 gap-3">
                           <button
                               onClick={downloadReport}
@@ -493,6 +749,15 @@ export default function RoasClient() {
                         </div>
                         {shareStatus === "done" ? <p className="text-xs text-green-700">Summary copied to clipboard.</p> : null}
                         {shareStatus === "error" ? <p className="text-xs text-red-600">Could not copy summary. Please try again.</p> : null}
+                        <EmailCaptureCard
+                          source="roas_results"
+                          variant="compact"
+                          title="Get the ROAS Profitability Checklist (free PDF)"
+                          description="Use your results with the checklist to validate break-even, risk, and next budget move."
+                          buttonLabel="Email Me the Checklist"
+                          helperText="Includes scale/hold/pause decision prompts."
+                          className="mt-2"
+                        />
                     </div>
                 )}
             </div>

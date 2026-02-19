@@ -21,6 +21,8 @@ export const metadata: Metadata = {
 };
 
 export default function About() {
+  const founderLinkedIn =
+    process.env.NEXT_PUBLIC_FOUNDER_LINKEDIN || "https://www.linkedin.com/in/sanjay-kumar-performance-marketing/";
   return (
     <div className="min-h-screen bg-slate-50 font-sans text-slate-900 py-12 px-4 md:px-6">
       
@@ -133,9 +135,45 @@ export default function About() {
                         that's why accurate ROAS tracking is non-negotiable.
                     </p>
                     <p className="text-slate-600 leading-relaxed">
-                        What started as a simple internal spreadsheet has evolved into a full suite of utility tools used by 
-                        over 50,000 marketers, students, and professionals worldwide every month.
+                        What started as a simple internal spreadsheet has evolved into a focused profitability platform used by 
+                        over 50,000 marketers, founders, and operators worldwide every month.
                     </p>
+                </div>
+            </section>
+
+            <section className="bg-slate-50 rounded-xl p-6 border border-slate-200">
+                <h3 className="text-lg font-bold text-slate-900 mb-4">Founder Snapshot</h3>
+                <div className="flex flex-col md:flex-row gap-6">
+                    <div className="w-24 h-24 rounded-2xl bg-linear-to-br from-blue-600 to-indigo-700 text-white flex items-center justify-center text-2xl font-bold shrink-0">
+                        SK
+                    </div>
+                    <div className="space-y-3">
+                        <p className="text-slate-700">
+                            Built by <strong>Sanjay Kumar</strong>, performance marketer with 15+ years in paid media execution and analytics systems.
+                        </p>
+                        <p className="text-slate-700">
+                            Credentials: Google Ads Certified, Meta Blueprint Certified, and practitioner-level experience across eCommerce, SaaS, and lead-gen accounts.
+                        </p>
+                        <div className="grid md:grid-cols-3 gap-3 text-sm">
+                            <div className="rounded-lg border border-slate-200 bg-white p-3">
+                                <p className="font-semibold text-slate-900">$1.2M+ ad spend managed</p>
+                            </div>
+                            <div className="rounded-lg border border-slate-200 bg-white p-3">
+                                <p className="font-semibold text-slate-900">2,000+ campaigns reviewed</p>
+                            </div>
+                            <div className="rounded-lg border border-slate-200 bg-white p-3">
+                                <p className="font-semibold text-slate-900">50,000+ monthly users served</p>
+                            </div>
+                        </div>
+                        <a
+                            href={founderLinkedIn}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center text-blue-700 font-semibold hover:underline"
+                        >
+                            View Founder on LinkedIn
+                        </a>
+                    </div>
                 </div>
             </section>
 

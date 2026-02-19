@@ -1,32 +1,34 @@
 "use client";
 
-import { FormEvent, useEffect, useState } from "react";
+import { FormEvent, useMemo, useState } from "react";
+import { useSearchParams } from "next/navigation";
 
 type EmailCaptureCardProps = {
   title?: string;
   description?: string;
   source: string;
   className?: string;
+  variant?: "default" | "compact";
+  buttonLabel?: string;
+  helperText?: string;
 };
 
 export default function EmailCaptureCard({
-  title = "Get the ROAS Decision Matrix",
+  title = "Get the ROAS Profitability Checklist (free PDF)",
   description = "Join the email list for weekly profitability playbooks, benchmark updates, and scale/hold/pause checklists.",
   source,
   className = "",
+  variant = "default",
+  buttonLabel = "Send Me the Checklist",
+  helperText = "Free resource: Profitability Scorecard PDF + monthly ROAS benchmark updates.",
 }: EmailCaptureCardProps) {
   const [email, setEmail] = useState("");
   const [consent, setConsent] = useState(false);
-  const [signupStatus, setSignupStatus] = useState<string | null>(null);
-  const [signupReason, setSignupReason] = useState<string | null>(null);
+  const searchParams = useSearchParams();
   const actionUrl = process.env.NEXT_PUBLIC_EMAIL_CAPTURE_ACTION || "/api/email-capture";
 
-  useEffect(() => {
-    if (typeof window === "undefined") return;
-    const params = new URLSearchParams(window.location.search);
-    setSignupStatus(params.get("signup"));
-    setSignupReason(params.get("reason"));
-  }, []);
+  const signupStatus = useMemo(() => searchParams.get("signup"), [searchParams]);
+  const signupReason = useMemo(() => searchParams.get("reason"), [searchParams]);
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     if (!consent) {
@@ -35,23 +37,21 @@ export default function EmailCaptureCard({
   };
 
   return (
-    <section className={`bg-slate-900 text-white rounded-2xl p-6 md:p-7 ${className}`}>
+    <section className={`bg-slate-900 text-white rounded-2xl ${variant === "compact" ? "p-5" : "p-6 md:p-7"} ${className}`}>
       {signupStatus === "error" ? (
         <p className="mb-3 rounded-lg border border-amber-300/40 bg-amber-500/10 px-3 py-2 text-sm text-amber-200">
           Signup failed ({signupReason || "unknown"}). Please retry in a moment.
         </p>
       ) : null}
-      <h2 className="text-2xl font-bold">{title}</h2>
-      <p className="mt-2 text-slate-300 max-w-2xl">{description}</p>
-      <p className="mt-1 text-xs text-slate-400">
-        Free resource: Profitability Scorecard PDF + monthly ROAS benchmark updates.
-      </p>
+      <h2 className={`${variant === "compact" ? "text-xl" : "text-2xl"} font-bold`}>{title}</h2>
+      <p className={`text-slate-300 max-w-2xl ${variant === "compact" ? "mt-1 text-sm" : "mt-2"}`}>{description}</p>
+      <p className="mt-1 text-xs text-slate-400">{helperText}</p>
 
       <form
         action={actionUrl || "#"}
         method="post"
         onSubmit={handleSubmit}
-        className="mt-5 grid gap-3 md:grid-cols-[1fr_auto]"
+        className={`mt-4 grid gap-3 ${variant === "compact" ? "" : "md:grid-cols-[1fr_auto]"}`}
       >
         <input type="hidden" name="source" value={source} />
         <input
@@ -68,7 +68,7 @@ export default function EmailCaptureCard({
           type="submit"
           className="inline-flex items-center justify-center rounded-lg bg-blue-600 px-5 py-3 font-semibold hover:bg-blue-700 disabled:cursor-not-allowed disabled:opacity-60"
         >
-          Send Me the Scorecard
+          {buttonLabel}
         </button>
         <label className="md:col-span-2 text-sm text-slate-300 inline-flex items-start gap-2">
           <input

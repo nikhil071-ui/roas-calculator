@@ -47,6 +47,8 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
+  const founderLinkedIn =
+    process.env.NEXT_PUBLIC_FOUNDER_LINKEDIN || "https://www.linkedin.com/in/sanjay-kumar-performance-marketing/";
   const webApplicationData = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
@@ -122,7 +124,15 @@ export default function Home() {
             Enter spend, revenue, and costs to get ROAS, net profit, CPA, AOV, and break-even guidance in one view.
           </p>
           <p className="text-sm text-blue-200 max-w-2xl mx-auto mt-3">
-            Built by Sanjay Kumar, performance marketer and operator across $2M+ monthly paid media budgets.
+            Built by Sanjay Kumar, performance marketer and operator across $2M+ monthly paid media budgets.{" "}
+            <a
+              href={founderLinkedIn}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline underline-offset-2 hover:text-white"
+            >
+              LinkedIn
+            </a>
           </p>
           <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
             <a href="#calculator" className="inline-flex items-center px-5 py-3 rounded-lg bg-white text-blue-900 font-bold hover:bg-blue-50 transition">
@@ -135,6 +145,15 @@ export default function Home() {
           <a href="#calculator" className="sr-only focus:not-sr-only focus:mt-4 focus:inline-flex focus:rounded-md focus:bg-white focus:px-4 focus:py-2 focus:text-blue-900">
             Skip to calculator
           </a>
+          <EmailCaptureCard
+            source="home_hero"
+            variant="compact"
+            title="Get the ROAS Profitability Checklist (free PDF)"
+            description="One-page checklist for scale, hold, or pause decisions before increasing budget."
+            buttonLabel="Send Checklist"
+            helperText="Delivered instantly by email. No spam."
+            className="mt-6 text-left"
+          />
         </div>
       </header>
 
@@ -204,6 +223,31 @@ export default function Home() {
                 </Link>
                 <Link href="/comparisons/mer-vs-roas" prefetch={false} className="text-sm font-semibold text-slate-700 hover:text-slate-900 underline underline-offset-2" aria-label="Read the MER versus ROAS comparison guide">
                   Read MER vs ROAS
+                </Link>
+              </div>
+            </section>
+
+            <section className="mt-8 mb-6 bg-white border border-slate-200 rounded-2xl p-6">
+              <h2 className="text-xl font-bold text-slate-900 mb-2">Persona Calculators</h2>
+              <p className="text-slate-600 mb-4">
+                Use tailored pages with vertical benchmarks and worked examples for your business model.
+              </p>
+              <div className="grid md:grid-cols-2 gap-3">
+                <Link href="/shopify-roas-calculator" prefetch={false} className="rounded-lg border border-slate-200 p-4 hover:border-blue-400 transition">
+                  <h3 className="font-semibold text-slate-900">Shopify ROAS Calculator</h3>
+                  <p className="text-sm text-slate-600 mt-1">DTC benchmarks and break-even guidance.</p>
+                </Link>
+                <Link href="/amazon-roas" prefetch={false} className="rounded-lg border border-slate-200 p-4 hover:border-blue-400 transition">
+                  <h3 className="font-semibold text-slate-900">Amazon ROAS</h3>
+                  <p className="text-sm text-slate-600 mt-1">ACoS-to-ROAS mapping with seller examples.</p>
+                </Link>
+                <Link href="/lead-generation-roas" prefetch={false} className="rounded-lg border border-slate-200 p-4 hover:border-blue-400 transition">
+                  <h3 className="font-semibold text-slate-900">Lead Generation ROAS</h3>
+                  <p className="text-sm text-slate-600 mt-1">CPL, close-rate, and pipeline-aware interpretation.</p>
+                </Link>
+                <Link href="/saas-cac-payback" prefetch={false} className="rounded-lg border border-slate-200 p-4 hover:border-blue-400 transition">
+                  <h3 className="font-semibold text-slate-900">SaaS CAC Payback</h3>
+                  <p className="text-sm text-slate-600 mt-1">Cash-flow-safe scaling thresholds for SaaS.</p>
                 </Link>
               </div>
             </section>

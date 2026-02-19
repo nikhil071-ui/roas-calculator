@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { BookOpen, TrendingUp, BarChart3, DollarSign, Zap } from "lucide-react";
 import type { Metadata } from "next";
+import EmailCaptureCard from "@/app/components/EmailCaptureCard";
 
 export const metadata: Metadata = {
   title: "ROAS Blog 2026: Benchmarks, Case Studies, and Calculator Guides",
@@ -184,86 +185,109 @@ export default function BlogIndex() {
           </div>
         </section>
 
-        {/* Featured Posts */}
-        {featuredPosts.length > 0 && (
-          <section className="mb-16">
-            <h2 className="text-2xl font-bold mb-6 text-slate-900">Featured</h2>
+        <div className="grid lg:grid-cols-[minmax(0,1fr)_320px] gap-8 items-start">
+          <div>
+            {/* Featured Posts */}
+            {featuredPosts.length > 0 && (
+              <section className="mb-16">
+                <h2 className="text-2xl font-bold mb-6 text-slate-900">Featured</h2>
 
-            <div className="grid gap-6">
-              {featuredPosts.map((post) => (
-                <Link key={post.href} href={post.href}>
-                  <div className="group bg-white rounded-2xl shadow-md hover:shadow-xl transition-all overflow-hidden cursor-pointer border border-slate-200 hover:border-slate-300">
-                    <div className="p-8 md:p-10">
-                      <div className="flex items-start justify-between mb-4">
-                        <div className="flex items-center gap-3">
-                          {post.icon}
-                          <span className={`text-xs font-bold px-3 py-1 rounded-full ${post.categoryColor}`}>
-                            {post.category}
-                          </span>
-                        </div>
-                        <div className="text-sm text-slate-500">
-                          <p className="font-semibold">{post.readTime}</p>
-                          <p>{post.wordCount.toLocaleString()} words</p>
+                <div className="grid gap-6">
+                  {featuredPosts.map((post) => (
+                    <Link key={post.href} href={post.href}>
+                      <div className="group bg-white rounded-2xl shadow-md hover:shadow-xl transition-all overflow-hidden cursor-pointer border border-slate-200 hover:border-slate-300">
+                        <div className="p-8 md:p-10">
+                          <div className="flex items-start justify-between mb-4">
+                            <div className="flex items-center gap-3">
+                              {post.icon}
+                              <span className={`text-xs font-bold px-3 py-1 rounded-full ${post.categoryColor}`}>
+                                {post.category}
+                              </span>
+                            </div>
+                            <div className="text-sm text-slate-500">
+                              <p className="font-semibold">{post.readTime}</p>
+                              <p>{post.wordCount.toLocaleString()} words</p>
+                            </div>
+                          </div>
+
+                          <h3 className="text-2xl md:text-3xl font-bold mb-3 text-slate-900 group-hover:text-blue-600 transition">
+                            {post.title}
+                          </h3>
+
+                          <p className="text-slate-600 mb-4 text-lg">
+                            {post.description}
+                          </p>
+
+                          <div className="flex items-center text-blue-600 font-semibold">
+                            Read Article &rarr;
+                          </div>
                         </div>
                       </div>
+                    </Link>
+                  ))}
+                </div>
+              </section>
+            )}
 
-                      <h3 className="text-2xl md:text-3xl font-bold mb-3 text-slate-900 group-hover:text-blue-600 transition">
-                        {post.title}
-                      </h3>
+            {/* Regular Posts Grid */}
+            {regularPosts.length > 0 && (
+              <section>
+                <h2 className="text-2xl font-bold mb-6 text-slate-900">All Articles</h2>
 
-                      <p className="text-slate-600 mb-4 text-lg">
-                        {post.description}
-                      </p>
+                <div className="grid md:grid-cols-2 gap-6 mb-12">
+                  {regularPosts.map((post) => (
+                    <Link key={post.href} href={post.href}>
+                      <div className="group h-full bg-white rounded-xl shadow-sm hover:shadow-lg transition-all overflow-hidden cursor-pointer border border-slate-200 hover:border-slate-300">
+                        <div className="p-6">
+                          <div className="flex items-start justify-between mb-3">
+                            <div className="flex items-center gap-2">
+                              {post.icon}
+                              <span className={`text-xs font-bold px-2 py-1 rounded-full ${post.categoryColor}`}>
+                                {post.category}
+                              </span>
+                            </div>
+                            <p className="text-xs text-slate-500">{post.readTime} | {post.wordCount.toLocaleString()} words</p>
+                          </div>
 
-                      <div className="flex items-center text-blue-600 font-semibold">
-                        Read Article &rarr;
+                          <h3 className="text-lg font-bold mb-2 text-slate-900 group-hover:text-blue-600 transition line-clamp-2">
+                            {post.title}
+                          </h3>
+
+                          <p className="text-slate-600 text-sm mb-4 line-clamp-2">
+                            {post.description}
+                          </p>
+
+                          <div className="flex items-center text-blue-600 font-semibold text-sm">
+                            Read Article &rarr;
+                          </div>
+                        </div>
                       </div>
-                    </div>
-                  </div>
+                    </Link>
+                  ))}
+                </div>
+              </section>
+            )}
+          </div>
+          <aside className="lg:sticky lg:top-20 space-y-4">
+            <EmailCaptureCard
+              source="blog_sidebar"
+              variant="compact"
+              title="Get the ROAS Profitability Checklist (free PDF)"
+              description="Use this during weekly campaign reviews to decide scale, hold, or pause."
+              buttonLabel="Get Free Checklist"
+              helperText="Includes break-even guardrails and scenario prompts."
+            />
+            <div className="bg-white border border-slate-200 rounded-xl p-4">
+              <p className="text-sm text-slate-600">
+                Want the decision matrix version?{" "}
+                <Link href="/lead-magnet/roas-decision-matrix" className="text-blue-700 hover:underline">
+                  Open lead magnet page
                 </Link>
-              ))}
+                .
+              </p>
             </div>
-          </section>
-        )}
-
-        {/* Regular Posts Grid */}
-        {regularPosts.length > 0 && (
-          <section>
-            <h2 className="text-2xl font-bold mb-6 text-slate-900">All Articles</h2>
-
-            <div className="grid md:grid-cols-2 gap-6 mb-12">
-              {regularPosts.map((post) => (
-                <Link key={post.href} href={post.href}>
-                  <div className="group h-full bg-white rounded-xl shadow-sm hover:shadow-lg transition-all overflow-hidden cursor-pointer border border-slate-200 hover:border-slate-300">
-                    <div className="p-6">
-                      <div className="flex items-start justify-between mb-3">
-                        <div className="flex items-center gap-2">
-                          {post.icon}
-                          <span className={`text-xs font-bold px-2 py-1 rounded-full ${post.categoryColor}`}>
-                            {post.category}
-                          </span>
-                        </div>
-                        <p className="text-xs text-slate-500">{post.readTime} | {post.wordCount.toLocaleString()} words</p>
-                      </div>
-
-                      <h3 className="text-lg font-bold mb-2 text-slate-900 group-hover:text-blue-600 transition line-clamp-2">
-                        {post.title}
-                      </h3>
-
-                      <p className="text-slate-600 text-sm mb-4 line-clamp-2">
-                        {post.description}
-                      </p>
-
-                      <div className="flex items-center text-blue-600 font-semibold text-sm">
-                        Read Article &rarr;
-                      </div>
-                    </div>
-                  </div>
-                </Link>
-              ))}
-            </div>
-          </section>
-        )}
+          </aside>
+        </div>
 
         {/* CTA Section */}
         <div className="bg-linear-to-r from-blue-50 to-indigo-50 rounded-2xl p-8 md:p-12 border border-blue-200 text-center">

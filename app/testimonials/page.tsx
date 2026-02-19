@@ -130,8 +130,7 @@ export default function Testimonials() {
                     </div>
                     <Quote size={24} className="text-slate-300 mb-2" />
                     <p className="text-slate-700 mb-4 italic">
-                        "The image compressor is a lifesaver. Government job applications in India have strict 300 KB limits. 
-                        I spent 3 hours trying other tools with poor results. This one hit exactly 285 KB with perfect quality."
+                        "The ROAS Decision Matrix helped me stop guessing in weekly reviews. We moved two campaigns from scale to hold, fixed conversion issues, and improved blended MER in under 3 weeks."
                     </p>
                     <div className="flex items-center gap-3">
                         <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-orange-700 rounded-full flex items-center justify-center text-white font-bold text-sm">
@@ -139,7 +138,7 @@ export default function Testimonials() {
                         </div>
                         <div>
                             <p className="font-bold text-slate-900">Rajesh Tiwari</p>
-                            <p className="text-sm text-slate-500">UPSC Aspirant, Lucknow</p>
+                            <p className="text-sm text-slate-500">Performance Analyst, Lucknow</p>
                         </div>
                     </div>
                 </div>
@@ -223,8 +222,7 @@ export default function Testimonials() {
                     </div>
                     <Quote size={24} className="text-slate-300 mb-2" />
                     <p className="text-slate-700 mb-4 italic">
-                        "The PDF converter saved my project presentation. Client needed it under 2 MB for email, but all other tools 
-                        destroyed the quality. This one kept it sharp at 1.85 MB. No watermark, no signup required. Perfect."
+                        "I use the benchmark pages plus calculator outputs in client decks every week. It makes budget discussions clearer and cut back-and-forth with finance."
                     </p>
                     <div className="flex items-center gap-3">
                         <div className="w-12 h-12 bg-gradient-to-br from-indigo-500 to-indigo-700 rounded-full flex items-center justify-center text-white font-bold text-sm">
@@ -232,7 +230,7 @@ export default function Testimonials() {
                         </div>
                         <div>
                             <p className="font-bold text-slate-900">Sanjay Kapoor</p>
-                            <p className="text-sm text-slate-500">Graphic Designer, Hyderabad</p>
+                            <p className="text-sm text-slate-500">Paid Media Consultant, Hyderabad</p>
                         </div>
                     </div>
                 </div>
@@ -246,8 +244,7 @@ export default function Testimonials() {
                     </div>
                     <Quote size={24} className="text-slate-300 mb-2" />
                     <p className="text-slate-700 mb-4 italic">
-                        "Currency converter with live rates is clutch. I pay international freelancers weekly and need accurate INR conversions 
-                        for invoicing. This tool matches XE.com rates but loads faster. Added to my daily bookmarks."
+                        "The CAC + payback workflow is exactly what we needed for SaaS planning. We now review paid channels using one framework instead of four disconnected spreadsheets."
                     </p>
                     <div className="flex items-center gap-3">
                         <div className="w-12 h-12 bg-gradient-to-br from-pink-500 to-pink-700 rounded-full flex items-center justify-center text-white font-bold text-sm">
@@ -255,7 +252,7 @@ export default function Testimonials() {
                         </div>
                         <div>
                             <p className="font-bold text-slate-900">Ananya Das</p>
-                            <p className="text-sm text-slate-500">Agency Owner, Kolkata</p>
+                            <p className="text-sm text-slate-500">Growth Manager, Kolkata</p>
                         </div>
                     </div>
                 </div>

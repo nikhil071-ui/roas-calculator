@@ -61,7 +61,7 @@ export default function PrivacyPolicy() {
                 <div>
                     <h2 className="text-xl font-bold text-slate-900 mb-3">Introduction</h2>
                     <p className="text-slate-600 leading-relaxed">
-                        Welcome to <strong>ROAS Calculator</strong> ("we," "our," or "us"). We operate this website to provide free utility tools for students and marketers. We respect your privacy and are committed to protecting it through our compliance with this policy.
+                        Welcome to <strong>ROAS Tools</strong> ("we," "our," or "us"). We operate this website to provide profitability calculators and planning resources for marketers. We respect your privacy and are committed to protecting it through our compliance with this policy.
                     </p>
                 </div>
             </section>
@@ -81,7 +81,7 @@ export default function PrivacyPolicy() {
                         We believe in data minimization. We do <strong>not</strong> collect personal information like your name, email, or phone number unless you voluntarily contact us directly.
                     </p>
                     <div className="bg-blue-50 p-4 rounded-lg border border-blue-100 text-blue-800 text-sm">
-                        <strong>Note:</strong> You can use all our tools (Calculator, Image Compressor, PDF Maker) without creating an account or logging in.
+                        <strong>Note:</strong> You can use all core calculators without creating an account or logging in.
                     </div>
                 </div>
             </section>
@@ -119,10 +119,10 @@ export default function PrivacyPolicy() {
                 <div>
                     <h2 className="text-xl font-bold text-slate-900 mb-3">How We Handle Your Data</h2>
                     <p className="text-slate-600 leading-relaxed">
-                        The financial data (Ad Spend, Revenue) and images you process on our tools are <strong>processed locally on your device</strong> via JavaScript. 
+                        The financial data (Ad Spend, Revenue) you process on our tools is <strong>processed locally on your device</strong> via JavaScript. 
                     </p>
                     <p className="text-slate-600 mt-2">
-                        We do not upload your images or financial inputs to any server. Your data never leaves your browser.
+                        We do not upload your financial inputs to any server. Your data never leaves your browser.
                     </p>
                 </div>
             </section>
@@ -147,9 +147,6 @@ export default function PrivacyPolicy() {
                         </li>
                         <li>
                             <strong>Google Fonts:</strong> We load web fonts from Google's CDN. Google may collect technical information when fonts are requested.
-                        </li>
-                        <li>
-                            <strong>Currency APIs:</strong> For our currency converter tool, we fetch live exchange rates from third-party financial APIs. Your conversion queries are not logged or stored.
                         </li>
                     </ul>
                     <p className="text-slate-600 mt-4 text-sm">
@@ -179,7 +176,7 @@ export default function PrivacyPolicy() {
                         <li>Cannot be recovered or accessed by us after you leave the site</li>
                     </ul>
                     <div className="bg-green-50 border border-green-200 p-4 rounded-lg mt-4 text-green-800 text-sm">
-                        <strong>OK Privacy Guarantee:</strong> We cannot access your uploaded images, financial calculations, or currency conversion history because they exist only in your browser's local memory.
+                        <strong>OK Privacy Guarantee:</strong> We cannot access your financial calculations because they exist only in your browser's local memory.
                     </div>
                 </div>
             </section>
@@ -248,7 +245,7 @@ export default function PrivacyPolicy() {
                         If you are a parent or guardian and believe that your child has provided us with personal information, please contact us immediately at <strong>luckmatters199@gmail.com</strong>. Although we do not collect personal data through our tools, if we discover that a child under 13 has submitted personal information to us by email, we will take steps to delete such information promptly.
                     </p>
                     <div className="bg-amber-50 border border-amber-200 p-4 rounded-lg mt-4 text-amber-900 text-sm">
-                        <strong>Note for Students:</strong> If you are under 18, please seek parental permission before using our image compression tools for exam applications.
+                        <strong>Note for Students:</strong> If you are under 18, please seek parental permission before using online tools and sharing personal information.
                     </div>
                 </div>
             </section>
@@ -345,7 +342,7 @@ export default function PrivacyPolicy() {
                         <p className="text-slate-500 text-sm mt-3">We aim to respond to all privacy inquiries within 48 hours during business days.</p>
                     </div>
                     <p className="text-slate-600 mt-6 leading-relaxed">
-                        For general support questions about our tools (calculator errors, image compression issues, PDF problems), please visit our <Link href="/contact" className="text-blue-600 underline hover:text-blue-800">Contact Page</Link> or <Link href="/faq" className="text-blue-600 underline hover:text-blue-800">FAQ Section</Link>.
+                        For general support questions about our calculators and resources, please visit our <Link href="/contact" className="text-blue-600 underline hover:text-blue-800">Contact Page</Link> or <Link href="/faq" className="text-blue-600 underline hover:text-blue-800">FAQ Section</Link>.
                     </p>
                 </div>
             </section>

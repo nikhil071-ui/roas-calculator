@@ -59,7 +59,7 @@ export default function TermsOfService() {
             <section>
                 <h2 className="text-2xl font-bold text-slate-900 mb-4">1. Acceptance of Terms</h2>
                 <p className="text-slate-700 leading-relaxed mb-4">
-                    By accessing or using ROAS Tools (the "Service"), including all calculators, converters, and utility tools 
+                    By accessing or using ROAS Tools (the "Service"), including all calculators and planning resources 
                     available at roas-calculator.tech (the "Website"), you agree to be bound by these Terms of Service 
                     ("Terms"). If you do not agree to these Terms, you must not use the Service.
                 </p>
@@ -74,13 +74,12 @@ export default function TermsOfService() {
             <section>
                 <h2 className="text-2xl font-bold text-slate-900 mb-4">2. Service Description</h2>
                 <p className="text-slate-700 leading-relaxed mb-4">
-                    ROAS Tools provides free online calculators and utility tools, including but not limited to:
+                    ROAS Tools provides free online calculators and planning resources, including but not limited to:
                 </p>
                 <ul className="list-disc pl-6 space-y-2 text-slate-700">
                     <li><strong>ROAS Calculator:</strong> For calculating Return on Ad Spend, break-even points, and profit margins.</li>
-                    <li><strong>Currency Converter:</strong> For converting between global currencies using live exchange rates.</li>
-                    <li><strong>Image Compressor:</strong> For reducing image file sizes to meet upload requirements.</li>
-                    <li><strong>PDF Converter:</strong> For merging images into PDF documents with size compression.</li>
+                    <li><strong>CAC, LTV, MER, and Payback Calculators:</strong> For validating acquisition efficiency and cash recovery.</li>
+                    <li><strong>Planning Templates:</strong> For scenario modeling, benchmark tracking, and budget pacing workflows.</li>
                 </ul>
                 <p className="text-slate-700 leading-relaxed mt-4">
                     All tools are provided free of charge and operate entirely within your web browser (client-side processing). 
@@ -140,8 +139,7 @@ export default function TermsOfService() {
                     </div>
                     <ul className="list-disc pl-10 mt-3 space-y-1 text-sm text-green-800">
                         <li>Financial data entered into the ROAS Calculator is never sent to us.</li>
-                        <li>Images uploaded to the Image Compressor or PDF Converter never leave your device.</li>
-                        <li>Currency conversion amounts are processed locally.</li>
+                        <li>Inputs used in our profitability calculators never leave your device.</li>
                     </ul>
                 </div>
                 <p className="text-slate-700 leading-relaxed mb-4">
