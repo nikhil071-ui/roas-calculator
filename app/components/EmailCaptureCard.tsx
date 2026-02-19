@@ -1,7 +1,6 @@
 "use client";
 
-import { FormEvent, useState } from "react";
-import { useSearchParams } from "next/navigation";
+import { FormEvent, useEffect, useState } from "react";
 
 type EmailCaptureCardProps = {
   title?: string;
@@ -18,10 +17,16 @@ export default function EmailCaptureCard({
 }: EmailCaptureCardProps) {
   const [email, setEmail] = useState("");
   const [consent, setConsent] = useState(false);
-  const searchParams = useSearchParams();
+  const [signupStatus, setSignupStatus] = useState<string | null>(null);
+  const [signupReason, setSignupReason] = useState<string | null>(null);
   const actionUrl = process.env.NEXT_PUBLIC_EMAIL_CAPTURE_ACTION || "/api/email-capture";
-  const signupStatus = searchParams.get("signup");
-  const signupReason = searchParams.get("reason");
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const params = new URLSearchParams(window.location.search);
+    setSignupStatus(params.get("signup"));
+    setSignupReason(params.get("reason"));
+  }, []);
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     if (!consent) {
