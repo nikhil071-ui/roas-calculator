@@ -47,8 +47,6 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
-  const founderLinkedIn =
-    process.env.NEXT_PUBLIC_FOUNDER_LINKEDIN || "https://www.linkedin.com/in/sanjay-kumar-performance-marketing/";
   const webApplicationData = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
@@ -122,17 +120,6 @@ export default function Home() {
           </h1>
           <p className="text-lg text-blue-100 max-w-3xl mx-auto">
             Enter spend, revenue, and costs to get ROAS, net profit, CPA, AOV, and break-even guidance in one view.
-          </p>
-          <p className="text-sm text-blue-200 max-w-2xl mx-auto mt-3">
-            Built by Sanjay Kumar, performance marketer and operator across $2M+ monthly paid media budgets.{" "}
-            <a
-              href={founderLinkedIn}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline underline-offset-2 hover:text-white"
-            >
-              LinkedIn
-            </a>
           </p>
           <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
             <a href="#calculator" className="inline-flex items-center px-5 py-3 rounded-lg bg-white text-blue-900 font-bold hover:bg-blue-50 transition">
