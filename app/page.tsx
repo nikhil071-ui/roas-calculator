@@ -27,12 +27,21 @@ export const metadata: Metadata = {
     description:
       "Calculate ROAS, break-even thresholds, and campaign profit in one free calculator for marketers and eCommerce teams.",
     url: SITE_URL,
+    images: [
+      {
+        url: `${SITE_URL}/og-image.png`,
+        width: 1200,
+        height: 630,
+        alt: "ROAS Calculator - Break-Even and Profit Estimator",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "ROAS Calculator: Break-Even and Profit Estimator",
     description:
       "Calculate ROAS, break-even thresholds, and campaign profit in one free calculator for marketers and eCommerce teams.",
+    images: [`${SITE_URL}/og-image.png`],
   },
 };
 

@@ -131,7 +131,7 @@ export default function RoasClient() {
 
     const roas = rev / spend;
     const profit = rev - spend - cost;
-    const breakEvenRoas = cost > 0 && rev - cost > 0 ? rev / (rev - cost) : null;
+    const breakEvenRoas = rev > 0 ? (cost === 0 ? 1 : rev - cost > 0 ? rev / (rev - cost) : null) : null;
     const profitMargin = rev > 0 ? (profit / rev) * 100 : 0;
     
     const cpa = orderCount > 0 ? spend / orderCount : 0; 
@@ -365,6 +365,7 @@ export default function RoasClient() {
                             <input 
                                 id="ad-spend"
                                 type="number" 
+                                step="any"
                                 value={adSpend}
                                 onChange={(e) => setAdSpend(e.target.value)}
                                 onFocus={trackCalculatorStart}
@@ -382,6 +383,7 @@ export default function RoasClient() {
                             <input 
                                 id="total-revenue"
                                 type="number" 
+                                step="any"
                                 value={revenue}
                                 onChange={(e) => setRevenue(e.target.value)}
                                 onFocus={trackCalculatorStart}
@@ -403,6 +405,7 @@ export default function RoasClient() {
                             <input 
                                 id="product-costs"
                                 type="number" 
+                                step="any"
                                 value={productCost}
                                 onChange={(e) => setProductCost(e.target.value)}
                                 onFocus={trackCalculatorStart}
@@ -420,6 +423,7 @@ export default function RoasClient() {
                             <input 
                                 id="total-orders"
                                 type="number" 
+                                step="1"
                                 value={orders}
                                 onChange={(e) => setOrders(e.target.value)}
                                 onFocus={trackCalculatorStart}
