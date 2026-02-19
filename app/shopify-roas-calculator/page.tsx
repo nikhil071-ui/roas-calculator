@@ -25,6 +25,15 @@ export default function ShopifyRoasCalculatorPage() {
           </p>
         </div>
 
+        <section className="bg-blue-50 border border-blue-200 rounded-xl p-6">
+          <h2 className="text-2xl font-bold mb-3">Who This Page Is For</h2>
+          <ul className="list-disc pl-5 space-y-2 text-slate-700">
+            <li>DTC operators managing Shopify catalog growth with paid social.</li>
+            <li>Performance marketers balancing discount strategy with contribution margin.</li>
+            <li>Teams deciding scale/hold/pause on weekly merchant reviews.</li>
+          </ul>
+        </section>
+
         <section className="bg-slate-50 border border-slate-200 rounded-xl p-6">
           <h2 className="text-2xl font-bold mb-3">Shopify Benchmark Snapshot (2026)</h2>
           <div className="overflow-x-auto">
@@ -75,6 +84,15 @@ export default function ShopifyRoasCalculatorPage() {
           <Link href="/ppc-toolkit" className="px-4 py-2 rounded-lg bg-indigo-600 text-white font-semibold hover:bg-indigo-700 transition">
             Open PPC Toolkit
           </Link>
+        </section>
+
+        <section className="bg-slate-50 border border-slate-200 rounded-xl p-6">
+          <h2 className="text-2xl font-bold mb-3">Shopify Decision Workflow</h2>
+          <ol className="list-decimal pl-5 space-y-2 text-slate-700">
+            <li>Calculate break-even ROAS using current margin after discounts.</li>
+            <li>Compare campaign ROAS by audience and product bundle.</li>
+            <li>Scale only cohorts with stable payback and repeat-purchase quality.</li>
+          </ol>
         </section>
 
         <EmailCaptureCard

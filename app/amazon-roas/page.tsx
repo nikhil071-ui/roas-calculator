@@ -25,6 +25,15 @@ export default function AmazonRoasPage() {
           </p>
         </div>
 
+        <section className="bg-amber-50 border border-amber-200 rounded-xl p-6">
+          <h2 className="text-2xl font-bold mb-3">Who This Page Is For</h2>
+          <ul className="list-disc pl-5 space-y-2 text-slate-700">
+            <li>Amazon operators managing ACoS targets and listing-level profitability.</li>
+            <li>Agencies optimizing Sponsored Products/Sponsored Brands mix.</li>
+            <li>Teams deciding when to raise bids versus improve conversion assets.</li>
+          </ul>
+        </section>
+
         <section className="bg-slate-50 border border-slate-200 rounded-xl p-6">
           <h2 className="text-2xl font-bold mb-3">Amazon PPC Benchmark Snapshot</h2>
           <ul className="list-disc pl-5 space-y-2 text-slate-700">
@@ -60,6 +69,15 @@ export default function AmazonRoasPage() {
           <Link href="/ppc-toolkit" className="px-4 py-2 rounded-lg bg-indigo-600 text-white font-semibold hover:bg-indigo-700 transition">
             Open PPC Toolkit
           </Link>
+        </section>
+
+        <section className="bg-slate-50 border border-slate-200 rounded-xl p-6">
+          <h2 className="text-2xl font-bold mb-3">Amazon Decision Workflow</h2>
+          <ol className="list-decimal pl-5 space-y-2 text-slate-700">
+            <li>Map ACoS to ROAS and compare with break-even margin thresholds.</li>
+            <li>Segment by campaign type, SKU group, and branded vs non-branded terms.</li>
+            <li>Scale bids only where contribution margin remains positive after fees.</li>
+          </ol>
         </section>
 
         <EmailCaptureCard

@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import TrackedDownloadLink from "@/app/components/TrackedDownloadLink";
 import TrackedLink from "@/app/components/TrackedLink";
+import EmailCaptureCard from "@/app/components/EmailCaptureCard";
 
 export const metadata: Metadata = {
   title: "Free Downloads and Templates | ROAS Tools",
@@ -51,6 +52,15 @@ export default function ResourcesPage() {
             Practical downloads to help you track ROAS, CAC, LTV assumptions, MER trends, and budget decisions.
           </p>
         </div>
+
+        <EmailCaptureCard
+          source="resources_page_top"
+          title="Get the 2026 Ad Revenue Benchmark Sheet by Email"
+          description="Direct signup form: join once and receive weekly RPM/ROAS benchmark updates plus planning templates."
+          buttonLabel="Send Me the Benchmark Sheet"
+          helperText="Email capture enabled here. You will be redirected to the resource access page after signup."
+          className="mb-8"
+        />
 
         <div className="grid md:grid-cols-2 gap-6">
           <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
@@ -212,6 +222,16 @@ export default function ResourcesPage() {
             Open ROAS Planning Template Page
           </Link>
         </div>
+
+        <EmailCaptureCard
+          source="resources_page_bottom"
+          variant="compact"
+          title="Want Benchmark Updates Instead of One-Off Downloads?"
+          description="Get weekly publisher benchmark emails so templates stay current and actionable."
+          buttonLabel="Subscribe for Weekly Benchmarks"
+          helperText="Includes ROAS, CAC payback, MER ranges, and decision prompts."
+          className="mt-10"
+        />
 
         <div className="mt-10 bg-white border border-slate-200 rounded-xl p-6">
           <h3 className="text-lg font-bold text-slate-900 mb-2">Recommended Workflow</h3>
