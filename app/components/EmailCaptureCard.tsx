@@ -1,6 +1,11 @@
 "use client";
 
 import { FormEvent, useState } from "react";
+import {
+  clearActiveSubscriberEmail,
+  getActiveSubscriberEmail,
+  setActiveSubscriberEmail,
+} from "@/app/lib/local-user";
 
 type EmailCaptureCardProps = {
   title?: string;
@@ -23,11 +28,18 @@ export default function EmailCaptureCard({
 }: EmailCaptureCardProps) {
   const [email, setEmail] = useState("");
   const [consent, setConsent] = useState(false);
+  const [activeEmail, setActiveEmail] = useState<string | null>(() => getActiveSubscriberEmail());
   const actionUrl = process.env.NEXT_PUBLIC_EMAIL_CAPTURE_ACTION || "/api/email-capture";
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     if (!consent) {
       event.preventDefault();
+      return;
+    }
+    if (email.trim()) {
+      setActiveSubscriberEmail(email);
+      setActiveEmail(email.trim().toLowerCase());
+      window.dispatchEvent(new Event("subscriber-email-updated"));
     }
   };
 
@@ -36,6 +48,24 @@ export default function EmailCaptureCard({
       <h2 className={`${variant === "compact" ? "text-xl" : "text-2xl"} font-bold`}>{title}</h2>
       <p className={`text-slate-300 max-w-2xl ${variant === "compact" ? "mt-1 text-sm" : "mt-2"}`}>{description}</p>
       <p className="mt-1 text-xs text-slate-400">{helperText}</p>
+      {activeEmail ? (
+        <div className="mt-3 flex flex-wrap items-center gap-3 rounded-lg border border-emerald-500/40 bg-emerald-900/20 px-3 py-2 text-sm">
+          <p className="text-emerald-200">
+            Subscribed as <strong>{activeEmail}</strong>
+          </p>
+          <button
+            type="button"
+            onClick={() => {
+              clearActiveSubscriberEmail();
+              setActiveEmail(null);
+              window.dispatchEvent(new Event("subscriber-email-updated"));
+            }}
+            className="rounded-md border border-emerald-300/40 px-2 py-1 text-xs font-semibold text-emerald-100 hover:bg-emerald-800/40"
+          >
+            Logout
+          </button>
+        </div>
+      ) : null}
 
       <form
         action={actionUrl || "#"}

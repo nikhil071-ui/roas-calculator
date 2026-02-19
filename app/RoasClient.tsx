@@ -3,6 +3,13 @@
 import { useEffect, useRef, useState } from "react";
 import { Download, Calculator, DollarSign, TrendingUp, AlertTriangle, RefreshCcw, ShoppingBag, BarChart3, RotateCcw, Share2 } from "lucide-react";
 import EmailCaptureCard from "@/app/components/EmailCaptureCard";
+import {
+  appendHistoryForEmail,
+  clearActiveSubscriberEmail,
+  getActiveSubscriberEmail,
+  getHistoryForEmail,
+  type LocalHistoryEntry,
+} from "@/app/lib/local-user";
 
 type RoasResults = {
   roas: string;
@@ -51,9 +58,12 @@ export default function RoasClient() {
   const [hasTrackedStart, setHasTrackedStart] = useState(false);
   const [exporting, setExporting] = useState(false);
   const [shareStatus, setShareStatus] = useState<"idle" | "done" | "error">("idle");
+  const [historyStatus, setHistoryStatus] = useState<"idle" | "sent">("idle");
   const [showStickyCta, setShowStickyCta] = useState(false);
   const [showExampleReport, setShowExampleReport] = useState(false);
   const [industryKey, setIndustryKey] = useState<IndustryKey>("dtc");
+  const [activeEmail, setActiveEmail] = useState<string | null>(null);
+  const [historyEntries, setHistoryEntries] = useState<LocalHistoryEntry[]>([]);
   const calculateButtonRef = useRef<HTMLButtonElement | null>(null);
 
   useEffect(() => {
@@ -64,6 +74,26 @@ export default function RoasClient() {
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  useEffect(() => {
+    const syncSubscriberState = () => {
+      const email = getActiveSubscriberEmail();
+      setActiveEmail(email);
+      if (email) {
+        setHistoryEntries(getHistoryForEmail(email));
+      } else {
+        setHistoryEntries([]);
+      }
+    };
+
+    syncSubscriberState();
+    window.addEventListener("storage", syncSubscriberState);
+    window.addEventListener("subscriber-email-updated", syncSubscriberState);
+    return () => {
+      window.removeEventListener("storage", syncSubscriberState);
+      window.removeEventListener("subscriber-email-updated", syncSubscriberState);
+    };
   }, []);
 
   const sendAnalyticsEvent = async (
@@ -242,6 +272,23 @@ export default function RoasClient() {
       aov: aov.toFixed(2),
       isProfitable: profit > 0
     });
+
+    if (activeEmail) {
+      const entry: LocalHistoryEntry = {
+        timestamp: new Date().toISOString(),
+        adSpend: spend,
+        revenue: rev,
+        productCost: cost,
+        orders: orderCount,
+        roas: roas.toFixed(2),
+        profit: profit.toFixed(2),
+        breakEven: breakEvenRoas ? breakEvenRoas.toFixed(2) : "N/A",
+        cpa: cpa.toFixed(2),
+        aov: aov.toFixed(2),
+      };
+      appendHistoryForEmail(activeEmail, entry);
+      setHistoryEntries(getHistoryForEmail(activeEmail));
+    }
   };
 
   const trackCalculatorStart = () => {
@@ -325,6 +372,50 @@ export default function RoasClient() {
     } catch {
       setShareStatus("error");
     }
+  };
+
+  const downloadHistory = () => {
+    if (!activeEmail || historyEntries.length === 0) return;
+    const rows = [
+      "timestamp,ad_spend,revenue,product_cost,orders,roas,profit,break_even,cpa,aov",
+      ...historyEntries.map((item) =>
+        [
+          item.timestamp,
+          item.adSpend,
+          item.revenue,
+          item.productCost,
+          item.orders,
+          item.roas,
+          item.profit,
+          item.breakEven,
+          item.cpa,
+          item.aov,
+        ].join(",")
+      ),
+    ];
+    const blob = new Blob([rows.join("\n")], { type: "text/csv;charset=utf-8" });
+    const fileUrl = URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    link.href = fileUrl;
+    link.download = `roas_history_${activeEmail.replace(/[@.]/g, "_")}.csv`;
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+    URL.revokeObjectURL(fileUrl);
+  };
+
+  const sendHistoryToEmail = () => {
+    if (!activeEmail || historyEntries.length === 0) return;
+    const preview = historyEntries
+      .slice(0, 10)
+      .map((item) => `${item.timestamp} | ROAS ${item.roas}x | Profit $${item.profit}`)
+      .join("\n");
+    const subject = encodeURIComponent("Your ROAS History Export");
+    const body = encodeURIComponent(
+      `Hi,\n\nHere is your latest ROAS history preview:\n\n${preview}\n\nGenerated from ROAS Tools.`
+    );
+    window.location.href = `mailto:${activeEmail}?subject=${subject}&body=${body}`;
+    setHistoryStatus("sent");
   };
 
   const resultsRoas = results ? Number(results.roas) : null;
@@ -749,6 +840,56 @@ export default function RoasClient() {
                         </div>
                         {shareStatus === "done" ? <p className="text-xs text-green-700">Summary copied to clipboard.</p> : null}
                         {shareStatus === "error" ? <p className="text-xs text-red-600">Could not copy summary. Please try again.</p> : null}
+                        {activeEmail ? (
+                          <div className="rounded-xl border border-slate-200 bg-white p-4">
+                            <div className="flex flex-wrap items-center justify-between gap-3">
+                              <p className="text-sm text-slate-700">
+                                Signed in as <strong>{activeEmail}</strong>. Your result history is stored locally for this email.
+                              </p>
+                              <button
+                                type="button"
+                                onClick={() => {
+                                  clearActiveSubscriberEmail();
+                                  setActiveEmail(null);
+                                  setHistoryEntries([]);
+                                }}
+                                className="rounded-md border border-slate-300 px-3 py-1 text-xs font-semibold text-slate-700 hover:bg-slate-100"
+                              >
+                                Logout
+                              </button>
+                            </div>
+                            <div className="mt-3 flex flex-wrap gap-2">
+                              <button
+                                type="button"
+                                onClick={downloadHistory}
+                                className="rounded-lg bg-slate-800 px-3 py-2 text-xs font-semibold text-white hover:bg-slate-900"
+                              >
+                                Download History CSV
+                              </button>
+                              <button
+                                type="button"
+                                onClick={sendHistoryToEmail}
+                                className="rounded-lg border border-slate-300 px-3 py-2 text-xs font-semibold text-slate-900 hover:bg-slate-100"
+                              >
+                                Send to This Email
+                              </button>
+                            </div>
+                            {historyStatus === "sent" ? (
+                              <p className="mt-2 text-xs text-emerald-700">Email draft opened in your mail app.</p>
+                            ) : null}
+                            {historyEntries.length > 0 ? (
+                              <ul className="mt-3 space-y-1 text-xs text-slate-600">
+                                {historyEntries.slice(0, 5).map((item) => (
+                                  <li key={`${item.timestamp}-${item.roas}`}>
+                                    {new Date(item.timestamp).toLocaleString()} | ROAS {item.roas}x | Profit ${item.profit}
+                                  </li>
+                                ))}
+                              </ul>
+                            ) : (
+                              <p className="mt-2 text-xs text-slate-500">No local history yet. Run a calculation to start saving entries.</p>
+                            )}
+                          </div>
+                        ) : null}
                         <EmailCaptureCard
                           source="roas_results"
                           variant="compact"
