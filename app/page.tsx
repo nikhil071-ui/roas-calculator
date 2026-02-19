@@ -5,18 +5,19 @@ import TrackedLink from "@/app/components/TrackedLink";
 import RoasClient from "./RoasClient";
 import LazyHomeSecondarySections from "@/app/components/LazyHomeSecondarySections";
 import EmailCaptureCard from "@/app/components/EmailCaptureCard";
+import ExitIntentLeadCapture from "@/app/components/ExitIntentLeadCapture";
 
 export const metadata: Metadata = {
-  title: "ROAS Calculator: Break-Even and Profit Estimator",
+  title: "ROAS Calculator for Ad-Supported Publishers",
   description:
-    "Calculate ROAS, break-even thresholds, and campaign profit in one free calculator for marketers and eCommerce teams.",
+    "The ROAS calculator built for ad-supported publishers. Model break-even thresholds, RPM assumptions, and campaign profitability.",
   keywords: [
     "roas calculator",
     "return on ad spend calculator",
     "break even roas calculator",
     "google ads roas calculator",
     "facebook ads roas calculator",
-    "ecommerce profitability calculator",
+    "publisher ad revenue calculator",
     "ppc profit calculator",
     "marketing roi tool",
   ],
@@ -24,9 +25,9 @@ export const metadata: Metadata = {
     canonical: SITE_URL,
   },
   openGraph: {
-    title: "ROAS Calculator: Break-Even and Profit Estimator",
+    title: "ROAS Calculator for Ad-Supported Publishers",
     description:
-      "Calculate ROAS, break-even thresholds, and campaign profit in one free calculator for marketers and eCommerce teams.",
+      "The ROAS calculator built for ad-supported publishers. Model break-even thresholds, RPM assumptions, and campaign profitability.",
     url: SITE_URL,
     images: [
       {
@@ -39,9 +40,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "ROAS Calculator: Break-Even and Profit Estimator",
+    title: "ROAS Calculator for Ad-Supported Publishers",
     description:
-      "Calculate ROAS, break-even thresholds, and campaign profit in one free calculator for marketers and eCommerce teams.",
+      "The ROAS calculator built for ad-supported publishers. Model break-even thresholds, RPM assumptions, and campaign profitability.",
     images: [`${SITE_URL}/og-image.png`],
   },
 };
@@ -112,21 +113,23 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqData) }}
       />
       
+      <ExitIntentLeadCapture />
+
       {/* --- HERO SECTION --- */}
       <header className="bg-blue-900 text-white py-10 md:py-12">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-3xl md:text-5xl font-bold mb-4">
-            ROAS Calculator: Calculate Break-Even and Campaign Profit Fast
+            The ROAS Calculator Built for Ad-Supported Publishers
           </h1>
           <p className="text-lg text-blue-100 max-w-3xl mx-auto">
-            Enter spend, revenue, and costs to get ROAS, net profit, CPA, AOV, and break-even guidance in one view.
+            Model RPM, CPC, CTR, and traffic mix assumptions to forecast true content ROI before increasing budget.
           </p>
           <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
             <a href="#calculator" className="inline-flex items-center px-5 py-3 rounded-lg bg-white text-blue-900 font-bold hover:bg-blue-50 transition">
               Start Calculator
             </a>
-            <Link href="/ppc-toolkit" prefetch={false} className="inline-flex items-center px-5 py-3 rounded-lg border border-blue-200 text-white font-semibold hover:bg-blue-800 transition">
-              Open PPC Toolkit
+            <Link href="/benchmarks/roas" prefetch={false} className="inline-flex items-center px-5 py-3 rounded-lg border border-blue-200 text-white font-semibold hover:bg-blue-800 transition">
+              View Benchmarks
             </Link>
           </div>
           <a href="#calculator" className="sr-only focus:not-sr-only focus:mt-4 focus:inline-flex focus:rounded-md focus:bg-white focus:px-4 focus:py-2 focus:text-blue-900">
@@ -135,9 +138,9 @@ export default function Home() {
           <EmailCaptureCard
             source="home_hero"
             variant="compact"
-            title="Get the ROAS Profitability Checklist (free PDF)"
-            description="One-page checklist for scale, hold, or pause decisions before increasing budget."
-            buttonLabel="Send Checklist"
+            title="Get Weekly RPM/ROAS Benchmarks"
+            description="Receive weekly benchmark snapshots and practical optimization prompts for publisher growth."
+            buttonLabel="Get Benchmark Updates"
             helperText="Delivered instantly by email. No spam."
             className="mt-6 text-left"
           />
@@ -160,12 +163,12 @@ export default function Home() {
               </p>
               <div className="flex flex-wrap gap-2">
                 <TrackedLink
-                  href="/ppc-toolkit"
-                  eventName="cta_click_ppc_toolkit"
+                  href="/benchmarks/roas"
+                  eventName="cta_click_benchmarks"
                   eventParams={{ source_page: "/", cta_module: "trust_strip", position: "below_calculator" }}
                   className="inline-flex items-center px-3 py-2 rounded-lg bg-emerald-700 text-white font-semibold hover:bg-emerald-800 transition"
                 >
-                  Open Toolkit
+                  Open Benchmarks
                 </TrackedLink>
                 <Link href="/methodology" prefetch={false} className="inline-flex items-center px-3 py-2 text-sm font-semibold text-emerald-900 underline underline-offset-2 hover:text-emerald-800 transition">
                   Review Methodology
@@ -256,6 +259,21 @@ export default function Home() {
                 </Link>
                 <Link href="/editorial-policy" prefetch={false} className="inline-flex items-center px-4 py-2 rounded-lg bg-white border border-slate-300 text-slate-900 font-semibold hover:bg-slate-50 transition">
                   Editorial Policy
+                </Link>
+              </div>
+            </section>
+
+            <section className="mt-4 mb-8 bg-white border border-slate-200 rounded-2xl p-6">
+              <h2 className="text-xl font-bold text-slate-900 mb-2">Who Built This and Why You Can Trust It</h2>
+              <p className="text-slate-600 mb-4">
+                ROAS Tools is built by Sanjay Kumar (Founder), focused on publisher economics and paid media profitability systems.
+              </p>
+              <div className="flex flex-wrap gap-3">
+                <Link href="/about" prefetch={false} className="inline-flex items-center px-4 py-2 rounded-lg bg-white border border-slate-300 text-slate-900 font-semibold hover:bg-slate-50 transition">
+                  Founder and Mission
+                </Link>
+                <Link href="/team" prefetch={false} className="inline-flex items-center px-4 py-2 rounded-lg bg-white border border-slate-300 text-slate-900 font-semibold hover:bg-slate-50 transition">
+                  Team Credentials
                 </Link>
               </div>
             </section>

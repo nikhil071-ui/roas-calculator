@@ -60,9 +60,9 @@ export default function SaasCacPaybackPage() {
 
         <EmailCaptureCard
           source="persona_saas_cac_payback"
-          title="Get the SaaS CAC Payback Checklist (free PDF)"
+          title="Get SaaS CAC/ROAS Benchmark Updates"
           description="Use this to review CAC, payback, retention quality, and safe scaling triggers each week."
-          buttonLabel="Send SaaS Checklist"
+          buttonLabel="Send SaaS Benchmarks"
           helperText="Includes payback guardrails and cash-flow risk prompts."
         />
       </div>

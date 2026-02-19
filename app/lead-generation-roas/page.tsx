@@ -79,9 +79,9 @@ export default function LeadGenerationRoasPage() {
 
         <EmailCaptureCard
           source="persona_lead_generation_roas"
-          title="Get the Lead Gen Profitability Checklist (free PDF)"
-          description="Use this checklist to stress-test CPL, close-rate assumptions, and sales-quality risk."
-          buttonLabel="Send Lead Gen Checklist"
+          title="Get Lead Gen RPM/ROAS Benchmark Updates"
+          description="Use these benchmark updates to stress-test CPL, close-rate assumptions, and sales-quality risk."
+          buttonLabel="Send Lead Gen Benchmarks"
           helperText="Includes qualification and pipeline guardrails for paid channels."
         />
       </div>

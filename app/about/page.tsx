@@ -317,7 +317,7 @@ export default function About() {
             <section className="bg-slate-900 text-slate-100 rounded-xl p-6">
                 <h3 className="text-lg font-bold mb-4">Trust and Security</h3>
                 <ul className="space-y-3 text-slate-200">
-                    <li><strong>Client-side processing:</strong> Images and PDFs are processed locally in your browser when possible.</li>
+                    <li><strong>Client-side processing:</strong> Calculator math is processed in your browser for speed and privacy.</li>
                     <li><strong>No account required:</strong> We do not require logins to use core tools. Email is optional for lead magnet delivery.</li>
                     <li><strong>Minimal data collection:</strong> We collect only aggregated analytics to improve performance and UX.</li>
                     <li><strong>Clear support path:</strong> Contact support for corrections or content issues at any time.</li>
@@ -333,7 +333,7 @@ export default function About() {
                 <div className="space-y-3">
                     <div className="flex items-start gap-3">
                         <span className="px-2 py-1 bg-green-100 text-green-700 text-xs font-bold rounded">LIVE</span>
-                        <span className="text-slate-700">ROAS Calculator with PDF Export</span>
+                        <span className="text-slate-700">ROAS Calculator with benchmark-aware scenarios</span>
                     </div>
                     <div className="flex items-start gap-3">
                         <span className="px-2 py-1 bg-green-100 text-green-700 text-xs font-bold rounded">LIVE</span>
@@ -369,7 +369,7 @@ export default function About() {
                     <blockquote className="border-l-4 border-purple-500 pl-4 py-2">
                         <p className="text-slate-700 italic mb-2">
                             "I use this during client calls to show them whether their Google Ads are profitable. 
-                            The PDF export feature makes it easy to send professional reports."
+                            The benchmark workflow makes team reviews faster and more consistent."
                         </p>
                         <footer className="text-sm text-slate-500">- Mike T., Digital Marketing Consultant</footer>
                     </blockquote>

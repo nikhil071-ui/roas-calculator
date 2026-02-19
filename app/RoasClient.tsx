@@ -752,10 +752,10 @@ export default function RoasClient() {
                         <EmailCaptureCard
                           source="roas_results"
                           variant="compact"
-                          title="Get the ROAS Profitability Checklist (free PDF)"
-                          description="Use your results with the checklist to validate break-even, risk, and next budget move."
-                          buttonLabel="Email Me the Checklist"
-                          helperText="Includes scale/hold/pause decision prompts."
+                          title="Get Weekly Publisher RPM/ROAS Benchmarks"
+                          description="Use your results with weekly benchmark ranges to validate break-even risk and next budget move."
+                          buttonLabel="Email Me Benchmarks"
+                          helperText="Includes 2026 Ad Revenue Benchmark Sheet."
                           className="mt-2"
                         />
                     </div>

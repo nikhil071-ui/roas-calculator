@@ -21,6 +21,8 @@ export const metadata: Metadata = {
 };
 
 export default function Team() {
+  const founderLinkedIn =
+    process.env.NEXT_PUBLIC_FOUNDER_LINKEDIN || "https://www.linkedin.com/in/sanjay-kumar-performance-marketing/";
   return (
     <div className="min-h-screen bg-slate-50 font-sans text-slate-900 py-12 px-4 md:px-6">
       
@@ -98,7 +100,7 @@ export default function Team() {
                                 Accurate financial tracking shouldn't require a finance degree-it should be instant and free."
                             </p>
                             <div className="mt-3">
-                              <Link href="https://www.linkedin.com" className="text-sm font-semibold text-blue-700 hover:underline">
+                              <Link href={founderLinkedIn} className="text-sm font-semibold text-blue-700 hover:underline">
                                 Founder LinkedIn
                               </Link>
                             </div>

@@ -142,7 +142,7 @@ export default function RootLayout({
             <div className="flex gap-4 md:gap-8 text-sm font-medium text-gray-600 overflow-x-auto ml-4 whitespace-nowrap">
               <Link href="/blog" prefetch={false} className="hover:text-blue-600 transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded-sm">Blog</Link>
               <Link href="/" prefetch={false} className="hover:text-blue-600 transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded-sm">Home</Link>
-              <Link href="/ppc-toolkit" prefetch={false} className="hover:text-blue-600 transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded-sm">PPC Toolkit</Link>
+              <Link href="/ppc-toolkit" prefetch={false} className="hover:text-blue-600 transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded-sm">Publisher Toolkit</Link>
               <Link href="/resources" prefetch={false} className="hover:text-blue-600 transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded-sm">Resources</Link>
               <Link href="/benchmarks/roas" prefetch={false} className="hover:text-blue-600 transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 focus-visible:rounded-sm">Benchmarks</Link>
             </div>
@@ -166,11 +166,14 @@ export default function RootLayout({
             <div>
               <h3 className="text-white font-bold text-lg mb-4 flex items-center gap-2"> ROAS Tools</h3>
               <p className="leading-relaxed mb-4">
-                Privacy-first profitability tools for digital marketers and growth teams.
+                Privacy-first profitability tools for ad-supported publishers and growth teams.
                 Built to be fast, free, and secure.
               </p>
               <p className="text-xs text-slate-500">
                 Data processed locally. No account required for calculators.
+              </p>
+              <p className="text-xs text-slate-500 mt-3">
+                Built by Sanjay Kumar. <Link href="/about" className="underline hover:text-white">Founder profile</Link>
               </p>
             </div>
 

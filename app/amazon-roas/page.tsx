@@ -64,9 +64,9 @@ export default function AmazonRoasPage() {
 
         <EmailCaptureCard
           source="persona_amazon_roas"
-          title="Get the Amazon ROAS Decision Checklist (free PDF)"
+          title="Get Amazon RPM/ROAS Benchmark Updates"
           description="Use this with ACoS and break-even targets before changing bids or daily budgets."
-          buttonLabel="Send Amazon Checklist"
+          buttonLabel="Send Amazon Benchmarks"
           helperText="Includes ACoS to ROAS conversion and scale/hold/pause guardrails."
         />
       </div>

@@ -13,13 +13,13 @@ type EmailCaptureCardProps = {
 };
 
 export default function EmailCaptureCard({
-  title = "Get the ROAS Profitability Checklist (free PDF)",
-  description = "Join the email list for weekly profitability playbooks, benchmark updates, and scale/hold/pause checklists.",
+  title = "Get Weekly Publisher RPM/ROAS Benchmarks",
+  description = "Join the email list for weekly benchmark updates, profitability playbooks, and scale/hold/pause guidance.",
   source,
   className = "",
   variant = "default",
-  buttonLabel = "Send Me the Checklist",
-  helperText = "Free resource: Profitability Scorecard PDF + monthly ROAS benchmark updates.",
+  buttonLabel = "Get Benchmark Updates",
+  helperText = "Free bonus: 2026 Ad Revenue Benchmark Sheet (Google Sheets).",
 }: EmailCaptureCardProps) {
   const [email, setEmail] = useState("");
   const [consent, setConsent] = useState(false);

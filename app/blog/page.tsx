@@ -272,9 +272,9 @@ export default function BlogIndex() {
             <EmailCaptureCard
               source="blog_sidebar"
               variant="compact"
-              title="Get the ROAS Profitability Checklist (free PDF)"
+              title="Get Weekly RPM/ROAS Benchmarks"
               description="Use this during weekly campaign reviews to decide scale, hold, or pause."
-              buttonLabel="Get Free Checklist"
+              buttonLabel="Get Benchmark Updates"
               helperText="Includes break-even guardrails and scenario prompts."
             />
             <div className="bg-white border border-slate-200 rounded-xl p-4">

@@ -79,9 +79,9 @@ export default function ShopifyRoasCalculatorPage() {
 
         <EmailCaptureCard
           source="persona_shopify_roas"
-          title="Get the Shopify ROAS Profitability Checklist (free PDF)"
-          description="Use this checklist to validate break-even, discount impact, and scale readiness for Shopify campaigns."
-          buttonLabel="Send Shopify Checklist"
+          title="Get Shopify RPM/ROAS Benchmark Updates"
+          description="Use benchmark updates to validate break-even, discount impact, and scale readiness for Shopify campaigns."
+          buttonLabel="Send Shopify Benchmarks"
           helperText="Includes DTC benchmark guardrails and weekly review prompts."
         />
       </div>

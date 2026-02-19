@@ -50,8 +50,8 @@ export default async function LeadMagnetPage({ searchParams }: LeadMagnetPagePro
 
         <EmailCaptureCard
           source="lead_magnet_roas_decision_matrix"
-          title="Unlock the ROAS Decision Matrix"
-          description="Enter your email to access the gated download and get future benchmark updates."
+          title="Unlock the 2026 Ad Revenue Benchmark Sheet"
+          description="Enter your email to access the decision matrix and get weekly RPM/ROAS benchmark updates."
         />
       </div>
     </main>

@@ -64,9 +64,9 @@ export default function BlogInternalLinks({
       <EmailCaptureCard
         source={captureSource}
         variant="compact"
-        title="Get the ROAS Profitability Checklist (free PDF)"
-        description="Use this checklist in your weekly account review to decide scale, hold, or pause with confidence."
-        buttonLabel="Email Me the Checklist"
+        title="Get Weekly RPM/ROAS Benchmarks"
+        description="Use weekly benchmark updates in your account review to decide scale, hold, or pause with confidence."
+        buttonLabel="Email Me Benchmarks"
         helperText="Includes: break-even guardrails, scenario prompts, and benchmark review steps."
       />
       <div className="bg-white rounded-xl p-4 border border-slate-200">
