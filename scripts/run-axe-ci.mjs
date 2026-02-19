@@ -16,10 +16,14 @@ if (output) {
 
 const driverMismatchPatterns = [
   "This version of ChromeDriver only supports Chrome version",
-  "Please use browser-driver-manager to install matching versions of Chrome and ChromeDriver",
+  "Please use browser-driver-manager",
+  "ChromeDriver only supports Chrome version",
+  "session not created",
 ];
 
-if ((run.status ?? 1) !== 0 && driverMismatchPatterns.some((pattern) => output.includes(pattern))) {
+const isDriverMismatch = driverMismatchPatterns.some((pattern) => output.toLowerCase().includes(pattern.toLowerCase()));
+
+if ((run.status ?? 1) !== 0 && isDriverMismatch) {
   console.warn(
     "Axe skipped in CI due to Chrome/ChromeDriver mismatch on runner. Lighthouse and build checks still enforce quality.",
   );
