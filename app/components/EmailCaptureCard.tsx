@@ -1,6 +1,6 @@
 "use client";
 
-import { FormEvent, useState } from "react";
+import { FormEvent, useEffect, useState } from "react";
 import {
   clearActiveSubscriberEmail,
   getActiveSubscriberEmail,
@@ -30,6 +30,19 @@ export default function EmailCaptureCard({
   const [consent, setConsent] = useState(false);
   const [activeEmail, setActiveEmail] = useState<string | null>(() => getActiveSubscriberEmail());
   const actionUrl = process.env.NEXT_PUBLIC_EMAIL_CAPTURE_ACTION || "/api/email-capture";
+
+  useEffect(() => {
+    const syncSubscriberState = () => {
+      setActiveEmail(getActiveSubscriberEmail());
+    };
+
+    window.addEventListener("storage", syncSubscriberState);
+    window.addEventListener("subscriber-email-updated", syncSubscriberState);
+    return () => {
+      window.removeEventListener("storage", syncSubscriberState);
+      window.removeEventListener("subscriber-email-updated", syncSubscriberState);
+    };
+  }, []);
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     if (!consent) {
