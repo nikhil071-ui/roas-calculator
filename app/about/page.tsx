@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Info, ArrowLeft, Target, Rocket, Heart, CheckCircle } from "lucide-react";
+import FounderAuthorityBlock from "@/app/components/FounderAuthorityBlock";
 
 export const metadata: Metadata = {
     title: "About ROAS Tools",
@@ -104,7 +105,7 @@ export default function About() {
                     </li>
                     <li className="flex items-start gap-3 text-slate-600">
                         <CheckCircle size={18} className="text-green-500 mt-1 shrink-0" />
-                        <span><strong>No Signups:</strong> We hate "Login to see results" walls. Everything here is free forever.</span>
+                        <span><strong>No Forced Accounts:</strong> Core calculators remain open with no login wall. Optional email signup is only for lead magnets and updates.</span>
                     </li>
                     <li className="flex items-start gap-3 text-slate-600">
                         <CheckCircle size={18} className="text-green-500 mt-1 shrink-0" />
@@ -234,20 +235,7 @@ export default function About() {
                 </p>
             </section>
 
-            <section className="bg-white rounded-xl border border-slate-200 p-6">
-                <h3 className="text-lg font-bold text-slate-900 mb-3">Founder Snapshot</h3>
-                <p className="text-slate-700 mb-3">
-                    Built by <strong>Sanjay Kumar</strong>, who has led performance programs across e-commerce and lead-gen accounts with over <strong>$2M monthly ad spend</strong> under management.
-                </p>
-                <div className="flex flex-wrap gap-3">
-                    <Link href="/team" className="inline-flex items-center px-4 py-2 rounded-lg bg-blue-600 text-white font-semibold hover:bg-blue-700 transition">
-                        View Full Team
-                    </Link>
-                    <Link href="https://www.linkedin.com" className="inline-flex items-center px-4 py-2 rounded-lg border border-slate-300 text-slate-900 font-semibold hover:bg-slate-50 transition">
-                        Founder LinkedIn
-                    </Link>
-                </div>
-            </section>
+            <FounderAuthorityBlock />
 
             {/* 9. Team & Credentials */}
             <section className="bg-white rounded-xl border border-slate-200 p-6">
@@ -295,7 +283,7 @@ export default function About() {
                 <h3 className="text-lg font-bold mb-4">Trust and Security</h3>
                 <ul className="space-y-3 text-slate-200">
                     <li><strong>Client-side processing:</strong> Images and PDFs are processed locally in your browser when possible.</li>
-                    <li><strong>No account required:</strong> We do not require logins or email collection to use core tools.</li>
+                    <li><strong>No account required:</strong> We do not require logins to use core tools. Email is optional for lead magnet delivery.</li>
                     <li><strong>Minimal data collection:</strong> We collect only aggregated analytics to improve performance and UX.</li>
                     <li><strong>Clear support path:</strong> Contact support for corrections or content issues at any time.</li>
                 </ul>

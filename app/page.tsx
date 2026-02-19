@@ -5,6 +5,7 @@ import TrackedLink from "@/app/components/TrackedLink";
 import RoasClient from "./RoasClient";
 import LazyHomeSecondarySections from "@/app/components/LazyHomeSecondarySections";
 import EmailCaptureCard from "@/app/components/EmailCaptureCard";
+import FounderAuthorityBlock from "@/app/components/FounderAuthorityBlock";
 
 export const metadata: Metadata = {
   title: "ROAS Calculator: Break-Even and Profit Estimator",
@@ -142,6 +143,7 @@ export default function Home() {
         
         {/* --- MAIN CONTENT AREA --- */}
         <div className="flex-1 order-2 lg:order-1">
+            <FounderAuthorityBlock compact className="mb-6" />
             {/* THE CALCULATOR TOOL */}
             <section id="calculator">
               <RoasClient />

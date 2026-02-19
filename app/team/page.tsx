@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowLeft, Award, BookOpen, Star, Briefcase } from "lucide-react";
+import FounderAuthorityBlock from "@/app/components/FounderAuthorityBlock";
 
 export const metadata: Metadata = {
     title: "Our Team | ROAS Tools",
@@ -40,10 +41,16 @@ export default function Team() {
             <p className="text-slate-300 text-lg max-w-2xl">
                 Meet the experts behind ROAS Tools-seasoned digital marketing professionals, certified analysts, and engineers committed to providing accurate, trustworthy financial tools.
             </p>
+            <div className="mt-5 flex flex-wrap gap-2 text-xs">
+              <span className="rounded-full bg-slate-800 px-3 py-1 text-slate-200">$2M+ monthly ad spend exposure</span>
+              <span className="rounded-full bg-slate-800 px-3 py-1 text-slate-200">2,000+ campaigns reviewed</span>
+              <span className="rounded-full bg-slate-800 px-3 py-1 text-slate-200">15+ years combined paid media experience</span>
+            </div>
         </div>
 
         {/* Team Members */}
         <div className="p-8 md:p-12 space-y-12">
+            <FounderAuthorityBlock compact />
             
             {/* Team Member 1: Founder & Lead Developer */}
             <div className="border-b border-slate-200 pb-12">
@@ -93,6 +100,11 @@ export default function Team() {
                                 "I built ROAS Tools because I was tired of seeing business owners waste money on unprofitable ads. 
                                 Accurate financial tracking shouldn't require a finance degree-it should be instant and free."
                             </p>
+                            <div className="mt-3">
+                              <Link href="https://www.linkedin.com" className="text-sm font-semibold text-blue-700 hover:underline">
+                                Founder LinkedIn
+                              </Link>
+                            </div>
                         </div>
                     </div>
                 </div>

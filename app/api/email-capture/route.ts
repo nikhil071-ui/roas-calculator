@@ -7,24 +7,32 @@ function sanitizeSource(value: string | null): string {
   return value.slice(0, 80).replace(/[^a-zA-Z0-9_-]/g, "_");
 }
 
+function buildFallbackUrl(request: NextRequest): URL {
+  const referer = request.headers.get("referer");
+  if (!referer) return new URL("/", request.url);
+  return new URL(referer);
+}
+
 export async function POST(request: NextRequest) {
   try {
     const formData = await request.formData();
     const email = String(formData.get("email") || "").trim().toLowerCase();
     const source = sanitizeSource(String(formData.get("source") || ""));
+    const fallbackUrl = buildFallbackUrl(request);
 
     if (!EMAIL_REGEX.test(email)) {
-      return NextResponse.json({ ok: false, error: "Invalid email" }, { status: 400 });
+      fallbackUrl.searchParams.set("signup", "error");
+      fallbackUrl.searchParams.set("reason", "invalid_email");
+      return NextResponse.redirect(fallbackUrl, 303);
     }
 
     const apiKey = process.env.BREVO_API_KEY;
     const listId = Number(process.env.BREVO_LIST_ID || "");
 
     if (!apiKey) {
-      return NextResponse.json(
-        { ok: false, error: "Missing BREVO_API_KEY" },
-        { status: 500 }
-      );
+      fallbackUrl.searchParams.set("signup", "error");
+      fallbackUrl.searchParams.set("reason", "missing_config");
+      return NextResponse.redirect(fallbackUrl, 303);
     }
 
     const payload: {
@@ -55,24 +63,34 @@ export async function POST(request: NextRequest) {
       console.error("brevo_email_capture_error", {
         status: brevoResponse.status,
         errorBody,
+        source,
       });
-      const safeMessage =
-        process.env.NODE_ENV === "development"
-          ? `Brevo error ${brevoResponse.status}: ${errorBody}`
-          : "Brevo contact sync failed";
-      return NextResponse.json(
-        { ok: false, error: safeMessage },
-        { status: 502 }
-      );
+      fallbackUrl.searchParams.set("signup", "error");
+      fallbackUrl.searchParams.set("reason", "provider_error");
+      if (process.env.NODE_ENV === "development") {
+        fallbackUrl.searchParams.set("provider_status", String(brevoResponse.status));
+      }
+      return NextResponse.redirect(fallbackUrl, 303);
     }
 
     console.info("email_capture", { email, source, at: new Date().toISOString() });
 
-    const redirectUrl = new URL(request.headers.get("referer") || "/", request.url);
-    redirectUrl.searchParams.set("signup", "success");
-    return NextResponse.redirect(redirectUrl);
+    const redirectUrl = new URL("/thank-you", request.url);
+    redirectUrl.searchParams.set("source", source);
+    const response = NextResponse.redirect(redirectUrl, 303);
+    response.cookies.set("lead_magnet_access", "1", {
+      httpOnly: true,
+      sameSite: "lax",
+      secure: process.env.NODE_ENV === "production",
+      path: "/",
+      maxAge: 60 * 60 * 24 * 7,
+    });
+    return response;
   } catch {
-    return NextResponse.json({ ok: false, error: "Failed to process signup" }, { status: 500 });
+    const fallbackUrl = buildFallbackUrl(request);
+    fallbackUrl.searchParams.set("signup", "error");
+    fallbackUrl.searchParams.set("reason", "unknown_error");
+    return NextResponse.redirect(fallbackUrl, 303);
   }
 }
 
