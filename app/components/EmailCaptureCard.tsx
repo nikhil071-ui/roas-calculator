@@ -28,7 +28,7 @@ export default function EmailCaptureCard({
 }: EmailCaptureCardProps) {
   const [email, setEmail] = useState("");
   const [consent, setConsent] = useState(false);
-  const [activeEmail, setActiveEmail] = useState<string | null>(() => getActiveSubscriberEmail());
+  const [activeEmail, setActiveEmail] = useState<string | null>(null);
   const actionUrl = process.env.NEXT_PUBLIC_EMAIL_CAPTURE_ACTION || "/api/email-capture";
 
   useEffect(() => {
