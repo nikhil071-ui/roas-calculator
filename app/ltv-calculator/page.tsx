@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import LTVCalculatorClient from "./LTVCalculatorClient";
 import EmailCaptureCard from "@/app/components/EmailCaptureCard";
+import LastReviewedBadge from "@/app/components/LastReviewedBadge";
 
 export const metadata: Metadata = {
   title: "LTV Calculator (Customer Lifetime Value)",
