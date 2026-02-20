@@ -1100,7 +1100,7 @@ export default function RoasClient() {
       <section className="rounded-2xl border border-slate-200 bg-white p-6">
         <h3 className="text-lg font-bold text-slate-900">Built and Reviewed</h3>
         <p className="text-sm text-slate-700 mt-2">
-          Built by <strong>Sanjay Kumar</strong> with 10+ years in publisher and paid media economics. Reviewed February 20, 2026 by ROAS Tools Editorial Team.
+          Built and reviewed by the ROAS Tools Editorial Team. Reviewed February 20, 2026.
         </p>
         <p className="text-sm text-slate-700 mt-1">
           Methodology: <Link href="/methodology" className="text-blue-700 underline underline-offset-2 hover:text-blue-800">formula definitions and assumptions</Link>, validated against current benchmark references for Shopify and performance channels.

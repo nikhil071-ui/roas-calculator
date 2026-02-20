@@ -342,7 +342,7 @@ export default function BlogIndex() {
             <BookOpen size={28} className="text-purple-600 mb-3" />
             <h3 className="font-bold text-lg mb-2">Expert Written</h3>
             <p className="text-slate-600 text-sm">
-              Written by marketing professionals with 10+ years experience in digital advertising and optimization.
+              Written by marketing professionals focused on digital advertising and optimization.
             </p>
           </div>
 

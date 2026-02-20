@@ -109,7 +109,7 @@ export default function EditorialPolicy() {
                             <h4 className="font-bold text-slate-800 mb-1">Expert Review</h4>
                             <p className="text-sm text-slate-600">
                                 All financial content is reviewed by team members with industry certifications (Google Ads Certified, 
-                                Meta Blueprint Certified) and 10+ years of professional experience managing six-figure advertising budgets.
+                                Meta Blueprint Certified) and active oversight of paid media planning workflows.
                             </p>
                         </div>
                     </div>

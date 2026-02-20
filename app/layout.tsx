@@ -100,11 +100,6 @@ export default function RootLayout({
                 "https://github.com/nikhil071-ui/roas-calculator"
               ],
               "publishingPrinciples": "https://roas-calculator.tech/editorial-policy",
-              "founder": {
-                "@type": "Person",
-                "name": "Sanjay Kumar",
-                "jobTitle": "Founder & Lead Developer"
-              },
               "knowsAbout": [
                 "Digital Marketing",
                 "Return on Ad Spend (ROAS)",
@@ -173,7 +168,7 @@ export default function RootLayout({
                 Data processed locally. No account required for calculators.
               </p>
               <p className="text-xs text-slate-400 mt-3">
-                Built by Sanjay Kumar. <Link href="/about" className="underline hover:text-white">Founder profile</Link>
+                Built and reviewed by the ROAS Tools Editorial Team.
               </p>
             </div>
 

@@ -4,25 +4,23 @@ import { ArrowLeft, Award, BookOpen, Star, Briefcase } from "lucide-react";
 
 export const metadata: Metadata = {
     title: "Our Team | ROAS Tools",
-    description: "Meet the experts behind ROAS Tools and learn about our experience in marketing analytics and performance tools.",
+    description: "Meet the experts behind ROAS Tools and learn about our standards in marketing analytics and performance tools.",
     alternates: {
         canonical: "https://roas-calculator.tech/team",
     },
     openGraph: {
         title: "Our Team | ROAS Tools",
-        description: "Meet the experts behind ROAS Tools and learn about our experience in marketing analytics and performance tools.",
+        description: "Meet the experts behind ROAS Tools and learn about our standards in marketing analytics and performance tools.",
         url: "https://roas-calculator.tech/team",
     },
         twitter: {
       card: "summary_large_image",
       title: "Our Team | ROAS Tools",
-      description: "Meet the experts behind ROAS Tools and learn about our experience in marketing analytics and performance tools.",
+      description: "Meet the experts behind ROAS Tools and learn about our standards in marketing analytics and performance tools.",
     },
 };
 
 export default function Team() {
-  const founderLinkedIn =
-    process.env.NEXT_PUBLIC_FOUNDER_LINKEDIN || "https://www.linkedin.com/in/sanjay-kumar-performance-marketing/";
   return (
     <div className="min-h-screen bg-slate-50 font-sans text-slate-900 py-12 px-4 md:px-6">
       
@@ -45,28 +43,27 @@ export default function Team() {
             <div className="mt-5 flex flex-wrap gap-2 text-xs">
               <span className="rounded-full bg-slate-800 px-3 py-1 text-slate-200">$2M+ monthly ad spend exposure</span>
               <span className="rounded-full bg-slate-800 px-3 py-1 text-slate-200">2,000+ campaigns reviewed</span>
-              <span className="rounded-full bg-slate-800 px-3 py-1 text-slate-200">15+ years combined paid media experience</span>
+              <span className="rounded-full bg-slate-800 px-3 py-1 text-slate-200">Methodology-first quality standards</span>
             </div>
         </div>
 
         {/* Team Members */}
         <div className="p-8 md:p-12 space-y-12">
-            {/* Team Member 1: Founder & Lead Developer */}
+            {/* Team Member 1 */}
             <div className="border-b border-slate-200 pb-12">
                 <div className="flex flex-col md:flex-row gap-8">
                     <div className="shrink-0">
                         <div className="w-32 h-32 bg-gradient-to-br from-blue-500 to-blue-700 rounded-2xl flex items-center justify-center text-white text-4xl font-bold shadow-lg">
-                            SK
+                            RT
                         </div>
                     </div>
                     <div className="flex-1">
-                        <h2 className="text-2xl font-bold text-slate-900 mb-2">Sanjay Kumar</h2>
-                        <p className="text-blue-600 font-semibold mb-4">Founder & Lead Developer</p>
+                        <h2 className="text-2xl font-bold text-slate-900 mb-2">ROAS Tools Editorial Team</h2>
+                        <p className="text-blue-600 font-semibold mb-4">Technical Review and Product Team</p>
                         
                         <p className="text-slate-600 leading-relaxed mb-6">
-                            Sanjay is a full-stack developer and digital marketing consultant with over 15 years of experience building 
-                            financial tools and analytics platforms. He previously worked at leading e-commerce agencies managing 
-                            $2M+ monthly ad budgets for Fortune 500 clients.
+                            This team maintains calculator logic, schema consistency, and measurement guidance across ROAS Tools.
+                            Reviews focus on formula accuracy, usability, and decision clarity for paid media operators.
                         </p>
 
                         <div className="grid md:grid-cols-2 gap-4 mb-6">
@@ -96,14 +93,8 @@ export default function Team() {
 
                         <div className="bg-blue-50 p-4 rounded-lg border border-blue-100">
                             <p className="text-sm text-slate-700 italic">
-                                "I built ROAS Tools because I was tired of seeing business owners waste money on unprofitable ads. 
-                                Accurate financial tracking shouldn't require a finance degree-it should be instant and free."
+                                "ROAS Tools exists to make profitability decisions clear, practical, and accessible without unnecessary complexity."
                             </p>
-                            <div className="mt-3">
-                              <Link href={founderLinkedIn} className="text-sm font-semibold text-blue-700 hover:underline">
-                                Founder LinkedIn
-                              </Link>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -136,7 +127,7 @@ export default function Team() {
                                 <ul className="text-sm text-slate-600 space-y-1">
                                     <li>- M.A. in Communication (Mumbai University)</li>
                                     <li>- HubSpot Content Marketing Certification</li>
-                                    <li>- 8+ years technical writing experience</li>
+                                    <li>- Technical writing and editorial QA</li>
                                 </ul>
                             </div>
                             <div className="bg-slate-50 p-4 rounded-lg border border-slate-100">
@@ -189,7 +180,7 @@ export default function Team() {
                                 <ul className="text-sm text-slate-600 space-y-1">
                                     <li>- B.Tech in Computer Science (IIT Delhi)</li>
                                     <li>- Certified Data Analyst (Google)</li>
-                                    <li>- 6+ years in fintech QA and testing</li>
+                                    <li>- Fintech QA and testing background</li>
                                 </ul>
                             </div>
                             <div className="bg-slate-50 p-4 rounded-lg border border-slate-100">

@@ -80,7 +80,7 @@ export default function RoasBenchmarks2026Page() {
     },
     reviewedBy: {
       "@type": "Person",
-      name: "Sanjay Kumar",
+      name: "ROAS Tools Editorial Team",
     },
     publisher: {
       "@type": "Organization",
@@ -113,8 +113,8 @@ export default function RoasBenchmarks2026Page() {
             <AuthorTrustBlock
               authorName="Priya Malhotra"
               authorRole="Lead Content Strategist"
-              reviewerName="Sanjay Kumar"
-              reviewerRole="Founder and Technical Reviewer"
+              reviewerName="ROAS Tools Editorial Team"
+              reviewerRole="Technical Reviewer"
               publishedDate="February 18, 2026"
               reviewedDate="February 18, 2026"
             />

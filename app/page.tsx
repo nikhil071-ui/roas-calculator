@@ -54,9 +54,9 @@ export default function Home() {
     "@context": "https://schema.org",
     "@type": "WebApplication",
     "name": "ROAS Calculator",
-    "description": "Free ROAS calculator with Shopify and Amazon benchmark context, break-even guidance, and campaign profitability outputs.",
+    "description": "Calculates return on ad spend using standard performance metrics.",
     "url": "https://roas-calculator.tech/",
-    "applicationCategory": "BusinessApplication",
+    "applicationCategory": "Business/Marketing Tool",
     "operatingSystem": "Web",
     "browserRequirements": "Requires JavaScript enabled browser",
     "author": {
@@ -94,34 +94,34 @@ export default function Home() {
       },
       {
         "@type": "Question",
-        "name": "Is high ROAS always profitable?",
+        "name": "Is a 3x ROAS profitable?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "No, a high ROAS can still lose money if margins are thin. Include COGS, shipping, platform fees, and operating costs in your profitability check. Pair ROAS with CAC, LTV, and MER before raising spend."
+          "text": "It depends on your margins and operating costs. A 3x ROAS means $3 in revenue for each $1 spent, but profitability can disappear once COGS, fulfillment, discounts, and overhead are included. Use your break-even ROAS as the baseline before scaling."
         }
       },
       {
         "@type": "Question",
-        "name": "When should I scale ad spend?",
+        "name": "How does ROAS differ from ROI?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Scale when ROAS is consistently above break-even and conversion quality is stable. Validate that CAC payback remains healthy over multiple days, not just one spike. Increase budgets gradually and monitor blended MER during scale."
+          "text": "ROAS measures revenue returned per ad dollar, while ROI measures net profit relative to total investment. ROAS is faster for campaign decisions, but ROI is broader and includes more costs. Teams use ROAS for optimization and ROI for full profitability checks."
         }
       },
       {
         "@type": "Question",
-        "name": "Does ROAS include profit margin?",
+        "name": "Why can ROAS alone be misleading?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "ROAS alone does not include your profit margin. It measures revenue returned for ad spend. To decide profitability, combine ROAS with gross margin, CAC, and overhead so you can see whether growth is actually creating cash."
+          "text": "ROAS excludes margin, cash timing, and lifecycle value. A campaign can look efficient in-platform while still producing weak unit economics after returns, discounts, and sales costs. Pair ROAS with CAC, LTV, and margin for a complete decision view."
         }
       },
       {
         "@type": "Question",
-        "name": "Should I use ROAS or MER for budget decisions?",
+        "name": "How can I improve my ROAS?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Use ROAS for campaign-level optimization and creative decisions. Use MER to evaluate overall account efficiency across paid channels. Teams usually manage both so local wins do not hide account-level inefficiency."
+          "text": "Improve message-to-audience fit, tighten targeting, strengthen landing pages, and remove low-intent spend. Validate tracking and attribution windows so you optimize the right signals. Then scale winning segments gradually while monitoring CAC and blended efficiency."
         }
       }
     ]
@@ -180,7 +180,7 @@ export default function Home() {
               <article>
                 <h2 className="text-2xl font-bold text-slate-900 mb-3">What Is ROAS and Why It Matters</h2>
                 <p className="text-slate-700">
-                  ROAS is the speedometer for paid growth. It shows how much revenue your campaigns return for every dollar you spend, so you can decide whether to scale, hold, or cut budget before cash flow gets tight. In practical terms, ROAS helps operators answer daily questions: Is this ad set worth another $1,000 today? Which channel is efficient enough to expand? Which audience looks good in-platform but weak after fulfillment costs and refunds? A useful ROAS process is not about chasing one high number. It is about comparing expected return against your margin structure, sales cycle, and payback tolerance. An ecommerce brand with aggressive discounts may need higher ROAS than a brand with strong repeat purchase behavior. A SaaS team may accept lower first-touch ROAS if downstream retention is solid. Lead generation teams may show healthy front-end ROAS but still miss revenue goals when close rates drop. ROAS also improves team alignment because finance, marketing, and leadership can evaluate one shared efficiency signal before new budget is approved. That is why strong teams read ROAS with context, not in isolation. If you want to set the right baseline first, run your margin assumptions in the <Link href="/break-even-roas-by-margin" prefetch={false} className="text-blue-700 hover:underline">break-even ROAS calculator</Link>, then compare campaign outputs to customer economics in the <Link href="/cac-calculator" prefetch={false} className="text-blue-700 hover:underline">CAC calculator</Link>. Together, these numbers turn ROAS from a reporting metric into a decision framework.
+                  ROAS is most useful when it drives decisions, not just reporting. It tells you whether current media spend is producing enough revenue to justify the next budget move. Teams use it to judge ad spend efficiency across channels, prioritize creatives worth scaling, and stop campaigns that generate activity without meaningful marketing return. It also helps separate short-term noise from dependable performance trends. A campaign with a strong in-platform number can still fail if returns, discounting, or close rates erode campaign profitability after the click. That is why ROAS works best when paired with margin assumptions and payback expectations before budget increases. For operators, the practical workflow is simple: measure results, compare against break-even, and decide whether to scale, hold, or optimize. This framework improves performance evaluation because decisions are made on economics, not vanity metrics. It also supports better cross-team planning by giving finance and marketing one shared view of acceptable growth. Over time, teams that track ROAS this way usually make faster allocation decisions, waste less spend on low-intent traffic, and defend budget decisions with clearer evidence. If you need a baseline first, use the <Link href="/break-even-roas-by-margin" prefetch={false} className="text-blue-700 hover:underline">break-even ROAS calculator</Link> to define the minimum viable target. Then compare this with your customer acquisition cost in the <Link href="/cac-calculator" prefetch={false} className="text-blue-700 hover:underline">customer acquisition cost calculator</Link>. Together, these checks turn ROAS from a dashboard metric into an operating control for growth and profitability.
                 </p>
               </article>
             </section>
@@ -189,7 +189,7 @@ export default function Home() {
               <article>
                 <h2 className="text-xl font-bold text-slate-900 mb-3">ROAS Formula Explained</h2>
                 <p className="text-slate-700">
-                  The core formula is simple: <strong>ROAS = Revenue Attributed to Ads / Ad Spend</strong>. If a campaign generates $25,000 in attributed revenue from $5,000 in spend, ROAS is 5.0x. Revenue attributed to ads means the sales value your attribution model credits to paid campaigns. Ad spend means the media investment tied to that same scope and timeframe. The revenue variable should match your attribution rule and time window, such as 7-day click or 30-day blended reporting. Ad spend should include all media costs for the same period, not partial totals. Keep variables aligned: same channel scope, same dates, and same attribution model. That consistency is what makes ROAS comparable across campaigns and prevents false confidence from mismatched reporting windows. To pressure-test results at account level, pair campaign ROAS with blended efficiency in the <Link href="/mer-calculator" prefetch={false} className="text-blue-700 hover:underline">MER calculator</Link>.
+                  The formula is straightforward: <strong>ROAS = Revenue / Ad Spend</strong>. Revenue is the sales value attributed to the campaigns you are evaluating, and ad spend is the media cost used to produce that same revenue. If revenue is $20,000 and spend is $5,000, ROAS is 4.0x. The math looks simple, but teams often misread it by combining mismatched variables, such as a 30-day revenue window with a 7-day spend window, or platform-attributed revenue against blended account spend. Those scope mismatches can distort performance and create poor budget decisions. Another common issue is excluding fees from spend while counting gross sales as revenue, which overstates true efficiency. Keep attribution model, channel scope, and date range aligned, then cross-check account efficiency with the <Link href="/mer-calculator" prefetch={false} className="text-blue-700 hover:underline">MER calculator</Link>.
                 </p>
               </article>
             </section>
@@ -203,7 +203,7 @@ export default function Home() {
               <article>
                 <h2 className="text-2xl font-bold text-slate-900 mb-3">How to Interpret Your ROAS Result</h2>
                 <p className="text-slate-700">
-                  Treat your ROAS output as a decision signal, not a vanity score. In most businesses, a result below 2.0x usually means you are buying revenue too expensively unless margins are unusually high or you are intentionally investing in new-customer acquisition. For many operators, the 2.0x to 3.5x range is workable but fragile: campaigns may look acceptable in-platform while profitability disappears after discounting, returns, or sales team costs. This is the zone where creative improvements, landing page fixes, and audience refinement often create the biggest gains without raising spend. A sustained ROAS above 3.5x is typically a stronger operating position, especially when quality metrics stay healthy and fulfillment capacity can absorb growth. Above 5.0x, teams should validate scale potential rather than assume unlimited expansion; incremental spend can reduce efficiency quickly if audience depth is limited. Always compare ROAS by time horizon as well: daily spikes are noisy, while weekly and monthly trends are more reliable for budget decisions. If your result is near break-even, optimize first. If it remains comfortably above break-even over multiple periods, scale in controlled steps.
+                  Start with ranges, then apply your economics. A low ROAS, often under 2.0x, usually signals weak efficiency unless your margins are unusually high or you are intentionally buying early-stage demand. An average range around 2.0x to 3.5x can be workable, but it is sensitive to pricing, conversion rate, and fulfillment costs. A strong ROAS above that range often supports scaling, but only if lead quality, conversion consistency, and operational capacity remain stable. Margin is the deciding filter: the same 3.0x result can be profitable for one business and unprofitable for another after discounts, shipping, or sales overhead. Use ROAS as one lens, not the entire model. Trends also matter more than isolated daily spikes, so evaluate weekly and monthly patterns before changing budgets. It is also useful to segment results by campaign objective and audience type, because blended averages can hide underperforming pockets that need optimization before scale. Compare this with your customer acquisition cost in the <Link href="/cac-calculator" prefetch={false} className="text-blue-700 hover:underline">customer acquisition cost calculator</Link>, and estimate long-term value using the <Link href="/ltv-calculator" prefetch={false} className="text-blue-700 hover:underline">LTV calculator</Link>. When ROAS, CAC, and LTV all align above break-even expectations, scaling decisions become far more reliable.
                 </p>
               </article>
             </section>
@@ -212,36 +212,40 @@ export default function Home() {
               <article>
                 <h2 className="text-2xl font-bold text-slate-900 mb-3">Example ROAS Scenarios</h2>
                 <p className="text-slate-700 mb-4">
-                  ROAS targets are context dependent, so side-by-side scenarios can clarify what a number means in practice. The examples below show how similar headline ROAS can lead to very different decisions depending on margin profile, sales process, and downstream conversion quality. Use these as directional planning references, then replace assumptions with your own channel data, attribution settings, and operating costs before changing spend. The goal is not to copy another model but to understand how each business type translates ROAS into action.
+                  ROAS benchmarks vary by model, so these examples should be treated as directional context, not universal targets. The same ROAS multiple can lead to opposite decisions depending on margin profile, conversion lag, and sales process. This table helps you compare your current performance against realistic business types and quickly identify where your numbers may be strong, fragile, or misleading. Use it as a planning reference, then replace sample values with your own channel scope, attribution settings, and operating assumptions before adjusting budget.
                 </p>
                 <div className="overflow-x-auto">
                   <table className="w-full text-left border border-slate-200 rounded-lg overflow-hidden">
                     <thead className="bg-slate-100">
                       <tr>
                         <th className="px-4 py-3 text-sm font-semibold text-slate-900">Business Type</th>
-                        <th className="px-4 py-3 text-sm font-semibold text-slate-900">Sample Inputs</th>
-                        <th className="px-4 py-3 text-sm font-semibold text-slate-900">ROAS Result</th>
-                        <th className="px-4 py-3 text-sm font-semibold text-slate-900">Decision</th>
+                        <th className="px-4 py-3 text-sm font-semibold text-slate-900">Ad Spend</th>
+                        <th className="px-4 py-3 text-sm font-semibold text-slate-900">Revenue</th>
+                        <th className="px-4 py-3 text-sm font-semibold text-slate-900">ROAS</th>
+                        <th className="px-4 py-3 text-sm font-semibold text-slate-900">Interpretation</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr className="border-t border-slate-200">
-                        <td className="px-4 py-3 text-sm text-slate-700">Ecommerce</td>
-                        <td className="px-4 py-3 text-sm text-slate-700">$40,000 attributed revenue on $10,000 spend</td>
+                        <td className="px-4 py-3 text-sm text-slate-700">Ecommerce brand</td>
+                        <td className="px-4 py-3 text-sm text-slate-700">$10,000</td>
+                        <td className="px-4 py-3 text-sm text-slate-700">$40,000</td>
                         <td className="px-4 py-3 text-sm text-slate-700">4.0x</td>
-                        <td className="px-4 py-3 text-sm text-slate-700">Strong if margins and return rates stay stable; scale gradually.</td>
+                        <td className="px-4 py-3 text-sm text-slate-700">Strong if gross margins and return rates remain stable; scale in controlled steps.</td>
                       </tr>
                       <tr className="border-t border-slate-200">
-                        <td className="px-4 py-3 text-sm text-slate-700">SaaS</td>
-                        <td className="px-4 py-3 text-sm text-slate-700">$18,000 pipeline revenue on $9,000 spend</td>
+                        <td className="px-4 py-3 text-sm text-slate-700">SaaS company</td>
+                        <td className="px-4 py-3 text-sm text-slate-700">$9,000</td>
+                        <td className="px-4 py-3 text-sm text-slate-700">$18,000</td>
                         <td className="px-4 py-3 text-sm text-slate-700">2.0x</td>
-                        <td className="px-4 py-3 text-sm text-slate-700">Potentially acceptable only if payback and retention stay within plan.</td>
+                        <td className="px-4 py-3 text-sm text-slate-700">Average headline efficiency; validate against payback period and retention before scaling.</td>
                       </tr>
                       <tr className="border-t border-slate-200">
-                        <td className="px-4 py-3 text-sm text-slate-700">Lead Generation</td>
-                        <td className="px-4 py-3 text-sm text-slate-700">$30,000 closed revenue on $12,000 spend</td>
+                        <td className="px-4 py-3 text-sm text-slate-700">Lead generation business</td>
+                        <td className="px-4 py-3 text-sm text-slate-700">$12,000</td>
+                        <td className="px-4 py-3 text-sm text-slate-700">$30,000</td>
                         <td className="px-4 py-3 text-sm text-slate-700">2.5x</td>
-                        <td className="px-4 py-3 text-sm text-slate-700">Hold and improve lead quality before scaling volume.</td>
+                        <td className="px-4 py-3 text-sm text-slate-700">Potentially viable, but close rate and lead quality should improve before increasing spend.</td>
                       </tr>
                     </tbody>
                   </table>
@@ -256,31 +260,31 @@ export default function Home() {
                   <div>
                     <h3 className="text-lg font-semibold text-slate-900">1. What is considered a good ROAS?</h3>
                     <p>
-                      A good ROAS is one that clears your break-even threshold with enough buffer for execution volatility and seasonal performance swings. Many teams reference 3.0x to 5.0x, but your target depends on gross margin, fulfillment costs, and payback expectations. Use your own economics first, then benchmark second.
+                      A good ROAS is any result that clears your break-even target with room for volatility. Many teams use 3.0x to 5.0x as a directional range, but your true benchmark depends on gross margin, return rate, and operating costs. A business with thin margins may need a much higher number than a business with strong repeat purchase behavior.
                     </p>
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-slate-900">2. Why can high ROAS still feel unprofitable?</h3>
+                    <h3 className="text-lg font-semibold text-slate-900">2. Is a 3x ROAS profitable?</h3>
                     <p>
-                      ROAS tracks top-line efficiency, not net profitability. A campaign can show strong ROAS while margin is compressed by discounts, shipping, returns, sales commissions, or fixed overhead. Validate ROAS alongside contribution margin, cash conversion timing, and post-purchase costs before scaling.
+                      Sometimes. A 3x ROAS means three dollars of revenue per dollar of ad spend, but profitability depends on what happens after revenue is recorded. If your product margins are thin, or costs like shipping, discounts, support, and sales overhead are high, 3x may still be below your profitability threshold.
                     </p>
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-slate-900">3. Should I optimize to ROAS, CAC, or both?</h3>
+                    <h3 className="text-lg font-semibold text-slate-900">3. How does ROAS differ from ROI?</h3>
                     <p>
-                      Most growth teams need both. ROAS is ideal for campaign and creative optimization, while CAC reflects customer acquisition economics across the funnel. If ROAS improves but CAC worsens, you may be attracting lower-value demand, weaker fit customers, or losing efficiency after click.
+                      ROAS measures revenue efficiency for advertising spend only. ROI measures profit against total investment, including broader business costs. ROAS is faster for day-to-day campaign optimization, while ROI gives the full profitability picture. Most operators use ROAS for media decisions and ROI for strategic finance checks.
                     </p>
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-slate-900">4. How often should I evaluate ROAS?</h3>
+                    <h3 className="text-lg font-semibold text-slate-900">4. Why can ROAS alone be misleading?</h3>
                     <p>
-                      Check daily for anomalies and delivery issues, but make budget decisions on multi-day windows such as 7-day and 30-day views. This reduces noise from attribution lag, weekend behavior, and short-term auction swings that can distort one-day snapshots and create reactionary decisions.
+                      ROAS does not capture margin quality, cash timing, or customer lifetime economics. A campaign can look efficient in-platform while losing money after fulfillment costs or generating low-quality customers with poor retention. That is why teams read ROAS beside CAC, LTV, and contribution margin before scaling spend.
                     </p>
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-slate-900">5. What should I do if ROAS is below target?</h3>
+                    <h3 className="text-lg font-semibold text-slate-900">5. How can I improve my ROAS?</h3>
                     <p>
-                      Prioritize diagnosis before cutting everything. Review tracking quality, audience intent, landing page conversion, offer clarity, and creative-message fit. Then test focused changes in sequence with clear success criteria. If ROAS remains below break-even after controlled tests, reallocate spend to stronger channels.
+                      Start by fixing measurement consistency, then improve traffic and conversion quality. Tighten targeting, refresh creative angles, align landing pages with ad intent, and cut low-intent queries or placements. Run controlled tests and review changes on 7-day and 30-day windows before scaling. Small, compounding improvements typically outperform large, reactive budget shifts. Prioritize one bottleneck at a time so the impact of each change is measurable.
                     </p>
                   </div>
                 </div>
@@ -332,7 +336,7 @@ export default function Home() {
 
             <section className="mt-4 mb-8 bg-slate-50 border border-slate-200 rounded-2xl p-4">
               <p className="text-sm text-slate-700">
-                Last updated February 20, 2026. This calculator and its guidance follow standard digital advertising measurement practices, including aligned attribution windows, channel-consistent spend inputs, and revenue-to-cost ratio methods used across performance marketing teams for core planning, reporting, and budget governance decisions.
+                Last Updated: February 2026. These calculations follow widely accepted digital advertising measurement practices, including consistent attribution windows, aligned spend and revenue scope, and standard revenue-to-ad-spend methodology used for performance evaluation and campaign planning.
               </p>
             </section>
 
@@ -430,16 +434,8 @@ export default function Home() {
             <section className="mt-4 mb-8 bg-white border border-slate-200 rounded-2xl p-6">
               <h2 className="text-xl font-bold text-slate-900 mb-2">Who Built This and Why You Can Trust It</h2>
               <p className="text-slate-600 mb-4">
-                ROAS Tools is built by Sanjay Kumar (Founder), focused on publisher economics and paid media profitability systems.
+                Built and maintained by the ROAS Tools Editorial Team.
               </p>
-              <div className="flex flex-wrap gap-3">
-                <Link href="/about" prefetch={false} className="inline-flex items-center px-4 py-2 rounded-lg bg-white border border-slate-300 text-slate-900 font-semibold hover:bg-slate-50 transition">
-                  Founder and Mission
-                </Link>
-                <Link href="/team" prefetch={false} className="inline-flex items-center px-4 py-2 rounded-lg bg-white border border-slate-300 text-slate-900 font-semibold hover:bg-slate-50 transition">
-                  Team Credentials
-                </Link>
-              </div>
             </section>
 
             <section className="mt-4 mb-8 bg-blue-50 border border-blue-200 rounded-2xl p-6">
@@ -458,6 +454,12 @@ export default function Home() {
             </section>
 
             <LazyHomeSecondarySections />
+
+            <section className="mt-4 mb-8 bg-slate-50 border border-slate-200 rounded-2xl p-4">
+              <p className="text-sm text-slate-700">
+                Last Updated: February 2026. Calculations on this page follow widely accepted digital advertising measurement practices, including consistent attribution windows, aligned ad spend and revenue scope, and standard ROAS methodology used by performance marketing teams for planning, evaluation, and ongoing budget governance.
+              </p>
+            </section>
         </div>
 
       </div>

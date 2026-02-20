@@ -30,8 +30,8 @@ export default function AuthorsPage() {
             </p>
           </div>
           <div className="rounded-xl border border-slate-200 p-5 bg-slate-50">
-            <h2 className="text-xl font-bold text-slate-900">Sanjay Kumar</h2>
-            <p className="text-sm text-slate-600">Founder, Product Owner, and Technical Reviewer</p>
+            <h2 className="text-xl font-bold text-slate-900">ROAS Tools Technical Review Team</h2>
+            <p className="text-sm text-slate-600">Product and Technical Review</p>
             <p className="text-slate-700 mt-2">
               Reviews calculator logic, schema implementation, and methodology consistency across tool pages.
             </p>

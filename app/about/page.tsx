@@ -21,8 +21,6 @@ export const metadata: Metadata = {
 };
 
 export default function About() {
-  const founderLinkedIn =
-    process.env.NEXT_PUBLIC_FOUNDER_LINKEDIN || "https://www.linkedin.com/in/sanjay-kumar-performance-marketing/";
   return (
     <div className="min-h-screen bg-slate-50 font-sans text-slate-900 py-12 px-4 md:px-6">
       
@@ -130,49 +128,40 @@ export default function About() {
                         basic profitability calculations, we decided to build tools that democratize financial analytics.
                     </p>
                     <p className="text-slate-600 leading-relaxed mb-4">
-                        Our founders have combined experience at leading marketing agencies, working with brands like fashion retailers, 
-                        SaaS startups, and dropshipping entrepreneurs. We understand the pressure of scaling ad spend while maintaining profitability-
-                        that's why accurate ROAS tracking is non-negotiable.
+                        Our team has supported operators across fashion retail, SaaS, and lead generation workflows. We understand
+                        the pressure of scaling ad spend while maintaining profitability, which is why accurate ROAS tracking is non-negotiable.
                     </p>
                     <p className="text-slate-600 leading-relaxed">
                         What started as a simple internal spreadsheet has evolved into a focused profitability platform used by 
-                        over 50,000 marketers, founders, and operators worldwide every month.
+                        marketers and operators worldwide every month.
                     </p>
                 </div>
             </section>
 
             <section className="bg-slate-50 rounded-xl p-6 border border-slate-200">
-                <h3 className="text-lg font-bold text-slate-900 mb-4">Founder Snapshot</h3>
+                <h3 className="text-lg font-bold text-slate-900 mb-4">Team Snapshot</h3>
                 <div className="flex flex-col md:flex-row gap-6">
                     <div className="w-24 h-24 rounded-2xl bg-linear-to-br from-blue-600 to-indigo-700 text-white flex items-center justify-center text-2xl font-bold shrink-0">
-                        SK
+                        RT
                     </div>
                     <div className="space-y-3">
                         <p className="text-slate-700">
-                            Built by <strong>Sanjay Kumar</strong>, performance marketer with 15+ years in paid media execution and analytics systems.
+                            Built by the <strong>ROAS Tools Editorial Team</strong> for practical paid media planning and measurement.
                         </p>
                         <p className="text-slate-700">
-                            Credentials: Google Ads Certified, Meta Blueprint Certified, and practitioner-level experience across eCommerce, SaaS, and lead-gen accounts.
+                            Coverage includes eCommerce, SaaS, and lead-generation operating models with methodology-first guidance.
                         </p>
                         <div className="grid md:grid-cols-3 gap-3 text-sm">
                             <div className="rounded-lg border border-slate-200 bg-white p-3">
-                                <p className="font-semibold text-slate-900">$1.2M+ ad spend managed</p>
+                                <p className="font-semibold text-slate-900">Methodology-backed calculators</p>
                             </div>
                             <div className="rounded-lg border border-slate-200 bg-white p-3">
-                                <p className="font-semibold text-slate-900">2,000+ campaigns reviewed</p>
+                                <p className="font-semibold text-slate-900">Consistent formula QA checks</p>
                             </div>
                             <div className="rounded-lg border border-slate-200 bg-white p-3">
-                                <p className="font-semibold text-slate-900">50,000+ monthly users served</p>
+                                <p className="font-semibold text-slate-900">Quarterly content refresh cycle</p>
                             </div>
                         </div>
-                        <a
-                            href={founderLinkedIn}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center text-blue-700 font-semibold hover:underline"
-                        >
-                            View Founder on LinkedIn
-                        </a>
                     </div>
                 </div>
             </section>
@@ -281,11 +270,11 @@ export default function About() {
                 <ul className="space-y-3 text-slate-700">
                     <li className="flex items-start gap-3">
                         <span className="text-blue-600 font-bold">-</span>
-                        <span><strong>Certifications:</strong> Google Analytics certified, Meta Blueprint certified, and hands-on experience with GA4, Meta Ads, and Google Ads.</span>
+                        <span><strong>Certifications:</strong> Google Analytics certified, Meta Blueprint certified, and practical work with GA4, Meta Ads, and Google Ads.</span>
                     </li>
                     <li className="flex items-start gap-3">
                         <span className="text-blue-600 font-bold">-</span>
-                        <span><strong>Experience:</strong> 15+ years combined experience managing paid media for e-commerce, SaaS, and lead generation.</span>
+                        <span><strong>Operations:</strong> Ongoing paid media analysis for e-commerce, SaaS, and lead generation use cases.</span>
                     </li>
                     <li className="flex items-start gap-3">
                         <span className="text-blue-600 font-bold">-</span>
