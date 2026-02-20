@@ -92,6 +92,30 @@ export default async function IndustryRoasPage({ params }: { params: Promise<{ s
             </Link>
           </div>
         </section>
+
+        <section className="bg-white border border-slate-200 rounded-xl p-6">
+          <h2 className="text-2xl font-bold mb-3">Worked Example for {data.name}</h2>
+          <p className="text-slate-700">
+            Use this quick check before scaling: if campaign ROAS stays above your break-even threshold and conversion quality is stable, increase spend gradually.
+            If ROAS is near break-even, hold and optimize offer clarity, landing page conversion, and audience quality first.
+          </p>
+          <p className="text-slate-700 mt-3">
+            Keep your decision tied to margin and payback assumptions, not benchmark ranges alone.
+          </p>
+        </section>
+
+        <section className="bg-white border border-slate-200 rounded-xl p-6">
+          <h2 className="text-2xl font-bold mb-3">Data and Source Notes</h2>
+          <p className="text-slate-700">
+            Benchmark bands are directional and reviewed on a recurring cadence. Validate this page with your current contribution margin,
+            attribution window, and operating cost model before making budget changes.
+          </p>
+          <div className="flex flex-wrap gap-3 mt-4">
+            <Link href="/methodology" className="text-blue-700 hover:underline">Methodology</Link>
+            <Link href="/data-sources" className="text-blue-700 hover:underline">Data Sources</Link>
+            <Link href="/blog/roas-benchmarks-2026" className="text-blue-700 hover:underline">Benchmark Reference</Link>
+          </div>
+        </section>
       </div>
     </main>
   );

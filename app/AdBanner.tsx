@@ -90,7 +90,7 @@ export default function AdBanner() {
 
   return (
     <div ref={containerRef} className="my-8 mx-auto text-center bg-gray-50 border border-gray-100 rounded-lg min-h-70 max-w-85 flex flex-col justify-center items-center overflow-hidden">
-      <span className="text-[10px] text-gray-400 uppercase tracking-widest mb-1">Advertisement</span>
+      <span className="text-[10px] text-gray-600 uppercase tracking-widest mb-1">Advertisement</span>
       <ins
         ref={adRef}
         className="adsbygoogle"

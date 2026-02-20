@@ -92,6 +92,30 @@ export default async function ScenarioPage({ params }: { params: Promise<{ slug:
             </Link>
           </div>
         </section>
+
+        <section className="bg-white border border-slate-200 rounded-xl p-6">
+          <h2 className="text-2xl font-bold mb-3">Scenario Interpretation</h2>
+          <p className="text-slate-700">
+            Use this scenario page to pressure-test assumptions before changing spend. A scenario is valid only when input assumptions
+            (margin, close rate, AOV, retention, or attribution window) match your current operating reality.
+          </p>
+          <p className="text-slate-700 mt-3">
+            If the projected result is close to break-even, prioritize optimization and measurement quality before scaling budget.
+          </p>
+        </section>
+
+        <section className="bg-white border border-slate-200 rounded-xl p-6">
+          <h2 className="text-2xl font-bold mb-3">Method and Data Notes</h2>
+          <p className="text-slate-700">
+            Benchmark ranges are directional references. Final decisions should be verified against your own contribution economics
+            and updated platform conditions.
+          </p>
+          <div className="flex flex-wrap gap-3 mt-4">
+            <Link href="/methodology" className="text-blue-700 hover:underline">Methodology</Link>
+            <Link href="/data-sources" className="text-blue-700 hover:underline">Data Sources</Link>
+            <Link href="/resources/roas-planning-template" className="text-blue-700 hover:underline">ROAS Planning Template</Link>
+          </div>
+        </section>
       </div>
     </main>
   );

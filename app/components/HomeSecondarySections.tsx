@@ -18,7 +18,6 @@ export default function HomeSecondarySections() {
             eventName="cta_click_ppc_toolkit"
             eventParams={{ source_page: "/", cta_module: "what_should_you_do_next", position: "mid_content" }}
             className="block rounded-xl border border-indigo-200 bg-indigo-50 p-4 hover:border-indigo-400 transition"
-            aria-label="Plan full funnel economics in PPC toolkit"
           >
             <h3 className="font-bold text-slate-900">Plan full funnel economics</h3>
             <p className="text-sm text-slate-600 mt-1">Use ROAS, CAC, LTV, MER, and target CPA together.</p>

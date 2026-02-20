@@ -8,16 +8,18 @@ import EmailCaptureCard from "@/app/components/EmailCaptureCard";
 import ExitIntentLeadCapture from "@/app/components/ExitIntentLeadCapture";
 
 export const metadata: Metadata = {
-  title: "ROAS Calculator for Ad-Supported Publishers",
+  title: "ROAS Calculator for Paid Media Profitability",
   description:
-    "The ROAS calculator built for ad-supported publishers. Model break-even thresholds, RPM assumptions, and campaign profitability.",
+    "Free ROAS calculator for ecommerce, SaaS, lead generation, and publishers. Model break-even thresholds and campaign profitability.",
   keywords: [
     "roas calculator",
     "return on ad spend calculator",
     "break even roas calculator",
     "google ads roas calculator",
     "facebook ads roas calculator",
-    "publisher ad revenue calculator",
+    "ecommerce roas calculator",
+    "saas roas calculator",
+    "lead generation roas calculator",
     "ppc profit calculator",
     "marketing roi tool",
   ],
@@ -25,9 +27,9 @@ export const metadata: Metadata = {
     canonical: SITE_URL,
   },
   openGraph: {
-    title: "ROAS Calculator for Ad-Supported Publishers",
+    title: "ROAS Calculator for Paid Media Profitability",
     description:
-      "The ROAS calculator built for ad-supported publishers. Model break-even thresholds, RPM assumptions, and campaign profitability.",
+      "Free ROAS calculator for ecommerce, SaaS, lead generation, and publishers. Model break-even thresholds and campaign profitability.",
     url: SITE_URL,
     images: [
       {
@@ -40,9 +42,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "ROAS Calculator for Ad-Supported Publishers",
+    title: "ROAS Calculator for Paid Media Profitability",
     description:
-      "The ROAS calculator built for ad-supported publishers. Model break-even thresholds, RPM assumptions, and campaign profitability.",
+      "Free ROAS calculator for ecommerce, SaaS, lead generation, and publishers. Model break-even thresholds and campaign profitability.",
     images: [`${SITE_URL}/og-image.png`],
   },
 };
@@ -142,10 +144,10 @@ export default function Home() {
       <header className="bg-blue-900 text-white py-10 md:py-12">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-3xl md:text-5xl font-bold mb-4">
-            The ROAS Calculator Built for Ad-Supported Publishers
+            The ROAS Calculator Built for Paid Media Teams
           </h1>
           <p className="text-lg text-blue-100 max-w-3xl mx-auto">
-            Model RPM, CPC, CTR, and traffic mix assumptions to forecast true content ROI before increasing budget.
+            Model break-even ROAS, campaign efficiency, and profitability before increasing spend across ecommerce, SaaS, lead gen, and publisher models.
           </p>
           <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
             <a href="#calculator" className="inline-flex items-center px-5 py-3 rounded-lg bg-white text-blue-900 font-bold hover:bg-blue-50 transition">
@@ -367,13 +369,13 @@ export default function Home() {
                 Use these follow-up tools before changing budget so decisions are tied to CAC, LTV, and blended efficiency.
               </p>
               <div className="flex flex-wrap items-center gap-3">
-                <Link href="/ppc-toolkit" prefetch={false} className="text-sm font-semibold text-slate-700 hover:text-slate-900 underline underline-offset-2" aria-label="Open PPC toolkit for ROAS CAC LTV and MER planning">
+                <Link href="/ppc-toolkit" prefetch={false} className="text-sm font-semibold text-slate-700 hover:text-slate-900 underline underline-offset-2">
                   Open PPC Toolkit
                 </Link>
-                <Link href="/resources" prefetch={false} className="text-sm font-semibold text-slate-700 hover:text-slate-900 underline underline-offset-2" aria-label="Download ROAS planning templates and checklists">
+                <Link href="/resources" prefetch={false} className="text-sm font-semibold text-slate-700 hover:text-slate-900 underline underline-offset-2">
                   Download Templates
                 </Link>
-                <Link href="/comparisons/mer-vs-roas" prefetch={false} className="text-sm font-semibold text-slate-700 hover:text-slate-900 underline underline-offset-2" aria-label="Read the MER versus ROAS comparison guide">
+                <Link href="/comparisons/mer-vs-roas" prefetch={false} className="text-sm font-semibold text-slate-700 hover:text-slate-900 underline underline-offset-2">
                   Read MER vs ROAS
                 </Link>
               </div>

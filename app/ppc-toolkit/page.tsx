@@ -51,64 +51,9 @@ export default function PPCToolkitPage() {
     },
   };
 
-  const productData = {
-    "@context": "https://schema.org",
-    "@type": "Product",
-    name: "PPC Profitability Toolkit",
-    description:
-      "Planning toolkit covering ROAS, CAC, LTV, MER, and target CPA for paid media profitability decisions.",
-    brand: {
-      "@type": "Brand",
-      name: "ROAS Tools",
-    },
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: "4.8",
-      reviewCount: "42",
-    },
-    offers: {
-      "@type": "Offer",
-      price: "0",
-      priceCurrency: "USD",
-      availability: "https://schema.org/InStock",
-      url: "https://roas-calculator.tech/ppc-toolkit",
-    },
-    review: [
-      {
-        "@type": "Review",
-        author: {
-          "@type": "Person",
-          name: "A. Sharma",
-        },
-        reviewRating: {
-          "@type": "Rating",
-          ratingValue: "5",
-          bestRating: "5",
-        },
-        reviewBody:
-          "Useful for aligning ROAS and CAC decisions before budget changes.",
-      },
-      {
-        "@type": "Review",
-        author: {
-          "@type": "Person",
-          name: "M. Patel",
-        },
-        reviewRating: {
-          "@type": "Rating",
-          ratingValue: "4",
-          bestRating: "5",
-        },
-        reviewBody:
-          "Helped us check break-even and payback assumptions in one workflow.",
-      },
-    ],
-  };
-
   return (
     <div className="min-h-screen bg-slate-50 text-slate-900 py-12 px-4 md:px-6">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webAppData) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productData) }} />
       <main className="max-w-5xl mx-auto space-y-8">
         <div>
           <Link href="/" className="text-sm text-slate-500 hover:text-blue-600 transition">

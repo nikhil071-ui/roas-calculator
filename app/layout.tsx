@@ -169,10 +169,10 @@ export default function RootLayout({
                 Privacy-first profitability tools for ad-supported publishers and growth teams.
                 Built to be fast, free, and secure.
               </p>
-              <p className="text-xs text-slate-500">
+              <p className="text-xs text-slate-400">
                 Data processed locally. No account required for calculators.
               </p>
-              <p className="text-xs text-slate-500 mt-3">
+              <p className="text-xs text-slate-400 mt-3">
                 Built by Sanjay Kumar. <Link href="/about" className="underline hover:text-white">Founder profile</Link>
               </p>
             </div>

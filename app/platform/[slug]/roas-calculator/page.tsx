@@ -92,6 +92,29 @@ export default async function PlatformRoasPage({ params }: { params: Promise<{ s
             </Link>
           </div>
         </section>
+
+        <section className="bg-white border border-slate-200 rounded-xl p-6">
+          <h2 className="text-2xl font-bold mb-3">How to Apply This to Live Campaigns</h2>
+          <p className="text-slate-700">
+            Treat platform ROAS as a decision signal, then pressure-test with break-even math and blended efficiency.
+            Scale only where ROAS remains sustainably above break-even with stable conversion quality.
+          </p>
+          <p className="text-slate-700 mt-3">
+            If results are near break-even, hold spend and prioritize creative-message fit, landing page conversion, and segment cleanup.
+          </p>
+        </section>
+
+        <section className="bg-white border border-slate-200 rounded-xl p-6">
+          <h2 className="text-2xl font-bold mb-3">Source and Validation Path</h2>
+          <p className="text-slate-700">
+            Use benchmark ranges directionally and validate final decisions with your own margin structure, attribution model, and payback tolerance.
+          </p>
+          <div className="flex flex-wrap gap-3 mt-4">
+            <Link href="/methodology" className="text-blue-700 hover:underline">Methodology</Link>
+            <Link href="/data-sources" className="text-blue-700 hover:underline">Data Sources</Link>
+            <Link href="/benchmarks/roas" className="text-blue-700 hover:underline">ROAS Benchmarks Hub</Link>
+          </div>
+        </section>
       </div>
     </main>
   );

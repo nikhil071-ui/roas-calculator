@@ -872,7 +872,6 @@ export default function RoasClient() {
                         onClick={resetFields}
                         className="px-4 py-4 rounded-xl font-bold text-slate-600 hover:text-slate-800 hover:bg-slate-100 transition border border-transparent hover:border-slate-200 flex items-center gap-2"
                         title="Clear all fields"
-                        aria-label="Clear all calculator fields"
                     >
                         <RotateCcw size={20} aria-hidden="true" focusable="false" />
                         <span className="text-sm">Reset</span>
@@ -881,7 +880,6 @@ export default function RoasClient() {
                         ref={calculateButtonRef}
                         onClick={calculateROAS}
                         className="flex-1 bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 rounded-xl shadow-lg hover:shadow-blue-500/30 transition transform hover:-translate-y-1 flex items-center justify-center gap-2 text-lg"
-                        aria-label="Calculate ROAS results and profitability metrics"
                     >
                         <RefreshCcw size={22} aria-hidden="true" focusable="false" /> Calculate Results
                     </button>
@@ -897,9 +895,9 @@ export default function RoasClient() {
             {/* RIGHT: DASHBOARD RESULTS */}
             <div className="bg-slate-50 rounded-2xl p-8 border border-slate-200 flex flex-col justify-center min-h-[400px]">
                 {!results ? (
-                    <div className="text-center text-slate-400">
+                    <div className="text-center text-slate-600">
                         <BarChart3 size={64} className="mx-auto mb-6 opacity-20" aria-hidden="true" focusable="false" />
-                        <h3 className="text-xl font-bold text-slate-500 mb-2">Ready to Analyze</h3>
+                        <h3 className="text-xl font-bold text-slate-700 mb-2">Ready to Analyze</h3>
                         <p className="text-sm">Enter your campaign data on the left to generate your profit report.</p>
                     </div>
                 ) : (
