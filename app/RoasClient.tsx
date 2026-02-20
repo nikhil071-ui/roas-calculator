@@ -626,7 +626,31 @@ export default function RoasClient() {
   })();
 
   return (
-    <div className="space-y-8">
+    <div className="space-y-8 relative">
+      {/* Sticky Sidebar Ad Unit - Desktop Only */}
+      <div className="fixed right-4 bottom-20 hidden lg:flex lg:flex-col w-80 gap-4 z-30 pointer-events-none">
+        <div className="ad-sidebar-sticky rounded-xl border border-slate-200 bg-slate-100 text-slate-600 p-4 shadow-lg pointer-events-auto">
+          <p className="text-xs font-semibold uppercase tracking-wider">Ad slot: sidebar 300x250</p>
+        </div>
+        
+        {/* Lead Magnet Card - Always Visible in Sidebar */}
+        <div className="rounded-xl border border-emerald-300 bg-gradient-to-br from-emerald-50 to-teal-50 p-5 shadow-lg pointer-events-auto">
+          <div className="flex items-start gap-2 mb-3">
+            <div className="text-2xl">📊</div>
+            <div className="flex-1">
+              <p className="text-sm font-bold text-slate-900">Track ROAS Over Time</p>
+              <p className="text-xs text-slate-600 mt-1">Get our free Google Sheets template to monitor campaigns weekly.</p>
+            </div>
+          </div>
+          <Link 
+            href="#lead-magnet-section"
+            className="w-full inline-block text-center text-xs font-bold bg-emerald-600 hover:bg-emerald-700 text-white py-2 rounded-lg transition"
+          >
+            Download Template
+          </Link>
+        </div>
+      </div>
+
       <div className="ad-leaderboard rounded-xl border border-slate-200 bg-slate-100 text-slate-600">
         <p className="text-xs font-semibold uppercase tracking-wider">Ad slot: leaderboard 728x90</p>
       </div>
@@ -890,6 +914,35 @@ export default function RoasClient() {
                 <p className="text-xs text-slate-500">
                   No signup required. Your inputs stay in your browser and are not sent to our server.
                 </p>
+
+                {/* LEAD MAGNET SECTION */}
+                <div id="lead-magnet-section" className="mt-6 rounded-2xl border-2 border-emerald-300 bg-gradient-to-br from-emerald-50 to-teal-50 p-6">
+                  <div className="flex items-start gap-3 mb-3">
+                    <span className="text-3xl">📑</span>
+                    <div className="flex-1">
+                      <h3 className="font-bold text-slate-900">Free ROAS Tracking Template</h3>
+                      <p className="text-xs text-slate-600 mt-1">Track your campaigns week-over-week with our Google Sheets template (includes break-even, margin, and forecast tabs).</p>
+                    </div>
+                  </div>
+                  <p className="text-sm text-slate-700 mb-4">
+                    <strong>What's included:</strong>
+                  </p>
+                  <ul className="text-xs text-slate-700 space-y-1 pl-5 list-disc mb-4">
+                    <li>Auto-calculating fields for ROAS, CPA, profit by channel</li>
+                    <li>Break-even ROAS calculator tab</li>
+                    <li>28-day rolling average trend tracking</li>
+                    <li>Margin-safety guardrails</li>
+                  </ul>
+                  <EmailCaptureCard
+                    source="lead_magnet_tracker"
+                    variant="compact"
+                    title="Get the Free ROAS Tracker"
+                    description="Download our Google Sheets template to monitor campaigns week-over-week."
+                    buttonLabel="Email Me the Template"
+                    helperText="No credit card required. You'll also get weekly ROAS benchmarks."
+                    className="mt-3 border-0"
+                  />
+                </div>
             </div>
 
             {/* RIGHT: DASHBOARD RESULTS */}
@@ -901,7 +954,7 @@ export default function RoasClient() {
                         <p className="text-sm">Enter your campaign data on the left to generate your profit report.</p>
                     </div>
                 ) : (
-                    <div className="space-y-6 animate-in fade-in zoom-in duration-300">
+                    <div className="space-y-6 animate-in fade-in zoom-in duration-300" aria-live="polite" aria-label="ROAS calculation results">
                         {showExampleReport ? (
                           <div className="bg-amber-50 border border-amber-200 rounded-xl p-3">
                             <p className="text-xs font-bold text-amber-900 uppercase tracking-wider">Example Report Mode</p>
@@ -910,7 +963,7 @@ export default function RoasClient() {
                         ) : null}
                         <div className="bg-white rounded-xl border border-slate-200 p-4 shadow-sm">
                             <p className="text-xs font-bold text-slate-500 uppercase tracking-wider mb-1">Decision Summary</p>
-                            <p className="text-sm text-slate-700 mb-3">
+                            <p className="text-sm text-slate-700 mb-3" role="status">
                               Your {results.roas}x ROAS analysis indicates {
                                 results.breakEven !== "N/A" && Number(results.roas) >= Number(results.breakEven) * 1.2
                                   ? "strong budget headroom above break-even."
@@ -941,6 +994,42 @@ export default function RoasClient() {
                                   : "Add spend and revenue inputs to model a 20% scale scenario."}
                               </li>
                             </ul>
+                        </div>
+
+                        {/* DYNAMIC RESULT CARDS - Next Steps Based on ROAS */}
+                        <div className="space-y-3 rounded-xl border border-blue-200 bg-blue-50 p-5">
+                          <p className="text-xs font-bold text-blue-900 uppercase tracking-wider">Recommended Next Steps</p>
+                          
+                          {/* Card 1: Low ROAS - Optimize CPA */}
+                          {resultsRoas && resultsBreakEven && resultsRoas < resultsBreakEven ? (
+                            <div className="rounded-lg border border-red-300 bg-white p-3">
+                              <p className="text-sm font-semibold text-red-900">ROAS Below Break-Even → CPA Optimization</p>
+                              <p className="text-xs text-red-800 mt-1">Your ROAS is below break-even. Read how to lower your CPA.</p>
+                              <Link href="/blog/how-to-improve-roas-without-raising-budget" className="mt-2 inline-flex text-xs font-semibold text-red-700 underline underline-offset-2 hover:text-red-600">
+                                Read: 5 Ways to Lower Your CPA When ROAS is Below Break-Even →
+                              </Link>
+                            </div>
+                          ) : null}
+
+                          {/* Card 2: High ROAS - Scale Strategy */}
+                          {resultsRoas && resultsRoas > 4.0 ? (
+                            <div className="rounded-lg border border-emerald-300 bg-white p-3">
+                              <p className="text-sm font-semibold text-emerald-900">High ROAS (&gt;4x) → Consider Scaling</p>
+                              <p className="text-xs text-emerald-800 mt-1">You have strong profitability headroom. Learn how to scale safely.</p>
+                              <Link href="/blog/when-to-scale-or-pause-campaigns" className="mt-2 inline-flex text-xs font-semibold text-emerald-700 underline underline-offset-2 hover:text-emerald-600">
+                                Read: Scaling Framework - How to Increase Budget Without Breaking Your ROAS →
+                              </Link>
+                            </div>
+                          ) : null}
+
+                          {/* Card 3: Always show - Industry Benchmarks */}
+                          <div className="rounded-lg border border-purple-300 bg-white p-3">
+                            <p className="text-sm font-semibold text-purple-900">Compare with Industry Standards</p>
+                            <p className="text-xs text-purple-800 mt-1">See 2026 industry benchmarks and case studies in your vertical.</p>
+                            <Link href="/benchmarks/roas" className="mt-2 inline-flex text-xs font-semibold text-purple-700 underline underline-offset-2 hover:text-purple-600">
+                              View: 2026 Industry Benchmarks Data →
+                            </Link>
+                          </div>
                         </div>
                         
                         {/* HERO METRICS */}
