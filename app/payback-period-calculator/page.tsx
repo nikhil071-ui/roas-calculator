@@ -72,7 +72,8 @@ export default function PaybackPeriodPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToData) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqData) }} />
       <main className="max-w-4xl mx-auto bg-white border border-slate-200 rounded-2xl shadow-sm p-8 md:p-12 space-y-8">
-        <div>
+        <article className="space-y-8">
+        <header>
           <Link href="/ppc-toolkit" className="text-sm text-slate-500 hover:text-blue-600 transition">Back to PPC Toolkit</Link>
           <h1 className="text-3xl md:text-4xl font-bold mt-2">CAC Payback Period Calculator</h1>
           <p className="text-slate-600 mt-3">
@@ -81,7 +82,7 @@ export default function PaybackPeriodPage() {
           <p className="text-slate-700 mt-3">
             Quick answer: payback period is the number of months required to recover CAC from gross profit.
           </p>
-        </div>
+        </header>
 
         <section className="bg-slate-50 border border-slate-200 rounded-xl p-6">
           <h2 className="text-2xl font-bold mb-3">Formula</h2>
@@ -102,6 +103,52 @@ export default function PaybackPeriodPage() {
           </ul>
         </section>
 
+        <section className="bg-slate-50 border border-slate-200 rounded-xl p-6">
+          <h2 className="text-2xl font-bold mb-3">What Payback Means for Decision-Making</h2>
+          <p className="text-slate-700">
+            Payback period is a cash-recovery metric. It answers whether growth is financeable at current acquisition rates, even if
+            <Link href="/" className="text-blue-700 hover:underline"> ROAS</Link> looks strong. Combine payback with
+            <Link href="/cac-calculator" className="text-blue-700 hover:underline"> CAC</Link>,
+            <Link href="/ltv-calculator" className="text-blue-700 hover:underline"> LTV</Link>, and
+            <Link href="/mer-calculator" className="text-blue-700 hover:underline"> MER</Link> to avoid over-scaling cash-negative cohorts.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-bold mb-3">How to Evaluate Your Result</h2>
+          <ul className="list-disc pl-5 space-y-2 text-slate-700">
+            <li>Evaluate by segment (channel, plan tier, region) because blended payback can hide weak cohorts.</li>
+            <li>Recompute after pricing, discounting, or onboarding changes to reflect real gross profit recovery.</li>
+            <li>Use sensitivity ranges for margin and ARPU; small assumption changes can shift months materially.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-bold mb-3">Realistic Business Scenarios</h2>
+          <ul className="list-disc pl-5 space-y-2 text-slate-700">
+            <li>PLG SaaS: low CAC cohort pays back fast, while enterprise-assisted cohort remains cash-heavy for longer.</li>
+            <li>DTC subscription: attractive first-order ROAS still yields slow payback when churn spikes after month two.</li>
+            <li>B2B services: rising ACV improves payback, but delayed collections can still pressure operating cash flow.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-bold mb-3">When to Use Payback and Common Misunderstandings</h2>
+          <ul className="list-disc pl-5 space-y-2 text-slate-700">
+            <li>Use payback when setting growth pace, hiring plans, and acceptable CAC ceilings.</li>
+            <li>Do not use top-line revenue in place of gross profit for payback decisions.</li>
+            <li>Do not treat a single payback target as universal; tolerance depends on runway and cost of capital.</li>
+          </ul>
+        </section>
+
+        <section className="bg-slate-50 border border-slate-200 rounded-xl p-6">
+          <h2 className="text-2xl font-bold mb-3">Methodology and Calculation Logic</h2>
+          <p className="text-slate-700">
+            The model divides CAC by monthly gross profit per customer. Inputs assume steady ARPU and margin during the payback window, so operators
+            should validate with cohort retention and billing behavior.
+          </p>
+        </section>
+
         <PaybackCalculatorClient />
 
         <section className="flex flex-wrap gap-3">
@@ -119,9 +166,10 @@ export default function PaybackPeriodPage() {
         </section>
         <EmailCaptureCard source="payback_calculator" />
 
-        <section className="text-sm text-slate-500 border-t border-slate-200 pt-6">
-          Reviewed by ROAS Tools Editorial Team. Updated February 18, 2026.
-        </section>
+        <footer className="text-sm text-slate-500 border-t border-slate-200 pt-6">
+          Reviewed by ROAS Tools Editorial Team. Last updated: February 20, 2026.
+        </footer>
+        </article>
       </main>
     </div>
   );

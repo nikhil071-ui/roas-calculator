@@ -72,7 +72,8 @@ export default function LTVCalculatorPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToData) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqData) }} />
       <main className="max-w-4xl mx-auto bg-white border border-slate-200 rounded-2xl shadow-sm p-8 md:p-12 space-y-8">
-        <div>
+        <article className="space-y-8">
+        <header>
           <Link href="/ppc-toolkit" className="text-sm text-slate-500 hover:text-blue-600 transition">Back to PPC Toolkit</Link>
           <h1 className="text-3xl md:text-4xl font-bold mt-2">LTV Calculator</h1>
           <p className="text-slate-600 mt-3">
@@ -81,7 +82,7 @@ export default function LTVCalculatorPage() {
           <p className="text-slate-700 mt-3">
             Quick answer: LTV estimates total gross profit a customer generates over their retained lifetime.
           </p>
-        </div>
+        </header>
 
         <section className="bg-slate-50 border border-slate-200 rounded-xl p-6">
           <h2 className="text-2xl font-bold mb-3">Formula</h2>
@@ -98,6 +99,52 @@ export default function LTVCalculatorPage() {
             <li>If LTV:CAC is 2 to 3, optimize retention and onboarding before aggressive scaling.</li>
             <li>If LTV:CAC exceeds 3 with stable payback, scaling is usually safer.</li>
           </ul>
+        </section>
+
+        <section className="bg-slate-50 border border-slate-200 rounded-xl p-6">
+          <h2 className="text-2xl font-bold mb-3">What LTV Means for Decision-Making</h2>
+          <p className="text-slate-700">
+            LTV estimates future gross profit potential per acquired customer. It helps determine how much CAC is rational today and whether
+            current <Link href="/" className="text-blue-700 hover:underline">ROAS</Link> is sustainable once retention is observed.
+            Use LTV with <Link href="/cac-calculator" className="text-blue-700 hover:underline">CAC</Link>,
+            <Link href="/payback-period-calculator" className="text-blue-700 hover:underline"> payback</Link>, and
+            <Link href="/mer-calculator" className="text-blue-700 hover:underline"> MER</Link> for full budget decisions.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-bold mb-3">How to Evaluate Your Result</h2>
+          <ul className="list-disc pl-5 space-y-2 text-slate-700">
+            <li>Check whether LTV assumptions are cohort-based or blended averages; cohort views are usually more reliable.</li>
+            <li>Stress-test retention and margin assumptions with conservative, base, and upside cases.</li>
+            <li>Recalculate monthly as pricing, churn, and product mix change.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-bold mb-3">Realistic Business Scenarios</h2>
+          <ul className="list-disc pl-5 space-y-2 text-slate-700">
+            <li>Subscription SaaS: LTV improves after onboarding fixes reduce month-2 churn, allowing safer CAC increases.</li>
+            <li>DTC brand: first-order ROAS is modest, but high repeat rate lifts true LTV and keeps blended MER healthy.</li>
+            <li>Agency lead-gen: strong close value but high churn lowers realized LTV, forcing tighter acquisition caps.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-bold mb-3">When to Use LTV and Common Misunderstandings</h2>
+          <ul className="list-disc pl-5 space-y-2 text-slate-700">
+            <li>Use LTV when setting CAC caps, channel mix, and acceptable payback windows.</li>
+            <li>Do not use revenue-only LTV for profitability decisions; gross margin must be included.</li>
+            <li>Do not assume historical retention persists during aggressive scale without monitoring cohort quality.</li>
+          </ul>
+        </section>
+
+        <section className="bg-slate-50 border border-slate-200 rounded-xl p-6">
+          <h2 className="text-2xl font-bold mb-3">Methodology and Calculation Logic</h2>
+          <p className="text-slate-700">
+            This page uses a transparent multiplicative model: order value times purchase frequency times gross margin times retention period.
+            It is an estimate, not a guarantee, and should be refreshed with actual cohort performance.
+          </p>
         </section>
 
         <LTVCalculatorClient />
@@ -117,9 +164,10 @@ export default function LTVCalculatorPage() {
         </section>
         <EmailCaptureCard source="ltv_calculator" />
 
-        <section className="text-sm text-slate-500 border-t border-slate-200 pt-6">
-          Reviewed by ROAS Tools Editorial Team. Updated February 18, 2026.
-        </section>
+        <footer className="text-sm text-slate-500 border-t border-slate-200 pt-6">
+          Reviewed by ROAS Tools Editorial Team. Last updated: February 20, 2026.
+        </footer>
+        </article>
       </main>
     </div>
   );

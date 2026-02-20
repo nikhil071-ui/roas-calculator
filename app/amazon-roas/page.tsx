@@ -12,10 +12,43 @@ export const metadata: Metadata = {
 };
 
 export default function AmazonRoasPage() {
+  const webAppData = {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    name: "Amazon ROAS Calculator Guide",
+    applicationCategory: "BusinessApplication",
+    operatingSystem: "Web",
+    offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+    url: "https://roas-calculator.tech/amazon-roas",
+  };
+  const faqData = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: "How do Amazon sellers convert ACoS to ROAS?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Convert ACoS to ROAS by taking 1 divided by ACoS as a decimal. For example, 25% ACoS equals 4.0x ROAS.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Why can acceptable ACoS still hurt profit?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "FBA fees, storage charges, returns, and price pressure can shrink contribution margin even when ACoS looks controlled.",
+        },
+      },
+    ],
+  };
   return (
     <main className="min-h-screen bg-slate-50 text-slate-900 py-12 px-4 md:px-6">
-      <div className="max-w-4xl mx-auto bg-white border border-slate-200 rounded-2xl shadow-sm p-8 md:p-10 space-y-8">
-        <div>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webAppData) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqData) }} />
+      <article className="max-w-4xl mx-auto bg-white border border-slate-200 rounded-2xl shadow-sm p-8 md:p-10 space-y-8">
+        <header>
           <Link href="/" className="text-sm text-slate-500 hover:text-blue-600 transition">
             Back to Home
           </Link>
@@ -23,7 +56,7 @@ export default function AmazonRoasPage() {
           <p className="text-slate-600 mt-3">
             Built for Amazon sellers using Sponsored Products and Sponsored Brands.
           </p>
-        </div>
+        </header>
 
         <section className="bg-amber-50 border border-amber-200 rounded-xl p-6">
           <h2 className="text-2xl font-bold mb-3">Who This Page Is For</h2>
@@ -59,6 +92,42 @@ export default function AmazonRoasPage() {
           </ul>
         </section>
 
+        <section className="bg-slate-50 border border-slate-200 rounded-xl p-6">
+          <h2 className="text-2xl font-bold mb-3">What This Metric Means for Amazon Decisions</h2>
+          <p className="text-slate-700">
+            Amazon ROAS and ACoS help prioritize bids and SKU-level spend, but they are not complete profitability metrics.
+            Validate with contribution margins, <Link href="/cac-calculator" className="text-blue-700 hover:underline">CAC</Link>-style acquisition cost controls, and blended
+            <Link href="/mer-calculator" className="text-blue-700 hover:underline"> MER</Link> on total marketing.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-bold mb-3">How to Evaluate Results</h2>
+          <ul className="list-disc pl-5 space-y-2 text-slate-700">
+            <li>Compare SKU/campaign ROAS against margin-adjusted thresholds in <Link href="/break-even-roas-by-margin" className="text-blue-700 hover:underline">Break-even ROAS by Margin</Link>.</li>
+            <li>Segment branded and non-branded terms before deciding to scale bids.</li>
+            <li>Track fee and return trends to confirm ROAS gains translate to contribution profit.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-bold mb-3">Realistic Business Scenarios</h2>
+          <ul className="list-disc pl-5 space-y-2 text-slate-700">
+            <li>Private-label launch: strong branded ROAS masks weak non-branded profitability, so scaling should stay selective.</li>
+            <li>Seasonal spike: peak-period ROAS rises, but higher storage and return rates reduce realized margin.</li>
+            <li>Catalog cleanup: pausing low-margin ASINs improves blended MER even when overall ad volume drops.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-bold mb-3">When to Use, Limitations, and Misunderstandings</h2>
+          <ul className="list-disc pl-5 space-y-2 text-slate-700">
+            <li>Use this metric during bid adjustments, SKU prioritization, and daily budget allocation reviews.</li>
+            <li>Do not treat Amazon-attributed ROAS as total business return without organic halo and cost checks.</li>
+            <li>Do not assume a fixed ACoS target works across all categories and lifecycle stages.</li>
+          </ul>
+        </section>
+
         <section className="flex flex-wrap gap-3">
           <Link href="/roas/amazon-ppc-acos" className="px-4 py-2 rounded-lg bg-blue-600 text-white font-semibold hover:bg-blue-700 transition">
             Open Amazon ACoS Calculator
@@ -80,6 +149,14 @@ export default function AmazonRoasPage() {
           </ol>
         </section>
 
+        <section className="bg-slate-50 border border-slate-200 rounded-xl p-6">
+          <h2 className="text-2xl font-bold mb-3">Methodology and Calculation Logic</h2>
+          <p className="text-slate-700">
+            Core logic uses standard formulas: ROAS equals attributed sales divided by ad spend, and ACoS equals ad spend divided by attributed sales.
+            Decision guidance should be validated against post-fee contribution economics.
+          </p>
+        </section>
+
         <EmailCaptureCard
           source="persona_amazon_roas"
           title="Get Amazon RPM/ROAS Benchmark Updates"
@@ -87,7 +164,10 @@ export default function AmazonRoasPage() {
           buttonLabel="Send Amazon Benchmarks"
           helperText="Includes ACoS to ROAS conversion and scale/hold/pause guardrails."
         />
-      </div>
+        <footer className="text-sm text-slate-500 border-t border-slate-200 pt-6">
+          Reviewed by ROAS Tools Editorial Team. Last updated: February 20, 2026.
+        </footer>
+      </article>
     </main>
   );
 }

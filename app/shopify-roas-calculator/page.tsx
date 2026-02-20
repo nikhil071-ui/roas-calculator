@@ -12,10 +12,43 @@ export const metadata: Metadata = {
 };
 
 export default function ShopifyRoasCalculatorPage() {
+  const webAppData = {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    name: "Shopify ROAS Calculator Guide",
+    applicationCategory: "BusinessApplication",
+    operatingSystem: "Web",
+    offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+    url: "https://roas-calculator.tech/shopify-roas-calculator",
+  };
+  const faqData = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: "When should a Shopify team trust ROAS enough to scale?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Scale when campaign ROAS is consistently above break-even, CAC payback remains acceptable, and blended MER is stable.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Why can high Shopify ROAS still be unprofitable?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Discounting, shipping, returns, and platform fees can reduce contribution margin, so ROAS alone may overstate true profitability.",
+        },
+      },
+    ],
+  };
   return (
     <main className="min-h-screen bg-slate-50 text-slate-900 py-12 px-4 md:px-6">
-      <div className="max-w-4xl mx-auto bg-white border border-slate-200 rounded-2xl shadow-sm p-8 md:p-10 space-y-8">
-        <div>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webAppData) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqData) }} />
+      <article className="max-w-4xl mx-auto bg-white border border-slate-200 rounded-2xl shadow-sm p-8 md:p-10 space-y-8">
+        <header>
           <Link href="/" className="text-sm text-slate-500 hover:text-blue-600 transition">
             Back to Home
           </Link>
@@ -23,7 +56,7 @@ export default function ShopifyRoasCalculatorPage() {
           <p className="text-slate-600 mt-3">
             Tailored for Shopify growth teams running Meta and Google Shopping campaigns.
           </p>
-        </div>
+        </header>
 
         <section className="bg-blue-50 border border-blue-200 rounded-xl p-6">
           <h2 className="text-2xl font-bold mb-3">Who This Page Is For</h2>
@@ -74,6 +107,34 @@ export default function ShopifyRoasCalculatorPage() {
           </ul>
         </section>
 
+        <section className="bg-slate-50 border border-slate-200 rounded-xl p-6">
+          <h2 className="text-2xl font-bold mb-3">What This Metric Means for Shopify Decisions</h2>
+          <p className="text-slate-700">
+            Shopify ROAS should be treated as an operating control metric, not a standalone profitability verdict.
+            Evaluate with <Link href="/cac-calculator" className="text-blue-700 hover:underline">CAC</Link>,
+            <Link href="/ltv-calculator" className="text-blue-700 hover:underline"> LTV</Link>, and
+            <Link href="/mer-calculator" className="text-blue-700 hover:underline"> MER</Link> to decide if higher spend is sustainable.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-bold mb-3">How to Evaluate Results</h2>
+          <ul className="list-disc pl-5 space-y-2 text-slate-700">
+            <li>Compare campaign ROAS against your margin-based floor in <Link href="/break-even-roas-by-margin" className="text-blue-700 hover:underline">Break-even ROAS by Margin</Link>.</li>
+            <li>Validate that blended MER stays stable after promotions and discount windows.</li>
+            <li>Review by product family because AOV and return rate variance can distort headline ROAS.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-bold mb-3">When to Use, Limitations, and Common Misunderstandings</h2>
+          <ul className="list-disc pl-5 space-y-2 text-slate-700">
+            <li>Use this for weekly budget reviews, promo planning, and catalog-level prioritization.</li>
+            <li>Do not assume attributed platform ROAS equals incremental profit after returns and discounts.</li>
+            <li>Do not rely only on first-order ROAS for subscription or repeat-heavy catalogs; include cohort LTV behavior.</li>
+          </ul>
+        </section>
+
         <section className="flex flex-wrap gap-3">
           <Link href="/roas/google-shopping-roas" className="px-4 py-2 rounded-lg bg-blue-600 text-white font-semibold hover:bg-blue-700 transition">
             Open Shopping ROAS Calculator
@@ -95,6 +156,14 @@ export default function ShopifyRoasCalculatorPage() {
           </ol>
         </section>
 
+        <section className="bg-slate-50 border border-slate-200 rounded-xl p-6">
+          <h2 className="text-2xl font-bold mb-3">Methodology and Calculation Logic</h2>
+          <p className="text-slate-700">
+            Scenario outputs use explicit arithmetic: ROAS equals attributed revenue divided by ad spend, while break-even guidance maps to contribution margin assumptions.
+            Decisions should be confirmed against blended efficiency and cash recovery windows.
+          </p>
+        </section>
+
         <EmailCaptureCard
           source="persona_shopify_roas"
           title="Get Shopify RPM/ROAS Benchmark Updates"
@@ -102,7 +171,10 @@ export default function ShopifyRoasCalculatorPage() {
           buttonLabel="Send Shopify Benchmarks"
           helperText="Includes DTC benchmark guardrails and weekly review prompts."
         />
-      </div>
+        <footer className="text-sm text-slate-500 border-t border-slate-200 pt-6">
+          Reviewed by ROAS Tools Editorial Team. Last updated: February 20, 2026.
+        </footer>
+      </article>
     </main>
   );
 }

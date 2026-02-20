@@ -159,7 +159,7 @@ export default function Home() {
             <section className="mt-4 mb-6 bg-emerald-50 border border-emerald-200 rounded-2xl p-4">
               <h2 className="text-base font-bold text-emerald-900 mb-2">Trusted planning, private inputs</h2>
               <p className="text-sm text-emerald-800 mb-3">
-                Last updated February 18, 2026. Reviewed by ROAS Tools Editorial Team. Inputs stay in your browser and are not sent to our server.
+                Last updated February 20, 2026. Reviewed by ROAS Tools Editorial Team. Inputs stay in your browser and are not sent to our server.
               </p>
               <div className="flex flex-wrap gap-2">
                 <TrackedLink
@@ -197,6 +197,33 @@ export default function Home() {
                   <p className="text-sm text-slate-600 mt-1">Decide when to scale, hold, or pause campaigns with confidence.</p>
                 </div>
               </div>
+            </section>
+
+            <section className="mt-8 mb-6 bg-white border border-slate-200 rounded-2xl p-6">
+              <h2 className="text-xl font-bold text-slate-900 mb-2">When to use ROAS and how to evaluate outputs</h2>
+              <ul className="list-disc pl-5 space-y-2 text-slate-700">
+                <li>Use ROAS for campaign-level budget decisions, creative testing cycles, and pre-scale checks.</li>
+                <li>Compare calculated ROAS to margin-based break-even thresholds before increasing spend.</li>
+                <li>Review 7-day and 30-day views to reduce attribution-window volatility.</li>
+              </ul>
+            </section>
+
+            <section className="mt-8 mb-6 bg-white border border-slate-200 rounded-2xl p-6">
+              <h2 className="text-xl font-bold text-slate-900 mb-2">Limitations and common misunderstandings</h2>
+              <ul className="list-disc pl-5 space-y-2 text-slate-700">
+                <li>High ROAS can still be unprofitable when contribution margin is thin.</li>
+                <li>Platform-reported ROAS should be validated against blended <Link href="/mer-calculator" prefetch={false} className="text-blue-700 hover:underline">MER</Link> and true acquisition cost.</li>
+                <li>ROAS does not measure payback timing, so cash-flow risk should be checked with <Link href="/payback-period-calculator" prefetch={false} className="text-blue-700 hover:underline">CAC payback</Link>.</li>
+              </ul>
+            </section>
+
+            <section className="mt-8 mb-6 bg-white border border-slate-200 rounded-2xl p-6">
+              <h2 className="text-xl font-bold text-slate-900 mb-2">Realistic operator scenarios</h2>
+              <ul className="list-disc pl-5 space-y-2 text-slate-700">
+                <li>DTC promo week: ROAS rises, but net profit weakens after discount and shipping pressure.</li>
+                <li>SaaS acquisition push: campaign ROAS looks healthy while payback extends beyond financing tolerance.</li>
+                <li>Lead-gen campaigns: low CPL volume underperforms revenue targets due to lower close quality.</li>
+              </ul>
             </section>
 
             <section className="mt-8 mb-6 bg-white border border-slate-200 rounded-2xl p-6">

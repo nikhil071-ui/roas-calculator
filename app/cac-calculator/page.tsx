@@ -74,7 +74,8 @@ export default function CACCalculatorPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToData) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqData) }} />
       <main className="max-w-4xl mx-auto bg-white border border-slate-200 rounded-2xl shadow-sm p-8 md:p-12 space-y-8">
-        <div>
+        <article className="space-y-8">
+        <header>
           <Link href="/ppc-toolkit" className="text-sm text-slate-500 hover:text-blue-600 transition">Back to PPC Toolkit</Link>
           <h1 className="text-3xl md:text-4xl font-bold mt-2">CAC Calculator</h1>
           <p className="text-slate-600 mt-3">
@@ -83,7 +84,7 @@ export default function CACCalculatorPage() {
           <p className="text-slate-700 mt-3">
             Quick answer: CAC equals total ad spend divided by new customers acquired in the same period.
           </p>
-        </div>
+        </header>
 
         <section className="bg-slate-50 border border-slate-200 rounded-xl p-6">
           <h2 className="text-2xl font-bold mb-3">Formula</h2>
@@ -98,6 +99,51 @@ export default function CACCalculatorPage() {
             <li>Hold when CAC drifts but still stays inside margin guardrails.</li>
             <li>Pause or rework when CAC exceeds target for 7-14 days after optimizations.</li>
           </ul>
+        </section>
+
+        <section className="bg-slate-50 border border-slate-200 rounded-xl p-6">
+          <h2 className="text-2xl font-bold mb-3">What CAC Means for Decision-Making</h2>
+          <p className="text-slate-700">
+            CAC is your acquisition price per customer, not your profitability outcome. A low CAC can still be unprofitable if margin is weak,
+            and a high CAC can still be acceptable if <Link href="/ltv-calculator" className="text-blue-700 hover:underline">LTV</Link> and
+            <Link href="/payback-period-calculator" className="text-blue-700 hover:underline"> payback</Link> are strong.
+            Use CAC with <Link href="/" className="text-blue-700 hover:underline">ROAS</Link> and <Link href="/mer-calculator" className="text-blue-700 hover:underline">MER</Link> before budget changes.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-bold mb-3">How to Evaluate Your Result</h2>
+          <ul className="list-disc pl-5 space-y-2 text-slate-700">
+            <li>Compare CAC to gross profit per customer, not only top-line revenue.</li>
+            <li>Track rolling 7-day and 30-day CAC to avoid reacting to short attribution noise.</li>
+            <li>Validate that CAC trends stay healthy after spend increases, not just before scaling.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-bold mb-3">Realistic Business Scenarios</h2>
+          <ul className="list-disc pl-5 space-y-2 text-slate-700">
+            <li>DTC eCommerce: CAC rises during promos, but repeat purchase lifts LTV and keeps scaling viable.</li>
+            <li>SaaS trial funnel: paid CAC is high early, but acceptable once onboarding improves payback below 12 months.</li>
+            <li>B2B lead-gen: CAC appears stable, but sales-cycle slippage reduces realized ROAS and requires tighter qualification.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-bold mb-3">When to Use CAC and Common Misunderstandings</h2>
+          <ul className="list-disc pl-5 space-y-2 text-slate-700">
+            <li>Use CAC when deciding budget pacing, channel mix, and offer strategy at weekly or monthly cadence.</li>
+            <li>Do not compare CAC across periods with different attribution windows without adjustment.</li>
+            <li>Do not treat CAC as complete profitability; always pair with contribution margin and LTV quality.</li>
+          </ul>
+        </section>
+
+        <section className="bg-slate-50 border border-slate-200 rounded-xl p-6">
+          <h2 className="text-2xl font-bold mb-3">Methodology and Calculation Logic</h2>
+          <p className="text-slate-700">
+            This calculator uses a direct unit-economics formula: total paid spend divided by new customers in the same measurement window.
+            For consistent interpretation, keep spend, conversions, and attribution settings aligned to one period and one channel scope.
+          </p>
         </section>
 
         <CACCalculatorClient />
@@ -117,9 +163,10 @@ export default function CACCalculatorPage() {
         </section>
         <EmailCaptureCard source="cac_calculator" />
 
-        <section className="text-sm text-slate-500 border-t border-slate-200 pt-6">
-          Reviewed by ROAS Tools Editorial Team. Updated February 18, 2026.
-        </section>
+        <footer className="text-sm text-slate-500 border-t border-slate-200 pt-6">
+          Reviewed by ROAS Tools Editorial Team. Last updated: February 20, 2026.
+        </footer>
+        </article>
       </main>
     </div>
   );
