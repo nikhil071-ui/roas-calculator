@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import EmailCaptureCard from "@/app/components/EmailCaptureCard";
+import LastReviewedBadge from "@/app/components/LastReviewedBadge";
 
 export const metadata: Metadata = {
   title: "Lead Generation ROAS Calculator (Close Rate & Deal Value Model)",
@@ -326,6 +327,8 @@ export default function LeadGenerationRoasPage() {
             CAC vs CPA vs ROAS
           </Link>
         </section>
+
+        <LastReviewedBadge date="February 20, 2026" variant="section" />
 
         <EmailCaptureCard
           source="persona_lead_generation_roas"

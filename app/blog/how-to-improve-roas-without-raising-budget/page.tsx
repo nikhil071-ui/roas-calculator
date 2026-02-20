@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import BlogInternalLinks from "@/app/components/BlogInternalLinks";
 import ArticleJsonLd from "@/app/components/ArticleJsonLd";
+import BlogCalculatorCTA from "@/app/components/BlogCalculatorCTA";
 import { getBlogPostBySlug } from "@/app/lib/blog-posts";
 
 const blogMeta = getBlogPostBySlug("how-to-improve-roas-without-raising-budget");
@@ -38,6 +39,13 @@ export default function ImproveRoasWithoutBudgetPage() {
         <p className="text-slate-700">
           Improve ROAS by raising output quality, not spend. Focus first on conversion rate, average order value, and offer clarity.
         </p>
+        
+        <BlogCalculatorCTA
+          calculatorName="ROAS Calculator"
+          calculatorPath="/"
+          description="Calculate your current ROAS and break-even threshold before implementing optimization changes. This gives you a baseline to track improvement."
+        />
+        
         <h2 className="text-2xl font-bold">Priority Workflow</h2>
         <ol className="list-decimal pl-5 space-y-2 text-slate-700">
           <li>Fix measurement and attribution consistency before optimization decisions.</li>

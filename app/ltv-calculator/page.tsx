@@ -147,6 +147,8 @@ export default function LTVCalculatorPage() {
           </p>
         </section>
 
+        <LastReviewedBadge date="February 20, 2026" variant="section" />
+
         <LTVCalculatorClient />
 
         <section className="flex flex-wrap gap-3">

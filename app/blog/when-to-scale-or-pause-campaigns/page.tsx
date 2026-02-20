@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import BlogInternalLinks from "@/app/components/BlogInternalLinks";
 import ArticleJsonLd from "@/app/components/ArticleJsonLd";
+import BlogCalculatorCTA from "@/app/components/BlogCalculatorCTA";
 import { getBlogPostBySlug } from "@/app/lib/blog-posts";
 
 const blogMeta = getBlogPostBySlug("when-to-scale-or-pause-campaigns");
@@ -38,6 +39,13 @@ export default function ScaleOrPauseCampaignsPage() {
         <p className="text-slate-700">
           Budget decisions should follow break-even ROAS and cash flow constraints, not isolated daily spikes.
         </p>
+        
+        <BlogCalculatorCTA
+          calculatorName="Break-Even ROAS Calculator"
+          calculatorPath="/break-even-roas-by-margin"
+          description="Calculate your break-even ROAS from contribution margin first. This gives you the hard floor—any campaign below this threshold should pause, regardless of platform-reported efficiency."
+        />
+        
         <h2 className="text-2xl font-bold">Decision Matrix</h2>
         <div className="overflow-x-auto">
           <table className="w-full text-sm border border-slate-200">

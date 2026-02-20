@@ -2,8 +2,9 @@
 
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
-import { Download, Calculator, DollarSign, TrendingUp, AlertTriangle, RefreshCcw, ShoppingBag, BarChart3, RotateCcw, Share2 } from "lucide-react";
+import { Download, Calculator, DollarSign, TrendingUp, AlertTriangle, RefreshCcw, ShoppingBag, BarChart3, RotateCcw, Share2, Link as LinkIcon } from "lucide-react";
 import EmailCaptureCard from "@/app/components/EmailCaptureCard";
+import NextStepsRecommendation from "@/app/components/NextStepsRecommendation";
 import {
   appendHistoryForEmail,
   clearActiveSubscriberEmail,
@@ -11,6 +12,10 @@ import {
   getHistoryForEmail,
   type LocalHistoryEntry,
 } from "@/app/lib/local-user";
+import {
+  generateShareableUrl,
+  getResultsFromUrlParam,
+} from "@/app/lib/share-results";
 
 type RoasResults = {
   roas: string;
@@ -101,6 +106,24 @@ export default function RoasClient() {
       setRestoredFromStorage(Boolean(parsed.results));
     } catch {
       window.localStorage.removeItem(ROAS_STORAGE_KEY);
+    }
+  }, []);
+
+  // Load from URL share parameter (privacy-first - data in hash)
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const params = new URLSearchParams(window.location.search);
+    const sharedResults = getResultsFromUrlParam(params);
+
+    if (sharedResults) {
+      setAdSpend(sharedResults.adSpend);
+      setRevenue(sharedResults.revenue);
+      setProductCost(sharedResults.productCost);
+      setOrders(sharedResults.orders);
+      // Trigger calculation automatically if shared results exist
+      setTimeout(() => {
+        calculateButtonRef.current?.click();
+      }, 100);
     }
   }, []);
 
@@ -444,6 +467,34 @@ export default function RoasClient() {
     }
   };
 
+  const copyShareUrl = async () => {
+    if (!adSpend || !revenue) {
+      alert("Please enter Ad Spend and Revenue to generate a shareable link.");
+      return;
+    }
+
+    const shareUrl = generateShareableUrl({
+      adSpend: Number(adSpend),
+      revenue: Number(revenue),
+      productCost: Number(productCost),
+      orders: Number(orders),
+      timestamp: new Date().toISOString(),
+    });
+
+    try {
+      await navigator.clipboard.writeText(shareUrl);
+      setShareStatus("done");
+      void sendAnalyticsEvent("result_share_click", {
+        calculator_type: "roas",
+        share_type: "url_link",
+      });
+      setTimeout(() => setShareStatus("idle"), 3000);
+    } catch {
+      setShareStatus("error");
+      setTimeout(() => setShareStatus("idle"), 3000);
+    }
+  };
+
   const downloadHistory = () => {
     if (!activeEmail || historyEntries.length === 0) return;
     const rows = [
@@ -655,6 +706,10 @@ export default function RoasClient() {
         <p className="text-xs font-semibold uppercase tracking-wider">Ad slot: leaderboard 728x90</p>
       </div>
 
+      <div className="ad-mid-content-1 rounded-xl border border-slate-200 bg-slate-100 text-slate-600 w-full" style={{minHeight: '250px'}}>
+        <p className="text-xs font-semibold uppercase tracking-wider">Ad slot: responsive in-content 300x250</p>
+      </div>
+
       <section className="rounded-2xl border border-amber-200 bg-amber-50 p-4">
         <p className="text-sm text-amber-900">
           2026 Q1 benchmark update: DTC ROAS average is 2.3x and Shopify midpoint is 1.9x. Based on 500+ store snapshots, last updated February 20, 2026.
@@ -751,7 +806,7 @@ export default function RoasClient() {
             <div className="space-y-6">
                 
                 {/* ROW 1 */}
-              <div className="grid grid-cols-2 gap-6">
+              <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="space-y-2">
                         <label htmlFor="ad-spend" className="text-xs font-bold text-slate-500 uppercase tracking-wider">Total Ad Spend</label>
                         <div className="relative group">
@@ -791,7 +846,7 @@ export default function RoasClient() {
                 </div>
 
                 {/* ROW 2 */}
-                <div className="grid grid-cols-2 gap-6">
+                <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="space-y-2">
                         <label htmlFor="product-costs" className="text-xs font-bold text-slate-500 uppercase tracking-wider">Product Costs</label>
                         <div className="relative group">
@@ -1031,21 +1086,33 @@ export default function RoasClient() {
                             </Link>
                           </div>
                         </div>
+
+                        {/* NEW: COMPREHENSIVE NEXT STEPS RECOMMENDATION ENGINE */}
+                        {resultsRoas && (
+                          <NextStepsRecommendation
+                            roas={resultsRoas}
+                            breakEven={resultsBreakEven}
+                            profit={Number(results.profit)}
+                            isProfitable={results.isProfitable}
+                            cpa={Number(results.cpa)}
+                            aov={Number(results.aov)}
+                          />
+                        )}
                         
                         {/* HERO METRICS */}
-                        <div className="grid grid-cols-2 gap-4">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             <div className="bg-white p-5 rounded-2xl border border-slate-100 shadow-sm text-center transform transition hover:scale-105">
                                 <p className="text-xs text-slate-500 uppercase font-bold tracking-wider mb-1">ROAS Score</p>
-                                <p className="text-4xl font-black text-blue-600">{results.roas}x</p>
+                                <p className="text-3xl sm:text-4xl font-black text-blue-600">{results.roas}x</p>
                                 {industryComparison ? (
-                                  <p className={`mt-2 inline-flex rounded-full border px-2 py-1 text-[11px] font-semibold ${industryComparison.tone}`}>
+                                  <p className={`mt-2 inline-flex rounded-full border px-2 py-1 text-[10px] sm:text-[11px] font-semibold ${industryComparison.tone}`}>
                                     Compare to industry: {industryComparison.label}
                                   </p>
                                 ) : null}
                             </div>
                             <div className="bg-white p-5 rounded-2xl border border-slate-100 shadow-sm text-center transform transition hover:scale-105">
                                 <p className="text-xs text-slate-500 uppercase font-bold tracking-wider mb-1">Net Profit</p>
-                                <p className={`text-4xl font-black ${results.isProfitable ? "text-green-500" : "text-red-500"}`}>
+                                <p className={`text-3xl sm:text-4xl font-black ${results.isProfitable ? "text-green-500" : "text-red-500"}`}>
                                     ${results.profit}
                                 </p>
                             </div>
@@ -1127,15 +1194,28 @@ export default function RoasClient() {
                             </div>
                         </div>
 
-                        <div className="grid sm:grid-cols-3 gap-3">
+                        <div className="ad-mid-content-2 rounded-xl border border-slate-200 bg-slate-100 text-slate-600 w-full" style={{minHeight: '250px'}}>
+                          <p className="text-xs font-semibold uppercase tracking-wider">Ad slot: responsive in-content 300x250</p>
+                        </div>
+
+                        <div className="grid sm:grid-cols-2 gap-3">
                           <button
                               onClick={downloadReport}
                               disabled={exporting}
                               className="w-full bg-slate-800 hover:bg-slate-900 text-white py-4 rounded-xl font-bold flex items-center justify-center gap-3 transition shadow-lg hover:shadow-slate-500/20"
                               aria-label="Save campaign results to PDF-style report file"
                           >
-                              <Download size={20} aria-hidden="true" focusable="false" /> {exporting ? "Preparing Report..." : "Save to PDF"}
+                              <Download size={20} aria-hidden="true" focusable="false" /> {exporting ? "Preparing..." : "Save to PDF"}
                           </button>
+                          <button
+                              onClick={copyShareUrl}
+                              className="w-full bg-blue-600 hover:bg-blue-700 text-white py-4 rounded-xl font-bold flex items-center justify-center gap-3 transition shadow-lg hover:shadow-blue-500/20"
+                              aria-label="Generate a shareable link with your inputs"
+                          >
+                              <LinkIcon size={20} aria-hidden="true" focusable="false" /> Copy Share Link
+                          </button>
+                        </div>
+                        <div className="grid sm:grid-cols-2 gap-3">
                           <button
                               onClick={emailResultsReport}
                               className="w-full bg-white border border-slate-300 hover:bg-slate-100 text-slate-900 py-4 rounded-xl font-bold flex items-center justify-center gap-3 transition"

@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import CACCalculatorClient from "./CACCalculatorClient";
 import EmailCaptureCard from "@/app/components/EmailCaptureCard";
+import LastReviewedBadge from "@/app/components/LastReviewedBadge";
 
 export const metadata: Metadata = {
   title: "CAC Calculator (Customer Acquisition Cost)",
@@ -145,6 +146,8 @@ export default function CACCalculatorPage() {
             For consistent interpretation, keep spend, conversions, and attribution settings aligned to one period and one channel scope.
           </p>
         </section>
+
+        <LastReviewedBadge date="February 20, 2026" variant="section" />
 
         <CACCalculatorClient />
 

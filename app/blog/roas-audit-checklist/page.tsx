@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import BlogInternalLinks from "@/app/components/BlogInternalLinks";
 import ArticleJsonLd from "@/app/components/ArticleJsonLd";
+import BlogCalculatorCTA from "@/app/components/BlogCalculatorCTA";
 import { getBlogPostBySlug } from "@/app/lib/blog-posts";
 
 const blogMeta = getBlogPostBySlug("roas-audit-checklist");
@@ -36,6 +37,13 @@ export default function RoasAuditChecklistPage() {
         <Link href="/blog" className="text-sm text-slate-500 hover:text-blue-600 transition">Back to Blog</Link>
         <h1 className="text-3xl font-bold">ROAS Audit Checklist</h1>
         <p className="text-slate-700">Run this checklist weekly to keep optimization decisions grounded in trustworthy data.</p>
+        
+        <BlogCalculatorCTA
+          calculatorName="ROAS Calculator"
+          calculatorPath="/"
+          description="Start by calculating your current ROAS and break-even threshold. Use this as the baseline for your audit—any changes that don't move this metric meaningfully aren't worth the effort."
+        />
+        
         <h2 className="text-2xl font-bold">Checklist</h2>
         <ul className="list-disc pl-5 space-y-2 text-slate-700">
           <li>Validate conversion tracking and attribution windows.</li>

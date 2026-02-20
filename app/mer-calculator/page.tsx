@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import MERCalculatorClient from "./MERCalculatorClient";
 import EmailCaptureCard from "@/app/components/EmailCaptureCard";
+import LastReviewedBadge from "@/app/components/LastReviewedBadge";
 
 export const metadata: Metadata = {
   title: "MER Calculator (Marketing Efficiency Ratio)",
@@ -147,6 +148,8 @@ export default function MERCalculatorPage() {
             channel set, attribution window, and cost categories every time you compute it.
           </p>
         </section>
+
+        <LastReviewedBadge date="February 20, 2026" variant="section" />
 
         <MERCalculatorClient />
 

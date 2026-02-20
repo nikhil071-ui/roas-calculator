@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import BreakEvenByMarginClient from "./BreakEvenByMarginClient";
 import EmailCaptureCard from "@/app/components/EmailCaptureCard";
+import LastReviewedBadge from "@/app/components/LastReviewedBadge";
 
 export const metadata: Metadata = {
   title: "Break-even ROAS by Margin Calculator",
@@ -123,6 +124,8 @@ export default function BreakEvenByMarginPage() {
             Input margin should include variable costs, platform fees, and fulfillment to avoid overstating safe ROAS thresholds.
           </p>
         </section>
+
+        <LastReviewedBadge date="February 20, 2026" variant="section" />
 
         <BreakEvenByMarginClient />
 

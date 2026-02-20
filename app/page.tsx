@@ -6,6 +6,7 @@ import RoasClient from "./RoasClient";
 import LazyHomeSecondarySections from "@/app/components/LazyHomeSecondarySections";
 import EmailCaptureCard from "@/app/components/EmailCaptureCard";
 import ExitIntentLeadCapture from "@/app/components/ExitIntentLeadCapture";
+import HomepageTrustIndicators from "@/app/components/HomepageTrustIndicators";
 
 export const metadata: Metadata = {
   title: "ROAS Calculator for Paid Media Profitability",
@@ -192,6 +193,12 @@ export default function Home() {
                   The formula is straightforward: <strong>ROAS = Revenue / Ad Spend</strong>. Revenue is the sales value attributed to the campaigns you are evaluating, and ad spend is the media cost used to produce that same revenue. If revenue is $20,000 and spend is $5,000, ROAS is 4.0x. The math looks simple, but teams often misread it by combining mismatched variables, such as a 30-day revenue window with a 7-day spend window, or platform-attributed revenue against blended account spend. Those scope mismatches can distort performance and create poor budget decisions. Another common issue is excluding fees from spend while counting gross sales as revenue, which overstates true efficiency. Keep attribution model, channel scope, and date range aligned, then cross-check account efficiency with the <Link href="/mer-calculator" prefetch={false} className="text-blue-700 hover:underline">MER calculator</Link>.
                 </p>
               </article>
+            </section>
+
+            {/* TRUST INDICATORS */}
+            <section className="mt-8 mb-8">
+              <h2 className="text-xl font-bold text-slate-900 mb-4">Why Trust ROAS Tools</h2>
+              <HomepageTrustIndicators />
             </section>
 
             {/* THE CALCULATOR TOOL */}
