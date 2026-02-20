@@ -35,3 +35,19 @@ body {
 .focus-z-100:focus-visible {
   z-index: 100;
 }
+
+.ad-leaderboard {
+  min-height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.ad-sidebar {
+  min-height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}

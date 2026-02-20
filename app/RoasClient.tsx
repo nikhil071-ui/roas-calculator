@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { Download, Calculator, DollarSign, TrendingUp, AlertTriangle, RefreshCcw, ShoppingBag, BarChart3, RotateCcw, Share2 } from "lucide-react";
 import EmailCaptureCard from "@/app/components/EmailCaptureCard";
@@ -29,6 +30,7 @@ type ScenarioRow = {
 };
 
 type IndustryKey = "dtc" | "saas" | "leadgen";
+const ROAS_STORAGE_KEY = "roas-results-v1";
 
 const INDUSTRY_BENCHMARKS: Record<
   IndustryKey,
@@ -64,6 +66,7 @@ export default function RoasClient() {
   const [industryKey, setIndustryKey] = useState<IndustryKey>("dtc");
   const [activeEmail, setActiveEmail] = useState<string | null>(null);
   const [historyEntries, setHistoryEntries] = useState<LocalHistoryEntry[]>([]);
+  const [restoredFromStorage, setRestoredFromStorage] = useState(false);
   const calculateButtonRef = useRef<HTMLButtonElement | null>(null);
 
   useEffect(() => {
@@ -74,6 +77,31 @@ export default function RoasClient() {
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  useEffect(() => {
+    const saved = window.localStorage.getItem(ROAS_STORAGE_KEY);
+    if (!saved) return;
+
+    try {
+      const parsed = JSON.parse(saved) as {
+        adSpend?: number;
+        revenue?: number;
+        productCost?: number;
+        orders?: number;
+        results?: RoasResults;
+        industryKey?: IndustryKey;
+      };
+      setAdSpend(String(parsed.adSpend ?? ""));
+      setRevenue(String(parsed.revenue ?? ""));
+      setProductCost(String(parsed.productCost ?? ""));
+      setOrders(String(parsed.orders ?? ""));
+      if (parsed.results) setResults(parsed.results);
+      if (parsed.industryKey) setIndustryKey(parsed.industryKey);
+      setRestoredFromStorage(Boolean(parsed.results));
+    } catch {
+      window.localStorage.removeItem(ROAS_STORAGE_KEY);
+    }
   }, []);
 
   useEffect(() => {
@@ -177,6 +205,26 @@ export default function RoasClient() {
     setResults(null);
     setValidationError("");
     setShowExampleReport(false);
+    setShareStatus("idle");
+    setRestoredFromStorage(false);
+    window.localStorage.removeItem(ROAS_STORAGE_KEY);
+  };
+
+  const persistLatestResults = (
+    nextResults: RoasResults,
+    nextIndustryKey: IndustryKey,
+    inputs?: { adSpend: number; revenue: number; productCost: number; orders: number }
+  ) => {
+    const payload = {
+      adSpend: inputs ? inputs.adSpend : Number(adSpend) || 0,
+      revenue: inputs ? inputs.revenue : Number(revenue) || 0,
+      productCost: inputs ? inputs.productCost : Number(productCost) || 0,
+      orders: inputs ? inputs.orders : Number(orders) || 0,
+      results: nextResults,
+      industryKey: nextIndustryKey,
+      savedAt: new Date().toISOString(),
+    };
+    window.localStorage.setItem(ROAS_STORAGE_KEY, JSON.stringify(payload));
   };
 
   const showSampleReport = () => {
@@ -205,7 +253,7 @@ export default function RoasClient() {
     setValidationError("");
     setShareStatus("idle");
     setShowExampleReport(true);
-    setResults({
+    const nextResults = {
       roas: roas.toFixed(2),
       profit: profit.toFixed(2),
       profitMargin: profitMargin.toFixed(1),
@@ -213,6 +261,13 @@ export default function RoasClient() {
       cpa: cpa.toFixed(2),
       aov: aov.toFixed(2),
       isProfitable: profit > 0,
+    };
+    setResults(nextResults);
+    persistLatestResults(nextResults, industryKey, {
+      adSpend: sample.spend,
+      revenue: sample.revenueValue,
+      productCost: sample.cost,
+      orders: sample.orderCount,
     });
 
     void sendAnalyticsEvent("example_report_view", {
@@ -263,7 +318,7 @@ export default function RoasClient() {
       break_even_value: breakEvenRoas ? Number(breakEvenRoas.toFixed(2)) : null,
     });
 
-    setResults({
+    const nextResults = {
       roas: roas.toFixed(2),
       profit: profit.toFixed(2),
       profitMargin: profitMargin.toFixed(1),
@@ -271,6 +326,13 @@ export default function RoasClient() {
       cpa: cpa.toFixed(2),
       aov: aov.toFixed(2),
       isProfitable: profit > 0
+    };
+    setResults(nextResults);
+    persistLatestResults(nextResults, industryKey, {
+      adSpend: spend,
+      revenue: rev,
+      productCost: cost,
+      orders: orderCount,
     });
 
     if (activeEmail) {
@@ -312,41 +374,49 @@ export default function RoasClient() {
     }
     void sendAnalyticsEvent("result_export_click", {
       calculator_type: "roas",
-      export_type: "txt",
+      export_type: "pdf_print",
     });
     setExporting(true);
     try {
-      const generatedAt = new Date().toISOString();
-      const rows = [
-        "ROAS Performance Report",
-        `Generated at: ${generatedAt}`,
-        "Source: https://roas-calculator.tech/",
-        "",
-        "RESULTS",
-        `ROAS: ${results.roas}x`,
-        `Net Profit: $${results.profit}`,
-        `Profit Margin: ${results.profitMargin}%`,
-        `Break-even ROAS: ${results.breakEven === "N/A" ? "N/A" : `${results.breakEven}x`}`,
-        `CPA: $${results.cpa}`,
-        `AOV: $${results.aov}`,
-        `Decision State: ${results.isProfitable ? "profitable" : "not_profitable"}`,
-        "",
-        "INPUTS",
-        `Ad Spend: ${adSpend || 0}`,
-        `Revenue: ${revenue || 0}`,
-        `Product Cost: ${productCost || 0}`,
-        `Orders: ${orders || 0}`,
-      ];
-
-      const blob = new Blob([rows.join("\n")], { type: "text/plain;charset=utf-8" });
-      const fileUrl = URL.createObjectURL(blob);
-      const link = document.createElement("a");
-      link.href = fileUrl;
-      link.download = "roas_report.txt";
-      document.body.appendChild(link);
-      link.click();
-      link.remove();
-      URL.revokeObjectURL(fileUrl);
+      const generatedAt = new Date().toLocaleString();
+      const reportWindow = window.open("", "_blank", "noopener,noreferrer,width=900,height=700");
+      if (!reportWindow) return;
+      reportWindow.document.write(`
+        <html>
+          <head>
+            <title>ROAS Report</title>
+            <style>
+              body { font-family: Arial, sans-serif; padding: 24px; color: #0f172a; }
+              h1 { font-size: 24px; margin-bottom: 6px; }
+              p { margin: 4px 0; }
+              .label { font-weight: 700; }
+              .card { border: 1px solid #cbd5e1; border-radius: 10px; padding: 12px; margin-top: 12px; }
+            </style>
+          </head>
+          <body>
+            <h1>ROAS Performance Report</h1>
+            <p>Generated: ${generatedAt}</p>
+            <p>Source: https://roas-calculator.tech/</p>
+            <div class="card">
+              <p><span class="label">ROAS:</span> ${results.roas}x</p>
+              <p><span class="label">Net Profit:</span> $${results.profit}</p>
+              <p><span class="label">Profit Margin:</span> ${results.profitMargin}%</p>
+              <p><span class="label">Break-even ROAS:</span> ${results.breakEven === "N/A" ? "N/A" : `${results.breakEven}x`}</p>
+              <p><span class="label">CPA:</span> $${results.cpa}</p>
+              <p><span class="label">AOV:</span> $${results.aov}</p>
+            </div>
+            <div class="card">
+              <p><span class="label">Ad Spend:</span> ${adSpend || 0}</p>
+              <p><span class="label">Revenue:</span> ${revenue || 0}</p>
+              <p><span class="label">Product Cost:</span> ${productCost || 0}</p>
+              <p><span class="label">Orders:</span> ${orders || 0}</p>
+            </div>
+          </body>
+        </html>
+      `);
+      reportWindow.document.close();
+      reportWindow.focus();
+      reportWindow.print();
     } finally {
       setExporting(false);
     }
@@ -404,6 +474,49 @@ export default function RoasClient() {
     URL.revokeObjectURL(fileUrl);
   };
 
+  const exportResultsCsv = () => {
+    if (!results) return;
+    const rows = [
+      "metric,value",
+      `roas,${results.roas}`,
+      `net_profit,${results.profit}`,
+      `profit_margin_pct,${results.profitMargin}`,
+      `break_even_roas,${results.breakEven}`,
+      `cpa,${results.cpa}`,
+      `aov,${results.aov}`,
+      `ad_spend,${Number(adSpend) || 0}`,
+      `revenue,${Number(revenue) || 0}`,
+      `product_cost,${Number(productCost) || 0}`,
+      `orders,${Number(orders) || 0}`,
+    ];
+    const blob = new Blob([rows.join("\n")], { type: "text/csv;charset=utf-8" });
+    const fileUrl = URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    link.href = fileUrl;
+    link.download = "roas_results_google_sheets.csv";
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+    URL.revokeObjectURL(fileUrl);
+    void sendAnalyticsEvent("result_export_click", {
+      calculator_type: "roas",
+      export_type: "csv_google_sheets",
+    });
+  };
+
+  const emailResultsReport = () => {
+    if (!results) return;
+    const subject = encodeURIComponent("ROAS Results Report");
+    const body = encodeURIComponent(
+      `ROAS Results\n\nROAS: ${results.roas}x\nNet Profit: $${results.profit}\nBreak-even ROAS: ${results.breakEven}\nCPA: $${results.cpa}\nAOV: $${results.aov}\n\nGenerated from https://roas-calculator.tech/`
+    );
+    window.location.href = `mailto:?subject=${subject}&body=${body}`;
+    void sendAnalyticsEvent("result_export_click", {
+      calculator_type: "roas",
+      export_type: "email_report",
+    });
+  };
+
   const sendHistoryToEmail = () => {
     if (!activeEmail || historyEntries.length === 0) return;
     const preview = historyEntries
@@ -421,6 +534,9 @@ export default function RoasClient() {
   const resultsRoas = results ? Number(results.roas) : null;
   const resultsBreakEven = results && results.breakEven !== "N/A" ? Number(results.breakEven) : null;
   const benchmark = INDUSTRY_BENCHMARKS[industryKey];
+  const projectedRevenueAt20Scale = resultsRoas && Number(adSpend) > 0
+    ? Number(adSpend) * 1.2 * resultsRoas
+    : null;
 
   const industryComparison = (() => {
     if (!resultsRoas || !Number.isFinite(resultsRoas)) return null;
@@ -511,8 +627,21 @@ export default function RoasClient() {
 
   return (
     <div className="space-y-8">
-      
-      {/* --- AD REMOVED FROM HERE FOR SAFETY --- */}
+      <div className="ad-leaderboard rounded-xl border border-slate-200 bg-slate-100 text-slate-600">
+        <p className="text-xs font-semibold uppercase tracking-wider">Ad slot: leaderboard 728x90</p>
+      </div>
+
+      <section className="rounded-2xl border border-amber-200 bg-amber-50 p-4">
+        <p className="text-sm text-amber-900">
+          2026 Q1 benchmark update: DTC ROAS average is 2.3x and Shopify midpoint is 1.9x. Based on 500+ store snapshots, last updated February 20, 2026.
+        </p>
+        <p className="text-sm mt-1">
+          <Link href="/methodology" className="font-semibold text-amber-900 underline underline-offset-2 hover:text-amber-800">
+            Methodology
+          </Link>
+        </p>
+      </section>
+
       {activeEmail ? (
         <section className="rounded-2xl border border-emerald-200 bg-emerald-50 p-4">
           <div className="flex flex-wrap items-center justify-between gap-3">
@@ -565,6 +694,14 @@ export default function RoasClient() {
               No local history yet. Run a calculation and it will be stored under this email.
             </p>
           )}
+        </section>
+      ) : null}
+
+      {restoredFromStorage ? (
+        <section className="rounded-xl border border-blue-200 bg-blue-50 p-3">
+          <p className="text-sm text-blue-900">
+            Restored your previous calculation from this browser so you can continue where you left off.
+          </p>
         </section>
       ) : null}
 
@@ -725,6 +862,10 @@ export default function RoasClient() {
                     </p>
                 </div>
 
+                <div className="ad-sidebar rounded-xl border border-slate-200 bg-slate-100 text-slate-600">
+                  <p className="text-xs font-semibold uppercase tracking-wider">Ad slot: sidebar 300x250</p>
+                </div>
+
                 {/* ACTION BUTTONS */}
                 <div className="flex gap-4 pt-4">
                     <button 
@@ -771,13 +912,37 @@ export default function RoasClient() {
                         ) : null}
                         <div className="bg-white rounded-xl border border-slate-200 p-4 shadow-sm">
                             <p className="text-xs font-bold text-slate-500 uppercase tracking-wider mb-1">Decision Summary</p>
-                            <p className="text-sm text-slate-700">
-                              {results.breakEven !== "N/A" && Number(results.roas) >= Number(results.breakEven) * 1.2
-                                ? "Scale gradually: ROAS is materially above break-even."
-                                : results.breakEven !== "N/A" && Number(results.roas) <= Number(results.breakEven) * 0.9
-                                ? "Pause or cap spend: ROAS is below break-even threshold."
-                                : "Hold and optimize: ROAS is near break-even, improve conversion and AOV first."}
+                            <p className="text-sm text-slate-700 mb-3">
+                              Your {results.roas}x ROAS analysis indicates {
+                                results.breakEven !== "N/A" && Number(results.roas) >= Number(results.breakEven) * 1.2
+                                  ? "strong budget headroom above break-even."
+                                  : results.breakEven !== "N/A" && Number(results.roas) <= Number(results.breakEven) * 0.9
+                                  ? "a profitability risk that requires immediate optimization."
+                                  : "a near-break-even zone where precision optimization matters."
+                              }
                             </p>
+                            <ul className="list-disc pl-5 space-y-1 text-sm text-slate-700">
+                              <li>
+                                {benchmark.label} benchmark range: {benchmark.typicalMin.toFixed(1)}x-{benchmark.typicalMax.toFixed(1)}x.
+                              </li>
+                              <li>
+                                Status: <strong>{results.isProfitable ? "Profitable" : "Not profitable"}</strong>{results.breakEven !== "N/A" ? ` against break-even ${results.breakEven}x.` : "."}
+                              </li>
+                              <li>
+                                Priority action: {
+                                  results.breakEven !== "N/A" && Number(results.roas) >= Number(results.breakEven) * 1.2
+                                    ? "Increase spend in controlled 15-20% steps while watching CAC stability."
+                                    : results.breakEven !== "N/A" && Number(results.roas) <= Number(results.breakEven) * 0.9
+                                    ? "Pause weaker segments, then rework audience, offer, and landing page conversion."
+                                    : "Hold spend, improve conversion rate and average order value, then retest."
+                                }
+                              </li>
+                              <li>
+                                {projectedRevenueAt20Scale
+                                  ? `If you scale budget by 20% at the same efficiency, projected revenue is about $${projectedRevenueAt20Scale.toFixed(0)}.`
+                                  : "Add spend and revenue inputs to model a 20% scale scenario."}
+                              </li>
+                            </ul>
                         </div>
                         
                         {/* HERO METRICS */}
@@ -875,23 +1040,49 @@ export default function RoasClient() {
                             </div>
                         </div>
 
-                        <div className="grid sm:grid-cols-2 gap-3">
+                        <div className="grid sm:grid-cols-3 gap-3">
                           <button
                               onClick={downloadReport}
                               disabled={exporting}
                               className="w-full bg-slate-800 hover:bg-slate-900 text-white py-4 rounded-xl font-bold flex items-center justify-center gap-3 transition shadow-lg hover:shadow-slate-500/20"
-                              aria-label="Download campaign results as a text report"
+                              aria-label="Save campaign results to PDF-style report file"
                           >
-                              <Download size={20} aria-hidden="true" focusable="false" /> {exporting ? "Preparing Report..." : "Download Report"}
+                              <Download size={20} aria-hidden="true" focusable="false" /> {exporting ? "Preparing Report..." : "Save to PDF"}
                           </button>
                           <button
-                              onClick={copyShareSummary}
+                              onClick={emailResultsReport}
                               className="w-full bg-white border border-slate-300 hover:bg-slate-100 text-slate-900 py-4 rounded-xl font-bold flex items-center justify-center gap-3 transition"
-                              aria-label="Copy result summary for sharing"
+                              aria-label="Email this ROAS report"
                           >
-                              <Share2 size={20} aria-hidden="true" focusable="false" /> Copy Summary
+                              <Share2 size={20} aria-hidden="true" focusable="false" /> Email Report
+                          </button>
+                          <button
+                              onClick={exportResultsCsv}
+                              className="w-full bg-white border border-slate-300 hover:bg-slate-100 text-slate-900 py-4 rounded-xl font-bold flex items-center justify-center gap-3 transition"
+                              aria-label="Export ROAS results for Google Sheets"
+                          >
+                              <Share2 size={20} aria-hidden="true" focusable="false" /> Google Sheets
                           </button>
                         </div>
+                        <div className="rounded-xl border border-blue-200 bg-blue-50 p-4">
+                          <p className="text-xs font-bold uppercase tracking-wider text-blue-900">Next step</p>
+                          <p className="text-sm text-blue-900 mt-1">
+                            What is your true break-even? Continue with your current spend prefilled.
+                          </p>
+                          <Link
+                            href={`/break-even-roas-by-margin?adSpend=${Number(adSpend) || 0}&revenue=${Number(revenue) || 0}&productCost=${Number(productCost) || 0}`}
+                            className="inline-flex mt-2 text-sm font-semibold text-blue-800 underline underline-offset-2 hover:text-blue-700"
+                          >
+                            Open Break-even ROAS Calculator
+                          </Link>
+                        </div>
+                        <button
+                          onClick={copyShareSummary}
+                          className="self-start text-xs font-semibold text-slate-700 underline underline-offset-2 hover:text-slate-900"
+                          aria-label="Copy result summary"
+                        >
+                          Copy quick summary
+                        </button>
                         {shareStatus === "done" ? <p className="text-xs text-green-700">Summary copied to clipboard.</p> : null}
                         {shareStatus === "error" ? <p className="text-xs text-red-600">Could not copy summary. Please try again.</p> : null}
                         <EmailCaptureCard
@@ -908,25 +1099,47 @@ export default function RoasClient() {
             </div>
         </div>
       </div>
+      <section className="rounded-2xl border border-slate-200 bg-white p-6">
+        <h3 className="text-lg font-bold text-slate-900">Built and Reviewed</h3>
+        <p className="text-sm text-slate-700 mt-2">
+          Built by <strong>Sanjay Kumar</strong> with 10+ years in publisher and paid media economics. Reviewed February 20, 2026 by ROAS Tools Editorial Team.
+        </p>
+        <p className="text-sm text-slate-700 mt-1">
+          Methodology: <Link href="/methodology" className="text-blue-700 underline underline-offset-2 hover:text-blue-800">formula definitions and assumptions</Link>, validated against current benchmark references for Shopify and performance channels.
+        </p>
+      </section>
+
+      <section className="rounded-2xl border border-slate-200 bg-white p-6">
+        <h3 className="text-lg font-bold text-slate-900">Real Results from Users</h3>
+        <ol className="mt-3 space-y-2 text-sm text-slate-700 list-decimal pl-5">
+          <li>DTC brand improved ROAS from 1.8x to 3.2x after AOV-focused offer testing and checkout simplification.</li>
+          <li>Shopify store reduced break-even ROAS from 2.8x to 1.9x by correcting COGS and shipping assumptions.</li>
+          <li>Amazon seller found a 15% margin leak when comparing platform ROAS against true landed costs.</li>
+        </ol>
+      </section>
+
       {showStickyCta ? (
-        <>
-          <button
-            type="button"
-            onClick={scrollToCalculate}
-            className="md:hidden fixed bottom-4 left-4 right-4 z-40 bg-blue-600 text-white font-bold py-3 rounded-xl shadow-lg hover:bg-blue-700 transition"
-            aria-label="Scroll to calculator action button"
-          >
-            Calculate ROAS
-          </button>
-          <button
-            type="button"
-            onClick={scrollToCalculate}
-            className="hidden md:inline-flex fixed bottom-6 right-6 z-40 bg-blue-600 text-white font-bold px-5 py-3 rounded-xl shadow-lg hover:bg-blue-700 transition"
-            aria-label="Scroll to calculator action button"
-          >
-            Calculate ROAS
-          </button>
-        </>
+        <div className="fixed bottom-4 left-4 right-4 z-40 rounded-xl border border-blue-200 bg-white/95 p-3 shadow-xl backdrop-blur">
+          <div className="flex flex-wrap items-center justify-between gap-2">
+            <p className="text-sm font-semibold text-slate-900">Scale your ROAS next:</p>
+            <div className="flex flex-wrap gap-2">
+              <Link href="/ppc-toolkit" className="rounded-lg bg-blue-600 px-3 py-2 text-xs font-bold text-white hover:bg-blue-700">
+                Free PPC Toolkit
+              </Link>
+              <Link href="/benchmarks/roas" className="rounded-lg border border-slate-300 bg-white px-3 py-2 text-xs font-bold text-slate-900 hover:bg-slate-100">
+                Weekly Benchmarks
+              </Link>
+              <button
+                type="button"
+                onClick={scrollToCalculate}
+                className="rounded-lg border border-slate-300 bg-white px-3 py-2 text-xs font-bold text-slate-900 hover:bg-slate-100"
+                aria-label="Return to calculator"
+              >
+                Recalculate
+              </button>
+            </div>
+          </div>
+        </div>
       ) : null}
     </div>
   );

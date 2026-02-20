@@ -51,10 +51,10 @@ export default function Home() {
   const webApplicationData = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "ROAS Calculator - Free Tool for Digital Marketing",
-    "description": "Calculate Return on Ad Spend (ROAS), evaluate break-even targets, and model campaign profitability using practical marketing inputs.",
+    "name": "ROAS Calculator",
+    "description": "Free ROAS calculator with Shopify and Amazon benchmark context, break-even guidance, and campaign profitability outputs.",
     "url": "https://roas-calculator.tech/",
-    "applicationCategory": "FinanceApplication",
+    "applicationCategory": "BusinessApplication",
     "operatingSystem": "Web",
     "browserRequirements": "Requires JavaScript enabled browser",
     "author": {
