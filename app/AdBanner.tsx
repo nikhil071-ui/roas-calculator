@@ -7,13 +7,29 @@ type AdSenseWindow = Window & {
   adsbygoogle?: unknown[];
 };
 
+const ADS_KEY = "adsense_consent";
+const CONSENT_EVENT = "consent-preferences-updated";
+
 export default function AdBanner() {
   const containerRef = useRef<HTMLDivElement>(null);
   const adRef = useRef<HTMLModElement>(null);
   const [shouldLoadAd, setShouldLoadAd] = useState(false);
+  const [hasConsent, setHasConsent] = useState(false);
 
   useEffect(() => {
-    if (shouldLoadAd || !containerRef.current) {
+    const syncConsent = () => {
+      if (typeof window === "undefined") return;
+      const consent = window.localStorage.getItem(ADS_KEY);
+      setHasConsent(consent === "granted");
+    };
+
+    syncConsent();
+    window.addEventListener(CONSENT_EVENT, syncConsent);
+    return () => window.removeEventListener(CONSENT_EVENT, syncConsent);
+  }, []);
+
+  useEffect(() => {
+    if (!hasConsent || shouldLoadAd || !containerRef.current) {
       return;
     }
 
@@ -32,7 +48,7 @@ export default function AdBanner() {
   }, [shouldLoadAd]);
 
   useEffect(() => {
-    if (!shouldLoadAd || typeof window === "undefined") {
+    if (!hasConsent || !shouldLoadAd || typeof window === "undefined") {
       return;
     }
 

@@ -280,11 +280,6 @@ export default async function DynamicRoasPage({ params }: { params: Promise<{ sl
           </div>
         </section>
 
-        {/* --- AD SLOT 1: TOP --- */}
-        <div className="w-full flex justify-center bg-gray-50 rounded-lg p-2 my-8">
-          <AdBanner />
-        </div>
-
         {/* THE TOOL ITSELF */}
         {/* We wrap the existing tool in a nice container */}
         <div className="bg-white rounded-3xl shadow-xl border border-gray-200 overflow-hidden p-1">

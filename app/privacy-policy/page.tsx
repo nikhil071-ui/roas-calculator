@@ -98,10 +98,17 @@ export default function PrivacyPolicy() {
                 <div>
                     <h2 className="text-xl font-bold text-slate-900 mb-3">Cookies & Google AdSense</h2>
                     <p className="text-slate-600 leading-relaxed mb-4">
-                        We use third-party vendors, specifically **Google AdSense**, to serve ads. Google uses cookies (including the DoubleClick cookie) to serve ads based on your prior visits to our website or other websites on the Internet.
+                        We use third-party vendors, including <strong>Google AdSense</strong>, to serve ads. Google uses cookies (including the DoubleClick cookie) to serve ads based on your prior visits to our website or other websites on the Internet.
+                    </p>
+                    <p className="text-slate-600 leading-relaxed mb-4">
+                        Third-party vendors may place and read cookies on your browser and may use web beacons or IP addresses to collect information as a result of ad serving on this website.
+                    </p>
+                    <p className="text-slate-600 leading-relaxed mb-4">
+                        We also use first-party cookies to remember email subscription access and preferences (for example: lead magnet access and subscriber status). We store consent choices in your browser storage so we can honor your selections on future visits.
                     </p>
                     <ul className="list-disc pl-5 space-y-2 text-slate-600">
                         <li>Google's advertising requirements can be summed up by <a href="https://support.google.com/adwordspolicy/answer/1316548" target="_blank" className="text-blue-600 underline hover:text-blue-800">Google's Advertising Principles</a>.</li>
+                        <li>Read how Google uses data when you use our partners' sites or apps: <a href="https://policies.google.com/technologies/partner-sites" target="_blank" className="text-blue-600 underline hover:text-blue-800">Google Partner Sites Policy</a>.</li>
                         <li>You can opt-out of personalized advertising by visiting <a href="https://www.google.com/settings/ads" target="_blank" className="text-blue-600 underline hover:text-blue-800">Google Ads Settings</a>.</li>
                     </ul>
                 </div>
@@ -143,7 +150,10 @@ export default function PrivacyPolicy() {
                     </p>
                     <ul className="list-disc pl-5 space-y-3 text-slate-600">
                         <li>
-                            <strong>Vercel Analytics:</strong> Collects anonymous usage statistics (page views, device types, geographic regions) to help us understand traffic patterns. No personal identifiers are collected.
+                            <strong>Google Analytics:</strong> Collects anonymous usage statistics (page views, device types, geographic regions) to help us understand traffic patterns. Analytics collection can be disabled by declining analytics consent.
+                        </li>
+                        <li>
+                            <strong>Vercel Analytics:</strong> Collects anonymous usage statistics to help us understand performance and page usage. No personal identifiers are collected.
                         </li>
                         <li>
                             <strong>Google Fonts:</strong> We load web fonts from Google's CDN. Google may collect technical information when fonts are requested.

@@ -143,7 +143,7 @@ export default function TermsOfService() {
                     </ul>
                 </div>
                 <p className="text-slate-700 leading-relaxed mb-4">
-                    We do collect anonymous usage analytics (page views, clicks, time on site) via Google Analytics to improve the Service. 
+                    We do collect anonymous usage analytics (page views, clicks, time on site) via Google Analytics and Vercel Analytics to improve the Service. 
                     This data does not include personally identifiable information (PII) or any content you input into the tools.
                 </p>
                 <p className="text-slate-700 leading-relaxed">

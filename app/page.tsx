@@ -5,7 +5,6 @@ import TrackedLink from "@/app/components/TrackedLink";
 import RoasClient from "./RoasClient";
 import LazyHomeSecondarySections from "@/app/components/LazyHomeSecondarySections";
 import EmailCaptureCard from "@/app/components/EmailCaptureCard";
-import ExitIntentLeadCapture from "@/app/components/ExitIntentLeadCapture";
 import HomepageTrustIndicators from "@/app/components/HomepageTrustIndicators";
 
 export const metadata: Metadata = {
@@ -138,8 +137,6 @@ export default function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqData) }}
       />
-      
-      <ExitIntentLeadCapture />
 
       {/* --- HERO SECTION --- */}
       <header className="bg-blue-900 text-white py-10 md:py-12">
@@ -462,9 +459,13 @@ export default function Home() {
 
             <LazyHomeSecondarySections />
 
-            <section className="mt-4 mb-8 bg-slate-50 border border-slate-200 rounded-2xl p-4">
-              <p className="text-sm text-slate-700">
-                Last Updated: February 2026. Calculations on this page follow widely accepted digital advertising measurement practices, including consistent attribution windows, aligned ad spend and revenue scope, and standard ROAS methodology used by performance marketing teams for planning, evaluation, and ongoing budget governance.
+            <section className="mt-4 mb-8 bg-blue-50 border border-blue-200 rounded-2xl p-5">
+              <h3 className="text-sm font-bold text-blue-900 mb-2">Important Disclaimer</h3>
+              <p className="text-sm text-blue-800 mb-3">
+                The ROAS Calculator and all financial tools on this site are provided for educational and informational purposes only. They do not constitute professional financial, investment, tax, or legal advice. Results are based on the data you provide and standard marketing formulas. Always consult with qualified professionals before making business or financial decisions.
+              </p>
+              <p className="text-xs text-blue-700">
+                Last Updated: February 2026. Calculations follow widely accepted digital advertising measurement practices. All data processing happens locally in your browser - we do not store or transmit your inputs.
               </p>
             </section>
         </div>
