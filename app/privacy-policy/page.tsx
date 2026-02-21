@@ -104,7 +104,7 @@ export default function PrivacyPolicy() {
                         Third-party vendors may place and read cookies on your browser and may use web beacons or IP addresses to collect information as a result of ad serving on this website.
                     </p>
                     <p className="text-slate-600 leading-relaxed mb-4">
-                        We also use first-party cookies to remember email subscription access and preferences (for example: lead magnet access and subscriber status). We store consent choices in your browser storage so we can honor your selections on future visits.
+                        We also use first-party cookies to remember email subscription access and preferences (for example: lead magnet access and subscriber status).
                     </p>
                     <ul className="list-disc pl-5 space-y-2 text-slate-600">
                         <li>Google's advertising requirements can be summed up by <a href="https://support.google.com/adwordspolicy/answer/1316548" target="_blank" className="text-blue-600 underline hover:text-blue-800">Google's Advertising Principles</a>.</li>
@@ -150,7 +150,7 @@ export default function PrivacyPolicy() {
                     </p>
                     <ul className="list-disc pl-5 space-y-3 text-slate-600">
                         <li>
-                            <strong>Google Analytics:</strong> Collects anonymous usage statistics (page views, device types, geographic regions) to help us understand traffic patterns. Analytics collection can be disabled by declining analytics consent.
+                            <strong>Google Analytics:</strong> Collects anonymous usage statistics (page views, device types, geographic regions) to help us understand traffic patterns. You can opt out using browser settings or Google tools.
                         </li>
                         <li>
                             <strong>Vercel Analytics:</strong> Collects anonymous usage statistics to help us understand performance and page usage. No personal identifiers are collected.

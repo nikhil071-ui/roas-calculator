@@ -4,7 +4,6 @@ import Link from "next/link";
 import { Analytics } from "@vercel/analytics/react";
 import WebVitals from "@/app/components/WebVitals";
 import AnalyticsScripts from "@/app/components/AnalyticsScripts";
-import CookieConsentBanner from "@/app/components/CookieConsentBanner";
 import "./globals.css";
 import { DEFAULT_OPEN_GRAPH, SITE_URL } from "./seo";
 
@@ -61,6 +60,13 @@ export default function RootLayout({
         
         {/* --- GOOGLE SEARCH CONSOLE VERIFICATION --- */}
         <meta name="google-site-verification" content="google07479700bcc28a6c" />
+
+        {/* --- GOOGLE ADSENSE TAG (Funding Choices) --- */}
+        <script
+          async
+          crossOrigin="anonymous"
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4649521973867824"
+        />
 
       </head>
       <body className={`${inter.className} bg-gray-50 text-gray-900 flex flex-col min-h-screen`}>
@@ -224,8 +230,6 @@ export default function RootLayout({
             <p>(c) 2026 ROAS Tools Inc. All rights reserved.</p>
           </div>
         </footer>
-
-        <CookieConsentBanner />
 
       </body>
     </html>
