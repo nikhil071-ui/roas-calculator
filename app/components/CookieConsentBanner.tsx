@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 const ADS_KEY = "adsense_consent";
 const ANALYTICS_KEY = "analytics_consent";
@@ -29,23 +29,17 @@ const writeConsent = (value: ConsentState) => {
 };
 
 export default function CookieConsentBanner() {
-  const [isVisible, setIsVisible] = useState(false);
-  const [showSettings, setShowSettings] = useState(false);
-  const [consent, setConsent] = useState<ConsentState>({ ads: false, analytics: false });
-
-  useEffect(() => {
+  const [isVisible, setIsVisible] = useState(() => {
     const ads = readConsent(ADS_KEY);
     const analytics = readConsent(ANALYTICS_KEY);
-
-    if (ads && analytics) {
-      setIsVisible(false);
-      setConsent({ ads: ads === "granted", analytics: analytics === "granted" });
-      return;
-    }
-
-    setConsent({ ads: ads === "granted", analytics: analytics === "granted" });
-    setIsVisible(true);
-  }, []);
+    return !(ads && analytics);
+  });
+  const [showSettings, setShowSettings] = useState(false);
+  const [consent, setConsent] = useState<ConsentState>(() => {
+    const ads = readConsent(ADS_KEY);
+    const analytics = readConsent(ANALYTICS_KEY);
+    return { ads: ads === "granted", analytics: analytics === "granted" };
+  });
 
   const acceptAll = () => {
     writeConsent({ ads: true, analytics: true });
