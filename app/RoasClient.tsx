@@ -5,6 +5,7 @@ import { useEffect, useRef, useState } from "react";
 import { Download, Calculator, DollarSign, TrendingUp, AlertTriangle, RefreshCcw, ShoppingBag, BarChart3, RotateCcw, Share2, Link as LinkIcon } from "lucide-react";
 import EmailCaptureCard from "@/app/components/EmailCaptureCard";
 import NextStepsRecommendation from "@/app/components/NextStepsRecommendation";
+import TrackedDownloadLink from "@/app/components/TrackedDownloadLink";
 import {
   appendHistoryForEmail,
   clearActiveSubscriberEmail,
@@ -693,12 +694,15 @@ export default function RoasClient() {
               <p className="text-xs text-slate-600 mt-1">Get our free Google Sheets template to monitor campaigns weekly.</p>
             </div>
           </div>
-          <Link 
-            href="#lead-magnet-section"
+          <TrackedDownloadLink
+            href="/resources/roas-tracking-template.csv"
+            templateName="roas_tracking_template"
+            fileType="csv"
+            sourcePage="/"
             className="w-full inline-block text-center text-xs font-bold bg-emerald-600 hover:bg-emerald-700 text-white py-2 rounded-lg transition"
           >
             Download Template
-          </Link>
+          </TrackedDownloadLink>
         </div>
       </div>
 
