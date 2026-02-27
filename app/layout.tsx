@@ -1,9 +1,9 @@
 import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import Link from "next/link";
-import { Analytics } from "@vercel/analytics/react";
 import WebVitals from "@/app/components/WebVitals";
 import AnalyticsScripts from "@/app/components/AnalyticsScripts";
+import CookieConsentBanner from "@/app/components/CookieConsentBanner";
 import "./globals.css";
 import { DEFAULT_OPEN_GRAPH, SITE_URL } from "./seo";
 
@@ -154,9 +154,6 @@ export default function RootLayout({
         {/* --- MAIN CONTENT --- */}
         <div id="main-content" className="grow" tabIndex={-1}>
             {children}
-            {process.env.NODE_ENV === "production" && process.env.NEXT_PUBLIC_ENABLE_VERCEL_ANALYTICS === "true" ? (
-              <Analytics />
-            ) : null}
             <WebVitals />
         </div>
 
@@ -230,6 +227,7 @@ export default function RootLayout({
             <p>(c) 2026 ROAS Tools Inc. All rights reserved.</p>
           </div>
         </footer>
+        <CookieConsentBanner />
 
       </body>
     </html>

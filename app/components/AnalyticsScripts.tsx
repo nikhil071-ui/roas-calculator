@@ -1,9 +1,11 @@
 "use client";
 
+import { Analytics } from "@vercel/analytics/react";
 import { useEffect, useState } from "react";
 import Script from "next/script";
 
 const GA_ID = "G-QQF9NJDQSZ";
+const CONSENT_EVENT = "consent-preferences-updated";
 const readConsent = () =>
   typeof window !== "undefined" && window.localStorage.getItem("analytics_consent") === "granted";
 
@@ -11,6 +13,10 @@ export default function AnalyticsScripts() {
   const [enabled, setEnabled] = useState(() => readConsent());
 
   useEffect(() => {
+    const syncConsent = () => {
+      setEnabled(readConsent());
+    };
+
     const onStorage = (event: StorageEvent) => {
       if (event.key === "analytics_consent") {
         setEnabled(event.newValue === "granted");
@@ -18,8 +24,10 @@ export default function AnalyticsScripts() {
     };
 
     window.addEventListener("storage", onStorage);
+    window.addEventListener(CONSENT_EVENT, syncConsent);
     return () => {
       window.removeEventListener("storage", onStorage);
+      window.removeEventListener(CONSENT_EVENT, syncConsent);
     };
   }, []);
 
@@ -29,6 +37,7 @@ export default function AnalyticsScripts() {
 
   return (
     <>
+      {process.env.NODE_ENV === "production" ? <Analytics /> : null}
       <Script
         id="google-analytics-src"
         async
