@@ -1,0 +1,17 @@
+Currency Transfer Checklist
+
+1) Compare rates
+- Check mid-market rate first
+- Compare 2-3 providers
+
+2) Identify hidden fees
+- Look for exchange rate markup
+- Check transfer fees and receiving fees
+
+3) Timing
+- Avoid weekends for large transfers
+- Consider limit orders if available
+
+4) Final verification
+- Confirm recipient amount in local currency
+- Save confirmation and receipt

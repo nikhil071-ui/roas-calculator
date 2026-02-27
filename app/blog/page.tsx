@@ -144,6 +144,42 @@ const blogPosts: BlogPost[] = [
     readTime: "7 min",
     wordCount: 1010,
   },
+  {
+    title: "Image Compression Technical Guide: Quality vs File Size",
+    description:
+      "Detailed guide on reducing image size to specific KB limits while preserving readability and clarity.",
+    category: "Technical Guide",
+    categoryColor: "bg-slate-100 text-slate-900",
+    icon: <BookOpen size={24} className="text-slate-600" />,
+    href: "/blog/image-compression-technical",
+    date: "2026",
+    readTime: "10 min",
+    wordCount: 1600,
+  },
+  {
+    title: "PDF Compression Guide: Keep Files Under Upload Limits",
+    description:
+      "Step-by-step process to create and compress PDFs for strict upload portals and exam forms.",
+    category: "Technical Guide",
+    categoryColor: "bg-slate-100 text-slate-900",
+    icon: <BookOpen size={24} className="text-slate-600" />,
+    href: "/blog/pdf-compression-guide",
+    date: "2026",
+    readTime: "9 min",
+    wordCount: 1450,
+  },
+  {
+    title: "Currency Exchange Guide: Rates, Spreads, and Transfer Fees",
+    description:
+      "Learn how live exchange rates work, where hidden spread costs appear, and how to reduce transfer loss.",
+    category: "Finance Guide",
+    categoryColor: "bg-green-100 text-green-900",
+    icon: <DollarSign size={24} className="text-green-600" />,
+    href: "/blog/currency-exchange-guide",
+    date: "2026",
+    readTime: "8 min",
+    wordCount: 1320,
+  },
 ];
 
 export default function BlogIndex() {

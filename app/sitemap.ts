@@ -46,6 +46,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     '/amazon-roas',
     '/lead-generation-roas',
     '/saas-cac-payback',
+    '/image-compressor',
+    '/pdf-converter',
+    '/currency-converter',
+    '/blog/image-compression-technical',
+    '/blog/pdf-compression-guide',
+    '/blog/currency-exchange-guide',
   ]);
 
   const staticRoutes = [
@@ -93,6 +99,19 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     '/faq',
     '/terms',
     '/privacy-policy',
+    '/image-compressor',
+    '/image-compressor/guide',
+    '/image-compressor/faq',
+    '/image-compressor/comprehensive-guide',
+    '/pdf-converter',
+    '/pdf-converter/guide',
+    '/pdf-converter/faq',
+    '/currency-converter',
+    '/currency-converter/guide',
+    '/currency-converter/faq',
+    '/blog/image-compression-technical',
+    '/blog/pdf-compression-guide',
+    '/blog/currency-exchange-guide',
   ];
   const blogRoutes = BLOG_POSTS.map((post) => `/blog/${post.slug}`);
   const allStaticRoutes = [...new Set([...staticRoutes, ...blogRoutes])];
@@ -112,6 +131,42 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     'target-cpa',
     'pinterest-ads',
   ];
+  const compressorSlugs = [
+    'jpeg-to-50kb',
+    'image-to-20kb',
+    'reduce-image-size-in-kb',
+    'passport-photo-size',
+    'compress-png-to-100kb',
+    'compress-image-for-web',
+    'resize-pixel-perfect',
+    'bulk-image-compressor',
+    'ssc-chsl-photo-resizer',
+    'upsc-photo-resizer',
+  ];
+  const pdfSlugs = [
+    'jpg-to-pdf',
+    'png-to-pdf',
+    'merge-photos-to-pdf',
+    'images-to-pdf',
+    'screenshot-to-pdf',
+    'iphone-photo-to-pdf',
+    'create-pdf-assignment',
+    'receipt-scanner-pdf',
+    'instagram-to-pdf',
+    'document-photo-to-pdf',
+  ];
+  const currencySlugs = [
+    'usd-to-inr',
+    'eur-to-usd',
+    'gbp-to-inr',
+    'aed-to-inr',
+    'cad-to-inr',
+    'aud-to-usd',
+    'usd-to-pkr',
+    'jpy-to-usd',
+    'usd-to-php',
+    'crypto-converter',
+  ];
 
   return [
     ...allStaticRoutes.map((route) => ({
@@ -122,6 +177,24 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     })),
     ...roasSlugs.map((slug) => ({
       url: `${baseUrl}/roas/${slug}`,
+      lastModified,
+      changeFrequency: 'weekly' as const,
+      priority: 0.8,
+    })),
+    ...compressorSlugs.map((slug) => ({
+      url: `${baseUrl}/compressor/${slug}`,
+      lastModified,
+      changeFrequency: 'weekly' as const,
+      priority: 0.8,
+    })),
+    ...pdfSlugs.map((slug) => ({
+      url: `${baseUrl}/pdf/${slug}`,
+      lastModified,
+      changeFrequency: 'weekly' as const,
+      priority: 0.8,
+    })),
+    ...currencySlugs.map((slug) => ({
+      url: `${baseUrl}/currency/${slug}`,
       lastModified,
       changeFrequency: 'weekly' as const,
       priority: 0.8,

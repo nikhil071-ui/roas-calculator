@@ -3,7 +3,7 @@ import type { NextConfig } from "next";
 const contentSecurityPolicy = [
   "default-src 'self'",
   "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://pagead2.googlesyndication.com",
-  "connect-src 'self' https://www.google-analytics.com https://region1.google-analytics.com https://pagead2.googlesyndication.com https://ep1.adtrafficquality.google",
+  "connect-src 'self' https://www.google-analytics.com https://region1.google-analytics.com https://pagead2.googlesyndication.com https://ep1.adtrafficquality.google https://api.exchangerate-api.com",
   "img-src 'self' data: blob: https:",
   "style-src 'self' 'unsafe-inline'",
   "font-src 'self' data:",
@@ -33,51 +33,6 @@ const nextConfig: NextConfig = {
       {
         source: "/blog/roas-benchmarks",
         destination: "/blog/roas-benchmarks-2026",
-        permanent: true,
-      },
-      {
-        source: "/blog/image-compression-technical",
-        destination: "/blog",
-        permanent: true,
-      },
-      {
-        source: "/blog/pdf-compression-guide",
-        destination: "/blog",
-        permanent: true,
-      },
-      {
-        source: "/blog/currency-exchange-guide",
-        destination: "/blog",
-        permanent: true,
-      },
-      {
-        source: "/image-compressor/:path*",
-        destination: "/resources",
-        permanent: true,
-      },
-      {
-        source: "/pdf-converter/:path*",
-        destination: "/resources",
-        permanent: true,
-      },
-      {
-        source: "/currency-converter/:path*",
-        destination: "/resources",
-        permanent: true,
-      },
-      {
-        source: "/compressor/:path*",
-        destination: "/resources",
-        permanent: true,
-      },
-      {
-        source: "/pdf/:path*",
-        destination: "/resources",
-        permanent: true,
-      },
-      {
-        source: "/currency/:path*",
-        destination: "/resources",
         permanent: true,
       },
     ];

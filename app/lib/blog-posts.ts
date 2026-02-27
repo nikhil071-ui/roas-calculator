@@ -89,6 +89,36 @@ export const BLOG_POSTS: BlogPostMeta[] = [
     readTimeMinutes: 7,
     wordCount: 1010,
   },
+  {
+    slug: "image-compression-technical",
+    title: "Image Compression Technical Guide: Quality vs File Size",
+    description:
+      "Technical breakdown of image compression settings, file-size targets, and quality tradeoffs.",
+    publishedDate: "2024-11-08",
+    modifiedDate: "2026-02-27",
+    readTimeMinutes: 10,
+    wordCount: 1600,
+  },
+  {
+    slug: "pdf-compression-guide",
+    title: "PDF Compression Guide: Keep Files Under Upload Limits",
+    description:
+      "How to create and compress PDFs for strict upload portals without breaking readability.",
+    publishedDate: "2024-11-12",
+    modifiedDate: "2026-02-27",
+    readTimeMinutes: 9,
+    wordCount: 1450,
+  },
+  {
+    slug: "currency-exchange-guide",
+    title: "Currency Exchange Guide: Rates, Spreads, and Transfer Fees",
+    description:
+      "Practical guide to live FX rates, hidden spread costs, and smarter international transfers.",
+    publishedDate: "2024-11-20",
+    modifiedDate: "2026-02-27",
+    readTimeMinutes: 8,
+    wordCount: 1320,
+  },
 ];
 
 export function getBlogPostBySlug(slug: string): BlogPostMeta | undefined {

@@ -5,15 +5,7 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: '*',
       allow: '/',
-      disallow: [
-        '/private/',
-        '/image-compressor/',
-        '/pdf-converter/',
-        '/currency-converter/',
-        '/compressor/',
-        '/pdf/',
-        '/currency/',
-      ],
+      disallow: ['/private/'],
     },
     host: 'roas-calculator.tech',
     sitemap: 'https://roas-calculator.tech/sitemap.xml',
