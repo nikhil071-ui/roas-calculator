@@ -25,6 +25,12 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
+        source: "/:path*",
+        has: [{ type: "host", value: "roas-calculator-brown.vercel.app" }],
+        destination: "https://roas-calculator.tech/:path*",
+        permanent: true,
+      },
+      {
         source: "/blog/roas-benchmarks",
         destination: "/blog/roas-benchmarks-2026",
         permanent: true,

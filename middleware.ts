@@ -7,6 +7,11 @@ export function middleware(request: NextRequest) {
     url.hostname = "roas-calculator.tech";
     return NextResponse.redirect(url, 301);
   }
+  if (host === "roas-calculator-brown.vercel.app") {
+    const url = request.nextUrl.clone();
+    url.hostname = "roas-calculator.tech";
+    return NextResponse.redirect(url, 301);
+  }
 
   return NextResponse.next();
 }
