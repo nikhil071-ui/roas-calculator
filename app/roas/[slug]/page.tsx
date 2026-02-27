@@ -38,12 +38,12 @@ const SEO_DATA: Record<string, { title: string; desc: string; h1: string; subtex
     keywords: ["facebook ads roas", "meta ads profit", "break even roas facebook", "dropshipping calculator"]
   },
   "tiktok-ads": {
-    title: "TikTok Ads ROAS Calculator - Dropshipping Profit Tool",
-    desc: "Estimate your TikTok Spark Ads profit. Input your ad spend and revenue to see your true Return on Ad Spend (ROAS).",
+    title: "TikTok ROAS Calculator (2026): Ads Benchmark and Profit Tool",
+    desc: "Estimate TikTok Ads ROAS, compare against common benchmark ranges, and calculate true profit from ad spend and revenue.",
     h1: "TikTok Ads ROAS Calculator",
-    subtext: "Analyze profitability for TikTok Spark Ads.",
+    subtext: "Analyze profitability for TikTok Ads with benchmark context.",
     platform: "TikTok",
-    keywords: ["tiktok ads roas", "tiktok profit calculator", "spark ads roi", "dropshipping tiktok"]
+    keywords: ["tiktok ads roas", "roas tiktok", "tiktok roas benchmark", "tiktok profit calculator", "spark ads roi", "dropshipping tiktok"]
   },
   "google-ads": {
     title: "Google Ads ROAS & Break-Even Calculator",

@@ -2,9 +2,9 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "CAC vs CPA vs ROAS: Which Metric Should You Optimize?",
+  title: "CPA vs ROAS vs CAC: Which Metric Should You Optimize in 2026?",
   description:
-    "Practical comparison of CAC, CPA, and ROAS with formulas, use-cases, and a decision framework for growth teams.",
+    "Practical CPA vs ROAS vs CAC comparison with formulas, use cases, and a decision framework for campaign and budget decisions.",
   keywords: [
     "cac vs cpa",
     "cpa vs roas",
@@ -16,16 +16,16 @@ export const metadata: Metadata = {
     canonical: "https://roas-calculator.tech/comparisons/cac-vs-cpa-vs-roas",
   },
   openGraph: {
-    title: "CAC vs CPA vs ROAS: Which Metric Should You Optimize?",
+    title: "CPA vs ROAS vs CAC: Which Metric Should You Optimize in 2026?",
     description:
-      "Use this framework to decide when CAC, CPA, or ROAS should drive campaign and budget decisions.",
+      "Use this framework to decide when CPA, ROAS, or CAC should drive campaign and budget decisions.",
     url: "https://roas-calculator.tech/comparisons/cac-vs-cpa-vs-roas",
   },
   twitter: {
     card: "summary_large_image",
-    title: "CAC vs CPA vs ROAS: Which Metric Should You Optimize?",
+    title: "CPA vs ROAS vs CAC: Which Metric Should You Optimize in 2026?",
     description:
-      "Use this framework to decide when CAC, CPA, or ROAS should drive campaign and budget decisions.",
+      "Use this framework to decide when CPA, ROAS, or CAC should drive campaign and budget decisions.",
   },
 };
 
@@ -46,7 +46,7 @@ export default function CACvsCPAvsROASPage() {
           <Link href="/comparisons" className="text-sm text-slate-500 hover:text-blue-600 transition">
             Back to Comparisons
           </Link>
-          <h1 className="text-3xl md:text-4xl font-bold mt-2">CAC vs CPA vs ROAS</h1>
+          <h1 className="text-3xl md:text-4xl font-bold mt-2">CPA vs ROAS vs CAC</h1>
           <p className="text-slate-600 mt-3 max-w-3xl">
             Quick answer: optimize <strong>CPA</strong> for campaign efficiency, <strong>ROAS</strong> for revenue return, and <strong>CAC</strong> for business-level acquisition economics.
           </p>

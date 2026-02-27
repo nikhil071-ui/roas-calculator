@@ -2,9 +2,9 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "ROAS Benchmarks Hub 2026: Channel and Model Reference",
+  title: "ROAS Industry Benchmarks 2026: Channel Averages and Targets",
   description:
-    "Use current ROAS benchmark ranges by channel and business model, with practical interpretation tied to break-even thresholds.",
+    "Compare ROAS industry benchmarks for 2026 by channel and business model, then map ranges to your break-even target.",
   alternates: {
     canonical: "https://roas-calculator.tech/benchmarks/roas",
   },
@@ -18,9 +18,9 @@ export default function BenchmarksRoasPage() {
           <Link href="/" className="text-sm text-slate-500 hover:text-blue-600 transition">
             Back to Home
           </Link>
-          <h1 className="text-3xl md:text-4xl font-bold mt-2">ROAS Benchmarks Hub</h1>
+          <h1 className="text-3xl md:text-4xl font-bold mt-2">ROAS Industry Benchmarks 2026</h1>
           <p className="text-slate-600 mt-3 max-w-3xl">
-            Benchmark ROAS by channel and objective, then interpret performance against your own break-even point.
+            Benchmark ROAS by industry, channel, and objective, then interpret performance against your own break-even point.
           </p>
         </div>
 

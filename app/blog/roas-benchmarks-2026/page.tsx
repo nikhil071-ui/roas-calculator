@@ -7,9 +7,9 @@ import { getBlogPostBySlug } from "@/app/lib/blog-posts";
 const blogMeta = getBlogPostBySlug("roas-benchmarks-2026");
 
 export const metadata: Metadata = {
-  title: "ROAS Benchmarks 2026 by Channel and Industry",
+  title: "ROAS Industry Benchmarks 2026 by Channel, Niche, and Model",
   description:
-    "Updated 2026 ROAS benchmarks with break-even formula, channel ranges, and practical scale/hold/pause interpretation.",
+    "Updated ROAS industry benchmarks for 2026 with break-even formulas, channel ranges, and practical scale/hold/pause guidance.",
   keywords: [
     "roas benchmarks 2026",
     "google ads benchmark roas",
@@ -26,16 +26,16 @@ export const metadata: Metadata = {
     "article:word_count": `${blogMeta?.wordCount ?? 1220}`,
   },
   openGraph: {
-    title: "ROAS Benchmarks 2026 by Channel and Industry",
+    title: "ROAS Industry Benchmarks 2026 by Channel, Niche, and Model",
     description:
-      "Updated 2026 ROAS benchmarks with break-even formula, channel ranges, and practical scale/hold/pause interpretation.",
+      "Updated ROAS industry benchmarks for 2026 with break-even formulas, channel ranges, and practical scale/hold/pause guidance.",
     url: "https://roas-calculator.tech/blog/roas-benchmarks-2026",
   },
   twitter: {
     card: "summary_large_image",
-    title: "ROAS Benchmarks 2026 by Channel and Industry",
+    title: "ROAS Industry Benchmarks 2026 by Channel, Niche, and Model",
     description:
-      "Updated 2026 ROAS benchmarks with break-even formula, channel ranges, and practical scale/hold/pause interpretation.",
+      "Updated ROAS industry benchmarks for 2026 with break-even formulas, channel ranges, and practical scale/hold/pause guidance.",
   },
   authors: [{ name: "Priya Malhotra" }],
   publisher: "ROAS Tools",
@@ -69,7 +69,7 @@ export default function RoasBenchmarks2026Page() {
   const articleData = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    headline: "ROAS Benchmarks 2026: Updated Channel and Industry Ranges",
+    headline: "ROAS Industry Benchmarks 2026: Updated Channel and Industry Ranges",
     datePublished: blogMeta?.publishedDate ?? "2026-02-18",
     dateModified: blogMeta?.modifiedDate ?? "2026-02-18",
     wordCount: blogMeta?.wordCount ?? 1220,
@@ -102,7 +102,7 @@ export default function RoasBenchmarks2026Page() {
           <Link href="/blog" className="text-sm text-slate-500 hover:text-blue-600 transition">
             Back to Blog
           </Link>
-          <h1 className="text-3xl md:text-5xl font-bold mt-3">ROAS Benchmarks 2026: Channel and Industry Reference</h1>
+          <h1 className="text-3xl md:text-5xl font-bold mt-3">ROAS Industry Benchmarks 2026: Channel and Industry Reference</h1>
           <p className="text-slate-600 mt-4">
             Last updated: February 2026. Use these ranges as directional guidance and calibrate them with your contribution margin and payback target.
           </p>
