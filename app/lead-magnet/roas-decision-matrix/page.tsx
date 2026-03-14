@@ -10,6 +10,10 @@ export const metadata: Metadata = {
   title: "ROAS Decision Matrix (Lead Magnet)",
   description:
     "Get the ROAS Decision Matrix to standardize scale, hold, and pause decisions across paid media campaigns.",
+  robots: {
+    index: false,
+    follow: false,
+  },
   alternates: {
     canonical: "https://roas-calculator.tech/lead-magnet/roas-decision-matrix",
   },

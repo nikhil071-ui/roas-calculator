@@ -521,13 +521,13 @@ export default function ImageCompressorPage() {
           </div>
 
           <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
-            <h4 className="font-bold text-slate-900 mb-2">Background Remover (Coming Soon)</h4>
+            <h4 className="font-bold text-slate-900 mb-2">Photo Prep Guidelines</h4>
             <p className="text-sm text-slate-600 mb-3">
-              Automatically remove backgrounds and replace with white for professional ID photos that meet exam requirements.
+              Follow this practical guide to create compliant ID photos with plain backgrounds, correct crop, and upload-safe size.
             </p>
-            <p className="text-slate-400 text-sm font-semibold">
-              Launching Q2 2026
-            </p>
+            <Link href="/image-compressor/guide" className="text-blue-600 font-semibold hover:underline text-sm">
+              Open Photo Prep Guide &rarr;
+            </Link>
           </div>
         </div>
 

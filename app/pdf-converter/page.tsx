@@ -480,13 +480,13 @@ export default function PdfConverterPage() {
           </div>
 
           <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
-            <h4 className="font-bold text-slate-900 mb-2">PDF Editor (Coming Soon)</h4>
+            <h4 className="font-bold text-slate-900 mb-2">Document Upload Checklist</h4>
             <p className="text-sm text-slate-600 mb-3">
-              Need to add text, signatures, or annotations to your PDF? Our PDF editor will launch in Q2 2026.
+              Need to add text or signatures before upload? Follow our checklist and size workflow for exam and portal submissions.
             </p>
-            <p className="text-slate-400 text-sm font-semibold">
-              Launching Soon
-            </p>
+            <Link href="/resources/seo-9of10-checklist" className="text-blue-600 font-semibold hover:underline text-sm">
+              Open Upload Checklist &rarr;
+            </Link>
           </div>
         </div>
 
