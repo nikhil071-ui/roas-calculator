@@ -113,9 +113,9 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     description: data.desc,
     keywords: data.keywords,
     robots: {
-      index: true,
-      follow: true,
-      nocache: false,
+      index: false,
+      follow: false,
+      nocache: true,
     },
     alternates: {
       canonical: `https://roas-calculator.tech/pdf/${slug}`,

@@ -70,6 +70,7 @@ export default function RootLayout({
 
       </head>
       <body className={`${inter.className} bg-gray-50 text-gray-900 flex flex-col min-h-screen`}>
+        <CookieConsentBanner />
         <a
           href="#main-content"
           className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus-z-100 focus:bg-white focus:text-slate-900 focus:px-4 focus:py-2 focus:rounded-md focus:shadow-lg"
@@ -227,7 +228,6 @@ export default function RootLayout({
             <p>(c) 2026 ROAS Tools Inc. All rights reserved.</p>
           </div>
         </footer>
-        <CookieConsentBanner />
 
       </body>
     </html>

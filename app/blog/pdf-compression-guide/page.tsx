@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://roas-calculator.tech/blog/pdf-compression-guide",
   },
-  robots: { index: true, follow: true },
+  robots: { index: false, follow: false, nocache: true },
   other: {
     "article:read_time": `${blogMeta?.readTimeMinutes ?? 11} min`,
     "article:word_count": `${blogMeta?.wordCount ?? 1680}`,

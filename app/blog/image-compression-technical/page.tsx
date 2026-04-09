@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://roas-calculator.tech/blog/image-compression-technical",
   },
-  robots: { index: true, follow: true },
+  robots: { index: false, follow: false, nocache: true },
   other: {
     "article:read_time": `${blogMeta?.readTimeMinutes ?? 10} min`,
     "article:word_count": `${blogMeta?.wordCount ?? 1560}`,

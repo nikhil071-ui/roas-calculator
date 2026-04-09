@@ -163,8 +163,10 @@ export default function RoasClient() {
     break_even_value: number | null;
   }) => {
     if (typeof window === "undefined") return;
-    const consent = window.localStorage.getItem("analytics_consent");
-    if (consent !== "granted") return;
+    const hasAnalyticsConsent = document.cookie
+      .split("; ")
+      .some((item) => item === "analytics_consent=granted");
+    if (!hasAnalyticsConsent) return;
 
     const body = JSON.stringify({
       ...payload,

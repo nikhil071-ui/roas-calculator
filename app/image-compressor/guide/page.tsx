@@ -27,6 +27,11 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://roas-calculator.tech/image-compressor/guide",
   },
+  robots: {
+    index: false,
+    follow: false,
+    nocache: true,
+  },
 };
 
 export default function ImageCompressionGuide() {

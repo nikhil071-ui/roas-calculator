@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://roas-calculator.tech/blog/currency-exchange-guide",
   },
-  robots: { index: true, follow: true },
+  robots: { index: false, follow: false, nocache: true },
   other: {
     "article:read_time": `${blogMeta?.readTimeMinutes ?? 13} min`,
     "article:word_count": `${blogMeta?.wordCount ?? 2010}`,

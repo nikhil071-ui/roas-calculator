@@ -123,43 +123,43 @@ export default function About() {
                 <div>
                     <h2 className="text-xl font-bold text-slate-900 mb-3">Our Story & Background</h2>
                     <p className="text-slate-600 leading-relaxed mb-4">
-                        ROAS Tools was founded in 2024 by a team of digital marketing professionals who spent years managing 
-                        six-figure monthly ad budgets for e-commerce brands. After seeing countless business owners struggle with 
-                        basic profitability calculations, we decided to build tools that democratize financial analytics.
+                        ROAS Tools was created by Nikhil Chaudhary as a focused project for practical profitability and ad spend analysis.
+                        The goal was simple: make ROAS and related calculations easier to understand without forcing signups or hiding the
+                        useful parts behind clutter.
                     </p>
                     <p className="text-slate-600 leading-relaxed mb-4">
-                        Our team has supported operators across fashion retail, SaaS, and lead generation workflows. We understand
-                        the pressure of scaling ad spend while maintaining profitability, which is why accurate ROAS tracking is non-negotiable.
+                        The site started from a simple need for faster break-even, CAC, LTV, and MER calculations and gradually expanded into
+                        a broader resource for marketers and business owners.
                     </p>
                     <p className="text-slate-600 leading-relaxed">
-                        What started as a simple internal spreadsheet has evolved into a focused profitability platform used by 
-                        marketers and operators worldwide every month.
+                        Today, the platform is maintained as an independent site with a privacy-first approach and a stronger focus on
+                        transparent ownership, methodology, and practical use.
                     </p>
                 </div>
             </section>
 
             <section className="bg-slate-50 rounded-xl p-6 border border-slate-200">
-                <h3 className="text-lg font-bold text-slate-900 mb-4">Team Snapshot</h3>
+                <h3 className="text-lg font-bold text-slate-900 mb-4">Owner Snapshot</h3>
                 <div className="flex flex-col md:flex-row gap-6">
                     <div className="w-24 h-24 rounded-2xl bg-linear-to-br from-blue-600 to-indigo-700 text-white flex items-center justify-center text-2xl font-bold shrink-0">
-                        RT
+                        NC
                     </div>
                     <div className="space-y-3">
                         <p className="text-slate-700">
-                            Built by the <strong>ROAS Tools Editorial Team</strong> for practical paid media planning and measurement.
+                            Built and maintained by <strong>Nikhil Chaudhary</strong>.
                         </p>
                         <p className="text-slate-700">
-                            Coverage includes eCommerce, SaaS, and lead-generation operating models with methodology-first guidance.
+                            The site focuses on practical calculators, methodology pages, and content around ROAS and profitability decisions.
                         </p>
                         <div className="grid md:grid-cols-3 gap-3 text-sm">
                             <div className="rounded-lg border border-slate-200 bg-white p-3">
                                 <p className="font-semibold text-slate-900">Methodology-backed calculators</p>
                             </div>
                             <div className="rounded-lg border border-slate-200 bg-white p-3">
-                                <p className="font-semibold text-slate-900">Consistent formula QA checks</p>
+                                <p className="font-semibold text-slate-900">Direct ownership and review</p>
                             </div>
                             <div className="rounded-lg border border-slate-200 bg-white p-3">
-                                <p className="font-semibold text-slate-900">Quarterly content refresh cycle</p>
+                                <p className="font-semibold text-slate-900">Transparent updates and methodology</p>
                             </div>
                         </div>
                     </div>
@@ -263,22 +263,22 @@ export default function About() {
 
             {/* 9. Team & Credentials */}
             <section className="bg-white rounded-xl border border-slate-200 p-6">
-                <h3 className="text-lg font-bold text-slate-900 mb-4">Team, Credentials, and Expertise</h3>
+                <h3 className="text-lg font-bold text-slate-900 mb-4">Ownership and Expertise</h3>
                 <p className="text-slate-700 mb-4">
-                    ROAS Tools is built by a small team of performance marketers, analysts, and engineers who specialize in ad efficiency, data analysis, and privacy-first web tools.
+                    ROAS Tools is independently built and maintained by Nikhil Chaudhary with a focus on ad efficiency, calculator usability, and privacy-first web tools.
                 </p>
                 <ul className="space-y-3 text-slate-700">
                     <li className="flex items-start gap-3">
                         <span className="text-blue-600 font-bold">-</span>
-                        <span><strong>Certifications:</strong> Google Analytics certified, Meta Blueprint certified, and practical work with GA4, Meta Ads, and Google Ads.</span>
+                        <span><strong>Focus areas:</strong> ROAS, CAC, LTV, MER, break-even analysis, and paid media decision support.</span>
                     </li>
                     <li className="flex items-start gap-3">
                         <span className="text-blue-600 font-bold">-</span>
-                        <span><strong>Operations:</strong> Ongoing paid media analysis for e-commerce, SaaS, and lead generation use cases.</span>
+                        <span><strong>Operations:</strong> Content updates, calculator maintenance, and trust-page upkeep are handled directly by the site owner.</span>
                     </li>
                     <li className="flex items-start gap-3">
                         <span className="text-blue-600 font-bold">-</span>
-                        <span><strong>Scale:</strong> 2,000+ campaigns analyzed and 50,000+ monthly users served across tools and guides.</span>
+                        <span><strong>Approach:</strong> Keep the site smaller, clearer, and more transparent instead of using fake team claims or inflated authority language.</span>
                     </li>
                 </ul>
             </section>
@@ -369,11 +369,11 @@ export default function About() {
             <section className="text-center bg-white p-8 rounded-xl border border-slate-200">
                 <h3 className="text-xl font-bold text-slate-900 mb-3">Learn More About Us</h3>
                 <p className="text-slate-600 mb-6">
-                    Want to know more about our team, editorial standards, or see real success stories from our users?
+                    Want to know more about the site owner, editorial standards, or see real success stories from users?
                 </p>
                 <div className="flex flex-wrap gap-4 justify-center">
                     <Link href="/team" className="inline-flex items-center gap-2 bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition">
-                         Meet the Team
+                         About Nikhil
                     </Link>
                     <Link href="/editorial-policy" className="inline-flex items-center gap-2 bg-emerald-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-emerald-700 transition">
                          Editorial Policy
@@ -399,7 +399,7 @@ export default function About() {
       {/* Footer */}
       <footer className="max-w-3xl mx-auto mt-12 text-center border-t border-slate-200 pt-8">
         <p className="text-slate-500 mb-2">Built with &lt;3 for the Marketing Community.</p>
-        <p className="text-slate-400 text-sm">(c) 2026 ROAS Tools Inc.</p>
+        <p className="text-slate-400 text-sm">(c) 2026 ROAS Tools</p>
       </footer>
 
     </div>

@@ -24,6 +24,11 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://roas-calculator.tech/currency-converter/faq",
   },
+  robots: {
+    index: false,
+    follow: false,
+    nocache: true,
+  },
 };
 
 const faqs = [

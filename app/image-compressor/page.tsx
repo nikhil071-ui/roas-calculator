@@ -15,6 +15,11 @@ export const metadata: Metadata = {
     "jpeg compressor online",
     "reduce photo size for signature",
   ],
+  robots: {
+    index: false,
+    follow: false,
+    nocache: true,
+  },
   alternates: {
     canonical: "https://roas-calculator.tech/image-compressor",
   },

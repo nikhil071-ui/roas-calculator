@@ -27,8 +27,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     description: data.description,
     keywords: [data.primaryKeyword, ...data.relatedKeywords],
     robots: {
-      index: true,
-      follow: true,
+      index: false,
+      follow: false,
     },
     alternates: { canonical: `https://roas-calculator.tech/platform/${slug}/roas-calculator` },
     openGraph: {
